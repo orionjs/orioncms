@@ -1,0 +1,10 @@
+<template name="adminEntitiesIndex">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<a href="{{ pathFor 'adminEntitiesCreate' entity=entity.name }}" 
+			class="btn btn-primary pull-right btn-xs">Create</a>
+			{{ entity.options.pluralName }}
+		</div>
+		{{> reactiveTable collection=items settings=settings }}
+	</div>
+</template>

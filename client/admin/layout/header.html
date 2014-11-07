@@ -1,0 +1,34 @@
+<template name="adminHeader">
+
+	<nav class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">{{ getDict.siteName }}</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="main-nav">
+				{{# if currentUser }}
+					<ul class="nav navbar-nav navbar-right">
+						<li class="{{ isActivePath regex='admin' }}">
+							<a href="{{ pathFor 'adminDictionaryUpdate' }}">Admin</a>
+						</li>
+					</ul>
+				{{else}}
+					<div class="navbar-right">
+						<!--<a href="{{ pathFor 'entrySignIn' }}" class="btn btn-default navbar-btn">Sign in</a>-->
+						<!--<a href="{{ pathFor 'entrySignUp' }}" class="btn btn-primary navbar-btn">Register</a>-->
+					</div>
+				{{/if}}
+			</div>
+
+		</div>
+	</nav>
+
+</template>

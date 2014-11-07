@@ -1,0 +1,23 @@
+<template name="adminLayout">
+	<!--[if lt IE 9]>
+	<p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
+	<![endif]-->
+	<div id="cms-admin">
+		{{> adminHeader }}
+		{{# if currentUser }}
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						{{> adminSidebar }}
+					</div>
+					<div class="col-sm-9">
+						{{> yield }}
+					</div>
+				</div>
+			</div>
+		{{ else }}
+			{{> yield }}
+		{{/ if }}
+		{{> adminFooter }}
+	</div>
+</template>

@@ -1,0 +1,25 @@
+<template name="adminSidebar">
+	<ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="#">
+                Admin
+            </a>
+        </li>
+        <li>
+            <a href="{{ pathFor 'adminDictionaryUpdate' }}">Dictionary</a>
+        </li>
+        {{# each getEntities }}
+			<li>
+            	<a href="{{ pathFor 'adminEntitiesIndex' entity=name }}">{{ options.sidebarName }}</a>
+        	</li>
+		{{/ each }}
+       
+        <li>
+            <a href="{{ pathFor 'atChangePwd' }}">Change Password</a>
+        </li>
+        <li>
+            <a id="logout-btn">Logout</a>
+        </li>
+    </ul>
+	
+</template>

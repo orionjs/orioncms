@@ -1,0 +1,10 @@
+<template name="adminEntitiesUpdate">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Update {{ entity.options.singularName }} {{ item.title }}
+		</div>
+		<div class="panel-body">
+			{{> quickForm collection=entity.collection id="updateEntityForm" doc=item type="update" omitFields="createdAt,updatedAt" }}
+		</div>
+	</div>
+</template>

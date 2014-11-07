@@ -1,0 +1,10 @@
+<template name="adminEntitiesCreate">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Create a new {{ entity.options.singularName }}
+		</div>
+		<div class="panel-body">
+			{{> quickForm collection=entity.collection id="createEntityForm" type="insert" omitFields="createdAt,updatedAt" }}
+		</div>
+	</div>
+</template>

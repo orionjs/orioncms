@@ -1,0 +1,3 @@
+Template.adminLayout.rendered = function () {
+
+};

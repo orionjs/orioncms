@@ -1,0 +1,30 @@
+
+body {
+	margin: 0px;
+}
+
+#cms-admin {
+	@import "bootstrap/cms.import.less";
+
+	danger: nn @brand-primary;
+
+	font-family: @font-family-base;
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+	color: @text-color;
+	background-color: @body-bg;
+
+	.container {
+		display: block;
+		zoom: 1;
+
+		&:after {
+			content: " ";
+			display: block;
+			font-size: 0;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+	}
+}

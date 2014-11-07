@@ -1,0 +1,16 @@
+<template name="adminDictionaryUpdate">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Dictionary
+		</div>
+		<div class="panel-body">
+			<div>
+				{{# each allCategories }}
+					<span class="label label-primary {{ isActiveCategory }}"><a href="{{ pathFor 'adminDictionaryUpdate' category=this }}">{{ this }}</a></span>
+				{{/ each }}
+			</div>
+			<br>
+			{{> quickForm buttonContent="Save" collection="cms.dictionary.collection" id="updateDictionaryForm" type="update" doc=getDict fields=fields }}
+		</div>
+	</div>
+</template>

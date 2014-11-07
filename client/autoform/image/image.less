@@ -1,0 +1,42 @@
+.image-attribute-container img {
+	height: 100px; 
+	margin-bottom: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.image-input[src=""] {
+	display: none;
+}
+
+.image-attribute-container p {
+	display: none;
+}
+
+.image-attribute-container.is-loading img {
+	display: none;
+}
+
+.image-attribute-container.is-loading p {
+	display: block;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
