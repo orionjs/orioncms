@@ -1,41 +1,36 @@
 <template name="accountsFormTemplate">
-	<div class="panel panel-default">
-		{{#if showTitle}}
-			<div class="panel-heading">
-				{{> accountsFormTemplateTitle}}
-			</div>
+	{{#if showTitle}}
+		{{> accountsFormTemplateTitle}}
+		<hr>
+	{{/if}}
+	<div>
+		{{#if showOauthServices}}
+			{{> atOauth}}
 		{{/if}}
-		<div class="panel-body">
-			<div class="at-form">
-				{{#if showOauthServices}}
-					{{> atOauth}}
-				{{/if}}
-				{{#if showServicesSeparator}}
-					{{> atSep}}
-				{{/if}}
-				{{#if showError}}
-					{{> atError}}
-				{{/if}}
-				{{#if showResult}}
-					{{> atResult}}
-				{{/if}}
-				{{#if showPwdForm}}
-					{{> atPwdForm}}
-				{{/if}}
-				{{#if showSignInLink}}
-					{{> atSigninLink}}
-				{{/if}}
-				{{#if showSignUpLink}}
-					{{> atSignupLink}}
-				{{/if}}
-				{{#if showTermsLink}}
-					{{> atTermsLink}}
-				{{/if}}
-			</div>
-		</div>
+		{{#if showServicesSeparator}}
+			{{> atSep}}
+		{{/if}}
+		{{#if showError}}
+			{{> atError}}
+		{{/if}}
+		{{#if showResult}}
+			{{> atResult}}
+		{{/if}}
+		{{#if showPwdForm}}
+			{{> atPwdForm}}
+		{{/if}}
+		{{#if showSignInLink}}
+			{{> atSigninLink}}
+		{{/if}}
+		{{#if showSignUpLink}}
+			{{> atSignupLink}}
+		{{/if}}
+		{{#if showTermsLink}}
+			{{> atTermsLink}}
+		{{/if}}
 	</div>
 </template>
 
 <template name="accountsFormTemplateTitle">
-	<h3 class="panel-title">{{title}}</h3>
+	<h3>{{title}}</h3>
 </template>

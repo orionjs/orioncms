@@ -3,3 +3,9 @@ Template.adminSidebar.events({
         Meteor.logout();
     },
 });
+
+Template.adminSidebar.helpers({
+	getPath: function (options) {
+		return Router.path('adminEntitiesIndex', {entity:this.name});;
+	}
+});

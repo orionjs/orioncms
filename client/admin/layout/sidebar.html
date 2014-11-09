@@ -1,20 +1,26 @@
 <template name="adminSidebar">
-	<ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            <a href="#">
-                Admin
-            </a>
-        </li>
+	<ul class="nav">
         <li>
+           <a href="/">
+               {{ dict 'siteName' 'Home' }}
+           </a>
+        </li>
+
+        <li class="nav-divider"></li>
+
+        <li class="{{ isActiveRoute regex='adminDictionary' }}">
             <a href="{{ pathFor 'adminDictionaryUpdate' }}">Dictionary</a>
         </li>
+
         {{# each getEntities }}
-			<li>
+			<li class="{{ isActivePath regex=getPath }}">
             	<a href="{{ pathFor 'adminEntitiesIndex' entity=name }}">{{ options.sidebarName }}</a>
         	</li>
 		{{/ each }}
        
-        <li>
+        <li class="nav-divider"></li>
+
+        <li class="{{ isActiveRoute regex='atChangePwd' }}">
             <a href="{{ pathFor 'atChangePwd' }}">Change Password</a>
         </li>
         <li>

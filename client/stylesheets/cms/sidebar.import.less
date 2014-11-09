@@ -1,0 +1,34 @@
+.nav-sidebar { 
+
+
+    width: 100%;
+    padding: 8px 0; 
+    border-right: 1px solid @nav-tabs-border-color;
+
+
+    li {
+
+        > a {
+            color: @text-color;
+            border-radius: @nav-pills-border-radius 0px 0px @nav-pills-border-radius; 
+        }
+
+        &.active > a {
+            cursor: default;
+            color: @nav-pills-active-link-hover-color;
+            background-color: @nav-pills-active-link-hover-bg;
+
+            &:hover {
+                background-color: @nav-pills-active-link-hover-bg;   
+            }
+        }
+    }
+
+    .text-overflow a,
+    .text-overflow .media-body {
+        white-space: nowrap;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis; 
+    }
+}

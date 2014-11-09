@@ -49,6 +49,7 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'server/fixtures.js',
+		'server/publications.js',
 		], 'server');
 
 	api.addFiles([
@@ -60,6 +61,7 @@ Package.onUse(function(api) {
 		'client/admin/layout/sidebar.js',
 		'client/admin/layout/accounts/formTemplate.html',
 		'client/admin/layout/accounts/formTemplate.js',
+		'client/admin/layout/accounts/formTemplate.less',
 
 		'client/admin/dictionary/index/index.html',
 		'client/admin/dictionary/update/update.html',
@@ -83,6 +85,8 @@ Package.onUse(function(api) {
 		'client/helpers/entities.js',
 
 		'client/stylesheets/global.less',
+
+		'client/subscriptions.js',
 
 		], 'client');
 

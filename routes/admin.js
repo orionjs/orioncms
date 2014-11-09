@@ -24,6 +24,9 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		path: '/admin/e/:entity/',
 		onBeforeAction: AccountsTemplates.ensureSignedIn,
+		waitOn: function () {
+			return Meteor.subscribe('entity', this.params.entity);
+		},
 		data: function() {
 			var entity = _.findWhere(cms.entities, {name: this.params.entity});
 			return {
@@ -48,6 +51,9 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		path: '/admin/e/:entity/:_id/update',
 		onBeforeAction: AccountsTemplates.ensureSignedIn,
+		waitOn: function () {
+			return Meteor.subscribe('entity', this.params.entity);
+		},
 		data: function() {
 			var entity = _.findWhere(cms.entities, {name: this.params.entity});
 			return {
@@ -61,6 +67,9 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		path: '/admin/e/:entity/:_id/delete',
 		onBeforeAction: AccountsTemplates.ensureSignedIn,
+		waitOn: function () {
+			return Meteor.subscribe('entity', this.params.entity);
+		},
 		data: function() {
 			var entity = _.findWhere(cms.entities, {name: this.params.entity});
 			return {

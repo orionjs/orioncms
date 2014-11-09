@@ -1,5 +1,5 @@
 <template name="adminHeader">
-
+<!--
 	<nav class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
 
@@ -16,19 +16,18 @@
 			<div class="collapse navbar-collapse" id="main-nav">
 				{{# if currentUser }}
 					<ul class="nav navbar-nav navbar-right">
-						<li class="{{ isActivePath regex='admin' }}">
+						<li class="{{ isActiveRoute regex='admin|atChangePwd' }}">
 							<a href="{{ pathFor 'adminDictionaryUpdate' }}">Admin</a>
 						</li>
 					</ul>
 				{{else}}
 					<div class="navbar-right">
-						<!--<a href="{{ pathFor 'entrySignIn' }}" class="btn btn-default navbar-btn">Sign in</a>-->
-						<!--<a href="{{ pathFor 'entrySignUp' }}" class="btn btn-primary navbar-btn">Register</a>-->
 					</div>
 				{{/if}}
 			</div>
 
 		</div>
 	</nav>
-
+-->
+<br><br>
 </template>

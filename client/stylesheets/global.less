@@ -1,16 +1,20 @@
+@import url("//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400");
 
 body {
 	margin: 0px;
 }
 
 #cms-admin {
-	@import "bootstrap/cms.import.less";
 
-	danger: nn @brand-primary;
+	@import "variables.less";
+	@import "bootstrap.import.less";
+	@import "cms/cms.import.less";
+	@import "theme/theme.import.less";
 
 	font-family: @font-family-base;
 	font-size: @font-size-base;
 	line-height: @line-height-base;
+	font-weight: @font-weight-base;
 	color: @text-color;
 	background-color: @body-bg;
 
