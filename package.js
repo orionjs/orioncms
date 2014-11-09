@@ -10,6 +10,7 @@ Package.onUse(function(api) {
 
 	api.use([
 		'meteor-platform', 
+		'meteorhacks:subs-manager',
 		'less', 
 		'linto:fontawesome', 
 		'accounts-password', 
@@ -26,7 +27,7 @@ Package.onUse(function(api) {
 		'aldeed:delete-button', 
 		'copleykj:livestamp', 
 		'lepozepo:s3@4.1.1', 
-		'useraccounts:bootstrap'
+		'useraccounts:bootstrap',
 		]);
 
 
@@ -37,6 +38,7 @@ Package.onUse(function(api) {
 		'iron:router',
 		'dburles:collection-helpers',
 		'copleykj:livestamp',
+		'meteorhacks:subs-manager',
 		]);
 
 
@@ -62,6 +64,7 @@ Package.onUse(function(api) {
 		'client/admin/layout/accounts/formTemplate.html',
 		'client/admin/layout/accounts/formTemplate.js',
 		'client/admin/layout/accounts/formTemplate.less',
+		'client/admin/layout/loading/loading.html',
 
 		'client/admin/dictionary/index/index.html',
 		'client/admin/dictionary/update/update.html',

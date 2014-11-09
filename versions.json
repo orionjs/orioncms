@@ -217,6 +217,10 @@
       "1.2.0"
     ],
     [
+      "meteorhacks:subs-manager",
+      "1.1.0"
+    ],
+    [
       "minifiers",
       "1.1.2"
     ],
