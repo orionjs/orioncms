@@ -99,7 +99,7 @@ Router.map(function() {
 Router.onBeforeAction(function() {
 
 	if (!Meteor.user()) {
-        AccountsTemplates.setPrevPath(Router.current().route._path);
+        AccountsTemplates.setPrevPath(Router.current().url);
         AccountsTemplates.setState(AccountsTemplates.options.defaultState, function(){
             var err = T9n.get(AccountsTemplates.texts.errors.mustBeLoggedIn, markIfMissing=false);
             AccountsTemplates.state.form.set("error", [err]);
