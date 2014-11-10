@@ -1,34 +1,37 @@
 <template name="accountsFormTemplate">
-	{{#if showTitle}}
-		{{> accountsFormTemplateTitle}}
-		<hr>
-	{{/if}}
-	<div>
-		{{#if showOauthServices}}
-			{{> atOauth}}
-		{{/if}}
-		{{#if showServicesSeparator}}
-			{{> atSep}}
-		{{/if}}
-		{{#if showError}}
-			{{> atError}}
-		{{/if}}
-		{{#if showResult}}
-			{{> atResult}}
-		{{/if}}
-		{{#if showPwdForm}}
-			{{> atPwdForm}}
-		{{/if}}
-		{{#if showSignInLink}}
-			{{> atSigninLink}}
-		{{/if}}
-		{{#if showSignUpLink}}
-			{{> atSignupLink}}
-		{{/if}}
-		{{#if showTermsLink}}
-			{{> atTermsLink}}
-		{{/if}}
-	</div>
+	{{#unless hide}}
+		<div>
+			{{#if showTitle}}
+				{{> accountsFormTemplateTitle}}
+				<hr>
+			{{/if}}
+		
+			{{#if showOauthServices}}
+				{{> atOauth}}
+			{{/if}}
+			{{#if showServicesSeparator}}
+				{{> atSep}}
+			{{/if}}
+			{{#if showError}}
+				{{> atError}}
+			{{/if}}
+			{{#if showResult}}
+				{{> atResult}}
+			{{/if}}
+			{{#if showPwdForm}}
+				{{> atPwdForm}}
+			{{/if}}
+			{{#if showSignInLink}}
+				{{> atSigninLink}}
+			{{/if}}
+			{{#if showSignUpLink}}
+				{{> atSignupLink}}
+			{{/if}}
+			{{#if showTermsLink}}
+				{{> atTermsLink}}
+			{{/if}}
+		</div>
+	{{/unless}}
 </template>
 
 <template name="accountsFormTemplateTitle">

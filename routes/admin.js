@@ -3,7 +3,6 @@ Router.map(function() {
 	this.route('admin', {
 		layoutTemplate: 'adminLayout',
 		loadingTemplate: 'adminLoading',
-		path: '/admin',
 		onBeforeAction: AccountsTemplates.ensureSignedIn,
 		waitOn: function () {
 			return cms.subs.subscribe('dictionary');
@@ -17,7 +16,6 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		loadingTemplate: 'adminLoading',
 		path: '/admin/dictionary/:category?',
-		onBeforeAction: AccountsTemplates.ensureSignedIn,
 		waitOn: function () {
 			return cms.subs.subscribe('dictionary');
 		},
@@ -41,7 +39,6 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		loadingTemplate: 'adminLoading',
 		path: '/admin/e/:entity/',
-		onBeforeAction: AccountsTemplates.ensureSignedIn,
 		waitOn: function () {
 			return [cms.subs.subscribe('dictionary'), cms.subs.subscribe('entity', this.params.entity)];
 		},
@@ -58,7 +55,6 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		loadingTemplate: 'adminLoading',
 		path: '/admin/e/:entity/create',
-		onBeforeAction: AccountsTemplates.ensureSignedIn,
 		data: function() {
 			return {
 				entity: cms.entities[this.params.entity]
@@ -70,7 +66,6 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		loadingTemplate: 'adminLoading',
 		path: '/admin/e/:entity/:_id/update',
-		onBeforeAction: AccountsTemplates.ensureSignedIn,
 		waitOn: function () {
 			return [cms.subs.subscribe('dictionary'), cms.subs.subscribe('entity', this.params.entity)];
 		},
@@ -87,7 +82,6 @@ Router.map(function() {
 		layoutTemplate: 'adminLayout',
 		loadingTemplate: 'adminLoading',
 		path: '/admin/e/:entity/:_id/delete',
-		onBeforeAction: AccountsTemplates.ensureSignedIn,
 		waitOn: function () {
 			return [cms.subs.subscribe('dictionary'), cms.subs.subscribe('entity', this.params.entity)];
 		},
@@ -100,4 +94,25 @@ Router.map(function() {
 		}
 	})
 
+});
+
+Router.onBeforeAction(function() {
+
+	if (!Meteor.user()) {
+        AccountsTemplates.setPrevPath(Router.current().route._path);
+        AccountsTemplates.setState(AccountsTemplates.options.defaultState, function(){
+            var err = T9n.get(AccountsTemplates.texts.errors.mustBeLoggedIn, markIfMissing=false);
+            AccountsTemplates.state.form.set("error", [err]);
+        });
+        AccountsTemplates.avoidRedirect = true;
+        // render the login template but keep the url in the browser the same
+        var signInRouteTemplate = AccountsTemplates.routes.signIn && AccountsTemplates.routes.signIn.template;
+        this.render(signInRouteTemplate || "fullPageAtForm");
+        this.renderRegions();
+    } else {
+        this.next();
+    }
+
+}, {
+    only: ['admin', 'adminDictionaryUpdate', 'adminEntitiesIndex', 'adminEntitiesCreate', 'adminEntitiesUpdate', 'adminEntitiesDelete']
 });

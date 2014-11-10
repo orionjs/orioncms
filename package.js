@@ -32,7 +32,7 @@ Package.onUse(function(api) {
 		'aldeed:delete-button', 
 		'copleykj:livestamp', 
 		'lepozepo:s3@4.1.1', 
-		'useraccounts:bootstrap',
+		'useraccounts:bootstrap@1.1.1',
 		]);
 
 
@@ -49,6 +49,7 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'lib/base.js',
+		'lib/accounts.js',
 		'lib/attributes/image.js',
 
 		'routes/admin.js',
