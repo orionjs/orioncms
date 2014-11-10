@@ -5,11 +5,16 @@ Package.describe({
 	git: ' /* Fill me in! */ '
 });
 
+Npm.depends({
+	"spin.js": "2.0.1"
+});
+
+
 Package.onUse(function(api) {
 	api.versionsFrom('1.0');
 
 	api.use([
-		'meteor-platform', 
+		'meteor-platform',
 		'meteorhacks:subs-manager',
 		'less', 
 		'linto:fontawesome', 
@@ -55,6 +60,8 @@ Package.onUse(function(api) {
 		], 'server');
 
 	api.addFiles([
+		'.npm/package/node_modules/spin.js/spin.js',
+		
 		'client/admin/layout/footer.html',
 		'client/admin/layout/header.html',
 		'client/admin/layout/layout.html',
@@ -65,6 +72,8 @@ Package.onUse(function(api) {
 		'client/admin/layout/accounts/formTemplate.js',
 		'client/admin/layout/accounts/formTemplate.less',
 		'client/admin/layout/loading/loading.html',
+		'client/admin/layout/loading/loading.js',
+		'client/admin/layout/loading/loading.less',
 
 		'client/admin/dictionary/index/index.html',
 		'client/admin/dictionary/update/update.html',
@@ -87,10 +96,7 @@ Package.onUse(function(api) {
 		'client/helpers/dictionary.js',
 		'client/helpers/entities.js',
 
-		'client/stylesheets/global.less',
-
-		'client/subscriptions.js',
-
+		'client/stylesheets/cms-global.less',
 		], 'client');
 
 	api.export('cms');

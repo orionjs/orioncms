@@ -5,12 +5,21 @@
     padding: 8px 0; 
     border-right: 1px solid @nav-tabs-border-color;
 
+    @media (max-width: @screen-sm-min) {
+        border-right: 0;
+    }
 
     li {
+
+        margin-top: 3px;
 
         > a {
             color: @text-color;
             border-radius: @nav-pills-border-radius 0px 0px @nav-pills-border-radius; 
+
+            @media (max-width: @screen-sm-min) {
+                border-radius: @nav-pills-border-radius; 
+            }
         }
 
         &.active > a {
