@@ -8,7 +8,8 @@ key/value definitions for your site.
 
 ## Getting Started
 
-run ```meteor add aldeed:collection2```
+Add the package
+```meteor add nicolaslopezj:cms```
 
 #### Create an account
 
