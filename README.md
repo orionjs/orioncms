@@ -148,7 +148,7 @@ To access the collection of the entity you can do this
 cms.entities.posts.collection;
 ```
 
-##### Using with iron router
+#### Using with iron router
 
 This is an example of the use with iron router
 
