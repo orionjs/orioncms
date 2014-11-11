@@ -1,8 +1,8 @@
 Package.describe({
 	name: 'nicolaslopezj:cms',
-	summary: ' /* Fill me in! */ ',
-	version: '1.0.0',
-	git: ' /* Fill me in! */ '
+	summary: 'In development',
+	version: '0.1.1',
+	git: 'https://github.com/nicolaslopezj/meteor-cms'
 });
 
 Npm.depends({
@@ -15,22 +15,19 @@ Package.onUse(function(api) {
 
 	api.use([
 		'meteor-platform',
-		'meteorhacks:subs-manager',
+		'meteorhacks:subs-manager@1.1.0',
 		'less', 
-		'linto:fontawesome', 
 		'accounts-password', 
-		'iron:router', 
+		'iron:router@1.0.1', 
 		'zimme:iron-router-active@1.0.0', 
-		'dburles:collection-helpers', 
+		'dburles:collection-helpers@0.1.0', 
 		'fuatsengul:iron-router-auth@1.0.7', 
-		'cunneen:mailgun', 
-		'aldeed:collection2', 
+		'cunneen:mailgun@0.9.1', 
+		'aldeed:collection2@2.0.0', 
 		'aldeed:autoform@4.0.0-rc10', 
 		'aslagle:reactive-table@0.5.5', 
-		'hckrs:summernote', 
-		'rajit:bootstrap3-datepicker', 
-		'aldeed:delete-button', 
-		'copleykj:livestamp', 
+		'hckrs:summernote@0.0.1', 
+		'aldeed:delete-button@1.0.0', 
 		'lepozepo:s3@4.1.1', 
 		'useraccounts:bootstrap@1.1.1',
 		]);
@@ -42,7 +39,6 @@ Package.onUse(function(api) {
 		'zimme:iron-router-active',
 		'iron:router',
 		'dburles:collection-helpers',
-		'copleykj:livestamp',
 		'meteorhacks:subs-manager',
 		]);
 

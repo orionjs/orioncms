@@ -15,5 +15,9 @@ Template.registerHelper('dict', function(name, defaultValue) {
 		return defaultValue;
 	}
 
+	if (typeof(dictionary) == 'object') {
+		return defaultValue;
+	}
+
     return dictionary ? dictionary : defaultValue;
 });
