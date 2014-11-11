@@ -4,20 +4,5 @@ Template.registerHelper('getDict', function() {
 
 
 Template.registerHelper('dict', function(name, defaultValue) {
-	var dictionary = cms.dictionary.collection.findOne();
-
-	name = name.split(".");
-    
-    try {
-    	for (var i = 0; i < name.length; i++)
-        	dictionary = dictionary[name[i]];
-	} catch(error) {
-		return defaultValue;
-	}
-
-	if (typeof(dictionary) == 'object') {
-		return defaultValue;
-	}
-
-    return dictionary ? dictionary : defaultValue;
+	return cms.dictionary.get(name, defaultValue);
 });

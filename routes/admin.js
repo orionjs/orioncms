@@ -96,23 +96,6 @@ Router.map(function() {
 
 });
 
-Router.onBeforeAction(function() {
-
-	if (!Meteor.user()) {
-        AccountsTemplates.setPrevPath(Router.current().url);
-        AccountsTemplates.setState(AccountsTemplates.options.defaultState, function(){
-            var err = T9n.get(AccountsTemplates.texts.errors.mustBeLoggedIn, markIfMissing=false);
-            AccountsTemplates.state.form.set("error", [err]);
-        });
-        AccountsTemplates.avoidRedirect = true;
-        // render the login template but keep the url in the browser the same
-        var signInRouteTemplate = AccountsTemplates.routes.signIn && AccountsTemplates.routes.signIn.template;
-        this.render(signInRouteTemplate || "fullPageAtForm");
-        this.renderRegions();
-    } else {
-        this.next();
-    }
-
-}, {
+Router.onBeforeAction(AccountsTemplates.ensureSignedIn, {
     only: ['admin', 'adminDictionaryUpdate', 'adminEntitiesIndex', 'adminEntitiesCreate', 'adminEntitiesUpdate', 'adminEntitiesDelete']
 });

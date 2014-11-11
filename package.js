@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'nicolaslopezj:cms',
-	summary: 'In development',
-	version: '0.1.1',
+	summary: 'Simple CMS for meteor',
+	version: '0.1.2',
 	git: 'https://github.com/nicolaslopezj/meteor-cms'
 });
 
@@ -44,7 +44,12 @@ Package.onUse(function(api) {
 
 
 	api.addFiles([
-		'lib/base.js',
+		'lib/cms/base.js',
+		'lib/cms/dictionary.js',
+		'lib/cms/entities.js',
+		'lib/cms/subcriptions.js',
+		'lib/cms/accounts.js',
+
 		'lib/accounts.js',
 		'lib/attributes/image.js',
 
