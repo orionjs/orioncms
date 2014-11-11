@@ -132,7 +132,9 @@ To show the index of the entity this package uses [aslagle:reactive-table](https
 
 #### Subscribing to a entity
 
-The name of the publication is ```entity``` and the second input of the function is the name of the entity. Its recomended to use ```cms.subs.subscribe`` instead of meteor default, becouse it uses [meteorhacks:subs-manager](https://github.com/meteorhacks/subs-manager).
+The name of the publication is ```entity``` and the second input of the function is the name of the entity. 
+Its recomended to use ```cms.subs.subscribe``` instead of meteor default, 
+becouse it uses [meteorhacks:subs-manager](https://github.com/meteorhacks/subs-manager).
 
 ```js
 cms.subs.subscribe('entity', 'posts')
@@ -146,6 +148,25 @@ To access the collection of the entity you can do this
 cms.entities.posts.collection;
 ```
 
+##### Using with iron router
+
+This is an example of the use with iron router
+
+```js
+Router.map(function() {
+
+	this.route('postsShow', {
+		path: '/posts/:_id',
+		waitOn: function() {
+			return [cms.subs.subscribe('dictionary'), cms.subs.subscribe('entity', 'posts')];
+		},
+		data: function() {
+			return cms.entities.posts.collection.findOne(this.params._id);
+		}
+	});
+
+});
+```
 
 ## Custom Attributes
 
