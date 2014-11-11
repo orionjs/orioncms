@@ -170,9 +170,9 @@ You must set the AWS credentials to use this
 
 ```js
 S3.config = {
-	key: process.env.AWS_KEY,
-	secret: process.env.AWS_SECRET,
-	bucket: process.env.AWS_BUCKET
+	key: 'AWS_KEY',
+	secret: 'AWS_SECRET',
+	bucket: 'AWS_BUCKET_NAME'
 };
 ```
 
