@@ -75,7 +75,7 @@ Where:
 
 **Warning: You must subscribe to the dictionary before using it**
 
-#### Using in other files
+#### Using in javascript files
 
 To use definitions in other javascript files you can do this
 
