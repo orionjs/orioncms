@@ -6,7 +6,7 @@ Creates automatically a admin panel for your
 collections and gives you the ability to have
 key/value definitions for your site.
 
-![alt tag](http://meteor-cms-default.s3.amazonaws.com/imgs/YrCnJqr9Hp23K8uK9.png)
+![alt tag](http://i.imgur.com/aTG9iF5.png)
 
 ## Getting Started
 
