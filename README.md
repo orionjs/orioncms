@@ -47,12 +47,13 @@ cms.dictionary.addDefinition('siteDescription', 'basic', {
 - The first attribute is the key of the definition.
 - The second is the category of the definition. This is used only in the admin panel.
 - The third attribute is the description of the attribute. This uses 
-[collection2](https://github.com/aldeed/meteor-collection2) and [autoform](https://github.com/aldeed/meteor-autoform),
+[collection2](https://github.com/aldeed/meteor-collection2) and 
+[autoform](https://github.com/aldeed/meteor-autoform),
 you can read the especifications there.
 
 #### Subscribing to the dictionary
 
-The name of the publication is ```dictionary```. Its recomended to use this method instead of meteor default, becouse it uses [meteorhacks:subs-manager](https://github.com/meteorhacks/subs-manager).
+The name of the publication is ```dictionary```. Its recomended to use ```cms.subs.subscribe``` instead of meteor default, becouse it uses [meteorhacks:subs-manager](https://github.com/meteorhacks/subs-manager).
 
 ```js
 cms.subs.subscribe('dictionary')
@@ -90,6 +91,94 @@ Entities are collections that are editable by the admin.
 
 #### Adding a new entity
 
+Create a file and add this code
+
+```js
+cms.addEntity('posts', {
+	title: {
+		type: String,
+		label: "Title",
+	},
+	body: {
+		type: String,
+		label: "Body",
+		autoform: {
+			type: 'textarea',
+		}
+	}
+}, {
+	sidebarName: 'Posts',
+	pluralName: 'Posts',
+	singularName: 'Post',
+	defaultIndexTableFields: [
+		{key:'title', label: 'Title'},
+	]
+});
+```
+Where:
+
+- The first attribute is the name of the entity and the collection in the database.
+- The second attribute is the description of the attributes. This uses 
+[collection2](https://github.com/aldeed/meteor-collection2) and 
+[autoform](https://github.com/aldeed/meteor-autoform),
+you can read the especifications there.
+- The third attribute is the options.
+To show the index of the entity this package uses [aslagle:reactive-table](https://github.com/ecohealthalliance/reactive-table).
+	- ```defaultIndexTableFields``` are the fields in ```aslagle:reactive-table```.
+
+#### Subscribing to a entity
+
+The name of the publication is ```entity``` and the second input of the function is the name of the entity. Its recomended to use ```cms.subs.subscribe`` instead of meteor default, becouse it uses [meteorhacks:subs-manager](https://github.com/meteorhacks/subs-manager).
+
+```js
+cms.subs.subscribe('entity', 'posts')
+```
+
+#### Access the collection
+
+To access the collection of the entity you can do this
+
+```js
+cms.entities.posts.collection;
+```
 
 
+## Custom Attributes
 
+### Images
+
+To add images to your entities or dictionary you can do this
+
+```js
+cms.dictionary.addDefinition('logo', 'basic', {
+	type: cms.imageAttribute,
+	label: "Logo"
+});
+
+// or 
+
+cms.dictionary.addDefinition('carouselImages', 'basic', {
+	type: [cms.imageAttribute],
+	label: "Carousel Images"
+});
+```
+
+It uses AWS S3 to save the images, using the package [lepozepo:s3](https://github.com/Lepozepo/S3)
+
+You must set the AWS credentials to use this
+
+```js
+S3.config = {
+	key: process.env.AWS_KEY,
+	secret: process.env.AWS_SECRET,
+	bucket: process.env.AWS_BUCKET
+};
+```
+
+To access the image you can do this
+
+```html
+<template name="example">
+	<img src="{{ dict 'logo.link' }}">
+</template>
+```

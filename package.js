@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'nicolaslopezj:cms',
 	summary: 'Simple CMS for meteor',
-	version: '0.1.2',
+	version: '0.2.0',
 	git: 'https://github.com/nicolaslopezj/meteor-cms'
 });
 
