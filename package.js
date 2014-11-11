@@ -47,7 +47,7 @@ Package.onUse(function(api) {
 		'lib/cms/base.js',
 		'lib/cms/dictionary.js',
 		'lib/cms/entities.js',
-		'lib/cms/subcriptions.js',
+		'lib/cms/subscriptions.js',
 		'lib/cms/accounts.js',
 
 		'lib/accounts.js',
