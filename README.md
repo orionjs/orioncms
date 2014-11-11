@@ -6,6 +6,8 @@ Creates automatically a admin panel for your
 collections and gives you the ability to have
 key/value definitions for your site.
 
+![alt tag](http://meteor-cms-default.s3.amazonaws.com/imgs/YrCnJqr9Hp23K8uK9.png)
+
 ## Getting Started
 
 Add the package
@@ -116,6 +118,7 @@ cms.addEntity('posts', {
 	]
 });
 ```
+
 Where:
 
 - The first attribute is the name of the entity and the collection in the database.
@@ -152,14 +155,14 @@ To add images to your entities or dictionary you can do this
 
 ```js
 cms.dictionary.addDefinition('logo', 'basic', {
-	type: cms.imageAttribute,
+	type: cms.attributes.image,
 	label: "Logo"
 });
 
-// or 
+// or if you want a array
 
 cms.dictionary.addDefinition('carouselImages', 'basic', {
-	type: [cms.imageAttribute],
+	type: [cms.attributes.image],
 	label: "Carousel Images"
 });
 ```
@@ -182,4 +185,21 @@ To access the image you can do this
 <template name="example">
 	<img src="{{ dict 'logo.link' }}">
 </template>
+```
+
+If you want to show the image in the index table of the entity use ```cms.attributesIndexTable.image(key, label)```
+
+```js
+cms.addEntity('posts', {
+	image: {
+		type: cms.attributes.image,
+		label: "Image",
+	},
+	...
+}, {
+	defaultIndexTableFields: [
+		cms.attributesIndexTable.image('image', 'Image'),
+		...
+	]
+});
 ```

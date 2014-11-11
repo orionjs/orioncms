@@ -50,8 +50,10 @@ Package.onUse(function(api) {
 		'lib/cms/subscriptions.js',
 		'lib/cms/accounts.js',
 
-		'lib/accounts.js',
+		'lib/attributes/base.js',
 		'lib/attributes/image.js',
+
+		'lib/accounts.js',
 
 		'routes/admin.js',
 		]);
