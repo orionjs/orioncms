@@ -84,6 +84,12 @@ var description = cms.dictionary.get('siteDescription', 'No description');
 ```
 
 
+## Entities
+
+Entities are collections that are editable by the admin.
+
+#### Adding a new entity
+
 
 
 
