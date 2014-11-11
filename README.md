@@ -125,7 +125,7 @@ Where:
 you can read the especifications there.
 - The third attribute is the options.
 To show the index of the entity this package uses [aslagle:reactive-table](https://github.com/ecohealthalliance/reactive-table).
-	- ```defaultIndexTableFields``` are the fields in ```aslagle:reactive-table```.
+	- ```defaultIndexTableFields``` are the fields in [aslagle:reactive-table](https://github.com/ecohealthalliance/reactive-table). It defaults to the id.
 
 #### Subscribing to a entity
 
