@@ -15,7 +15,7 @@ Add the package
 
 #### Create an account
 
-Add this line to create a new file in ```/server``` and add this code
+Add this line to a file in ```/server```
 
 ```js
 if (Meteor.users.find().count() === 0) {
