@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'nicolaslopezj:cms',
 	summary: 'Simple CMS for meteor',
-	version: '0.2.3',
+	version: '0.2.4',
 	git: 'https://github.com/nicolaslopezj/meteor-cms'
 });
 
@@ -29,7 +29,7 @@ Package.onUse(function(api) {
 		'hckrs:summernote@0.0.1', 
 		'aldeed:delete-button@1.0.0', 
 		'lepozepo:s3@4.1.1', 
-		'useraccounts:bootstrap@1.1.1',
+		'useraccounts:bootstrap@1.2.1',
 		]);
 
 
