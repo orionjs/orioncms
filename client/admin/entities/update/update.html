@@ -1,7 +1,0 @@
-<template name="adminEntitiesUpdate">
-	<h3>Update {{ entity.options.singularName }} {{ item.title }}</h3>
-
-	<hr>
-
-	{{> quickForm collection=entity.collection id="updateEntityForm" doc=item type="update" omitFields="createdAt,updatedAt" }}
-</template>

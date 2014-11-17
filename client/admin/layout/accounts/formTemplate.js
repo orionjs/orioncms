@@ -1,2 +1,0 @@
-Template.accountsFormTemplate.helpers(AccountsTemplates.atFormHelpers);
-Template.accountsFormTemplateTitle.helpers(AccountsTemplates.atTitleHelpers);

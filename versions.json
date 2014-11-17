@@ -9,32 +9,16 @@
       "1.0.4"
     ],
     [
-      "aldeed:autoform",
-      "4.0.0-rc10"
-    ],
-    [
       "aldeed:collection2",
       "2.0.0"
-    ],
-    [
-      "aldeed:delete-button",
-      "1.0.0"
     ],
     [
       "aldeed:simple-schema",
       "1.1.0"
     ],
     [
-      "anti:i18n",
-      "0.4.3"
-    ],
-    [
       "application-configuration",
       "1.0.3"
-    ],
-    [
-      "aslagle:reactive-table",
-      "0.5.5"
     ],
     [
       "autoupdate",
@@ -69,14 +53,6 @@
       "1.0.2"
     ],
     [
-      "coffeescript",
-      "1.0.4"
-    ],
-    [
-      "cunneen:mailgun",
-      "0.9.1"
-    ],
-    [
       "dburles:collection-helpers",
       "0.1.0"
     ],
@@ -105,16 +81,8 @@
       "1.0.2"
     ],
     [
-      "fuatsengul:iron-router-auth",
-      "1.0.7"
-    ],
-    [
       "geojson-utils",
       "1.0.1"
-    ],
-    [
-      "hckrs:summernote",
-      "0.0.1"
     ],
     [
       "html-tools",
@@ -133,38 +101,6 @@
       "1.0.1"
     ],
     [
-      "iron:controller",
-      "1.0.0"
-    ],
-    [
-      "iron:core",
-      "1.0.0"
-    ],
-    [
-      "iron:dynamic-template",
-      "1.0.0"
-    ],
-    [
-      "iron:layout",
-      "1.0.0"
-    ],
-    [
-      "iron:location",
-      "1.0.1"
-    ],
-    [
-      "iron:middleware-stack",
-      "1.0.0"
-    ],
-    [
-      "iron:router",
-      "1.0.1"
-    ],
-    [
-      "iron:url",
-      "1.0.0"
-    ],
-    [
       "jquery",
       "1.0.1"
     ],
@@ -175,18 +111,6 @@
     [
       "launch-screen",
       "1.0.0"
-    ],
-    [
-      "lepozepo:s3",
-      "4.1.1"
-    ],
-    [
-      "lepozepo:streams",
-      "0.2.0"
-    ],
-    [
-      "less",
-      "1.0.11"
     ],
     [
       "livedata",
@@ -231,10 +155,6 @@
     [
       "mongo-livedata",
       "1.0.6"
-    ],
-    [
-      "mrt:moment",
-      "2.6.0"
     ],
     [
       "npm-bcrypt",
@@ -285,10 +205,6 @@
       "1.0.1"
     ],
     [
-      "softwarerero:accounts-t9n",
-      "1.0.2"
-    ],
-    [
       "spacebars",
       "1.0.3"
     ],
@@ -321,28 +237,12 @@
       "1.0.2"
     ],
     [
-      "useraccounts:bootstrap",
-      "1.2.1"
-    ],
-    [
-      "useraccounts:core",
-      "1.2.1"
-    ],
-    [
       "webapp",
       "1.1.4"
     ],
     [
       "webapp-hashing",
       "1.0.1"
-    ],
-    [
-      "wizonesolutions:underscore-string",
-      "1.0.0"
-    ],
-    [
-      "zimme:iron-router-active",
-      "1.0.0"
     ]
   ],
   "pluginDependencies": [],
