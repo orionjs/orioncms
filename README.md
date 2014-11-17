@@ -32,3 +32,38 @@ It's very easy to add custom attributes to orion. You can start by forking https
 
 #### Custom Admin Panel:
 You can make your own admin panel. Start by forking https://atmospherejs.com/orionjs/admin.
+
+## Getting Started
+
+#### Install the package
+
+```
+meteor add orionjs:admin
+```
+
+#### Add bootstrap (if you haven't)
+
+Orion admin is styled with bootstrap. Choose the bootstrap theme or make one your one.
+For example, use this theme created by bootswatch
+
+```
+meteor add mrt:bootswatch-yeti
+```
+
+#### Create a new user
+
+Users can access to orion admin. You need to create one manually
+Add this code to a file in ```server/```
+
+```js
+if (Meteor.users.find().count() === 0) {
+    Accounts.createUser({
+        email: 'your email',
+        password: 'your password'
+    });
+}
+```
+
+#### Read the docs!
+
+Go to the [documentation](http://orion.meteor.com/docs/dictionary) and learn how to be an expert in orion
