@@ -12,13 +12,13 @@ key/value definitions for your site.
 
 ## Features
 
-##### Dictionary:
+#### Dictionary:
 The dictionary is where you can save key/value definitions, allowing the admin to change things like the site logo or the content of a page.
 
-##### Entities:
+#### Entities:
 Orion generates the full crud for your collections.
 
-##### Custom attributes:
+#### Custom attributes:
 In orion you can add custom attributes like images to entities and dictionary with just a line of code.
 
 - [orionjs:image-attribute](http://orion.meteor.com/docs/attributes/image)
@@ -30,3 +30,5 @@ Use the powerful summernote editor. The images uploaded are saved in a S3 bucket
 - Add one yourself
 It's very easy to add custom attributes to orion. You can start by forking https://atmospherejs.com/orionjs/summernote.
 
+#### Custom Admin Panel:
+You can make your own admin panel. Start by forking https://atmospherejs.com/orionjs/admin.
