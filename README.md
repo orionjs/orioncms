@@ -67,3 +67,7 @@ if (Meteor.users.find().count() === 0) {
 #### Read the docs!
 
 Go to the [documentation](http://orion.meteor.com/docs/dictionary) and learn how to be an expert in orion
+
+#### Browse the example
+
+View the [example blog](https://github.com/orionjs/example-blog) made with orion
