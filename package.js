@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple CMS for meteor',
-	version: '0.0.1',
+	version: '0.0.2',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -25,8 +25,13 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'lib/init.js',
+
 		'lib/dictionary/init.js',
+		'lib/dictionary/functions/get.js',
+		'lib/dictionary/functions/add-definition.js',
+		'lib/dictionary/functions/default-category.js',
 		'lib/dictionary/permissions.js',
+
 		'lib/entities/init.js',
 		'lib/entities/add.js',
 		'lib/subscriptions/init.js',
