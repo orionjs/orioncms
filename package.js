@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple CMS for meteor',
-	version: '0.0.5',
+	version: '0.0.6',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -13,7 +13,7 @@ Package.onUse(function(api) {
 		'meteorhacks:subs-manager@1.1.0',
 		'accounts-base',
 		'accounts-password', 
-		'dburles:collection-helpers@0.1.0', 
+		'dburles:collection-helpers@1.0.1', 
 		'aldeed:collection2@2.0.0', 
 		]);
 
@@ -28,6 +28,7 @@ Package.onUse(function(api) {
 
 		'lib/dictionary/init.js',
 		'lib/dictionary/functions/get.js',
+		'lib/dictionary/functions/get-schema.js',
 		'lib/dictionary/functions/add-definition.js',
 		'lib/dictionary/functions/default-category.js',
 		'lib/dictionary/permissions.js',
@@ -52,15 +53,6 @@ Package.onUse(function(api) {
 	
 	api.export('orion');
 });
-
-
-
-
-
-
-
-
-
 
 Package.onTest(function(api) {
 	api.use('tinytest');
