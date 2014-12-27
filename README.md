@@ -21,8 +21,8 @@ Orion generates the full crud for your collections.
 #### Custom attributes:
 In orion you can add custom attributes like images to entities and dictionary with just a line of code.
 
-- [orionjs:image-attribute](http://orion.meteor.com/docs/attributes/image)
-Save images easily in the dictionary or entities, uploading them to a S3 bucket.
+- [orionjs:file-attribute](http://orion.meteor.com/docs/attributes/file)
+Save files easily in the dictionary or entities, uploading them to a S3 bucket.
 
 - [orionjs:summernote](http://orion.meteor.com/docs/attributes/summernote)
 Use the powerful summernote editor. The images uploaded are saved in a S3 bucket.
