@@ -41,15 +41,6 @@ You can make your own admin panel. Start by forking https://atmospherejs.com/ori
 meteor add orionjs:admin
 ```
 
-#### Add bootstrap (if you haven't)
-
-Orion admin is styled with bootstrap. Choose the bootstrap theme or make one your one.
-For example, use this theme created by bootswatch
-
-```
-meteor add mrt:bootswatch-yeti
-```
-
 #### Create a new user
 
 Users can access to orion admin. You need to create one manually
