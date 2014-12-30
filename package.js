@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple CMS for meteor',
-	version: '0.1.0',
+	version: '0.1.2',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -15,7 +15,7 @@ Package.onUse(function(api) {
 		'accounts-password', 
 		'dburles:collection-helpers@1.0.1', 
 		'aldeed:collection2@2.0.0',
-		'aldeed:tabular@0.2.2',  
+		'nicolaslopezj:tabular@0.2.2',  
 		'aldeed:autoform@4.2.1', 
 		]);
 
@@ -25,6 +25,7 @@ Package.onUse(function(api) {
 		'dburles:collection-helpers',
 		'aldeed:collection2', 
 		'aldeed:autoform', 
+		'nicolaslopezj:tabular',
 		]);
 
 	api.addFiles([
