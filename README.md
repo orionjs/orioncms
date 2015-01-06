@@ -39,21 +39,12 @@ You can make your own admin panel. Start by forking https://atmospherejs.com/ori
 
 ```
 meteor add orionjs:admin
+meteor add orionjs:styles
 ```
 
-#### Create a new user
+#### Go to the admin panel
 
-Users can access to orion admin. You need to create one manually
-Add this code to a file in ```server/```
-
-```js
-if (Meteor.users.find().count() === 0) {
-    Accounts.createUser({
-        email: 'your email',
-        password: 'your password'
-    });
-}
-```
+Navigate to ```/admin``` and create the first user.
 
 #### Read the docs!
 

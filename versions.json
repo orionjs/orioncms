@@ -21,10 +21,6 @@
       "1.1.0"
     ],
     [
-      "aldeed:tabular",
-      "0.2.2"
-    ],
-    [
       "application-configuration",
       "1.0.3"
     ],
@@ -66,7 +62,7 @@
     ],
     [
       "ddp",
-      "1.0.12"
+      "1.0.11"
     ],
     [
       "deps",
@@ -158,7 +154,7 @@
     ],
     [
       "mongo",
-      "1.0.9"
+      "1.0.8"
     ],
     [
       "mongo-livedata",
@@ -166,7 +162,11 @@
     ],
     [
       "mrt:moment",
-      "2.6.0"
+      "2.8.1"
+    ],
+    [
+      "nicolaslopezj:tabular",
+      "0.2.2"
     ],
     [
       "npm-bcrypt",
@@ -258,6 +258,6 @@
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.36",
+  "toolVersion": "meteor-tool@1.0.35",
   "format": "1.0"
 }
