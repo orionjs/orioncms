@@ -3,12 +3,12 @@ Orion
 
 http://orion.meteor.com
 
-This is a simple and useful cms for meteor. 
+Orion is a simple and powerful cms for meteor. 
 Creates automatically a admin panel for your 
 collections and gives you the ability to have
 key/value definitions for your site.
 
-![alt tag](http://i.imgur.com/aTG9iF5.png)
+![alt tag](http://i.imgur.com/eNMaaje.png)
 
 ## Features
 
@@ -50,6 +50,12 @@ Navigate to ```/admin``` and create the first user.
 
 Go to the [documentation](http://orion.meteor.com/docs/dictionary) and learn how to be an expert in orion
 
-#### Browse the example
+#### View the example
 
 View the [example blog](https://github.com/orionjs/example-blog) made with orion
+
+## Screenshots
+
+![alt tag](http://i.imgur.com/eFEQ5lT.jpg)
+![alt tag](http://i.imgur.com/eNMaaje.png)
+![alt tag](http://i.imgur.com/Rl3Mpvi.jpg)
