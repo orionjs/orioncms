@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple CMS for meteor',
-	version: '0.1.3',
+	version: '0.2.0',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -17,6 +17,7 @@ Package.onUse(function(api) {
 		'aldeed:collection2@2.0.0',
 		'nicolaslopezj:tabular@0.2.2',  
 		'aldeed:autoform@4.2.1', 
+		'matb33:collection-hooks@0.7.7'
 		]);
 
 	api.imply([
@@ -26,6 +27,7 @@ Package.onUse(function(api) {
 		'aldeed:collection2', 
 		'aldeed:autoform', 
 		'nicolaslopezj:tabular',
+		'matb33:collection-hooks'
 		]);
 
 	api.addFiles([
@@ -42,6 +44,10 @@ Package.onUse(function(api) {
 		'lib/entities/add.js',
 		'lib/subscriptions/init.js',
 		'lib/attributes/init.js',
+
+		'lib/config/init.js',
+		'lib/config/permissions.js',
+		'lib/config/functions.js',
 		
 		]);
 
@@ -49,6 +55,8 @@ Package.onUse(function(api) {
 		'lib/dictionary/fixtures.js',
 		'lib/dictionary/publications.js',
 		'lib/entities/publications.js',
+		'lib/config/fixtures.js',
+		'lib/config/publications.js',
 
 		], 'server');
 
