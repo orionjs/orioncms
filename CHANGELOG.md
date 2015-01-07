@@ -3,7 +3,7 @@ Orion Core
 
 This is the changelog for ```orionjs:core```. 
 
-### 0.2.0
+### 0.2.1
 
 - Dictionary definitions are optional by default.
 
