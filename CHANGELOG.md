@@ -3,7 +3,12 @@ Orion Core
 
 This is the changelog for ```orionjs:core```. 
 
-### 0.2.1
+
+### 0.2.2
+
+- Added default value for ```orion.config.get```.
+
+### 0.2.0
 
 - Dictionary definitions are optional by default.
 
