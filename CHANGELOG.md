@@ -3,6 +3,11 @@ Orion Core
 
 This is the changelog for ```orionjs:core```. 
 
+### 0.3.0
+
+- Introducing Accounts. See documentation on http://orion.meteor.com/docs/accounts.
+
+- In ``` orion.config``` you can specify public options, which are passed to the client only at startup. 
 
 ### 0.2.2
 
@@ -12,7 +17,7 @@ This is the changelog for ```orionjs:core```.
 
 - Dictionary definitions are optional by default.
 
-- Introducing ``` orion.config```. See documentation on http://orion.meteor.com/docs/extras/config.
+- Introducing ``` orion.config```. See documentation on http://orion.meteor.com/docs/config.
 
 ### 0.1.3
 
