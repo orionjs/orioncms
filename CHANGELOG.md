@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```. 
 
+### 0.3.1
+
+- Remove invitations after using them.
+
 ### 0.3.0
 
 - Introducing Accounts. See documentation on http://orion.meteor.com/docs/accounts.
