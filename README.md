@@ -36,7 +36,7 @@ You can make your own admin panel. Start by forking https://atmospherejs.com/ori
 #### Install the package
 
 ```
-meteor add orionjs:admin
+meteor add orionjs:core
 meteor add orionjs:styles
 ```
 

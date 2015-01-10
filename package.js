@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
-	summary: 'Simple CMS for meteor',
-	version: '0.4.0',
+	summary: 'Simple and powerful admin generator for meteor',
+	version: '0.4.1',
 	git: 'https://github.com/orionjs/core'
 });
 

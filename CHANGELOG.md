@@ -1,11 +1,15 @@
 Orion Core
 ==========
 
-This is the changelog for ```orionjs:core```. 
+This is the changelog for ```orionjs:core```.
+
+### 0.4.1
+
+- Changed package description.
 
 ### 0.4.0
 
-- Merged with ```orionjs:admin```
+- Merged with ```orionjs:admin```.
 
 ### 0.3.1
 
