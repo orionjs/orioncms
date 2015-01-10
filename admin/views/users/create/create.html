@@ -1,0 +1,40 @@
+<template name="adminUsersCreate">
+	<div class="admin-top-nav">
+		<span class="title">Create a User</span>
+	</div>
+	<div class="admin-content">
+		<p><b>Choose Permissions</b></p>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="isadmin" disabled="{{# if invitationId }}true{{/ if }}"> <code>admin</code>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				{{# each permissions }}
+					<div class="checkbox permission-checkbox">
+						<label>
+							{{# if isAdmin }}
+								<input type="checkbox" disabled="true" checked="true"> <code>{{ this }}</code>
+							{{ else }}
+								<input type="checkbox" name="{{ this }}" disabled="{{# if invitationId }}true{{/ if }}"> <code>{{ this }}</code>
+							{{/ if }}
+						</label>
+					</div>
+				{{/ each }}
+			</div>
+		</div>
+		<br>
+		{{# if invitationId }}
+			<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Back</a>
+			<a href="{{ urlFor 'adminAccountsInvitation' _id=invitationId }}" target="_blank">
+				<code>{{ urlFor 'adminAccountsInvitation' _id=invitationId }}</code>
+			</a>
+		{{ else }}
+			<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Cancel</a>
+			<button class="btn btn-primary btn-create">Create Invitation</button>
+		{{/ if }}
+	</div>
+</template>

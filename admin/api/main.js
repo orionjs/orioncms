@@ -1,0 +1,3 @@
+orion.admin = {
+	sidebarTabs: [],
+};

@@ -1,0 +1,13 @@
+<template name="adminUsersDelete">
+	<div class="admin-top-nav">
+		<span class="title">
+			Delete
+			<i>{{ profile.name }}</i>
+		</span>
+	</div>
+	<div class="admin-content">
+		<p>Are you sure you want to delete this user?</p>
+		<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Cancel</a>
+		<button class="btn btn-danger btn-delete">Confirm</button>
+	</div>
+</template>

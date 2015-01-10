@@ -1,0 +1,25 @@
+<template name="outAdminLayout">
+	<div id="orion-admin">
+		<div class="out-admin">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+						<div class="content">
+							{{> yield }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style type="text/css">
+	html,
+	body {
+		margin: 0px;
+		height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</template>

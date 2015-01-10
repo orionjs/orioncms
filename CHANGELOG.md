@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```. 
 
+### 0.4.0
+
+- Merged with ```orionjs:admin```
+
 ### 0.3.1
 
 - Remove invitations after using them.

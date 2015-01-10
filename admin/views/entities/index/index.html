@@ -1,0 +1,21 @@
+<template name="adminEntitiesIndex">
+	<div class="adminEntitiesIndex">
+		<div class="admin-top-nav">
+			<a href="{{ pathFor 'adminEntitiesCreate' entity=entity.name }}" 
+			class="btn btn-primary btn-sm pull-right">Create</a>
+			<span class="title">{{ entity.options.pluralName }}</span>
+		</div>
+		<div class="admin-content">
+			{{> tabular table=table class='table table-hover' }}
+		</div>
+	</div>
+</template>
+
+<template name="adminEntitiesIndexTableActions">
+	<div class="text-right">
+		<div class="btn-group">
+			<a class="btn btn-default btn-xs" href="{{ pathFor 'adminEntitiesUpdate' entity=getEntity }}">Edit</a>
+			<a class="btn btn-default btn-xs" href="{{ pathFor 'adminEntitiesDelete' entity=getEntity }}">Delete</a>
+		</div>
+	</div>
+</template>

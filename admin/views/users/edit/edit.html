@@ -1,0 +1,45 @@
+<template name="adminUsersEdit">
+	<div class="admin-top-nav">
+		<span class="title">
+			{{ profile.name }}
+			<small>
+				<i>Permissions</i>
+			</small>
+		</span>
+	</div>
+	<div class="admin-content">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="checkbox">
+					<label>
+						{{# if isAdmin }}
+							<input type="checkbox" name="isadmin" checked="true"> <code>admin</code>
+						{{ else }}
+							<input type="checkbox" name="isadmin"> <code>admin</code>
+						{{/ if }}
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				{{# each permissions }}
+					<div class="checkbox permission-checkbox">
+						<label>
+							{{# if isAdmin }}
+								<input type="checkbox" disabled="true" checked="true"> <code>{{ this }}</code>
+							{{ else }}
+								{{# if hasPermission }}
+									<input type="checkbox" name="{{ this }}" checked="true"> <code>{{ this }}</code>
+								{{ else }}
+									<input type="checkbox" name="{{ this }}"> <code>{{ this }}</code>
+								{{/ if }}
+							{{/ if }}
+						</label>
+					</div>
+				{{/ each }}
+			</div>
+		</div>
+		<br>
+		<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Back</a>
+		<button class="btn btn-primary btn-save">Save</button>
+	</div>
+</template>
