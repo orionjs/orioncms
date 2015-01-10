@@ -28,9 +28,6 @@ Use the powerful summernote editor. The images uploaded are saved in a S3 bucket
 - Add one yourself
 It's very easy to add custom attributes to Orion. You can start by forking https://atmospherejs.com/orionjs/summernote.
 
-#### Custom Admin Panel:
-You can make your own admin panel. Start by forking https://atmospherejs.com/orionjs/admin.
-
 ## Getting Started
 
 #### Install the package
