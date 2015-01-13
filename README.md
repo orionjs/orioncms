@@ -58,4 +58,4 @@ View the [example blog](https://github.com/orionjs/example-blog) made with orion
 ## Updates
 
 Orion is a very active repository. 
-Subscribe for updates in the newsletter [here](http://eepurl.com/bbji3b)
+Subscribe to updates newsletter [here](http://eepurl.com/bbji3b)
