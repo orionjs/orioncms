@@ -49,10 +49,10 @@ Go to the [documentation](http://orion.meteor.com/docs/dictionary) and learn how
 
 View the [example blog](https://github.com/orionjs/example-blog) made with orion
 
-## Updates
+## Subscribe for updates
 
 Orion is a very active repository. 
-**Subscribe to the updates newsletter [here](http://eepurl.com/bbji3b)**
+**Subscribe for updates [here](http://eepurl.com/bbji3b)**
 
 ## Screenshots
 
