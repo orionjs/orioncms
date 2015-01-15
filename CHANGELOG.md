@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.4.2
+
+- Fixed default value for orion entity tableColumns.
+
 ### 0.4.1
 
 - Changed package description.
