@@ -8,6 +8,8 @@ your collections and gives you the ability to have key/value definitions for you
 
 ![alt tag](http://i.imgur.com/eNMaaje.png)
 
+You can view a preview of the admin panel [here](http://orion-example.meteor.com/admin).
+
 ## Features
 
 #### Dictionary:
