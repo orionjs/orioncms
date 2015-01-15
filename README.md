@@ -49,8 +49,16 @@ Go to the [documentation](http://orion.meteor.com/docs/dictionary) and learn how
 
 View the [example blog](https://github.com/orionjs/example-blog) made with orion
 
+## Subscribe for updates
+
+Orion is a very active repository. 
+**Subscribe for updates [here](http://eepurl.com/bbji3b)**
+
 ## Screenshots
 
 ![alt tag](http://i.imgur.com/eFEQ5lT.jpg)
 ![alt tag](http://i.imgur.com/eNMaaje.png)
 ![alt tag](http://i.imgur.com/Rl3Mpvi.jpg)
+![alt tag](http://i.imgur.com/hdN6efE.png)
+
+
