@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple and powerful admin panel for meteor',
-	version: '0.4.2',
+	version: '0.4.3',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -19,7 +19,7 @@ Package.onUse(function(api) {
 		'accounts-password', 
 		'dburles:collection-helpers@1.0.2', 
 		'aldeed:collection2@2.0.0',
-		'aldeed:tabular@0.2.3',  
+		'nicolaslopezj:tabular@0.2.3',  
 		'meteorhacks:inject-initial@1.0.2',
 		'aldeed:autoform@4.2.1', 
 		'matb33:collection-hooks@0.7.7',
@@ -37,7 +37,7 @@ Package.onUse(function(api) {
 		'dburles:collection-helpers',
 		'aldeed:collection2', 
 		'aldeed:autoform', 
-		'aldeed:tabular',
+		'nicolaslopezj:tabular',
 		'matb33:collection-hooks',
 		'iron:router',
 		'useraccounts:bootstrap',
