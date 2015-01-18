@@ -6,7 +6,9 @@
 			<span class="title">{{ entity.options.pluralName }}</span>
 		</div>
 		<div class="admin-content">
-			{{> tabular table=table class='table table-hover' }}
+			{{# if showTable }}
+				{{> tabular table=table class='table table-hover' }}
+			{{/ if }}
 		</div>
 	</div>
 </template>
