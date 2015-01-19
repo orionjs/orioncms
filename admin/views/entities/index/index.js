@@ -36,9 +36,3 @@ Template.adminEntitiesIndex.rendered = function() {
 		toogleTable();
 	});
 }
-
-Template.adminEntitiesIndexTableActions.helpers({
-	getEntity: function () {
-		return Router.current().data().entity.name;
-	}
-});

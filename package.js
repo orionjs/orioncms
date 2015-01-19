@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple and powerful admin panel for meteor',
-	version: '0.4.5',
+	version: '0.4.6',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -72,6 +72,7 @@ Package.onUse(function(api) {
 		'admin/api/main.js',
 		'admin/api/add-sidebar-tab.js',
 		'admin/api/add-admin-subscription.js',
+		'admin/api/users.js',
 		'admin/accounts.js',
 		'admin/routes.js',
 		]);

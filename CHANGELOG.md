@@ -3,7 +3,15 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
-### 0.4.3
+### 0.4.6
+
+- User actions in the admin.
+
+### 0.4.5
+
+- Changes in entity index table.
+
+### 0.4.4
 
 - Fixed #11.
 

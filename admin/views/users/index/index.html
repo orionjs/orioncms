@@ -18,6 +18,17 @@
 		<p>
 			<b>{{ profile.name }}</b>
 		</p>
+		{{# if getError }}
+			<div class="alert alert-danger" style="display: inline-block;">
+				<b>{{ getError.error }}</b>
+				{{ getError.reason }}
+			</div>
+		{{/ if }}
+		{{# if getResponse }}
+			<div class="alert alert-success" style="display: inline-block;">
+				{{ getResponse }}
+			</div>
+		{{/ if }}
 		{{# each emails }}
 			<p>
 				{{ address }}
@@ -34,7 +45,26 @@
 					Permissions
 				</a>
 			{{/ if }}
+			{{# each actions }}
+				{{# if forAdmins }}
+					{{# if isAdmin }}
+						{{> adminUsersIndexUserAction }}
+					{{/ if }}
+				{{/ if }}
+				{{# if forUsers }}
+					{{# unless isAdmin }}
+						{{> adminUsersIndexUserAction }}
+					{{/ unless }}
+				{{/ if }}
+			{{/ each }}
+			
 		</p>
 	</div>
 	<br>
+</template>
+
+<template name="adminUsersIndexUserAction">
+	<button class="btn btn-xs {{ btnClass }}">
+		{{ title }}
+	</button>
 </template>

@@ -1,3 +1,4 @@
 orion.admin = {
 	sidebarTabs: [],
+	userActions: [],
 };
