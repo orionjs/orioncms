@@ -6,3 +6,9 @@ AutoForm.hooks({
 		}
 	}
 });
+
+Template.adminEntitiesUpdate.helpers({
+	getEntity: function () {
+		return Router.current().data().entity.name;
+	}
+})

@@ -10,6 +10,17 @@ Template.adminEntitiesIndex.helpers({
 	}
 });
 
+Template.adminEntitiesIndex.events({
+	'click tr': function(event) {
+		var dataTable = $(event.target).closest('table').DataTable();
+		var rowData = dataTable.row(event.currentTarget).data();
+		Router.go('adminEntitiesUpdate', {
+			_id: rowData._id,
+			entity: Router.current().data().entity.name
+		});
+	}
+})
+
 Template.adminEntitiesIndex.rendered = function() {
 	Session.set('adminEntitiesIndexShowTable', true);
 
