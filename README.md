@@ -1,8 +1,6 @@
 Orion
 =====
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orionjs/core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 http://orion.meteor.com
 
 Orion is a simple and powerful CMS for meteor. It creates automatically an admin panel for
