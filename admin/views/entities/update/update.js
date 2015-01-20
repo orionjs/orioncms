@@ -12,3 +12,9 @@ Template.adminEntitiesUpdate.helpers({
 		return Router.current().data().entity.name;
 	}
 })
+
+Template.adminEntitiesUpdate.events({
+	'click #submit-btn': function() {
+		$("#updateEntityForm").submit();
+	}
+})

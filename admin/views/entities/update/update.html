@@ -4,16 +4,14 @@
 			<span class="title">Update {{ entity.options.singularName }} {{ item.title }}</span>
 		</div>
 		<div class="admin-content clearfix">
-			{{# autoForm collection=entity.collection id="updateEntityForm" doc=item type="update" }}
-				{{# each afFieldNames omitFields="createdAt,updatedAt" }}
-					{{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-sm-3 text-right" input-col-class="col-lg-7 col-md-8 col-sm-9 input-container" }}
-				{{/ each }}
+			{{> quickForm collection=entity.collection id="updateEntityForm" doc=item type="update" omitFields="createdAt,updatedAt" template="bootstrap3-horizontal" label-class="col-sm-3 text-right" input-col-class="col-lg-7 col-md-8 col-sm-9 input-container" buttonContent=false }}
+			<div class="row">
 				<div class="col-sm-offset-3 col-sm-9">
 					<a class="btn btn-default" href="{{ pathFor 'adminEntitiesIndex' entity=getEntity }}">Cancel</a>
 					<a class="btn btn-danger" href="{{ pathFor 'adminEntitiesDelete' _id=item._id entity=getEntity }}">Delete</a>
-					<button class="btn btn-primary">Save</button>
+					<button id="submit-btn" class="btn btn-primary">Save</button>
 				</div>
-			{{/ autoForm }}
+			</div>
 		</div>
 	</div>
 </template>

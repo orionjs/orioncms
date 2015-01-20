@@ -28,7 +28,7 @@ Template.adminEntitiesIndex.rendered = function() {
 		Session.set('adminEntitiesIndexShowTable', false);
 		Meteor.setTimeout(function() {
 			Session.set('adminEntitiesIndexShowTable', true);
-		}, 10);
+		}, 1);
 	}
 
 	Deps.autorun(function () {
