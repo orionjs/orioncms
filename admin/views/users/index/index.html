@@ -2,65 +2,84 @@
 	<div class="admin-top-nav">
 		<span class="title">
 			Users
-			<a href="{{ pathFor 'adminUsersCreate' }}" class="btn btn-primary btn-sm pull-right">Create</a>
 		</span>
+		<div>
+			<a href="{{ pathFor 'adminUsersCreate' }}" class="label label-primary">Create</a>
+		</div>
 	</div>
 	<div class="admin-content">
-		{{# each this }}
-			{{> adminUsersIndexUser }}
-		{{/ each }}
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{# each this }}
+						{{> adminUsersIndexUser }}
+					{{/ each }}
+				</tbody>
+			</table>
+		</div>
+		
 		
 	</div>
 </template>
 
 <template name="adminUsersIndexUser">
-	<div class="adminUsersIndexUser">
-		<p>
-			<b>{{ profile.name }}</b>
-		</p>
-		{{# if getError }}
-			<div class="alert alert-danger" style="display: inline-block;">
-				<b>{{ getError.error }}</b>
-				{{ getError.reason }}
-			</div>
-		{{/ if }}
-		{{# if getResponse }}
-			<div class="alert alert-success" style="display: inline-block;">
-				{{ getResponse }}
-			</div>
-		{{/ if }}
-		{{# each emails }}
-			<p>
-				{{ address }}
-			</p>
-		{{/ each }}
-		<p>
+	<tr class="adminUsersIndexUser">
+		<td>
 			{{# if itsMe }}
-				<span class="label label-primary">Me</span>
-			{{ else }}
-				<a href="{{ pathFor 'adminUsersDelete' }}" class="btn btn-danger btn-xs">
-					Delete
-				</a>
-				<a href="{{ pathFor 'adminUsersEdit' }}" class="btn btn-primary btn-xs">
-					Permissions
-				</a>
+				<span class="label label-primary pull-right">Me</span>
 			{{/ if }}
-			{{# each actions }}
-				{{# if forAdmins }}
-					{{# if isAdmin }}
-						{{> adminUsersIndexUserAction }}
-					{{/ if }}
-				{{/ if }}
-				{{# if forUsers }}
-					{{# unless isAdmin }}
-						{{> adminUsersIndexUserAction }}
-					{{/ unless }}
-				{{/ if }}
+			{{ profile.name }}
+		</td>
+		<td>
+			{{# each emails }}
+				{{ address }}
 			{{/ each }}
+		</td>
+		<td>
+			{{# if getError }}
+				<div class="alert alert-danger" style="display: inline-block;">
+					<b>{{ getError.error }}</b>
+					{{ getError.reason }}
+				</div>
+			{{/ if }}
+			{{# if getResponse }}
+				<div class="alert alert-success" style="display: inline-block;">
+					{{ getResponse }}
+				</div>
+			{{/ if }}
 			
-		</p>
-	</div>
-	<br>
+			<p>
+				{{# unless itsMe }}
+					<a href="{{ pathFor 'adminUsersDelete' }}" class="btn btn-danger btn-xs">
+						Delete
+					</a>
+					<a href="{{ pathFor 'adminUsersEdit' }}" class="btn btn-primary btn-xs">
+						Permissions
+					</a>
+				{{/ unless }}
+				{{# each actions }}
+					{{# if forAdmins }}
+						{{# if isAdmin }}
+							{{> adminUsersIndexUserAction }}
+						{{/ if }}
+					{{/ if }}
+					{{# if forUsers }}
+						{{# unless isAdmin }}
+							{{> adminUsersIndexUserAction }}
+						{{/ unless }}
+					{{/ if }}
+				{{/ each }}
+				
+			</p>
+		</td>
+	</tr>
 </template>
 
 <template name="adminUsersIndexUserAction">

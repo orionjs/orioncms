@@ -20,9 +20,6 @@
             {{/ if }}
 		{{/ each }}
 
-        {{# if hasSidebarTabs }}
-        <li class="nav-divider"></li>
-        {{/ if }}
         {{# each sidebarTabs }}
             {{# if doIHavePermission permission }}
                 <li class="{{ isActiveRoute regex=activeRouteRegex }}">
@@ -34,7 +31,6 @@
             {{/ if }}
         {{/ each }}
        
-        <li class="nav-divider"></li>
         {{# if doIHavePermission 'admin' }}
             <li class="{{ isActiveRoute regex='adminUsers' }}">
                 <a href="{{ pathFor 'adminUsersIndex' }}">
