@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.4.9
+
+- Added license.
+
 ### 0.4.6
 
 - User actions in the admin.
