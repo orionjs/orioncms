@@ -1,12 +1,9 @@
 <template name="adminEntitiesIndex">
 	<div class="adminEntitiesIndex">
 		<div class="admin-top-nav">
-			<span class="title">
-				{{ entity.options.pluralName }}
-			</span>
-			<div>
-				<a href="{{ pathFor 'adminEntitiesCreate' entity=entity.name }}" class="label label-primary">Create</a>
-			</div>
+			<a href="{{ pathFor 'adminEntitiesCreate' entity=entity.name }}" 
+			class="btn btn-primary btn-sm pull-right">Create</a>
+			<span class="title">{{ entity.options.pluralName }}</span>
 		</div>
 		<div class="admin-content">
 			{{# if showTable }}
