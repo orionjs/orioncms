@@ -12,6 +12,10 @@ your collections and gives you the ability to have key/value definitions for you
 
 http://orion-example.meteor.com
 
+#### Roadmap
+
+https://trello.com/b/dQhi5dF9/orion-roadmap
+
 ## Features
 
 #### Dictionary:
