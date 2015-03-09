@@ -1,12 +1,11 @@
-orion.addEntity = function(name, schema, options) {
-	var newCollection = {};
-	newCollection.name = name;
-	newCollection.collection = new Meteor.Collection(name);
+/**
+ * Definition of the entities object
+ */
+orion.entities = {}
 
-	orion.users.permissions.add('entity.' + name + '.all');
-	orion.users.permissions.add('entity.' + name+ '.personal');
 
-	newCollection.collection.allow({
+orion.entities.getEntityDefaultAllowPermissions = function() {
+	return {
 		'insert': function(userId, doc) {
 			var user = Meteor.users.findOne(userId);
 			return (user.hasPermission('entity.' + name) && doc.createdBy === userId);
@@ -40,9 +39,21 @@ orion.addEntity = function(name, schema, options) {
 			return false;
 		},
 		fetch: ['createdBy']
-	});
+	};
+}
+orion.entities.getNewEntityOptions = function(options) {
+	return _.extend({
+		sidebarName: name,
+		icon: 'pencil',
+		pluralName: name,
+		singularName: name,
+		tableColumns: [{data: '_id', title: 'ID'}],
+		extraFields: [],
+	}, options);
+}
 
-	var defaultSchema = {
+orion.entities.getNewEntitySchema = function(schema) {
+	return _.extend({
 		createdAt: {
 			type: Date,
 			autoValue: function() {
@@ -80,28 +91,46 @@ orion.addEntity = function(name, schema, options) {
 				}
 			}
 		},
-	};
-	newCollection.schema = _.extend(defaultSchema, schema);
-	newCollection.collection.attachSchema(new SimpleSchema(newCollection.schema));
+	}, schema);
+}
 
-	var defaultOptions = {
-		sidebarName: name,
-		icon: 'pencil',
-		pluralName: name,
-		singularName: name,
-		tableColumns: [{data: '_id', title: 'ID'}],
-		extraFields: [],
-	}
+/**
+ * Creation process for entities
+ */
+orion.addEntity = function(name, schema, options) {
+	var newEntity = {};
+	newEntity.name = name;
 
-	newCollection.options = _.extend(defaultOptions, options);
-	newCollection.table = new Tabular.Table({
+	// Creates the mongo collection in the collection variable
+	newEntity.collection = new Meteor.Collection(name);
+
+	// Adds the permissions for the entity
+	orion.users.permissions.add('entity.' + name + '.all');
+	orion.users.permissions.add('entity.' + name+ '.personal');
+
+	// Set the permissions
+	var allow = orion.entities.getEntityDefaultAllowPermissions();
+	newEntity.collection.allow(allow);
+
+	// Attachs the schema
+	newEntity.schema = orion.entities.getNewEntitySchema(schema);
+	newEntity.collection.attachSchema(new SimpleSchema(newEntity.schema));
+
+	// Get the options, override default
+	newEntity.options = orion.entities.getNewEntityOptions(options);
+
+	// Sets the tabular table
+	newEntity.table = new Tabular.Table({
 		name: 'entities.' + name,
-		collection: newCollection.collection,
-		columns: newCollection.options.tableColumns,
+		collection: newEntity.collection,
+		columns: newEntity.options.tableColumns,
 		pub: 'entityTabular',
 		sub: orion.subs,
-		extraFields: newCollection.options.extraFields
+		extraFields: newEntity.options.extraFields
 	});
 
-	this.entities[name] = newCollection;
+	// Saves the new entity to the array
+	this.entities[name] = newEntity;
+
+	return newEntity;
 }

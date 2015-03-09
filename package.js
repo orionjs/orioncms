@@ -47,7 +47,8 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'main/common.js',
-		'dictionary/common.js'
+		'dictionary/common.js',
+		'entities/common.js'
 		]);
 
 
@@ -61,8 +62,6 @@ Package.onUse(function(api) {
 		'lib/users/permissions.js',
 		'lib/users/invitations.js',
 
-		'lib/entities/init.js',
-		'lib/entities/add.js',
 		'lib/attributes/init.js',
 
 		'admin/api/main.js',
@@ -131,11 +130,13 @@ Package.onUse(function(api) {
 		], 'client');
 
 	api.addFiles([
-		'dictionary/server.js'
+		'dictionary/server.js',
+		'entities/server.js'
 		], 'server');
 
 	api.addFiles([
-		'dictionary/client.js'
+		'dictionary/client.js',
+		'entities/client.js'
 		], 'client');
 	
 	api.export('orion');

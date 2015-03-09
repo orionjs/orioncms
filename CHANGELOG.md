@@ -11,6 +11,10 @@ This is the changelog for ```orionjs:core```.
 
 - Reorder main variables.
 
+- Reorder entities code.
+
+- ```orion.addEntity()``` now returns the new entity.
+
 ### 0.4.10
 
 - Fixed bug #21.
