@@ -1,19 +1,37 @@
+/**
+ * Invitations object
+ */
 orion.users.invitations = new Meteor.Collection('invitations');
 
+/**
+ * Invitation permissions
+ */
 orion.users.invitations.allow({
+	/**
+	 * Only admins can send invitations
+	 */
 	'insert': function(userId, doc) {
 		var user = Meteor.users.findOne(userId);
 		return userId && user.isAdmin;
 	},
+	/**
+	 * Invitations are automatically updated
+	 */
 	'update': function(userId, doc, fields, modifier) {
 		return false;
 	},
+	/**
+	 * Only admins can remove invitations
+	 */
 	'remove': function(userId, doc) {
 		var user = Meteor.users.findOne(userId);
 		return userId && user.isAdmin;
 	}
 });
 
+/**
+ * Invitations Schema
+ */
 InvitationsSchema = new SimpleSchema({
 	isAdmin: {
 		type: Boolean

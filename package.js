@@ -48,6 +48,7 @@ Package.onUse(function(api) {
 	api.addFiles([
 		'main/common.js',
 		'config/common.js',
+		'users/common.js',
 		'attributes/common.js',
 		'dictionary/common.js',
 		'entities/common.js'
@@ -55,11 +56,6 @@ Package.onUse(function(api) {
 
 
 	api.addFiles([
-		'lib/users/init.js',
-		'lib/users/helpers.js',
-		'lib/users/permissions.js',
-		'lib/users/invitations.js',
-
 		'admin/api/main.js',
 		'admin/api/add-sidebar-tab.js',
 		'admin/api/add-admin-subscription.js',
@@ -70,12 +66,14 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'config/server.js',
+		'users/server.js',
 		'dictionary/server.js',
 		'entities/server.js'
 		], 'server');
 
 	api.addFiles([
 		'config/client.js',
+		'users/client.js',
 		'dictionary/client.js',
 		'entities/client.js'
 		], 'client');
