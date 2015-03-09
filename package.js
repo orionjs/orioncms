@@ -73,6 +73,16 @@ Package.onUse(function(api) {
 		]);
 
 	api.addFiles([
+		'dictionary/server.js',
+		'entities/server.js'
+		], 'server');
+
+	api.addFiles([
+		'dictionary/client.js',
+		'entities/client.js'
+		], 'client');
+
+	api.addFiles([
 		'lib/config/fixtures.js',
 		'lib/config/publications.js',
 		'lib/users/functions.js',
@@ -129,16 +139,6 @@ Package.onUse(function(api) {
 		'admin/views/extras/not-allowed.html',
 		], 'client');
 
-	api.addFiles([
-		'dictionary/server.js',
-		'entities/server.js'
-		], 'server');
-
-	api.addFiles([
-		'dictionary/client.js',
-		'entities/client.js'
-		], 'client');
-	
 	api.export('orion');
 });
 

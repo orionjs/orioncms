@@ -3,8 +3,51 @@
  */
 orion.entities = {}
 
+/**
+ * Creation process for entities
+ */
+orion.addEntity = function(name, schema, options) {
+	var newEntity = {};
+	newEntity.name = name;
 
-orion.entities.getEntityDefaultAllowPermissions = function() {
+	// Creates the mongo collection in the collection variable
+	newEntity.collection = new Meteor.Collection(name);
+
+	// Adds the permissions for the entity
+	orion.users.permissions.add('entity.' + name + '.all');
+	orion.users.permissions.add('entity.' + name+ '.personal');
+
+	// Set the permissions
+	var allow = orion.getEntityDefaultAllowPermissions();
+	newEntity.collection.allow(allow);
+
+	// Attachs the schema
+	newEntity.schema = orion.getNewEntitySchema(schema);
+	newEntity.collection.attachSchema(new SimpleSchema(newEntity.schema));
+
+	// Get the options, override default
+	newEntity.options = orion.getNewEntityOptions(name, options);
+
+	// Sets the tabular table
+	newEntity.table = new Tabular.Table({
+		name: 'entities.' + name,
+		collection: newEntity.collection,
+		columns: newEntity.options.tableColumns,
+		pub: 'entityTabular',
+		sub: orion.subs,
+		extraFields: newEntity.options.extraFields
+	});
+
+	// Saves the new entity to the array
+	this.entities[name] = newEntity;
+
+	return newEntity;
+}
+
+/**
+ * Returns the allow permissions for a new entity
+ */
+orion.getEntityDefaultAllowPermissions = function() {
 	return {
 		'insert': function(userId, doc) {
 			var user = Meteor.users.findOne(userId);
@@ -41,7 +84,11 @@ orion.entities.getEntityDefaultAllowPermissions = function() {
 		fetch: ['createdBy']
 	};
 }
-orion.entities.getNewEntityOptions = function(options) {
+
+/**
+ * Get the default entity options
+ */
+orion.getNewEntityOptions = function(name, options) {
 	return _.extend({
 		sidebarName: name,
 		icon: 'pencil',
@@ -52,7 +99,10 @@ orion.entities.getNewEntityOptions = function(options) {
 	}, options);
 }
 
-orion.entities.getNewEntitySchema = function(schema) {
+/**
+ * Get the default entity schema
+ */
+orion.getNewEntitySchema = function(schema) {
 	return _.extend({
 		createdAt: {
 			type: Date,
@@ -92,45 +142,4 @@ orion.entities.getNewEntitySchema = function(schema) {
 			}
 		},
 	}, schema);
-}
-
-/**
- * Creation process for entities
- */
-orion.addEntity = function(name, schema, options) {
-	var newEntity = {};
-	newEntity.name = name;
-
-	// Creates the mongo collection in the collection variable
-	newEntity.collection = new Meteor.Collection(name);
-
-	// Adds the permissions for the entity
-	orion.users.permissions.add('entity.' + name + '.all');
-	orion.users.permissions.add('entity.' + name+ '.personal');
-
-	// Set the permissions
-	var allow = orion.entities.getEntityDefaultAllowPermissions();
-	newEntity.collection.allow(allow);
-
-	// Attachs the schema
-	newEntity.schema = orion.entities.getNewEntitySchema(schema);
-	newEntity.collection.attachSchema(new SimpleSchema(newEntity.schema));
-
-	// Get the options, override default
-	newEntity.options = orion.entities.getNewEntityOptions(options);
-
-	// Sets the tabular table
-	newEntity.table = new Tabular.Table({
-		name: 'entities.' + name,
-		collection: newEntity.collection,
-		columns: newEntity.options.tableColumns,
-		pub: 'entityTabular',
-		sub: orion.subs,
-		extraFields: newEntity.options.extraFields
-	});
-
-	// Saves the new entity to the array
-	this.entities[name] = newEntity;
-
-	return newEntity;
 }
