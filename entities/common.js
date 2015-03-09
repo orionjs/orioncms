@@ -18,7 +18,7 @@ orion.addEntity = function(name, schema, options) {
 	orion.users.permissions.add('entity.' + name+ '.personal');
 
 	// Set the permissions
-	var allow = orion.getEntityDefaultAllowPermissions();
+	var allow = orion.getEntityDefaultAllowPermissions(name);
 	newEntity.collection.allow(allow);
 
 	// Attachs the schema
@@ -47,7 +47,7 @@ orion.addEntity = function(name, schema, options) {
 /**
  * Returns the allow permissions for a new entity
  */
-orion.getEntityDefaultAllowPermissions = function() {
+orion.getEntityDefaultAllowPermissions = function(name) {
 	return {
 		'insert': function(userId, doc) {
 			var user = Meteor.users.findOne(userId);

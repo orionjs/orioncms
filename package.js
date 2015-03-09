@@ -53,7 +53,8 @@ Package.onUse(function(api) {
 		'users/accounts-templates.js',
 		'attributes/common.js',
 		'dictionary/common.js',
-		'entities/common.js'
+		'entities/common.js', 
+		'admin/routes.js',
 		]);
 
 	api.addFiles([
@@ -76,7 +77,6 @@ Package.onUse(function(api) {
 		'admin/api/add-sidebar-tab.js',
 		'admin/api/add-admin-subscription.js',
 		'admin/api/users.js',
-		'admin/routes.js',
 		]);
 
 	// old
