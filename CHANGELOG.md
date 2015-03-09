@@ -15,6 +15,8 @@ This is the changelog for ```orionjs:core```.
 
 - ```orion.addEntity()``` now returns the new entity.
 
+- Reorder orion config code.
+
 ### 0.4.10
 
 - Fixed bug #21.

@@ -1,3 +1,6 @@
+/**
+ * Helper function to extend
+ */
 var deepExtend = function(target, source) {
     for (var prop in source)
         if (prop in target && typeof(target[prop]) == 'object' && typeof(source[prop]) == 'object')
@@ -7,12 +10,21 @@ var deepExtend = function(target, source) {
     return target;
 }
 
+/**
+ * Adds the option the set orionAttribute on SimpleSchema
+ */
 SimpleSchema.extendOptions({
 	orionAttribute: Match.Optional(String)
 });
 
+/**
+ * Definition of the attributes object
+ */
 orion.attributes = {};
 
+/**
+ * Returns the schema for the attribute
+ */
 orion.attribute = function(name, schema, options) {
 	var schema = schema || {};
 	var options = options || {};
@@ -26,6 +38,9 @@ orion.attribute = function(name, schema, options) {
 	return deepExtend(deepExtend(schema, attributeSchema), override);
 }
 
+/**
+ * Returns proper tabular column for the attribute
+ */
 orion.attributeColumn = function(name, key, title) {
 	return {
 		data: key,
@@ -41,6 +56,9 @@ orion.attributeColumn = function(name, key, title) {
 	}
 }
 
+/**
+ * Helper function to use arrays of attributes (Ex: array of images)
+ */
 orion.arrayOfAttribute = function(name, schema, options) {
 	var subSchema = new SimpleSchema({
 		item: orion.attribute(name, {
@@ -54,6 +72,9 @@ orion.arrayOfAttribute = function(name, schema, options) {
 	});
 }
 
+/**
+ * Creates a new attribute
+ */
 orion.attributes.registerAttribute = function(name, attribute) {
 	orion.attributes[name] = attribute;
 
