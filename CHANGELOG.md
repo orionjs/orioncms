@@ -25,6 +25,10 @@ This is the changelog for ```orionjs:core```.
 
 - Reorder admin api.
 
+- Put all the common helpers, events, and rendered callback on this repository.
+
+- Removed templates.
+
 ### 0.4.10
 
 - Fixed bug #21.

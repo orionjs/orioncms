@@ -1,4 +1,7 @@
-Template.adminDictionaryUpdate.helpers({
+/**
+ * adminDictionaryUpdate
+ */
+orion.admin.dictionaryUpdateHelpers = {
 	getDoc: function() {
 		return orion.dictionary.collection.findOne();
 	},
@@ -11,4 +14,4 @@ Template.adminDictionaryUpdate.helpers({
 	getPermission: function() {
 		return 'dictionary.' + this;
 	}
-});
+}

@@ -1,13 +1,16 @@
-Template.adminSidebar.events({
+/**
+ * adminSidebar
+ */
+orion.admin.sidebarEvents = {
     'click #logout-btn': function(event){
         Meteor.logout();
         Router.go('/');
     },
-});
+};
 
-Template.adminSidebar.helpers({
+orion.admin.sidebarHelpers = {
 	getPath: function (options) {
-		return Router.path('adminEntitiesIndex', {entity:this.name});;
+		return Router.path('adminEntitiesIndex', {entity:this.name});
 	},
 	getEntities: function() {
 		result = [];
@@ -25,4 +28,4 @@ Template.adminSidebar.helpers({
 	getPermissionForEntity: function() {
 		return 'entity.' + this.name;
 	}
-});
+};

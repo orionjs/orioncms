@@ -1,5 +1,0 @@
-Template.adminAccountsLogin.helpers(AccountsTemplates.atFormHelpers);
-Template.adminAccountsLogin.helpers(AccountsTemplates.atTitleHelpers);
-Template.adminAccountsLogin.helpers(AccountsTemplates.atPwdFormHelpers);
-Template.adminAccountsLogin.events(AccountsTemplates.atPwdFormEvents);
-Template.adminAccountsLogin.helpers(AccountsTemplates.atPwdFormBtnHelpers);
