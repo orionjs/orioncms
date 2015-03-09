@@ -14,6 +14,24 @@ Meteor.publish('adminUsers', function() {
 });
 
 /**
+ * Adds necessary values to the new users
+ */
+Accounts.onCreateUser(function (options, user) {
+	user.permissions = orion.users.permissions.defaultPermissions;
+	user.profile = options.profile;
+	user.registrationType = options.registrationType || 'register';
+
+	/**
+	 * Use this function to edit the new users
+	 */
+	if (orion.users.onCreateUser) {
+        user = orion.users.onCreateUser(options, user);
+    }
+
+	return user;
+});
+
+/**
  * Methods
  */
 Meteor.methods({

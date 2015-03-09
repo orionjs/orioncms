@@ -49,19 +49,11 @@ Package.onUse(function(api) {
 		'main/common.js',
 		'config/common.js',
 		'users/common.js',
+		'users/invitations.js',
+		'users/accounts-templates.js',
 		'attributes/common.js',
 		'dictionary/common.js',
 		'entities/common.js'
-		]);
-
-
-	api.addFiles([
-		'admin/api/main.js',
-		'admin/api/add-sidebar-tab.js',
-		'admin/api/add-admin-subscription.js',
-		'admin/api/users.js',
-		'admin/accounts.js',
-		'admin/routes.js',
 		]);
 
 	api.addFiles([
@@ -78,11 +70,16 @@ Package.onUse(function(api) {
 		'entities/client.js'
 		], 'client');
 
+	// old
 	api.addFiles([
-		'lib/users/functions.js',
-		'lib/users/publications.js',
-		], 'server');
+		'admin/api/main.js',
+		'admin/api/add-sidebar-tab.js',
+		'admin/api/add-admin-subscription.js',
+		'admin/api/users.js',
+		'admin/routes.js',
+		]);
 
+	// old
 	api.addFiles([
 		'.npm/package/node_modules/spin.js/spin.js',
 		'admin/views/base/footer/footer.html',

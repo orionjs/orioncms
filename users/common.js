@@ -9,24 +9,6 @@ orion.users = {
 };
 
 /**
- * Adds necessary values to the new users
- */
-Accounts.onCreateUser(function (options, user) {
-	user.permissions = orion.users.permissions.defaultPermissions;
-	user.profile = options.profile;
-	user.registrationType = options.registrationType || 'register';
-
-	/**
-	 * Use this function to edit the new users
-	 */
-	if (orion.users.onCreateUser) {
-        user = orion.users.onCreateUser(options, user);
-    }
-
-	return user;
-});
-
-/**
  * Methods
  */
 Meteor.methods({
@@ -113,3 +95,29 @@ Meteor.users.helpers({
 		return has;
 	}
 });
+
+/**
+ * Helper for iron router to check if the user has permissions
+ */
+orion.users.ensureRoutePermissions = function(permissions) {
+    return function(ironRouter) {
+        ironRouter = this.url ? this : ironRouter;
+        permissions = typeof permissions == 'string' ? [permissions] : permissions;
+        if (Meteor.userId()) {
+            var has = true;
+            _.each(permissions, function(permission) {
+                if (!Meteor.user().hasPermission(permission)) {
+                    has = false;
+                    
+                }
+            });
+            if (has) {
+                ironRouter.next();
+            } else {
+                ironRouter.render('adminExtrasNotAllowed');
+            }
+        } else {
+            ironRouter.next();
+        }
+    }
+}
