@@ -41,8 +41,7 @@ It's very easy to add custom attributes to Orion. You can start by forking https
 #### Install the package
 
 ```
-meteor add orionjs:core
-meteor add orionjs:styles
+meteor add orionjs:bootstrap
 ```
 
 #### Go to the admin panel

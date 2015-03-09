@@ -27,7 +27,7 @@ This is the changelog for ```orionjs:core```.
 
 - Put all the common helpers, events, and rendered callback on this repository.
 
-- Removed templates.
+- Removed views.
 
 ### 0.4.10
 
