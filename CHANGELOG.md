@@ -9,6 +9,8 @@ This is the changelog for ```orionjs:core```.
 
 - Subscribe to dictionary on startup automatically.
 
+- Reorder main variables.
+
 ### 0.4.10
 
 - Fixed bug #21.

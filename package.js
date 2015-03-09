@@ -45,11 +45,13 @@ Package.onUse(function(api) {
 		'manuelschoebel:ms-seo'
 		]);
 
+	api.addFiles([
+		'main/common.js',
+		'dictionary/common.js'
+		]);
 
 
 	api.addFiles([
-		'lib/init.js',
-
 		'lib/config/init.js',
 		'lib/config/permissions.js',
 		'lib/config/functions.js',
@@ -61,7 +63,6 @@ Package.onUse(function(api) {
 
 		'lib/entities/init.js',
 		'lib/entities/add.js',
-		'lib/subscriptions/init.js',
 		'lib/attributes/init.js',
 
 		'admin/api/main.js',
@@ -128,10 +129,6 @@ Package.onUse(function(api) {
 		'admin/views/users/create/create.js',
 		'admin/views/extras/not-allowed.html',
 		], 'client');
-
-	api.addFiles([
-		'dictionary/common.js'
-		]);
 
 	api.addFiles([
 		'dictionary/server.js'
