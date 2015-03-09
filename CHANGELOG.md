@@ -3,6 +3,32 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.0
+
+- Reorder dictionary code.
+
+- Subscribe to dictionary on startup automatically.
+
+- Reorder main variables.
+
+- Reorder entities code.
+
+- ```orion.addEntity()``` now returns the new entity.
+
+- Reorder orion config code.
+
+- Reorder users code.
+
+- Added the posibility to modify the user object on creation using ```orion.users.onCreateUser(options, user)```. Thanks @splendido.
+
+- Rewrite routes.
+
+- Reorder admin api.
+
+- Put all the common helpers, events, and rendered callback on this repository.
+
+- Removed templates.
+
 ### 0.4.10
 
 - Fixed bug #21.
