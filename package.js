@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple and powerful admin panel for meteor',
-	version: '0.4.10',
+	version: '0.5.0',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -45,6 +45,8 @@ Package.onUse(function(api) {
 		'manuelschoebel:ms-seo'
 		]);
 
+
+
 	api.addFiles([
 		'lib/init.js',
 
@@ -56,13 +58,6 @@ Package.onUse(function(api) {
 		'lib/users/helpers.js',
 		'lib/users/permissions.js',
 		'lib/users/invitations.js',
-
-		'lib/dictionary/init.js',
-		'lib/dictionary/functions/get.js',
-		'lib/dictionary/functions/get-schema.js',
-		'lib/dictionary/functions/add-definition.js',
-		'lib/dictionary/functions/default-category.js',
-		'lib/dictionary/permissions.js',
 
 		'lib/entities/init.js',
 		'lib/entities/add.js',
@@ -78,9 +73,6 @@ Package.onUse(function(api) {
 		]);
 
 	api.addFiles([
-		'lib/dictionary/fixtures.js',
-		'lib/dictionary/publications.js',
-		'lib/entities/publications.js',
 		'lib/config/fixtures.js',
 		'lib/config/publications.js',
 		'lib/users/functions.js',
@@ -88,7 +80,6 @@ Package.onUse(function(api) {
 		], 'server');
 
 	api.addFiles([
-		'lib/dictionary/helpers.js',
 		'.npm/package/node_modules/spin.js/spin.js',
 		'admin/views/base/footer/footer.html',
 		'admin/views/base/header/header.html',
@@ -136,6 +127,18 @@ Package.onUse(function(api) {
 		'admin/views/users/create/create.html',
 		'admin/views/users/create/create.js',
 		'admin/views/extras/not-allowed.html',
+		], 'client');
+
+	api.addFiles([
+		'dictionary/common.js'
+		]);
+
+	api.addFiles([
+		'dictionary/server.js'
+		], 'server');
+
+	api.addFiles([
+		'dictionary/client.js'
 		], 'client');
 	
 	api.export('orion');
