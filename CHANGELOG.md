@@ -21,6 +21,10 @@ This is the changelog for ```orionjs:core```.
 
 - Added the posibility to modify the user object on creation using ```orion.users.onCreateUser(options, user)```. Thanks @splendido.
 
+- Rewrite routes.
+
+- Reorder admin api.
+
 ### 0.4.10
 
 - Fixed bug #21.

@@ -54,6 +54,7 @@ Package.onUse(function(api) {
 		'attributes/common.js',
 		'dictionary/common.js',
 		'entities/common.js', 
+		'admin/api.js',
 		'admin/routes.js',
 		]);
 
@@ -70,14 +71,6 @@ Package.onUse(function(api) {
 		'dictionary/client.js',
 		'entities/client.js'
 		], 'client');
-
-	// old
-	api.addFiles([
-		'admin/api/main.js',
-		'admin/api/add-sidebar-tab.js',
-		'admin/api/add-admin-subscription.js',
-		'admin/api/users.js',
-		]);
 
 	// old
 	api.addFiles([
