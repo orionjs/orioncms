@@ -36,6 +36,12 @@ Accounts.onCreateUser(function (options, user) {
  */
 Meteor.methods({
 	/**
+	 * To know if there is any account created
+	 */
+	accountsNumberIsCero: function() {
+		return Meteor.users.find({}, { limit: 1 }).count() == 0
+	},
+	/**
 	 * Creates the first user. 
 	 * This user will be a admin.
 	 * This function will not create a user if 

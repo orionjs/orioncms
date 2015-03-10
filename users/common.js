@@ -9,18 +9,6 @@ orion.users = {
 };
 
 /**
- * Methods
- */
-Meteor.methods({
-	/**
-	 * To know if the is any account created
-	 */
-	accountsNumberIsCero: function() {
-		return Meteor.users.find({}, { limit: 1 }).count() == 0
-	},
-});
-
-/**
  * Adds a permission to the list of users permissions.
  */
 orion.users.permissions.add = function(permission) {

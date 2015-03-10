@@ -27,7 +27,6 @@ OrionRouteController = RouteController.extend({
  */
 Router.route('/admin', {
 	name: 'admin',
-	controller: OrionRouteController,  
 	action: function() {
 		var self = this;
 		Meteor.call('accountsNumberIsCero', function(error, response){
