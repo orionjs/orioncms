@@ -1,4 +1,25 @@
 /**
+ * Ensure that we're authenticated for admin routes
+ */
+Router.plugin('ensureSignedIn', {
+	only: [
+		'admin',
+		'adminAccountsSetup',
+		'adminAccountsInvitation',
+		'adminDictionaryUpdate',
+		'adminUsersIndex',
+		'adminUsersCreate',
+		'adminUsersEdit',
+		'adminUsersDelete',
+		'adminConfigUpdate',
+		'adminEntitiesIndex',
+		'adminEntitiesCreate',
+		'adminEntitiesUpdate',
+		'adminEntitiesDelete'
+	]
+});
+
+/**
  * Creates the orion route controller
  */
 OrionRouteController = RouteController.extend({
@@ -7,7 +28,6 @@ OrionRouteController = RouteController.extend({
 	waitOn: function () {
 		return orion.admin.adminSubscriptions;
 	},
-	onBeforeAction: AccountsTemplates.ensureSignedIn,
 	onAfterAction: function() {
 		if (!Meteor.isClient) {
 			return;
