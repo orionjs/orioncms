@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.2
+
+- Switched to plugin version of ensureSignedIn (@pcorey).
+
 ### 0.5.1
 
 - Fix bug that made acccount setup stop working.
