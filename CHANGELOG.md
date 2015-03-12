@@ -3,6 +3,12 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.3
+
+- Fix error that block login route.
+
+- Fix the way that was working subscriptions on admin. Now sites starts much faster.
+
 ### 0.5.2
 
 - Switched to plugin version of ensureSignedIn (@pcorey).

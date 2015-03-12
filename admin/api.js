@@ -4,22 +4,36 @@
 orion.admin = {
 	sidebarTabs: [],
 	userActions: [],
+	adminSubscriptions: []
 };
-
-/**
- * Default subscriptions for all the admin panel.
- */
-orion.admin.adminSubscriptions = [
-	orion.subs.subscribe('dictionary'),
-	orion.subs.subscribe('config'),
-	orion.subs.subscribe('adminUsers')
-];
 
 /**
  * Add new subscriptions to all the admin panel.
  */
-orion.admin.addAdminSubscription = function(func) {
-	orion.admin.adminSubscriptions.push(func);
+orion.admin.addAdminSubscription = function() {
+	orion.admin.adminSubscriptions.push(arguments);
+}
+
+/**
+ * Add default subscriptions of the admin panel
+ */
+
+orion.admin.addAdminSubscription('dictionary');
+orion.admin.addAdminSubscription('config');
+orion.admin.addAdminSubscription('adminUsers');
+
+/**
+ * Get the admin subscriptions
+ */
+
+orion.admin.getAdminSubscriptions = function() {
+	var subscriptions = [];
+	for(var i  = 0; i < orion.admin.adminSubscriptions.length; i++) {
+		var args = orion.admin.adminSubscriptions[i];
+		var subscription = orion.subs.subscribe.apply(orion.subs, args);
+		subscriptions.push(subscription)
+	}
+	return subscriptions;
 }
 
 /**

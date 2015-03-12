@@ -3,9 +3,6 @@
  */
 Router.plugin('ensureSignedIn', {
 	only: [
-		'admin',
-		'adminAccountsSetup',
-		'adminAccountsInvitation',
 		'adminDictionaryUpdate',
 		'adminUsersIndex',
 		'adminUsersCreate',
@@ -22,11 +19,11 @@ Router.plugin('ensureSignedIn', {
 /**
  * Creates the orion route controller
  */
-OrionRouteController = RouteController.extend({
+orion.RouteController = RouteController.extend({
 	layoutTemplate: 'adminLayout',
 	loadingTemplate: 'adminLoading',
 	waitOn: function () {
-		return orion.admin.adminSubscriptions;
+		return orion.admin.getAdminSubscriptions();
 	},
 	onAfterAction: function() {
 		if (!Meteor.isClient) {
@@ -83,7 +80,7 @@ Router.route('/admin/create-account/:_id', {
  */
 Router.route('/admin/dictionary/:category?', {
 	name: 'adminDictionaryUpdate',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		var permission = this.params.category ? 'dictionary.' + this.params.category : 'dictionary';
 		return orion.users.ensureRoutePermissions(permission)(this);
@@ -108,7 +105,7 @@ Router.route('/admin/dictionary/:category?', {
  */
 Router.route('/admin/users', {
 	name: 'adminUsersIndex',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin'),
 	data: function() {
 		return Meteor.users.find();
@@ -120,7 +117,7 @@ Router.route('/admin/users', {
  */
 Router.route('/admin/users/invite', {
 	name: 'adminUsersCreate',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin')
 });
 
@@ -129,7 +126,7 @@ Router.route('/admin/users/invite', {
  */
 Router.route('/admin/users/:_id/edit', {
 	name: 'adminUsersEdit',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin'), 
 	data: function() {
 		return Meteor.users.findOne(this.params._id);
@@ -141,7 +138,7 @@ Router.route('/admin/users/:_id/edit', {
  */
 Router.route('/admin/users/:_id/delete', {
 	name: 'adminUsersDelete',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin'), 
 	data: function() {
 		return Meteor.users.findOne(this.params._id);
@@ -154,7 +151,7 @@ Router.route('/admin/users/:_id/delete', {
  */
 Router.route('/admin/config/:configCategory?', {
 	name: 'adminConfigUpdate',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin'),
 	data: function() {
 		if (this.params.configCategory) {
@@ -176,7 +173,7 @@ Router.route('/admin/config/:configCategory?', {
  */
 Router.route('/admin/e/:entity/', {
 	name: 'adminEntitiesIndex',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},
@@ -192,7 +189,7 @@ Router.route('/admin/e/:entity/', {
  */
 Router.route('/admin/e/:entity/create', {
 	name: 'adminEntitiesCreate',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},
@@ -208,7 +205,7 @@ Router.route('/admin/e/:entity/create', {
  */
 Router.route('/admin/e/:entity/:_id/update', {
 	name: 'adminEntitiesUpdate',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},
@@ -229,7 +226,7 @@ Router.route('/admin/e/:entity/:_id/update', {
  */
 Router.route('/admin/e/:entity/:_id/delete', {
 	name: 'adminEntitiesDelete',
-	controller: OrionRouteController,  
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},
