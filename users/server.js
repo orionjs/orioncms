@@ -115,3 +115,24 @@ Meteor.methods({
 Accounts.addAutopublishFields({
 	forLoggedInUser: ['isAdmin', 'permissions'],
 });
+
+/**
+ * Prevents error that made the user sign out.
+ */
+Meteor.publish(null, function() {
+	if (this.userId) {
+		return Meteor.users.find(
+			{_id: this.userId}, {
+				fields: {
+					profile: 1,
+					username: 1,
+					emails: 1,
+					permission: 1,
+					isAdmin: 1
+				}
+			}
+		);
+	} else {
+		return null;
+	}
+});

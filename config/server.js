@@ -17,29 +17,6 @@ if (orion.config.collection.find().count() === 0) {
 	});
 }
 
-Meteor.publish(null, function() {
-	if (this.userId) {
-		return Meteor.users.find(
-			{_id: this.userId}, {
-				fields: {
-					profile: 1,
-					username: 1,
-					emails: 1,
-					permission: 1,
-					isAdmin: 1
-				}
-			}
-		);
-	} else {
-		return null;
-	}
-});
-
-Accounts.addAutopublishFields({
-	forLoggedInUser: ['permission', 'isAdmin'],
-	forOtherUsers: []
-});
-
 /**
  * Publications of the config. Only for admins
  */

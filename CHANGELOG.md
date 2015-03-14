@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.4
+
+- Fix the "sign out" error (@pcorey).
+
 ### 0.5.3
 
 - Fix error that block login route.

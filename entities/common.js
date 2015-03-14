@@ -106,6 +106,9 @@ orion.getNewEntitySchema = function(schema) {
 	return _.extend({
 		createdAt: {
 			type: Date,
+			autoform: {
+				omit: true
+			},
 			autoValue: function() {
 				if (this.isInsert) {
 					return new Date;
@@ -118,6 +121,9 @@ orion.getNewEntitySchema = function(schema) {
 		},
 		updatedAt: {
 			type: Date,
+			autoform: {
+				omit: true
+			},
 			autoValue: function() {
 				if (this.isUpdate) {
 					return new Date();
