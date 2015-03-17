@@ -44,8 +44,6 @@ orion.config.get(name),
 
 - ```name``` **String**. The name of the variable.
 
-> Use this function only in server. ```orion.config``` is not made to work on the client.
-
 ## Example
 
 In previous versions of orion, to upload with s3 you had to set the aws keys in the code.
