@@ -34,6 +34,11 @@ https://trello.com/b/dQhi5dF9/orion-roadmap
 
 This project is very active, if you use orion you must [subscribe](http://eepurl.com/bbji3b)
 
+#### Documentation
+
+Navigate to the repository folders to see the documentation for each section. 
+Each package also has their own documentation
+
 ## Features
 
 #### Dictionary:
