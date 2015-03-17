@@ -32,8 +32,7 @@ https://trello.com/b/dQhi5dF9/orion-roadmap
 
 #### Newsletter
 
-Orion is a very active repository. 
-**Subscribe for updates [here](http://eepurl.com/bbji3b)**
+Orion is a very active repository. [Subscribe for updates](http://eepurl.com/bbji3b)
 
 ## Features
 
