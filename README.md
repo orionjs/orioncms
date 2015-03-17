@@ -1,8 +1,6 @@
 Orion
 =====
 
-http://orion.meteor.com
-
 Orion is a simple and powerful CMS for meteor. It allows you to build 
 simple or complex websites with powerful admin panels in minutes.
 
