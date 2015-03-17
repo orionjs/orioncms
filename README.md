@@ -3,10 +3,24 @@ Orion
 
 http://orion.meteor.com
 
-Orion is a simple and powerful CMS for meteor. It creates automatically an admin panel for
-your collections and gives you the ability to have key/value definitions for your site.
+Orion is a simple and powerful CMS for meteor. It allows you to build 
+simple or complex websites with powerful admin panels in minutes.
 
 ![alt tag](http://i.imgur.com/eNMaaje.png)
+
+### Principles of Orion
+
+- **Speed**. Orion was build to speed up the process of making administrable
+web pages.
+
+- **Simplicity**. The api will always be easy to use, everything will be 
+magic, just like meteor.
+
+- **Unobtrusive**. You will always be able to use the full power of meteor:
+install extensions, use the templates system and everything else.
+
+- **Scalable**. Orion it's built for the cloud. It doesn't write files, 
+so you can deploy on anywhere.
 
 #### Preview
 
@@ -16,25 +30,31 @@ http://orion-example.meteor.com
 
 https://trello.com/b/dQhi5dF9/orion-roadmap
 
+#### Newsletter
+
+Orion is a very active repository. 
+**Subscribe for updates [here](http://eepurl.com/bbji3b)**
+
 ## Features
 
 #### Dictionary:
-The dictionary is where you can save key/value definitions, allowing the admin to change things like the site logo or the content of a page.
+
+One of the best things of orion. You can make all 
+the content of your site editable!
+
+Imagine you want to change the logo of the site. With the dictionary, you 
+can make the logo editable and change it without touching the code. It 
+also applies to every content of your site.
 
 #### Entities:
-Orion generates the full CRUD for your collections.
 
-#### Custom attributes:
-In Orion you can add custom attributes like images to entities and dictionary with just a line of code.
+__Entities__ are Meteor collections. You specify the fields and 
+Orion creates automatically the admin panel to show, create and edit them.
 
-- [orionjs:file-attribute](http://orion.meteor.com/docs/attributes/file)
-Save files easily in the dictionary or entities, uploading them to a S3 bucket.
+#### Custom Attributes:
 
-- [orionjs:summernote](http://orion.meteor.com/docs/attributes/summernote)
-Use the powerful summernote editor. The images uploaded are saved in a S3 bucket.
-
-- Add one yourself
-It's very easy to add custom attributes to Orion. You can start by forking https://atmospherejs.com/orionjs/summernote.
+Save images or use text editors in entities or the dictionary it's super easy.
+Orion attributes are powerful tools to help developers save a lot of time.
 
 ## Getting Started
 
@@ -48,24 +68,10 @@ meteor add orionjs:bootstrap
 
 Navigate to ```/admin``` and create the first user.
 
-#### Read the docs!
-
-Go to the [documentation](http://orion.meteor.com/docs/dictionary) and learn how to be an expert in orion
-
-#### View the example
-
-View the [example blog](https://github.com/orionjs/example-blog) made with orion
-
-## Subscribe for updates
-
-Orion is a very active repository. 
-**Subscribe for updates [here](http://eepurl.com/bbji3b)**
-
 ## Screenshots
 
 ![alt tag](http://i.imgur.com/eFEQ5lT.jpg)
 ![alt tag](http://i.imgur.com/eNMaaje.png)
 ![alt tag](http://i.imgur.com/Rl3Mpvi.jpg)
-![alt tag](http://i.imgur.com/hdN6efE.png)
 
 
