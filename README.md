@@ -34,8 +34,7 @@ This project is very active, if you use orion you must [subscribe](http://eepurl
 
 #### Documentation
 
-Navigate to the repository folders to see the documentation for each section. 
-Each package also has their own documentation
+http://orion.meteor.com/docs
 
 ## Features
 
