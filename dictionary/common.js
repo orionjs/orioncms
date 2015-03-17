@@ -69,6 +69,9 @@ orion.dictionary.getDefaultCategory = function() {
 	if (!Meteor.userId()) {
 		return _.first(_.keys(this.categories));
 	}
+	if (!Meteor.user()) {
+		return null;
+	}
 	var found = null;
 	_.keys(this.categories).map(function(category) {
 		if (Meteor.user().hasPermission('dictionary.' + category)) {

@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.5
+
+- Fix the dictionary bug #37.
+
 ### 0.5.4
 
 - Fix the "sign out" error (@pcorey).
