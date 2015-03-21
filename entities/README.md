@@ -20,7 +20,7 @@ orion.addEntity(name, schema, options)
 - ```name``` **String**. The name of the entity. Also the name
 of the collection in mongodb.
 
-- ```schema``` **[Schema](https://github.com/orionjs/core/tree/master/attributes)**. The schema of the entity.
+- ```schema``` **[Schema](https://github.com/orionjs/core/tree/master/attributes)**. The schema of the entity. The schema has 3 default fields: ```createdAt```, ```updatedAt``` and ```createdBy``` (the id of the user that created the entity).
 
 ***Options***
 
