@@ -118,3 +118,11 @@ user.hasPermission('files.delete') // false
 user.hasPermission('') // true
 user.hasPermission(null) // true
 ```
+
+You can also check if the logged in user has some permission in html
+
+```html
+{{# if doIHavePermission 'entity.posts' }}
+	<!-- Content here -->
+{{/ if }}
+```
