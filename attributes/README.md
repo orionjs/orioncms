@@ -129,4 +129,28 @@ orion.addEntity('posts', {
 
 ### Creating Orion Attributes
 
-Not ready
+You can create orion attribute to have instant 
+solutions and integrated solutions for orion 
+dictionary and entities.
+
+```js
+orion.attributes.registerAttribute(name, options)
+```
+
+- ```name``` **String**. The name of the attribute.
+
+***Options***
+
+- ```template```, ```valueIn```, ```valueOut```, 
+```valueConverters```, ```contextAdjust``` are passed directly to 
+[autoform](https://github.com/aldeed/meteor-autoform), check here https://github.com/aldeed/meteor-autoform#defining-custom-input-types.
+
+- ```columnTemplate``` **String**. The name of the template to display 
+on the entity list table. The value of the attribute will be the data of
+template.
+
+- ```getSchema``` **Function**. A function that should return the 
+[schema](https://github.com/aldeed/meteor-simple-schema) of the attribue.
+Sometimes its a [value](https://github.com/orionjs/froala-editor/blob/master/lib/attribute.js#L4) 
+and sometimes an [object](https://github.com/orionjs/file-attribute/blob/master/lib/attribute.js#L4).
+
