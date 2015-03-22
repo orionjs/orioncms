@@ -126,3 +126,7 @@ orion.addEntity('posts', {
     }),
 });
 ```
+
+### Creating Orion Attributes
+
+Not ready
