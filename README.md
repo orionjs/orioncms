@@ -36,6 +36,14 @@ This project is very active, if you use orion you must [subscribe](http://eepurl
 
 http://orion.meteor.com/docs
 
+#### Community Add-On Packages
+
+*Submit a pull request to add your package to this list*
+
+**Attributes:**
+
+- [rwatts:orion-maps](https://atmospherejs.com/rwatts/orion-maps) *No description*
+
 ## Features
 
 #### Dictionary:
