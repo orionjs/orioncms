@@ -18,7 +18,6 @@ orion.admin.addAdminSubscription = function() {
  * Add default subscriptions of the admin panel
  */
 
-orion.admin.addAdminSubscription('dictionary');
 orion.admin.addAdminSubscription('config');
 orion.admin.addAdminSubscription('adminUsers');
 

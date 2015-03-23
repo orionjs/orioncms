@@ -13,7 +13,7 @@ if (orion.dictionary.collection.find().count() === 0) {
 /**
  * Publications of the dictionary
  */
-Meteor.publish('dictionary', function(options) {
+Meteor.publish(null, function(options) {
 	options = options ? options : {};
 	return orion.dictionary.collection.find(options);
 });

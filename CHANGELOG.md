@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.6
+
+- Dictionary now subscribe with null publication.
+
 ### 0.5.5
 
 - Fix the dictionary bug #37.
