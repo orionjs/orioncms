@@ -3,9 +3,13 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.7
+
+- Hides dictionary when there are no definitions.
+
 ### 0.5.6
 
-- Dictionary now subscribe with null publication.
+- Dictionary now subscribes with null publication.
 
 ### 0.5.5
 

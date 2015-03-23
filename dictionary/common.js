@@ -122,3 +122,11 @@ orion.dictionary.get = function(name, defaultValue) {
 
 	return dictionary ? dictionary : defaultValue;
 };
+
+/**
+ * Returns false when there are no definitions
+ * in the dictionary
+ */
+orion.dictionary.isActive = function() {
+	return _.keys(orion.dictionary.categories).length != 0;
+}

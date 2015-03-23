@@ -82,6 +82,9 @@ Router.route('/admin/dictionary/:category?', {
 	name: 'adminDictionaryUpdate',
 	controller: orion.RouteController,  
 	onBeforeAction: function() {
+		if (!orion.dictionary.isActive()) {
+			this.redirect('atChangePwd')
+		}
 		var permission = this.params.category ? 'dictionary.' + this.params.category : 'dictionary';
 		return orion.users.ensureRoutePermissions(permission)(this);
 	},
