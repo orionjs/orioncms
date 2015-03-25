@@ -13,7 +13,14 @@ if (orion.dictionary.collection.find().count() === 0) {
 /**
  * Publications of the dictionary
  */
-Meteor.publish(null, function(options) {
-	options = options ? options : {};
-	return orion.dictionary.collection.find(options);
+Meteor.publish(null, function() {
+	return orion.dictionary.collection.find();
+});
+
+/**
+ * Deprecation notice
+ */
+Meteor.publish('dictionary', function(options) {
+	console.log('Do not subscribe to the dictionary, the client is subscribed automatically. This publication will be removed and will cause errors on your app.')
+	return [];
 });

@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.5.8
+
+- Deprecation notice of dictionary publication.
+
 ### 0.5.7
 
 - Hides dictionary when there are no definitions.
