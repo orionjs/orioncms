@@ -73,6 +73,13 @@ Orion attributes are powerful tools to help developers save a lot of time.
 meteor add orionjs:bootstrap
 ```
 
+You also need bootstrap and font awesome.
+
+```
+meteor add twbs:bootstrap
+meteor add fortawesome:fontawesome
+```
+
 #### Go to the admin panel
 
 Navigate to ```/admin``` and create the first user.
