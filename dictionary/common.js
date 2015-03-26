@@ -3,7 +3,13 @@
  */
 orion.dictionary = {
 	collection: new Meteor.Collection('dictionary'),
-	schema: {},
+	schema: {
+		_languages: {
+			type: Object,
+			blackbox: true,
+			optional: true
+		}
+	},
 	categories: {},
 };
 
@@ -27,9 +33,12 @@ orion.dictionary.collection.allow({
 		var user = Meteor.users.findOne(userId);
 		var canEdit = !!userId;
 		fields.map(function(field) {
-			var category = orion.dictionary.getCategoryOf(field);
-			if (!user.hasPermission('dictionary.' + category)) {
-				canEdit = false;
+			// To-do: fix security with languages
+			if (field != '_languages') {
+				var category = orion.dictionary.getCategoryOf(field);
+				if (!user.hasPermission('dictionary.' + category)) {
+					canEdit = false;
+				}
 			}
 		});
 		return canEdit;
@@ -96,6 +105,27 @@ orion.dictionary.getCategoryOf = function(name) {
 };
 
 /**
+ * A helper to search in the dictionary with dots
+ */
+var objectSearchWithDots = function(object, key) {
+	key = key.split('.');
+
+	try {
+		for (var i = 0; i < key.length; i++) {
+			if (key[i] in object) {
+				object = object[key[i]];
+			} else {
+				return null;
+			}
+		}
+	} catch(error) {
+		return null;
+	}
+
+	return object || null;
+}
+
+/**
  * Returns the value of the definition.
  * If the definition doesn't exists it 
  * returns the defaultValue
@@ -105,22 +135,20 @@ orion.dictionary.get = function(name, defaultValue) {
 		defaultValue = '';
 	}
 
-	var dictionary = this.collection.findOne();
-	name = name.split(".");
+	var value = null;
 
-	try {
-		for (var i = 0; i < name.length; i++) {
-			if (name[i] in dictionary) {
-				dictionary = dictionary[name[i]];
-			} else {
-				return defaultValue;
-			}
+	if (Meteor.isClient) {
+		var language = orion.languages.getCurrentLanguage();
+		if (language) {
+			value = objectSearchWithDots(this.collection.findOne(), '_languages.' + language.identifier + '.' + name);
 		}
-	} catch(error) {
-		return defaultValue;
 	}
 
-	return dictionary ? dictionary : defaultValue;
+	if (!value) {
+		value = objectSearchWithDots(this.collection.findOne(), name);
+	}
+
+	return value ? value : defaultValue;
 };
 
 /**

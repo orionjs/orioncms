@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple and powerful admin panel for meteor',
-	version: '0.5.8',
+	version: '0.6.0',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -42,6 +42,7 @@ Package.onUse(function(api) {
 	api.addFiles([
 		'main/common.js',
 		'config/common.js',
+		'languages/common.js',
 		'users/common.js',
 		'users/invitations.js',
 		'users/accounts-templates.js',
@@ -61,6 +62,7 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'config/client.js',
+		'languages/client.js',
 		'users/client.js',
 		'dictionary/client.js',
 		'entities/client.js',
@@ -70,6 +72,7 @@ Package.onUse(function(api) {
 		'admin/client-common/dictionary.js',
 		'admin/client-common/entities.js',
 		'admin/client-common/users.js',
+		'admin/client-common/languages.js',
 		], 'client');
 
 	api.export('orion');

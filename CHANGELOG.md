@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.6.0
+
+- Languages for dictionary.
+
 ### 0.5.8
 
 - Deprecation notice of dictionary publication.
