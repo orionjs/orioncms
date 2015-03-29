@@ -14,7 +14,8 @@ var deepExtend = function(target, source) {
  * Adds the option the set orionAttribute on SimpleSchema
  */
 SimpleSchema.extendOptions({
-	orionAttribute: Match.Optional(String)
+	orionAttribute: Match.Optional(String),
+	orion: Match.Optional(Object)
 });
 
 /**
@@ -26,16 +27,18 @@ orion.attributes = {};
  * Returns the schema for the attribute
  */
 orion.attribute = function(name, schema, options) {
+
 	var schema = schema || {};
 	var options = options || {};
-	var attributeSchema = orion.attributes[name].getSchema(options);
+	var attributeSchema = orion.attributes[name].getSchema.call(this, options);
 	var override = {
 		orionAttribute: name,
 		autoform: {
 			type: 'orion_' + name
 		}
 	}
-	return deepExtend(deepExtend(schema, attributeSchema), override);
+	var attribute = deepExtend(deepExtend(schema, attributeSchema), override);
+	return attribute;
 }
 
 /**
