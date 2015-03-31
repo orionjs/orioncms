@@ -29,10 +29,12 @@ orion.admin.entitiesIndexEvents = {
 	'click tr': function(event) {
 		var dataTable = $(event.target).closest('table').DataTable();
 		var rowData = dataTable.row(event.currentTarget).data();
-		Router.go('adminEntitiesUpdate', {
-			_id: rowData._id,
-			entity: Router.current().data().entity.name
-		});
+		if (rowData) {
+			Router.go('adminEntitiesUpdate', {
+				_id: rowData._id,
+				entity: Router.current().data().entity.name
+			});
+		}
 	}
 }
 
@@ -45,6 +47,31 @@ orion.admin.entitiesIndexHelpers = {
 	},
 	showTable: function() {
 		return Session.get('adminEntitiesIndexShowTable');
+	},
+	canCreateEntity: function() {
+		if (this.entity) {
+			if (!Meteor.userId()) {
+				return false;
+			}
+
+			var user = Meteor.users.findOne(Meteor.userId());
+
+			if (user.hasPermission('entity.' + this.entity.name + '.all')) {
+				return true;
+			}
+
+			if (user.hasPermission('entity.' + this.entity.name + '.personal')) {
+				return true;
+			}
+
+			for (var i = 0; i < this.entity.customPermissions.length; i++) {
+				var permission = this.entity.customPermissions[i];
+				if (user.hasPermission('entity.' + this.entity.name + '.' + permission.name)) {
+					return permission.create(Meteor.userId());
+				}
+			}
+		}
+		return false;
 	}
 }
 
@@ -85,5 +112,59 @@ orion.admin.entitiesUpdateEvents = {
 orion.admin.entitiesUpdateHelpers = {
 	getEntity: function () {
 		return Router.current().data().entity.name;
+	},
+	canUpdateEntity: function() {
+		var entity = Router.current().data().entity;
+		var item = Router.current().data().item;
+		if (entity) {
+			if (!Meteor.userId()) {
+				return false;
+			}
+
+			var user = Meteor.users.findOne(Meteor.userId());
+
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
+				return true;
+			}
+
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
+				return true;
+			}
+
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					return permission.update(Meteor.userId(), item);
+				}
+			}
+		}
+		return false;
+	},
+	canRemoveEntity: function() {
+		var entity = Router.current().data().entity;
+		var item = Router.current().data().item;
+		if (entity) {
+			if (!Meteor.userId()) {
+				return false;
+			}
+
+			var user = Meteor.users.findOne(Meteor.userId());
+
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
+				return true;
+			}
+
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
+				return true;
+			}
+
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					return permission.remove(Meteor.userId(), item);
+				}
+			}
+		}
+		return false;
 	}
 };

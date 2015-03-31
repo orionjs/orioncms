@@ -18,6 +18,23 @@ orion.users.permissions.add = function(permission) {
 }
 
 /**
+ * Custom permissions for entities
+ */
+orion.users.permissions.createCustomEntityPermission = function(options) {
+	check(options, {
+		entity: String,
+		name: String,
+		indexFilter: Match.Any,
+		update: Match.Any,
+		create: Match.Any,
+		remove: Match.Any
+	});
+
+	orion.entities[options.entity].customPermissions.push(options);
+	orion.users.permissions.add('entity.' + options.entity + '.' + options.name);
+}
+
+/**
  * Permissions users object.
  */
 Meteor.users.allow({

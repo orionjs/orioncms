@@ -126,3 +126,55 @@ You can also check if the logged in user has some permission in html
 	<!-- Content here -->
 {{/ if }}
 ```
+
+### Custom Permissions For Entities
+
+If you need more detail on who can view, create, edit or remove entities you can
+create custom permissions.
+
+```js
+orion.users.permissions.createCustomEntityPermission(options)
+```
+
+***Options***
+
+- ```entity``` **String**. The name of the entity.
+
+- ```name``` **String**. The name of the new permission. 
+If you choose "custom", the new permission will be 
+named ```entity.entityName.custom```.
+
+- ```indexFilter``` **Function**. Input ```userId```. Must return the filter for the
+mongo query (```collection.find(thisIsTheFilter)```).
+
+- ```update``` **Function**. Input ```userId```, ```doc```, ```fields```, ```modifier```.
+Return ```true``` or ```false```. This is called also to check if the user should see the update button, 
+in that case, ```fields``` and ```modifier``` will be ```undefined```.
+
+- ```create``` **Function**. Input ```userId```, ```doc```.
+Return ```true``` or ```false```. This is called also to check if the user should see the create button, 
+in that case, ```doc``` will be ```undefined```.
+
+- ```remove``` **Function**. Input ```userId```, ```doc```.
+Return ```true``` or ```false```.
+
+Example:
+
+```js
+orion.users.permissions.createCustomEntityPermission({
+    entity: 'posts',
+    name: 'custom',
+    indexFilter: function(userId) {
+        return { owners: userId });
+    },
+    update: function(userId, doc, fields, modifier) {
+        return _.contains(doc.owners, userId);
+    },
+    create: function(userId, doc) {
+        return true;
+    },
+    remove: function(userId, doc) {
+        return _.contains(doc.owners, userId);
+    }
+});
+```

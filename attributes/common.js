@@ -54,7 +54,12 @@ orion.attributeColumn = function(name, key, title) {
 			return '';
 		},
 		createdCell: function(cell, cellData, rowData) {
-        	Blaze.renderWithData(Template[orion.attributes[name].columnTemplate], cellData, cell);
+			var data = {
+				key: key,
+				value: cellData,
+				item: rowData
+			}
+        	Blaze.renderWithData(Template[orion.attributes[name].columnTemplate], data, cell);
         }
 	}
 }

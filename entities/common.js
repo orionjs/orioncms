@@ -9,6 +9,7 @@ orion.entities = {}
 orion.addEntity = function(name, schema, options) {
 	var newEntity = {};
 	newEntity.name = name;
+	newEntity.customPermissions = [];
 
 	// Creates the mongo collection in the collection variable
 	newEntity.collection = new Meteor.Collection(name);
@@ -18,7 +19,7 @@ orion.addEntity = function(name, schema, options) {
 	orion.users.permissions.add('entity.' + name+ '.personal');
 
 	// Set the permissions
-	var allow = orion.getEntityDefaultAllowPermissions(name);
+	var allow = orion.getEntityDefaultAllowPermissions(newEntity);
 	newEntity.collection.allow(allow);
 
 	// Attachs the schema
@@ -35,7 +36,31 @@ orion.addEntity = function(name, schema, options) {
 		columns: newEntity.options.tableColumns,
 		pub: 'entityTabular',
 		sub: orion.subs,
-		extraFields: newEntity.options.extraFields
+		extraFields: newEntity.options.extraFields,
+		selector: function(userId) {
+			if (!userId) {
+				return null;
+			}
+
+			var user = Meteor.users.findOne(userId);
+
+			if (user.hasPermission('entity.' + newEntity.name + '.all')) {
+				return {}
+			}
+
+			if (user.hasPermission('entity.' + newEntity.name + '.personal')) {
+				return { createdBy: userId }
+			}
+
+			for (var i = 0; i < newEntity.customPermissions.length; i++) {
+				var permission = newEntity.customPermissions[i];
+				if (user.hasPermission('entity.' + newEntity.name + '.' + permission.name)) {
+					return permission.indexFilter(userId);
+				}
+			}
+
+			return null;
+		}
 	});
 
 	// Saves the new entity to the array
@@ -47,11 +72,27 @@ orion.addEntity = function(name, schema, options) {
 /**
  * Returns the allow permissions for a new entity
  */
-orion.getEntityDefaultAllowPermissions = function(name) {
+orion.getEntityDefaultAllowPermissions = function(entity) {
 	return {
 		'insert': function(userId, doc) {
 			var user = Meteor.users.findOne(userId);
-			return (user.hasPermission('entity.' + name) && doc.createdBy === userId);
+
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
+				return doc.createdBy === userId;
+			}
+
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
+				return doc.createdBy === userId;
+			}
+
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					return permission.create(userId, doc) && doc.createdBy === userId;
+				}
+			}
+
+			return false;
 		},
 		'update': function(userId, doc, fields, modifier) {
 			if (_.contains(fields, 'createdBy')) {
@@ -59,29 +100,40 @@ orion.getEntityDefaultAllowPermissions = function(name) {
 			}
 
 			var user = Meteor.users.findOne(userId);
-			if (user.hasPermission('entity.' + name + '.all')) {
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
 				return true;
 			}
-			if (user.hasPermission('entity.' + name + '.personal')) {
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
 				if (userId === doc.createdBy) {
 					return true;
+				}
+			}
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					return permission.update(userId, doc, fields, modifier);
 				}
 			}
 			return false;
 		},
 		'remove': function(userId, doc) {
 			var user = Meteor.users.findOne(userId);
-			if (user.hasPermission('entity.' + name + '.all')) {
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
 				return true;
 			}
-			if (user.hasPermission('entity.' + name + '.personal')) {
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
 				if (userId === doc.createdBy) {
 					return true;
 				}
 			}
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					return permission.remove(userId, doc);
+				}
+			}
 			return false;
-		},
-		fetch: ['createdBy']
+		}
 	};
 }
 
