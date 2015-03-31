@@ -107,11 +107,14 @@ orion.dictionary.getCategoryOf = function(name) {
 /**
  * A helper to search in the dictionary with dots
  */
-var objectSearchWithDots = function(object, key) {
+orion.searchObjectWithDots = function(object, key, selectFirstIfIsArray) {
 	key = key.split('.');
 
 	try {
 		for (var i = 0; i < key.length; i++) {
+			if (selectFirstIfIsArray && object.length && object.length > 0) {
+				object = object[0];
+			}
 			if (key[i] in object) {
 				object = object[key[i]];
 			} else {
@@ -140,12 +143,12 @@ orion.dictionary.get = function(name, defaultValue) {
 	if (Meteor.isClient) {
 		var language = orion.languages.getCurrentLanguage();
 		if (language) {
-			value = objectSearchWithDots(this.collection.findOne(), '_languages.' + language.identifier + '.' + name);
+			value = orion.searchObjectWithDots(this.collection.findOne(), '_languages.' + language.identifier + '.' + name);
 		}
 	}
 
 	if (!value) {
-		value = objectSearchWithDots(this.collection.findOne(), name);
+		value = orion.searchObjectWithDots(this.collection.findOne(), name);
 	}
 
 	return value ? value : defaultValue;

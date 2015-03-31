@@ -7,9 +7,9 @@ Meteor.publish('adminUsers', function() {
 	}
 	var user = Meteor.users.findOne(this.userId);
 	if (user.hasPermission('admin')) {
-		return Meteor.users.find();
+		return Meteor.users.find({}, { fields: { services: 0 } });
 	} else {
-		return Meteor.users.find({_id: this.userId});
+		return [];
 	}
 });
 
@@ -121,18 +121,8 @@ Accounts.addAutopublishFields({
  */
 Meteor.publish(null, function() {
 	if (this.userId) {
-		return Meteor.users.find(
-			{_id: this.userId}, {
-				fields: {
-					profile: 1,
-					username: 1,
-					emails: 1,
-					permission: 1,
-					isAdmin: 1
-				}
-			}
-		);
+		return Meteor.users.find( {_id: this.userId}, { fields: { services: 0 } } );
 	} else {
-		return null;
+		return [];
 	}
 });

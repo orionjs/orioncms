@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.7.1
+
+- Changed custom attribute column data.
+
 ### 0.7.0
 
 - Custom permissions for entities.
