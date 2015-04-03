@@ -189,6 +189,7 @@ orion.getNewEntitySchema = function(schema) {
 			autoform: {
 				omit: true
 			},
+			optional: true,
 			autoValue: function() {
 				if (this.isInsert) {
 					return this.userId;

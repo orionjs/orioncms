@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.7.2
+
+- "Created by" on entities is no more required (to insert values on server).
+
 ### 0.7.1
 
 - Changed custom attribute column data.
