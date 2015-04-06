@@ -70,7 +70,6 @@ Package.onUse(function(api) {
 		'admin/client-common/base.js',
 		'admin/client-common/config.js',
 		'admin/client-common/dictionary.js',
-		'admin/client-common/entitytypes.js',
 		'admin/client-common/entities.js',
 		'admin/client-common/users.js',
 		'admin/client-common/languages.js',
