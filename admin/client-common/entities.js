@@ -1,4 +1,31 @@
 /**
+* check if custom entity template is being used
+* before using defualt temaplate
+*/
+var AdminEntityExist, entityList,
+  indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+entityList = ['posts', 'availability'];
+
+AdminEntityExist = {
+  entityList: entityList,
+  create: function(arg) {
+    if (indexOf.call(this.entityList, arg) >= 0) {
+      return "admin" + arg + "Create";
+    } else {
+      return "adminEntitiesCreateDefault";
+    }
+  },
+  update: function(arg) {
+    if (indexOf.call(this.entityList, arg) >= 0) {
+      return "admin" + arg + "Update";
+    } else {
+      return "adminEntitiesUpdateDefault";
+    }
+  }
+};
+
+/**
  * adminEntitiesCreate
  */
 AutoForm.hooks({
@@ -13,11 +40,18 @@ AutoForm.hooks({
 /**
  * adminEntitiesDelete
  */
+orion.admin.entitiesCreateHelpers ={
+	dynamicEntity: function(){
+		return AdminEntityExist.create(this.entity.name)},
+}
+/**
+ * adminEntitiesDelete
+ */
 orion.admin.entitiesDeleteHelpers = {
 	onSuccess: function () {
-		return function (result) { 
+		return function (result) {
 			var name = Router.current().data().entity.name;
-			Router.go('adminEntitiesIndex', {entity: name}); 
+			Router.go('adminEntitiesIndex', {entity: name});
 		};
 	}
 }
@@ -37,6 +71,7 @@ orion.admin.entitiesIndexEvents = {
 		}
 	}
 }
+
 
 orion.admin.entitiesIndexHelpers = {
 	table: function() {
@@ -90,7 +125,21 @@ orion.admin.entitiesIndexRendered = function() {
 		toogleTable();
 	});
 }
+/**
+* adminEntitiesType
+*/
 
+orion.admin.entitiesTypeEvents = {
+
+}
+
+orion.admin.entitiesTypeHelpers = {
+
+}
+
+orion.admin.entitiesTypeHelpers = {
+
+}
 /**
  * adminEntitiesUpdate
  */
@@ -103,13 +152,18 @@ AutoForm.hooks({
 	}
 });
 
-orion.admin.entitiesUpdateEvents = {
+orion.admin.entitiesUpdateHelpers ={
+	dynamicEntity: function(){
+		return AdminEntityExist.update(this.entity.name)},
+}
+// defualts when no custom template
+orion.admin.entitiesUpdateDefaultEvents = {
 	'click #submit-btn': function() {
 		$("#updateEntityForm").submit();
 	}
 };
 
-orion.admin.entitiesUpdateHelpers = {
+orion.admin.entitiesUpdateDefaultHelpers = {
 	getEntity: function () {
 		return Router.current().data().entity.name;
 	},
