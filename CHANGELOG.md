@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.7.3
+
+- In /login you can set ?redirect=xxx.
+
 ### 0.7.2
 
 - "Created by" on entities is no more required (to insert values on server).
