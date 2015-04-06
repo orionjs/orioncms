@@ -147,6 +147,8 @@ orion.getNewEntityOptions = function(name, options) {
 		pluralName: name,
 		singularName: name,
 		customTypeForm:false,
+  	createTemplate:'adminEntitiesCreateDefault',
+		updateTemplate:'adminEntitiesUpdateDefault',
 		tableColumns: [{data: '_id', title: 'ID'}],
 		extraFields: [],
 	}, options);
