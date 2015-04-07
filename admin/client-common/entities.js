@@ -47,9 +47,9 @@ orion.admin.entitiesCreateHelpers = {
  */
 orion.admin.entitiesDeleteHelpers = {
 	onSuccess: function () {
-		return function (result) { 
+		return function (result) {
 			var name = Router.current().data().entity.name;
-			Router.go('adminEntitiesIndex', {entity: name}); 
+			Router.go('adminEntitiesIndex', {entity: name});
 		};
 	}
 }
@@ -70,6 +70,7 @@ orion.admin.entitiesIndexEvents = {
 		}
 	}
 }
+
 
 orion.admin.entitiesIndexHelpers = {
 	table: function() {
@@ -136,13 +137,14 @@ AutoForm.hooks({
 	}
 });
 
-orion.admin.entitiesUpdateEvents = {
+// defualts when no custom template
+orion.admin.entitiesUpdateDefaultEvents = {
 	'click #submit-btn': function() {
 		$("#updateEntityForm").submit();
 	}
 };
 
-orion.admin.entitiesUpdateHelpers = {
+orion.admin.entitiesUpdateDefaultHelpers = {
 	getEntity: function () {
 		return Router.current().data().entity.name;
 	},

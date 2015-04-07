@@ -162,6 +162,9 @@ orion.getNewEntityOptions = function(name, options) {
 		icon: 'pencil',
 		pluralName: name,
 		singularName: name,
+		customTypeForm:false,
+  	createTemplate:'adminEntitiesCreateDefault',
+		updateTemplate:'adminEntitiesUpdateDefault',
 		tableColumns: [{data: '_id', title: 'ID'}],
 		extraFields: [],
 	}, options);
