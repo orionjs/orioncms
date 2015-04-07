@@ -57,7 +57,7 @@ orion.admin.entitiesDeleteHelpers = {
 /**
  * adminEntitiesIndex
  */
-orion.admin.entitiesIndexEvents = {
+orion.admin.entitiesIndexDefaultEvents = {
 	'click tr': function(event) {
 		if (!$(event.target).is('td')) return;
 		var dataTable = $(event.target).closest('table').DataTable();
@@ -72,7 +72,7 @@ orion.admin.entitiesIndexEvents = {
 }
 
 
-orion.admin.entitiesIndexHelpers = {
+orion.admin.entitiesIndexDefaultHelpers = {
 	table: function() {
 		if (this.entity) {
 			return this.entity.table;
@@ -109,7 +109,7 @@ orion.admin.entitiesIndexHelpers = {
 	}
 }
 
-orion.admin.entitiesIndexRendered = function() {
+orion.admin.entitiesIndexDefaultRendered = function() {
 	Session.set('adminEntitiesIndexShowTable', true);
 
 	var toogleTable = function() {
