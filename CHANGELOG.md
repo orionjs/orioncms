@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.7.6
+
+- Custom entity templates.
+
 ### 0.7.5
 
 - Choose fields for custom entity permissions.

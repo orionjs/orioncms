@@ -37,7 +37,7 @@ jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
 livedata@1.0.13
-local-test:orionjs:core@0.7.5
+local-test:orionjs:core@0.7.6
 localstorage@1.0.3
 logging@1.0.7
 manuelschoebel:ms-seo@0.4.1
@@ -55,7 +55,7 @@ mongo-livedata@1.0.8
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-orionjs:core@0.7.5
+orionjs:core@0.7.6
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
