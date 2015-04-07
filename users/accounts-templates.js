@@ -25,6 +25,11 @@ AccountsTemplates.configureRoute('changePwd', {
 AccountsTemplates.configureRoute('signIn', {
 	template: 'adminAccountsLogin',
 	path: '/login',
+    name: 'login',
+    redirect: function() {
+        var url = Router.current().params.query.redirect || '/admin';
+        Router.go(url);
+    }
 });
 
 /**

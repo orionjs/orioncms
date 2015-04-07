@@ -10,6 +10,38 @@ AutoForm.hooks({
 	}
 });
 
+orion.admin.entitiesCreateDefaultHelpers = {
+	getFields: function() {
+		var entity = Router.current().data().entity;
+		var item = Router.current().data().item;
+		if (entity) {
+			if (!Meteor.userId()) {
+				return;
+			}
+
+			var user = Meteor.users.findOne(Meteor.userId());
+
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
+				return;
+			}
+
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
+				return;
+			}
+
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					if (permission.fields) {
+						return permission.fields(Meteor.userId());
+					}
+				}
+			}
+		}
+		return;
+	}
+}
+
 /**
  * adminEntitiesDelete
  */
@@ -25,8 +57,11 @@ orion.admin.entitiesDeleteHelpers = {
 /**
  * adminEntitiesIndex
  */
-orion.admin.entitiesIndexEvents = {
+orion.admin.entitiesIndexDefaultEvents = {
 	'click tr': function(event) {
+		if ($(event.target).is('a') || $(event.target).is('button')) {
+			return;
+		}
 		var dataTable = $(event.target).closest('table').DataTable();
 		var rowData = dataTable.row(event.currentTarget).data();
 		if (rowData) {
@@ -38,8 +73,7 @@ orion.admin.entitiesIndexEvents = {
 	}
 }
 
-
-orion.admin.entitiesIndexHelpers = {
+orion.admin.entitiesIndexDefaultHelpers = {
 	table: function() {
 		if (this.entity) {
 			return this.entity.table;
@@ -76,7 +110,7 @@ orion.admin.entitiesIndexHelpers = {
 	}
 }
 
-orion.admin.entitiesIndexRendered = function() {
+orion.admin.entitiesIndexDefaultRendered = function() {
 	Session.set('adminEntitiesIndexShowTable', true);
 
 	var toogleTable = function() {
@@ -104,7 +138,6 @@ AutoForm.hooks({
 	}
 });
 
-// defualts when no custom template
 orion.admin.entitiesUpdateDefaultEvents = {
 	'click #submit-btn': function() {
 		$("#updateEntityForm").submit();
@@ -114,6 +147,35 @@ orion.admin.entitiesUpdateDefaultEvents = {
 orion.admin.entitiesUpdateDefaultHelpers = {
 	getEntity: function () {
 		return Router.current().data().entity.name;
+	},
+	getFields: function() {
+		var entity = Router.current().data().entity;
+		var item = Router.current().data().item;
+		if (entity) {
+			if (!Meteor.userId()) {
+				return;
+			}
+
+			var user = Meteor.users.findOne(Meteor.userId());
+
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
+				return;
+			}
+
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
+				return;
+			}
+
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					if (permission.fields) {
+						return permission.fields(Meteor.userId());
+					}
+				}
+			}
+		}
+		return;
 	},
 	canUpdateEntity: function() {
 		var entity = Router.current().data().entity;

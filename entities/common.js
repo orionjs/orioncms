@@ -88,6 +88,14 @@ orion.getEntityDefaultAllowPermissions = function(entity) {
 			for (var i = 0; i < entity.customPermissions.length; i++) {
 				var permission = entity.customPermissions[i];
 				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					if (permission.fields) {
+						var allowedFields = permission.fields(userId);
+						var keys = _.keys(doc)
+						var diff = _.difference(keys, allowedFields, ['createdAt', 'createdBy']);
+						if (diff.length > 0) {
+							return false;
+						}
+					}
 					return permission.create(userId, doc) && doc.createdBy === userId;
 				}
 			}
@@ -111,6 +119,14 @@ orion.getEntityDefaultAllowPermissions = function(entity) {
 			for (var i = 0; i < entity.customPermissions.length; i++) {
 				var permission = entity.customPermissions[i];
 				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					if (permission.fields) {
+						var allowedFields = permission.fields(userId);
+						var keys = fields;
+						var diff = _.difference(keys, allowedFields, ['updatedAt']);
+						if (diff.length > 0) {
+							return false;
+						}
+					}
 					return permission.update(userId, doc, fields, modifier);
 				}
 			}
@@ -146,9 +162,9 @@ orion.getNewEntityOptions = function(name, options) {
 		icon: 'pencil',
 		pluralName: name,
 		singularName: name,
-		customTypeForm:false,
-  	createTemplate:'adminEntitiesCreateDefault',
-		updateTemplate:'adminEntitiesUpdateDefault',
+		createTemplate:'adminEntitiesCreateDefault',
+		indexTemplate:'adminEntitiesIndexDefault',
++   updateTemplate:'adminEntitiesUpdateDefault',
 		tableColumns: [{data: '_id', title: 'ID'}],
 		extraFields: [],
 	}, options);

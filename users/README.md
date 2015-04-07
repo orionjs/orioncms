@@ -158,6 +158,9 @@ in that case, ```doc``` will be ```undefined```.
 - ```remove``` **Function**. Input ```userId```, ```doc```.
 Return ```true``` or ```false```.
 
+- ```fields``` **Function**. Input ```userId```.
+Return a ```array``` of fields that the user can edit. If this is not set, the user can edit all fields.
+
 Example:
 
 ```js

@@ -39,7 +39,7 @@ orion.RouteController = RouteController.extend({
 });
 
 /**
- * The home route for the admin, redirects to
+ * The home route for the admin, redirects to 
  * dictionaryUpdate or create account.
  */
 Router.route('/admin', {
@@ -80,7 +80,7 @@ Router.route('/admin/create-account/:_id', {
  */
 Router.route('/admin/dictionary/:category?', {
 	name: 'adminDictionaryUpdate',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		if (!orion.dictionary.isActive()) {
 			this.redirect('atChangePwd')
@@ -108,7 +108,7 @@ Router.route('/admin/dictionary/:category?', {
  */
 Router.route('/admin/users', {
 	name: 'adminUsersIndex',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin'),
 	data: function() {
 		return Meteor.users.find();
@@ -120,7 +120,7 @@ Router.route('/admin/users', {
  */
 Router.route('/admin/users/invite', {
 	name: 'adminUsersCreate',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin')
 });
 
@@ -129,8 +129,8 @@ Router.route('/admin/users/invite', {
  */
 Router.route('/admin/users/:_id/edit', {
 	name: 'adminUsersEdit',
-	controller: orion.RouteController,
-	onBeforeAction: orion.users.ensureRoutePermissions('admin'),
+	controller: orion.RouteController,  
+	onBeforeAction: orion.users.ensureRoutePermissions('admin'), 
 	data: function() {
 		return Meteor.users.findOne(this.params._id);
 	}
@@ -141,8 +141,8 @@ Router.route('/admin/users/:_id/edit', {
  */
 Router.route('/admin/users/:_id/delete', {
 	name: 'adminUsersDelete',
-	controller: orion.RouteController,
-	onBeforeAction: orion.users.ensureRoutePermissions('admin'),
+	controller: orion.RouteController,  
+	onBeforeAction: orion.users.ensureRoutePermissions('admin'), 
 	data: function() {
 		return Meteor.users.findOne(this.params._id);
 	}
@@ -154,7 +154,7 @@ Router.route('/admin/users/:_id/delete', {
  */
 Router.route('/admin/config/:configCategory?', {
 	name: 'adminConfigUpdate',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: orion.users.ensureRoutePermissions('admin'),
 	data: function() {
 		if (this.params.configCategory) {
@@ -176,7 +176,7 @@ Router.route('/admin/config/:configCategory?', {
  */
 Router.route('/admin/e/:entity/', {
 	name: 'adminEntitiesIndex',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},
@@ -192,7 +192,7 @@ Router.route('/admin/e/:entity/', {
  */
 Router.route('/admin/e/:entity/create', {
 	name: 'adminEntitiesCreate',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},
@@ -208,7 +208,7 @@ Router.route('/admin/e/:entity/create', {
  */
 Router.route('/admin/e/:entity/:_id/update', {
 	name: 'adminEntitiesUpdate',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},
@@ -229,7 +229,7 @@ Router.route('/admin/e/:entity/:_id/update', {
  */
 Router.route('/admin/e/:entity/:_id/delete', {
 	name: 'adminEntitiesDelete',
-	controller: orion.RouteController,
+	controller: orion.RouteController,  
 	onBeforeAction: function() {
 		return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 	},

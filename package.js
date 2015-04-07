@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple and powerful admin panel for meteor',
-	version: '0.7.2',
+	version: '0.7.5',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -12,16 +12,16 @@ Package.onUse(function(api) {
 		'meteor-platform',
 		'meteorhacks:subs-manager@1.1.0',
 		'accounts-base',
-		'accounts-password',
-		'dburles:collection-helpers@1.0.2',
+		'accounts-password', 
+		'dburles:collection-helpers@1.0.2', 
 		'aldeed:collection2@2.0.0',
-		'aldeed:tabular@1.1.0',
+		'aldeed:tabular@1.1.0',  
 		'meteorhacks:inject-initial@1.0.2',
-		'aldeed:autoform@5.1.1',
+		'aldeed:autoform@5.1.1', 
 		'matb33:collection-hooks@0.7.7',
-		'iron:router@1.0.7',
-		'zimme:iron-router-active@1.0.0',
-		'aldeed:delete-button@1.0.0',
+		'iron:router@1.0.7', 
+		'zimme:iron-router-active@1.0.0', 
+		'aldeed:delete-button@1.0.0', 
 		'useraccounts:core@1.8.1',
 		'manuelschoebel:ms-seo@0.4.1',
 		]);
@@ -30,8 +30,8 @@ Package.onUse(function(api) {
 		'accounts-base',
 		'accounts-password',
 		'dburles:collection-helpers',
-		'aldeed:collection2',
-		'aldeed:autoform',
+		'aldeed:collection2', 
+		'aldeed:autoform', 
 		'aldeed:tabular',
 		'matb33:collection-hooks',
 		'iron:router',
@@ -48,7 +48,7 @@ Package.onUse(function(api) {
 		'users/accounts-templates.js',
 		'attributes/common.js',
 		'dictionary/common.js',
-		'entities/common.js',
+		'entities/common.js', 
 		'api/main.js',
 		'admin/routes.js',
 		]);
