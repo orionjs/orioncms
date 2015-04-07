@@ -1,0 +1,134 @@
+<template name="adminLayout">
+	<div id="orion-admin">
+		<div class="orion-admin-panel clearfix">
+			{{# if currentUser }}
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-2 col-sm-3">
+							<div class="sidebar">
+								{{> adminSidebar }}
+							</div>
+						</div>
+						<div class="col-md-10 col-sm-9">
+							<div class="orion-layout">
+								{{> yield }}
+							</div>
+						</div>
+					</div>
+				</div>
+			{{ else }}
+				{{> yield }}
+			{{/ if }}
+		</div>
+	</div>
+	<style type="text/css">
+	html,
+	body {
+		margin: 0px;
+		height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+	</style>
+	<meta name="viewport" content="width=device-width,minimal-ui,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+</template>
+<template name="outAdminLayout">
+	<div id="orion-admin">
+		<div class="out-admin">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+						<div class="content">
+							{{> yield }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style type="text/css">
+	html,
+	body {
+		margin: 0px;
+		height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+	</style>
+	<meta name="viewport" content="width=device-width,minimal-ui,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+</template>
+<template name="adminSidebar">
+    <nav role="navigation" class="navbar navbar-transparent navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">{{ dict 'siteName' 'Orion Admin'}}</a>
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="fa-ul">
+				{{# if isDictionaryActive }}
+					{{# if doIHavePermission 'dictionary' }}
+                        <li class="{{ isActiveRoute regex='adminDictionary' }}">
+                            <a href="{{ pathFor 'adminDictionaryUpdate' }}">
+                                <i class="fa fa-li fa-book"></i>
+                                <span class="text">Dictionary</span>
+                            </a>
+                        </li>
+					{{/ if }}
+				{{/ if }}
+
+				{{# each getEntities }}
+					{{# if doIHavePermission getPermissionForEntity }}
+                        <li class="{{ isActivePath regex=getPath }}">
+                            <a href="{{ pathFor 'adminEntitiesIndex' entity=name }}">
+                                <i class="fa fa-li fa-{{ options.icon }}"></i>
+                                <span class="text">{{ options.sidebarName }}</span>
+                            </a>
+                        </li>
+					{{/ if }}
+				{{/ each }}
+
+				{{# if hasSidebarTabs }}
+                    <li class="nav-divider"></li>
+				{{/ if }}
+				{{# each sidebarTabs }}
+					{{# if doIHavePermission permission }}
+                        <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+                            <a href="{{ pathFor routeName }}">
+                                <i class="fa fa-li fa-{{ icon }}"></i>
+                                <span class="text">{{ navbarTitle }}</span>
+                            </a>
+                        </li>
+					{{/ if }}
+				{{/ each }}
+
+                <li class="nav-divider"></li>
+				{{# if doIHavePermission 'admin' }}
+                    <li class="{{ isActiveRoute regex='adminUsers' }}">
+                        <a href="{{ pathFor 'adminUsersIndex' }}">
+                            <i class="fa fa-li fa-users"></i>
+                            <span class="text">Users</span>
+                        </a>
+                    </li>
+				{{/ if }}
+                <li class="{{ isActiveRoute regex='adminConfig' }}{{ isActiveRoute regex='changePwd' }}">
+                    <a href="{{ pathFor 'atChangePwd' }}">
+                        <i class="fa fa-li fa-cog"></i>
+                        <span class="text">Config</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="logout-btn" href="#">
+                        <i class="fa fa-li fa-power-off"></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

@@ -1,0 +1,13 @@
+<template name="adminPagesUpdate">
+	<div class="admin-top-nav">
+		<span class="title">
+			Update page
+		</span>
+	</div>
+	<div class="admin-content">
+		{{> quickForm collection="orion.pages.collection" schema=getSchema id="adminPagesUpdateForm" doc=this type="update"  buttonContent=false }}
+		<br>
+		<a href="{{ pathFor 'adminPagesIndex' }}" class="btn btn-default">Cancel</a>
+		<button id="submit-btn" class="btn btn-primary">Update</button>
+	</div>
+</template>

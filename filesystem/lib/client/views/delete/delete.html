@@ -1,0 +1,11 @@
+<template name="adminFilesDelete">
+	<div class="admin-top-nav">
+		<span class="title">Delete file</span>
+	</div>
+	<div class="admin-content">
+		<p>Are you sure you want to delete this file?</p>
+		<a href="{{ pathFor 'adminFilesShow' _id=file._id }}" class="btn btn-default">Cancel</a>
+		<button class="confirm-btn btn btn-danger">Confirm</button>
+	</div>
+	
+</template>

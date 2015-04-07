@@ -1,0 +1,32 @@
+<template name="adminDictionaryUpdate">
+	<div class="admin-top-nav">
+		<div class="dictionary-categories pull-right text-right">
+			{{# each allCategories }}
+				{{# if doIHavePermission getPermission }}
+					<span class="label {{ isActiveCategory }}"><a href="{{ pathFor 'adminDictionaryUpdate' category=this }}">{{ this }}</a></span>
+				{{/ if }}
+			{{/ each }}
+		</div>
+		<span class="title">Dictionary</span>
+	</div>
+	<div class="admin-content">
+		{{# if languages.isActive }}
+			<div class="text-center">
+				{{# with languages.defaultLanguage }}
+					<a class="btn btn-xs {{# if languages.isCurrentDefault }}btn-primary{{ else }}btn-default{{/ if }}" language-set-default>{{ name }}</a>
+				{{/ with }}
+				{{# each languages.aditionalLanguages }}
+					<a class="btn btn-xs {{# if languages.isCurrent identifier }}btn-primary{{ else }}btn-default{{/ if }}" language-set="{{ identifier }}">{{ name }}</a>
+				{{/ each }}
+				<br><br>
+			</div>
+			{{# if languages.isCurrentDefault }}
+				{{> quickForm buttonContent="Save" collection="orion.dictionary.collection" id="updateDictionaryForm" type="update" doc=getDoc fields=fields template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-lg-7 col-md-8 col-sm-9 input-container" }}
+			{{ else }}
+				{{> quickForm buttonContent="Save" id="updateDictionaryFormOnLanguage" schema=getLanguageSchema  type="normal" doc=getDocOnLanguage fields=fields template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-lg-7 col-md-8 col-sm-9 input-container" }}
+			{{/ if }}
+		{{ else }}
+			{{> quickForm buttonContent="Save" collection="orion.dictionary.collection" id="updateDictionaryForm" type="update" doc=getDoc fields=fields template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-lg-7 col-md-8 col-sm-9 input-container" }}
+		{{/ if }}
+	</div>
+</template>
