@@ -27,7 +27,8 @@ orion.users.permissions.createCustomEntityPermission = function(options) {
 		indexFilter: Match.Any,
 		update: Match.Any,
 		create: Match.Any,
-		remove: Match.Any
+		remove: Match.Any,
+		fields: Match.Optional(Match.Any),
 	});
 
 	orion.entities[options.entity].customPermissions.push(options);

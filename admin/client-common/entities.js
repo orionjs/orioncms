@@ -10,6 +10,38 @@ AutoForm.hooks({
 	}
 });
 
+orion.admin.entitiesCreateHelpers = {
+	getFields: function() {
+		var entity = Router.current().data().entity;
+		var item = Router.current().data().item;
+		if (entity) {
+			if (!Meteor.userId()) {
+				return;
+			}
+
+			var user = Meteor.users.findOne(Meteor.userId());
+
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
+				return;
+			}
+
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
+				return;
+			}
+
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					if (permission.fields) {
+						return permission.fields(Meteor.userId());
+					}
+				}
+			}
+		}
+		return;
+	}
+}
+
 /**
  * adminEntitiesDelete
  */
@@ -115,6 +147,35 @@ orion.admin.entitiesUpdateEvents = {
 orion.admin.entitiesUpdateHelpers = {
 	getEntity: function () {
 		return Router.current().data().entity.name;
+	},
+	getFields: function() {
+		var entity = Router.current().data().entity;
+		var item = Router.current().data().item;
+		if (entity) {
+			if (!Meteor.userId()) {
+				return;
+			}
+
+			var user = Meteor.users.findOne(Meteor.userId());
+
+			if (user.hasPermission('entity.' + entity.name + '.all')) {
+				return;
+			}
+
+			if (user.hasPermission('entity.' + entity.name + '.personal')) {
+				return;
+			}
+
+			for (var i = 0; i < entity.customPermissions.length; i++) {
+				var permission = entity.customPermissions[i];
+				if (user.hasPermission('entity.' + entity.name + '.' + permission.name)) {
+					if (permission.fields) {
+						return permission.fields(Meteor.userId());
+					}
+				}
+			}
+		}
+		return;
 	},
 	canUpdateEntity: function() {
 		var entity = Router.current().data().entity;

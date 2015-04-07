@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple and powerful admin panel for meteor',
-	version: '0.7.4',
+	version: '0.7.5',
 	git: 'https://github.com/orionjs/core'
 });
 
