@@ -3,6 +3,10 @@ Orion Core
 
 This is the changelog for ```orionjs:core```.
 
+### 0.7.4
+
+- Entity index table doesn't listen to click if it is <a> or <button>
+
 ### 0.7.3
 
 - In /login you can set ?redirect=xxx.
