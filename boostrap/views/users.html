@@ -1,0 +1,171 @@
+<template name="adminUsersCreate">
+	<div class="admin-top-nav">
+		<span class="title">Create a User</span>
+	</div>
+	<div class="admin-content">
+		<p><b>Choose Permissions</b></p>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="isadmin" disabled="{{# if invitationId }}true{{/ if }}"> <code>admin</code>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				{{# each permissions }}
+					<div class="checkbox permission-checkbox">
+						<label>
+							{{# if isAdmin }}
+								<input type="checkbox" disabled="true" checked="true"> <code>{{ this }}</code>
+							{{ else }}
+								<input type="checkbox" name="{{ this }}" disabled="{{# if invitationId }}true{{/ if }}"> <code>{{ this }}</code>
+							{{/ if }}
+						</label>
+					</div>
+				{{/ each }}
+			</div>
+		</div>
+		<br>
+		{{# if invitationId }}
+			<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Back</a>
+			<a href="{{ urlFor 'adminAccountsInvitation' _id=invitationId }}" target="_blank">
+				<code>{{ urlFor 'adminAccountsInvitation' _id=invitationId }}</code>
+			</a>
+		{{ else }}
+			<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Cancel</a>
+			<button class="btn btn-primary btn-create">Create Invitation</button>
+		{{/ if }}
+	</div>
+</template>
+
+<template name="adminUsersDelete">
+	<div class="admin-top-nav">
+		<span class="title">
+			Delete
+			<i>{{ profile.name }}</i>
+		</span>
+	</div>
+	<div class="admin-content">
+		<p>Are you sure you want to delete this user?</p>
+		<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Cancel</a>
+		<button class="btn btn-danger btn-delete">Confirm</button>
+	</div>
+</template>
+
+<template name="adminUsersEdit">
+	<div class="admin-top-nav">
+		<span class="title">
+			{{ profile.name }}
+			<small>
+				<i>Permissions</i>
+			</small>
+		</span>
+	</div>
+	<div class="admin-content">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="checkbox">
+					<label>
+						{{# if isAdmin }}
+							<input type="checkbox" name="isadmin" checked="true"> <code>admin</code>
+						{{ else }}
+							<input type="checkbox" name="isadmin"> <code>admin</code>
+						{{/ if }}
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-9">
+				{{# each permissions }}
+					<div class="checkbox permission-checkbox">
+						<label>
+							{{# if isAdmin }}
+								<input type="checkbox" disabled="true" checked="true"> <code>{{ this }}</code>
+							{{ else }}
+								{{# if hasPermission }}
+									<input type="checkbox" name="{{ this }}" checked="true"> <code>{{ this }}</code>
+								{{ else }}
+									<input type="checkbox" name="{{ this }}"> <code>{{ this }}</code>
+								{{/ if }}
+							{{/ if }}
+						</label>
+					</div>
+				{{/ each }}
+			</div>
+		</div>
+		<br>
+		<a href="{{ pathFor 'adminUsersIndex' }}" class="btn btn-default">Back</a>
+		<button class="btn btn-primary btn-save">Save</button>
+	</div>
+</template>
+
+<template name="adminUsersIndex">
+	<div class="admin-top-nav">
+		<span class="title">
+			Users
+			<a href="{{ pathFor 'adminUsersCreate' }}" class="btn btn-primary btn-sm pull-right">Create</a>
+		</span>
+	</div>
+	<div class="admin-content">
+		{{# each this }}
+			{{> adminUsersIndexUser }}
+		{{/ each }}
+		
+	</div>
+</template>
+
+<template name="adminUsersIndexUser">
+	<div class="adminUsersIndexUser">
+		<p>
+			<b>{{ profile.name }}</b>
+		</p>
+		{{# if getError }}
+			<div class="alert alert-danger" style="display: inline-block;">
+				<b>{{ getError.error }}</b>
+				{{ getError.reason }}
+			</div>
+		{{/ if }}
+		{{# if getResponse }}
+			<div class="alert alert-success" style="display: inline-block;">
+				{{ getResponse }}
+			</div>
+		{{/ if }}
+		{{# each emails }}
+			<p>
+				{{ address }}
+			</p>
+		{{/ each }}
+		<p>
+			{{# if itsMe }}
+				<span class="label label-primary">Me</span>
+			{{ else }}
+				<a href="{{ pathFor 'adminUsersDelete' }}" class="btn btn-danger btn-xs">
+					Delete
+				</a>
+				<a href="{{ pathFor 'adminUsersEdit' }}" class="btn btn-primary btn-xs">
+					Permissions
+				</a>
+			{{/ if }}
+			{{# each actions }}
+				{{# if forAdmins }}
+					{{# if isAdmin }}
+						{{> adminUsersIndexUserAction }}
+					{{/ if }}
+				{{/ if }}
+				{{# if forUsers }}
+					{{# unless isAdmin }}
+						{{> adminUsersIndexUserAction }}
+					{{/ unless }}
+				{{/ if }}
+			{{/ each }}
+			
+		</p>
+	</div>
+	<br>
+</template>
+
+<template name="adminUsersIndexUserAction">
+	<button class="btn btn-xs {{ btnClass }}">
+		{{ title }}
+	</button>
+</template>

@@ -1,0 +1,52 @@
+<template name="adminFilesShow">
+	<div class="adminFilesShow">
+		<div class="admin-top-nav">
+			<span class="title">
+				<ul>
+					<li><a href="{{ pathFor 'adminFilesIndex' query='path=' }}">Files</a></li>
+					{{# each breadcrumb }}
+						<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
+					{{/ each }}
+					<li class="active">{{ file.name }}</li>
+				</ul>
+			</span>
+		</div>
+		<div class="admin-content">
+			<p><b>Name:</b></p>
+			<p>{{ file.name }}</p>
+			<br>
+
+			{{# if isImage file.url }}
+				<p><b>Image:</b></p>
+				<p>
+					<a href="{{ file.url }}" target="_BLANK">
+						<img src="{{ file.url }}" alt="{{ file.name }}">
+					</a>
+				</p>
+				<br>
+			{{ else }}
+				<p><b>URL:</b></p>
+				<p>
+					<a href="{{ file.url }}" target="_BLANK">
+						{{ file.url }}
+					</a>
+				</p>
+				<br>
+			{{/ if }}
+			
+
+			<p><b>Uploaded:</b></p>
+			<p>{{ file.createdAt }}</p>
+			<br>
+			
+			<p>
+				<a class="btn btn-primary" href="{{ pathFor 'adminFilesIndex' }}">Back</a>
+				{{# if file.canRemove }}
+					{{# if doIHavePermission 'files.delete' }}
+						<a class="btn btn-danger" href="{{ pathFor 'adminFilesDelete' _id=file._id }}">Delete</a>
+					{{/ if }}
+				{{/ if }}
+			</p>
+		</div>
+	</div>
+</template>

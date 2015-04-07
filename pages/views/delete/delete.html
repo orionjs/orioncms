@@ -1,0 +1,12 @@
+<template name="adminPagesDelete">
+	<div class="admin-top-nav">
+		<span class="title">Delete Page</span>
+	</div>
+	<div class="admin-content">
+		<p>Are you sure you want to delete this page?</p>
+		<a href="{{ pathFor 'adminPagesIndex' }}" class="btn btn-default">Cancel</a>
+		{{# quickRemoveButton collection="orion.pages.collection" _id=_id onSuccess=onSuccess class="btn btn-danger" }}
+			Confirm
+		{{/ quickRemoveButton }}
+	</div>
+</template>

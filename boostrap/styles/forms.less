@@ -1,0 +1,49 @@
+@import "variables.import.less";
+
+.form-group {
+	.input-container {
+		padding-bottom: 15px;
+		margin-bottom: 10px;
+		border-bottom: 1px dashed @navbar-default-border;
+	}
+}
+
+textarea.form-control {
+	height: auto;
+}
+
+.form-group:last-child {
+	.input-container {
+		border-bottom: 0px;
+	}
+}
+
+#orion-admin label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #777777;
+	min-height: 30px;
+}
+
+#orion-admin .form-control {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555555;
+	background-color: #f5f8f9;
+	background-image: none;
+	border: 1px solid #d5e2e6;
+	border-radius: 4px;
+	box-shadow: none;
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, background-color ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, background-color ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, background-color ease-in-out .15s;
+	
+	&:focus {
+		background-color: #fff;
+	}
+}
