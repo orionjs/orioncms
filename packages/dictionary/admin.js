@@ -1,21 +1,32 @@
 /**
  * Init the template name variable
  */
-orion.admin.requestTemplate('dictionaryUpdate');
+orion.templates.request('dictionaryUpdate');
 
 /**
- * Register the route 
+ * Register the route
  */
 Router.route('/admin/dictionary', function () {
-  this.render(orion.admin.template('dictionaryUpdate'));
+  this.layout(orion.templates.get('layout'));
+  this.render(orion.templates.get('dictionaryUpdate'));
 }, { name: 'dictionary.update' });
+
+/**
+ * Register the link
+ */
+orion.addLink({
+  section: 'top',
+  title: 'Dictionary',
+  routeName: 'dictionary.update',
+  activeRouteRegex: 'dictionary',
+});
 
 /**
  * Create the template helpers for a dictionary
  */
 
 if (Meteor.isClient) {
-  orion.admin.setTemplateHelpers('dictionaryUpdate', {
+  orion.templates.setHelpers('dictionaryUpdate', {
     getDoc: function() {
       return orion.dictionary.findOne();
     }
