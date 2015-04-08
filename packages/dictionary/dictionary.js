@@ -29,6 +29,12 @@ orion.dictionary.allow({
    */
   'remove': function(userId, doc) {
     return false;
+  },
+  /**
+   * This is momentary
+   */
+  'update': function() {
+    return true;
   }
 });
 
@@ -50,4 +56,15 @@ orion.dictionary.addDefinition = function(name, category, attribute) {
   }, attribute);
 
   this.attachSchema(new SimpleSchema(newSchema));
+};
+
+/**
+ * Returns the value of the definition.
+ * If the definition doesn't exists it 
+ * returns the defaultValue
+ */
+orion.dictionary.get = function(path, defaultValue) {
+  // Sets empty string to avoid problems on templates
+  defaultValue = !defaultValue || defaultValue instanceof Spacebars.kw ? '' : defaultValue;
+  return orion.helpers.searchObjectWithDots(this.findOne(), path) || defaultValue;
 };

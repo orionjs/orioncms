@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     'underscore',
     ]);
 
-  api.addFiles(['init.js', 'options.js']);
+  api.addFiles(['init.js', 'helpers.js', 'options.js']);
 
   api.export('orion');
 });
