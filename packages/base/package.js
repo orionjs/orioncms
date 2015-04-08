@@ -24,8 +24,8 @@ Package.onUse(function(api) {
     'init.js', 
     'helpers.js', 
     'options.js', 
-    'admin.js',
-    'templates.js'
+    'templates.js',
+    'layouts.js'
     ]);
 
   api.export('orion');
