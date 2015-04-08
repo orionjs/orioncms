@@ -1,7 +1,9 @@
+orion.templates = {};
+
 /**
  * We will save all the templates that any component need
  */
-orion.admin.requestTemplate = function(name) {
+orion.templates.request = function(name) {
   check(name, String);
   orion.options.init('template.' + name);
 }
@@ -9,14 +11,14 @@ orion.admin.requestTemplate = function(name) {
 /**
  * Reactively returns the name of the template
  */
-orion.admin.template = function(name) {
+orion.templates.get = function(name) {
   return orion.options.get('template.' + name);
 }
 
 /**
  * Assings a template to a template request
  */
-orion.admin.setTemplate = function(requestedName, templateName) {
+orion.templates.set = function(requestedName, templateName) {
   return orion.options.set('template.' + requestedName, templateName);
 }
 
@@ -25,9 +27,9 @@ if (Meteor.isClient) {
   /**
    * Set helpers to a template that maybe it doensn't exists yet
    */
-  orion.admin.setTemplateHelpers = function(templateName, helpers) {
+  orion.templates.setHelpers = function(templateName, helpers) {
     Tracker.autorun(function () {
-      var template = orion.admin.template(templateName);
+      var template = orion.templates.get(templateName);
       if (Blaze.isTemplate(Template[template])) {
         Template[template].helpers(helpers);
       }
@@ -37,9 +39,9 @@ if (Meteor.isClient) {
   /**
    * Set events to a template that maybe it doensn't exists yet
    */
-  orion.admin.setTemplateEvents = function(templateName, events) {
+  orion.templates.setEvents = function(templateName, events) {
     Tracker.autorun(function () {
-      var template = orion.admin.template(templateName);
+      var template = orion.templates.get(templateName);
       if (Blaze.isTemplate(Template[template])) {
         Template[template].events(events);
       }
@@ -49,9 +51,9 @@ if (Meteor.isClient) {
   /**
    * Set onRendered to a template that maybe it doensn't exists yet
    */
-  orion.admin.setTemplateOnRendered = function(templateName, onRendered) {
+  orion.templates.setOnRendered = function(templateName, onRendered) {
     Tracker.autorun(function () {
-      var template = orion.admin.template(templateName);
+      var template = orion.templates.get(templateName);
       if (Blaze.isTemplate(Template[template])) {
         Template[template].onRendered(onRendered);
       }
@@ -61,9 +63,9 @@ if (Meteor.isClient) {
   /**
    * Set onCreated to a template that maybe it doensn't exists yet
    */
-  orion.admin.setTemplateOnCreated = function(templateName, onCreated) {
+  orion.templates.setOnCreated = function(templateName, onCreated) {
     Tracker.autorun(function () {
-      var template = orion.admin.template(templateName);
+      var template = orion.templates.get(templateName);
       if (Blaze.isTemplate(Template[template])) {
         Template[template].onCreated(onCreated);
       }
@@ -73,9 +75,9 @@ if (Meteor.isClient) {
   /**
    * Set onDestroyed to a template that maybe it doensn't exists yet
    */
-  orion.admin.setTemplateOnDestroyed = function(templateName, onDestroyed) {
+  orion.templates.setOnDestroyed = function(templateName, onDestroyed) {
     Tracker.autorun(function () {
-      var template = orion.admin.template(templateName);
+      var template = orion.templates.get(templateName);
       if (Blaze.isTemplate(Template[template])) {
         Template[template].onDestroyed(onDestroyed);
       }
