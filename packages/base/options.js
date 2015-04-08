@@ -10,14 +10,10 @@ orion.options = {
  * Initialize a option variable.
  * You can set a unique string o a array of string
  */
-orion.options.init = function(keys) {
-  var keys = !_.isArray(keys) ? [keys] : keys;
-
-  check(keys, [String]);
-
-  keys.forEach(function (key) {
-    orion.options._deps[key] = new Tracker.Dependency;
-  });
+orion.options.init = function(key, initialValue) {
+  check(key, String);
+  orion.options._deps[key] = new Tracker.Dependency;
+  orion.options._values[key] = initialValue;
 }
 
 /**

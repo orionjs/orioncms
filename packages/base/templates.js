@@ -3,9 +3,10 @@ orion.templates = {};
 /**
  * We will save all the templates that any component need
  */
-orion.templates.request = function(name) {
+orion.templates.request = function(name, defaultTemplate) {
   check(name, String);
-  orion.options.init('template.' + name);
+  check(defaultTemplate, Match.Optional(String));
+  orion.options.init('template.' + name, defaultTemplate);
 }
 
 /**

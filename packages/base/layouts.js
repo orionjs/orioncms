@@ -1,8 +1,7 @@
 /**
  * Handle links. To add tabs to the sidebar
  */
-orion.options.init('links')
-orion.options.set('links', []);
+orion.options.init('links', []);
 orion.addLink = function(options) {
   check(options, {
     section: String,
