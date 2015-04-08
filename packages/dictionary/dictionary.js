@@ -1,12 +1,4 @@
 /**
- * Set the default options for orion dictionary
- * The only reason to set this to null is to show to the developer that they can override them
- */
-orion.setOptions({
-  
-})
-
-/**
  * Creates the dictionary mongo collection
  */ 
 orion.dictionary = new Mongo.Collection('dictionary');

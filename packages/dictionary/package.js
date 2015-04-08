@@ -22,6 +22,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'dictionary.js',
+    'admin.js',
     ]);
 
   api.addFiles([
