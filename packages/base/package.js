@@ -9,10 +9,24 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'meteor-platform',
     'underscore',
+    'iron:router@1.0.7',
     ]);
 
-  api.addFiles(['init.js', 'helpers.js', 'options.js']);
+  api.imply([
+    'meteor-platform',
+    'underscore',
+    'iron:router'
+    ]);
+
+  api.addFiles([
+    'init.js', 
+    'helpers.js', 
+    'options.js', 
+    'admin.js',
+    'templates.js'
+    ]);
 
   api.export('orion');
 });
