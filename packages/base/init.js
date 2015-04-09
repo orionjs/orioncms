@@ -1,3 +1,3 @@
 orion = {};
-orion.options = _options;
+orion.options = Options;
 orion.templates = ReactiveTemplates;
