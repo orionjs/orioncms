@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'orionjs:base',
-  summary: 'Orion',
+  name: 'orionjs:reactive-templates',
+  summary: 'Reactive templates for meteor',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
 });
@@ -10,25 +10,13 @@ Package.onUse(function(api) {
 
   api.use([
     'meteor-platform',
-    'underscore',
-    'orionjs:options',
-    'orionjs:reactive-templates',
-    'iron:router@1.0.7',
-    ]);
-
-  api.imply([
-    'meteor-platform',
-    'underscore',
-    'iron:router'
     ]);
 
   api.addFiles([
-    'init.js', 
-    'helpers.js', 
-    'layouts.js'
+    'templates.js', 
     ]);
 
-  api.export('orion');
+  api.export('ReactiveTemplates');
 });
 
 Package.onTest(function(api) {
