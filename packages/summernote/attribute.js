@@ -10,3 +10,4 @@ orion.attributes.registerAttribute('summernote', {
     return this.find('.summernote').code();
   }
 });
+
