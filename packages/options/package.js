@@ -16,7 +16,7 @@ Package.onUse(function(api) {
     'options.js', 
     ]);
 
-  api.export('_options');
+  api.export('Options');
 });
 
 Package.onTest(function(api) {
