@@ -14,6 +14,7 @@ Package.onUse(function(api) {
     'orionjs:options',
     'orionjs:reactive-templates',
     'iron:router@1.0.7',
+    'zimme:iron-router-active@1.0.1',
     ]);
 
   api.imply([

@@ -1,25 +1,24 @@
 <template name="simpleThemeSidebar">
-  <div class="top">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+        <a href="/">
+            Admin
+        </a>
+    </li>
     {{# each links 'top' }}
       {{> simpleThemeSidebarLink }}
     {{/ each }}
-  </div>
-  <div class="medium">
     {{# each links 'medium' }}
       {{> simpleThemeSidebarLink }}
     {{/ each }}
-  </div>
-  <div class="bottom">
     {{# each links 'bottom' }}
       {{> simpleThemeSidebarLink }}
     {{/ each }}
-  </div>
+  </ul>
 </template>
 
 <template name="simpleThemeSidebarLink">
-  <div class="link">
-    <a href="{{ pathFor routeName }}">
-      {{ title }}
-    </a>
-  </div>
+  <li class="{{isActiveRoute regex=activeRouteRegex }}">
+    <a href="{{ pathFor routeName }}">{{ title }}</a>
+  </li>
 </template>

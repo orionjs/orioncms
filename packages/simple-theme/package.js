@@ -29,8 +29,10 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'views/layout/layout.html',
+    'views/layout/layout.js',
+    'views/layout/layout.less',
     'views/sidebar/sidebar.html',
-    'views/home/home.html',
+    'views/sidebar/sidebar.less',
     'views/dictionary/update.html',
     'views/collections/index.html',
     'views/collections/index.js',

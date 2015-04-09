@@ -1,10 +1,23 @@
 <template name="simpleThemeLayout">
-    <div class="container">
-        <div class="col-sm-3">
-            {{> reactiveTemplate template="links" }}
-        </div>
-        <div class="col-sm-9">
-            {{> yield }}
-        </div>
+  <div class="simple-theme-admin">
+    <div class="sidebar">
+      {{> reactiveTemplate template="links" }}
     </div>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="pull-left">
+              <button class="menu-toggle">
+                <i class="fa fa-bars"></i>
+              </button>
+            </div>
+            <div class="admin-content">
+              {{> yield }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
