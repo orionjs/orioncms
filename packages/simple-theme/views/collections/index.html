@@ -1,0 +1,11 @@
+<template name="simpleThemeCollectionsIndex">
+
+  <h1>{{ collection.link.title }}</h1>
+
+  <a href="{{ collection.createPath }}">
+    <b>Create</b>
+  </a>
+  <br>
+  <br>
+  {{> tabular table=collection.tabularTable class="table table-striped table-bordered table-condensed index-table" }}
+</template>

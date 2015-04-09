@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'orionjs:core',
-  summary: 'Orion',
+  name: 'orionjs:tabular',
+  summary: 'Creates a tabular table automatically when orion.collections are created',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
 });
@@ -9,19 +9,17 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base',
+    'meteor-platform',
     'orionjs:collections',
-    'orionjs:dictionary',
-    'insecure',
+    'aldeed:tabular@1.1.0',
     ]);
 
-  api.imply([
-    'orionjs:base',
-    'orionjs:collections',
-    'orionjs:dictionary',
-    ]);
 
-  api.export('orion');
+  api.imply(['aldeed:tabular']);
+
+  api.addFiles([
+    'tabular.js', 
+    ]);
 });
 
 Package.onTest(function(api) {

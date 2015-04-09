@@ -1,0 +1,10 @@
+<template name="simpleThemeLayout">
+    <div class="container">
+        <div class="col-sm-3">
+            {{> reactiveTemplate template="links" }}
+        </div>
+        <div class="col-sm-9">
+            {{> yield }}
+        </div>
+    </div>
+</template>

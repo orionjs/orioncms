@@ -1,0 +1,25 @@
+<template name="simpleThemeSidebar">
+  <div class="top">
+    {{# each links 'top' }}
+      {{> simpleThemeSidebarLink }}
+    {{/ each }}
+  </div>
+  <div class="medium">
+    {{# each links 'medium' }}
+      {{> simpleThemeSidebarLink }}
+    {{/ each }}
+  </div>
+  <div class="bottom">
+    {{# each links 'bottom' }}
+      {{> simpleThemeSidebarLink }}
+    {{/ each }}
+  </div>
+</template>
+
+<template name="simpleThemeSidebarLink">
+  <div class="link">
+    <a href="{{ pathFor routeName }}">
+      {{ title }}
+    </a>
+  </div>
+</template>
