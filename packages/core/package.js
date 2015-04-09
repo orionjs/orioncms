@@ -10,13 +10,13 @@ Package.onUse(function(api) {
 
   api.use([
     'orionjs:base',
-    'orionjs:entities',
+    'orionjs:collections',
     'orionjs:dictionary',
     ]);
 
   api.imply([
     'orionjs:base',
-    'orionjs:entities',
+    'orionjs:collections',
     'orionjs:dictionary',
     ]);
 

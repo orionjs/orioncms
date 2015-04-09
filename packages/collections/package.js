@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'orionjs:entities',
+  name: 'orionjs:collections',
   summary: 'Meteor collection with some magic',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
@@ -21,7 +21,9 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
-    'entities.js',
+    'init.js',
+    'new.js',
+    'admin.js',
     ]);
 
   api.addFiles([
