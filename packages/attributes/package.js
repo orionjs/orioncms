@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'orionjs:core',
-  summary: 'Orion',
+  name: 'orionjs:attributes',
+  summary: 'Orion attributes',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
 });
@@ -10,17 +10,17 @@ Package.onUse(function(api) {
 
   api.use([
     'orionjs:base',
-    'orionjs:collections',
-    'orionjs:dictionary',
-    'orionjs:attributes',
-    'insecure',
+    'aldeed:collection2@2.0.0',
+    'aldeed:autoform@5.1.1',
     ]);
 
   api.imply([
-    'orionjs:base',
-    'orionjs:collections',
-    'orionjs:dictionary',
-    'orionjs:attributes',
+    'aldeed:collection2',
+    'aldeed:autoform',
+    ]);
+
+  api.addFiles([
+    'attributes.js'
     ]);
 
   api.export('orion');

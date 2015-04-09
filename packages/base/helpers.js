@@ -28,3 +28,15 @@ orion.helpers.searchObjectWithDots = function(object, key, selectFirstIfIsArray)
 
     return object || null;
 }
+
+/**
+ * Deep extend
+ */
+orion.helpers.deepExtend = function(target, source) {
+    for (var prop in source)
+        if (prop in target && typeof(target[prop]) == 'object' && typeof(source[prop]) == 'object')
+            deepExtend(target[prop], source[prop]);
+        else
+            target[prop] = source[prop];
+    return target;
+}

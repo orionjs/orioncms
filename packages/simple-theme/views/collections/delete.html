@@ -1,5 +1,7 @@
 <template name="simpleThemeCollectionsDelete">
-  <h1>Delete {{ collection.singularName }}</h1>
+  {{# Layout template="simpleThemeTitle" }}
+    Delete {{ collection.singularName }}
+  {{/ Layout }}
   <p>Are you sure you want to delete this {{ collection.singularName }}?</p>
   <p>
     <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>

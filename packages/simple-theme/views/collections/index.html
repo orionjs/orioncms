@@ -1,7 +1,7 @@
 <template name="simpleThemeCollectionsIndex">
-
-  <h1>{{ collection.link.title }}</h1>
-
+  {{# Layout template="simpleThemeTitle" }}
+    {{ collection.link.title }}
+  {{/ Layout }}
   <a href="{{ collection.createPath }}">
     <b>Create</b>
   </a>

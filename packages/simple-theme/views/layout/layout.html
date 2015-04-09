@@ -7,11 +7,6 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
-            <div class="pull-left">
-              <button class="menu-toggle">
-                <i class="fa fa-bars"></i>
-              </button>
-            </div>
             <div class="admin-content">
               {{> yield }}
             </div>
@@ -20,4 +15,14 @@
       </div>
     </div>
   </div>
+</template>
+
+<template name="simpleThemeTitle">
+  <h1>  
+    <a class="menu-toggle btn btn-default">
+      <i class="fa fa-bars"></i>
+    </a>
+    {{> yield }}
+  </h1>
+  <hr>
 </template>

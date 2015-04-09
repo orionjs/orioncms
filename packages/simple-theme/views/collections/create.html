@@ -1,4 +1,10 @@
 <template name="simpleThemeCollectionsCreate">
-  <h1>Create a {{ collection.singularName }}</h1>
-  {{> quickForm collection=collection id="simpleThemeCollectionsCreateForm" type="insert" }}
+  {{# Layout template="simpleThemeTitle" }}
+    Create a {{ collection.singularName }}
+  {{/ Layout }}
+  {{> quickForm collection=collection id="simpleThemeCollectionsCreateForm" type="insert" buttonContent=false }}
+  <div class="buttons">
+    <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
+    <a class="btn btn-primary create-btn">Create</a>
+  </div>
 </template>

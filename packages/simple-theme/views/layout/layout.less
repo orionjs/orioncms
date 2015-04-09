@@ -11,24 +11,14 @@
 }
 
 .menu-toggle {
-  cursor: pointer;
-  color: lighten(#000, 20%);
-  font-size: 20px;
-  background: none;
-  border: none;
-  &:hover {
-    color: #000;
-  }
-  &:focus {
-    outline: none;
-  }
+    position: relative;
+    top: -3px;
 }
 
 .admin-content {
 
 
   > h1 {
-    border-bottom: 1px solid #000;
   }
 }
 
@@ -109,7 +99,16 @@
     background: none;
 }
 
+@media(max-width:767px) {
+    html, body {
+        .no-overflow {
+            overflow-x: hidden;
+        }
+    }
+}
+
 @media(min-width:768px) {
+
     .simple-theme-admin {
         padding-left: 250px;
     }

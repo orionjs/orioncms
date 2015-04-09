@@ -10,6 +10,7 @@ orion.collections.onCreated(function() {
    * Register the index route
    */
   Router.route('/admin/' + this.routePath, function () {
+    this.collection = self;
     this.layout(orion.templates.get('layout'));
     this.render(orion.templates.get('collectionIndex.' + self.name), {
       data: function() {
@@ -32,6 +33,7 @@ orion.collections.onCreated(function() {
    * Register the create route
    */
   Router.route('/admin/' + this.routePath + '/create', function () {
+    this.collection = self;
     this.layout(orion.templates.get('layout'));
     this.render(orion.templates.get('collectionCreate.' + self.name), {
       data: function() {
@@ -54,10 +56,11 @@ orion.collections.onCreated(function() {
    * Register the update route
    */
   Router.route('/admin/' + this.routePath + '/:_id', function () {
-    // should subscribe here
+    this.collection = self;
     this.layout(orion.templates.get('layout'));
     var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
     var item = self.findOne(this.params._id);
+    this.item = item;
     this.render(orion.templates.get('collectionUpdate.' + self.name), {
       data: function() {
         return {
@@ -93,10 +96,11 @@ orion.collections.onCreated(function() {
    * Register the delete route
    */
   Router.route('/admin/' + this.routePath + '/:_id/delete', function () {
-    // should subscribe here
+    this.collection = self;
     this.layout(orion.templates.get('layout'));
     var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
     var item = self.findOne(this.params._id);
+    this.item = item;
     this.render(orion.templates.get('collectionDelete.' + self.name), {
       data: function() {
         return {

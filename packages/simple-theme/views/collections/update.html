@@ -1,5 +1,7 @@
 <template name="simpleThemeCollectionsUpdate">
-  <h1>Update {{ collection.singularName }}</h1>
+  {{# Layout template="simpleThemeTitle" }}
+    Update {{ collection.singularName }}
+  {{/ Layout }}
   {{> quickForm collection=collection doc=item id="simpleThemeCollectionsUpdateForm" type="update" buttonContent=false }}
   <div class="buttons">
     <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>

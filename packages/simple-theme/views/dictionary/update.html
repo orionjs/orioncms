@@ -1,4 +1,6 @@
 <template name="simpleThemeDictionaryUpdate">
-  <h1>Dictionary</h1>
+  {{# Layout template="simpleThemeTitle" }}
+    Dictionary
+  {{/ Layout }}
   {{> quickForm buttonContent="Save" collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
 </template>
