@@ -12,9 +12,8 @@ Package.onUse(function(api) {
     'meteor-platform',
     ]);
 
-  api.addFiles([
-    'templates.js', 
-    ]);
+  api.addFiles('templates.js');
+  api.addFiles(['templates.html', 'templates_client.js'], 'client');
 
   api.export('ReactiveTemplates');
 });
