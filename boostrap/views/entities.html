@@ -3,7 +3,7 @@
 </template>
 <template name="adminEntitiesCreateDefault">
   <div class="admin-top-nav">
-    <span class="title">Create a newor {{ entity.options.singularName }}</span>
+    <span class="title">Create a new {{ entity.options.singularName }}</span>
   </div>
   <div class="admin-content">
     {{> quickForm collection=entity.collection id="createEntityForm" type="insert" omitFields="createdAt,updatedAt" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-lg-7 col-md-8 col-sm-9 input-container" }}
