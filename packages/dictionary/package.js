@@ -10,7 +10,6 @@ Package.onUse(function(api) {
 
   api.use([
     'orionjs:base',
-    'underscore',
     'aldeed:simple-schema@1.3.2',
     'aldeed:collection2@2.3.3',
     ]);
