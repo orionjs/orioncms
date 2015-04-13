@@ -12,6 +12,11 @@ Router.route('/admin/dictionary', function () {
 }, { name: 'dictionary.update' });
 
 /**
+ * Ensure user is logged in
+ */
+orion.accounts.addProtectedRoute('dictionary.update');
+
+/**
  * Register the link
  */
 orion.addLink({

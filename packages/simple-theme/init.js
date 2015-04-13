@@ -1,5 +1,6 @@
 orion.templates.set('layout', 'simpleThemeLayout');
 orion.templates.set('links', 'simpleThemeSidebar');
+orion.templates.set('login', 'simpleThemeLogin');
 
 orion.templates.set('configUpdate', 'simpleThemeConfigUpdate');
 orion.templates.set('dictionaryUpdate', 'simpleThemeDictionaryUpdate');

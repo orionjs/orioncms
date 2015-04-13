@@ -14,13 +14,15 @@ Package.onUse(function(api) {
     'less',
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
-    'orionjs:tabular'
+    'orionjs:tabular',
+    'useraccounts:bootstrap@1.8.1'
     ]);
 
   api.imply([
     'orionjs:core',
     'iron:layout',
     'aldeed:autoform',
+    'useraccounts:bootstrap'
     ]);
 
   api.addFiles([
@@ -33,6 +35,7 @@ Package.onUse(function(api) {
     'views/layout/layout.less',
     'views/sidebar/sidebar.html',
     'views/sidebar/sidebar.less',
+    'views/accounts/login.html',
     'views/config/update.html',
     'views/dictionary/update.html',
     'views/collections/index.html',

@@ -12,11 +12,16 @@ Router.route('/admin/config', function () {
 }, { name: 'config.update' });
 
 /**
+ * Ensure user is logged in
+ */
+orion.accounts.addProtectedRoute('config.update');
+
+/**
  * Register the link
  */
 orion.addLink({
   section: 'bottom',
-  title: 'Config',
+  title: 'App Configuration',
   routeName: 'config.update',
   activeRouteRegex: 'config',
 });

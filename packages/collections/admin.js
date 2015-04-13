@@ -25,6 +25,11 @@ orion.collections.onCreated(function() {
   }
 
   /**
+   * Ensure user is logged in
+   */
+  orion.accounts.addProtectedRoute('collections.' + this.name + '.index');
+
+  /**
    * Request a template for the collection create
    */
   orion.templates.request('collectionCreate.' + this.name, orion.options.get('collectionsDefaultCreateTemplate'));
@@ -46,6 +51,11 @@ orion.collections.onCreated(function() {
   this.createPath = function() {
     return Router.path('collections.' + self.name + '.create');
   }
+
+  /**
+   * Ensure user is logged in
+   */
+  orion.accounts.addProtectedRoute('collections.' + this.name + '.create');
 
   /**
    * Request a template for the collection update
@@ -77,6 +87,11 @@ orion.collections.onCreated(function() {
     }
     return Router.path('collections.' + self.name + '.update', options);
   }
+
+  /**
+   * Ensure user is logged in
+   */
+  orion.accounts.addProtectedRoute('collections.' + this.name + '.update');
 
   /**
    * Request a template for the collection delete
@@ -117,6 +132,11 @@ orion.collections.onCreated(function() {
     }
     return Router.path('collections.' + self.name + '.delete', options);
   }
+
+  /**
+   * Ensure user is logged in
+   */
+  orion.accounts.addProtectedRoute('collections.' + this.name + '.delete');
 
   /**
    * Register the link
