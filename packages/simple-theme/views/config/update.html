@@ -1,0 +1,6 @@
+<template name="simpleThemeConfigUpdate">
+  {{# Layout template="simpleThemeTitle" }}
+    Config
+  {{/ Layout }}
+  {{> quickForm buttonContent="Save" collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
+</template>

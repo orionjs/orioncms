@@ -33,6 +33,7 @@ Package.onUse(function(api) {
     'views/layout/layout.less',
     'views/sidebar/sidebar.html',
     'views/sidebar/sidebar.less',
+    'views/config/update.html',
     'views/dictionary/update.html',
     'views/collections/index.html',
     'views/collections/index.js',
