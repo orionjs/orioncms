@@ -35,3 +35,40 @@ Tracker.autorun(function () {
     template: orion.templates.get('login'),
   });
 });
+
+
+/**
+ * Display account settings
+ */
+orion.templates.request('accountSettings');
+
+/**
+ * Register the route
+ */
+Router.route('/admin/my-account', function () {
+  this.layout(orion.templates.get('layout'));
+  this.render(orion.templates.get('accountSettings'));
+}, { name: 'accountSettings' });
+orion.accounts.addProtectedRoute('accountSettings');
+
+/**
+ * Register the link
+ */
+orion.addLink({
+  section: 'bottom',
+  title: 'My Account',
+  routeName: 'accountSettings',
+  activeRouteRegex: 'accountSettings',
+});
+
+/**
+ * Create the template events account settings
+ */
+if (Meteor.isClient) {
+  orion.templates.setEvents('accountSettings', {
+    'click .logout': function() {
+      return Meteor.logout();
+    }
+  })
+}
+

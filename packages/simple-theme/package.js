@@ -36,6 +36,7 @@ Package.onUse(function(api) {
     'views/sidebar/sidebar.html',
     'views/sidebar/sidebar.less',
     'views/accounts/login.html',
+    'views/accounts/settings.html',
     'views/config/update.html',
     'views/dictionary/update.html',
     'views/collections/index.html',

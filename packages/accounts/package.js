@@ -21,6 +21,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'accounts.js',
+    'roles.js',
     'admin.js'
     ]);
 
