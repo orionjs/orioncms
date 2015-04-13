@@ -1,14 +1,18 @@
 <template name="simpleThemeLayout">
   <div class="simple-theme-admin">
     <div class="sidebar">
-      {{> reactiveTemplate template="links" }}
+      {{# if dictionaryReady }}
+        {{> reactiveTemplate template="links" }}
+      {{/ if }}
     </div>
     <div class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
             <div class="admin-content">
-              {{> yield }}
+              {{# if dictionaryReady }}
+                {{> yield }}
+              {{/ if }}
             </div>
           </div>
         </div>
