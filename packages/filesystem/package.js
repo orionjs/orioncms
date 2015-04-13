@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:filesystem',
-  summary: 'Collection fs',
+  summary: 'Orion Filesystem',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
 });
@@ -19,12 +19,6 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'filesystem.js',
-    ]);
-
-  api.addFiles([
-    ], 'server');
-
-  api.addFiles([
     ], 'client');
 
   api.export('orion');
