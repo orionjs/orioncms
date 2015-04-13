@@ -10,6 +10,7 @@ Package.onUse(function(api) {
 
   api.use([
     'orionjs:base',
+    'orionjs:config',
     'orionjs:collections',
     'orionjs:dictionary',
     'orionjs:attributes',
