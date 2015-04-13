@@ -19,6 +19,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'filesystem.js',
+    'helpers.js',
     ], 'client');
 
   api.export('orion');

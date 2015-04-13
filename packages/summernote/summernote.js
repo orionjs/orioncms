@@ -23,7 +23,6 @@ orion.templates.setOnRendered('attribute.summernote', function() {
         }
       });
       Tracker.autorun(function () {
-        console.log(upload.progress(), 'progress');
         Session.set('orionSummernoteProgress', upload.progress());
       });
     }
