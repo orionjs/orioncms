@@ -1,0 +1,55 @@
+orion.templates.setOnRendered('attribute.froala', function () {
+  var key = this.data.name;
+  var parent = $('[data-schema-key="' + key + '"]')
+  // Find the element
+  var element = parent.find('.editor');
+
+  // initialize froala
+  element.editable({
+    inlineMode: false,
+    placeholder: ''
+  });
+
+  // set the current value of the attribute
+  element.editable("setHTML", this.data.value, true);
+
+  // Handle image uploads
+  element.on('editable.beforeImageUpload', function (e, editor, files) {
+    var upload = orion.filesystem.upload({
+      fileList: files,
+      name: files[0].name,
+    });
+    Tracker.autorun(function () {
+      if (upload.ready()) {
+        if (upload.error) {
+          console.log(upload.error, "error uploading file")
+        } else {
+          element.editable("insertHTML", "<img class='fr-fin' data-file-id='" + /*upload._id*/ 1 + "' src='" + upload.url + "'>", true);
+        }
+        element.editable("hidePopups");
+      }
+    });
+    return false;
+  });
+  // Handle image deletes
+  // If its uploaded through filesystem, it deletes the image and prevent the server call to delete
+  element.on('editable.beforeRemoveImage', function (e, editor, img) {
+    /* not ready
+    var imgId = img.attr("data-file-id");
+    if (!imgId) {
+      return;
+    }
+    orion.filesystem.remove(imgId);
+    */
+  });
+});
+
+orion.templates.setHelpers('attributeColumn.froala', {
+  preview: function () {
+    var value = this.value;
+    var tmp = document.createElement("DIV");
+    var content = value.replace(/<(?:.|\n)*?>/gm, ' ');
+    if(content.length > 50) content = content.substring(0, 47).trim() + '...';
+    return content;
+  }
+});
