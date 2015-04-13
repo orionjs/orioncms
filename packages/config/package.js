@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'orionjs:s3',
-  summary: 'Collection fs S3',
+  name: 'orionjs:config',
+  summary: 'Orion Filesystem',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
 });
@@ -10,21 +10,26 @@ Package.onUse(function(api) {
 
   api.use([
     'orionjs:base',
-    'orionjs:filesystem',
+    'aldeed:simple-schema@1.3.2',
+    'aldeed:collection2@2.3.3',
+    'matb33:collection-hooks',
+    'meteorhacks:inject-initial'
     ]);
 
   api.imply([
     ]);
 
   api.addFiles([
-    's3.js',
+    'config.js',
+    'admin.js'
     ]);
 
   api.addFiles([
-    
+    'config_server.js'
     ], 'server');
 
   api.addFiles([
+    'config_client.js'
     ], 'client');
 
   api.export('orion');
