@@ -1,13 +1,43 @@
 orion.templates.setOnRendered('attribute.summernote', function() {
   this.subscribe('summernoteImages');
+  Session.set('orionSummernoteIsUploading', false);
   var element = this.$('.summernote');
   element.summernote({
-      height: 300,
-      onImageUpload: function(files, editor, $editable) {
-        // upload file here
-      }
+    height: 300,
+    onImageUpload: function(files, editor, $editable) {
+      var upload = orion.filesystem.upload({
+        fileList: files,
+        name: files[0].name,
+      });
+      Session.set('orionSummernoteIsUploading', true);
+      Session.set('orionSummernoteProgress', 0);
+      Tracker.autorun(function () {
+        if (upload.ready()) {
+          if (upload.error) {
+            console.log(upload.error);
+            alert(upload.error.reason);
+          } else {
+            editor.insertImage($editable, upload.url);
+          }
+          Session.set('orionSummernoteIsUploading', false);
+        }
+      });
+      Tracker.autorun(function () {
+        console.log(upload.progress(), 'progress');
+        Session.set('orionSummernoteProgress', upload.progress());
+      });
+    }
   });
   element.code(this.data.value);
+})
+
+orion.templates.setHelpers('attribute.summernote', {
+  isUploading: function() {
+    return Session.get('orionSummernoteIsUploading');
+  },
+  progress: function() {
+    return Session.get('orionSummernoteProgress');
+  }
 })
 
 orion.templates.setHelpers('attributeColumn.summernote', {
