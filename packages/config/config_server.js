@@ -28,7 +28,7 @@ Meteor.publish(null, function() {
     return orion.config.collection.find();
   } 
   return [];
-});
+}, { is_auto: true });
 
 /**
  * Get the config from the database only once

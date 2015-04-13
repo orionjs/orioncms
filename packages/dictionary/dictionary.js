@@ -23,7 +23,7 @@ orion.dictionary.allow({
     return false;
   },
   /**
-   * This is momentary
+   * TODO: Add permissions here
    */
   'update': function() {
     return true;

@@ -56,6 +56,5 @@ orion.templates.setHelpers('attribute.file', {
 orion.templates.setOnRendered('attribute.file', function () {
   Session.set('uploadProgress' + this.data.name, null);
   Session.set('isUploading' + this.data.name, false);
-  console.log(this.data);
   Session.set('file' + this.data.name, this.data.value);
 });

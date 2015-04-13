@@ -29,6 +29,7 @@ Package.onUse(function(api) {
     ], 'server');
 
   api.addFiles([
+    'dictionary_client.js',
     ], 'client');
 
   api.export('orion');
