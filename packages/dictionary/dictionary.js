@@ -7,7 +7,9 @@ orion.dictionary = new Mongo.Collection('dictionary');
  * Register dictionary actions and helpers for roles
  */
 orion.roles.registerAction('dictionary.update', true);
-orion.roles.registerHelper('dictionary.getAllowedCategories', false);
+orion.roles.registerHelper('dictionary.getAllowedCategories', function() {
+  return orion.dictionary.simpleSchema()._firstLevelSchemaKeys;
+});
 
 /**
  * Dictionary permissions
