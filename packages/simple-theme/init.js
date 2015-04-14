@@ -1,3 +1,6 @@
+orion.options.init('homePath')
+orion.options.init('siteName');
+
 orion.templates.set('layout', 'simpleThemeLayout');
 orion.templates.set('links', 'simpleThemeSidebar');
 orion.templates.set('login', 'simpleThemeLogin');

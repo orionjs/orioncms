@@ -1,16 +1,20 @@
 <template name="simpleThemeCollectionsUpdate">
-  {{# Layout template="simpleThemeTitle" }}
-    Update {{ collection.singularName }}
-  {{/ Layout }}
-
-  {{# if collection.canShowUpdate }}
-    {{> quickForm collection=collection doc=item id="simpleThemeCollectionsUpdateForm" type="update" buttonContent=false }}
-    <div class="buttons">
-      <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
-      {{# if collection.canShowRemove }}
-        <a class="btn btn-danger" href="{{ collection.deletePath item._id }}">Delete</a>
+  {{# Layout template="simpleThemeMediumContentOffset" }}
+    {{# Layout template="simpleThemeTitle" }}
+      Update {{ collection.singularName }}
+    {{/ Layout }}
+    {{# Layout template="simpleThemeContentContainer" }}
+      {{# if collection.canShowUpdate }}
+        {{> quickForm collection=collection doc=item id="simpleThemeCollectionsUpdateForm" type="update" buttonContent=false }}
+        <br>
+        <div class="buttons text-right">
+          <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
+          {{# if collection.canShowRemove }}
+            <a class="btn btn-danger" href="{{ collection.deletePath item._id }}">Delete</a>
+          {{/ if }}
+          <a class="btn btn-primary save-btn">Save</a>
+        </div>
       {{/ if }}
-      <a class="btn btn-primary save-btn">Save</a>
-    </div>
-  {{/ if }}
+    {{/ Layout }}
+  {{/ Layout }}
 </template>

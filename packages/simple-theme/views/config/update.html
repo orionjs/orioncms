@@ -1,6 +1,26 @@
 <template name="simpleThemeConfigUpdate">
-  {{# Layout template="simpleThemeTitle" }}
-    Config
+  {{# Layout template="simpleThemeSmallContentOffset" }}
+    {{# Layout template="simpleThemeTitle" }}
+      Config
+    {{/ Layout }}
+    {{# Layout template="simpleThemeContentContainer" }}
+      <p>
+        {{# each getCategories }}
+          <a class="btn btn-primary btn-xs" data-category="{{ this }}">{{ this }}</a>
+        {{/ each }}
+      </p>
+      <hr>
+      {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
+        {{# if getFields }}
+          {{# each afFieldNames fields=getFields }}
+            {{> afQuickField name=this.name options=afOptionsFromSchema }}
+          {{/ each}}
+        {{/ if }}
+        <br>
+        <div class="text-right">
+          <button class="btn btn-primary">Save</button>
+        </div>
+      {{/ autoForm }}
+    {{/ Layout }}
   {{/ Layout }}
-  {{> quickForm buttonContent="Save" collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
 </template>

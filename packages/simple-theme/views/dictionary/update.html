@@ -1,19 +1,24 @@
 <template name="simpleThemeDictionaryUpdate">
-  {{# Layout template="simpleThemeTitle" }}
-    Dictionary
+  {{# Layout template="simpleThemeSmallContentOffset" }}
+    {{# Layout template="simpleThemeTitle" }}
+      Dictionary
+    {{/ Layout }}
+    {{# Layout template="simpleThemeContentContainer" }}
+      <p>
+        {{# each getCategories }}
+          <a class="btn btn-primary btn-xs" data-category="{{ this }}">{{ this }}</a>
+        {{/ each }}
+      </p>
+      <hr>
+      {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
+        {{# if currentCategory }}
+          {{> afQuickFields name=currentCategory }}
+        {{/ if }}
+        <br>
+        <div class="text-right">
+          <button class="btn btn-primary">Save</button>
+        </div>
+      {{/ autoForm }}
+    {{/ Layout }}
   {{/ Layout }}
-  <p>
-    {{# each getAllowedFields }}
-      <a class="btn btn-primary btn-xs" data-category="{{ this }}">{{ this }}</a>
-    {{/ each }}
-  </p>
-
-  {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
-    {{# if currentCategory }}
-      <br>
-      {{> afQuickFields name=currentCategory }}
-      <br>
-    {{/ if }}
-    <button class="btn btn-primary">Save</button>
-  {{/ autoForm }}
 </template>

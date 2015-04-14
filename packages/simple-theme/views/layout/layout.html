@@ -6,6 +6,7 @@
       {{/ if }}
     </div>
     <div class="content">
+      {{> simpleThemeHeader }}
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
@@ -21,11 +22,44 @@
   </div>
 </template>
 
+<template name="simpleThemeHeader">
+  <div class="navbar">
+    <div class="navbar-header">
+      <div class="navbar-header">
+        <a class="menu-toggle navbar-brand">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template name="simpleThemeSmallContentOffset">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      {{> yield }}
+    </div>
+  </div>
+</template>
+<template name="simpleThemeMediumContentOffset">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      {{> yield }}
+    </div>
+  </div>
+</template>
+<template name="simpleThemeContentContainer">
+  <div class="well">
+    {{> yield }}
+  </div>
+</template>
+
 <template name="simpleThemeTitle">
-  <h1>  
-    <a class="menu-toggle btn btn-default">
-      <i class="fa fa-bars"></i>
-    </a>
+  <h1 class="title">  
     {{> yield }}
   </h1>
   <hr>

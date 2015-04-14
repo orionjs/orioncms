@@ -1,13 +1,15 @@
 <template name="simpleThemeCollectionsIndex">
-  {{# Layout template="simpleThemeTitle" }}
-    {{ collection.link.title }}
+  {{# Layout template="simpleThemeMediumContentOffset" }}
+    {{# Layout template="simpleThemeTitle" }}
+      {{ collection.link.title }}
+      {{# if collection.canShowCreate }}
+        <a href="{{ collection.createPath }}" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></a>
+      {{/ if }}
+    {{/ Layout }}
+    {{# Layout template="simpleThemeContentContainer" }}
+      {{# if collection.canIndex }}
+        {{> tabular table=collection.tabularTable class="table index-table" }}
+      {{/ if }}
+    {{/ Layout }}
   {{/ Layout }}
-  {{# if collection.canShowCreate }}
-    <a href="{{ collection.createPath }}" class="btn btn-primary">Create</a>
-    <br>
-    <br>
-  {{/ if }}
-  {{# if collection.canIndex }}
-    {{> tabular table=collection.tabularTable class="table table-striped table-bordered table-condensed index-table" }}
-  {{/ if }}
 </template>
