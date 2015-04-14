@@ -12,9 +12,8 @@ Package.onUse(function(api) {
     'meteor-platform',
     ]);
 
-  api.addFiles([
-    'options.js', 
-    ]);
+  api.addFiles('options.js');
+  api.addFiles('options_client.js', 'client');
 
   api.export('Options');
 });
