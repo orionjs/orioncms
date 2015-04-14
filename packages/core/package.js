@@ -15,7 +15,6 @@ Package.onUse(function(api) {
     'orionjs:collections',
     'orionjs:dictionary',
     'orionjs:attributes',
-    'insecure',
     ]);
 
   api.imply([
