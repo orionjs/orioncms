@@ -12,7 +12,8 @@ Package.onUse(function(api) {
     'orionjs:base',
     'orionjs:roles',
     'accounts-base',
-    'useraccounts:core@1.8.1'
+    'useraccounts:core@1.8.1',
+    'aldeed:simple-schema@1.3.2'
     ]);
 
   api.imply([

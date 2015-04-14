@@ -47,6 +47,7 @@ Tracker.autorun(function () {
  */
 orion.templates.request('account.index');
 orion.templates.request('account.password');
+orion.templates.request('account.profile');
 
 /**
  * Register the route
@@ -74,6 +75,15 @@ Router.route('/admin/my-account/change-password', function () {
 orion.accounts.addProtectedRoute('account.password');
 
 /**
+ * To update the profile
+ */
+Router.route('/admin/my-account/profile', function () {
+  this.layout(orion.templates.get('layout'));
+  this.render(orion.templates.get('account.profile'));
+}, { name: 'account.profile' });
+orion.accounts.addProtectedRoute('account.profile');
+
+/**
  * Register the link
  */
 orion.addLink({
@@ -90,6 +100,15 @@ if (Meteor.isClient) {
   orion.templates.setEvents('account.index', {
     'click .logout': function() {
       return Meteor.logout();
+    }
+  })
+
+  orion.templates.setHelpers('account.profile', {
+    getDoc: function() {
+      return Meteor.user();
+    },
+    getSchema: function() {
+      return orion.accounts.profileSchema;
     }
   })
 }

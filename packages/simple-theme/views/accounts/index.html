@@ -1,0 +1,36 @@
+<template name="simpleThemeAccountIndex">
+  {{# Layout template="simpleThemeSmallContentOffset" }}
+    {{# Layout template="simpleThemeTitle" }}
+      My Account
+    {{/ Layout }}
+
+    {{# Layout template="simpleThemeContentContainer" }}
+      <div class="row">
+        {{# if currentUser.profile.picture }}
+          <div class="col-sm-2">
+            <p>
+              <img class="profile-picture" src="{{ currentUser.profile.picture.url }}">
+            </p>
+          </div>
+        {{/ if }}
+        <div class="col-sm-10">
+          <p><b>{{ currentUser.profile.name }}</b></p>
+          {{# each currentUser.emails }}
+            <p>{{ address }}</p>
+          {{/ each }}
+          <p>
+          {{# each currentUser.roles }}
+            <span class="label label-danger">{{ this }}</span>
+          {{/ each }}
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div class="buttons">
+        <a class="btn btn-default btn-xs logout">Logout</a>
+        <a href="{{ pathFor 'account.profile' }}" class="btn btn-default btn-xs">Update Profile</a>
+        <a href="{{ pathFor 'account.password' }}" class="btn btn-default btn-xs">Change Password</a>
+      </div>
+    {{/ Layout }}
+  {{/ Layout }}
+</template>
