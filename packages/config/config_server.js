@@ -21,13 +21,12 @@ if (orion.config.collection.find().count() === 0) {
  * Publications of the config. Only for admins
  */
 Meteor.publish(null, function() {
-  /*if (!this.userId) {
+  if (!this.userId) {
     return [];
-  }*/
-  if (/*User is admin*/ true) {
+  }
+  if (orion.roles.userHasPermission(this.userId, 'config.update')) {
     return orion.config.collection.find();
-  } 
-  return [];
+  }
 }, { is_auto: true });
 
 /**

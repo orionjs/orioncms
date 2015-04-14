@@ -1,10 +1,14 @@
 <template name="simpleThemeCollectionsCreate">
-  {{# Layout template="simpleThemeTitle" }}
-    Create a {{ collection.singularName }}
-  {{/ Layout }}
-  {{> quickForm collection=collection id="simpleThemeCollectionsCreateForm" type="insert" buttonContent=false }}
-  <div class="buttons">
-    <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
-    <a class="btn btn-primary create-btn">Create</a>
-  </div>
+  {{# if collection.canShowCreate }}
+    {{# Layout template="simpleThemeTitle" }}
+      Create a {{ collection.singularName }}
+    {{/ Layout }}
+    {{> quickForm collection=collection id="simpleThemeCollectionsCreateForm" type="insert" buttonContent=false }}
+    <div class="buttons">
+      <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
+      <a class="btn btn-primary create-btn">Create</a>
+    </div>
+  {{ else }}
+    <p><b>No permissions</b></p>
+  {{/ if }}
 </template>

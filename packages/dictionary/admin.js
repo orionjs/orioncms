@@ -24,6 +24,7 @@ orion.addLink({
   title: 'Dictionary',
   routeName: 'dictionary.update',
   activeRouteRegex: 'dictionary',
+  permission: 'dictionary.update',
 });
 
 /**
@@ -34,7 +35,9 @@ if (Meteor.isClient) {
   orion.templates.setHelpers('dictionaryUpdate', {
     getDoc: function() {
       return orion.dictionary.findOne();
+    },
+    getAllowedFields: function() {
+      return orion.roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories');
     }
   })
 }
-

@@ -3,12 +3,13 @@
  */
 orion.options.init('links', []);
 orion.addLink = function(options) {
-  check(options, {
+  check(options, Match.ObjectIncluding({
     section: String,
     title: String,
     routeName: String,
     activeRouteRegex: Match.Optional(String),
-  });
+    permission: Match.Optional(String),
+  }));
   orion.options.arrayPush('links', options);
 }
 
@@ -51,6 +52,13 @@ if (Meteor.isClient) {
       if (section) {
         links = _.where(links, { section: section });
       }
+      _.each(links, function(value, key, list){
+        if (value.permission) {
+          if (!orion.roles.userHasPermission(Meteor.userId(), value.permission)) {
+            delete list[key];
+          }
+        }
+      });
       return links;
     }
   });

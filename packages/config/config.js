@@ -17,6 +17,11 @@ SimpleSchema.extendOptions({
 });
 
 /**
+ * Register the action for the permissions
+ */
+orion.roles.registerAction('config.update', true);
+
+/**
  * Permissions for the dictionary.
  */
 orion.config.collection.allow({
@@ -29,12 +34,6 @@ orion.config.collection.allow({
     return false;
   },
   /**
-   * TODO: Fix this
-   */
-  'update': function(userId, doc, fields, modifier) {
-    return true;
-  },
-  /**
    * No one can remove a config object
    * becouse it only uses one.
    */
@@ -42,6 +41,18 @@ orion.config.collection.allow({
     return false;
   }
 });
+
+orion.config.collection.allow({
+  'update': function(userId, doc, fields, modifier) {
+    return orion.roles.allow(userId, 'config.update', userId, doc, fields, modifier);
+  }
+});
+
+orion.config.collection.deny({
+  'update': function(userId, doc, fields, modifier) {
+    return orion.roles.deny(userId, 'config.update', userId, doc, fields, modifier);
+  }
+})
 
 /**
  * Function to add a config.

@@ -2,10 +2,12 @@
   {{# Layout template="simpleThemeTitle" }}
     {{ collection.link.title }}
   {{/ Layout }}
-  <a href="{{ collection.createPath }}">
-    <b>Create</b>
-  </a>
-  <br>
-  <br>
-  {{> tabular table=collection.tabularTable class="table table-striped table-bordered table-condensed index-table" }}
+  {{# if collection.canShowCreate }}
+    <a href="{{ collection.createPath }}" class="btn btn-primary">Create</a>
+    <br>
+    <br>
+  {{/ if }}
+  {{# if collection.canIndex }}
+    {{> tabular table=collection.tabularTable class="table table-striped table-bordered table-condensed index-table" }}
+  {{/ if }}
 </template>

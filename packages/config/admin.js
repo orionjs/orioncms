@@ -24,6 +24,7 @@ orion.addLink({
   title: 'App Configuration',
   routeName: 'config.update',
   activeRouteRegex: 'config',
+  permission: 'config.update'
 });
 
 /**

@@ -23,6 +23,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'init.js',
     'new.js',
+    'permissions.js',
     'admin.js',
     ]);
 

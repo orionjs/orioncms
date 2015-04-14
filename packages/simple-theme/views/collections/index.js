@@ -5,8 +5,10 @@ Template.simpleThemeCollectionsIndex.events({
     var dataTable = $(event.target).closest('table').DataTable();
     var rowData = dataTable.row(event.currentTarget).data();
     if (rowData) {
-      var path = collection.updatePath(rowData);
-      Router.go(path);
+      if (collection.canShowUpdate()) {
+        var path = collection.updatePath(rowData);
+        Router.go(path);
+      }
     }
   }
 });

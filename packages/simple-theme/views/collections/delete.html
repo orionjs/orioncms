@@ -3,8 +3,11 @@
     Delete {{ collection.singularName }}
   {{/ Layout }}
   <p>Are you sure you want to delete this {{ collection.singularName }}?</p>
+
+  {{# if collection.canShowRemove }}
   <p>
     <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
     <a class="btn btn-danger confirm-delete">Confirm</a>
   </p>
+  {{/ if }}
 </template>
