@@ -79,11 +79,11 @@ orion.attributes.registerAttribute = function(name, attribute) {
   check(attribute, {
     template: String,
     columnTemplate: Match.Optional(String),
-    getSchema: Match.Any,
-    valueOut: Match.Any,
-    valueIn: Match.Optional(Match.Any),
-    valueConverters: Match.Optional(Match.Any),
-    contextAdjust: Match.Optional(Match.Any),
+    getSchema: Function,
+    valueOut: Function,
+    valueIn: Match.Optional(Function),
+    valueConverters: Match.Optional(Function),
+    contextAdjust: Match.Optional(Function),
   });
 
   orion.templates.request('attribute.' + name, attribute.template);

@@ -5,13 +5,13 @@ var getSchema = function(options, hasMany) {
     pluralName: Match.Optional(String),
     singularName: Match.Optional(String),
     collection: Mongo.Collection,
-    filter: Match.Optional(Match.Any),
-    createFilter: Match.Optional(Match.Any),
-    create: Match.Optional(Match.Any),
+    filter: Match.Optional(Function),
+    createFilter: Match.Optional(Function),
+    create: Match.Optional(Function),
     aditionalFields: Match.Optional(Array),
     render: Match.Optional({
-      item: Match.Any,
-      option: Match.Any
+      item: Function,
+      option: Function
     })
   });
 
@@ -111,8 +111,6 @@ orion.attributes.registerAttribute('hasOne', {
     return getSchema(options, false);
   },
   valueOut: function() {
-    console.log(this);
-    console.log(this.val(), 'value');
     return this.val();
   }
 });
