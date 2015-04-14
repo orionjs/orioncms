@@ -52,7 +52,7 @@ if (Meteor.isClient) {
     currentCategory: function() {
       return Session.get('dictionaryUpdateCurrentCategory');
     },
-    getAllowedFields: function() {
+    getCategories: function() {
       return orion.roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories');
     }
   })

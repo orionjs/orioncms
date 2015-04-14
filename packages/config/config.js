@@ -65,7 +65,7 @@ orion.config.add = function(name, category, options) {
   newSchema[name] = _.extend({
     type: String,
     secret: false,
-    label: category + ' - ' + name,
+    label: name,
     public: false,
     category: category,
     name: name

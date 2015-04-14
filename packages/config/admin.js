@@ -31,9 +31,30 @@ orion.addLink({
  * Create the template helpers for a dictionary
  */
 if (Meteor.isClient) {
+
+  orion.templates.setOnRendered('configUpdate', function() {
+    var categories = _.uniq(_.pluck(orion.config.collection.simpleSchema()._schema, 'category'));
+    var defaultCategory = categories && categories[0]
+    Session.set('configUpdateCurrentCategory', defaultCategory);
+  })
+
+  orion.templates.setEvents('configUpdate', {
+    'click [data-category]': function(event) {
+      var newCategory = $(event.currentTarget).attr('data-category');
+      Session.set('configUpdateCurrentCategory', newCategory);
+    }
+  })
+
   orion.templates.setHelpers('configUpdate', {
     getDoc: function() {
       return orion.config.collection.findOne();
+    },
+    getFields: function() {
+      var currentCategory = Session.get('configUpdateCurrentCategory');
+      return _.pluck(_.where(orion.config.collection.simpleSchema()._schema, { category: currentCategory }), 'name')
+    },
+    getCategories: function() {
+      return _.uniq(_.pluck(orion.config.collection.simpleSchema()._schema, 'category'));
     }
   })
 }
