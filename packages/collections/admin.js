@@ -145,6 +145,8 @@ orion.collections.onCreated(function() {
     routeName: 'collections.' + this.name + '.index',
     activeRouteRegex: 'collections.' + this.name,
     permission: 'collection.' + this.name + '.index',
+    title: this.name[0].toUpperCase() + this.name.slice(1),
+    section: 'medium'
   }, this.link);
   orion.addLink(linkOptions);
 })
