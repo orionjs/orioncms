@@ -6,11 +6,9 @@ orion.attributes.registerAttribute('file', {
       url: {
         type: String
       },
-      /** TODO
       fileId: {
         type: String
       }
-      */
     });
     return {
       type: subSchema

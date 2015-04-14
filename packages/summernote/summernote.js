@@ -8,6 +8,7 @@ orion.templates.setOnRendered('attribute.summernote', function() {
       var upload = orion.filesystem.upload({
         fileList: files,
         name: files[0].name,
+        uploader: 'summernote'
       });
       Session.set('orionSummernoteIsUploading', true);
       Session.set('orionSummernoteProgress', 0);

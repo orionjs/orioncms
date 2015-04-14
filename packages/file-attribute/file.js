@@ -1,9 +1,8 @@
 orion.templates.setEvents('attribute.file', {
   'click .btn-remove': function(event, template) {
-    try {
-      orion.filesystem.remove(this.fileId);
-    } catch (e) {
-      console.log(e, 'error removing image')
+    var file = Session.get('file' + template.data.name);
+    if (file && file.fileId) {
+      orion.filesystem.remove(file.fileId);
     }
     Session.set('file' + template.data.name, null);
   },
@@ -15,6 +14,7 @@ orion.templates.setEvents('attribute.file', {
     var upload = orion.filesystem.upload({
       fileList: files,
       name: files[0].name,
+      uploader: 'file-attribute'
     });
 
     Session.set('isUploading' + self.name, true);
@@ -28,7 +28,7 @@ orion.templates.setEvents('attribute.file', {
           alert(upload.error.reason);
         } else {
           Session.set('file' + self.name, {
-            //fileId: upload._id,
+            fileId: upload.fileId,
             url: upload.url
           });
         }

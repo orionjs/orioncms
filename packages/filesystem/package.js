@@ -19,6 +19,14 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'filesystem.js',
+    ]);
+
+  api.addFiles([
+    'filesystem_server.js',
+    ], 'server');
+
+  api.addFiles([
+    'filesystem_client.js',
     'helpers.js',
     ], 'client');
 

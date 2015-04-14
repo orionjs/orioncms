@@ -30,8 +30,8 @@ if (Meteor.isClient) {
   }
 }
 
-orion.config.add('AWS_API_KEY', 'aws', {public: true})
-orion.config.add('AWS_API_SECRET', 'aws', {secret: true})
+orion.config.add('AWS_API_KEY', 'aws')
+orion.config.add('AWS_API_SECRET', 'aws', { secret: true })
 orion.config.add('AWS_S3_BUCKET', 'aws')
 
 if (Meteor.isServer) {

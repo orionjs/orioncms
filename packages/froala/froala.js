@@ -18,6 +18,7 @@ orion.templates.setOnRendered('attribute.froala', function () {
     var upload = orion.filesystem.upload({
       fileList: files,
       name: files[0].name,
+      uploader: 'froala'
     });
     Tracker.autorun(function () {
       if (upload.ready()) {
