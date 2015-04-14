@@ -18,7 +18,7 @@
 </template>
 
 <template name="simpleThemeSidebarLink">
-  <li class="{{isActiveRoute regex=activeRouteRegex }}">
+  <li class="{{ isActiveRoute regex=activeRouteRegex }}">
     <a href="{{ pathFor routeName }}">{{ title }}</a>
   </li>
 </template>

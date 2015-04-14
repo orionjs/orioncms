@@ -13,6 +13,7 @@ Package.onUse(function(api) {
     'accounts-base',
     'aldeed:simple-schema@1.3.2',
     'aldeed:collection2@2.3.3',
+    'dburles:collection-helpers@1.0.3',
     ]);
 
   api.imply([

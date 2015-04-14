@@ -259,4 +259,10 @@ Roles.userHasPermission = function() {
 
 Roles._adminRole = new Roles.role('admin');
 
+Meteor.users.helpers({
+  roles: function () {
+    var object = Roles._collection.findOne({ userId: this._id });
+    return object ? object.roles : [];
+  }
+});
 

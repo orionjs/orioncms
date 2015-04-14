@@ -4,7 +4,7 @@
 orion.templates.request('login');
 
 /**
- * Register the route
+ * Register the routes
  */
 Router.route('/login', function () {
   this.render(orion.templates.get('login'));
@@ -45,16 +45,33 @@ Tracker.autorun(function () {
 /**
  * Display account settings
  */
-orion.templates.request('accountSettings');
+orion.templates.request('account.index');
+orion.templates.request('account.password');
 
 /**
  * Register the route
  */
 Router.route('/admin/my-account', function () {
   this.layout(orion.templates.get('layout'));
-  this.render(orion.templates.get('accountSettings'));
-}, { name: 'accountSettings' });
-orion.accounts.addProtectedRoute('accountSettings');
+  this.render(orion.templates.get('account.index'));
+}, { name: 'account.index' });
+orion.accounts.addProtectedRoute('account.index');
+
+/**
+ * Allow password change
+ */
+AccountsTemplates.configure({
+  enablePasswordChange: true
+});
+
+/**
+ * Register the route
+ */
+Router.route('/admin/my-account/change-password', function () {
+  this.layout(orion.templates.get('layout'));
+  this.render(orion.templates.get('account.password'));
+}, { name: 'account.password' });
+orion.accounts.addProtectedRoute('account.password');
 
 /**
  * Register the link
@@ -62,15 +79,15 @@ orion.accounts.addProtectedRoute('accountSettings');
 orion.addLink({
   section: 'bottom',
   title: 'My Account',
-  routeName: 'accountSettings',
-  activeRouteRegex: 'accountSettings',
+  routeName: 'account.index',
+  activeRouteRegex: 'account',
 });
 
 /**
  * Create the template events account settings
  */
 if (Meteor.isClient) {
-  orion.templates.setEvents('accountSettings', {
+  orion.templates.setEvents('account.index', {
     'click .logout': function() {
       return Meteor.logout();
     }
