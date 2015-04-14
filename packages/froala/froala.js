@@ -25,7 +25,7 @@ orion.templates.setOnRendered('attribute.froala', function () {
         if (upload.error) {
           console.log(upload.error, "error uploading file")
         } else {
-          element.editable("insertHTML", "<img class='fr-fin' data-file-id='" + /*upload._id*/ 1 + "' src='" + upload.url + "'>", true);
+          element.editable("insertHTML", "<img class='fr-fin' data-file-id='" + upload.fileId + "' src='" + upload.url + "'>", true);
         }
         element.editable("hidePopups");
       }
@@ -35,13 +35,11 @@ orion.templates.setOnRendered('attribute.froala', function () {
   // Handle image deletes
   // If its uploaded through filesystem, it deletes the image and prevent the server call to delete
   element.on('editable.beforeRemoveImage', function (e, editor, img) {
-    /* not ready
     var imgId = img.attr("data-file-id");
     if (!imgId) {
       return;
     }
     orion.filesystem.remove(imgId);
-    */
   });
 });
 
