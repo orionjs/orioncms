@@ -27,13 +27,18 @@ orion.accounts.addProtectedRoute = function(routeName) {
 }
 
 /**
- * Set login template to ensure signed in
+ * Set login template to ensure signed in.
+ * First we need to create a route (in accounts templates)
+ */
+AccountsTemplates.configureRoute('ensureSignedIn', {
+  template: 'none'
+});
+
+/**
+ * Then we can override it
  */
 Tracker.autorun(function () {
-  if (!orion.templates.get('login')) return;
-  AccountsTemplates.configureRoute('ensureSignedIn', {
-    template: orion.templates.get('login'),
-  });
+  AccountsTemplates.routes.ensureSignedIn.template = orion.templates.get('login');
 });
 
 

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:accounts',
-  summary: 'Orion accuonts mannager',
+  summary: 'Orion accounts mannager',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
 });
@@ -10,18 +10,18 @@ Package.onUse(function(api) {
 
   api.use([
     'orionjs:base',
+    'orionjs:roles',
     'accounts-base',
-    'useraccounts:core@1.8.1',
+    'useraccounts:core@1.8.1'
     ]);
 
   api.imply([
     'accounts-base',
-    'useraccounts:core'
+    'useraccounts:core',
     ]);
 
   api.addFiles([
     'accounts.js',
-    'roles.js',
     'admin.js'
     ]);
 
