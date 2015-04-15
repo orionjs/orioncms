@@ -15,14 +15,16 @@ Package.onUse(function(api) {
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
     'orionjs:tabular',
-    'useraccounts:bootstrap@1.8.1'
+    'useraccounts:bootstrap@1.8.1',
+    'zimme:iron-router-active@1.0.4'
     ]);
 
   api.imply([
     'orionjs:core',
     'iron:layout',
     'aldeed:autoform',
-    'useraccounts:bootstrap'
+    'useraccounts:bootstrap',
+    'zimme:iron-router-active'
     ]);
 
   api.addFiles([
