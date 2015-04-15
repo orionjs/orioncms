@@ -34,7 +34,7 @@ orion.addLink({
 if (Meteor.isClient) {
 
   ReactiveTemplates.onRendered('dictionaryUpdate', function() {
-    var defaultCategory = orion.dictionary.simpleSchema()._firstLevelSchemaKeys && orion.dictionary.simpleSchema()._firstLevelSchemaKeys[0];
+    var defaultCategory = _.first(_.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories')));
     Session.set('dictionaryUpdateCurrentCategory', defaultCategory);
   })
 
