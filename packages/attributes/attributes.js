@@ -77,16 +77,18 @@ orion.arrayOfAttribute = function(name, schema, options) {
 orion.attributes.registerAttribute = function(name, attribute) {
   check(name, String);
   check(attribute, {
-    template: String,
+    template: Match.Optional(String),
     columnTemplate: Match.Optional(String),
     getSchema: Function,
-    valueOut: Function,
+    valueOut: Match.Optional(Function),
     valueIn: Match.Optional(Function),
     valueConverters: Match.Optional(Function),
     contextAdjust: Match.Optional(Function),
   });
 
-  ReactiveTemplates.request('attribute.' + name, attribute.template);
+  if (attribute.template) {
+    ReactiveTemplates.request('attribute.' + name, attribute.template);
+  }
 
   if (attribute.columnTemplate) {
     ReactiveTemplates.request('attributeColumn.' + name, attribute.columnTemplate);
@@ -94,7 +96,7 @@ orion.attributes.registerAttribute = function(name, attribute) {
 
   orion.attributes[name] = attribute;
 
-  if (Meteor.isClient) {
+  if (Meteor.isClient && attribute.template) {
     Tracker.autorun(function () {
       AutoForm.addInputType('orion.' + name, {
         template: ReactiveTemplates.get('attribute.' + name),
