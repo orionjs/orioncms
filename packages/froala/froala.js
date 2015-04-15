@@ -1,4 +1,4 @@
-orion.templates.setOnRendered('attribute.froala', function () {
+ReactiveTemplates.onRendered('attribute.froala', function () {
   var key = this.data.name;
   var parent = $('[data-schema-key="' + key + '"]')
   // Find the element
@@ -43,7 +43,7 @@ orion.templates.setOnRendered('attribute.froala', function () {
   });
 });
 
-orion.templates.setHelpers('attributeColumn.froala', {
+ReactiveTemplates.helpers('attributeColumn.froala', {
   preview: function () {
     var value = this.value;
     var tmp = document.createElement("DIV");

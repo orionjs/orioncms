@@ -11,8 +11,8 @@ Package.onUse(function(api) {
   api.use([
     'meteor-platform',
     'underscore',
-    'nicolaslopezj:options',
-    'nicolaslopezj:reactive-templates',
+    'nicolaslopezj:options@1.0.0',
+    'nicolaslopezj:reactive-templates@1.0.0',
     'iron:router@1.0.7',
     'zimme:iron-router-active@1.0.1',
     ]);
@@ -20,7 +20,9 @@ Package.onUse(function(api) {
   api.imply([
     'meteor-platform',
     'underscore',
-    'iron:router'
+    'iron:router',
+    'nicolaslopezj:options',
+    'nicolaslopezj:reactive-templates',
     ]);
 
   api.addFiles([

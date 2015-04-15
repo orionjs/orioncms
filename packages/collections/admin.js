@@ -4,15 +4,15 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection
    */
-  orion.templates.request('collectionIndex.' + this.name, orion.options.get('collectionsDefaultIndexTemplate'));
+  ReactiveTemplates.request('collectionIndex.' + this.name, orion.options.get('collectionsDefaultIndexTemplate'));
 
   /**
    * Register the index route
    */
   Router.route('/admin/' + this.routePath, function () {
     this.collection = self;
-    this.layout(orion.templates.get('layout'));
-    this.render(orion.templates.get('collectionIndex.' + self.name), {
+    this.layout(ReactiveTemplates.get('layout'));
+    this.render(ReactiveTemplates.get('collectionIndex.' + self.name), {
       data: function() {
         return {
           collection: self,
@@ -32,15 +32,15 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection create
    */
-  orion.templates.request('collectionCreate.' + this.name, orion.options.get('collectionsDefaultCreateTemplate'));
+  ReactiveTemplates.request('collectionCreate.' + this.name, orion.options.get('collectionsDefaultCreateTemplate'));
 
   /**
    * Register the create route
    */
   Router.route('/admin/' + this.routePath + '/create', function () {
     this.collection = self;
-    this.layout(orion.templates.get('layout'));
-    this.render(orion.templates.get('collectionCreate.' + self.name), {
+    this.layout(ReactiveTemplates.get('layout'));
+    this.render(ReactiveTemplates.get('collectionCreate.' + self.name), {
       data: function() {
         return {
           collection: self,
@@ -60,18 +60,18 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection update
    */
-  orion.templates.request('collectionUpdate.' + this.name, orion.options.get('collectionsDefaultUpdateTemplate'));
+  ReactiveTemplates.request('collectionUpdate.' + this.name, orion.options.get('collectionsDefaultUpdateTemplate'));
   
   /**
    * Register the update route
    */
   Router.route('/admin/' + this.routePath + '/:_id', function () {
     this.collection = self;
-    this.layout(orion.templates.get('layout'));
+    this.layout(ReactiveTemplates.get('layout'));
     var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
     var item = self.findOne(this.params._id);
     this.item = item;
-    this.render(orion.templates.get('collectionUpdate.' + self.name), {
+    this.render(ReactiveTemplates.get('collectionUpdate.' + self.name), {
       data: function() {
         return {
           collection: self,
@@ -96,9 +96,9 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection delete
    */
-  orion.templates.request('collectionDelete.' + this.name, orion.options.get('collectionsDefaultDeleteTemplate'));
+  ReactiveTemplates.request('collectionDelete.' + this.name, orion.options.get('collectionsDefaultDeleteTemplate'));
   if (Meteor.isClient) {
-    orion.templates.setEvents('collectionDelete.' + this.name, {
+    ReactiveTemplates.events('collectionDelete.' + this.name, {
       'click .confirm-delete': function() {
         self.remove(this.item._id, function() {
           Router.go(self.indexPath());
@@ -112,11 +112,11 @@ orion.collections.onCreated(function() {
    */
   Router.route('/admin/' + this.routePath + '/:_id/delete', function () {
     this.collection = self;
-    this.layout(orion.templates.get('layout'));
+    this.layout(ReactiveTemplates.get('layout'));
     var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
     var item = self.findOne(this.params._id);
     this.item = item;
-    this.render(orion.templates.get('collectionDelete.' + self.name), {
+    this.render(ReactiveTemplates.get('collectionDelete.' + self.name), {
       data: function() {
         return {
           collection: self,

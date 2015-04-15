@@ -49,7 +49,7 @@ orion.attributeColumn = function(name, key, title) {
         item: rowData,
         schema: schema,
       }
-      var template = orion.templates.get('attributeColumn.' + name);
+      var template = ReactiveTemplates.get('attributeColumn.' + name);
       Blaze.renderWithData(Template[template], data, cell);
     }
   }
@@ -86,10 +86,10 @@ orion.attributes.registerAttribute = function(name, attribute) {
     contextAdjust: Match.Optional(Function),
   });
 
-  orion.templates.request('attribute.' + name, attribute.template);
+  ReactiveTemplates.request('attribute.' + name, attribute.template);
 
   if (attribute.columnTemplate) {
-    orion.templates.request('attributeColumn.' + name, attribute.columnTemplate);
+    ReactiveTemplates.request('attributeColumn.' + name, attribute.columnTemplate);
   }
 
   orion.attributes[name] = attribute;
@@ -97,7 +97,7 @@ orion.attributes.registerAttribute = function(name, attribute) {
   if (Meteor.isClient) {
     Tracker.autorun(function () {
       AutoForm.addInputType('orion.' + name, {
-        template: orion.templates.get('attribute.' + name),
+        template: ReactiveTemplates.get('attribute.' + name),
         valueIn: attribute.valueIn,
         valueOut: attribute.valueOut,
         valueConverters: attribute.valueConverters,

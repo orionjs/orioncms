@@ -1,4 +1,4 @@
-orion.templates.setEvents('attribute.file', {
+ReactiveTemplates.events('attribute.file', {
   'click .btn-remove': function(event, template) {
     var file = Session.get('file' + template.data.name);
     if (file && file.fileId) {
@@ -41,7 +41,7 @@ orion.templates.setEvents('attribute.file', {
   }
 });
 
-orion.templates.setHelpers('attribute.file', {
+ReactiveTemplates.helpers('attribute.file', {
   progress: function () {
     return Session.get('uploadProgress' + this.name);
   },
@@ -53,7 +53,7 @@ orion.templates.setHelpers('attribute.file', {
   }
 });
 
-orion.templates.setOnRendered('attribute.file', function () {
+ReactiveTemplates.onRendered('attribute.file', function () {
   Session.set('uploadProgress' + this.data.name, null);
   Session.set('isUploading' + this.data.name, false);
   Session.set('file' + this.data.name, this.data.value);

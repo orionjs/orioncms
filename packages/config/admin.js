@@ -1,14 +1,14 @@
 /**
  * Init the template name variable
  */
-orion.templates.request('configUpdate');
+ReactiveTemplates.request('configUpdate');
 
 /**
  * Register the route
  */
 Router.route('/admin/config', function () {
-  this.layout(orion.templates.get('layout'));
-  this.render(orion.templates.get('configUpdate'));
+  this.layout(ReactiveTemplates.get('layout'));
+  this.render(ReactiveTemplates.get('configUpdate'));
 }, { name: 'config.update' });
 
 /**
@@ -32,20 +32,20 @@ orion.addLink({
  */
 if (Meteor.isClient) {
 
-  orion.templates.setOnRendered('configUpdate', function() {
+  ReactiveTemplates.onRendered('configUpdate', function() {
     var categories = _.uniq(_.pluck(orion.config.collection.simpleSchema()._schema, 'category'));
     var defaultCategory = categories && categories[0]
     Session.set('configUpdateCurrentCategory', defaultCategory);
   })
 
-  orion.templates.setEvents('configUpdate', {
+  ReactiveTemplates.events('configUpdate', {
     'click [data-category]': function(event) {
       var newCategory = $(event.currentTarget).attr('data-category');
       Session.set('configUpdateCurrentCategory', newCategory);
     }
   })
 
-  orion.templates.setHelpers('configUpdate', {
+  ReactiveTemplates.helpers('configUpdate', {
     getDoc: function() {
       return orion.config.collection.findOne();
     },

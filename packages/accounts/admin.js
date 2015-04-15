@@ -1,13 +1,13 @@
 /**
  * Init the template name variable
  */
-orion.templates.request('login');
+ReactiveTemplates.request('login');
 
 /**
  * Register the routes
  */
 Router.route('/login', function () {
-  this.render(orion.templates.get('login'));
+  this.render(ReactiveTemplates.get('login'));
 }, { name: 'login' });
 
 /**
@@ -38,23 +38,23 @@ AccountsTemplates.configureRoute('ensureSignedIn', {
  * Then we can override it
  */
 Tracker.autorun(function () {
-  AccountsTemplates.routes.ensureSignedIn.template = orion.templates.get('login');
+  AccountsTemplates.routes.ensureSignedIn.template = ReactiveTemplates.get('login');
 });
 
 
 /**
  * Display account settings
  */
-orion.templates.request('account.index');
-orion.templates.request('account.password');
-orion.templates.request('account.profile');
+ReactiveTemplates.request('account.index');
+ReactiveTemplates.request('account.password');
+ReactiveTemplates.request('account.profile');
 
 /**
  * Register the route
  */
 Router.route('/admin/my-account', function () {
-  this.layout(orion.templates.get('layout'));
-  this.render(orion.templates.get('account.index'));
+  this.layout(ReactiveTemplates.get('layout'));
+  this.render(ReactiveTemplates.get('account.index'));
 }, { name: 'account.index' });
 orion.accounts.addProtectedRoute('account.index');
 
@@ -69,8 +69,8 @@ AccountsTemplates.configure({
  * Register the route
  */
 Router.route('/admin/my-account/change-password', function () {
-  this.layout(orion.templates.get('layout'));
-  this.render(orion.templates.get('account.password'));
+  this.layout(ReactiveTemplates.get('layout'));
+  this.render(ReactiveTemplates.get('account.password'));
 }, { name: 'account.password' });
 orion.accounts.addProtectedRoute('account.password');
 
@@ -78,8 +78,8 @@ orion.accounts.addProtectedRoute('account.password');
  * To update the profile
  */
 Router.route('/admin/my-account/profile', function () {
-  this.layout(orion.templates.get('layout'));
-  this.render(orion.templates.get('account.profile'));
+  this.layout(ReactiveTemplates.get('layout'));
+  this.render(ReactiveTemplates.get('account.profile'));
 }, { name: 'account.profile' });
 orion.accounts.addProtectedRoute('account.profile');
 
@@ -97,13 +97,13 @@ orion.addLink({
  * Create the template events account settings
  */
 if (Meteor.isClient) {
-  orion.templates.setEvents('account.index', {
+  ReactiveTemplates.events('account.index', {
     'click .logout': function() {
       return Meteor.logout();
     }
   })
 
-  orion.templates.setHelpers('account.profile', {
+  ReactiveTemplates.helpers('account.profile', {
     getDoc: function() {
       return Meteor.user();
     },

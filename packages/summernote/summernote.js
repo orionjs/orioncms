@@ -1,4 +1,4 @@
-orion.templates.setOnRendered('attribute.summernote', function() {
+ReactiveTemplates.onRendered('attribute.summernote', function() {
   this.subscribe('summernoteImages');
   Session.set('orionSummernoteIsUploading', false);
   var element = this.$('.summernote');
@@ -31,7 +31,7 @@ orion.templates.setOnRendered('attribute.summernote', function() {
   element.code(this.data.value);
 })
 
-orion.templates.setHelpers('attribute.summernote', {
+ReactiveTemplates.helpers('attribute.summernote', {
   isUploading: function() {
     return Session.get('orionSummernoteIsUploading');
   },
@@ -40,7 +40,7 @@ orion.templates.setHelpers('attribute.summernote', {
   }
 })
 
-orion.templates.setHelpers('attributeColumn.summernote', {
+ReactiveTemplates.helpers('attributeColumn.summernote', {
   preview: function () {
     var value = this.value;
     var tmp = document.createElement("DIV");

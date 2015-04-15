@@ -40,12 +40,12 @@ var onRendered = function() {
 var onDestroyed = function() {
   this.$('select')[0].selectize && this.$('select')[0].selectize.destroy();
 }
-orion.templates.setOnRendered('attribute.hasMany', onRendered)
-orion.templates.setOnRendered('attribute.hasOne', onRendered)
-orion.templates.setOnDestroyed('attribute.hasMany', onDestroyed)
-orion.templates.setOnDestroyed('attribute.hasOne', onDestroyed)
+ReactiveTemplates.onRendered('attribute.hasMany', onRendered)
+ReactiveTemplates.onRendered('attribute.hasOne', onRendered)
+ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed)
+ReactiveTemplates.onDestroyed('attribute.hasOne', onDestroyed)
 
-orion.templates.setHelpers('attributeColumn.hasMany', {
+ReactiveTemplates.helpers('attributeColumn.hasMany', {
   val: function() {
     var count = this.value.length;
     if (!this.schema) {
@@ -58,11 +58,11 @@ orion.templates.setHelpers('attributeColumn.hasMany', {
   }
 });
 
-orion.templates.setOnRendered('attributeColumn.hasOne', function() {
+ReactiveTemplates.onRendered('attributeColumn.hasOne', function() {
   this.subscribe(this.data.schema.orion.publicationName + '_row', this.data.value);
 });
 
-orion.templates.setHelpers('attributeColumn.hasOne', {
+ReactiveTemplates.helpers('attributeColumn.hasOne', {
   val: function () {
     var entity = Router.current().data().entity;
     var item = this.schema && this.schema.orion.collection.findOne(this.value);

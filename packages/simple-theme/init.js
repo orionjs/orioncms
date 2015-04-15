@@ -1,15 +1,15 @@
 orion.options.init('homePath')
 orion.options.init('siteName');
 
-orion.templates.set('layout', 'simpleThemeLayout');
-orion.templates.set('links', 'simpleThemeSidebar');
-orion.templates.set('login', 'simpleThemeLogin');
-orion.templates.set('account.index', 'simpleThemeAccountIndex');
-orion.templates.set('account.password', 'simpleThemeAccountPassword');
-orion.templates.set('account.profile', 'simpleThemeAccountProfile');
+ReactiveTemplates.set('layout', 'simpleThemeLayout');
+ReactiveTemplates.set('links', 'simpleThemeSidebar');
+ReactiveTemplates.set('login', 'simpleThemeLogin');
+ReactiveTemplates.set('account.index', 'simpleThemeAccountIndex');
+ReactiveTemplates.set('account.password', 'simpleThemeAccountPassword');
+ReactiveTemplates.set('account.profile', 'simpleThemeAccountProfile');
 
-orion.templates.set('configUpdate', 'simpleThemeConfigUpdate');
-orion.templates.set('dictionaryUpdate', 'simpleThemeDictionaryUpdate');
+ReactiveTemplates.set('configUpdate', 'simpleThemeConfigUpdate');
+ReactiveTemplates.set('dictionaryUpdate', 'simpleThemeDictionaryUpdate');
 
 // Set the default entity templates
 orion.options.set('collectionsDefaultIndexTemplate', 'simpleThemeCollectionsIndex');
