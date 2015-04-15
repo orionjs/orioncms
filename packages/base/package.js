@@ -11,8 +11,8 @@ Package.onUse(function(api) {
   api.use([
     'meteor-platform',
     'underscore',
-    'orionjs:options',
-    'orionjs:reactive-templates',
+    'nicolaslopezj:options',
+    'nicolaslopezj:reactive-templates',
     'iron:router@1.0.7',
     'zimme:iron-router-active@1.0.1',
     ]);
