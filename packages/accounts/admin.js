@@ -14,16 +14,16 @@ Router.route('/login', function () {
  * To set the secure routes
  */
 
-orion.options.init('ensureSignedIn', []);
+Options.init('ensureSignedIn', []);
 
 Tracker.autorun(function () {
   Router.plugin('ensureSignedIn', {
-    only: orion.options.get('ensureSignedIn')
+    only: Options.get('ensureSignedIn')
   });
 });
 
 orion.accounts.addProtectedRoute = function(routeName) {
-  orion.options.arrayPush('ensureSignedIn', routeName);
+  Options.arrayPush('ensureSignedIn', routeName);
 }
 
 /**

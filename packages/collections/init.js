@@ -14,7 +14,7 @@ orion.collections.onCreated = function(cb) {
 /**
  * Request the default templates using options
  */
-orion.options.init('collectionsDefaultIndexTemplate');
-orion.options.init('collectionsDefaultCreateTemplate');
-orion.options.init('collectionsDefaultUpdateTemplate');
-orion.options.init('collectionsDefaultDeleteTemplate');
+Options.init('collectionsDefaultIndexTemplate');
+Options.init('collectionsDefaultCreateTemplate');
+Options.init('collectionsDefaultUpdateTemplate');
+Options.init('collectionsDefaultDeleteTemplate');

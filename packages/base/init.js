@@ -1,2 +1,1 @@
 orion = {};
-orion.options = Options;

@@ -24,7 +24,7 @@ Meteor.publish(null, function() {
   if (!this.userId) {
     return [];
   }
-  if (orion.roles.userHasPermission(this.userId, 'config.update')) {
+  if (Roles.userHasPermission(this.userId, 'config.update')) {
     return orion.config.collection.find();
   }
 }, { is_auto: true });

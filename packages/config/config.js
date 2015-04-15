@@ -19,7 +19,7 @@ SimpleSchema.extendOptions({
 /**
  * Register the action for the permissions
  */
-orion.roles.registerAction('config.update', true);
+Roles.registerAction('config.update', true);
 
 /**
  * Permissions for the dictionary.
@@ -44,13 +44,13 @@ orion.config.collection.allow({
 
 orion.config.collection.allow({
   'update': function(userId, doc, fields, modifier) {
-    return orion.roles.allow(userId, 'config.update', userId, doc, fields, modifier);
+    return Roles.allow(userId, 'config.update', userId, doc, fields, modifier);
   }
 });
 
 orion.config.collection.deny({
   'update': function(userId, doc, fields, modifier) {
-    return orion.roles.deny(userId, 'config.update', userId, doc, fields, modifier);
+    return Roles.deny(userId, 'config.update', userId, doc, fields, modifier);
   }
 })
 

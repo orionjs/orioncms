@@ -4,7 +4,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection
    */
-  ReactiveTemplates.request('collectionIndex.' + this.name, orion.options.get('collectionsDefaultIndexTemplate'));
+  ReactiveTemplates.request('collectionIndex.' + this.name, Options.get('collectionsDefaultIndexTemplate'));
 
   /**
    * Register the index route
@@ -32,7 +32,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection create
    */
-  ReactiveTemplates.request('collectionCreate.' + this.name, orion.options.get('collectionsDefaultCreateTemplate'));
+  ReactiveTemplates.request('collectionCreate.' + this.name, Options.get('collectionsDefaultCreateTemplate'));
 
   /**
    * Register the create route
@@ -60,7 +60,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection update
    */
-  ReactiveTemplates.request('collectionUpdate.' + this.name, orion.options.get('collectionsDefaultUpdateTemplate'));
+  ReactiveTemplates.request('collectionUpdate.' + this.name, Options.get('collectionsDefaultUpdateTemplate'));
   
   /**
    * Register the update route
@@ -96,7 +96,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection delete
    */
-  ReactiveTemplates.request('collectionDelete.' + this.name, orion.options.get('collectionsDefaultDeleteTemplate'));
+  ReactiveTemplates.request('collectionDelete.' + this.name, Options.get('collectionsDefaultDeleteTemplate'));
   if (Meteor.isClient) {
     ReactiveTemplates.events('collectionDelete.' + this.name, {
       'click .confirm-delete': function() {

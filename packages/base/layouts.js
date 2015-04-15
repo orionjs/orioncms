@@ -1,7 +1,7 @@
 /**
  * Handle links. To add tabs to the sidebar
  */
-orion.options.init('links', []);
+Options.init('links', []);
 orion.addLink = function(options) {
   check(options, Match.ObjectIncluding({
     section: String,
@@ -10,7 +10,7 @@ orion.addLink = function(options) {
     activeRouteRegex: Match.Optional(String),
     permission: Match.Optional(String),
   }));
-  orion.options.arrayPush('links', options);
+  Options.arrayPush('links', options);
 }
 
 /**
@@ -48,13 +48,13 @@ if (Meteor.isClient) {
      * You can pass a section and it will filter
      */
     links: function(section) {
-      var links = orion.options.get('links');
+      var links = Options.get('links');
       if (section) {
         links = _.where(links, { section: section });
       }
       _.each(links, function(value, key, list){
         if (value.permission) {
-          if (!orion.roles.userHasPermission(Meteor.userId(), value.permission)) {
+          if (!Roles.userHasPermission(Meteor.userId(), value.permission)) {
             delete list[key];
           }
         }

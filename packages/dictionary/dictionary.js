@@ -6,8 +6,8 @@ orion.dictionary = new Mongo.Collection('dictionary');
 /**
  * Register dictionary actions and helpers for roles
  */
-orion.roles.registerAction('dictionary.update', true);
-orion.roles.registerHelper('dictionary.getAllowedCategories', function() {
+Roles.registerAction('dictionary.update', true);
+Roles.registerHelper('dictionary.getAllowedCategories', function() {
   return orion.dictionary.simpleSchema()._firstLevelSchemaKeys;
 });
 
@@ -34,13 +34,13 @@ orion.dictionary.deny({
 
 orion.dictionary.allow({
   'update': function(userId, doc, fields, modifier) {
-    return orion.roles.allow(userId, 'dictionary.update', userId, doc, fields, modifier);
+    return Roles.allow(userId, 'dictionary.update', userId, doc, fields, modifier);
   }
 });
 
 orion.dictionary.deny({
   'update': function(userId, doc, fields, modifier) {
-    return orion.roles.deny(userId, 'dictionary.update', userId, doc, fields, modifier);
+    return Roles.deny(userId, 'dictionary.update', userId, doc, fields, modifier);
   }
 })
 
@@ -50,7 +50,7 @@ orion.dictionary.deny({
  */
 orion.dictionary.deny({
   update: function (userId, doc, fields, modifier) {
-    var allowedFields = orion.roles.helper(userId, 'dictionary.getAllowedCategories');
+    var allowedFields = Roles.helper(userId, 'dictionary.getAllowedCategories');
     if (allowedFields === false && _.difference(fields, allowedFields).length > 0) {
       return true;
     }

@@ -13,6 +13,7 @@ Package.onUse(function(api) {
     'underscore',
     'nicolaslopezj:options@1.0.0',
     'nicolaslopezj:reactive-templates@1.0.0',
+    'nicolaslopezj:roles@1.0.1',
     'iron:router@1.0.7',
     'zimme:iron-router-active@1.0.1',
     ]);
@@ -23,6 +24,7 @@ Package.onUse(function(api) {
     'iron:router',
     'nicolaslopezj:options',
     'nicolaslopezj:reactive-templates',
+    'nicolaslopezj:roles'
     ]);
 
   api.addFiles([
