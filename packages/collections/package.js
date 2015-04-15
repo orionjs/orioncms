@@ -13,11 +13,13 @@ Package.onUse(function(api) {
     'underscore',
     'aldeed:simple-schema@1.3.2',
     'aldeed:collection2@2.3.3',
+    'dburles:collection-helpers@1.0.3',
     ]);
 
   api.imply([
     'aldeed:simple-schema',
-    'aldeed:collection2'
+    'aldeed:collection2',
+    'dburles:collection-helpers'
     ]);
 
   api.addFiles([
