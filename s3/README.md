@@ -10,7 +10,7 @@ to have key/value definitions for your site.
 
 More info on http://orion.meteor.com
 
-## Instalation
+## Installation
 
 Install the package
 ```
