@@ -43,11 +43,13 @@ orion.collections.onCreated(function() {
     this.canShowCreate = function() {
       return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showCreate');
     }
-    this.canShowUpdate = function() {
-      return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showUpdate');
-    }
-    this.canShowRemove = function() {
-      return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showRemove');
-    }
+    this.helpers({
+      canShowUpdate: function () {
+        return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showUpdate', this);
+      },
+      canShowRemove: function() {
+        return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showRemove', this);
+      }
+    });
   }
 });

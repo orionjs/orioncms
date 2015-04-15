@@ -5,7 +5,7 @@ Template.simpleThemeCollectionsIndex.events({
     var dataTable = $(event.target).closest('table').DataTable();
     var rowData = dataTable.row(event.currentTarget).data();
     if (rowData) {
-      if (collection.canShowUpdate()) {
+      if (rowData.canShowUpdate()) {
         var path = collection.updatePath(rowData);
         Router.go(path);
       }
