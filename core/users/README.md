@@ -6,26 +6,26 @@ very simple to use.
 #### Create the first account
 
 It all starts with this. Navigate to ```/admin``` and orion
-will search if there's any user registrated, if not you will 
+will search if there's any user registrated, if not you will
 be redirected to ```/admin/setup```, where you can create
 the first account. This account will be a **admin**.
 
 ## Creating accounts
 
-After the first account is created, the ```/admin/setup``` way 
+After the first account is created, the ```/admin/setup``` way
 will not work anymore. Now you have 2 methods to create accounts:
 
 #### Invitations
 
 The first method, and the one you will probably use, is invitations.
-If you navigate to ```/admin/users``` you will see a **create** button, 
-when you click there, you will see a page where you can select the 
-permissions for the new user and generate the invitation. 
+If you navigate to ```/admin/users``` you will see a **create** button,
+when you click there, you will see a page where you can select the
+permissions for the new user and generate the invitation.
 The invitation will only work once.
 
 #### Public account creation
 
-You can allow anyone create create an account.
+You can allow anyone to create an account.
 
 ```js
 orion.users.configure(options)
@@ -33,7 +33,7 @@ orion.users.configure(options)
 
 ***Options***
 
-- ```defaultPermissions``` **Array**. Array of the permissions that new users will have. 
+- ```defaultPermissions``` **Array**. Array of the permissions that new users will have.
 You can see the list of permissions in ```/admin/users/create```.
 
 Anything in the ```options``` (except ```defaultPermissions```) will be passed directly
@@ -58,13 +58,13 @@ orion.users.configure({
 
 ## Permissions
 
-Orion permissions consists in 2 parts. You can register permissions, 
-which they can be assign to users by the admin. And you can see a a user
+Orion permissions consists of 2 parts. You can register permissions,
+which can be assigned to users by the admin. And you can check if a user
 has the right permission.
 
 ### Register Permissions
 
-When you register a permission the permission will now appear on the list 
+When you register a permission the permission will now appear on the list
 of permissions, and the admin can assign it to a user.
 
 ![alt tag](http://i.imgur.com/Guo41xU.png)
@@ -77,8 +77,8 @@ orion.users.permissions.add(permission)
 
 ### Check Permissions
 
-The user object have a helper function that indicates if the user have
-the right permission.
+The user object has a helper function that indicates if the user has
+a specific permission.
 
 ```js
 Meteor.user().hasPermission(permission, strict)
@@ -88,7 +88,7 @@ Meteor.user().hasPermission(permission, strict)
 
 - ```strict``` ***Boolean*** defaults to ```false```. Strict search of the permission.
 
-If ```strict``` is ```true``` this function will return true only if the user 
+If ```strict``` is ```true``` this function will return true only if the user
 has exactly that permission if not, even if its admin, it will return false.
 
 If ```strict``` is ```false```:
@@ -140,26 +140,26 @@ orion.users.permissions.createCustomEntityPermission(options)
 
 - ```entity``` **String**. The name of the entity.
 
-- ```name``` **String**. The name of the new permission. 
-If you choose "custom", the new permission will be 
-named ```entity.entityName.custom```.
+- ```name``` **String**. The name of the new permission.
+For example if you specify "customPermission", the new permission will be
+named ```entity.entityName.customPermission```.
 
 - ```indexFilter``` **Function**. Input ```userId```. Must return the filter for the
 mongo query (```collection.find(thisIsTheFilter)```).
 
 - ```update``` **Function**. Input ```userId```, ```doc```, ```fields```, ```modifier```.
-Return ```true``` or ```false```. This is called also to check if the user should see the update button, 
+Return ```true``` or ```false```. This is called also to check if the user should see the update button,
 in that case, ```fields``` and ```modifier``` will be ```undefined```.
 
 - ```create``` **Function**. Input ```userId```, ```doc```.
-Return ```true``` or ```false```. This is called also to check if the user should see the create button, 
+Return ```true``` or ```false```. This is called also to check if the user should see the create button,
 in that case, ```doc``` will be ```undefined```.
 
 - ```remove``` **Function**. Input ```userId```, ```doc```.
 Return ```true``` or ```false```.
 
 - ```fields``` **Function**. Input ```userId```.
-Return a ```array``` of fields that the user can edit. If this is not set, the user can edit all fields.
+Return an ```array``` of fields that the user can edit. If this is not set, the user can edit all fields.
 
 Example:
 
