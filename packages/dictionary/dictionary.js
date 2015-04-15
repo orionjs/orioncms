@@ -50,7 +50,7 @@ orion.dictionary.deny({
  */
 orion.dictionary.deny({
   update: function (userId, doc, fields, modifier) {
-    var allowedFields = Roles.helper(userId, 'dictionary.getAllowedCategories');
+    var allowedFields = _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories'));
     if (allowedFields === false && _.difference(fields, allowedFields).length > 0) {
       return true;
     }
