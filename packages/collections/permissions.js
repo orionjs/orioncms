@@ -11,6 +11,7 @@ orion.collections.onCreated(function() {
   Roles.registerAction('collection.' + this.name + '.showCreate', true);
   Roles.registerAction('collection.' + this.name + '.showUpdate', true);
   Roles.registerAction('collection.' + this.name + '.showRemove', true);
+  Roles.registerHelper('collection.' + this.name + '.indexFilter', {});
 
   this.allow({
     insert: function (userId, doc) {

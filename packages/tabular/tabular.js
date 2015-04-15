@@ -8,7 +8,11 @@ orion.collections.onCreated(function() {
     collection: this,
     columns: [
       { data: "_id", title: "ID" }
-    ]
+    ],
+    selector: function(userId) {
+      var selectors = Roles.helper(userId, 'collection.' + self.name + '.indexFilter');
+      return { $or: selectors };
+    }
   }, this.tabular);
 
   this.tabularTable = new Tabular.Table(tabularOptions);
