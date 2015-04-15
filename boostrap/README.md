@@ -1,7 +1,7 @@
 Bootstrap Views
 ===============
 
-This packages will install orion with bootstrap views.
+This package provides bootstrap views for orion.
 
 ![alt tag](http://i.imgur.com/eNMaaje.png)
 

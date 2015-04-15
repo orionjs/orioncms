@@ -1,10 +1,10 @@
 # Entities
 
-Create your collections using orion and it will automatically 
-create a admin panel to view, edit or create items.
+Create your collections in orion and orion will dynamically
+generate an admin interface to view, edit, and create items.
 
 > Entities work like normal collections, the only difference
-is that entities are automatically inserted to the admin panel. 
+is that entities are automatically inserted to the admin panel.
 
 ## Getting started
 
@@ -30,7 +30,9 @@ of the collection in mongodb.
 
 - ```pluralName``` **String**.
 
-- ```tableColumns``` **Array of Fields**. You have to put here what do you want to show in
+- ```singularName``` **String**.
+
+- ```tableColumns``` **Array of Fields**. You have to put here what you want to show in
 the entity index page. It uses [aldeed:tabular](https://github.com/aldeed/meteor-tabular/). Check the documentation [here](https://github.com/aldeed/meteor-tabular/)
 
 Example:
@@ -71,13 +73,13 @@ var posts = orion.entities.posts.collection.find().fetch();
 var post = orion.entities.posts.collection.findOne({_id: 'AdkAMX67BLs5rrRpf'});
 ```
 
-> Remember that when you use that functions in the client it will only search 
+> Remember that when you use that functions in the client it will only search
 across the local data. You first have to **subscribe to the collections**.
 
 ### Subscriptions
 
-When you define a entity orion with make a publication of the entity. You can 
-use it like this
+When you define a entity orion will make a publication of the entity. You can
+use it like this:
 
 
 **Meteor Default Way**
@@ -98,10 +100,10 @@ orion.subs.subscribe('entity', 'posts', {awesome: true});
 
 ***¿What is the difference?***
 
-The orion recomended way uses [meteorhacks:subs-manager](https://github.com/meteorhacks/subs-manager). 
+The orion recomended way uses [meteorhacks:subs-manager](https://github.com/meteorhacks/subs-manager).
 
-> With the meteor default way, when you navigate to a new route, all the previous subscriptions will be stopped. 
-The user will have to wait a bit even if they've visited that route previously. 
+> With the meteor default way, when you navigate to a new route, all the previous subscriptions will be stopped.
+The user will have to wait a bit even if they've visited that route previously.
 
-> With the Orion recomended way Subscriptions Manager caches your subscriptions 
+> With the Orion recomended way Subscriptions Manager caches your subscriptions
 and runs all the subscriptions that have been cached when a route is changed. This means that when switching between routes, the user will no longer have to wait. Also, Meteor won't need to re-send data that's already in the client.

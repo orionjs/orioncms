@@ -1,10 +1,10 @@
 # Config
 
-**orion.config** is "enviorment vars" editable in the admin.
-When the server starts it fetchs the variables from the database
+**orion.config** is like "enviorment vars" editable in the admin.
+When the server starts it fetches the variables from the database
 and each time the admin updates the settings the server is **restarted**.
 
-*Only the admin can see and edit this variables, unless you specify*.
+*Only the admin can see and edit this variables, unless you specify otherwise*.
 
 ## Adding variables
 
@@ -15,11 +15,11 @@ orion.config.add(name, category, options)
 ```
 
 - ```name``` **String**. This is the name of the variable.
-When you want to access the value of the variable you have to 
+When you want to access the value of the variable you have to
 use the **name**.
 
 - ```category``` **String**. The only purpose of the category is to
-organize the variables in the admin.
+organize the variables in the admin panel.
 
 
 ***Options***
@@ -28,7 +28,7 @@ organize the variables in the admin.
 
 - ```label``` **String**. Optional. The label that will be shown in the admin panel.
 
-- ```secret``` **Boolean**. Default: ```false```. If ```true```, the content will be 
+- ```secret``` **Boolean**. Default: ```false```. If ```true```, the content will be
 hidden in the input (```type="password"```) unless the admin is editing it.
 
 - ```public``` **Boolean**. Default: ```false```. If ```true```, This variable will
@@ -52,7 +52,7 @@ Now ```orionjs:s3``` is made to work with ```orion.config```. This is how it's m
 ```js
 /**
  * Before
- * 
+ *
  * In yourapp/server/s3.js
  */
 
@@ -65,7 +65,7 @@ S3.config = {
 /**
  * After
  *
- * In orionjs:s3 package 
+ * In orionjs:s3 package
  * (you don't have to do nothing now)
  */
 
