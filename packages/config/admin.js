@@ -19,12 +19,16 @@ orion.accounts.addProtectedRoute('config.update');
 /**
  * Register the link
  */
-orion.addLink({
-  section: 'bottom',
-  title: 'App Configuration',
-  routeName: 'config.update',
-  activeRouteRegex: 'config',
-  permission: 'config.update'
+Tracker.autorun(function () {
+  if (!orion.config.isActive()) return;
+  
+  orion.addLink({
+    section: 'bottom',
+    title: 'App Configuration',
+    routeName: 'config.update',
+    activeRouteRegex: 'config',
+    permission: 'config.update'
+  });
 });
 
 /**

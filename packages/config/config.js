@@ -17,6 +17,16 @@ SimpleSchema.extendOptions({
 });
 
 /**
+ * To get reactively if the config is active
+ */
+orion.config._isActiveDependency = new Tracker.Dependency;
+orion.config._isActive = false;
+orion.config.isActive = function() {
+  this._isActiveDependency.depend()
+  return this._isActive;
+}
+
+/**
  * Register the action for the permissions
  */
 Roles.registerAction('config.update', true);
@@ -79,6 +89,11 @@ orion.config.add = function(name, category, options) {
   }
 
   this.collection.attachSchema(new SimpleSchema(newSchema));
+
+  if (!this._isActive) {
+    this._isActive = true;
+    this._isActiveDependency.changed();
+  }
 };
 
 /**
