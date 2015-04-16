@@ -25,7 +25,7 @@ Tracker.autorun(function () {
 Options.init('defaultRoles', []);
 Options.init('forbidClientAccountCreation');
 AccountsTemplates.configure({
-  forbidClientAccountCreation: !orion.adminExists
+  forbidClientAccountCreation: !!orion.adminExists
 });
 
 /**
