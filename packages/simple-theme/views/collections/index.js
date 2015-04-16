@@ -12,3 +12,19 @@ Template.simpleThemeCollectionsIndex.events({
     }
   }
 });
+
+Template.simpleThemeCollectionsIndex.onRendered(function() {
+  this.autorun(function () {
+    Template.currentData();
+    Session.set('simpleThemeCollectionsIndex_showTable', false);
+    Meteor.defer(function () {
+      Session.set('simpleThemeCollectionsIndex_showTable', true);
+    });
+  });
+})
+
+Template.simpleThemeCollectionsIndex.helpers({
+  showTable: function () {
+    return Session.get('simpleThemeCollectionsIndex_showTable');
+  }
+});

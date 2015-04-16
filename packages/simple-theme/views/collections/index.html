@@ -8,7 +8,9 @@
     {{/ Layout }}
     {{# Layout template="simpleThemeContentContainer" }}
       {{# if collection.canIndex }}
-        {{> tabular table=collection.tabularTable class="table index-table" }}
+        {{# if showTable }}
+          {{> tabular table=collection.tabularTable class="table index-table" }}
+        {{/ if }}
       {{/ if }}
     {{/ Layout }}
   {{/ Layout }}
