@@ -9,7 +9,8 @@ orion.collection = function(name, options) {
     name: name,
     routePath: name,
     pluralName: name,
-    singularName: name
+    singularName: name,
+    title: name[0].toUpperCase() + name.slice(1),
   }, options);
 
   collection = _.extend(collection, options);
