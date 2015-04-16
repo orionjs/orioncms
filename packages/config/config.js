@@ -96,6 +96,6 @@ orion.config.get = function(path, defaultValue) {
  * Returns the public options
  */
 orion.config.getPublicFields = function() {
-  var atts = _.where(this.collection.simpleSchema()._schema, { public: true });
-  return _.pluck(atts, 'name');
+  var atts = this.collection.simpleSchema() && _.where(this.collection.simpleSchema()._schema, { public: true });
+  return atts && _.pluck(atts, 'name');
 }

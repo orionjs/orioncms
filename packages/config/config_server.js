@@ -41,7 +41,7 @@ orion.config.object = orion.config.collection.findOne();
  * and the values should be on the client when it starts.
  */
 Meteor.startup(function () {
-  if (orion.config.getPublicFields().length == 0) {
+  if (orion.config.getPublicFields()) {
     Inject.obj('orion.config', {});
     return;
   }
