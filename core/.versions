@@ -37,7 +37,7 @@ jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
 livedata@1.0.13
-local-test:orionjs:core@0.7.6
+local-test:orionjs:core@0.7.7
 localstorage@1.0.3
 logging@1.0.7
 manuelschoebel:ms-seo@0.4.1
@@ -55,7 +55,7 @@ mongo-livedata@1.0.8
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-orionjs:core@0.7.6
+orionjs:core@0.7.7
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
@@ -74,9 +74,9 @@ tinytest@1.0.5
 tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3
+underscorestring:underscore.string@3.0.3
 url@1.0.4
 useraccounts:core@1.8.1
 webapp@1.2.0
 webapp-hashing@1.0.3
-wizonesolutions:underscore-string@1.0.0
-zimme:iron-router-active@1.0.0
+zimme:iron-router-active@1.0.4

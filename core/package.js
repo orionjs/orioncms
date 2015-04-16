@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:core',
 	summary: 'Simple and powerful admin panel for meteor',
-	version: '0.7.6',
+	version: '0.7.7',
 	git: 'https://github.com/orionjs/core'
 });
 
@@ -20,7 +20,7 @@ Package.onUse(function(api) {
 		'aldeed:autoform@5.1.1',
 		'matb33:collection-hooks@0.7.7',
 		'iron:router@1.0.7',
-		'zimme:iron-router-active@1.0.0',
+		'zimme:iron-router-active@1.0.4',
 		'aldeed:delete-button@1.0.0',
 		'useraccounts:core@1.8.1',
 		'manuelschoebel:ms-seo@0.4.1',
