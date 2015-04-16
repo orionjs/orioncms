@@ -4,6 +4,16 @@
 orion.dictionary = new Mongo.Collection('dictionary');
 
 /**
+ * To get reactively if the dictionary is active
+ */
+orion.dictionary._isActiveDependency = new Tracker.Dependency;
+orion.dictionary._isActive = false;
+orion.dictionary.isActive = function() {
+  this._isActiveDependency.depend()
+  return this._isActive;
+}
+
+/**
  * Register dictionary actions and helpers for roles
  */
 Roles.registerAction('dictionary.update', true);
@@ -75,6 +85,11 @@ orion.dictionary.addDefinition = function(name, category, attribute) {
   }, attribute);
 
   this.attachSchema(new SimpleSchema(newSchema));
+
+  if (!this._isActive) {
+    this._isActive = true;
+    this._isActiveDependency.changed();
+  }
 };
 
 /**

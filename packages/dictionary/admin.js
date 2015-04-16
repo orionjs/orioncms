@@ -19,12 +19,16 @@ orion.accounts.addProtectedRoute('dictionary.update');
 /**
  * Register the link
  */
-orion.addLink({
-  section: 'top',
-  title: 'Dictionary',
-  routeName: 'dictionary.update',
-  activeRouteRegex: 'dictionary',
-  permission: 'dictionary.update',
+Tracker.autorun(function () {
+  if (!orion.dictionary.isActive()) return;
+  
+  orion.addLink({
+    section: 'top',
+    title: 'Dictionary',
+    routeName: 'dictionary.update',
+    activeRouteRegex: 'dictionary',
+    permission: 'dictionary.update',
+  });
 });
 
 /**
