@@ -47,6 +47,7 @@ orion.attributeColumn = function(name, key, title) {
         key: key,
         value: cellData,
         item: rowData,
+        collection: collection,
         schema: schema,
       }
       var template = ReactiveTemplates.get('attributeColumn.' + name);

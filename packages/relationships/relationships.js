@@ -64,7 +64,6 @@ ReactiveTemplates.onRendered('attributeColumn.hasOne', function() {
 
 ReactiveTemplates.helpers('attributeColumn.hasOne', {
   val: function () {
-    var entity = Router.current().data().entity;
     var item = this.schema && this.schema.orion.collection.findOne(this.value);
     return item && orion.helpers.searchObjectWithDots(item, this.schema.orion.titleField, true);
   }
