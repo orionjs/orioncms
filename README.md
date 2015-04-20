@@ -1,6 +1,8 @@
 Orion
 =====
 
+[![Join the chat at https://gitter.im/orionjs/orion](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orionjs/orion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Orion is a simple and powerful CMS for meteor. It allows you to build 
 simple or complex websites with powerful admin panels in minutes.
 
