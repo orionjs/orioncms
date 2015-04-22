@@ -11,3 +11,7 @@ Template.registerHelper('dict', function(name, defaultValue) {
 Template.registerHelper('dictionaryReady', function() {
   return !!orion.dictionary.findOne();
 });
+
+orion.dictionary.availableCategories = function() {
+  return _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories'));
+}

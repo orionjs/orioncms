@@ -2,17 +2,10 @@
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
       Dictionary
-      <span class="text-muted">
-        <small>
-          {{ currentCategory }}
-        </small>
-      </span>
     {{/ Layout }}
     {{# Layout template="orionBootstrapContentContainer" }}
       <p>
-        {{# each getCategories }}
-          <a class="btn btn-primary btn-xs" data-category="{{ this }}">{{ this }}</a>
-        {{/ each }}
+        {{> reactiveTemplate template="tabs" data=getDataForTabs }}
       </p>
       <hr>
       {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}

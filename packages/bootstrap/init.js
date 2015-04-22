@@ -1,6 +1,8 @@
 Options.init('homePath')
 Options.init('siteName');
 
+ReactiveTemplates.request('tabs', 'orionBootstrapTabs');
+
 ReactiveTemplates.set('layout', 'orionBootstrapLayout');
 ReactiveTemplates.set('links', 'orionBootstrapSidebar');
 ReactiveTemplates.set('login', 'orionBootstrapLogin');

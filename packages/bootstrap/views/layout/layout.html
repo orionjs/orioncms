@@ -69,3 +69,9 @@
   </h1>
   <hr>
 </template>
+
+<template name="orionBootstrapTabs">
+  {{# each items }}
+    <a class="btn btn-xs {{ class }}">{{ title }}</a>
+  {{/ each }}
+</template>

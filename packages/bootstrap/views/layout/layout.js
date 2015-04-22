@@ -8,3 +8,15 @@ Template.orionBootstrapLayout.events({
     $("html,body").toggleClass("no-overflow");
   }
 });
+
+Template.orionBootstrapTabs.helpers({
+  items: function () {
+    return this;
+  }
+});
+
+Template.orionBootstrapTabs.events({
+  'click a': function () {
+    this.onClick();
+  }
+});

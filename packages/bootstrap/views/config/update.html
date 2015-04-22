@@ -5,9 +5,7 @@
     {{/ Layout }}
     {{# Layout template="orionBootstrapContentContainer" }}
       <p>
-        {{# each getCategories }}
-          <a class="btn btn-primary btn-xs" data-category="{{ this }}">{{ this }}</a>
-        {{/ each }}
+        {{> reactiveTemplate template="tabs" data=getDataForTabs }}
       </p>
       <hr>
       {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
