@@ -19,6 +19,8 @@ Package.onUse(function(api) {
 
   api.imply([
     'orionjs:base',
+    'orionjs:accounts',
+    'orionjs:config',
     'orionjs:collections',
     'orionjs:dictionary',
     'orionjs:attributes',

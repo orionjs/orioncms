@@ -28,8 +28,8 @@ Package.onUse(function(api) {
   api.addFiles('accounts_server.js', 'server');
   api.addFiles(['accounts_client.js'], 'client');
 
-  api.addFiles('createdBy-attribute.html', 'client');
-  api.addFiles('createdBy-attribute.js');
+  api.addFiles('createdBy/createdBy-attribute.html', 'client');
+  api.addFiles('createdBy/createdBy-attribute.js');
 
   api.export('orion');
 });
