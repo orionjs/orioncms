@@ -43,6 +43,7 @@ Package.onUse(function(api) {
     'views/accounts/profile.html',
     'views/accounts/profile.js',
     'views/accounts/accounts.less',
+    'views/accounts/accounts.html',
     'views/config/update.html',
     'views/dictionary/update.html',
     'views/collections/index.html',

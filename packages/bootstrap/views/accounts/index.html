@@ -1,10 +1,10 @@
-<template name="simpleThemeAccountIndex">
-  {{# Layout template="simpleThemeSmallContentOffset" }}
-    {{# Layout template="simpleThemeTitle" }}
+<template name="orionBootstrapAccountIndex">
+  {{# Layout template="orionBootstrapSmallContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
       My Account
     {{/ Layout }}
 
-    {{# Layout template="simpleThemeContentContainer" }}
+    {{# Layout template="orionBootstrapContentContainer" }}
       <div class="row">
         {{# if currentUser.profile.picture }}
           <div class="col-sm-2">
@@ -28,8 +28,8 @@
       <hr>
       <div class="buttons">
         <a class="btn btn-default btn-xs logout">Logout</a>
-        <a href="{{ pathFor 'account.profile' }}" class="btn btn-default btn-xs">Update Profile</a>
-        <a href="{{ pathFor 'account.password' }}" class="btn btn-default btn-xs">Change Password</a>
+        <a href="{{ pathFor 'myAccount.profile' }}" class="btn btn-default btn-xs">Update Profile</a>
+        <a href="{{ pathFor 'myAccount.password' }}" class="btn btn-default btn-xs">Change Password</a>
       </div>
     {{/ Layout }}
   {{/ Layout }}

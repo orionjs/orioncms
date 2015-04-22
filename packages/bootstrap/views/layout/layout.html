@@ -1,12 +1,12 @@
-<template name="simpleThemeLayout">
-  <div class="simple-theme-admin">
+<template name="orionBootstrapLayout">
+  <div class="orion-bootstrap-admin">
     <div class="sidebar">
       {{# if dictionaryReady }}
         {{> reactiveTemplate template="links" }}
       {{/ if }}
     </div>
     <div class="content">
-      {{> simpleThemeHeader }}
+      {{> orionBootstrapHeader }}
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
@@ -27,7 +27,7 @@
   </style>
 </template>
 
-<template name="simpleThemeHeader">
+<template name="orionBootstrapHeader">
   <div class="navbar">
     <div class="navbar-header">
       <div class="navbar-header">
@@ -43,27 +43,27 @@
   </div>
 </template>
 
-<template name="simpleThemeSmallContentOffset">
+<template name="orionBootstrapSmallContentOffset">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       {{> yield }}
     </div>
   </div>
 </template>
-<template name="simpleThemeMediumContentOffset">
+<template name="orionBootstrapMediumContentOffset">
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
       {{> yield }}
     </div>
   </div>
 </template>
-<template name="simpleThemeContentContainer">
+<template name="orionBootstrapContentContainer">
   <div class="well">
     {{> yield }}
   </div>
 </template>
 
-<template name="simpleThemeTitle">
+<template name="orionBootstrapTitle">
   <h1 class="title">  
     {{> yield }}
   </h1>

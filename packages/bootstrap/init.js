@@ -1,18 +1,21 @@
 Options.init('homePath')
 Options.init('siteName');
 
-ReactiveTemplates.set('layout', 'simpleThemeLayout');
-ReactiveTemplates.set('links', 'simpleThemeSidebar');
-ReactiveTemplates.set('login', 'simpleThemeLogin');
-ReactiveTemplates.set('account.index', 'simpleThemeAccountIndex');
-ReactiveTemplates.set('account.password', 'simpleThemeAccountPassword');
-ReactiveTemplates.set('account.profile', 'simpleThemeAccountProfile');
+ReactiveTemplates.set('layout', 'orionBootstrapLayout');
+ReactiveTemplates.set('links', 'orionBootstrapSidebar');
+ReactiveTemplates.set('login', 'orionBootstrapLogin');
 
-ReactiveTemplates.set('configUpdate', 'simpleThemeConfigUpdate');
-ReactiveTemplates.set('dictionaryUpdate', 'simpleThemeDictionaryUpdate');
+ReactiveTemplates.set('myAccount.index', 'orionBootstrapAccountIndex');
+ReactiveTemplates.set('myAccount.password', 'orionBootstrapAccountPassword');
+ReactiveTemplates.set('myAccount.profile', 'orionBootstrapAccountProfile');
+
+ReactiveTemplates.set('accounts.index', 'orionBootstrapAccountsIndex');
+
+ReactiveTemplates.set('configUpdate', 'orionBootstrapConfigUpdate');
+ReactiveTemplates.set('dictionaryUpdate', 'orionBootstrapDictionaryUpdate');
 
 // Set the default entity templates
-Options.set('collectionsDefaultIndexTemplate', 'simpleThemeCollectionsIndex');
-Options.set('collectionsDefaultCreateTemplate', 'simpleThemeCollectionsCreate');
-Options.set('collectionsDefaultUpdateTemplate', 'simpleThemeCollectionsUpdate');
-Options.set('collectionsDefaultDeleteTemplate', 'simpleThemeCollectionsDelete');
+Options.set('collectionsDefaultIndexTemplate', 'orionBootstrapCollectionsIndex');
+Options.set('collectionsDefaultCreateTemplate', 'orionBootstrapCollectionsCreate');
+Options.set('collectionsDefaultUpdateTemplate', 'orionBootstrapCollectionsUpdate');
+Options.set('collectionsDefaultDeleteTemplate', 'orionBootstrapCollectionsDelete');

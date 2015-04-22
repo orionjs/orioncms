@@ -1,11 +1,11 @@
-<template name="simpleThemeCollectionsCreate">
-  {{# Layout template="simpleThemeMediumContentOffset" }}
+<template name="orionBootstrapCollectionsCreate">
+  {{# Layout template="orionBootstrapMediumContentOffset" }}
     {{# if collection.canShowCreate }}
-      {{# Layout template="simpleThemeTitle" }}
+      {{# Layout template="orionBootstrapTitle" }}
         Create a {{ collection.singularName }}
       {{/ Layout }}
-      {{# Layout template="simpleThemeContentContainer" }}
-        {{> quickForm collection=collection id="simpleThemeCollectionsCreateForm" type="insert" buttonContent=false }}
+      {{# Layout template="orionBootstrapContentContainer" }}
+        {{> quickForm collection=collection id="orionBootstrapCollectionsCreateForm" type="insert" buttonContent=false }}
         <br>
         <div class="buttons text-right">
           <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>

@@ -1,11 +1,11 @@
-<template name="simpleThemeCollectionsUpdate">
-  {{# Layout template="simpleThemeMediumContentOffset" }}
-    {{# Layout template="simpleThemeTitle" }}
+<template name="orionBootstrapCollectionsUpdate">
+  {{# Layout template="orionBootstrapMediumContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
       Update {{ collection.singularName }}
     {{/ Layout }}
-    {{# Layout template="simpleThemeContentContainer" }}
+    {{# Layout template="orionBootstrapContentContainer" }}
       {{# if item.canShowUpdate }}
-        {{> quickForm collection=collection doc=item id="simpleThemeCollectionsUpdateForm" type="update" buttonContent=false }}
+        {{> quickForm collection=collection doc=item id="orionBootstrapCollectionsUpdateForm" type="update" buttonContent=false }}
         <br>
         <div class="buttons text-right">
           <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
