@@ -24,12 +24,25 @@ Package.onUse(function(api) {
     'matb33:collection-hooks',
     ]);
 
-  api.addFiles(['accounts.js', 'admin.js']);
-  api.addFiles('accounts_server.js', 'server');
-  api.addFiles(['accounts_client.js'], 'client');
+  api.addFiles([
+    'accounts.js',
+    'authentication/login.js',
+    'authentication/secure-routes.js',
+    'my-account/admin.js',
+    'accounts-tab/admin.js',
+    ])
 
-  api.addFiles('createdBy/createdBy-attribute.html', 'client');
-  api.addFiles('createdBy/createdBy-attribute.js');
+  api.addFiles([
+    'accounts_server.js'
+    ], 'server');
+
+  api.addFiles([
+    'accounts_client.js',
+    ], 'client');
+
+  // Created by attribute
+  api.addFiles('created-by/created-by-attribute.js');
+  api.addFiles('created-by/created-by-attribute.html', 'client');
 
   api.export('orion');
 });
