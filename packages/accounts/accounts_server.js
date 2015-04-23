@@ -6,8 +6,11 @@ Meteor.users.after.insert(function (userId, doc) {
 
   if (orion.adminExists) {
     // if there is a admin created we will set the default roles.
-    var defaultRoles = Options.get('defaultRoles');
-    Roles.addUserToRoles(userId, defaultRoles);
+    
+    if (Roles._collection.find({ userId: userId }).count() == 0) {
+      var defaultRoles = Options.get('defaultRoles');
+      Roles.addUserToRoles(userId, defaultRoles);
+    }
   } else {
     // If there is no admin, we will add the admin role to this new user.
     Roles.addUserToRoles(userId, 'admin');
