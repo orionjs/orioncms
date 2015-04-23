@@ -23,6 +23,10 @@ Package.onUse(function(api) {
     'attributes.js'
     ]);
 
+  // Created by attribute
+  api.addFiles('created-by/created-by-attribute.js');
+  api.addFiles('created-by/created-by-attribute.html', 'client');
+
   api.export('orion');
 });
 
