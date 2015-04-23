@@ -2,6 +2,8 @@
  * Display account settings
  */
 ReactiveTemplates.request('accounts.index');
+ReactiveTemplates.request('accounts.update.roles');
+ReactiveTemplates.request('accounts.create');
 
 /**
  * Register the route
@@ -19,5 +21,32 @@ orion.addLink({
   section: 'bottom',
   title: 'Accounts',
   routeName: 'accounts.index',
-  activeRouteRegex: 'accounts.',
+  activeRouteRegex: 'accounts',
 });
+
+/**
+ * Edit the roles of the user
+ */
+Router.route('/admin/accounts/:_id/update/roles', function () {
+  this.layout(ReactiveTemplates.get('layout'));
+  this.render(ReactiveTemplates.get('accounts.update.roles'));
+}, { name: 'accounts.update.roles' });
+orion.accounts.addProtectedRoute('accounts.update.roles');
+
+orion.accounts.addAdminUsersButton({
+  title: 'Edit Roles',
+  route: 'accounts.update.roles',
+  shouldShow: function() {
+    return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');
+  }
+});
+
+/**
+ * Create/invite users
+ */
+Router.route('/admin/accounts/create', function () {
+  this.layout(ReactiveTemplates.get('layout'));
+  this.render(ReactiveTemplates.get('accounts.create'));
+}, { name: 'accounts.create' });
+orion.accounts.addProtectedRoute('accounts.create');
+

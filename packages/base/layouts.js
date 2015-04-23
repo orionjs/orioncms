@@ -1,4 +1,9 @@
 /**
+ * Requests a layout template
+ */
+ReactiveTemplates.request('layout');
+
+/**
  * Handle links. To add tabs to the sidebar
  */
 Options.init('links', []);
@@ -11,26 +16,6 @@ orion.addLink = function(options) {
     permission: Match.Optional(String),
   }));
   Options.arrayPush('links', options);
-}
-
-/**
- * Requests a layout template
- */
-ReactiveTemplates.request('layout');
-
-if (Meteor.isClient) {
-  /**
-   * Set the helpers to the layout template
-   */
-  ReactiveTemplates.helpers('layout', {
-    /**
-     * Return the name of the sidebar template.
-     * This is used to set dynamically the sidebar.
-     */
-    linksTemplate: function() {
-      return ReactiveTemplates.get('links');
-    }
-  });
 }
 
 /**

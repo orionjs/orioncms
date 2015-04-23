@@ -29,15 +29,18 @@ Package.onUse(function(api) {
     'authentication/login.js',
     'authentication/secure-routes.js',
     'my-account/admin.js',
+    'accounts-tab/accounts.js',
     'accounts-tab/admin.js',
     ])
 
   api.addFiles([
-    'accounts_server.js'
+    'accounts_server.js',
+    'accounts-tab/server.js',
     ], 'server');
 
   api.addFiles([
     'accounts_client.js',
+    'accounts-tab/client.js',
     ], 'client');
 
   // Created by attribute

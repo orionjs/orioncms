@@ -44,6 +44,8 @@ Package.onUse(function(api) {
     'views/accounts/profile.js',
     'views/accounts/accounts.less',
     'views/accounts/accounts.html',
+    'views/accounts/roles.html',
+    'views/accounts/create.html',
     'views/config/update.html',
     'views/config/update.js',
     'views/dictionary/update.html',
