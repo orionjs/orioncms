@@ -1,0 +1,45 @@
+<template name="orionBootstrapAccountsIndex">
+  {{# Layout template="orionBootstrapSmallContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
+      Accounts
+      {{# if userHasPermission 'accounts.create' }}
+        <a href="{{ pathFor 'accounts.create' }}" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></a>
+      {{/ if }}
+    {{/ Layout }}
+
+    {{# Layout template="orionBootstrapContentContainer" }}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{# each users }}
+            <tr>
+              <td><b>{{ profile.name }}</b></td>
+              <td>
+                {{# each emails }}
+                  {{ address }}
+                {{/ each }}
+              </td>
+              <td>
+                {{# each roles }}
+                  <span class="label label-danger">{{ this }}</span>
+                {{/ each }}
+              </td>
+              <td>
+                {{# each buttons }}
+                  <a class="btn btn-default btn-xs user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
+                {{/ each }}
+              </td>
+            </tr>
+          {{/ each }}
+        </tbody>
+      </table>
+    {{/ Layout }}
+  {{/ Layout }}
+</template>
