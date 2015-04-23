@@ -38,6 +38,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'accounts_server.js',
     'accounts-tab/server.js',
+    'invitations/server.js',
     ], 'server');
 
   api.addFiles([

@@ -42,23 +42,6 @@ InvitationsSchema = new SimpleSchema({
 orion.accounts.invitations.attachSchema(InvitationsSchema);
 
 
-Meteor.methods({
-  createInvitation: function (options) {
-    check(options, {
-      roles: Array,
-      email: Match.Optional(String),
-    });
-    var invitationId = orion.accounts.invitations.insert(options);
-
-    if (Options.get('sendAccountInvitationToEmail') && Options.get('accountInvitationEmailTemplate')) {
-      // Not ready
-    }
-
-    return invitationId;
-  }
-});
-
-
 
 
 

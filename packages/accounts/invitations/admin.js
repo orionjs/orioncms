@@ -49,3 +49,83 @@ if (Meteor.isClient) {
     }
   });
 }
+
+
+
+/**
+ * Register with invitation
+ */
+ReactiveTemplates.request('registerWithInvitation');
+
+Router.route('/register/invitation/:_id', function () {
+  this.render(ReactiveTemplates.get('registerWithInvitation'));
+}, { name: 'registerWithInvitation' });
+
+
+if (Meteor.isClient) {
+
+  ReactiveTemplates.onRendered('registerWithInvitation', function() {
+    if (Meteor.userId()) {
+      Router.go('admin');
+    }
+    this.subscribe('invitation', Router.current().params._id);
+    Session.set('registerWithInvitationError', null);
+  })
+
+  ReactiveTemplates.helpers('registerWithInvitation', {
+    invitation: function() {
+      return orion.accounts.invitations.findOne(Router.current().params._id);
+    },
+    error: function() {
+      return Session.get('registerWithInvitationError');
+    }
+  });
+
+  ReactiveTemplates.events('registerWithInvitation', {
+    'submit form': function (event, template) {
+      event.preventDefault();
+      Session.set('registerWithInvitationError', null);
+
+      var email = template.$("[name='email']").val(),
+        name = template.$("[name='name']").val(),
+        password = template.$("[name='password']").val(),
+        passwordConfirm = template.$("[name='password-confirm']").val();
+
+      if (!/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
+        Session.set('registerWithInvitationError', 'The email is not valid');
+        return;
+      }
+
+      if (password != passwordConfirm) {
+        Session.set('registerWithInvitationError', 'Passwords must match');
+        return;
+      }
+
+      Meteor.call('registerWithInvitation', {
+        invitationId: Router.current().params._id,
+        email: email,
+        password: password,
+        name: name
+      }, function(error, result) {
+        if (error) {
+          Session.set('registerWithInvitationError', error.reason);
+          console.log(error);
+        } else {
+          Meteor.loginWithPassword(email, password, function(error) {
+            if (error) {
+              Session.set('registerWithInvitationError', error.reason);
+              console.log(error);
+            } else {
+              Router.go('admin');
+            }
+          })
+        }
+      });
+    }
+  });
+}
+
+
+
+
+
