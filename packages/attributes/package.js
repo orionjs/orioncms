@@ -27,6 +27,10 @@ Package.onUse(function(api) {
   api.addFiles('created-by/created-by.js');
   api.addFiles('created-by/created-by.html', 'client');
 
+  // Created at attribute
+  api.addFiles('created-at/created-at.js');
+  api.addFiles('created-at/created-at.html', 'client');
+
   api.export('orion');
 });
 
