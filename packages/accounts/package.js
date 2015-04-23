@@ -31,6 +31,8 @@ Package.onUse(function(api) {
     'my-account/admin.js',
     'accounts-tab/accounts.js',
     'accounts-tab/admin.js',
+    'invitations/invitations.js',
+    'invitations/admin.js',
     ])
 
   api.addFiles([

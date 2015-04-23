@@ -3,7 +3,6 @@
  */
 ReactiveTemplates.request('accounts.index');
 ReactiveTemplates.request('accounts.update.roles');
-ReactiveTemplates.request('accounts.invite');
 
 /**
  * Register the route

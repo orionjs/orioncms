@@ -5,7 +5,40 @@
     {{/ Layout }}
 
     {{# Layout template="orionBootstrapContentContainer" }}
-      
+      {{# if invitationId }}
+        <div class="alert alert-success">
+          Invitation created successfully
+        </div>
+        <p>
+          <span class="label label-danger">{{ invitationId }}</span>
+        </p>
+        <hr>
+        <div class="buttons">
+          <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Back</a>
+          <button class="btn btn-primary btn-invite-another">Invite another</button>
+        </div>
+      {{ else }}
+        <form class="invite">
+          <p>Select the roles for the new user</p>
+          {{# each roles }}
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" role="{{ this }}"> <code>{{ this }}</code>
+              </label>
+            </div>
+          {{/ each }}
+          <p>Email of the new user (optional)</p>
+          <div class="form-group">
+            <input type="email" class="form-control">
+          </div>
+          
+          <hr>
+          <div class="buttons">
+            <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
+            <button class="btn btn-primary">Invite</button>
+          </div>
+        </form>
+        {{/ if }}
     {{/ Layout }}
   {{/ Layout }}
 </template>
