@@ -13,7 +13,7 @@ ReactiveTemplates.set('myAccount.profile', 'orionBootstrapAccountProfile');
 
 ReactiveTemplates.set('accounts.index', 'orionBootstrapAccountsIndex');
 ReactiveTemplates.set('accounts.update.roles', 'orionBootstrapAccountsUpdateRoles');
-ReactiveTemplates.set('accounts.create', 'orionBootstrapAccountsCreate');
+ReactiveTemplates.set('accounts.invite', 'orionBootstrapAccountsInvite');
 
 ReactiveTemplates.set('configUpdate', 'orionBootstrapConfigUpdate');
 ReactiveTemplates.set('dictionaryUpdate', 'orionBootstrapDictionaryUpdate');

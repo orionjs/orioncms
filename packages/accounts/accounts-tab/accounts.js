@@ -9,11 +9,6 @@ Roles.registerAction('accounts.index', true);
 Roles.registerAction('accounts.update.roles', true);
 
 /**
- * Can the user update user users roles?
- */
-Roles.registerAction('accounts.create', true);
-
-/**
  * To set the actions for the admin
  */
 orion.accounts._adminUsersButtons = [];

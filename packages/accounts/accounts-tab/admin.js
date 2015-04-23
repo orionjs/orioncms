@@ -3,7 +3,7 @@
  */
 ReactiveTemplates.request('accounts.index');
 ReactiveTemplates.request('accounts.update.roles');
-ReactiveTemplates.request('accounts.create');
+ReactiveTemplates.request('accounts.invite');
 
 /**
  * Register the route
@@ -40,13 +40,4 @@ orion.accounts.addAdminUsersButton({
     return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');
   }
 });
-
-/**
- * Create/invite users
- */
-Router.route('/admin/accounts/create', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('accounts.create'));
-}, { name: 'accounts.create' });
-orion.accounts.addProtectedRoute('accounts.create');
 
