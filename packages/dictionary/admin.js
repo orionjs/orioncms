@@ -38,7 +38,7 @@ Tracker.autorun(function () {
 if (Meteor.isClient) {
 
   ReactiveTemplates.onRendered('dictionaryUpdate', function() {
-    var defaultCategory = _.first(_.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories')));
+    var defaultCategory = _.first(_.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.allowedCategories')));
     Session.set('dictionaryUpdateCurrentCategory', defaultCategory);
   })
 
@@ -57,7 +57,7 @@ if (Meteor.isClient) {
       return Session.get('dictionaryUpdateCurrentCategory');
     },
     getCategories: function() {
-      return _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories'))
+      return _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.allowedCategories'))
     }
   })
 }

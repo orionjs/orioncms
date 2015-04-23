@@ -17,7 +17,7 @@ orion.dictionary.isActive = function() {
  * Register dictionary actions and helpers for roles
  */
 Roles.registerAction('dictionary.update', true);
-Roles.registerHelper('dictionary.getAllowedCategories', function() {
+Roles.registerHelper('dictionary.allowedCategories', function() {
   return orion.dictionary.simpleSchema()._firstLevelSchemaKeys;
 });
 
@@ -60,7 +60,7 @@ orion.dictionary.deny({
  */
 orion.dictionary.deny({
   update: function (userId, doc, fields, modifier) {
-    var allowedFields = _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.getAllowedCategories'));
+    var allowedFields = _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.allowedCategories'));
     if (allowedFields === false && _.difference(fields, allowedFields).length > 0) {
       return true;
     }
