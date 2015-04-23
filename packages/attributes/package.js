@@ -24,8 +24,8 @@ Package.onUse(function(api) {
     ]);
 
   // Created by attribute
-  api.addFiles('created-by/created-by-attribute.js');
-  api.addFiles('created-by/created-by-attribute.html', 'client');
+  api.addFiles('created-by/created-by.js');
+  api.addFiles('created-by/created-by.html', 'client');
 
   api.export('orion');
 });
