@@ -26,4 +26,5 @@ AccountsTemplates.configureRoute('ensureSignedIn', {
  */
 Tracker.autorun(function () {
   AccountsTemplates.routes.ensureSignedIn.template = ReactiveTemplates.get('login');
+  AccountsTemplates.routes.ensureSignedIn.layoutTemplate = ReactiveTemplates.get('outAdminLayout');
 });

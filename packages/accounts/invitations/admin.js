@@ -58,6 +58,7 @@ if (Meteor.isClient) {
 ReactiveTemplates.request('registerWithInvitation');
 
 Router.route('/register/invitation/:_id', function () {
+  this.layout(ReactiveTemplates.get('outAdminLayout'));
   this.render(ReactiveTemplates.get('registerWithInvitation'));
 }, { name: 'registerWithInvitation' });
 

@@ -4,6 +4,8 @@ Options.init('siteName');
 ReactiveTemplates.request('tabs', 'orionBootstrapTabs');
 
 ReactiveTemplates.set('layout', 'orionBootstrapLayout');
+ReactiveTemplates.set('outAdminLayout', 'orionBootstrapOutAdminLayout');
+
 ReactiveTemplates.set('links', 'orionBootstrapSidebar');
 ReactiveTemplates.set('login', 'orionBootstrapLogin');
 ReactiveTemplates.set('registerWithInvitation', 'orionBootstrapRegisterWithInvitation');

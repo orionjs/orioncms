@@ -4,6 +4,11 @@
 ReactiveTemplates.request('layout');
 
 /**
+ * Requests a layout for auth
+ */
+ReactiveTemplates.request('outAdminLayout');
+
+/**
  * Handle links. To add tabs to the sidebar
  */
 Options.init('links', []);
