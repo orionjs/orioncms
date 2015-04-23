@@ -30,7 +30,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'init.js', 
     'helpers.js', 
-    'layouts.js'
+    'layouts.js',
+    'home-route.js'
     ]);
 
   api.export('orion');
