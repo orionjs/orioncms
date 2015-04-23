@@ -10,7 +10,7 @@
           Invitation created successfully
         </div>
         <p>
-          <span class="label label-danger">{{ invitationId }}</span>
+          <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
         </p>
         <hr>
         <div class="buttons">

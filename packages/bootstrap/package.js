@@ -38,6 +38,7 @@ Package.onUse(function(api) {
     'views/sidebar/sidebar.html',
     'views/sidebar/sidebar.less',
     'views/accounts/login.html',
+    'views/accounts/register-with-invitation.html',
     'views/accounts/index.html',
     'views/accounts/password.html',
     'views/accounts/profile.html',

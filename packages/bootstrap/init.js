@@ -6,6 +6,7 @@ ReactiveTemplates.request('tabs', 'orionBootstrapTabs');
 ReactiveTemplates.set('layout', 'orionBootstrapLayout');
 ReactiveTemplates.set('links', 'orionBootstrapSidebar');
 ReactiveTemplates.set('login', 'orionBootstrapLogin');
+ReactiveTemplates.set('registerWithInvitation', 'orionBootstrapRegisterWithInvitation');
 
 ReactiveTemplates.set('myAccount.index', 'orionBootstrapAccountIndex');
 ReactiveTemplates.set('myAccount.password', 'orionBootstrapAccountPassword');
