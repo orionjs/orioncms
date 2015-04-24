@@ -11,7 +11,6 @@ Package.onUse(function(api) {
   api.use([
     'orionjs:core@1.0.0',
     'orionjs:filesystem@1.0.0',
-    'orionjs:config',
     'cfs:standard-packages',
     'cfs:filesystem',
     'cfs:graphicsmagick',
