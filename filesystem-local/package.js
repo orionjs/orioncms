@@ -13,7 +13,6 @@ Package.onUse(function(api) {
     'orionjs:filesystem@1.0.0',
     'cfs:standard-packages',
     'cfs:filesystem',
-    'cfs:graphicsmagick',
     'underscore'
     ]);
 
