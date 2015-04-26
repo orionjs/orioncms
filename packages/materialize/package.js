@@ -14,7 +14,7 @@ Package.onUse(function(api) {
     'less',
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
-    'orionjs:tabular',
+    'nicolaslopezj:tabular-materialize',
     'useraccounts:materialize@1.8.1',
     'zimme:iron-router-active@1.0.4',
     'gildaspk:autoform-materialize@0.0.18'
@@ -30,6 +30,10 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'init.js',
+    'tabular.js'
+    ]);
+
+  api.addFiles([
     'views/layout/layout.html',
     'views/layout/layout.js',
     'views/layout/layout.less',

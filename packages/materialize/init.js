@@ -27,9 +27,11 @@ Options.set('collectionsDefaultCreateTemplate', 'orionMaterializeCollectionsCrea
 Options.set('collectionsDefaultUpdateTemplate', 'orionMaterializeCollectionsUpdate');
 Options.set('collectionsDefaultDeleteTemplate', 'orionMaterializeCollectionsDelete');
 
-AutoForm.setDefaultTemplate('materialize');
-
 // Orion attributes replace
 Meteor.startup(function () {
   ReactiveTemplates.set('attribute.file', 'orionMaterializeFileAttribute');
 });
+
+if (Meteor.isClient) {
+  AutoForm.setDefaultTemplate('materialize');
+}
