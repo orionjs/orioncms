@@ -1,0 +1,43 @@
+<template name="orionMaterializeAccountsInvite">
+  {{# if invitationId }}
+    {{# Layout template="orionMaterializeContentContainer" }}
+      {{# Layout template="orionMaterializeHeaderContainer" }}
+        Invite
+      {{/ Layout }}
+      <div class="alert">
+        Invitation created successfully
+      </div>
+      <p>
+        <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
+      </p>
+    {{/ Layout }}
+    {{# Layout template="orionMaterializeButtonsContainer" }}
+      <a href="{{ pathFor 'accounts.index' }}">Back</a>
+      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-invite-another">Invite another</button>
+    {{/ Layout }}
+  {{ else }}
+    <form class="invite">
+      {{# Layout template="orionMaterializeContentContainer" }}
+        {{# Layout template="orionMaterializeHeaderContainer" }}
+          Invite
+        {{/ Layout }}
+        <label>Select the roles for the new user</label>
+        <br><br>
+        {{# each roles }}
+          <p>
+            <input type="checkbox" role="{{ this }}" id="input-role-{{this}}"/>
+            <label for="input-role-{{this}}">{{ this }}</label>
+          </p>
+        {{/ each }}
+        <div class="input-field">
+          <input type="email" class="form-control" id="email">
+          <label for="email">Email of the new user (optional)</label>
+        </div>
+      {{/ Layout }}
+      {{# Layout template="orionMaterializeButtonsContainer" }}
+        <a href="{{ pathFor 'accounts.index' }}">Cancel</a>
+        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">Invite</button>
+      {{/ Layout }}
+    </form>
+  {{/ if }}
+</template>

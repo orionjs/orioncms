@@ -1,0 +1,35 @@
+<template name="orionMaterializeFileAttribute">
+  <br>
+  <div class="fileUpload" {{ this.atts }}>
+    {{# if file }}
+      <div class="preview">
+        {{# if isImage file.url }}
+          <div class="row">
+            <div class="col m6">
+              <p><img src="{{ file.url }}"></p>
+            </div>
+          </div>
+        {{ else }}
+          <p><i class="fa {{ iconForFile file.url }}"></i></p>
+          <p><a href="{{ file.url }}" target="_blank">{{ file.url }}</a></p>
+        {{/ if }}
+      </div>
+      <button type="button" class="btn btn-danger btn-remove btn-xs">Remove</button>
+    {{ else }}
+      {{# if isUploading }}
+        <div class="progress">
+          <div class="determinate" style="width: {{ progress }}%"></div>
+        </div>
+      {{ else }}
+        <div class="file-field input-field">
+          <input class="file-path validate" type="text"/>
+          <div class="btn btn-small">
+            <span>File</span>
+            <input type="file" />
+          </div>
+        </div>
+      {{/ if }} 
+    {{/ if }}
+  </div>
+  <br>
+</template>

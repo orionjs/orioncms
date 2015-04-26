@@ -1,0 +1,16 @@
+<template name="orionMaterializeDictionaryUpdate">
+  {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
+    {{# Layout template="orionMaterializeContentContainer" }}
+      {{# Layout template="orionMaterializeHeaderContainer" }}
+        Dictionary
+      {{/ Layout }}
+      {{> reactiveTemplate template="tabs" data=getDataForTabs }}
+      {{# if currentCategory }}
+        {{> afQuickFields name=currentCategory }}
+      {{/ if }}
+    {{/ Layout }}
+    {{# Layout template="orionMaterializeButtonsContainer" }}
+        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">Save</button>
+    {{/ Layout }}
+  {{/ autoForm }}
+</template>

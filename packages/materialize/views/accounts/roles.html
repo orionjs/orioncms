@@ -1,0 +1,30 @@
+<template name="orionMaterializeAccountsUpdateRoles">
+  <form class="roles">
+    {{# Layout template="orionMaterializeContentContainer" }}
+      {{# Layout template="orionMaterializeHeaderContainer" }}
+        Edit Roles
+        <small>
+          {{ user.profile.name }}
+        </small>
+      {{/ Layout }}
+      
+        <p>Select the roles for this user</p>
+        <br>
+        {{# each roles }}
+          <p>
+            {{# if hasRole }}
+              <input type="checkbox" role="{{ this }}" id="input-role-{{this}}" checked />
+            {{ else }}
+              <input type="checkbox" role="{{ this }}" id="input-role-{{this}}"/>
+            {{/ if }}
+            <label for="input-role-{{this}}">{{ this }}</label>
+          </p>
+        {{/ each }}
+        
+    {{/ Layout }}
+    {{# Layout template="orionMaterializeButtonsContainer" }}
+      <a class="" href="{{ pathFor 'accounts.index' }}">Cancel</a>
+      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-save">Save</button>
+    {{/ Layout }}
+  </form>
+</template>

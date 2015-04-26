@@ -1,0 +1,18 @@
+<template name="orionMaterializeConfigUpdate">
+  {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
+    {{# Layout template="orionMaterializeContentContainer" }}
+      {{# Layout template="orionMaterializeHeaderContainer" }}
+        Config
+      {{/ Layout }}
+      {{> reactiveTemplate template="tabs" data=getDataForTabs }}
+      {{# if getFields }}
+        {{# each afFieldNames fields=getFields }}
+          {{> afQuickField name=this.name options=afOptionsFromSchema }}
+        {{/ each}}
+      {{/ if }}
+    {{/ Layout }}
+    {{# Layout template="orionMaterializeButtonsContainer" }}
+        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">Save</button>
+    {{/ Layout }}
+  {{/ autoForm }}
+</template>

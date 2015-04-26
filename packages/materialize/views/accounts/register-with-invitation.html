@@ -1,0 +1,46 @@
+<template name="orionMaterializeRegisterWithInvitation">
+  {{# contentFor "title" }}
+    Register
+  {{/ contentFor }}
+  {{# if invitation }}
+    {{# if error }}
+      <br>
+      <div class="alert alert-danger">
+        {{ error }}
+      </div>
+      <br>
+    {{ else }}
+      <p class="text-center">
+        <label class="label label-danger">{{ invitation._id }}</label>
+      </p>
+      <br>
+    {{/ if }}
+
+    <form>
+      <div class="form-group">
+        <label>Email</label>
+        {{# if invitation.email }}
+          <input class="form-control" value="{{ invitation.email }}" name="email" type="email" disabled=true>
+        {{ else }}
+          <input class="form-control" placeholder="Email" name="email" type="email">
+        {{/ if }}
+      </div>
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" placeholder="Name" name="name" type="text">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input class="form-control" placeholder="Password" name="password" type="password">
+      </div>
+      <div class="form-group">
+        <label>Password (again)</label>
+        <input class="form-control" placeholder="Password (again)" name="password-confirm" type="password">
+      </div>
+      <br>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block btn-lg">Register</button>
+      </div>
+    </form>
+  {{/ if }}
+</template>

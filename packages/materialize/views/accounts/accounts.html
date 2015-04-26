@@ -1,0 +1,44 @@
+<template name="orionMaterializeAccountsIndex">
+  {{# Layout template="orionMaterializeContentContainer" }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      Accounts
+    {{/ Layout }}
+    <table class="table hoverable responsive-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Roles</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{# each users }}
+          <tr>
+            <td><b>{{ profile.name }}</b></td>
+            <td>
+              {{# each emails }}
+                {{ address }}
+              {{/ each }}
+            </td>
+            <td>
+              {{# each roles }}
+                <span class="label label-danger">{{ this }}</span>
+              {{/ each }}
+            </td>
+            <td>
+              {{# each buttons }}
+                <a class="btn waves-effect waves-teal light-blue accent-4 user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
+              {{/ each }}
+            </td>
+          </tr>
+        {{/ each }}
+      </tbody>
+    </table>
+  {{/ Layout }}
+  {{# Layout template="orionMaterializeButtonsContainer" }}
+    {{# if userHasPermission 'accounts.invite' }}
+      <a href="{{ pathFor 'accounts.invite' }}" >Invite</a>
+    {{/ if }}
+  {{/ Layout }}
+</template>
