@@ -21,11 +21,12 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'attribute.js',
+    'users.js',
     ]);
 
   api.addFiles([
     'relationships.html',
     'relationships.js',
-    'relationships.less'
+    'relationships.less',
     ], 'client');
 });
