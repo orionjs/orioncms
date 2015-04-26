@@ -14,7 +14,7 @@ Package.onUse(function(api) {
     'less',
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
-    'orionjs:tabular',
+    'aldeed:tabular@1.1.0',
     'useraccounts:bootstrap@1.8.1',
     'zimme:iron-router-active@1.0.4'
     ]);
@@ -29,6 +29,7 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'init.js',
+    'tabular.js'
     ]);
 
   api.addFiles([
