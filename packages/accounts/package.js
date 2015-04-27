@@ -12,6 +12,7 @@ Package.onUse(function(api) {
     'orionjs:base',
     'orionjs:attributes',
     'accounts-base',
+    'accounts-password',
     'useraccounts:core@1.8.1',
     'aldeed:simple-schema@1.3.2',
     'matb33:collection-hooks@0.7.11',
@@ -20,6 +21,7 @@ Package.onUse(function(api) {
 
   api.imply([
     'accounts-base',
+    'accounts-password',
     'useraccounts:core',
     'matb33:collection-hooks',
     ]);
