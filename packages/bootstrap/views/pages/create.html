@@ -1,0 +1,35 @@
+<template name="orionBootstrapPagesCreate">
+  {{# Layout template="orionBootstrapMediumContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
+      {{# if choosenTemplate }}
+        Create a new page - {{ choosenTemplate.name }}
+      {{ else }}
+        Choose a template
+      {{/ if }}
+    {{/ Layout }}
+    {{# Layout template="orionBootstrapContentContainer" }}
+      {{# if choosenTemplate }}
+        {{> quickForm collection="orion.pages.collection" schema=choosenTemplate.schema id="orionPagesCreateForm" type="insert"  buttonContent=false }}
+        <br>
+        <button class="btn btn-default cancel-btn">Back</button>
+        <button class="btn btn-primary submit-btn">Create</button>
+      {{ else }}
+        {{# each templates }}
+          <div class="row">
+            <div class="col-sm-12">
+              <h4>{{ name }}</h4>
+              <p>{{ description }}</p>
+              <p>
+                <button class="btn btn-primary btn-xs template-choose">
+                  Choose
+                </button>
+              </p>
+            </div>
+          </div>
+        {{/ each }}
+        <hr>
+        <a href="{{ pathFor 'pages.index' }}" class="btn btn-default"> Back</a>
+      {{/ if }}
+    {{/ Layout }}
+  {{/ Layout }}
+</template>

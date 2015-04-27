@@ -26,3 +26,9 @@ Options.set('collectionsDefaultIndexTemplate', 'orionBootstrapCollectionsIndex')
 Options.set('collectionsDefaultCreateTemplate', 'orionBootstrapCollectionsCreate');
 Options.set('collectionsDefaultUpdateTemplate', 'orionBootstrapCollectionsUpdate');
 Options.set('collectionsDefaultDeleteTemplate', 'orionBootstrapCollectionsDelete');
+
+// Pages
+ReactiveTemplates.set('pages.index', 'orionBootstrapPagesIndex');
+ReactiveTemplates.set('pages.create', 'orionBootstrapPagesCreate');
+ReactiveTemplates.set('pages.update', 'orionBootstrapPagesUpdate');
+ReactiveTemplates.set('pages.delete', 'orionBootstrapPagesDelete');
