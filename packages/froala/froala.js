@@ -43,7 +43,7 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
   });
 });
 
-ReactiveTemplates.helpers('attributeColumn.froala', {
+ReactiveTemplates.helpers('attributePreview.froala', {
   preview: function () {
     var value = this.value;
     var tmp = document.createElement("DIV");

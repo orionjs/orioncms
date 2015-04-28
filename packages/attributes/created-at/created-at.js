@@ -1,5 +1,5 @@
 orion.attributes.registerAttribute('createdAt', {
-  columnTemplate: 'createdAtColumn',
+  previewTemplate: 'createdAtPreview',
   getSchema: function(options) {
     return {
       type: Date,
@@ -20,9 +20,9 @@ orion.attributes.registerAttribute('createdAt', {
 });
 
 if (Meteor.isClient) {
-  ReactiveTemplates.helpers('attributeColumn.createdBy', {
+  ReactiveTemplates.helpers('attributePreview.createdAt', {
     date: function() {
-      return this.value;
+      return this.value && moment(this.value).format('LLL');
     }
   });
 }

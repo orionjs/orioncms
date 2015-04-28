@@ -45,7 +45,7 @@ ReactiveTemplates.onRendered('attribute.hasOne', onRendered)
 ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed)
 ReactiveTemplates.onDestroyed('attribute.hasOne', onDestroyed)
 
-ReactiveTemplates.helpers('attributeColumn.hasMany', {
+ReactiveTemplates.helpers('attributePreview.hasMany', {
   val: function() {
     var count = this.value.length;
     if (!this.schema) {
@@ -58,11 +58,11 @@ ReactiveTemplates.helpers('attributeColumn.hasMany', {
   }
 });
 
-ReactiveTemplates.onRendered('attributeColumn.hasOne', function() {
+ReactiveTemplates.onRendered('attributePreview.hasOne', function() {
   this.subscribe(this.data.schema.orion.publicationName + '_row', this.data.value);
 });
 
-ReactiveTemplates.helpers('attributeColumn.hasOne', {
+ReactiveTemplates.helpers('attributePreview.hasOne', {
   val: function () {
     var item = this.schema && this.schema.orion.collection.findOne(this.value);
     return item && orion.helpers.searchObjectWithDots(item, this.schema.orion.titleField, true);

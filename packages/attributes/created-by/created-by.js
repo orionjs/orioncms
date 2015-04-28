@@ -1,5 +1,5 @@
 orion.attributes.registerAttribute('createdBy', {
-  columnTemplate: 'createdByColumn',
+  previewTemplate: 'createdByPreview',
   getSchema: function(options) {
     return {
       type: String,
@@ -27,10 +27,10 @@ if (Meteor.isServer) {
   });
 }
 if (Meteor.isClient) {
-  ReactiveTemplates.onRendered('attributeColumn.createdBy', function() {
+  ReactiveTemplates.onRendered('attributePreview.createdBy', function() {
     this.subscribe('userProfileForCreatedByAttributeColumn', this.data.value)
   });
-  ReactiveTemplates.helpers('attributeColumn.createdBy', {
+  ReactiveTemplates.helpers('attributePreview.createdBy', {
     name: function() {
       var user = Meteor.users.findOne(this.value)
       return user && user.profile.name;

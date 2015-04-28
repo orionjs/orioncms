@@ -1,6 +1,6 @@
 orion.attributes.registerAttribute('users', {
   template: 'orionAttributesHasMany',
-  columnTemplate: 'orionAttributesHasManyColumn',
+  previewTemplate: 'orionAttributesHasManyColumn',
   getSchema: function(options) {
     options = _.extend(options, {
       titleField: 'profile.name',
@@ -34,7 +34,7 @@ orion.attributes.registerAttribute('users', {
 
 orion.attributes.registerAttribute('user', {
   template: 'orionAttributesHasOne',
-  columnTemplate: 'orionAttributesHasOneColumn',
+  previewTemplate: 'orionAttributesHasOneColumn',
   getSchema: function(options) {
     options = _.extend(options, {
       titleField: 'profile.name',

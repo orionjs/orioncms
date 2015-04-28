@@ -1,6 +1,6 @@
 orion.attributes.registerAttribute('file', {
   template: 'orionAttributesFileUpload',
-  columnTemplate: 'orionAttributesFileUploadColumn',
+  previewTemplate: 'orionAttributesFileUploadColumn',
   getSchema: function(options) {
     var subSchema = new SimpleSchema({
       url: {

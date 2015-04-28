@@ -95,7 +95,7 @@ var getSchema = function(options, hasMany) {
 
 orion.attributes.registerAttribute('hasMany', {
   template: 'orionAttributesHasMany',
-  columnTemplate: 'orionAttributesHasManyColumn',
+  previewTemplate: 'orionAttributesHasManyColumn',
   getSchema: function(options) {
     return getSchema(options, true);
   },
@@ -106,7 +106,7 @@ orion.attributes.registerAttribute('hasMany', {
 
 orion.attributes.registerAttribute('hasOne', {
   template: 'orionAttributesHasOne',
-  columnTemplate: 'orionAttributesHasOneColumn',
+  previewTemplate: 'orionAttributesHasOneColumn',
   getSchema: function(options) {
     return getSchema(options, false);
   },

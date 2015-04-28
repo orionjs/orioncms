@@ -1,6 +1,6 @@
 orion.attributes.registerAttribute('summernote', {
   template: 'orionAttributesSummernote',
-  columnTemplate: 'orionAttributesSummernoteColumn',
+  previewTemplate: 'orionAttributesSummernoteColumn',
   getSchema: function(options) {
     return {
       type: String

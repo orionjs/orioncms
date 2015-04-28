@@ -40,7 +40,7 @@ ReactiveTemplates.helpers('attribute.summernote', {
   }
 })
 
-ReactiveTemplates.helpers('attributeColumn.summernote', {
+ReactiveTemplates.helpers('attributePreview.summernote', {
   preview: function () {
     var value = this.value;
     var tmp = document.createElement("DIV");

@@ -12,6 +12,7 @@ Package.onUse(function(api) {
     'orionjs:base',
     'aldeed:collection2@2.0.0',
     'aldeed:autoform@5.1.1',
+    'momentjs:moment'
     ]);
 
   api.imply([
@@ -24,12 +25,12 @@ Package.onUse(function(api) {
     ]);
 
   // Created by attribute
-  api.addFiles('created-by/created-by.js');
   api.addFiles('created-by/created-by.html', 'client');
-
+  api.addFiles('created-by/created-by.js');
+  
   // Created at attribute
-  api.addFiles('created-at/created-at.js');
   api.addFiles('created-at/created-at.html', 'client');
+  api.addFiles('created-at/created-at.js');
 
   api.export('orion');
 });

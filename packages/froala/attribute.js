@@ -1,6 +1,6 @@
 orion.attributes.registerAttribute('froala', {
   template: 'orionAttributesFroala',
-  columnTemplate: 'orionAttributesFroalaColumn',
+  previewTemplate: 'orionAttributesFroalaColumn',
   getSchema: function(options) {
     return {
       type: String

@@ -50,7 +50,7 @@ orion.attributeColumn = function(name, key, title) {
         collection: collection,
         schema: schema,
       }
-      var template = ReactiveTemplates.get('attributeColumn.' + name);
+      var template = ReactiveTemplates.get('attributePreview.' + name);
       Blaze.renderWithData(Template[template], data, cell);
     }
   }
@@ -80,6 +80,7 @@ orion.attributes.registerAttribute = function(name, attribute) {
   check(attribute, {
     template: Match.Optional(String),
     columnTemplate: Match.Optional(String),
+    previewTemplate: Match.Optional(String),
     getSchema: Function,
     valueOut: Match.Optional(Function),
     valueIn: Match.Optional(Function),
@@ -91,8 +92,8 @@ orion.attributes.registerAttribute = function(name, attribute) {
     ReactiveTemplates.request('attribute.' + name, attribute.template);
   }
 
-  if (attribute.columnTemplate) {
-    ReactiveTemplates.request('attributeColumn.' + name, attribute.columnTemplate);
+  if (attribute.previewTemplate) {
+    ReactiveTemplates.request('attributePreview.' + name, attribute.previewTemplate);
   }
 
   orion.attributes[name] = attribute;
