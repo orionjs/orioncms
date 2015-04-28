@@ -37,3 +37,9 @@ Tracker.autorun(function () {
 if (Meteor.isClient) {
   AutoForm.setDefaultTemplate('materialize');
 }
+
+// Pages
+ReactiveTemplates.set('pages.index', 'orionMaterializePagesIndex');
+ReactiveTemplates.set('pages.create', 'orionMaterializePagesCreate');
+ReactiveTemplates.set('pages.update', 'orionMaterializePagesUpdate');
+ReactiveTemplates.set('pages.delete', 'orionMaterializePagesDelete');

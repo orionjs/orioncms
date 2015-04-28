@@ -126,11 +126,21 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
   }, schema);
 }
 
-TabularTables = {};
+var Tabular = null;
 
-Meteor.isClient && Template.registerHelper('TabularTables', TabularTables);
+if (Package['nicolaslopezj:tabular-materialize']) {
+  Tabular = Package['nicolaslopezj:tabular-materialize'].Tabular
+}
 
-TabularTables.Pages = new Tabular.Table({
+if (Package['aldeed:tabular']) {
+  Tabular = Package['aldeed:tabular'].Tabular
+}
+
+if (!Tabular) {
+  throw new Error('You must install tabular to use this package');
+}
+
+orion.pages.tabular = new Tabular.Table({
   name: "PagesIndex",
   collection: orion.pages.collection,
   columns: [

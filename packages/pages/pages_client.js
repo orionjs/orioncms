@@ -3,6 +3,12 @@ Template.registerHelper('pages', function(kw) {
   return orion.pages.collection.find(options);
 });
 
+ReactiveTemplates.helpers('pages.index', {
+  tabularTable: function () {
+    return orion.pages.tabular;
+  }
+});
+
 /**
  * Create Route
  */

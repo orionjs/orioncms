@@ -62,6 +62,11 @@ Package.onUse(function(api) {
     'views/collections/update.html',
     'views/collections/update.js',
     'views/collections/delete.html',
+    'views/pages/index.html',
+    'views/pages/create.html',
+    'views/pages/delete.html',
+    'views/pages/update.html',
+    'views/pages/pages.js',
     'views/misc/file.html',
     'views/misc/misc.js',
     ], 'client');

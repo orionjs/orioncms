@@ -12,10 +12,13 @@ Package.onUse(function(api) {
 		'meteor-platform',
 		'orionjs:base',
 		'aldeed:collection2@2.0.0',
-		'aldeed:tabular',
 		'aldeed:autoform',
 		'fortawesome:fontawesome'
 		]);
+
+	api.use(['aldeed:tabular', 'nicolaslopezj:tabular-materialize'], {
+		weak: true
+	});
 
 	api.imply([
 
