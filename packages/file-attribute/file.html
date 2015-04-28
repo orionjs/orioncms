@@ -1,0 +1,35 @@
+<template name="orionAttributesFileUpload">
+  <div class="fileUpload" {{ this.atts }}>
+    {{# if file }}
+      <div class="preview">
+        {{# if isImage file.url }}
+          <p><img src="{{ file.url }}"></p>
+        {{ else }}
+          <p><i class="fa {{ iconForFile file.url }}"></i></p>
+          <p><a href="{{ file.url }}" target="_blank">{{ file.url }}</a></p>
+        {{/ if }}
+      </div>
+      <button type="button" class="btn btn-danger btn-remove btn-xs">Remove</button>
+    {{ else }}
+      {{# if isUploading }}
+        <div class="progress"><div class="progress-bar progress-bar-striped active" style="width: {{ progress }}%"></div></div>
+      {{ else }}
+        <span class="btn btn-default btn-file btn-xs">
+          Choose a File <input type="file">
+        </span>
+      {{/ if }} 
+    {{/ if }}
+  </div>
+</template>
+
+<template name="orionAttributesFileUploadColumn">
+  {{# if value }}
+    {{# if isImage value.url }}
+      <p><img class="data-table-image" src="{{ value.url }}"></p>
+    {{ else }}
+      <p><a href="{{ value.url }}" target="_blank">File</a></p>
+    {{/ if }}
+  {{ else }}
+    <p class="help-block"><i>No File</i></p>
+  {{/ if }}
+</template>

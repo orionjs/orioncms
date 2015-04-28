@@ -1,0 +1,17 @@
+<template name="orionBootstrapCollectionsIndex">
+  {{# Layout template="orionBootstrapMediumContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
+      {{ collection.title }}
+      {{# if collection.canShowCreate }}
+        <a href="{{ collection.createPath }}" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></a>
+      {{/ if }}
+    {{/ Layout }}
+    {{# Layout template="orionBootstrapContentContainer" }}
+      {{# if collection.canIndex }}
+        {{# if showTable }}
+          {{> tabular table=collection.tabularTable class="table index-table" }}
+        {{/ if }}
+      {{/ if }}
+    {{/ Layout }}
+  {{/ Layout }}
+</template>

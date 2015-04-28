@@ -1,0 +1,88 @@
+<template name="orionBootstrapLayout">
+  <div class="orion-bootstrap-admin">
+    <div class="sidebar">
+      {{# if dictionaryReady }}
+        {{> reactiveTemplate template="links" }}
+      {{/ if }}
+    </div>
+    <div class="content">
+      {{> orionBootstrapHeader }}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="admin-content">
+              {{# if dictionaryReady }}
+                {{> yield }}
+              {{/ if }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style type="text/css">
+  html, body {
+    overflow: visible;
+  }
+  </style>
+</template>
+
+<template name="orionBootstrapOutAdminLayout">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+        <h1 class="text-center">{{> yield 'title' }}</h1>
+        {{> yield }}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="orionBootstrapHeader">
+  <div class="navbar">
+    <div class="navbar-header">
+      <div class="navbar-header">
+        <a class="menu-toggle navbar-brand">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template name="orionBootstrapSmallContentOffset">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      {{> yield }}
+    </div>
+  </div>
+</template>
+<template name="orionBootstrapMediumContentOffset">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      {{> yield }}
+    </div>
+  </div>
+</template>
+<template name="orionBootstrapContentContainer">
+  <div class="well">
+    {{> yield }}
+  </div>
+</template>
+
+<template name="orionBootstrapTitle">
+  <h1 class="title">  
+    {{> yield }}
+  </h1>
+  <hr>
+</template>
+
+<template name="orionBootstrapTabs">
+  {{# each items }}
+    <a class="btn btn-xs {{ class }}">{{ title }}</a>
+  {{/ each }}
+</template>

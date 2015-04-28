@@ -1,0 +1,33 @@
+<template name="orionBootstrapAccountsUpdateRoles">
+  {{# Layout template="orionBootstrapSmallContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
+      Edit Roles
+      <small>
+        {{ user.profile.name }}
+      </small>
+    {{/ Layout }}
+
+    {{# Layout template="orionBootstrapContentContainer" }}
+      <form class="roles">
+        <p>Select the roles for this user</p>
+        {{# each roles }}
+          <div class="checkbox">
+            <label>
+              {{# if hasRole }}
+                <input type="checkbox" role="{{ this }}" checked><code>{{ this }}</code>
+              {{ else }}
+                <input type="checkbox" role="{{ this }}"> <code>{{ this }}</code>
+              {{/ if }}
+            </label>
+          </div>
+        {{/ each }}
+        
+        <hr>
+        <div class="buttons">
+          <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
+          <button class="btn btn-primary btn-save">Save</button>
+        </div>
+      </form>
+    {{/ Layout }}
+  {{/ Layout }}
+</template>

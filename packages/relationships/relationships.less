@@ -1,0 +1,40 @@
+.orionAttributesHasMany {
+
+  &.selectize-control.multi .selectize-input [data-value] {
+    background-color: #fff;
+    background-image: none;
+    color: #555;
+    text-shadow: none;
+    border: 1px solid #ccc;
+    box-shadow: none;
+
+    &.active, &.focus {
+      background-color: lighten(rgba(0, 0, 0, 0.03), 20%);
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    .remove {
+      border-left: 1px solid #ccc;
+    }
+  }
+}
+
+.not-ready {
+  display: none;
+}
+
+.usersAttribute .email {
+  opacity: 0.5;
+}
+.usersAttribute .name + .email {
+  margin-left: 5px;
+}
+.usersAttribute .email:before {
+  content: '<';
+}
+.usersAttribute .email:after {
+  content: '>';
+}

@@ -1,0 +1,17 @@
+<template name="orionMaterializeCollectionsIndex">
+  {{# Layout template="orionMaterializeContentContainer" }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      {{ collection.title }}
+      {{# if collection.canShowCreate }}
+        <a href="{{ collection.createPath }}" class="btn-floating waves-effect waves-light red right">
+          <i class="mdi-content-add"></i>
+        </a>
+      {{/ if }}
+    {{/ Layout }}
+    {{# if collection.canIndex }}
+      {{# if showTable }}
+        {{> tabular table=collection.tabularTable class="table index-table" }}
+      {{/ if }}
+    {{/ if }}
+  {{/ Layout }}
+</template>

@@ -1,0 +1,19 @@
+<template name="orionAttributesHasMany">
+  <div class="{{# unless Template.subscriptionsReady }}not-ready{{/ unless }}">
+    <select multiple="true" class="orionAttributesHasMany" {{ atts }}></select>
+  </div>
+</template>
+
+<template name="orionAttributesHasManyColumn">
+  {{ val }}
+</template>
+
+<template name="orionAttributesHasOne">
+  <div class="{{# unless Template.subscriptionsReady }}not-ready{{/ unless }}">
+    <select class="orionAttributesHasOne" {{ atts }}></select>
+  </div>
+</template>
+
+<template name="orionAttributesHasOneColumn">
+  {{ val }}
+</template>

@@ -1,0 +1,63 @@
+<template name="orionMaterializeLayout">
+  <div class="orion-materialize-admin">
+    <div class="sidebar">
+      {{# if dictionaryReady }}
+        {{> reactiveTemplate template="links" }}
+      {{/ if }}
+    </div>
+    <main>
+      <div class="container">
+        <div class="admin-content card white">
+          {{# if dictionaryReady }}
+            {{> yield }}
+          {{/ if }}
+        </div>
+      </div>
+    </main>
+  </div>
+  <style type="text/css">
+  body {
+    background-color: #eeeeee;
+  }
+  </style>
+</template>
+
+<template name="orionMaterializeOutAdminLayout">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <br><br><br>
+        {{> yield }}
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="orionMaterializeContentContainer">
+  <div class="card-content">
+    {{> yield }}
+  </div>
+</template>
+
+<template name="orionMaterializeButtonsContainer">
+  <div class="card-action">
+    {{> yield }}
+  </div>
+</template>
+
+<template name="orionMaterializeHeaderContainer">
+  <span class="card-title grey-text text-darken-4">{{> yield }}</span><br>
+</template>
+
+<template name="orionMaterializeTabs">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        {{# each items }}
+          <li class="tab col"><a class="{{ class }}" href="#">{{ title }}</a></li>
+        {{/ each }}
+      </ul>
+    </div>
+  </div>
+</template>

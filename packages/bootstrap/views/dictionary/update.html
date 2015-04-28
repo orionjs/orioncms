@@ -1,0 +1,22 @@
+<template name="orionBootstrapDictionaryUpdate">
+  {{# Layout template="orionBootstrapSmallContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
+      Dictionary
+    {{/ Layout }}
+    {{# Layout template="orionBootstrapContentContainer" }}
+      <p>
+        {{> reactiveTemplate template="tabs" data=getDataForTabs }}
+      </p>
+      <hr>
+      {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
+        {{# if currentCategory }}
+          {{> afQuickFields name=currentCategory }}
+        {{/ if }}
+        <br>
+        <div class="text-right">
+          <button class="btn btn-primary">Save</button>
+        </div>
+      {{/ autoForm }}
+    {{/ Layout }}
+  {{/ Layout }}
+</template>

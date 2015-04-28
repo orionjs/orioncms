@@ -1,0 +1,35 @@
+<template name="orionMaterializeAccountIndex">
+  {{# Layout template="orionMaterializeContentContainer" }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      My Account
+    {{/ Layout }}
+    <br>
+
+    <div class="row">
+      {{# if currentUser.profile.picture }}
+        <div class="col m2 s12">
+          <p>
+            <img class="profile-picture" src="{{ currentUser.profile.picture.url }}">
+          </p>
+        </div>
+      {{/ if }}
+      <div class="col m10 s12">
+        <p><b>{{ currentUser.profile.name }}</b></p>
+        {{# each currentUser.emails }}
+          <p>{{ address }}</p>
+        {{/ each }}
+        <br>
+        <p>
+        {{# each currentUser.roles }}
+          <span class="btn disabled">{{ this }}</span>
+        {{/ each }}
+        </p>
+      </div>
+    </div>
+  {{/ Layout }}
+  {{# Layout template="orionMaterializeButtonsContainer" }}
+      <a class="logout">Logout</a>
+      <a href="{{ pathFor 'myAccount.profile' }}" class="">Update Profile</a>
+      <a href="{{ pathFor 'myAccount.password' }}" class="">Change Password</a>
+  {{/ Layout }}
+</template>

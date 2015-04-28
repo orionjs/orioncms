@@ -1,0 +1,51 @@
+.orion-materialize-admin .sidebar {
+  ul.side-nav.fixed {
+    overflow: hidden; 
+    li {
+      line-height: 44px; 
+      a {
+        font-size: 13px;
+        line-height: 44px;
+        height: 44px; 
+
+        &.collapsible-header {
+          margin: 0;
+        }
+      }
+    }
+    li:hover {
+      background-color: rgba(0, 0, 0, 0.05); 
+    }
+
+    li.active {
+      background-color: rgba(0, 0, 0, 0.1); 
+      a {
+        color: #444;
+      }
+    }
+
+    ul.collapsible-accordion {
+      background-color: #FFF; 
+
+      li {
+        a {
+          margin: 0;
+          padding: 0 1rem 0 2rem;
+        }
+      }
+    }
+
+    li.sidebar-brand {
+      text-align: center;
+      a {
+        font-size: 18px;
+        line-height: 60px;
+        height: 60px; 
+      }
+    }
+
+    &:hover {
+      overflow-y: auto; 
+    }
+  }
+}
