@@ -3,40 +3,48 @@ Orion
 
 [![Join the chat at https://gitter.im/orionjs/orion](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orionjs/orion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Orion is a simple and powerful CMS for meteor. It allows you to build 
-simple or complex websites with powerful admin panels in minutes.
+Orion is an open source framework built on meteor that makes complex as well as simple apps possible with minimal effort. It’s built, modified, used, and supported by an active community of people around the world.
 
-![alt tag](http://i.imgur.com/eNMaaje.png)
+## Getting Started
 
-### Principles of Orion
+To start to you orion the first thing you need to do is install the core package and a admin template.
+Orion has 2 templates, one for [bootstrap](http://getbootstrap.com) and one for [materialize](http://materializecss.com).
 
-- **Speed**. Orion was build to speed up the process of making administrable
-web pages.
+```sh
+meteor add orionjs:core
+```
 
-- **Simplicity**. The api will always be easy to use, everything will be 
-magic, just like meteor.
+And now decide which one to use
 
-- **Unobtrusive**. You will always be able to use the full power of meteor:
-install extensions, use the templates system and everything else.
+```sh
+meteor add orionjs:bootstrap
+```
 
-- **Scalable**. Orion it's built for the cloud. It doesn't write files, 
-so you can deploy on anywhere.
+*You must have installed ```twbs:boostrap``` or similar*
+
+or
+
+```sh
+meteor add orionjs:materialize
+```
+
+*You must have installed ```materialize:materialize``` or similar*
+
+#### Documentation
+
+[orionjs.org](http://orionjs.org)
 
 #### Preview
 
-http://orion-example.meteor.com
+[orion-example.meteor.com](http://orion-example.meteor.com)
 
 #### Roadmap
 
-https://trello.com/b/dQhi5dF9/orion-roadmap
+[trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
 
 #### Newsletter
 
 This project is very active, if you use orion you must [subscribe](http://eepurl.com/bbji3b)
-
-#### Documentation
-
-http://orion.meteor.com/docs
 
 #### Community Add-On Packages
 
@@ -44,52 +52,10 @@ http://orion.meteor.com/docs
 
 **Attributes:**
 
-- [rwatts:orion-maps](https://atmospherejs.com/rwatts/orion-maps) *No description*
+- [rwatts:orion-maps](https://atmospherejs.com/rwatts/orion-maps)
 
-## Features
+**Filesystem:**
 
-#### Dictionary:
-
-One of the best things of orion. You can make all 
-the content of your site editable!
-
-Imagine you want to change the logo of the site. With the dictionary, you 
-can make the logo editable and change it without touching the code. It 
-also applies to every content of your site.
-
-#### Entities:
-
-__Entities__ are Meteor collections. You specify the fields and 
-Orion creates automatically the admin panel to show, create and edit them.
-
-#### Custom Attributes:
-
-Save images or use text editors in entities or the dictionary it's super easy.
-Orion attributes are powerful tools to help developers save a lot of time.
-
-## Getting Started
-
-#### Install the package
-
-```
-meteor add orionjs:bootstrap
-```
-
-You also need bootstrap and font awesome.
-
-```
-meteor add twbs:bootstrap
-meteor add fortawesome:fontawesome
-```
-
-#### Go to the admin panel
-
-Navigate to ```/admin``` and create the first user.
-
-## Screenshots
-
-![alt tag](http://i.imgur.com/eFEQ5lT.jpg)
-![alt tag](http://i.imgur.com/eNMaaje.png)
-![alt tag](http://i.imgur.com/Rl3Mpvi.jpg)
+- [lc3t35:orion-filesystem-local](https://github.com/lc3t35/orion-filesystem-local)
 
 
