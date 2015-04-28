@@ -9,9 +9,9 @@ Package.onUse(function(api) {
   api.versionsFrom('METEOR@1.0');
 
   api.use([
-    'orionjs:base',
-    'orionjs:attributes',
-    'orionjs:filesystem', 
+    'orionjs:base@1.0.0',
+    'orionjs:attributes@1.0.0',
+    'orionjs:filesystem@1.0.0', 
     'less'
     ]);
 

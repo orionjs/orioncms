@@ -9,11 +9,11 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base',
+    'orionjs:base@1.0.0',
     'aldeed:simple-schema@1.3.2',
     'aldeed:collection2@2.3.3',
-    'matb33:collection-hooks',
-    'meteorhacks:inject-initial'
+    'matb33:collection-hooks@0.7.13',
+    'meteorhacks:inject-initial@1.0.2'
     ]);
 
   api.imply([

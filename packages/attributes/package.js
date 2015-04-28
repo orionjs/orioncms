@@ -9,10 +9,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base',
+    'orionjs:base@1.0.0',
     'aldeed:collection2@2.0.0',
     'aldeed:autoform@5.1.1',
-    'momentjs:moment'
+    'momentjs:moment@2.10.3'
     ]);
 
   api.imply([

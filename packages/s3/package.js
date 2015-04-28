@@ -11,7 +11,7 @@ Package.onUse(function(api) {
   api.use([
     'orionjs:core@1.0.0',
     'orionjs:filesystem@1.0.0', 
-    'orionjs:config',
+    'orionjs:config@1.0.0',
     'lepozepo:s3@5.1.1',
     ]);
 

@@ -9,8 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base',
-    'orionjs:attributes',
+    'orionjs:base@1.0.0',
+    'orionjs:attributes@1.0.0',
     'less',
     'jeremy:selectize@0.12.1',
     ]);

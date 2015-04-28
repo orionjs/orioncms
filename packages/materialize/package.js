@@ -10,11 +10,11 @@ Package.onUse(function(api) {
 
   api.use([
     'meteor-platform',
-    'orionjs:core',
+    'orionjs:core@1.0.0',
     'less',
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
-    'nicolaslopezj:tabular-materialize',
+    'nicolaslopezj:tabular-materialize@1.2.1',
     'useraccounts:materialize@1.8.1',
     'zimme:iron-router-active@1.0.4',
     'gildaspk:autoform-materialize@0.0.18'
