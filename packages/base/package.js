@@ -11,9 +11,9 @@ Package.onUse(function(api) {
   api.use([
     'meteor-platform',
     'underscore',
-    'nicolaslopezj:options@1.0.0',
-    'nicolaslopezj:reactive-templates@1.0.0',
-    'nicolaslopezj:roles@1.0.1',
+    'nicolaslopezj:options@1.0.1',
+    'nicolaslopezj:reactive-templates@1.2.0',
+    'nicolaslopezj:roles@1.0.5',
     'iron:router@1.0.7',
     'zimme:iron-router-active@1.0.1',
     ]);
