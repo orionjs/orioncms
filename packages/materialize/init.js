@@ -28,11 +28,8 @@ Options.set('collectionsDefaultUpdateTemplate', 'orionMaterializeCollectionsUpda
 Options.set('collectionsDefaultDeleteTemplate', 'orionMaterializeCollectionsDelete');
 
 // Orion attributes replace
-Tracker.autorun(function () {
-  if (ReactiveTemplates.isRequested('attribute.file')) {
-    ReactiveTemplates.set('attribute.file', 'orionMaterializeFileAttribute');
-  }
-});
+ReactiveTemplates.set('attribute.file', 'orionMaterializeFileAttribute');
+ReactiveTemplates.set('attribute.hasOne', 'orionMaterializeHasOneAttribute');
 
 if (Meteor.isClient) {
   AutoForm.setDefaultTemplate('materialize');
