@@ -17,18 +17,16 @@ meteor add orionjs:core
 And now decide which one to use
 
 ```sh
-meteor add orionjs:bootstrap
+meteor add twbs:boostrap orionjs:bootstrap
 ```
 
-*You must have installed ```twbs:boostrap``` or similar*
+*Either ```twbs:boostrap``` or similar*
 
 or
 
 ```sh
-meteor add orionjs:materialize
+meteor add materialize:materialize orionjs:materialize
 ```
-
-*You must have installed ```materialize:materialize``` or similar*
 
 #### Documentation
 
