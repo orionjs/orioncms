@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:froala',
-  summary: 'Summernote editor for orion',
+  summary: 'Froala editor for orion',
   version: '1.0.0',
   git: 'https://github.com/orionjs/orion'
 });
