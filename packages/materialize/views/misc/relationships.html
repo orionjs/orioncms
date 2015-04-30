@@ -3,3 +3,9 @@
     <select class="orionAttributesHasOne" {{ atts }}></select>
   </div>
 </template>
+
+<template name="orionMaterializeHasManyAttribute">
+  <div class="{{# unless Template.subscriptionsReady }}not-ready{{/ unless }} orionMaterializeHasManyAttribute">
+    <select multiple="true" class="orionAttributesHasMany" {{ atts }}></select>
+  </div>
+</template>
