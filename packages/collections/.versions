@@ -35,7 +35,7 @@ jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
 livedata@1.0.13
-local-test:orionjs:collections@1.0.0
+local-test:orionjs:collections@1.0.1
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.13
@@ -45,7 +45,7 @@ meteorhacks:inject-initial@1.0.2
 minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3
-momentjs:moment@2.8.4
+momentjs:moment@2.10.3
 mongo@1.1.0
 nicolaslopezj:options@1.0.1
 nicolaslopezj:reactive-templates@1.2.0
@@ -53,10 +53,10 @@ nicolaslopezj:roles@1.0.5
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-orionjs:accounts@1.0.0
+orionjs:accounts@1.0.1
 orionjs:attributes@1.0.0
 orionjs:base@1.0.0
-orionjs:collections@1.0.0
+orionjs:collections@1.0.1
 orionjs:config@1.0.0
 orionjs:core@1.0.0
 orionjs:dictionary@1.0.0
