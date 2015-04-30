@@ -21,6 +21,7 @@ orion.addLink({
   title: 'Accounts',
   routeName: 'accounts.index',
   activeRouteRegex: 'accounts',
+  permission: 'accounts.index'
 });
 
 /**
