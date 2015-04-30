@@ -4,5 +4,5 @@
 Options.init('adminHomeRoute', 'myAccount.index');
 
 Router.route('/admin', function () {
-  Router.go(Options.get('adminHomeRoute'));
+  this.router.go(Options.get('adminHomeRoute'), {}, { replaceState: true });
 }, { name: 'admin' });
