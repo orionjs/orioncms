@@ -71,14 +71,18 @@ orion.collections.onCreated(function() {
     var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
     var item = self.findOne(this.params._id);
     this.item = item;
-    this.render(ReactiveTemplates.get('collectionUpdate.' + self.name), {
-      data: function() {
-        return {
-          collection: self,
-          item: item,
-        }; 
-      }
-    });
+    if (subs.ready()) {
+      this.render(ReactiveTemplates.get('collectionUpdate.' + self.name), {
+        data: function() {
+          return {
+            collection: self,
+            item: item,
+          }; 
+        }
+      });
+    } else {
+      this.render('');
+    }
   }, { name: ('collections.' + this.name + '.update') });
   this.updatePath = function(item) {
     var options = item;
@@ -116,14 +120,18 @@ orion.collections.onCreated(function() {
     var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
     var item = self.findOne(this.params._id);
     this.item = item;
-    this.render(ReactiveTemplates.get('collectionDelete.' + self.name), {
-      data: function() {
-        return {
-          collection: self,
-          item: item,
-        }; 
-      }
-    });
+    if (subs.ready()) {
+      this.render(ReactiveTemplates.get('collectionDelete.' + self.name), {
+        data: function() {
+          return {
+            collection: self,
+            item: item,
+          }; 
+        }
+      });
+    } else {
+      this.render('');
+    }
   }, { name: ('collections.' + this.name + '.delete') });
   this.deletePath = function(item) {
     var options = item;
