@@ -37,7 +37,7 @@ json@1.0.3
 launch-screen@1.0.2
 less@1.0.14
 livedata@1.0.13
-local-test:orionjs:materialize@1.0.4
+local-test:orionjs:materialize@1.0.5
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.13
@@ -63,7 +63,7 @@ orionjs:collections@1.0.1
 orionjs:config@1.0.0
 orionjs:core@1.0.0
 orionjs:dictionary@1.0.0
-orionjs:materialize@1.0.4
+orionjs:materialize@1.0.5
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5

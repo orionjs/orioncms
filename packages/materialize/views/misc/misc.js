@@ -1,5 +1,5 @@
 Template.orionMaterializeHasOneAttribute.onRendered(function() {
-  if (this.data.value) {
+  if (this.$('.orionAttributesHasOne').val()) {
     var id = this.$('.orionAttributesHasOne').attr('id');
     $('label[for="' + id + '"]').addClass('active');
   }
@@ -26,7 +26,7 @@ Template.orionMaterializeHasOneAttribute.events({
 });
 
 Template.orionMaterializeHasManyAttribute.onRendered(function() {
-  if (this.data.value) {
+  if (this.$('.orionAttributesHasMany').val()) {
     var id = this.$('.orionAttributesHasMany').attr('id');
     $('label[for="' + id + '"]').addClass('active');
   }
