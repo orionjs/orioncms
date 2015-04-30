@@ -30,6 +30,7 @@ Options.set('collectionsDefaultDeleteTemplate', 'orionMaterializeCollectionsDele
 // Orion attributes replace
 ReactiveTemplates.set('attribute.file', 'orionMaterializeFileAttribute');
 ReactiveTemplates.set('attribute.hasOne', 'orionMaterializeHasOneAttribute');
+ReactiveTemplates.set('attribute.user', 'orionMaterializeHasOneAttribute');
 
 if (Meteor.isClient) {
   AutoForm.setDefaultTemplate('materialize');
