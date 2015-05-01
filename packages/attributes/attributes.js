@@ -15,6 +15,9 @@ orion.attributes = {};
  * Returns the schema for the attribute
  */
 orion.attribute = function(name, schema, options) {
+  if (!_.has(orion.attributes, name)) {
+    throw 'The attribute "' + name + '" does not exist';
+  }
   var schema = schema || {};
   var options = options || {};
   var attributeSchema = orion.attributes[name].getSchema.call(this, options);

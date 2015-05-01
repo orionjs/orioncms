@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:attributes',
   summary: 'Orion attributes',
-  version: '1.0.0',
+  version: '1.0.1',
   git: 'https://github.com/orionjs/orion'
 });
 
