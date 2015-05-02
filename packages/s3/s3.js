@@ -33,11 +33,13 @@ if (Meteor.isClient) {
 orion.config.add('AWS_API_KEY', 'aws')
 orion.config.add('AWS_API_SECRET', 'aws', { secret: true })
 orion.config.add('AWS_S3_BUCKET', 'aws')
+orion.config.add('AWS_S3_REGION', 'aws', { optional: true })
 
 if (Meteor.isServer) {
   S3.config = {
     key: orion.config.get('AWS_API_KEY', 'key'),
     secret: orion.config.get('AWS_API_SECRET', 'secret'),
-    bucket: orion.config.get('AWS_S3_BUCKET', 'bucket')
+    bucket: orion.config.get('AWS_S3_BUCKET', 'bucket'),
+    region: orion.config.get('AWS_S3_REGION', 'us-standard')
   };
 }
