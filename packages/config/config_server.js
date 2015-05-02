@@ -4,6 +4,7 @@
 orion.config.collection.after.update(function (userId, doc, fieldNames, modifier, options) {
   // Timeout is necessary to no enter a infinit loop of restarts
   Meteor.setTimeout(function () {
+    console.log('Updating Orion config');
     process.exit();
   }, 500);
 });
