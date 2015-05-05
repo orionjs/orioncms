@@ -12,6 +12,7 @@ Package.onUse(function(api) {
     'orionjs:base@1.0.0',
     'orionjs:attributes@1.0.0',
     'orionjs:filesystem@1.0.0', 
+    'jonblum:jquery-cropper@0.9.2',
     'less'
     ]);
 
