@@ -21,5 +21,8 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
+    'image.html',
+    'image.js',
+    'image.less'
     ], 'client');
 });
