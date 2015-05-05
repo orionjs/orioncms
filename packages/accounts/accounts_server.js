@@ -26,3 +26,6 @@ Meteor.users.after.insert(function (userId, doc) {
  */
 orion.adminExists = Roles._collection.find({ roles: 'admin' }).count() != 0;
 Inject.obj('adminExists', { exists: orion.adminExists });
+AccountsTemplates.configure({
+  forbidClientAccountCreation: !!orion.adminExists
+});

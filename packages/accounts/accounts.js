@@ -23,10 +23,7 @@ Tracker.autorun(function () {
  * If there is no admin, we allow to create accounts
  */
 Options.init('defaultRoles', []);
-Options.init('forbidClientAccountCreation');
-AccountsTemplates.configure({
-  forbidClientAccountCreation: !!orion.adminExists
-});
+Options.init('forbidClientAccountCreation', true);
 
 /**
  * We will use listen instead of tracker because on client tracker starts after meteor.startup
