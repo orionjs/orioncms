@@ -8,7 +8,7 @@
 orion.filesystem.upload = function(options) {
   check(options, {
     name: String,
-    fileList: FileList,
+    fileList: Match.Any,
     uploader: String,
     meta: Match.Optional(Object)
   });
