@@ -2,7 +2,6 @@ mfPkg.syncAll({
   "en": {
     "accounts": {
       "key": "accounts",
-      "lang": "en",
       "text": "Accounts",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -11,7 +10,6 @@ mfPkg.syncAll({
     },
     "edit_roles": {
       "key": "edit_roles",
-      "lang": "en",
       "text": "Edit Roles",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -20,7 +18,6 @@ mfPkg.syncAll({
     },
     "invalid_email": {
       "key": "invalid_email",
-      "lang": "en",
       "text": "The email is not valid",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -29,7 +26,6 @@ mfPkg.syncAll({
     },
     "passwords_must_match": {
       "key": "passwords_must_match",
-      "lang": "en",
       "text": "Passwords must match",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -38,7 +34,6 @@ mfPkg.syncAll({
     },
     "no_permission_for_roles": {
       "key": "no_permission_for_roles",
-      "lang": "en",
       "text": "You have no permissions to change user roles",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -47,7 +42,6 @@ mfPkg.syncAll({
     },
     "invalid_invitation_code": {
       "key": "invalid_invitation_code",
-      "lang": "en",
       "text": "The invitation code is invalid",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -56,7 +50,6 @@ mfPkg.syncAll({
     },
     "my_account": {
       "key": "my_account",
-      "lang": "en",
       "text": "My Account",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -65,7 +58,6 @@ mfPkg.syncAll({
     },
     "name": {
       "key": "name",
-      "lang": "en",
       "text": "Name",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -74,7 +66,6 @@ mfPkg.syncAll({
     },
     "your_name": {
       "key": "your_name",
-      "lang": "en",
       "text": "Your name",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -83,7 +74,6 @@ mfPkg.syncAll({
     },
     "email": {
       "key": "email",
-      "lang": "en",
       "text": "Email",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -92,7 +82,6 @@ mfPkg.syncAll({
     },
     "roles": {
       "key": "roles",
-      "lang": "en",
       "text": "Roles",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -101,7 +90,6 @@ mfPkg.syncAll({
     },
     "actions": {
       "key": "actions",
-      "lang": "en",
       "text": "Actions",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -110,7 +98,6 @@ mfPkg.syncAll({
     },
     "logout": {
       "key": "logout",
-      "lang": "en",
       "text": "Logout",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -119,7 +106,6 @@ mfPkg.syncAll({
     },
     "update_profile": {
       "key": "update_profile",
-      "lang": "en",
       "text": "Update Profile",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -128,7 +114,6 @@ mfPkg.syncAll({
     },
     "change_password": {
       "key": "change_password",
-      "lang": "en",
       "text": "Change Password",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -137,7 +122,7 @@ mfPkg.syncAll({
     },
     "invite": {
       "key": "invite",
-      "lang": "en",
+
       "text": "Invite",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -146,7 +131,6 @@ mfPkg.syncAll({
     },
     "invitation_created_successfully": {
       "key": "invitation_created_successfully",
-      "lang": "en",
       "text": "Invitation created successfully",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -155,7 +139,6 @@ mfPkg.syncAll({
     },
     "back": {
       "key": "back",
-      "lang": "en",
       "text": "Back",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -164,7 +147,6 @@ mfPkg.syncAll({
     },
     "invite_another": {
       "key": "invite_another",
-      "lang": "en",
       "text": "Invite another",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -173,7 +155,6 @@ mfPkg.syncAll({
     },
     "select_new_user_roles": {
       "key": "select_new_user_roles",
-      "lang": "en",
       "text": "Select the roles for the new user",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -182,7 +163,6 @@ mfPkg.syncAll({
     },
     "optional_new_user_email": {
       "key": "optional_new_user_email",
-      "lang": "en",
       "text": "Email of the new user (optional)",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -191,7 +171,6 @@ mfPkg.syncAll({
     },
     "cancel": {
       "key": "cancel",
-      "lang": "en",
       "text": "Cancel",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -200,7 +179,6 @@ mfPkg.syncAll({
     },
     "login": {
       "key": "login",
-      "lang": "en",
       "text": "Login",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -209,7 +187,6 @@ mfPkg.syncAll({
     },
     "save": {
       "key": "save",
-      "lang": "en",
       "text": "Save",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -218,7 +195,6 @@ mfPkg.syncAll({
     },
     "register": {
       "key": "register",
-      "lang": "en",
       "text": "Register",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -227,7 +203,6 @@ mfPkg.syncAll({
     },
     "password_again": {
       "key": "password_again",
-      "lang": "en",
       "text": "Password (again)",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -236,7 +211,6 @@ mfPkg.syncAll({
     },
     "select_user_roles": {
       "key": "select_user_roles",
-      "lang": "en",
       "text": "Select the roles for this user",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -245,7 +219,6 @@ mfPkg.syncAll({
     },
     "create_a": {
       "key": "create_a",
-      "lang": "en",
       "text": "Create a",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -254,7 +227,6 @@ mfPkg.syncAll({
     },
     "create": {
       "key": "create",
-      "lang": "en",
       "text": "Create",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -263,7 +235,6 @@ mfPkg.syncAll({
     },
     "no_permission": {
       "key": "no_permission",
-      "lang": "en",
       "text": "No permission",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -272,7 +243,6 @@ mfPkg.syncAll({
     },
     "delete": {
       "key": "delete",
-      "lang": "en",
       "text": "Delete",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -281,7 +251,6 @@ mfPkg.syncAll({
     },
     "are_you_sure_to_delete_this": {
       "key": "are_you_sure_to_delete_this",
-      "lang": "en",
       "text": "Are you sure you want to delete this",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -290,7 +259,6 @@ mfPkg.syncAll({
     },
     "confirm": {
       "key": "confirm",
-      "lang": "en",
       "text": "Confirm",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -299,7 +267,6 @@ mfPkg.syncAll({
     },
     "update": {
       "key": "update",
-      "lang": "en",
       "text": "Update",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -308,7 +275,6 @@ mfPkg.syncAll({
     },
     "config": {
       "key": "config",
-      "lang": "en",
       "text": "Config",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -317,7 +283,6 @@ mfPkg.syncAll({
     },
     "dictionary": {
       "key": "dictionary",
-      "lang": "en",
       "text": "Dictionary",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -326,7 +291,6 @@ mfPkg.syncAll({
     },
     "create_new_page": {
       "key": "create_new_page",
-      "lang": "en",
       "text": "Create a new page",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -335,7 +299,6 @@ mfPkg.syncAll({
     },
     "choose_template": {
       "key": "choose_template",
-      "lang": "en",
       "text": "Choose a template",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -344,7 +307,6 @@ mfPkg.syncAll({
     },
     "choose": {
       "key": "choose",
-      "lang": "en",
       "text": "Choose",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -353,7 +315,6 @@ mfPkg.syncAll({
     },
     "delete_page": {
       "key": "delete_page",
-      "lang": "en",
       "text": "Delete page",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -362,7 +323,6 @@ mfPkg.syncAll({
     },
     "are_you_sure_to_delete_this_page": {
       "key": "are_you_sure_to_delete_this_page",
-      "lang": "en",
       "text": "Are you sure you want to delete this page?",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -371,7 +331,6 @@ mfPkg.syncAll({
     },
     "pages": {
       "key": "pages",
-      "lang": "en",
       "text": "Pages",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -380,7 +339,6 @@ mfPkg.syncAll({
     },
     "update_page": {
       "key": "update_page",
-      "lang": "en",
       "text": "Update page",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -389,7 +347,6 @@ mfPkg.syncAll({
     },
     "app_configuration": {
       "key": "app_configuration",
-      "lang": "en",
       "text": "App Configuration",
       "ctime": "2015-05-09T12:23:22.000Z",
       "mtime": "2015-05-09T12:23:22.000Z",
@@ -398,7 +355,6 @@ mfPkg.syncAll({
     },
     "remove": {
       "key": "remove",
-      "lang": "en",
       "text": "Remove",
       "ctime": "2015-05-09T12:36:28.000Z",
       "mtime": "2015-05-09T12:36:28.000Z",
@@ -407,7 +363,6 @@ mfPkg.syncAll({
     },
     "choose_file": {
       "key": "choose_file",
-      "lang": "en",
       "text": "Choose a file",
       "ctime": "2015-05-09T12:37:17.000Z",
       "mtime": "2015-05-09T12:37:17.000Z",
@@ -416,7 +371,6 @@ mfPkg.syncAll({
     },
     "file": {
       "key": "file",
-      "lang": "en",
       "text": "File",
       "ctime": "2015-05-09T12:38:25.000Z",
       "mtime": "2015-05-09T12:38:25.000Z",
@@ -425,7 +379,6 @@ mfPkg.syncAll({
     },
     "no_file": {
       "key": "no_file",
-      "lang": "en",
       "text": "No file",
       "ctime": "2015-05-09T12:38:25.000Z",
       "mtime": "2015-05-09T12:38:25.000Z",
@@ -434,7 +387,6 @@ mfPkg.syncAll({
     },
     "file_id_not_found": {
       "key": "file_id_not_found",
-      "lang": "en",
       "text": "The file with id {fileId} was not found",
       "ctime": "2015-05-09T13:48:42.000Z",
       "mtime": "2015-05-09T13:48:42.000Z",
@@ -443,7 +395,6 @@ mfPkg.syncAll({
     },
     "title": {
       "key": "title",
-      "lang": "en",
       "text": "Title",
       "ctime": "2015-05-09T17:20:30.000Z",
       "mtime": "2015-05-09T17:20:30.000Z",
@@ -452,7 +403,6 @@ mfPkg.syncAll({
     },
     "item": {
       "key": "item",
-      "lang": "en",
       "text": "item",
       "ctime": "2015-05-09T17:28:46.000Z",
       "mtime": "2015-05-09T17:28:46.000Z",
@@ -461,7 +411,6 @@ mfPkg.syncAll({
     },
     "items": {
       "key": "items",
-      "lang": "en",
       "text": "items",
       "ctime": "2015-05-09T17:28:46.000Z",
       "mtime": "2015-05-09T17:28:46.000Z",
@@ -470,7 +419,6 @@ mfPkg.syncAll({
     },
     "users": {
       "key": "users",
-      "lang": "en",
       "text": "users",
       "ctime": "2015-05-09T17:36:00.000Z",
       "mtime": "2015-05-09T17:36:00.000Z",
@@ -479,7 +427,6 @@ mfPkg.syncAll({
     },
     "user": {
       "key": "user",
-      "lang": "en",
       "text": "user",
       "ctime": "2015-05-09T17:36:00.000Z",
       "mtime": "2015-05-09T17:36:00.000Z",
@@ -488,7 +435,6 @@ mfPkg.syncAll({
     },
     "error_uploading_file": {
       "key": "error_uploading_file",
-      "lang": "en",
       "text": "Error uploading file",
       "ctime": "2015-05-09T17:55:01.000Z",
       "mtime": "2015-05-09T17:55:01.000Z",
@@ -497,7 +443,6 @@ mfPkg.syncAll({
     },
     "error_removing_file": {
       "key": "error_removing_file",
-      "lang": "en",
       "text": "Error removing file",
       "ctime": "2015-05-09T17:55:01.000Z",
       "mtime": "2015-05-09T17:55:01.000Z",
@@ -508,7 +453,6 @@ mfPkg.syncAll({
   "fr": {
     "accounts": {
       "key": "accounts",
-      "lang": "fr",
       "text": "Comptes",
       "ctime": 1431161486814,
       "mtime": 1431161486814,
@@ -517,7 +461,6 @@ mfPkg.syncAll({
     },
     "invalid_email": {
       "key": "invalid_email",
-      "lang": "fr",
       "text": "L'email n'est pas valide",
       "ctime": 1431162539451,
       "mtime": 1431162539451,
@@ -526,7 +469,6 @@ mfPkg.syncAll({
     },
     "passwords_must_match": {
       "key": "passwords_must_match",
-      "lang": "fr",
       "text": "Les mots de passes doivent correspondre",
       "ctime": 1431162559188,
       "mtime": 1431162559189,
@@ -535,7 +477,6 @@ mfPkg.syncAll({
     },
     "edit_roles": {
       "key": "edit_roles",
-      "lang": "fr",
       "text": "Editer les rôles",
       "ctime": 1431163702521,
       "mtime": 1431163702521,
@@ -544,7 +485,6 @@ mfPkg.syncAll({
     },
     "no_permission_for_roles": {
       "key": "no_permission_for_roles",
-      "lang": "fr",
       "text": "Vous n'avez pas la permission de changer les rôles utilisateurs",
       "ctime": 1431163727177,
       "mtime": 1431163727177,
@@ -553,7 +493,6 @@ mfPkg.syncAll({
     },
     "invalid_invitation_code": {
       "key": "invalid_invitation_code",
-      "lang": "fr",
       "text": "Le code d'invitation n'est pas valide",
       "ctime": 1431163737632,
       "mtime": 1431163737632,
@@ -562,7 +501,6 @@ mfPkg.syncAll({
     },
     "my_account": {
       "key": "my_account",
-      "lang": "fr",
       "text": "Mon compte",
       "ctime": 1431163742265,
       "mtime": 1431163742265,
@@ -571,7 +509,6 @@ mfPkg.syncAll({
     },
     "name": {
       "key": "name",
-      "lang": "fr",
       "text": "Nom",
       "ctime": 1431164837335,
       "mtime": 1431164837335,
@@ -580,7 +517,6 @@ mfPkg.syncAll({
     },
     "your_name": {
       "key": "your_name",
-      "lang": "fr",
       "text": "Votre nom",
       "ctime": 1431164856854,
       "mtime": 1431164856854,
@@ -589,7 +525,6 @@ mfPkg.syncAll({
     },
     "email": {
       "key": "email",
-      "lang": "fr",
       "text": "Email",
       "ctime": 1431165980509,
       "mtime": 1431165980509,
@@ -598,7 +533,6 @@ mfPkg.syncAll({
     },
     "roles": {
       "key": "roles",
-      "lang": "fr",
       "text": "Rôles",
       "ctime": 1431165984226,
       "mtime": 1431165984226,
@@ -607,7 +541,6 @@ mfPkg.syncAll({
     },
     "actions": {
       "key": "actions",
-      "lang": "fr",
       "text": "Actions",
       "ctime": 1431165987131,
       "mtime": 1431165987131,
@@ -616,7 +549,6 @@ mfPkg.syncAll({
     },
     "logout": {
       "key": "logout",
-      "lang": "fr",
       "text": "Déconnexion",
       "ctime": 1431165993852,
       "mtime": 1431165993852,
@@ -625,7 +557,6 @@ mfPkg.syncAll({
     },
     "update_profile": {
       "key": "update_profile",
-      "lang": "fr",
       "text": "Mettre le profil à jour",
       "ctime": 1431166021019,
       "mtime": 1431169629518,
@@ -634,7 +565,6 @@ mfPkg.syncAll({
     },
     "change_password": {
       "key": "change_password",
-      "lang": "fr",
       "text": "Changer le mot de passe",
       "ctime": 1431166027850,
       "mtime": 1431166027850,
@@ -643,7 +573,6 @@ mfPkg.syncAll({
     },
     "invite": {
       "key": "invite",
-      "lang": "fr",
       "text": "Inviter",
       "ctime": 1431169623459,
       "mtime": 1431169623459,
@@ -652,7 +581,6 @@ mfPkg.syncAll({
     },
     "invitation_created_successfully": {
       "key": "invitation_created_successfully",
-      "lang": "fr",
       "text": "Invitation créée avec succès",
       "ctime": 1431169650639,
       "mtime": 1431169650639,
@@ -661,7 +589,6 @@ mfPkg.syncAll({
     },
     "back": {
       "key": "back",
-      "lang": "fr",
       "text": "Retour",
       "ctime": 1431169653710,
       "mtime": 1431169653710,
@@ -670,7 +597,6 @@ mfPkg.syncAll({
     },
     "invite_another": {
       "key": "invite_another",
-      "lang": "fr",
       "text": "Inviter un autre utilisateur",
       "ctime": 1431169662027,
       "mtime": 1431169662027,
@@ -679,7 +605,6 @@ mfPkg.syncAll({
     },
     "select_new_user_roles": {
       "key": "select_new_user_roles",
-      "lang": "fr",
       "text": "Sélectionner les rôles pour le nouvel utilisateur",
       "ctime": 1431169676946,
       "mtime": 1431169676946,
@@ -688,7 +613,6 @@ mfPkg.syncAll({
     },
     "optional_new_user_email": {
       "key": "optional_new_user_email",
-      "lang": "fr",
       "text": "Email du nouvel utilisateur (optionnel)",
       "ctime": 1431169689865,
       "mtime": 1431169689865,
@@ -697,7 +621,6 @@ mfPkg.syncAll({
     },
     "cancel": {
       "key": "cancel",
-      "lang": "fr",
       "text": "Annuler",
       "ctime": 1431169693150,
       "mtime": 1431169693150,
@@ -706,7 +629,6 @@ mfPkg.syncAll({
     },
     "login": {
       "key": "login",
-      "lang": "fr",
       "text": "Connexion",
       "ctime": 1431169698088,
       "mtime": 1431169698088,
@@ -715,7 +637,6 @@ mfPkg.syncAll({
     },
     "save": {
       "key": "save",
-      "lang": "fr",
       "text": "Enregistrer",
       "ctime": 1431169705952,
       "mtime": 1431169705952,
@@ -724,7 +645,6 @@ mfPkg.syncAll({
     },
     "register": {
       "key": "register",
-      "lang": "fr",
       "text": "Enregistrer",
       "ctime": 1431170806104,
       "mtime": 1431170806104,
@@ -733,7 +653,6 @@ mfPkg.syncAll({
     },
     "password_again": {
       "key": "password_again",
-      "lang": "fr",
       "text": "Confirmation du mot de passe",
       "ctime": 1431170880224,
       "mtime": 1431170880224,
@@ -742,7 +661,6 @@ mfPkg.syncAll({
     },
     "select_user_roles": {
       "key": "select_user_roles",
-      "lang": "fr",
       "text": "Sélectionner les rôles pour cet utilisateur",
       "ctime": 1431172996848,
       "mtime": 1431172996848,
@@ -751,7 +669,6 @@ mfPkg.syncAll({
     },
     "create_a": {
       "key": "create_a",
-      "lang": "fr",
       "text": "Créer une",
       "ctime": 1431173001743,
       "mtime": 1431173001743,
@@ -760,7 +677,6 @@ mfPkg.syncAll({
     },
     "create": {
       "key": "create",
-      "lang": "fr",
       "text": "Créer",
       "ctime": 1431173004657,
       "mtime": 1431173004657,
@@ -769,7 +685,6 @@ mfPkg.syncAll({
     },
     "no_permission": {
       "key": "no_permission",
-      "lang": "fr",
       "text": "Pas de permission",
       "ctime": 1431173012406,
       "mtime": 1431173012406,
@@ -778,7 +693,6 @@ mfPkg.syncAll({
     },
     "delete": {
       "key": "delete",
-      "lang": "fr",
       "text": "Effacer",
       "ctime": 1431173015137,
       "mtime": 1431173015137,
@@ -787,7 +701,6 @@ mfPkg.syncAll({
     },
     "are_you_sure_to_delete_this": {
       "key": "are_you_sure_to_delete_this",
-      "lang": "fr",
       "text": "Etes-vous sûr d'effacer cette",
       "ctime": 1431173052725,
       "mtime": 1431173052725,
@@ -796,7 +709,6 @@ mfPkg.syncAll({
     },
     "confirm": {
       "key": "confirm",
-      "lang": "fr",
       "text": "Confirmer",
       "ctime": 1431173057329,
       "mtime": 1431173057329,
@@ -805,7 +717,6 @@ mfPkg.syncAll({
     },
     "update": {
       "key": "update",
-      "lang": "fr",
       "text": "Mettre à jour",
       "ctime": 1431173062159,
       "mtime": 1431173062159,
@@ -814,7 +725,6 @@ mfPkg.syncAll({
     },
     "config": {
       "key": "config",
-      "lang": "fr",
       "text": "Configurer",
       "ctime": 1431173065890,
       "mtime": 1431173065890,
@@ -823,7 +733,6 @@ mfPkg.syncAll({
     },
     "dictionary": {
       "key": "dictionary",
-      "lang": "fr",
       "text": "Dictionnaire",
       "ctime": 1431173071051,
       "mtime": 1431173071051,
@@ -832,7 +741,6 @@ mfPkg.syncAll({
     },
     "create_new_page": {
       "key": "create_new_page",
-      "lang": "fr",
       "text": "Créer une nouvelle page",
       "ctime": 1431173079861,
       "mtime": 1431173079861,
@@ -841,7 +749,6 @@ mfPkg.syncAll({
     },
     "choose_template": {
       "key": "choose_template",
-      "lang": "fr",
       "text": "Choisir un modèle",
       "ctime": 1431173087317,
       "mtime": 1431173087317,
@@ -850,7 +757,6 @@ mfPkg.syncAll({
     },
     "choose": {
       "key": "choose",
-      "lang": "fr",
       "text": "Choisir",
       "ctime": 1431173092498,
       "mtime": 1431173092498,
@@ -859,7 +765,6 @@ mfPkg.syncAll({
     },
     "delete_page": {
       "key": "delete_page",
-      "lang": "fr",
       "text": "Effacer une page",
       "ctime": 1431173096990,
       "mtime": 1431173096990,
@@ -868,7 +773,6 @@ mfPkg.syncAll({
     },
     "are_you_sure_to_delete_this_page": {
       "key": "are_you_sure_to_delete_this_page",
-      "lang": "fr",
       "text": "Etes-vous sûr de vouloir effacer cette page ?",
       "ctime": 1431173114104,
       "mtime": 1431173114104,
@@ -877,7 +781,6 @@ mfPkg.syncAll({
     },
     "pages": {
       "key": "pages",
-      "lang": "fr",
       "text": "Pages",
       "ctime": 1431173116567,
       "mtime": 1431173116567,
@@ -886,7 +789,6 @@ mfPkg.syncAll({
     },
     "update_page": {
       "key": "update_page",
-      "lang": "fr",
       "text": "Mettre à jour la page",
       "ctime": 1431173123235,
       "mtime": 1431173123235,
@@ -895,7 +797,6 @@ mfPkg.syncAll({
     },
     "app_configuration": {
       "key": "app_configuration",
-      "lang": "fr",
       "text": "Configuration de l'application",
       "ctime": 1431174475756,
       "mtime": 1431174475756,
@@ -904,7 +805,6 @@ mfPkg.syncAll({
     },
     "remove": {
       "key": "remove",
-      "lang": "fr",
       "text": "Effacer",
       "ctime": 1431178140770,
       "mtime": 1431178140770,
@@ -913,7 +813,6 @@ mfPkg.syncAll({
     },
     "choose_file": {
       "key": "choose_file",
-      "lang": "fr",
       "text": "Choisir un fichier",
       "ctime": 1431178147067,
       "mtime": 1431178147067,
@@ -922,7 +821,6 @@ mfPkg.syncAll({
     },
     "file": {
       "key": "file",
-      "lang": "fr",
       "text": "Fichier",
       "ctime": 1431178150254,
       "mtime": 1431178150254,
@@ -931,7 +829,6 @@ mfPkg.syncAll({
     },
     "no_file": {
       "key": "no_file",
-      "lang": "fr",
       "text": "Aucun fichier",
       "ctime": 1431178160450,
       "mtime": 1431178160450,
@@ -940,7 +837,6 @@ mfPkg.syncAll({
     },
     "file_id_not_found": {
       "key": "file_id_not_found",
-      "lang": "fr",
       "text": "Le fichier avec l'id {fileId} n'a pas été trouvé",
       "ctime": 1431189129225,
       "mtime": 1431189129225,
@@ -949,7 +845,6 @@ mfPkg.syncAll({
     },
     "title": {
       "key": "title",
-      "lang": "fr",
       "text": "Titre",
       "ctime": 1431192197814,
       "mtime": 1431192197814,
@@ -958,7 +853,6 @@ mfPkg.syncAll({
     },
     "item": {
       "key": "item",
-      "lang": "fr",
       "text": "item",
       "ctime": 1431193058556,
       "mtime": 1431193058556,
@@ -967,7 +861,6 @@ mfPkg.syncAll({
     },
     "items": {
       "key": "items",
-      "lang": "fr",
       "text": "items",
       "ctime": 1431193062903,
       "mtime": 1431193062903,
@@ -976,7 +869,6 @@ mfPkg.syncAll({
     },
     "users": {
       "key": "users",
-      "lang": "fr",
       "text": "utilisateurs",
       "ctime": 1431193068130,
       "mtime": 1431193068130,
@@ -985,7 +877,6 @@ mfPkg.syncAll({
     },
     "user": {
       "key": "user",
-      "lang": "fr",
       "text": "utilisateur",
       "ctime": 1431193072851,
       "mtime": 1431193072851,
@@ -994,7 +885,6 @@ mfPkg.syncAll({
     },
     "error_uploading_file": {
       "key": "error_uploading_file",
-      "lang": "fr",
       "text": "Erreur de chargement de fichier",
       "ctime": 1431194208353,
       "mtime": 1431194208353,
@@ -1003,7 +893,6 @@ mfPkg.syncAll({
     },
     "error_removing_file": {
       "key": "error_removing_file",
-      "lang": "fr",
       "text": "Erreur d'effacement de fichier",
       "ctime": 1431194216656,
       "mtime": 1431194216656,
