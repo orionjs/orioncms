@@ -1,345 +1,175 @@
 mfPkg.syncAll({
-  "en": {
-    "accounts": {
-      "text": "Accounts"
+  fr: {
+    accounts: {
+      text: 'Comptes'
     },
-    "edit_roles": {
-      "text": "Edit Roles"
+    invalid_email: {
+      text: 'L\'email n\'est pas valide'
     },
-    "invalid_email": {
-      "text": "The email is not valid"
+    passwords_must_match: {
+      text: 'Les mots de passes doivent correspondre'
     },
-    "passwords_must_match": {
-      "text": "Passwords must match"
+    edit_roles: {
+      text: 'Editer les rôles'
     },
-    "no_permission_for_roles": {
-      "text": "You have no permissions to change user roles"
+    no_permission_for_roles: {
+      text: 'Vous n\'avez pas la permission de changer les rôles utilisateurs'
     },
-    "invalid_invitation_code": {
-      "text": "The invitation code is invalid"
+    invalid_invitation_code: {
+      text: 'Le code d\'invitation n\'est pas valide'
     },
-    "my_account": {
-      "text": "My Account"
+    my_account: {
+      text: 'Mon compte'
     },
-    "name": {
-      "text": "Name"
+    name: {
+      text: 'Nom'
     },
-    "your_name": {
-      "text": "Your name"
+    your_name: {
+      text: 'Votre nom'
     },
-    "email": {
-      "text": "Email"
+    email: {
+      text: 'Email'
     },
-    "roles": {
-      "text": "Roles"
+    roles: {
+      text: 'Rôles'
     },
-    "actions": {
-      "text": "Actions"
+    actions: {
+      text: 'Actions'
     },
-    "logout": {
-      "text": "Logout"
+    logout: {
+      text: 'Déconnexion'
     },
-    "update_profile": {
-      "text": "Update Profile"
+    update_profile: {
+      text: 'Mettre le profil à jour'
     },
-    "change_password": {
-      "text": "Change Password"
+    change_password: {
+      text: 'Changer le mot de passe'
     },
-    "invite": {
-      "text": "Invite"
+    invite: {
+      text: 'Inviter'
     },
-    "invitation_created_successfully": {
-      "text": "Invitation created successfully"
+    invitation_created_successfully: {
+      text: 'Invitation créée avec succès'
     },
-    "back": {
-      "text": "Back"
+    back: {
+      text: 'Retour'
     },
-    "invite_another": {
-      "text": "Invite another"
+    invite_another: {
+      text: 'Inviter un autre utilisateur'
     },
-    "select_new_user_roles": {
-      "text": "Select the roles for the new user"
+    select_new_user_roles: {
+      text: 'Sélectionner les rôles pour le nouvel utilisateur'
     },
-    "optional_new_user_email": {
-      "text": "Email of the new user (optional)"
+    optional_new_user_email: {
+      text: 'Email du nouvel utilisateur (optionnel)'
     },
-    "cancel": {
-      "text": "Cancel"
+    cancel: {
+      text: 'Annuler'
     },
-    "login": {
-      "text": "Login"
+    login: {
+      text: 'Connexion'
     },
-    "save": {
-      "text": "Save"
+    save: {
+      text: 'Enregistrer'
     },
-    "register": {
-      "text": "Register"
+    register: {
+      text: 'Enregistrer'
     },
-    "password_again": {
-      "text": "Password (again)"
+    password_again: {
+      text: 'Confirmation du mot de passe'
     },
-    "select_user_roles": {
-      "text": "Select the roles for this user"
+    select_user_roles: {
+      text: 'Sélectionner les rôles pour cet utilisateur'
     },
-    "create_a": {
-      "text": "Create a"
+    create_a: {
+      text: 'Créer une'
     },
-    "create": {
-      "text": "Create"
+    create: {
+      text: 'Créer'
     },
-    "no_permission": {
-      "text": "No permission"
+    no_permission: {
+      text: 'Pas de permission'
     },
-    "delete": {
-      "text": "Delete"
+    delete: {
+      text: 'Effacer'
     },
-    "are_you_sure_to_delete_this": {
-      "text": "Are you sure you want to delete this"
+    are_you_sure_to_delete_this: {
+      text: 'Etes-vous sûr d\'effacer cette'
     },
-    "confirm": {
-      "text": "Confirm"
+    confirm: {
+      text: 'Confirmer'
     },
-    "update": {
-      "text": "Update"
+    update: {
+      text: 'Mettre à jour'
     },
-    "config": {
-      "text": "Config"
+    config: {
+      text: 'Configurer'
     },
-    "dictionary": {
-      "text": "Dictionary"
+    dictionary: {
+      text: 'Dictionnaire'
     },
-    "create_new_page": {
-      "text": "Create a new page"
+    create_new_page: {
+      text: 'Créer une nouvelle page'
     },
-    "choose_template": {
-      "text": "Choose a template"
+    choose_template: {
+      text: 'Choisir un modèle'
     },
-    "choose": {
-      "text": "Choose"
+    choose: {
+      text: 'Choisir'
     },
-    "delete_page": {
-      "text": "Delete page"
+    delete_page: {
+      text: 'Effacer une page'
     },
-    "are_you_sure_to_delete_this_page": {
-      "text": "Are you sure you want to delete this page?"
+    are_you_sure_to_delete_this_page: {
+      text: 'Etes-vous sûr de vouloir effacer cette page ?'
     },
-    "pages": {
-      "text": "Pages"
+    pages: {
+      text: 'Pages'
     },
-    "update_page": {
-      "text": "Update page"
+    update_page: {
+      text: 'Mettre à jour la page'
     },
-    "app_configuration": {
-      "text": "App Configuration"
+    app_configuration: {
+      text: 'Configuration de l\'application'
     },
-    "remove": {
-      "text": "Remove"
+    remove: {
+      text: 'Effacer'
     },
-    "choose_file": {
-      "text": "Choose a file"
+    choose_file: {
+      text: 'Choisir un fichier'
     },
-    "file": {
-      "text": "File"
+    file: {
+      text: 'Fichier'
     },
-    "no_file": {
-      "text": "No file"
+    no_file: {
+      text: 'Aucun fichier'
     },
-    "file_id_not_found": {
-      "text": "The file with id {fileId} was not found"
+    file_id_not_found: {
+      text: 'Le fichier avec l\'id {fileId} n\'a pas été trouvé'
     },
-    "title": {
-      "text": "Title"
+    title: {
+      text: 'Titre'
     },
-    "item": {
-      "text": "item"
+    item: {
+      text: 'item'
     },
-    "items": {
-      "text": "items"
+    items: {
+      text: 'items'
     },
-    "users": {
-      "text": "users"
+    users: {
+      text: 'utilisateurs'
     },
-    "user": {
-      "text": "user"
+    user: {
+      text: 'utilisateur'
     },
-    "error_uploading_file": {
-      "text": "Error uploading file"
+    error_uploading_file: {
+      text: 'Erreur de chargement de fichier'
     },
-    "error_removing_file": {
-      "text": "Error removing file"
-    }
-  },
-  "fr": {
-    "accounts": {
-      "text": "Comptes"
-    },
-    "invalid_email": {
-      "text": "L'email n'est pas valide"
-    },
-    "passwords_must_match": {
-      "text": "Les mots de passes doivent correspondre"
-    },
-    "edit_roles": {
-      "text": "Editer les rôles"
-    },
-    "no_permission_for_roles": {
-      "text": "Vous n'avez pas la permission de changer les rôles utilisateurs"
-    },
-    "invalid_invitation_code": {
-      "text": "Le code d'invitation n'est pas valide"
-    },
-    "my_account": {
-      "text": "Mon compte"
-    },
-    "name": {
-      "text": "Nom"
-    },
-    "your_name": {
-      "text": "Votre nom"
-    },
-    "email": {
-      "text": "Email"
-    },
-    "roles": {
-      "text": "Rôles"
-    },
-    "actions": {
-      "text": "Actions"
-    },
-    "logout": {
-      "text": "Déconnexion"
-    },
-    "update_profile": {
-      "text": "Mettre le profil à jour"
-    },
-    "change_password": {
-      "text": "Changer le mot de passe"
-    },
-    "invite": {
-      "text": "Inviter"
-    },
-    "invitation_created_successfully": {
-      "text": "Invitation créée avec succès"
-    },
-    "back": {
-      "text": "Retour"
-    },
-    "invite_another": {
-      "text": "Inviter un autre utilisateur"
-    },
-    "select_new_user_roles": {
-      "text": "Sélectionner les rôles pour le nouvel utilisateur"
-    },
-    "optional_new_user_email": {
-      "text": "Email du nouvel utilisateur (optionnel)"
-    },
-    "cancel": {
-      "text": "Annuler"
-    },
-    "login": {
-      "text": "Connexion"
-    },
-    "save": {
-      "text": "Enregistrer"
-    },
-    "register": {
-      "text": "Enregistrer"
-    },
-    "password_again": {
-      "text": "Confirmation du mot de passe"
-    },
-    "select_user_roles": {
-      "text": "Sélectionner les rôles pour cet utilisateur"
-    },
-    "create_a": {
-      "text": "Créer une"
-    },
-    "create": {
-      "text": "Créer"
-    },
-    "no_permission": {
-      "text": "Pas de permission"
-    },
-    "delete": {
-      "text": "Effacer"
-    },
-    "are_you_sure_to_delete_this": {
-      "text": "Etes-vous sûr d'effacer cette"
-    },
-    "confirm": {
-      "text": "Confirmer"
-    },
-    "update": {
-      "text": "Mettre à jour"
-    },
-    "config": {
-      "text": "Configurer"
-    },
-    "dictionary": {
-      "text": "Dictionnaire"
-    },
-    "create_new_page": {
-      "text": "Créer une nouvelle page"
-    },
-    "choose_template": {
-      "text": "Choisir un modèle"
-    },
-    "choose": {
-      "text": "Choisir"
-    },
-    "delete_page": {
-      "text": "Effacer une page"
-    },
-    "are_you_sure_to_delete_this_page": {
-      "text": "Etes-vous sûr de vouloir effacer cette page ?"
-    },
-    "pages": {
-      "text": "Pages"
-    },
-    "update_page": {
-      "text": "Mettre à jour la page"
-    },
-    "app_configuration": {
-      "text": "Configuration de l'application"
-    },
-    "remove": {
-      "text": "Effacer"
-    },
-    "choose_file": {
-      "text": "Choisir un fichier"
-    },
-    "file": {
-      "text": "Fichier"
-    },
-    "no_file": {
-      "text": "Aucun fichier"
-    },
-    "file_id_not_found": {
-      "text": "Le fichier avec l'id {fileId} n'a pas été trouvé"
-    },
-    "title": {
-      "text": "Titre"
-    },
-    "item": {
-      "text": "item"
-    },
-    "items": {
-      "text": "items"
-    },
-    "users": {
-      "text": "utilisateurs"
-    },
-    "user": {
-      "text": "utilisateur"
-    },
-    "error_uploading_file": {
-      "text": "Erreur de chargement de fichier"
-    },
-    "error_removing_file": {
-      "text": "Erreur d'effacement de fichier"
+    error_removing_file: {
+      text: 'Erreur d\'effacement de fichier'
     }
   }
 }, {
-  "exportedAt": 1431194223035,
-  "updatedAt": 1431194216656
+  'exportedAt': 1431194223035,
+  'updatedAt': 1431194216656
 });
