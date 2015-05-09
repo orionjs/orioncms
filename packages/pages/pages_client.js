@@ -36,13 +36,13 @@ ReactiveTemplates.events('pages.create', {
   },
   'click .cancel-btn': function () {
     if (_.keys(orion.pages.templates).length == 1) {
-      Router.go('adminPagesIndex')
+      Router.go('adminPagesIndex');
     } else {
       Session.set('adminPagesCreate_choosenTemplate', null);
     }
   },
   'click .submit-btn': function () {
-    $("#orionPagesCreateForm").submit();
+    $('#orionPagesCreateForm').submit();
   }
 });
 
@@ -89,7 +89,7 @@ ReactiveTemplates.helpers('pages.update', {
 
 ReactiveTemplates.events('pages.update', {
   'click .save-btn': function () {
-    $("#orionPagesUpdateForm").submit();
+    $('#orionPagesUpdateForm').submit();
   }
 });
 
@@ -98,8 +98,8 @@ ReactiveTemplates.events('pages.update', {
  */
 ReactiveTemplates.helpers('pages.delete', {
   onSuccess: function () {
-    return function (result) { 
-      Router.go('pages.index'); 
+    return function (result) {
+      Router.go('pages.index');
     };
   }
 });
@@ -111,4 +111,3 @@ ReactiveTemplates.events('pages.delete', {
     });
   }
 });
-
