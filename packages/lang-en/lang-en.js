@@ -153,54 +153,54 @@ mfPkg.syncAll({
     item: {
       text: 'item'
     },
-    'items': {
+    items: {
       text: 'items'
     },
-    'users': {
+    users: {
       text: 'users'
     },
-    'user': {
+    user: {
       text: 'user'
     },
-    'error_uploading_file': {
+    error_uploading_file: {
       text: 'Error uploading file'
     },
-    'error_removing_file': {
+    error_removing_file: {
       text: 'Error removing file'
     }
   },
-  'fr': {
-    'accounts': {
+  fr: {
+    accounts: {
       text: 'Comptes'
     },
-    'invalid_email': {
+    invalid_email: {
       text: 'L\'email n\'est pas valide'
     },
-    'passwords_must_match': {
+    passwords_must_match: {
       text: 'Les mots de passes doivent correspondre'
     },
-    'edit_roles': {
+    edit_roles: {
       text: 'Editer les rôles'
     },
-    'no_permission_for_roles': {
+    no_permission_for_roles: {
       text: 'Vous n\'avez pas la permission de changer les rôles utilisateurs'
     },
-    'invalid_invitation_code': {
+    invalid_invitation_code: {
       text: 'Le code d\'invitation n\'est pas valide'
     },
-    'my_account': {
+    my_account: {
       text: 'Mon compte'
     },
-    'name': {
+    name: {
       text: 'Nom'
     },
-    'your_name': {
+    your_name: {
       text: 'Votre nom'
     },
-    'email': {
+    email: {
       text: 'Email'
     },
-    'roles': {
+    roles: {
       text: 'Rôles'
     },
     actions: {
