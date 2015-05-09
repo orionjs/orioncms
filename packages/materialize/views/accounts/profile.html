@@ -3,15 +3,15 @@
 
     {{# Layout template="orionMaterializeContentContainer" }}
       {{# Layout template="orionMaterializeHeaderContainer" }}
-        Update Profile
+        {{mf 'update_profile'}}
       {{/ Layout }}
 
       {{> afQuickFields name='profile' }}
 
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ pathFor 'myAccount.index' }}">Cancel</a>
-      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">Save</button>
+      <a href="{{ pathFor 'myAccount.index' }}">{{mf 'cancel'}}</a>
+      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{mf 'save'}}</button>
     {{/ Layout }}
 
   {{/ autoForm }}

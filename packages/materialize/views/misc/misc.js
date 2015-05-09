@@ -3,7 +3,7 @@ Template.orionMaterializeHasOneAttribute.onRendered(function() {
     var id = this.$('.orionAttributesHasOne').attr('id');
     $('label[for="' + id + '"]').addClass('active');
   }
-})
+});
 
 Template.orionMaterializeHasOneAttribute.events({
   'focus .selectize-input input': function (event, template) {
@@ -22,7 +22,7 @@ Template.orionMaterializeHasOneAttribute.events({
       var id = template.$('.orionAttributesHasOne').attr('id');
       $('label[for="' + id + '"]').addClass('active');
     }
-  },
+  }
 });
 
 Template.orionMaterializeHasManyAttribute.onRendered(function() {
@@ -30,7 +30,7 @@ Template.orionMaterializeHasManyAttribute.onRendered(function() {
     var id = this.$('.orionAttributesHasMany').attr('id');
     $('label[for="' + id + '"]').addClass('active');
   }
-})
+});
 
 Template.orionMaterializeHasManyAttribute.events({
   'focus .selectize-input input': function (event, template) {
@@ -49,5 +49,5 @@ Template.orionMaterializeHasManyAttribute.events({
       var id = template.$('.orionAttributesHasMany').attr('id');
       $('label[for="' + id + '"]').addClass('active');
     }
-  },
+  }
 });

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:materialize',
   summary: 'Materialize theme for orion admin',
-  version: '1.0.5',
+  version: '1.1.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -17,7 +17,8 @@ Package.onUse(function(api) {
     'nicolaslopezj:tabular-materialize@1.2.1',
     'useraccounts:materialize@1.8.1',
     'zimme:iron-router-active@1.0.4',
-    'gildaspk:autoform-materialize@0.0.18'
+    'gildaspk:autoform-materialize@0.0.18',
+    'msgfmt:core@2.0.0-preview.7'
     ]);
 
   api.imply([

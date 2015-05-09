@@ -3,9 +3,9 @@
     {{# Layout template="orionMaterializeContentContainer" }}
       {{# Layout template="orionMaterializeHeaderContainer" }}
         {{# if choosenTemplate }}
-          Create a new page - {{ choosenTemplate.name }}
+          {{mf 'create_new_page'}} - {{ choosenTemplate.name }}
         {{ else }}
-          Choose a template
+          {{mf 'choose_template'}}
         {{/ if }}
       {{/ Layout }}
       {{# if choosenTemplate }}
@@ -20,14 +20,14 @@
           {{/ each }}
         </div>
       {{/ if }}
-      
+
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
       {{# if choosenTemplate }}
-        <a class="cancel-btn" href="#">Back</a>
-        <a class="light-blue-text text-accent-4 submit-btn" href="#">Create</a>
+        <a class="cancel-btn" href="#">{{mf 'back'}}</a>
+        <a class="light-blue-text text-accent-4 submit-btn" href="#">{{mf 'create'}}</a>
       {{ else }}
-        <a href="{{ pathFor 'pages.index' }}">Back</a>
+        <a href="{{ pathFor 'pages.index' }}">{{mf 'back'}}</a>
       {{/ if }}
     {{/ Layout }}
   {{/ if }}
