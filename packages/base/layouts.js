@@ -21,7 +21,7 @@ orion.addLink = function(options) {
     permission: Match.Optional(String),
   }));
   Options.arrayPush('links', options);
-}
+};
 
 /**
  * Requests a links template
@@ -53,4 +53,3 @@ if (Meteor.isClient) {
     }
   });
 }
-

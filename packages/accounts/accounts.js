@@ -40,7 +40,7 @@ Options.listen('forbidClientAccountCreation', function(value) {
 AccountsTemplates.addField({
     _id: 'name',
     type: 'text',
-    displayName: 'Name',
-    placeholder: 'Your name',
+    displayName: mf('name'),
+    placeholder: mf('your_name'),
     required: true,
 });
