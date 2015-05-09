@@ -1,903 +1,342 @@
 mfPkg.syncAll({
   "en": {
     "accounts": {
-      "key": "accounts",
-      "text": "Accounts",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "kv59PKNqFEgwKFFzH",
-      "_id": "z7vp5qHnP75AFgWxf"
+      "text": "Accounts"
     },
     "edit_roles": {
-      "key": "edit_roles",
-      "text": "Edit Roles",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "WPe2jL8nJ5gynYcY5",
-      "_id": "PpCEA96877pE56SMg"
+      "text": "Edit Roles"
     },
     "invalid_email": {
-      "key": "invalid_email",
-      "text": "The email is not valid",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "mbwJtCK8D7nbGLtnW",
-      "_id": "wqoDMSE2r52kbuumC"
+      "text": "The email is not valid"
     },
     "passwords_must_match": {
-      "key": "passwords_must_match",
-      "text": "Passwords must match",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "qMXPDgMYcwW48v3Wv",
-      "_id": "F6L4PFgeWGwC9WPwG"
+      "text": "Passwords must match"
     },
     "no_permission_for_roles": {
-      "key": "no_permission_for_roles",
-      "text": "You have no permissions to change user roles",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "zW7kZhhLFoZTBmNz7",
-      "_id": "w9KNWkN6WjhxqqDXc"
+      "text": "You have no permissions to change user roles"
     },
     "invalid_invitation_code": {
-      "key": "invalid_invitation_code",
-      "text": "The invitation code is invalid",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "Gh83dDMHB7mCqmCPQ",
-      "_id": "WYrCMbGCBEBBvLhtN"
+      "text": "The invitation code is invalid"
     },
     "my_account": {
-      "key": "my_account",
-      "text": "My Account",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "BHJvvP9zxJhHagHMg",
-      "_id": "dRZkdeYXmybRAJMqM"
+      "text": "My Account"
     },
     "name": {
-      "key": "name",
-      "text": "Name",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "xPm6KZx9iFBuPYTEA",
-      "_id": "yC8fsqP8YsFqDjbFr"
+      "text": "Name"
     },
     "your_name": {
-      "key": "your_name",
-      "text": "Your name",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "seo5BmqnuCk92KD2z",
-      "_id": "t3EzCBTCpoScurDzu"
+      "text": "Your name"
     },
     "email": {
-      "key": "email",
-      "text": "Email",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "5hWdtebKxEujvW78e",
-      "_id": "rCGxFok69oMrE93td"
+      "text": "Email"
     },
     "roles": {
-      "key": "roles",
-      "text": "Roles",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "o3rdYDowNivkX6t7w",
-      "_id": "Shqhye6g8BgBMrroi"
+      "text": "Roles"
     },
     "actions": {
-      "key": "actions",
-      "text": "Actions",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "DakGAWdo2oYsLmTc7",
-      "_id": "ELEQ2v5Pn6DYLzzXQ"
+      "text": "Actions"
     },
     "logout": {
-      "key": "logout",
-      "text": "Logout",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "Jn9SuEh2tYyukcErA",
-      "_id": "y79XMY4h9y2TFrWoh"
+      "text": "Logout"
     },
     "update_profile": {
-      "key": "update_profile",
-      "text": "Update Profile",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "biMaLRSZ33WDDqcG3",
-      "_id": "FGFu7xFaTQ4C7HKou"
+      "text": "Update Profile"
     },
     "change_password": {
-      "key": "change_password",
-      "text": "Change Password",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "TM5E9n627TEWQWhZQ",
-      "_id": "Hr4f4Tm6smtMFdqCk"
+      "text": "Change Password"
     },
     "invite": {
-      "key": "invite",
-
-      "text": "Invite",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "F72nMoCLdeg9MJAQ2",
-      "_id": "kw9ucGzRkrNukGgCv"
+      "text": "Invite"
     },
     "invitation_created_successfully": {
-      "key": "invitation_created_successfully",
-      "text": "Invitation created successfully",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "eKTwZWx86QkdREDby",
-      "_id": "pndrxQLQMF28oJDoa"
+      "text": "Invitation created successfully"
     },
     "back": {
-      "key": "back",
-      "text": "Back",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "LCo3WCf8HWfGt83DY",
-      "_id": "B5vYFhG76Pn5YHbqJ"
+      "text": "Back"
     },
     "invite_another": {
-      "key": "invite_another",
-      "text": "Invite another",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "aXsCJg2xtCr9u2pZA",
-      "_id": "czxmdbMfeamiHQT7g"
+      "text": "Invite another"
     },
     "select_new_user_roles": {
-      "key": "select_new_user_roles",
-      "text": "Select the roles for the new user",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "M9bdwLadDfxZs8zpQ",
-      "_id": "GWQfcqu2zB65EFEYp"
+      "text": "Select the roles for the new user"
     },
     "optional_new_user_email": {
-      "key": "optional_new_user_email",
-      "text": "Email of the new user (optional)",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "ZpPo454LxByjiHpXv",
-      "_id": "s9SM6Na8CzRuCzmak"
+      "text": "Email of the new user (optional)"
     },
     "cancel": {
-      "key": "cancel",
-      "text": "Cancel",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "hnevZMfx9DdkeezQB",
-      "_id": "sZLtDj6e4WwSAMRn9"
+      "text": "Cancel"
     },
     "login": {
-      "key": "login",
-      "text": "Login",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "T66ca5XZhrhYB2b39",
-      "_id": "38ahddXZWwBNFQ4p9"
+      "text": "Login"
     },
     "save": {
-      "key": "save",
-      "text": "Save",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "HTwCytL8dJLccyMPf",
-      "_id": "aDTxDuAhLbA2YTThv"
+      "text": "Save"
     },
     "register": {
-      "key": "register",
-      "text": "Register",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "EHSCrhCxnLuyFXwss",
-      "_id": "fGnnAQ7meS6S2QHdq"
+      "text": "Register"
     },
     "password_again": {
-      "key": "password_again",
-      "text": "Password (again)",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "L59ZN5hAhAQR4YX8S",
-      "_id": "Qc4fGmXm5WxohEYP3"
+      "text": "Password (again)"
     },
     "select_user_roles": {
-      "key": "select_user_roles",
-      "text": "Select the roles for this user",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "ZNNtnX2NyhWRfGgxQ",
-      "_id": "6igk8Bq8BonmJhMKf"
+      "text": "Select the roles for this user"
     },
     "create_a": {
-      "key": "create_a",
-      "text": "Create a",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "d5BtE4LSa4x5phg5X",
-      "_id": "zuQqmMpCPEE9g5KSc"
+      "text": "Create a"
     },
     "create": {
-      "key": "create",
-      "text": "Create",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "EXbwuRKZNi3nHfcQg",
-      "_id": "wugLDF5HaAiHDczgq"
+      "text": "Create"
     },
     "no_permission": {
-      "key": "no_permission",
-      "text": "No permission",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "FodZFr6XMPMwYy5E8",
-      "_id": "X7C34dnqmkgZxxmaF"
+      "text": "No permission"
     },
     "delete": {
-      "key": "delete",
-      "text": "Delete",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "kaKSim3TFhjAdQ8Db",
-      "_id": "kcCH9AbuTRKiYoznq"
+      "text": "Delete"
     },
     "are_you_sure_to_delete_this": {
-      "key": "are_you_sure_to_delete_this",
-      "text": "Are you sure you want to delete this",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "Z8t97qtQQHF6YthZP",
-      "_id": "L3uh3b5jSiB4d8pw5"
+      "text": "Are you sure you want to delete this"
     },
     "confirm": {
-      "key": "confirm",
-      "text": "Confirm",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "QnQbw77JuJnAgFHB8",
-      "_id": "CZL6dTKYemQCZTf2G"
+      "text": "Confirm"
     },
     "update": {
-      "key": "update",
-      "text": "Update",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "hzmpAis64iGwYWsL9",
-      "_id": "hQWpHvPw2gWbkeRbf"
+      "text": "Update"
     },
     "config": {
-      "key": "config",
-      "text": "Config",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "xXtpXWjj2Az4WeLAq",
-      "_id": "NMPQ35QBKh2P8fddn"
+      "text": "Config"
     },
     "dictionary": {
-      "key": "dictionary",
-      "text": "Dictionary",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "gPzegSRa7b2j88Ngd",
-      "_id": "6BLKNkBEsFbjNQDWj"
+      "text": "Dictionary"
     },
     "create_new_page": {
-      "key": "create_new_page",
-      "text": "Create a new page",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "riK2G4hRApfxRKdMK",
-      "_id": "dZb3JBut3MNBMfCqD"
+      "text": "Create a new page"
     },
     "choose_template": {
-      "key": "choose_template",
-      "text": "Choose a template",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "gEJy52kFoecW6mRwF",
-      "_id": "L6fP4nNsNC3jywYZi"
+      "text": "Choose a template"
     },
     "choose": {
-      "key": "choose",
-      "text": "Choose",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "jQw8eSZbsnRJbwc6s",
-      "_id": "xNykqsJMoCcjodjES"
+      "text": "Choose"
     },
     "delete_page": {
-      "key": "delete_page",
-      "text": "Delete page",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "tkuLMZi4xtsT5yYo6",
-      "_id": "Lc5ECB3Pb6CFEHqu4"
+      "text": "Delete page"
     },
     "are_you_sure_to_delete_this_page": {
-      "key": "are_you_sure_to_delete_this_page",
-      "text": "Are you sure you want to delete this page?",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "D7Hb9K2bomcDAda8x",
-      "_id": "KmWKWTSHPAgp2zNK8"
+      "text": "Are you sure you want to delete this page?"
     },
     "pages": {
-      "key": "pages",
-      "text": "Pages",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "fnDsaZszp8cn5X5BT",
-      "_id": "9DoAba2gCSjFfjjqH"
+      "text": "Pages"
     },
     "update_page": {
-      "key": "update_page",
-      "text": "Update page",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "WHiiGSoeij8rJC2g5",
-      "_id": "wLT7kScJdPGnRuGMK"
+      "text": "Update page"
     },
     "app_configuration": {
-      "key": "app_configuration",
-      "text": "App Configuration",
-      "ctime": "2015-05-09T12:23:22.000Z",
-      "mtime": "2015-05-09T12:23:22.000Z",
-      "revisionId": "oi8aF65HkJnonrMDn",
-      "_id": "miPgdHZQo8ZicQGXE"
+      "text": "App Configuration"
     },
     "remove": {
-      "key": "remove",
-      "text": "Remove",
-      "ctime": "2015-05-09T12:36:28.000Z",
-      "mtime": "2015-05-09T12:36:28.000Z",
-      "revisionId": "26TNtmexKh8MJA7SR",
-      "_id": "nk4KC9htEQhg2meoo"
+      "text": "Remove"
     },
     "choose_file": {
-      "key": "choose_file",
-      "text": "Choose a file",
-      "ctime": "2015-05-09T12:37:17.000Z",
-      "mtime": "2015-05-09T12:37:17.000Z",
-      "revisionId": "wueQ5MxuBs93HuiaM",
-      "_id": "4WBG3hX6SDS3PScPT"
+      "text": "Choose a file"
     },
     "file": {
-      "key": "file",
-      "text": "File",
-      "ctime": "2015-05-09T12:38:25.000Z",
-      "mtime": "2015-05-09T12:38:25.000Z",
-      "revisionId": "AyLzHKJbNvukd8wxH",
-      "_id": "RTCaNwfaTzJ744QRG"
+      "text": "File"
     },
     "no_file": {
-      "key": "no_file",
-      "text": "No file",
-      "ctime": "2015-05-09T12:38:25.000Z",
-      "mtime": "2015-05-09T12:38:25.000Z",
-      "revisionId": "BR2hqwu3nuEwzWXnw",
-      "_id": "FE3ofeknpFrcxqAHs"
+      "text": "No file"
     },
     "file_id_not_found": {
-      "key": "file_id_not_found",
-      "text": "The file with id {fileId} was not found",
-      "ctime": "2015-05-09T13:48:42.000Z",
-      "mtime": "2015-05-09T13:48:42.000Z",
-      "revisionId": "goB7Tuz8wxgHDCGoE",
-      "_id": "ZseHNiwgHMp9533Eh"
+      "text": "The file with id {fileId} was not found"
     },
     "title": {
-      "key": "title",
-      "text": "Title",
-      "ctime": "2015-05-09T17:20:30.000Z",
-      "mtime": "2015-05-09T17:20:30.000Z",
-      "revisionId": "oPFYZdcc7DbKrueaR",
-      "_id": "NYzkGGjwczmykhLz9"
+      "text": "Title"
     },
     "item": {
-      "key": "item",
-      "text": "item",
-      "ctime": "2015-05-09T17:28:46.000Z",
-      "mtime": "2015-05-09T17:28:46.000Z",
-      "revisionId": "FXZ5d9NAhQB3kHSP2",
-      "_id": "h9SBFPukjBEvBg743"
+      "text": "item"
     },
     "items": {
-      "key": "items",
-      "text": "items",
-      "ctime": "2015-05-09T17:28:46.000Z",
-      "mtime": "2015-05-09T17:28:46.000Z",
-      "revisionId": "6s7FtYWDC3AvmMZHn",
-      "_id": "v3W7YQjfh5SF5taNT"
+      "text": "items"
     },
     "users": {
-      "key": "users",
-      "text": "users",
-      "ctime": "2015-05-09T17:36:00.000Z",
-      "mtime": "2015-05-09T17:36:00.000Z",
-      "revisionId": "XTk7P6KaHSXHCyCyb",
-      "_id": "GwxZS2iobQjnP4imF"
+      "text": "users"
     },
     "user": {
-      "key": "user",
-      "text": "user",
-      "ctime": "2015-05-09T17:36:00.000Z",
-      "mtime": "2015-05-09T17:36:00.000Z",
-      "revisionId": "LsoXMyG3SJGWday7d",
-      "_id": "iy7e3Xeswdez4YZJG"
+      "text": "user"
     },
     "error_uploading_file": {
-      "key": "error_uploading_file",
-      "text": "Error uploading file",
-      "ctime": "2015-05-09T17:55:01.000Z",
-      "mtime": "2015-05-09T17:55:01.000Z",
-      "revisionId": "FcNp4TRjF7yNuLSmc",
-      "_id": "wQNtmbBNaJArsKa2j"
+      "text": "Error uploading file"
     },
     "error_removing_file": {
-      "key": "error_removing_file",
-      "text": "Error removing file",
-      "ctime": "2015-05-09T17:55:01.000Z",
-      "mtime": "2015-05-09T17:55:01.000Z",
-      "revisionId": "vTxB7B2mEBp7M2jmG",
-      "_id": "o5mjqo3aZa6kXEnoX"
+      "text": "Error removing file"
     }
   },
   "fr": {
     "accounts": {
-      "key": "accounts",
-      "text": "Comptes",
-      "ctime": 1431161486814,
-      "mtime": 1431161486814,
-      "revisionId": "iXLYYS75jRGZ22Y7A",
-      "_id": "xojR6YMDmXn3ifmEo"
+      "text": "Comptes"
     },
     "invalid_email": {
-      "key": "invalid_email",
-      "text": "L'email n'est pas valide",
-      "ctime": 1431162539451,
-      "mtime": 1431162539451,
-      "revisionId": "st5Mar7MyqADpwdi5",
-      "_id": "dmzMRt2f7BPZEnDdG"
+      "text": "L'email n'est pas valide"
     },
     "passwords_must_match": {
-      "key": "passwords_must_match",
-      "text": "Les mots de passes doivent correspondre",
-      "ctime": 1431162559188,
-      "mtime": 1431162559189,
-      "revisionId": "2EjNKMjN8s9xR8P49",
-      "_id": "E8CcRmuWXs44YwMqW"
+      "text": "Les mots de passes doivent correspondre"
     },
     "edit_roles": {
-      "key": "edit_roles",
-      "text": "Editer les rôles",
-      "ctime": 1431163702521,
-      "mtime": 1431163702521,
-      "revisionId": "XamRXQ4uGTwH4aeCY",
-      "_id": "CdC6EaNpBtLbDSfn5"
+      "text": "Editer les rôles"
     },
     "no_permission_for_roles": {
-      "key": "no_permission_for_roles",
-      "text": "Vous n'avez pas la permission de changer les rôles utilisateurs",
-      "ctime": 1431163727177,
-      "mtime": 1431163727177,
-      "revisionId": "NvZGP8yEePRrsxFPk",
-      "_id": "4BMH6HwRyDQkJniJp"
+      "text": "Vous n'avez pas la permission de changer les rôles utilisateurs"
     },
     "invalid_invitation_code": {
-      "key": "invalid_invitation_code",
-      "text": "Le code d'invitation n'est pas valide",
-      "ctime": 1431163737632,
-      "mtime": 1431163737632,
-      "revisionId": "fR9LKxoQ5JxdguuMY",
-      "_id": "xdfg88vcNadSnYg8b"
+      "text": "Le code d'invitation n'est pas valide"
     },
     "my_account": {
-      "key": "my_account",
-      "text": "Mon compte",
-      "ctime": 1431163742265,
-      "mtime": 1431163742265,
-      "revisionId": "AXtTZc5ZtXAhojqrQ",
-      "_id": "dm7rYR9HpN6Hqjg4f"
+      "text": "Mon compte"
     },
     "name": {
-      "key": "name",
-      "text": "Nom",
-      "ctime": 1431164837335,
-      "mtime": 1431164837335,
-      "revisionId": "NYabNBhChiS3iShJy",
-      "_id": "CpXJ6grvJZfef8q2h"
+      "text": "Nom"
     },
     "your_name": {
-      "key": "your_name",
-      "text": "Votre nom",
-      "ctime": 1431164856854,
-      "mtime": 1431164856854,
-      "revisionId": "bzmcd9GBbLG4BagkJ",
-      "_id": "kE8BQN3SHrut5TxoY"
+      "text": "Votre nom"
     },
     "email": {
-      "key": "email",
-      "text": "Email",
-      "ctime": 1431165980509,
-      "mtime": 1431165980509,
-      "revisionId": "xNHzPBoDZ365mX3HG",
-      "_id": "C8Hz4aR8Ei8AfxAfA"
+      "text": "Email"
     },
     "roles": {
-      "key": "roles",
-      "text": "Rôles",
-      "ctime": 1431165984226,
-      "mtime": 1431165984226,
-      "revisionId": "xesD96xmw5CDxDG6n",
-      "_id": "5TdwBmPnLbQP6GuXj"
+      "text": "Rôles"
     },
     "actions": {
-      "key": "actions",
-      "text": "Actions",
-      "ctime": 1431165987131,
-      "mtime": 1431165987131,
-      "revisionId": "sQrdJX4PWdAGzRTmJ",
-      "_id": "cMyYMZEayiK9Znb5h"
+      "text": "Actions"
     },
     "logout": {
-      "key": "logout",
-      "text": "Déconnexion",
-      "ctime": 1431165993852,
-      "mtime": 1431165993852,
-      "revisionId": "x9roqekk8E38oTAze",
-      "_id": "xNQMQ9PgSLyiDgLsy"
+      "text": "Déconnexion"
     },
     "update_profile": {
-      "key": "update_profile",
-      "text": "Mettre le profil à jour",
-      "ctime": 1431166021019,
-      "mtime": 1431169629518,
-      "revisionId": "8mjgyuEvgPJDwvbyD",
-      "_id": "WPLMwAesQ73qDiih8"
+      "text": "Mettre le profil à jour"
     },
     "change_password": {
-      "key": "change_password",
-      "text": "Changer le mot de passe",
-      "ctime": 1431166027850,
-      "mtime": 1431166027850,
-      "revisionId": "wEfBZ73FtSGbDB9SY",
-      "_id": "uHsafxvSHmgNj9zH7"
+      "text": "Changer le mot de passe"
     },
     "invite": {
-      "key": "invite",
-      "text": "Inviter",
-      "ctime": 1431169623459,
-      "mtime": 1431169623459,
-      "revisionId": "BsxHsdt82w5HYGS2Y",
-      "_id": "TBtfW2dXNwBcd8mLy"
+      "text": "Inviter"
     },
     "invitation_created_successfully": {
-      "key": "invitation_created_successfully",
-      "text": "Invitation créée avec succès",
-      "ctime": 1431169650639,
-      "mtime": 1431169650639,
-      "revisionId": "K4PbRu9mFeArbdWXb",
-      "_id": "o5AR5D5Fz4QbhuvQr"
+      "text": "Invitation créée avec succès"
     },
     "back": {
-      "key": "back",
-      "text": "Retour",
-      "ctime": 1431169653710,
-      "mtime": 1431169653710,
-      "revisionId": "Mnonh7yByq3ERMFyG",
-      "_id": "PdXqEP47wyBiCs9Rj"
+      "text": "Retour"
     },
     "invite_another": {
-      "key": "invite_another",
-      "text": "Inviter un autre utilisateur",
-      "ctime": 1431169662027,
-      "mtime": 1431169662027,
-      "revisionId": "rpcqBcWiitY63qG2C",
-      "_id": "WqwqDRAaYsCH9ixEJ"
+      "text": "Inviter un autre utilisateur"
     },
     "select_new_user_roles": {
-      "key": "select_new_user_roles",
-      "text": "Sélectionner les rôles pour le nouvel utilisateur",
-      "ctime": 1431169676946,
-      "mtime": 1431169676946,
-      "revisionId": "8KLrqqF832r3K2Nbe",
-      "_id": "egGJ2N3TADTAidMHt"
+      "text": "Sélectionner les rôles pour le nouvel utilisateur"
     },
     "optional_new_user_email": {
-      "key": "optional_new_user_email",
-      "text": "Email du nouvel utilisateur (optionnel)",
-      "ctime": 1431169689865,
-      "mtime": 1431169689865,
-      "revisionId": "N2WkyBw3ZYjdvfqD9",
-      "_id": "eT2QNjiFXyT23SYSG"
+      "text": "Email du nouvel utilisateur (optionnel)"
     },
     "cancel": {
-      "key": "cancel",
-      "text": "Annuler",
-      "ctime": 1431169693150,
-      "mtime": 1431169693150,
-      "revisionId": "JNuNJ6DTEAA9Qmhpp",
-      "_id": "SZXZxJvC4oafLdCHG"
+      "text": "Annuler"
     },
     "login": {
-      "key": "login",
-      "text": "Connexion",
-      "ctime": 1431169698088,
-      "mtime": 1431169698088,
-      "revisionId": "bmoEBsZEHB6v4vhb3",
-      "_id": "qkhbkvb9W8hwQ4ycn"
+      "text": "Connexion"
     },
     "save": {
-      "key": "save",
-      "text": "Enregistrer",
-      "ctime": 1431169705952,
-      "mtime": 1431169705952,
-      "revisionId": "WnMTEDWc535BxHbBM",
-      "_id": "8rFebtdYB98RpbEWr"
+      "text": "Enregistrer"
     },
     "register": {
-      "key": "register",
-      "text": "Enregistrer",
-      "ctime": 1431170806104,
-      "mtime": 1431170806104,
-      "revisionId": "fkeaBe2jCDxLJRAKv",
-      "_id": "dvrD7agFvFqcdPC9x"
+      "text": "Enregistrer"
     },
     "password_again": {
-      "key": "password_again",
-      "text": "Confirmation du mot de passe",
-      "ctime": 1431170880224,
-      "mtime": 1431170880224,
-      "revisionId": "ygPpfSqP4aTjdpWfa",
-      "_id": "yLRzctQesdXZHDyie"
+      "text": "Confirmation du mot de passe"
     },
     "select_user_roles": {
-      "key": "select_user_roles",
-      "text": "Sélectionner les rôles pour cet utilisateur",
-      "ctime": 1431172996848,
-      "mtime": 1431172996848,
-      "revisionId": "xRFuvSnP6p6Gd5zi4",
-      "_id": "yo4mmnAB4YqqJTgXd"
+      "text": "Sélectionner les rôles pour cet utilisateur"
     },
     "create_a": {
-      "key": "create_a",
-      "text": "Créer une",
-      "ctime": 1431173001743,
-      "mtime": 1431173001743,
-      "revisionId": "mkeiPX5kmZ8YvPNHn",
-      "_id": "zLfSfR3dBWftqHmeY"
+      "text": "Créer une"
     },
     "create": {
-      "key": "create",
-      "text": "Créer",
-      "ctime": 1431173004657,
-      "mtime": 1431173004657,
-      "revisionId": "maevd647J2mW2ERsK",
-      "_id": "cGo7qXieCZsoagDBu"
+      "text": "Créer"
     },
     "no_permission": {
-      "key": "no_permission",
-      "text": "Pas de permission",
-      "ctime": 1431173012406,
-      "mtime": 1431173012406,
-      "revisionId": "zD2oWHiTybHNBj2gg",
-      "_id": "jcKNjzG2Znc47LRCx"
+      "text": "Pas de permission"
     },
     "delete": {
-      "key": "delete",
-      "text": "Effacer",
-      "ctime": 1431173015137,
-      "mtime": 1431173015137,
-      "revisionId": "vFF6gE5ydfinoahWQ",
-      "_id": "isTJht56rM5WPbRFJ"
+      "text": "Effacer"
     },
     "are_you_sure_to_delete_this": {
-      "key": "are_you_sure_to_delete_this",
-      "text": "Etes-vous sûr d'effacer cette",
-      "ctime": 1431173052725,
-      "mtime": 1431173052725,
-      "revisionId": "z8zwNnrhBJz4L3tcK",
-      "_id": "6MpfuDAscuvMcYnt6"
+      "text": "Etes-vous sûr d'effacer cette"
     },
     "confirm": {
-      "key": "confirm",
-      "text": "Confirmer",
-      "ctime": 1431173057329,
-      "mtime": 1431173057329,
-      "revisionId": "gy3yyQgGATsryzcAS",
-      "_id": "aDbn7m2nrTLC8M7ZM"
+      "text": "Confirmer"
     },
     "update": {
-      "key": "update",
-      "text": "Mettre à jour",
-      "ctime": 1431173062159,
-      "mtime": 1431173062159,
-      "revisionId": "bTZn3y2ma2g9vDXmi",
-      "_id": "WQi73Fux4ZqCosT8Z"
+      "text": "Mettre à jour"
     },
     "config": {
-      "key": "config",
-      "text": "Configurer",
-      "ctime": 1431173065890,
-      "mtime": 1431173065890,
-      "revisionId": "G9qxJx2pqNXnWPhHv",
-      "_id": "NSWsxqe5zSGueHm8h"
+      "text": "Configurer"
     },
     "dictionary": {
-      "key": "dictionary",
-      "text": "Dictionnaire",
-      "ctime": 1431173071051,
-      "mtime": 1431173071051,
-      "revisionId": "cx2n8zsw6yxrAcc5R",
-      "_id": "Xq5frtxhbyK7ju9N2"
+      "text": "Dictionnaire"
     },
     "create_new_page": {
-      "key": "create_new_page",
-      "text": "Créer une nouvelle page",
-      "ctime": 1431173079861,
-      "mtime": 1431173079861,
-      "revisionId": "LHS2Ad232q8uTM8wb",
-      "_id": "T4Jmb7m5p5ujyq3w3"
+      "text": "Créer une nouvelle page"
     },
     "choose_template": {
-      "key": "choose_template",
-      "text": "Choisir un modèle",
-      "ctime": 1431173087317,
-      "mtime": 1431173087317,
-      "revisionId": "azmCzFuM6KrNFspde",
-      "_id": "ECyCy8u27WtEhtrZT"
+      "text": "Choisir un modèle"
     },
     "choose": {
-      "key": "choose",
-      "text": "Choisir",
-      "ctime": 1431173092498,
-      "mtime": 1431173092498,
-      "revisionId": "wwBFSADRWC5v9u3N9",
-      "_id": "qgWucWeRTPHphiKG7"
+      "text": "Choisir"
     },
     "delete_page": {
-      "key": "delete_page",
-      "text": "Effacer une page",
-      "ctime": 1431173096990,
-      "mtime": 1431173096990,
-      "revisionId": "LCgphKMXPB5SqpGDD",
-      "_id": "sNFPnKx8HKBPd2zaT"
+      "text": "Effacer une page"
     },
     "are_you_sure_to_delete_this_page": {
-      "key": "are_you_sure_to_delete_this_page",
-      "text": "Etes-vous sûr de vouloir effacer cette page ?",
-      "ctime": 1431173114104,
-      "mtime": 1431173114104,
-      "revisionId": "SST7ahx4onsTMsFEy",
-      "_id": "icjn5dRqsovExiHp8"
+      "text": "Etes-vous sûr de vouloir effacer cette page ?"
     },
     "pages": {
-      "key": "pages",
-      "text": "Pages",
-      "ctime": 1431173116567,
-      "mtime": 1431173116567,
-      "revisionId": "KK9By92tobYkezmfQ",
-      "_id": "FaixqwLA25Fg9qffS"
+      "text": "Pages"
     },
     "update_page": {
-      "key": "update_page",
-      "text": "Mettre à jour la page",
-      "ctime": 1431173123235,
-      "mtime": 1431173123235,
-      "revisionId": "HLN7MJ5HMGu9vBYEY",
-      "_id": "EScQWypGXwtqKSs6Y"
+      "text": "Mettre à jour la page"
     },
     "app_configuration": {
-      "key": "app_configuration",
-      "text": "Configuration de l'application",
-      "ctime": 1431174475756,
-      "mtime": 1431174475756,
-      "revisionId": "JL5E3v5Y6Xweza9Jy",
-      "_id": "NmAAWv5jmRX4sniDC"
+      "text": "Configuration de l'application"
     },
     "remove": {
-      "key": "remove",
-      "text": "Effacer",
-      "ctime": 1431178140770,
-      "mtime": 1431178140770,
-      "revisionId": "DMD2P7C5EHuMXTmDy",
-      "_id": "bEo4vZg4b7zCEQf5F"
+      "text": "Effacer"
     },
     "choose_file": {
-      "key": "choose_file",
-      "text": "Choisir un fichier",
-      "ctime": 1431178147067,
-      "mtime": 1431178147067,
-      "revisionId": "GXQWSj2a62G6x2zmy",
-      "_id": "4TCvEF4ZPFfsuPagT"
+      "text": "Choisir un fichier"
     },
     "file": {
-      "key": "file",
-      "text": "Fichier",
-      "ctime": 1431178150254,
-      "mtime": 1431178150254,
-      "revisionId": "DSeZmgG2qkqSSxoiJ",
-      "_id": "zTRAw5uEAtZPekS3n"
+      "text": "Fichier"
     },
     "no_file": {
-      "key": "no_file",
-      "text": "Aucun fichier",
-      "ctime": 1431178160450,
-      "mtime": 1431178160450,
-      "revisionId": "bpfwNo7yL7ycS7Qqv",
-      "_id": "SQzva9pg59gobzpQ7"
+      "text": "Aucun fichier"
     },
     "file_id_not_found": {
-      "key": "file_id_not_found",
-      "text": "Le fichier avec l'id {fileId} n'a pas été trouvé",
-      "ctime": 1431189129225,
-      "mtime": 1431189129225,
-      "revisionId": "KNp2GXdbopx9352zr",
-      "_id": "rRrkmdzutQwgbdpQL"
+      "text": "Le fichier avec l'id {fileId} n'a pas été trouvé"
     },
     "title": {
-      "key": "title",
-      "text": "Titre",
-      "ctime": 1431192197814,
-      "mtime": 1431192197814,
-      "revisionId": "p5mM4aaZL9Cyopftm",
-      "_id": "wCsT9vzWYSYr3JoPQ"
+      "text": "Titre"
     },
     "item": {
-      "key": "item",
-      "text": "item",
-      "ctime": 1431193058556,
-      "mtime": 1431193058556,
-      "revisionId": "ZTxJ9azoHr4wFc24t",
-      "_id": "zizNt4kZGFhzGw4Ex"
+      "text": "item"
     },
     "items": {
-      "key": "items",
-      "text": "items",
-      "ctime": 1431193062903,
-      "mtime": 1431193062903,
-      "revisionId": "FrRhJq5pgzRrXBSbT",
-      "_id": "G9727kudvxnpE9QdK"
+      "text": "items"
     },
     "users": {
-      "key": "users",
-      "text": "utilisateurs",
-      "ctime": 1431193068130,
-      "mtime": 1431193068130,
-      "revisionId": "tArfiLLw9Q3KsrZZ6",
-      "_id": "pkrrT2JoLg6WdaM9N"
+      "text": "utilisateurs"
     },
     "user": {
-      "key": "user",
-      "text": "utilisateur",
-      "ctime": 1431193072851,
-      "mtime": 1431193072851,
-      "revisionId": "MhTjSNhn46bfCraXP",
-      "_id": "TjtuFG2rGgMLTSd6Y"
+      "text": "utilisateur"
     },
     "error_uploading_file": {
-      "key": "error_uploading_file",
-      "text": "Erreur de chargement de fichier",
-      "ctime": 1431194208353,
-      "mtime": 1431194208353,
-      "revisionId": "4WrWHeQuFQrFPeZxt",
-      "_id": "hx2aNhy9HNcvu3zAn"
+      "text": "Erreur de chargement de fichier"
     },
     "error_removing_file": {
-      "key": "error_removing_file",
-      "text": "Erreur d'effacement de fichier",
-      "ctime": 1431194216656,
-      "mtime": 1431194216656,
-      "revisionId": "FYPb8xHnfr6iqgSGy",
-      "_id": "3kQzDz2LsxbCgM9K5"
+      "text": "Erreur d'effacement de fichier"
     }
   }
 }, {
