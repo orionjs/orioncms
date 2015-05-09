@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:froala',
   summary: 'Froala editor for orion',
-  version: '1.0.0',
+  version: '1.1.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     'orionjs:base@1.0.0',
     'orionjs:attributes@1.0.0',
     'less',
-    'orionjs:filesystem@1.0.0', 
+    'orionjs:filesystem@1.1.0',
     'froala:editor@1.2.4',
     ]);
 

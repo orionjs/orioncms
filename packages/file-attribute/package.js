@@ -11,7 +11,7 @@ Package.onUse(function(api) {
   api.use([
     'orionjs:base@1.0.0',
     'orionjs:attributes@1.0.0',
-    'orionjs:filesystem@1.0.0',
+    'orionjs:filesystem@1.1.0',
     'less',
     'msgfmt:core@2.0.0-preview.7'
     ]);
