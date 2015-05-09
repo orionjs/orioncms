@@ -5,11 +5,11 @@ if (Meteor.isClient) {
       path: 'orionjs',
     }, function(error, result) {
       if (error) {
-        failure(new Meteor.Error('s3-error', 'Error uploading file'));
+        failure(new Meteor.Error('s3-error', mf('error_uploading_file')));
       } else {
         success(result.secure_url, { s3Path: result.relative_url });
       }
-      S3.collection.remove({})
+      S3.collection.remove({});
     });
     Tracker.autorun(function () {
       var file = S3.collection.findOne();
@@ -17,23 +17,23 @@ if (Meteor.isClient) {
         progress(file.percent_uploaded);
       }
     });
-  }
+  };
 
   orion.filesystem.providerRemove = function(file, success, failure)  {
     S3.delete(file.meta.s3Path, function(error, result) {
       if (error) {
-        failure(new Meteor.Error('s3-error', 'Error removing file'));
+        failure(new Meteor.Error('s3-error', mf('error_removing_file')));
       } else {
         success();
       }
-    })
-  }
+    });
+  };
 }
 
-orion.config.add('AWS_API_KEY', 'aws')
-orion.config.add('AWS_API_SECRET', 'aws', { secret: true })
-orion.config.add('AWS_S3_BUCKET', 'aws')
-orion.config.add('AWS_S3_REGION', 'aws', { optional: true })
+orion.config.add('AWS_API_KEY', 'aws');
+orion.config.add('AWS_API_SECRET', 'aws', { secret: true });
+orion.config.add('AWS_S3_BUCKET', 'aws');
+orion.config.add('AWS_S3_REGION', 'aws', { optional: true });
 
 if (Meteor.isServer) {
   S3.config = {
