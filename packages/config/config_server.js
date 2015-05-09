@@ -14,7 +14,7 @@ orion.config.collection.after.update(function (userId, doc, fieldNames, modifier
  */
 if (orion.config.collection.find().count() === 0) {
   orion.config.collection.insert({}, function(){
-    console.log("Orion config initialized")
+    console.log("Orion config initialized");
   });
 }
 
@@ -37,8 +37,8 @@ orion.config.object = orion.config.collection.findOne();
 
 /**
  * Send the data to the client (only public values).
- * It uses the injection method (meteorhacks:inject-initial) not 
- * the publish/subcribe, because this is not meant to be reactive 
+ * It uses the injection method (meteorhacks:inject-initial) not
+ * the publish/subcribe, because this is not meant to be reactive
  * and the values should be on the client when it starts.
  */
 Meteor.startup(function () {
