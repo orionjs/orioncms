@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'orionjs:lang-en',
+  name: 'orionjs:lang-ru',
   version: '1.1.0',
   summary: 'Orion - Russian language',
   git: 'https://github.com/orionjs/orion',
