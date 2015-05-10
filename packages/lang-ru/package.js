@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:lang-en',
   version: '1.1.0',
-  summary: 'Orion - Default english language',
+  summary: 'Orion - Russian language',
   git: 'https://github.com/orionjs/orion',
   documentation: 'README.md'
 });
@@ -15,8 +15,7 @@ Package.onUse(function(api) {
 
   api.imply(['msgfmt:core']);
 
-  api.addFiles('init.js', ['client', 'server']);
-  api.addFiles('lang-en.js', 'server');
+  api.addFiles('lang-ru.js', 'server');
 
   api.export(['msgfmt', 'mfPkg']);
 });

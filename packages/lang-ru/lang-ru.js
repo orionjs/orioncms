@@ -1,5 +1,5 @@
 mfPkg.syncAll({
-  en: {
+  ru: {
     accounts: {
       text: 'Аккуанты'
     },
