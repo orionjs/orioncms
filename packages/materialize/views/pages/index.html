@@ -1,7 +1,7 @@
 <template name="orionMaterializePagesIndex">
   {{# Layout template="orionMaterializeContentContainer" }}
     {{# Layout template="orionMaterializeHeaderContainer" }}
-      Pages
+      {{mf 'pages'}}
       {{# if userHasPermission 'pages.insert' }}
         <a href="{{ pathFor 'pages.create' }}" class="btn-floating waves-effect waves-light red right">
           <i class="mdi-content-add"></i>

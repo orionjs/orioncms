@@ -10,7 +10,7 @@ Template.orionMaterializeConfigUpdate.helpers({
         class: function() {
           return Session.get('configUpdateCurrentCategory') == category ? 'btn-default disabled': 'btn-primary';
         }
-      }
+      };
     });
   }
 });

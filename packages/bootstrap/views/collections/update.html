@@ -1,16 +1,16 @@
 <template name="orionBootstrapCollectionsUpdate">
   {{# Layout template="orionBootstrapMediumContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      Update {{ collection.singularName }}
+      {{mf 'update'}} {{ collection.singularName }}
     {{/ Layout }}
     {{# Layout template="orionBootstrapContentContainer" }}
       {{# if item.canShowUpdate }}
         {{> quickForm collection=collection doc=item id="orionBootstrapCollectionsUpdateForm" type="update" buttonContent=false }}
         <br>
         <div class="buttons text-right">
-          <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
+          <a class="btn btn-default" href="{{ collection.indexPath }}">{{mf 'cancel'}}</a>
           {{# if item.canShowRemove }}
-            <a class="btn btn-danger" href="{{ collection.deletePath item._id }}">Delete</a>
+            <a class="btn btn-danger" href="{{ collection.deletePath item._id }}">{{mf 'delete'}}</a>
           {{/ if }}
           <a class="btn btn-primary save-btn">Save</a>
         </div>

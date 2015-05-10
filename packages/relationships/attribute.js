@@ -33,7 +33,7 @@ var getSchema = function(options, hasMany) {
       option: function(item, escape) {
         return '<div>' + escape(item[options.titleField]) + '</div>';
       }
-    }
+    };
   }
 
   if (!options.aditionalFields) {
@@ -49,11 +49,11 @@ var getSchema = function(options, hasMany) {
   }
 
   if (!options.pluralName) {
-    options.pluralName = 'items';
+    options.pluralName = mf('items');
   }
 
   if (!options.singularName) {
-    options.singularName = 'item';
+    options.singularName = mf('item');
   }
 
   options.fields = options.aditionalFields;
@@ -64,7 +64,7 @@ var getSchema = function(options, hasMany) {
       var pubFields = {};
       for (var i = 0; i < options.fields.length; i++) {
         pubFields[options.fields[i]] = 1;
-      };
+      }
       return options.collection.find(options.filter(this.userId), { fields: pubFields });
     }, { is_auto: true });
     if (!hasMany) {
@@ -72,7 +72,7 @@ var getSchema = function(options, hasMany) {
         var pubFields = {};
         for (var i = 0; i < options.fields.length; i++) {
           pubFields[options.fields[i]] = 1;
-        };
+        }
         var filter = options.filter(this.userId);
         filter._id = id;
         return options.collection.find(filter, { fields: pubFields });
@@ -84,14 +84,14 @@ var getSchema = function(options, hasMany) {
     return {
       type: [String],
       orion: options
-    }
+    };
   } else {
     return {
       type: String,
       orion: options
-    }
+    };
   }
-}
+};
 
 orion.attributes.registerAttribute('hasMany', {
   template: 'orionAttributesHasMany',

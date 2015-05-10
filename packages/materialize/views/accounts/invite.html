@@ -2,26 +2,26 @@
   {{# if invitationId }}
     {{# Layout template="orionMaterializeContentContainer" }}
       {{# Layout template="orionMaterializeHeaderContainer" }}
-        Invite
+        {{mf 'invite'}}
       {{/ Layout }}
       <div class="alert">
-        Invitation created successfully
+        {{mf 'invitation_created_successfully'}}
       </div>
       <p>
         <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
       </p>
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ pathFor 'accounts.index' }}">Back</a>
-      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-invite-another">Invite another</button>
+      <a href="{{ pathFor 'accounts.index' }}">{{mf 'back'}}</a>
+      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-invite-another">{{mf 'invite_another'}}</button>
     {{/ Layout }}
   {{ else }}
     <form class="invite">
       {{# Layout template="orionMaterializeContentContainer" }}
         {{# Layout template="orionMaterializeHeaderContainer" }}
-          Invite
+          {{mf 'invite'}}
         {{/ Layout }}
-        <label>Select the roles for the new user</label>
+        <label>{{mf 'select_new_user_roles'}}</label>
         <br><br>
         {{# each roles }}
           <p>
@@ -31,12 +31,12 @@
         {{/ each }}
         <div class="input-field">
           <input type="email" class="form-control" id="email">
-          <label for="email">Email of the new user (optional)</label>
+          <label for="email">{{mf 'optional_new_user_email'}}</label>
         </div>
       {{/ Layout }}
       {{# Layout template="orionMaterializeButtonsContainer" }}
-        <a href="{{ pathFor 'accounts.index' }}">Cancel</a>
-        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">Invite</button>
+        <a href="{{ pathFor 'accounts.index' }}">{{mf 'cancel'}}</a>
+        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{mf 'invite'}}</button>
       {{/ Layout }}
     </form>
   {{/ if }}

@@ -21,7 +21,7 @@ Template.orionMaterializeCollectionsIndex.onRendered(function() {
       Session.set('orionMaterializeCollectionsIndex_showTable', true);
     });
   });
-})
+});
 
 Template.orionMaterializeCollectionsIndex.helpers({
   showTable: function () {

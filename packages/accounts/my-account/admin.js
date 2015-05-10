@@ -44,7 +44,7 @@ orion.accounts.addProtectedRoute('myAccount.profile');
  */
 orion.addLink({
   section: 'bottom',
-  title: 'My Account',
+  title: mf('my_account'),
   routeName: 'myAccount.index',
   activeRouteRegex: 'myAccount',
 });
@@ -57,7 +57,7 @@ if (Meteor.isClient) {
     'click .logout': function() {
       return Meteor.logout();
     }
-  })
+  });
 
   ReactiveTemplates.helpers('myAccount.profile', {
     getDoc: function() {
@@ -66,5 +66,5 @@ if (Meteor.isClient) {
     getSchema: function() {
       return orion.accounts.profileSchema;
     }
-  })
+  });
 }

@@ -4,8 +4,8 @@ orion.attributes.registerAttribute('users', {
   getSchema: function(options) {
     options = _.extend(options, {
       titleField: 'profile.name',
-      pluralName: 'users',
-      singularName: 'user',
+      pluralName: mf('users'),
+      singularName: mf('user'),
       collection: Meteor.users,
       aditionalFields: ['emails.address'],
       render: {
@@ -25,7 +25,7 @@ orion.attributes.registerAttribute('users', {
         }
       },
     });
-    return orion.attribute('hasMany', {}, options)
+    return orion.attribute('hasMany', {}, options);
   },
   valueOut: function() {
     return this.val();
@@ -57,11 +57,9 @@ orion.attributes.registerAttribute('user', {
         }
       },
     });
-    return orion.attribute('hasOne', {}, options)
+    return orion.attribute('hasOne', {}, options);
   },
   valueOut: function() {
     return this.val();
   }
 });
-
-

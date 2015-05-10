@@ -18,7 +18,7 @@ orion.accounts.addProtectedRoute('accounts.index');
  */
 orion.addLink({
   section: 'bottom',
-  title: 'Accounts',
+  title: mf('accounts', 'Accounts'),
   routeName: 'accounts.index',
   activeRouteRegex: 'accounts',
   permission: 'accounts.index'
@@ -34,10 +34,9 @@ Router.route('/admin/accounts/:_id/update/roles', function () {
 orion.accounts.addProtectedRoute('accounts.update.roles');
 
 orion.accounts.addAdminUsersButton({
-  title: 'Edit Roles',
+  title: mf('edit_roles'),
   route: 'accounts.update.roles',
   shouldShow: function() {
     return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');
   }
 });
-

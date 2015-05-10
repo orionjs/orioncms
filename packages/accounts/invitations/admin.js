@@ -93,12 +93,12 @@ if (Meteor.isClient) {
         passwordConfirm = template.$("[name='password-confirm']").val();
 
       if (!/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
-        Session.set('registerWithInvitationError', 'The email is not valid');
+        Session.set('registerWithInvitationError', mf('invalid_email'));
         return;
       }
 
       if (password != passwordConfirm) {
-        Session.set('registerWithInvitationError', 'Passwords must match');
+        Session.set('registerWithInvitationError', mf('passwords_must_match'));
         return;
       }
 
@@ -125,8 +125,3 @@ if (Meteor.isClient) {
     }
   });
 }
-
-
-
-
-
