@@ -10,26 +10,26 @@ Roles.registerAction('pages.remove', true);
 
 orion.pages.collection.allow({
   'insert': function (userId, doc) {
-    return Roles.allow(userId, 'pages.insert', userId, doc)
+    return Roles.allow(userId, 'pages.insert', userId, doc);
   },
   'update': function (userId, doc, fields, modifier) {
-    return Roles.allow(userId, 'pages.update', userId, doc, fields, modifier)
+    return Roles.allow(userId, 'pages.update', userId, doc, fields, modifier);
   },
   'remove': function (userId, doc) {
-    return Roles.allow(userId, 'pages.remove', userId, doc)
-  },
+    return Roles.allow(userId, 'pages.remove', userId, doc);
+  }
 });
 
 orion.pages.collection.deny({
   'insert': function (userId, doc) {
-    return Roles.deny(userId, 'pages.insert', userId, doc)
+    return Roles.deny(userId, 'pages.insert', userId, doc);
   },
   'update': function (userId, doc, fields, modifier) {
-    return Roles.deny(userId, 'pages.update', userId, doc, fields, modifier)
+    return Roles.deny(userId, 'pages.update', userId, doc, fields, modifier);
   },
   'remove': function (userId, doc) {
-    return Roles.deny(userId, 'pages.remove', userId, doc)
-  },
+    return Roles.deny(userId, 'pages.remove', userId, doc);
+  }
 });
 
 orion.pages.collection.helpers({
@@ -57,19 +57,19 @@ orion.pages.addTemplate = function (options, schema) {
   orion.pages.templates[newTemplate.template] = newTemplate;
 
   return newTemplate;
-}
+};
 
 orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
   return _.extend({
     title: {
       type: String,
-      label: "Title"
+      label: mf('title')
     },
     url: {
       type: String,
       regEx: /^[a-z0-9A-Z_-]+$/,
       unique: true,
-      label: "Url"
+      label: 'Url'
     },
     template: {
       type: String,
@@ -87,9 +87,9 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
       },
       autoValue: function () {
         if (this.isInsert) {
-          return new Date;
+          return new Date();
         } else if (this.isUpsert) {
-          return {$setOnInsert: new Date};
+          return {$setOnInsert: new Date()};
         } else {
           this.unset();
         }
@@ -124,16 +124,16 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
       }
     }
   }, schema);
-}
+};
 
 var Tabular = null;
 
 if (Package['nicolaslopezj:tabular-materialize']) {
-  Tabular = Package['nicolaslopezj:tabular-materialize'].Tabular
+  Tabular = Package['nicolaslopezj:tabular-materialize'].Tabular;
 }
 
 if (Package['aldeed:tabular']) {
-  Tabular = Package['aldeed:tabular'].Tabular
+  Tabular = Package['aldeed:tabular'].Tabular;
 }
 
 if (!Tabular) {
@@ -141,11 +141,11 @@ if (!Tabular) {
 }
 
 orion.pages.tabular = new Tabular.Table({
-  name: "PagesIndex",
+  name: 'PagesIndex',
   collection: orion.pages.collection,
   columns: [
-    {data: "title", title: "Title"},
-    {data: "url", title: "URL"}
+    {data: 'title', title: mf('title')},
+    {data: 'url', title: 'URL'}
   ]
 });
 
@@ -165,6 +165,5 @@ Meteor.startup(function(){
         this.render(page.template, {data: page});
       }
     }
-
   }, { name: 'pages' });
 });

@@ -23,7 +23,7 @@ Router.route('/admin/pages/:_id/edit', function() {
   this.item = item;
   this.render(ReactiveTemplates.get('pages.update'), {
     data: function() {
-      return item; 
+      return item;
     }
   });
 } , {name: 'pages.update'});
@@ -37,7 +37,7 @@ Router.route('/admin/pages/:_id/delete', function() {
   this.item = item;
   this.render(ReactiveTemplates.get('pages.delete'), {
     data: function() {
-      return item; 
+      return item;
     }
   });
 } , {name: 'pages.delete'});
@@ -49,7 +49,7 @@ orion.accounts.addProtectedRoute('pages.delete');
  */
 orion.addLink({
   section: 'medium',
-  title: 'Pages',
+  title: mf('pages'),
   routeName: 'pages.index',
   activeRouteRegex: 'pages',
   permission: 'pages.index',

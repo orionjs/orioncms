@@ -2,18 +2,18 @@
   {{# Layout template="orionBootstrapMediumContentOffset" }}
     {{# if collection.canShowCreate }}
       {{# Layout template="orionBootstrapTitle" }}
-        Create a {{ collection.singularName }}
+        {{mf 'create_a'}} {{ collection.singularName }}
       {{/ Layout }}
       {{# Layout template="orionBootstrapContentContainer" }}
         {{> quickForm collection=collection id="orionBootstrapCollectionsCreateForm" type="insert" buttonContent=false }}
         <br>
         <div class="buttons text-right">
-          <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
-          <a class="btn btn-primary create-btn">Create</a>
+          <a class="btn btn-default" href="{{ collection.indexPath }}">{{mf 'cancel'}}</a>
+          <a class="btn btn-primary create-btn">{{mf 'create'}}</a>
         </div>
       {{/ Layout }}
     {{ else }}
-      <p><b>No permissions</b></p>
+      <p><b>{{mf 'no_permission'}}</b></p>
     {{/ if }}
   {{/ Layout }}
 </template>

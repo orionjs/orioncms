@@ -1,15 +1,15 @@
 <template name="orionMaterializeAccountsIndex">
   {{# Layout template="orionMaterializeContentContainer" }}
     {{# Layout template="orionMaterializeHeaderContainer" }}
-      Accounts
+      {{mf 'accounts'}}
     {{/ Layout }}
     <table class="table hoverable responsive-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Roles</th>
-          <th>Actions</th>
+          <th>{{mf 'name'}}</th>
+          <th>{{mf 'email'}}</th>
+          <th>{{mf 'roles'}}</th>
+          <th>{{mf 'actions'}}</th>
         </tr>
       </thead>
       <tbody>
@@ -38,7 +38,7 @@
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
     {{# if userHasPermission 'accounts.invite' }}
-      <a href="{{ pathFor 'accounts.invite' }}" >Invite</a>
+      <a href="{{ pathFor 'accounts.invite' }}" >{{mf 'invite'}}</a>
     {{/ if }}
   {{/ Layout }}
 </template>

@@ -1,25 +1,25 @@
 <template name="orionBootstrapAccountsInvite">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      Invite
+      {{mf 'invite'}}
     {{/ Layout }}
 
     {{# Layout template="orionBootstrapContentContainer" }}
       {{# if invitationId }}
         <div class="alert alert-success">
-          Invitation created successfully
+          {{mf 'invitation_created_successfully'}}
         </div>
         <p>
           <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
         </p>
         <hr>
         <div class="buttons">
-          <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Back</a>
-          <button class="btn btn-primary btn-invite-another">Invite another</button>
+          <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{mf 'back'}}</a>
+          <button class="btn btn-primary btn-invite-another">{{mf 'invite_another'}}</button>
         </div>
       {{ else }}
         <form class="invite">
-          <p>Select the roles for the new user</p>
+          <p>{{mf 'select_new_user_roles'}}</p>
           {{# each roles }}
             <div class="checkbox">
               <label>
@@ -27,15 +27,15 @@
               </label>
             </div>
           {{/ each }}
-          <p>Email of the new user (optional)</p>
+          <p>{{mf 'optional_new_user_email'}}</p>
           <div class="form-group">
             <input type="email" class="form-control">
           </div>
-          
+
           <hr>
           <div class="buttons">
-            <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
-            <button class="btn btn-primary">Invite</button>
+            <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{mf 'cancel'}}</a>
+            <button class="btn btn-primary">{{mf 'invite'}}</button>
           </div>
         </form>
         {{/ if }}

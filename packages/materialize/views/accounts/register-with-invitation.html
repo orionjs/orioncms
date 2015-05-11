@@ -1,6 +1,6 @@
 <template name="orionMaterializeRegisterWithInvitation">
   {{# contentFor "title" }}
-    Register
+    {{mf 'Register'}}
   {{/ contentFor }}
   {{# if invitation }}
     {{# if error }}
@@ -18,28 +18,28 @@
 
     <form>
       <div class="form-group">
-        <label>Email</label>
+        <label>{{mf 'email'}}</label>
         {{# if invitation.email }}
           <input class="form-control" value="{{ invitation.email }}" name="email" type="email" disabled=true>
         {{ else }}
-          <input class="form-control" placeholder="Email" name="email" type="email">
+          <input class="form-control" placeholder="{{mf 'email'}}" name="email" type="email">
         {{/ if }}
       </div>
       <div class="form-group">
-        <label>Name</label>
-        <input class="form-control" placeholder="Name" name="name" type="text">
+        <label>{{mf 'name'}}</label>
+        <input class="form-control" placeholder="{{mf 'name'}}" name="name" type="text">
       </div>
       <div class="form-group">
-        <label>Password</label>
-        <input class="form-control" placeholder="Password" name="password" type="password">
+        <label>{{mf 'password'}}</label>
+        <input class="form-control" placeholder="{{mf 'password'}}" name="password" type="password">
       </div>
       <div class="form-group">
-        <label>Password (again)</label>
-        <input class="form-control" placeholder="Password (again)" name="password-confirm" type="password">
+        <label>{{mf 'password_again'}}</label>
+        <input class="form-control" placeholder="{{mf 'password_again'}}" name="password-confirm" type="password">
       </div>
       <br>
       <div class="form-group">
-        <button class="btn btn-primary btn-block btn-lg">Register</button>
+        <button class="btn btn-primary btn-block btn-lg">{{mf 'register'}}</button>
       </div>
     </form>
   {{/ if }}

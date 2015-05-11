@@ -14,4 +14,4 @@ Template.registerHelper('dictionaryReady', function() {
 
 orion.dictionary.availableCategories = function() {
   return _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.allowedCategories'));
-}
+};

@@ -1,17 +1,17 @@
 /**
  * Creates the dictionary mongo collection
- */ 
+ */
 orion.dictionary = new Mongo.Collection('dictionary');
 
 /**
  * To get reactively if the dictionary is active
  */
-orion.dictionary._isActiveDependency = new Tracker.Dependency;
+orion.dictionary._isActiveDependency = new Tracker.Dependency();
 orion.dictionary._isActive = false;
 orion.dictionary.isActive = function() {
-  this._isActiveDependency.depend()
+  this._isActiveDependency.depend();
   return this._isActive;
-}
+};
 
 /**
  * Register dictionary actions and helpers for roles
@@ -52,7 +52,7 @@ orion.dictionary.deny({
   'update': function(userId, doc, fields, modifier) {
     return Roles.deny(userId, 'dictionary.update', userId, doc, fields, modifier);
   }
-})
+});
 
 /**
  * Only allow to edit allowed categories
@@ -94,7 +94,7 @@ orion.dictionary.addDefinition = function(name, category, attribute) {
 
 /**
  * Returns the value of the definition.
- * If the definition doesn't exists it 
+ * If the definition doesn't exists it
  * returns the defaultValue
  */
 orion.dictionary.get = function(path, defaultValue) {

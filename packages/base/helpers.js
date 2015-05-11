@@ -5,7 +5,7 @@ orion.helpers = {}
 
 /**
  * Searchs a object with a givin string
- * you can specify if you want the searcher to 
+ * you can specify if you want the searcher to
  * take the first values of array if they are
  */
 orion.helpers.searchObjectWithDots = function(object, key, selectFirstIfIsArray) {
@@ -27,7 +27,7 @@ orion.helpers.searchObjectWithDots = function(object, key, selectFirstIfIsArray)
     }
 
     return object || null;
-}
+};
 
 /**
  * Deep extend
@@ -39,4 +39,4 @@ orion.helpers.deepExtend = function(target, source) {
         else
             target[prop] = source[prop];
     return target;
-}
+};

@@ -11,7 +11,7 @@ Template.orionMaterializeDictionaryUpdate.helpers({
         class: function() {
           return Session.get('dictionaryUpdateCurrentCategory') == category ? 'active': '';
         }
-      }
+      };
     });
   }
 });
