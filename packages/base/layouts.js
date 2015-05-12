@@ -11,17 +11,19 @@ ReactiveTemplates.request('outAdminLayout');
 /**
  * Handle links. To add tabs to the sidebar
  */
-Options.init('links', []);
-orion.addLink = function(options) {
-  check(options, Match.ObjectIncluding({
-    section: String,
-    title: String,
-    routeName: String,
-    activeRouteRegex: Match.Optional(String),
-    permission: Match.Optional(String),
-  }));
-  Options.arrayPush('links', options);
-};
+if (Meteor.isClient) {
+  Options.init('links', []);
+  orion.addLink = function(options) {
+    check(options, Match.ObjectIncluding({
+      section: String,
+      title: String,
+      routeName: String,
+      activeRouteRegex: Match.Optional(String),
+      permission: Match.Optional(String),
+    }));
+    Options.arrayPush('links', options);
+  };
+}
 
 /**
  * Requests a links template

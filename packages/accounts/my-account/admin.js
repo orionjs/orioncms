@@ -40,19 +40,19 @@ Router.route('/admin/my-account/profile', function () {
 orion.accounts.addProtectedRoute('myAccount.profile');
 
 /**
- * Register the link
- */
-orion.addLink({
-  section: 'bottom',
-  title: mf('my_account'),
-  routeName: 'myAccount.index',
-  activeRouteRegex: 'myAccount',
-});
-
-/**
  * Create the template events account settings
  */
 if (Meteor.isClient) {
+  /**
+   * Register the link
+   */
+  orion.addLink({
+    section: 'bottom',
+    title: mf('my_account'),
+    routeName: 'myAccount.index',
+    activeRouteRegex: 'myAccount',
+  });
+
   ReactiveTemplates.events('myAccount.index', {
     'click .logout': function() {
       return Meteor.logout();

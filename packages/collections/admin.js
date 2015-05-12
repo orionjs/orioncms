@@ -146,15 +146,17 @@ orion.collections.onCreated(function() {
    */
   orion.accounts.addProtectedRoute('collections.' + this.name + '.delete');
 
-  /**
-   * Register the link
-   */
-  var linkOptions = _.extend({
-    routeName: 'collections.' + this.name + '.index',
-    activeRouteRegex: 'collections.' + this.name,
-    permission: 'collection.' + this.name + '.index',
-    title: this.name[0].toUpperCase() + this.name.slice(1),
-    section: 'medium'
-  }, this.link);
-  orion.addLink(linkOptions);
+  if (Meteor.isClient) {
+    /**
+     * Register the link
+     */
+    var linkOptions = _.extend({
+      routeName: 'collections.' + this.name + '.index',
+      activeRouteRegex: 'collections.' + this.name,
+      permission: 'collection.' + this.name + '.index',
+      title: this.name[0].toUpperCase() + this.name.slice(1),
+      section: 'medium'
+    }, this.link);
+    orion.addLink(linkOptions);
+  }
 })
