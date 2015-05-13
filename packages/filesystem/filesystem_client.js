@@ -68,33 +68,35 @@ orion.filesystem.remove = function(fileId) {
   remove._statusDependency = new Tracker.Dependency;
   remove._ready = false;
   remove.error = null;
-  remove.subscription = Meteor.subscribe('filesystem_file_toEarse', fileId);
 
   remove.ready = function() {
     remove._statusDependency.depend();
     return remove._ready;
   }
 
-  Tracker.autorun(function () {
-    if (remove.subscription.ready()) {
-      var file = orion.filesystem.collection.findOne(fileId);
-      if (!file) {
+  Meteor.call('getFileDataToEarse', fileId, function (error, file) {
+    if (error) {
+      remove._ready = true;
+      remove.error = error;
+      remove._statusDependency.changed();
+      return;
+    }
+    if (!file) {
+      remove._ready = true;
+      remove.error = new Meteor.Error('file-not-found', 'The file with id "' + fileId + '" was not found');
+      remove._statusDependency.changed();
+    } else {
+      orion.filesystem.providerRemove(file, function() {
         remove._ready = true;
-        remove.error = new Meteor.Error('file-not-found', 'The file with id "' + fileId + '" was not found');
+        orion.filesystem.collection.remove(fileId);
         remove._statusDependency.changed();
-      } else {
-        orion.filesystem.providerRemove(file, function() {
-          remove._ready = true;
-          orion.filesystem.collection.remove(fileId);
-          remove._statusDependency.changed();
-        }, function(error) {
-          check(error, Meteor.Error);
-          remove._ready = true;
-          remove.error = error;
-          orion.filesystem.collection.remove(fileId);
-          remove._statusDependency.changed();
-        })
-      }
+      }, function(error) {
+        check(error, Meteor.Error);
+        remove._ready = true;
+        remove.error = error;
+        orion.filesystem.collection.remove(fileId);
+        remove._statusDependency.changed();
+      })
     }
   });
 }
