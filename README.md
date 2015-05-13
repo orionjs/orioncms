@@ -45,7 +45,7 @@ meteor add materialize:materialize orionjs:materialize
 
 #### Newsletter
 
-This project is very active, if you use orion you must [subscribe](http://eepurl.com/bbji3b)
+This project is very active, if you use orion you must **[subscribe](http://eepurl.com/bbji3b)** to the newsletter
 
 #### Community Add-On Packages
 
