@@ -59,4 +59,5 @@ This project is very active, if you use orion you must [subscribe](http://eepurl
 
 - [lc3t35:orion-filesystem-local](https://github.com/lc3t35/orion-filesystem-local)
 
+- [brightbind:orion-gridfs](https://github.com/brightbind/orion-gridFS/)
 
