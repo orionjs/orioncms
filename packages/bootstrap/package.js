@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:bootstrap',
   summary: 'A simple theme for orion',
-  version: '1.0.0',
+  version: '1.0.1',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -16,7 +16,8 @@ Package.onUse(function(api) {
     'aldeed:autoform@5.1.2',
     'aldeed:tabular@1.1.0',
     'useraccounts:bootstrap@1.8.1',
-    'zimme:iron-router-active@1.0.4'
+    'zimme:iron-router-active@1.0.4',
+    "fortawesome:fontawesome@4.3.0"
     ]);
 
   api.imply([
