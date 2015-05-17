@@ -2,7 +2,7 @@ if (Meteor.isClient) {
   orion.filesystem.providerUpload = function(options, success, failure, progress) {
     S3.upload({
       files: options.fileList,
-      path: 'orionjs',
+      path: orion.config.get('AWS_S3_PATH', 'orionjs'),
     }, function(error, result) {
       if (error) {
         failure(new Meteor.Error('s3-error', 'Error uploading file'));
@@ -34,6 +34,7 @@ orion.config.add('AWS_API_KEY', 'aws')
 orion.config.add('AWS_API_SECRET', 'aws', { secret: true })
 orion.config.add('AWS_S3_BUCKET', 'aws')
 orion.config.add('AWS_S3_REGION', 'aws', { optional: true })
+orion.config.add('AWS_S3_PATH', 'aws', { optional: true })
 
 if (Meteor.isServer) {
   S3.config = {
