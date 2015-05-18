@@ -24,7 +24,7 @@ if (Meteor.isClient) {
     if (!orion.config.isActive()) return;
     orion.addLink({
       section: 'bottom',
-      title: mf('app_configuration'),
+      title: i18n('app_configuration'),
       routeName: 'config.update',
       activeRouteRegex: 'config',
       permission: 'config.update'

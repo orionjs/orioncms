@@ -9,7 +9,6 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'msgfmt:core@2.0.0-preview.7'
     'orionjs:base@1.1.0',
     'aldeed:collection2@2.3.2'
     ]);

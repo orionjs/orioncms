@@ -28,11 +28,11 @@ Meteor.methods({
     var invitation = orion.accounts.invitations.findOne(options.invitationId);
 
     if (!options.invitationId) {
-      throw new Meteor.Error('invalid-invitation', mf('invalid_invitation_code'));
+      throw new Meteor.Error('invalid-invitation', i18n('invalid_invitation_code'));
     }
 
     if (invitation.email && invitation.email != options.email) {
-      throw new Meteor.Error('invalid-email', mf('invalid_email'));
+      throw new Meteor.Error('invalid-email', i18n('invalid_email'));
     }
 
     var userId = Accounts.createUser({ email: options.email, password: options.password });

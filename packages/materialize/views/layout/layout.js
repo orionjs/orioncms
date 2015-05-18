@@ -1,6 +1,10 @@
 Template.orionMaterializeLayout.onRendered(function() {
-  $(".button-collapse").sideNav();
+  
 });
+
+Template.orionMaterializeHeaderContainer.onRendered(function() {
+  $('.button-collapse').sideNav();
+})
 
 Template.orionMaterializeTabs.onRendered(function() {
   this.$('ul.tabs').tabs();

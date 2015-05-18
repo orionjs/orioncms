@@ -46,11 +46,13 @@ if (Meteor.isClient) {
   /**
    * Register the link
    */
-  orion.addLink({
-    section: 'bottom',
-    title: mf('my_account'),
-    routeName: 'myAccount.index',
-    activeRouteRegex: 'myAccount',
+  Tracker.autorun(function () {
+    orion.addLink({
+      section: 'bottom',
+      title: i18n('my_account'),
+      routeName: 'myAccount.index',
+      activeRouteRegex: 'myAccount',
+    });
   });
 
   ReactiveTemplates.events('myAccount.index', {

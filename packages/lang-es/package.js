@@ -1,7 +1,7 @@
 Package.describe({
-  name: 'orionjs:lang-ru',
+  name: 'orionjs:lang-es',
   version: '1.1.0',
-  summary: 'Orion - Russian language',
+  summary: 'Orion spanish language',
   git: 'https://github.com/orionjs/orion',
   documentation: 'README.md'
 });
@@ -12,5 +12,5 @@ Package.onUse(function(api) {
   api.use('orionjs:lang-en');
   api.imply('orionjs:lang-en');
 
-  api.addFiles('ru.i18n.json');
+  api.addFiles('es.js');
 });

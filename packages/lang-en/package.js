@@ -9,14 +9,9 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
 
-  api.use([
-    'msgfmt:core@2.0.0-preview.7'
-    ]);
+  api.use('anti:i18n@0.4.3');
+  api.imply('anti:i18n');
 
-  api.imply(['msgfmt:core']);
-
-  api.addFiles('init.js', ['client', 'server']);
-  api.addFiles('lang-en.js', 'server');
-
-  api.export(['msgfmt', 'mfPkg']);
+  api.addFiles('init.js');
+  api.addFiles('en.js');
 });

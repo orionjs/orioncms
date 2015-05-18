@@ -16,6 +16,7 @@ Package.onUse(function(api) {
     'nicolaslopezj:roles@1.0.5',
     'iron:router@1.0.7',
     'zimme:iron-router-active@1.0.1',
+    'orionjs:lang-en@1.1.0'
     ]);
 
   api.imply([

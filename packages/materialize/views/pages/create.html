@@ -1,13 +1,13 @@
 <template name="orionMaterializePagesCreate">
   {{# if userHasPermission 'pages.index' }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      {{# if choosenTemplate }}
+        {{i18n 'create_new_page'}} - {{ choosenTemplate.name }}
+      {{ else }}
+        {{i18n 'choose_template'}}
+      {{/ if }}
+    {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
-      {{# Layout template="orionMaterializeHeaderContainer" }}
-        {{# if choosenTemplate }}
-          {{mf 'create_new_page'}} - {{ choosenTemplate.name }}
-        {{ else }}
-          {{mf 'choose_template'}}
-        {{/ if }}
-      {{/ Layout }}
       {{# if choosenTemplate }}
         {{> quickForm collection="orion.pages.collection" schema=choosenTemplate.schema id="orionPagesCreateForm" type="insert"  buttonContent=false }}
       {{ else }}
@@ -24,10 +24,10 @@
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
       {{# if choosenTemplate }}
-        <a class="cancel-btn" href="#">{{mf 'back'}}</a>
-        <a class="light-blue-text text-accent-4 submit-btn" href="#">{{mf 'create'}}</a>
+        <a class="cancel-btn" href="#">{{i18n 'back'}}</a>
+        <a class="light-blue-text text-accent-4 submit-btn" href="#">{{i18n 'create'}}</a>
       {{ else }}
-        <a href="{{ pathFor 'pages.index' }}">{{mf 'back'}}</a>
+        <a href="{{ pathFor 'pages.index' }}">{{i18n 'back'}}</a>
       {{/ if }}
     {{/ Layout }}
   {{/ if }}

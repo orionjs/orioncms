@@ -1,15 +1,15 @@
 <template name="orionBootstrapPagesUpdate">
   {{# Layout template="orionBootstrapMediumContentOffset" }}
 	{{# Layout template="orionBootstrapTitle" }}
-		{{mf 'update_page'}}
+		{{i18n 'update_page'}}
 	{{/ Layout }}
 	{{# Layout template="orionBootstrapContentContainer" }}
 		{{# if getSchema }}
 			{{> quickForm collection="orion.pages.collection" schema=getSchema doc=this id="orionPagesUpdateForm" type="update" buttonContent=false }}
 			<br>
 			<div class="buttons text-right">
-				<a class="btn btn-default cancel-btn" href="{{ pathFor 'pages.index' }}">{{mf 'cancel'}}</a>
-				<a class="btn btn-danger delete-btn" href="{{ pathFor 'pages.delete' }}">{{mf 'delete'}}</a>
+				<a class="btn btn-default cancel-btn" href="{{ pathFor 'pages.index' }}">{{i18n 'cancel'}}</a>
+				<a class="btn btn-danger delete-btn" href="{{ pathFor 'pages.delete' }}">{{i18n 'delete'}}</a>
 				<a class="btn btn-primary save-btn">Save</a>
 			</div>
 		{{/ if }}

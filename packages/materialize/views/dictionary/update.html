@@ -1,16 +1,16 @@
 <template name="orionMaterializeDictionaryUpdate">
   {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      {{i18n 'dictionary'}}
+    {{/ Layout }}
+    {{> reactiveTemplate template="tabs" data=getDataForTabs }}
     {{# Layout template="orionMaterializeContentContainer" }}
-      {{# Layout template="orionMaterializeHeaderContainer" }}
-        {{mf 'dictionary'}}
-      {{/ Layout }}
-      {{> reactiveTemplate template="tabs" data=getDataForTabs }}
       {{# if currentCategory }}
         {{> afQuickFields name=currentCategory }}
       {{/ if }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{mf 'save'}}</button>
+        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{i18n 'save'}}</button>
     {{/ Layout }}
   {{/ autoForm }}
 </template>

@@ -49,7 +49,7 @@ orion.accounts.addProtectedRoute('pages.delete');
  */
 orion.addLink({
   section: 'medium',
-  title: mf('pages'),
+  title: i18n('pages'),
   routeName: 'pages.index',
   activeRouteRegex: 'pages',
   permission: 'pages.index',

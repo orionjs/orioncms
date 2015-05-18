@@ -2,17 +2,17 @@
   {{# Layout template="orionBootstrapMediumContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
       {{# if choosenTemplate }}
-        {{mf 'create_new_page'}} - {{ choosenTemplate.name }}
+        {{i18n 'create_new_page'}} - {{ choosenTemplate.name }}
       {{ else }}
-        {{mf 'choose_template'}}
+        {{i18n 'choose_template'}}
       {{/ if }}
     {{/ Layout }}
     {{# Layout template="orionBootstrapContentContainer" }}
       {{# if choosenTemplate }}
         {{> quickForm collection="orion.pages.collection" schema=choosenTemplate.schema id="orionPagesCreateForm" type="insert"  buttonContent=false }}
         <br>
-        <button class="btn btn-default cancel-btn">{{mf 'back'}}</button>
-        <button class="btn btn-primary submit-btn">{{mf 'Create'}}</button>
+        <button class="btn btn-default cancel-btn">{{i18n 'back'}}</button>
+        <button class="btn btn-primary submit-btn">{{i18n 'Create'}}</button>
       {{ else }}
         {{# each templates }}
           <div class="row">
@@ -21,14 +21,14 @@
               <p>{{ description }}</p>
               <p>
                 <button class="btn btn-primary btn-xs template-choose">
-                  {{mf 'choose'}}
+                  {{i18n 'choose'}}
                 </button>
               </p>
             </div>
           </div>
         {{/ each }}
         <hr>
-        <a href="{{ pathFor 'pages.index' }}" class="btn btn-default">{{mf 'back'}}</a>
+        <a href="{{ pathFor 'pages.index' }}" class="btn btn-default">{{i18n 'back'}}</a>
       {{/ if }}
     {{/ Layout }}
   {{/ Layout }}

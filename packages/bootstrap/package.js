@@ -17,7 +17,6 @@ Package.onUse(function(api) {
     'aldeed:tabular@1.1.0',
     'useraccounts:bootstrap@1.8.1',
     'zimme:iron-router-active@1.0.4',
-    'msgfmt:core@2.0.0-preview.7'
     ]);
 
   api.imply([

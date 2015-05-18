@@ -9,34 +9,34 @@ orion.helpers = {}
  * take the first values of array if they are
  */
 orion.helpers.searchObjectWithDots = function(object, key, selectFirstIfIsArray) {
-    key = key.split('.');
+  key = key.split('.');
 
-    try {
-        for (var i = 0; i < key.length; i++) {
-            if (selectFirstIfIsArray && object.length && object.length > 0) {
-                object = object[0];
-            }
-            if (key[i] in object) {
-                object = object[key[i]];
-            } else {
-                return null;
-            }
-        }
-    } catch(error) {
+  try {
+    for (var i = 0; i < key.length; i++) {
+      if (selectFirstIfIsArray && object.length && object.length > 0) {
+        object = object[0];
+      }
+      if (key[i] in object) {
+        object = object[key[i]];
+      } else {
         return null;
+      }
     }
+  } catch(error) {
+    return null;
+  }
 
-    return object || null;
+  return object || null;
 };
 
 /**
  * Deep extend
  */
 orion.helpers.deepExtend = function(target, source) {
-    for (var prop in source)
-        if (prop in target && typeof(target[prop]) == 'object' && typeof(source[prop]) == 'object')
-            orion.helpers.deepExtend(target[prop], source[prop]);
-        else
-            target[prop] = source[prop];
-    return target;
+  for (var prop in source)
+    if (prop in target && typeof(target[prop]) == 'object' && typeof(source[prop]) == 'object')
+      orion.helpers.deepExtend(target[prop], source[prop]);
+    else
+      target[prop] = source[prop];
+  return target;
 };

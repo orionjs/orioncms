@@ -1,25 +1,25 @@
 <template name="orionBootstrapAccountsInvite">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      {{mf 'invite'}}
+      {{i18n 'invite'}}
     {{/ Layout }}
 
     {{# Layout template="orionBootstrapContentContainer" }}
       {{# if invitationId }}
         <div class="alert alert-success">
-          {{mf 'invitation_created_successfully'}}
+          {{i18n 'invitation_created_successfully'}}
         </div>
         <p>
           <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
         </p>
         <hr>
         <div class="buttons">
-          <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{mf 'back'}}</a>
-          <button class="btn btn-primary btn-invite-another">{{mf 'invite_another'}}</button>
+          <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{i18n 'back'}}</a>
+          <button class="btn btn-primary btn-invite-another">{{i18n 'invite_another'}}</button>
         </div>
       {{ else }}
         <form class="invite">
-          <p>{{mf 'select_new_user_roles'}}</p>
+          <p>{{i18n 'select_new_user_roles'}}</p>
           {{# each roles }}
             <div class="checkbox">
               <label>
@@ -27,15 +27,15 @@
               </label>
             </div>
           {{/ each }}
-          <p>{{mf 'optional_new_user_email'}}</p>
+          <p>{{i18n 'optional_new_user_email'}}</p>
           <div class="form-group">
             <input type="email" class="form-control">
           </div>
 
           <hr>
           <div class="buttons">
-            <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{mf 'cancel'}}</a>
-            <button class="btn btn-primary">{{mf 'invite'}}</button>
+            <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{i18n 'cancel'}}</a>
+            <button class="btn btn-primary">{{i18n 'invite'}}</button>
           </div>
         </form>
         {{/ if }}

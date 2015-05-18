@@ -1,8 +1,8 @@
 <template name="orionMaterializePagesUpdate">
+  {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{i18n 'update_page'}}
+  {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{# Layout template="orionMaterializeHeaderContainer" }}
-      {{mf 'update_page'}}
-    {{/ Layout }}
     {{# if getSchema }}
       {{> quickForm collection="orion.pages.collection" schema=getSchema doc=this id="orionPagesUpdateForm" type="update" buttonContent=false }}
       <br>
@@ -12,8 +12,8 @@
     {{/ if }}
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
-    <a class="cancel-btn" href="{{ pathFor 'pages.index' }}">{{mf 'cancel'}}</a>
-    <a class="red-text delete-btn" href="{{ pathFor 'pages.delete' }}">{{mf 'delete'}}</a>
-    <a class="light-blue-text text-accent-4 save-btn">{{mf 'save'}}</a>
+    <a class="cancel-btn" href="{{ pathFor 'pages.index' }}">{{i18n 'cancel'}}</a>
+    <a class="red-text delete-btn" href="{{ pathFor 'pages.delete' }}">{{i18n 'delete'}}</a>
+    <a class="light-blue-text text-accent-4 save-btn">{{i18n 'save'}}</a>
   {{/ Layout }}
 </template>

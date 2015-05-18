@@ -82,7 +82,7 @@ orion.filesystem.remove = function(fileId) {
         remove._ready = true;
         remove.error = new Meteor.Error(
           'file-not-found',
-          mf('file_id_not_found', { fileId: fileId })
+          i18n('file_id_not_found', { fileId: fileId })
         );
         remove._statusDependency.changed();
       } else {

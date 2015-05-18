@@ -13,7 +13,18 @@ ReactiveTemplates.request('outAdminLayout');
  */
 if (Meteor.isClient) {
   Options.init('links', []);
+
   orion.addLink = function(options) {
+    var currentLinks;
+
+    Tracker.nonreactive(function () {
+      currentLinks = Options.get('links');
+      var currentLink = _.findWhere(currentLinks, { routeName: options.routeName });
+      if (currentLink) {
+        currentLinks = _.without(currentLinks, currentLink);
+      }
+    });
+    
     check(options, Match.ObjectIncluding({
       section: String,
       title: String,
@@ -21,7 +32,8 @@ if (Meteor.isClient) {
       activeRouteRegex: Match.Optional(String),
       permission: Match.Optional(String),
     }));
-    Options.arrayPush('links', options);
+    currentLinks.push(options);
+    Options.set('links', currentLinks);
   };
 }
 

@@ -63,7 +63,7 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
   return _.extend({
     title: {
       type: String,
-      label: mf('title')
+      label: i18n('title')
     },
     url: {
       type: String,
@@ -144,7 +144,7 @@ orion.pages.tabular = new Tabular.Table({
   name: 'PagesIndex',
   collection: orion.pages.collection,
   columns: [
-    {data: 'title', title: mf('title')},
+    {data: 'title', title: i18n('title')},
     {data: 'url', title: 'URL'}
   ]
 });

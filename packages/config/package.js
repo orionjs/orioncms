@@ -9,15 +9,16 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'orionjs:lang-en@1.1.0',
     'orionjs:base@1.1.0',
     'aldeed:simple-schema@1.3.2',
     'aldeed:collection2@2.3.3',
     'matb33:collection-hooks@0.7.13',
     'meteorhacks:inject-initial@1.0.2',
-    'msgfmt:core@2.0.0-preview.7'
     ]);
 
   api.imply([
+    'orionjs:lang-en@1.1.0'
     ]);
 
   api.addFiles([

@@ -1,15 +1,15 @@
 <template name="orionMaterializeCollectionsUpdate">
+  {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{i18n 'update'}} {{ collection.singularName }}
+  {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{# Layout template="orionMaterializeHeaderContainer" }}
-      {{mf 'update'}} {{ collection.singularName }}
-    {{/ Layout }}
     {{> quickForm collection=collection doc=item id="orionMaterializeCollectionsUpdateForm" type="update" buttonContent=false }}
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ collection.indexPath }}">{{mf 'cancel'}}</a>
+      <a href="{{ collection.indexPath }}">{{i18n 'cancel'}}</a>
       {{# if item.canShowRemove }}
-        <a class="red-text" href="{{ collection.deletePath item._id }}">{{mf 'delete'}}</a>
+        <a class="red-text" href="{{ collection.deletePath item._id }}">{{i18n 'delete'}}</a>
       {{/ if }}
-      <a class="light-blue-text text-accent-4 save-btn" href="#">{{mf 'save'}}</a>
+      <a class="light-blue-text text-accent-4 save-btn" href="#">{{i18n 'save'}}</a>
   {{/ Layout }}
 </template>

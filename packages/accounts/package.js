@@ -17,7 +17,6 @@ Package.onUse(function(api) {
     'aldeed:simple-schema@1.3.2',
     'matb33:collection-hooks@0.7.11',
     'meteorhacks:inject-initial@1.0.2',
-    'msgfmt:core@2.0.0-preview.7'
     ]);
 
   api.imply([

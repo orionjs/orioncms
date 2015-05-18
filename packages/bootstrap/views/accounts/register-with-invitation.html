@@ -1,6 +1,6 @@
 <template name="orionBootstrapRegisterWithInvitation">
   {{# contentFor "title" }}
-    {{mf 'register'}}
+    {{i18n 'register'}}
   {{/ contentFor }}
   {{# if invitation }}
     {{# if error }}
@@ -18,28 +18,28 @@
 
     <form>
       <div class="form-group">
-        <label>{{mf 'email'}}</label>
+        <label>{{i18n 'email'}}</label>
         {{# if invitation.email }}
           <input class="form-control" value="{{ invitation.email }}" name="email" type="email" disabled=true>
         {{ else }}
-          <input class="form-control" placeholder="{{mf 'email'}}" name="email" type="email">
+          <input class="form-control" placeholder="{{i18n 'email'}}" name="email" type="email">
         {{/ if }}
       </div>
       <div class="form-group">
-        <label>{{mf 'name'}}</label>
-        <input class="form-control" placeholder="{{mf 'name'}}" name="name" type="text">
+        <label>{{i18n 'name'}}</label>
+        <input class="form-control" placeholder="{{i18n 'name'}}" name="name" type="text">
       </div>
       <div class="form-group">
-        <label>{{mf 'password'}}</label>
-        <input class="form-control" placeholder="{{mf 'password'}}" name="password" type="password">
+        <label>{{i18n 'password'}}</label>
+        <input class="form-control" placeholder="{{i18n 'password'}}" name="password" type="password">
       </div>
       <div class="form-group">
-        <label>{{mf 'password_again'}}</label>
-        <input class="form-control" placeholder="{{mf 'password_again'}}" name="password-confirm" type="password">
+        <label>{{i18n 'password_again'}}</label>
+        <input class="form-control" placeholder="{{i18n 'password_again'}}" name="password-confirm" type="password">
       </div>
       <br>
       <div class="form-group">
-        <button class="btn btn-primary btn-block btn-lg">{{mf 'register'}}</button>
+        <button class="btn btn-primary btn-block btn-lg">{{i18n 'register'}}</button>
       </div>
     </form>
   {{/ if }}

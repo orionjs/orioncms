@@ -1,13 +1,13 @@
 <template name="orionMaterializeAccountsUpdateRoles">
   <form class="roles">
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      {{i18n 'edit_roles'}}
+      <small>
+        {{ user.profile.name }}
+      </small>
+    {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
-      {{# Layout template="orionMaterializeHeaderContainer" }}
-        {{mf 'edit_roles'}}
-        <small>
-          {{ user.profile.name }}
-        </small>
-      {{/ Layout }}
-      <p>{{mf 'select_user_roles'}}</p>
+      <p>{{i18n 'select_user_roles'}}</p>
       <br>
       {{# each roles }}
         <p>
@@ -21,8 +21,8 @@
       {{/ each }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a class="" href="{{ pathFor 'accounts.index' }}">{{mf 'cancel'}}</a>
-      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-save">{{mf 'save'}}</button>
+      <a class="" href="{{ pathFor 'accounts.index' }}">{{i18n 'cancel'}}</a>
+      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-save">{{i18n 'save'}}</button>
     {{/ Layout }}
   </form>
 </template>

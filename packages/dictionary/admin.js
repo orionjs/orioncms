@@ -20,11 +20,11 @@ orion.accounts.addProtectedRoute('dictionary.update');
  * Register the link
  */
 Tracker.autorun(function () {
-  if (!orion.dictionary.isActive()) return;
+  if (!orion.dictionary.isActive() || Meteor.isServer) return;
 
   orion.addLink({
     section: 'top',
-    title: 'Dictionary',
+    title: i18n('dictionary'),
     routeName: 'dictionary.update',
     activeRouteRegex: 'dictionary',
     permission: 'dictionary.update',

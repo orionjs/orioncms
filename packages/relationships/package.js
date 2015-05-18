@@ -12,7 +12,6 @@ Package.onUse(function(api) {
     'orionjs:base@1.1.0',
     'orionjs:attributes@1.1.0',
     'less',
-    'msgfmt:core@2.0.0-preview.7'
     'jeremy:selectize@0.12.1'
     ]);
 

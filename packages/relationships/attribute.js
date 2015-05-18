@@ -49,11 +49,11 @@ var getSchema = function(options, hasMany) {
   }
 
   if (!options.pluralName) {
-    options.pluralName = mf('items');
+    options.pluralName = i18n('items');
   }
 
   if (!options.singularName) {
-    options.singularName = mf('item');
+    options.singularName = i18n('item');
   }
 
   options.fields = options.aditionalFields;

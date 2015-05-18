@@ -1,7 +1,7 @@
 <template name="orionBootstrapAccountsIndex">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      {{mf 'accounts'}}
+      {{i18n 'accounts'}}
       {{# if userHasPermission 'accounts.invite' }}
         <a href="{{ pathFor 'accounts.invite' }}" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></a>
       {{/ if }}
@@ -11,10 +11,10 @@
       <table class="table">
         <thead>
           <tr>
-            <th>{{mf 'name'}}</th>
-            <th>{{mf 'email'}}</th>
-            <th>{{mf 'roles'}}</th>
-            <th>{{mf 'actions'}}</th>
+            <th>{{i18n 'name'}}</th>
+            <th>{{i18n 'email'}}</th>
+            <th>{{i18n 'roles'}}</th>
+            <th>{{i18n 'actions'}}</th>
           </tr>
         </thead>
         <tbody>

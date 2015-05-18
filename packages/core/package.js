@@ -9,7 +9,6 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:lang-en@1.1.0',
     'orionjs:base@1.1.0',
     'orionjs:accounts@1.1.0',
     'orionjs:config@1.1.0',
@@ -19,6 +18,7 @@ Package.onUse(function(api) {
     ]);
 
   api.imply([
+    'orionjs:lang-en@1.1.0',
     'orionjs:base',
     'orionjs:accounts',
     'orionjs:config',

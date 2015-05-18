@@ -5,7 +5,7 @@ if (Meteor.isClient) {
       path: 'orionjs',
     }, function(error, result) {
       if (error) {
-        failure(new Meteor.Error('s3-error', mf('error_uploading_file')));
+        failure(new Meteor.Error('s3-error', i18n('error_uploading_file')));
       } else {
         success(result.secure_url, { s3Path: result.relative_url });
       }
@@ -22,7 +22,7 @@ if (Meteor.isClient) {
   orion.filesystem.providerRemove = function(file, success, failure)  {
     S3.delete(file.meta.s3Path, function(error, result) {
       if (error) {
-        failure(new Meteor.Error('s3-error', mf('error_removing_file')));
+        failure(new Meteor.Error('s3-error', i18n('error_removing_file')));
       } else {
         success();
       }

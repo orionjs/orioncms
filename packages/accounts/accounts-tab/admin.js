@@ -17,12 +17,14 @@ orion.accounts.addProtectedRoute('accounts.index');
  * Register the link
  */
 if (Meteor.isClient) {
-  orion.addLink({
-    section: 'bottom',
-    title: mf('accounts', 'Accounts'),
-    routeName: 'accounts.index',
-    activeRouteRegex: 'accounts',
-    permission: 'accounts.index'
+  Tracker.autorun(function () {
+    orion.addLink({
+      section: 'bottom',
+      title: i18n('accounts'),
+      routeName: 'accounts.index',
+      activeRouteRegex: 'accounts',
+      permission: 'accounts.index'
+    });
   });
 }
 
@@ -36,11 +38,13 @@ Router.route('/admin/accounts/:_id/update/roles', function () {
 orion.accounts.addProtectedRoute('accounts.update.roles');
 
 if (Meteor.isClient) {
-  orion.accounts.addAdminUsersButton({
-    title: mf('edit_roles'),
-    route: 'accounts.update.roles',
-    shouldShow: function() {
-      return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');
-    }
+  Tracker.autorun(function () {
+    orion.accounts.addAdminUsersButton({
+      title: i18n('edit_roles'),
+      route: 'accounts.update.roles',
+      shouldShow: function() {
+        return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');
+      }
+    });
   });
 } 
