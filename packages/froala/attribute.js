@@ -11,3 +11,5 @@ orion.attributes.registerAttribute('froala', {
   }
 });
 
+Options.init('froala.height');
+orion.config.add('FROALA_ACTIVATION_KEY', 'aws', { public: true });

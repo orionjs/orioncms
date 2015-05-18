@@ -7,7 +7,7 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
   element.editable({
     inlineMode: false,
     placeholder: '',
-    height: orion.config.get('FROALA_EDITOR_HEIGHT'),  // setting a default height
+    minHeight: Options.get('froala.height', 400),  // setting a default height
     key: orion.config.get('FROALA_ACTIVATION_KEY') // set license key if exists
   });
 
