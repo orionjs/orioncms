@@ -10,12 +10,12 @@ Package.onUse(function(api) {
 
   api.use([
     'orionjs:lang-en@1.1.0',
-    'orionjs:base@1.0.0',
+    'orionjs:base@1.1.0',
     'orionjs:accounts@1.1.0',
     'orionjs:config@1.1.0',
-    'orionjs:collections@1.0.0',
-    'orionjs:dictionary@1.0.0',
-    'orionjs:attributes@1.0.0'
+    'orionjs:collections@1.1.0',
+    'orionjs:dictionary@1.1.0',
+    'orionjs:attributes@1.1.0'
     ]);
 
   api.imply([

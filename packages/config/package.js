@@ -9,7 +9,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.0.0',
+    'orionjs:base@1.1.0',
     'aldeed:simple-schema@1.3.2',
     'aldeed:collection2@2.3.3',
     'matb33:collection-hooks@0.7.13',

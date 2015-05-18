@@ -9,11 +9,11 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.0.0',
-    'orionjs:attributes@1.0.0',
+    'orionjs:base@1.1.0',
+    'orionjs:attributes@1.1.0',
     'less',
-    'jeremy:selectize@0.12.1',
     'msgfmt:core@2.0.0-preview.7'
+    'jeremy:selectize@0.12.1'
     ]);
 
   api.imply([

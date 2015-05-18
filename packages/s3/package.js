@@ -9,11 +9,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:core@1.0.0',
+    'orionjs:core@1.1.0',
     'orionjs:filesystem@1.1.0',
     'orionjs:config@1.1.0',
-    'lepozepo:s3@5.1.1',
-    'msgfmt:core@2.0.0-preview.7'
+    'lepozepo:s3@5.1.1'
     ]);
 
   api.addFiles([

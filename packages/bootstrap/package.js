@@ -10,7 +10,7 @@ Package.onUse(function(api) {
 
   api.use([
     'meteor-platform',
-    'orionjs:core@1.0.0',
+    'orionjs:core@1.1.0',
     'less',
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',

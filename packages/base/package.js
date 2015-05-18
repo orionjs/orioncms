@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.0.1',
+  version: '1.1.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -24,7 +24,8 @@ Package.onUse(function(api) {
     'iron:router',
     'nicolaslopezj:options',
     'nicolaslopezj:reactive-templates',
-    'nicolaslopezj:roles'
+    'nicolaslopezj:roles',
+    'orionjs:lang-en@1.1.0'
     ]);
 
   api.addFiles([
