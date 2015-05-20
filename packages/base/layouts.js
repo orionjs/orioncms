@@ -37,33 +37,22 @@ if (Meteor.isClient) {
   };
 }
 
-/**
- * Requests a links template
- */
-ReactiveTemplates.request('links');
-
 if (Meteor.isClient) {
   /**
    * Set the helpers to the sidebar template
    */
-  ReactiveTemplates.helpers('links', {
-    /**
-     * Return the links for the admin.
-     * You can pass a section and it will filter
-     */
-    links: function(section) {
-      var links = Options.get('links');
-      if (section) {
-        links = _.where(links, { section: section });
-      }
-      _.each(links, function(value, key, list){
-        if (value.permission) {
-          if (!Roles.userHasPermission(Meteor.userId(), value.permission)) {
-            delete list[key];
-          }
-        }
-      });
-      return links;
+  Template.registerHelper('adminLinks', function(section) {
+    var links = Options.get('links');
+    if (section) {
+      links = _.where(links, { section: section });
     }
-  });
+    _.each(links, function(value, key, list){
+      if (value.permission) {
+        if (!Roles.userHasPermission(Meteor.userId(), value.permission)) {
+          delete list[key];
+        }
+      }
+    });
+    return links;
+  })
 }

@@ -48,7 +48,7 @@ if (Meteor.isClient) {
    */
   Tracker.autorun(function () {
     orion.addLink({
-      section: 'bottom',
+      section: 'user',
       title: i18n('accounts.myAccount.title'),
       routeName: 'myAccount.index',
       activeRouteRegex: 'myAccount',
