@@ -1,58 +1,124 @@
 i18n.map('en', {
-  accounts: 'Accounts',
-  edit_roles: 'Edit Roles',
-  invalid_email: 'The email is not valid',
-  passwords_must_match: 'Passwords must match',
-  no_permission_for_roles: 'You have no permissions to change user roles',
-  invalid_invitation_code: 'The invitation code is invalid',
-  my_account: 'My Account',
-  name: 'Name',
-  your_name: 'Your name',
-  email: 'Email',
-  roles: 'Roles',
-  actions: 'Actions',
-  logout: 'Logout',
-  update_profile: 'Update Profile',
-  change_password: 'Change Password',
-  invite: 'Invite',
-  invitation_created_successfully: 'Invitation created successfully',
-  back: 'Back',
-  invite_another: 'Invite another',
-  select_new_user_roles: 'Select the roles for the new user',
-  optional_new_user_email: 'Email of the new user (optional)',
-  cancel: 'Cancel',
-  login: 'Login',
-  save: 'Save',
-  register: 'Register',
-  password_again: 'Password (again)',
-  select_user_roles: 'Select the roles for this user',
-  create_a: 'Create a',
-  create: 'Create',
-  no_permission: 'No permission',
-  delete: 'Delete',
-  are_you_sure_to_delete_this: 'Are you sure you want to delete this',
-  confirm: 'Confirm',
-  update: 'Update',
-  config: 'Config',
-  dictionary: 'Dictionary',
-  create_new_page: 'Create a new page',
-  choose_template: 'Choose a template',
-  choose: 'Choose',
-  delete_page: 'Delete page',
-  are_you_sure_to_delete_this_page: 'Are you sure you want to delete this page?',
-  pages: 'Pages',
-  update_page: 'Update page',
-  app_configuration: 'App Configuration',
-  remove: 'Remove',
-  choose_file: 'Choose a file',
-  file: 'File',
-  no_file: 'No file',
-  file_id_not_found: 'The file with id {fileId} was not found',
-  title: 'Title',
-  item: 'item',
-  items: 'items',
-  users: 'users',
-  user: 'user',
-  error_uploading_file: 'Error uploading file',
-  error_removing_file: 'Error removing file'
-});
+  global: {
+    save: 'Save',
+    create: 'Create',
+    logout: 'Logout',
+    back: 'Back',
+    cancel: 'Cancel',
+    delete: 'Delete',
+    confirm: 'Confirm',
+    choose: 'Choose',
+    noPermission: 'You have no permissions',
+  },
+  accounts: {
+    index: {
+      title: 'Accounts',
+      actions: {
+        editRoles: 'Edit Roles',
+      },
+      tableTitles: {
+        name: 'Name',
+        email: 'Email',
+        roles: 'Roles',
+        actions: 'Actions'
+      }
+    },
+    myAccount: {
+      title: 'My Account',
+      updateProfile: 'Update Profile',
+      changePassword: 'Change Password',
+    },
+    invite: {
+      title: 'Invite',
+      inviteOther: 'Invite Other',
+      selectRoles: 'Select new user roles',
+      email: 'Email (optional)',
+      messages: {
+        successfullyCreated: 'Invitation created successfully'
+      }
+    },
+    changePassword: {
+      title: 'Change Password',
+    },
+    updateProfile: {
+      title: 'Update Profile',
+    },
+    updateRoles: {
+      title: 'Update User Roles',
+      selectRoles: 'Select user roles',
+      messages: {
+        noPermissions: 'You have no permissions to edit roles'
+      }
+    },
+    register: {
+      title: 'Register',
+      registerButton: 'Register',
+      fields: {
+        email: 'Email',
+        name: 'Name',
+        password: 'Password',
+        confirmPassword: 'Password (again)'
+      },
+      messages: {
+        invalidEmail: 'Invalid Email',
+        passwordNotMatch: 'Password doesn\'t match',
+        invalidInvitationCode: 'Invalid invitation code',
+      }
+    }
+  },
+  collections: {
+    create: {
+      title: 'Create a {$1}'
+    },
+    update: {
+      title: 'Update {$1}'
+    },
+    delete: {
+      title: 'Delete {$1}',
+      confirmQuestion: 'Are you sure you wan\'t to delete this {$1}'
+    },
+    common: {
+      defaultPluralName: 'items',
+      defaultSingularName: 'item',
+    }
+  },
+  config: {
+    update: {
+      title: 'Config',
+    }
+  },
+  dictionary: {
+    update: {
+      title: 'Dictionary'
+    }
+  },
+  filesystem: {
+    messages: {
+      notFound_id: 'File not found [{$i}]',
+      errorUploading: 'Error uploading file',
+      errorRemoving: 'Error removing file',
+    }
+  },
+  pages: {
+    index: {
+      title: 'Pages',
+    },
+    create: {
+      title: 'Create page',
+      chooseTemplate: 'Choose Template'
+    },
+    update: {
+      title: 'Update page',
+    },
+    delete: {
+      title: 'Delete page',
+      confirmQuestion: 'Are you sure you wan\'t to delete this page'
+    }
+  },
+  attributes: {
+    users: {
+      pluralName: 'users',
+      singularName: 'user',
+    }
+  }
+})

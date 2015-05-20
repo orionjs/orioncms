@@ -40,7 +40,7 @@ Options.listen('forbidClientAccountCreation', function(value) {
 AccountsTemplates.addField({
     _id: 'name',
     type: 'text',
-    displayName: Meteor.isClient ? i18n('name') : 'Name',
-    placeholder: Meteor.isClient ? i18n('your_name') : 'Your Name',
+    displayName: Meteor.isClient ? i18n('accounts.register.fields.name') : 'Name',
+    placeholder: Meteor.isClient ? i18n('accounts.register.fields.name') : 'Your Name',
     required: true,
 });

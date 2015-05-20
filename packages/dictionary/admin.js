@@ -24,7 +24,7 @@ Tracker.autorun(function () {
 
   orion.addLink({
     section: 'top',
-    title: i18n('dictionary'),
+    title: i18n('dictionary.update.title'),
     routeName: 'dictionary.update',
     activeRouteRegex: 'dictionary',
     permission: 'dictionary.update',

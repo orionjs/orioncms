@@ -20,7 +20,7 @@ if (Meteor.isClient) {
   Tracker.autorun(function () {
     orion.addLink({
       section: 'bottom',
-      title: i18n('accounts'),
+      title: i18n('accounts.index.title'),
       routeName: 'accounts.index',
       activeRouteRegex: 'accounts',
       permission: 'accounts.index'
@@ -40,7 +40,7 @@ orion.accounts.addProtectedRoute('accounts.update.roles');
 if (Meteor.isClient) {
   Tracker.autorun(function () {
     orion.accounts.addAdminUsersButton({
-      title: i18n('edit_roles'),
+      title: i18n('accounts.index.actions.editRoles'),
       route: 'accounts.update.roles',
       shouldShow: function() {
         return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');

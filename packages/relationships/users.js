@@ -4,8 +4,8 @@ orion.attributes.registerAttribute('users', {
   getSchema: function(options) {
     options = _.extend(options, {
       titleField: 'profile.name',
-      pluralName: i18n('users'),
-      singularName: i18n('user'),
+      pluralName: i18n('attributes.users.pluralName'),
+      singularName: i18n('attributes.users.singularName'),
       collection: Meteor.users,
       aditionalFields: ['emails.address'],
       render: {

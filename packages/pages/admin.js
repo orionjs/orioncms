@@ -47,10 +47,12 @@ orion.accounts.addProtectedRoute('pages.delete');
 /**
  * Register the Pages link in the admin panel
  */
-orion.addLink({
-  section: 'medium',
-  title: i18n('pages'),
-  routeName: 'pages.index',
-  activeRouteRegex: 'pages',
-  permission: 'pages.index',
-});
+if (Meteor.isClient) {
+  orion.addLink({
+    section: 'medium',
+    title: i18n('pages.index.title'),
+    routeName: 'pages.index',
+    activeRouteRegex: 'pages',
+    permission: 'pages.index',
+  });
+}

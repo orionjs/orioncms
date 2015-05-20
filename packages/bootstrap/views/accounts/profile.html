@@ -1,7 +1,7 @@
 <template name="orionBootstrapAccountProfile">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      {{i18n 'update_profile'}}
+      {{ i18n 'accounts.updateProfile.title' }}
     {{/ Layout }}
 
     {{# Layout template="orionBootstrapContentContainer" }}
@@ -9,8 +9,8 @@
         {{> afQuickFields name='profile' }}
         <br>
         <div class="text-right">
-          <a class="btn btn-default" href="{{ pathFor 'myAccount.index' }}">{{i18n 'cancel'}}</a>
-          <button class="btn btn-primary">{{i18n 'save'}}</button>
+          <a class="btn btn-default" href="{{ pathFor 'myAccount.index' }}">{{ i18n 'global.cancel' }}</a>
+          <button class="btn btn-primary">{{ i18n 'global.save' }}</button>
         </div>
       {{/ autoForm }}
     {{/ Layout }}
