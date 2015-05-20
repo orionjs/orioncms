@@ -2,7 +2,7 @@
   {{# autoForm schema=getSchema id="updateProfileForm" collection="Meteor.users" type="update" doc=getDoc }}
     
     {{# Layout template="orionMaterializeHeaderContainer" }}
-      {{i18n 'update_profile'}}
+      {{ i18n 'accounts.updateProfile.title' }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
 
@@ -10,8 +10,8 @@
 
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ pathFor 'myAccount.index' }}">{{i18n 'cancel'}}</a>
-      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{i18n 'save'}}</button>
+      <a href="{{ pathFor 'myAccount.index' }}">{{ i18n 'global.cancel' }}</a>
+      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{ i18n 'global.save' }}</button>
     {{/ Layout }}
 
   {{/ autoForm }}

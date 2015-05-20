@@ -1,27 +1,24 @@
 <template name="orionMaterializeAccountsInvite">
+  {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{ i18n 'accounts.invite.title' }}
+  {{/ Layout }}
   {{# if invitationId }}
-    {{# Layout template="orionMaterializeHeaderContainer" }}
-      {{i18n 'invite'}}
-    {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
       <div class="alert">
-        {{i18n 'invitation_created_successfully'}}
+        {{ i18n 'accounts.invite.messages.successfullyCreated' }}
       </div>
       <p>
         <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
       </p>
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ pathFor 'accounts.index' }}">{{i18n 'back'}}</a>
-      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-invite-another">{{i18n 'invite_another'}}</button>
+      <a href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.back' }}</a>
+      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-invite-another">{{ i18n 'accounts.invite.inviteOther' }}</button>
     {{/ Layout }}
   {{ else }}
     <form class="invite">
       {{# Layout template="orionMaterializeContentContainer" }}
-        {{# Layout template="orionMaterializeHeaderContainer" }}
-          {{i18n 'invite'}}
-        {{/ Layout }}
-        <label>{{i18n 'select_new_user_roles'}}</label>
+        <label>{{ i18n 'accounts.invite.selectRoles' }}</label>
         <br><br>
         {{# each roles }}
           <p>
@@ -31,12 +28,12 @@
         {{/ each }}
         <div class="input-field">
           <input type="email" class="form-control" id="email">
-          <label for="email">{{i18n 'optional_new_user_email'}}</label>
+          <label for="email">{{ i18n 'accounts.invite.email' }}</label>
         </div>
       {{/ Layout }}
       {{# Layout template="orionMaterializeButtonsContainer" }}
-        <a href="{{ pathFor 'accounts.index' }}">{{i18n 'cancel'}}</a>
-        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{i18n 'invite'}}</button>
+        <a href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.cancel' }}</a>
+        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{ i18n 'accounts.invite.inviteButton' }}</button>
       {{/ Layout }}
     </form>
   {{/ if }}

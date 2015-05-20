@@ -1,6 +1,6 @@
 <template name="orionMaterializeAccountIndex">
   {{# Layout template="orionMaterializeHeaderContainer" }}
-    {{i18n 'my_account'}}
+    {{ i18n 'accounts.myAccount.title' }}
   {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
     <br>
@@ -27,8 +27,8 @@
     </div>
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a class="logout" href="#">{{i18n 'logout'}}</a>
-      <a href="{{ pathFor 'myAccount.profile' }}" class="">{{i18n 'update_profile'}}</a>
-      <a href="{{ pathFor 'myAccount.password' }}" class="">{{i18n 'change_password'}}</a>
+      <a class="logout" href="#">{{ i18n 'global.logout' }}</a>
+      <a href="{{ pathFor 'myAccount.profile' }}" class="">{{ i18n 'accounts.updateProfile.title' }}</a>
+      <a href="{{ pathFor 'myAccount.password' }}" class="">{{ i18n 'accounts.changePassword.title' }}</a>
   {{/ Layout }}
 </template>

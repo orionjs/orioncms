@@ -2,9 +2,9 @@
   {{# if userHasPermission 'pages.index' }}
     {{# Layout template="orionMaterializeHeaderContainer" }}
       {{# if choosenTemplate }}
-        {{i18n 'create_new_page'}} - {{ choosenTemplate.name }}
+        {{ i18n 'pages.create.title' }} - {{ choosenTemplate.name }}
       {{ else }}
-        {{i18n 'choose_template'}}
+        {{ i18n 'pages.create.chooseTemplate' }}
       {{/ if }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
@@ -24,10 +24,10 @@
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
       {{# if choosenTemplate }}
-        <a class="cancel-btn" href="#">{{i18n 'back'}}</a>
-        <a class="light-blue-text text-accent-4 submit-btn" href="#">{{i18n 'create'}}</a>
+        <a class="cancel-btn" href="#">{{ i18n 'global.back'}}</a>
+        <a class="light-blue-text text-accent-4 submit-btn" href="#">{{ i18n 'global.create' }}</a>
       {{ else }}
-        <a href="{{ pathFor 'pages.index' }}">{{i18n 'back'}}</a>
+        <a href="{{ pathFor 'pages.index' }}">{{ i18n 'global.back' }}</a>
       {{/ if }}
     {{/ Layout }}
   {{/ if }}

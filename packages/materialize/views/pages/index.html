@@ -1,13 +1,13 @@
 <template name="orionMaterializePagesIndex">
   {{# Layout template="orionMaterializeHeaderContainer" }}
-    {{i18n 'pages'}}
+    {{ i18n 'pages.index.title' }}
+  {{/ Layout }}
+  {{# Layout template="orionMaterializeContentContainer" }}
     {{# if userHasPermission 'pages.insert' }}
-      <a href="{{ pathFor 'pages.create' }}" class="btn-floating waves-effect waves-light red right">
+      <a href="{{ pathFor 'pages.create' }}" class="floating-btn-onheader btn-floating btn-large waves-effect waves-light red right">
         <i class="mdi-content-add"></i>
       </a>
     {{/ if }}
-  {{/ Layout }}
-  {{# Layout template="orionMaterializeContentContainer" }}
     {{# if userHasPermission 'pages.index' }}
       {{> tabular table=tabularTable class="table index-table" }}
     {{/ if }}

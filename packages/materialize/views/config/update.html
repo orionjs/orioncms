@@ -1,7 +1,7 @@
 <template name="orionMaterializeConfigUpdate">
   {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
     {{# Layout template="orionMaterializeHeaderContainer" }}
-      {{i18n 'config'}}
+      {{ i18n 'config.update.title' }}
     {{/ Layout }}
     {{> reactiveTemplate template="tabs" data=getDataForTabs }}
     {{# Layout template="orionMaterializeContentContainer" }}
@@ -12,7 +12,7 @@
       {{/ if }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{i18n 'save'}}</button>
+        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{ i18n 'global.save' }}</button>
     {{/ Layout }}
   {{/ autoForm }}
 </template>
