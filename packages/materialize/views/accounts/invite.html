@@ -8,12 +8,12 @@
         {{ i18n 'accounts.invite.messages.successfullyCreated' }}
       </div>
       <p>
-        <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
+        <input type="text" disabled="true" value="{{ urlFor 'registerWithInvitation' _id=invitationId }}">
       </p>
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.back' }}</a>
-      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4 btn-invite-another">{{ i18n 'accounts.invite.inviteOther' }}</button>
+      <a href="{{ pathFor 'accounts.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.back' }}</a>
+      <button class="waves-effect waves-light btn light-blue accent-4 btn-invite-another">{{ i18n 'accounts.invite.inviteOther' }}</button>
     {{/ Layout }}
   {{ else }}
     <form class="invite">
@@ -32,8 +32,8 @@
         </div>
       {{/ Layout }}
       {{# Layout template="orionMaterializeButtonsContainer" }}
-        <a href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.cancel' }}</a>
-        <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">{{ i18n 'accounts.invite.inviteButton' }}</button>
+        <a href="{{ pathFor 'accounts.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>
+        <button class="waves-effect waves-light btn light-blue accent-4">{{ i18n 'accounts.invite.inviteButton' }}</button>
       {{/ Layout }}
     </form>
   {{/ if }}

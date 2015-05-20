@@ -3,9 +3,10 @@ Template.orionMaterializeLayout.onRendered(function() {
 });
 
 Template.orionMaterializeHeaderContainer.onRendered(function() {
+  $('#sidenav-overlay').click();
   $('.button-collapse').sideNav();
   $('.dropdown-button').dropdown({
-    constrain_width: true
+    constrain_width: false
   });
 })
 

@@ -13,7 +13,7 @@
       {{ else }}
         <div class="collection">
           {{# each templates }}
-            <a href="#" class="collection-item template-choose grey-text text-darken-4">
+            <a href="#" class="collection-item template-choose grey-text text-darken-4 waves-effect waves-light">
               <p class=""><b>{{ name }}</b></p>
               <p>{{ description }}</p>
             </a>
@@ -24,10 +24,10 @@
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
       {{# if choosenTemplate }}
-        <a class="cancel-btn" href="#">{{ i18n 'global.back'}}</a>
-        <a class="light-blue-text text-accent-4 submit-btn" href="#">{{ i18n 'global.create' }}</a>
+        <a class="waves-effect waves-light btn cancel-btn" href="#">{{ i18n 'global.back'}}</a>
+        <a class="waves-effect waves-light btn light-blue accent-4 submit-btn" href="#">{{ i18n 'global.create' }}</a>
       {{ else }}
-        <a href="{{ pathFor 'pages.index' }}">{{ i18n 'global.back' }}</a>
+        <a href="{{ pathFor 'pages.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.back' }}</a>
       {{/ if }}
     {{/ Layout }}
   {{/ if }}

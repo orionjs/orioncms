@@ -9,6 +9,7 @@
       {{# if dictionaryReady }}
         {{> yield }}
       {{/ if }}
+      <br><br>
     </main>
   </div>
   <style type="text/css">
@@ -53,6 +54,11 @@
 <template name="orionMaterializeHeaderContainer">
   <!-- Dropdown Structure -->
   <ul id="navbar-user-dropdown" class="dropdown-content">
+    <li>
+      <span class="grey-text text-darken-1">
+        {{ currentUser.profile.name }}
+      </span>
+    </li>
     {{# each adminLinks 'user' }}
       <li class="{{ isActiveRoute regex=activeRouteRegex }}">
         <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
