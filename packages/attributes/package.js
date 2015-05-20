@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:attributes',
   summary: 'Orion attributes',
-  version: '1.0.1',
+  version: '1.0.2',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -27,6 +27,10 @@ Package.onUse(function(api) {
   // Created by attribute
   api.addFiles('created-by/created-by.html', 'client');
   api.addFiles('created-by/created-by.js');
+
+  // Created at attribute
+  api.addFiles('created-at/created-at.html', 'client');
+  api.addFiles('created-at/created-at.js');
   
   // Created at attribute
   api.addFiles('created-at/created-at.html', 'client');
