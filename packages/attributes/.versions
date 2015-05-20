@@ -35,7 +35,7 @@ jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
 livedata@1.0.13
-local-test:orionjs:attributes@1.0.2
+local-test:orionjs:attributes@1.0.3
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.13
@@ -54,7 +54,7 @@ npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
 orionjs:accounts@1.0.3
-orionjs:attributes@1.0.2
+orionjs:attributes@1.0.3
 orionjs:base@1.0.1
 orionjs:collections@1.0.1
 orionjs:config@1.0.1
