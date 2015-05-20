@@ -25,8 +25,6 @@ i18n.map('en', {
     },
     myAccount: {
       title: 'My Account',
-      updateProfile: 'Update Profile',
-      changePassword: 'Change Password',
     },
     invite: {
       title: 'Invite',
@@ -75,7 +73,7 @@ i18n.map('en', {
     },
     delete: {
       title: 'Delete {$1}',
-      confirmQuestion: 'Are you sure you wan\'t to delete this {$1}'
+      confirmQuestion: 'Are you sure you wan\'t to delete this {$1}?'
     },
     common: {
       defaultPluralName: 'items',
@@ -112,13 +110,17 @@ i18n.map('en', {
     },
     delete: {
       title: 'Delete page',
-      confirmQuestion: 'Are you sure you wan\'t to delete this page'
+      confirmQuestion: 'Are you sure you wan\'t to delete this page?'
     }
   },
   attributes: {
     users: {
       pluralName: 'users',
       singularName: 'user',
+    },
+    file: {
+      choose: 'Choose file',
+      noFile: 'No file',
     }
   }
 })

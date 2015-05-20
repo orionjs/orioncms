@@ -9,13 +9,13 @@
           <p><a href="{{ file.url }}" target="_blank">{{ file.url }}</a></p>
         {{/ if }}
       </div>
-      <button type="button" class="btn btn-danger btn-remove btn-xs">{{i18n 'remove'}}</button>
+      <button type="button" class="btn btn-danger btn-remove btn-xs">{{ i18n 'global.remove' }}</button>
     {{ else }}
       {{# if isUploading }}
         <div class="progress"><div class="progress-bar progress-bar-striped active" style="width: {{ progress }}%"></div></div>
       {{ else }}
         <span class="btn btn-default btn-file btn-xs">
-          {{i18n 'choose_file'}} <input type="file">
+          {{ i18n 'attributes.file.choose' }} <input type="file">
         </span>
       {{/ if }}
     {{/ if }}
@@ -27,9 +27,9 @@
     {{# if isImage value.url }}
       <p><img class="data-table-image" src="{{ value.url }}"></p>
     {{ else }}
-      <p><a href="{{ value.url }}" target="_blank">{{i18n 'file'}}</a></p>
+      <p><a href="{{ value.url }}" target="_blank">{{ value.url }}</a></p>
     {{/ if }}
   {{ else }}
-    <p class="help-block"><i>{{i18n 'no_file'}}</i></p>
+    <p class="help-block"><i>{{ i18n 'attributes.file.noFile' }}</i></p>
   {{/ if }}
 </template>
