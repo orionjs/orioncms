@@ -8,6 +8,7 @@ if (Meteor.isClient) {
     var language = window.navigator.userLanguage || window.navigator.language;
     language = language.split('-')[0];
     i18n.setLanguage(language);
+    T9n.setLanguage(language);
   }
 
   /**
