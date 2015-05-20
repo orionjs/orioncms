@@ -2,7 +2,7 @@
   <div class="orion-materialize-admin">
     <div class="sidebar">
       {{# if dictionaryReady }}
-        {{> reactiveTemplate template="links" }}
+        {{> orionMaterializeSidebar }}
       {{/ if }}
     </div>
     <main class="admin-content">
@@ -12,9 +12,9 @@
     </main>
   </div>
   <style type="text/css">
-  body {
-    background-color: #f9f9f9;
-  }
+    body, html {
+      background-color: #f9f9f9;
+    }
   </style>
 </template>
 
@@ -31,6 +31,11 @@
       </div>
     </div>
   </div>
+  <style type="text/css">
+    body, html {
+      background-color: #2196F3;
+    }
+  </style>
 </template>
 
 <template name="orionMaterializeContentContainer">
@@ -46,6 +51,16 @@
 </template>
 
 <template name="orionMaterializeHeaderContainer">
+  <!-- Dropdown Structure -->
+  <ul id="navbar-user-dropdown" class="dropdown-content">
+    {{# each adminLinks 'user' }}
+      <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+        <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+      </li>
+    {{/ each }}
+    <li class="divider"></li>
+    <li><a href="#" class="grey-text text-darken-4 logout">{{ i18n 'global.logout' }}</a></li>
+  </ul>
   <div class="{{ options 'materialize.headerColor' 'blue' }} header-container">
     <nav class="{{ options 'materialize.headerColor' 'blue' }}">
       <div class="nav-wrapper">
@@ -57,7 +72,11 @@
           </li>
         </ul>
         <ul class="right">
-          <li><a href="mobile.html"><i class="mdi-navigation-more-vert"></i></a></li>
+          <li>
+            <a class="dropdown-button user-links-activator" href="#" data-activates="navbar-user-dropdown">
+              <i class="mdi-social-person"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

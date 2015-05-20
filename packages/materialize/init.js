@@ -7,7 +7,6 @@ ReactiveTemplates.request('tabs', 'orionMaterializeTabs');
 ReactiveTemplates.set('layout', 'orionMaterializeLayout');
 ReactiveTemplates.set('outAdminLayout', 'orionMaterializeOutAdminLayout');
 
-ReactiveTemplates.set('links', 'orionMaterializeSidebar');
 ReactiveTemplates.set('login', 'orionMaterializeLogin');
 ReactiveTemplates.set('registerWithInvitation', 'orionMaterializeRegisterWithInvitation');
 
