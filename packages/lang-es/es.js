@@ -27,10 +27,11 @@ i18n.map('en', {
       title: 'Mi Cuenta',
     },
     invite: {
-      title: 'Invitar',
+      title: 'Invitar usuarios',
       inviteOther: 'Invitar a otro',
       selectRoles: 'Selecciona los roles para el nuevo usuario',
       email: 'Email (opcional)',
+      inviteButton: 'Invitar',
       messages: {
         successfullyCreated: 'La invitación fue creada satisfactoriamente'
       }

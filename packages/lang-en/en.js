@@ -31,6 +31,7 @@ i18n.map('en', {
       inviteOther: 'Invite Other',
       selectRoles: 'Select new user roles',
       email: 'Email (optional)',
+      inviteButton: 'Invite',
       messages: {
         successfullyCreated: 'Invitation created successfully'
       }
