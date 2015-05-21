@@ -104,7 +104,7 @@ orion.config.add = function(name, category, options) {
 orion.config.get = function(path, defaultValue) {
   // Sets empty string to avoid problems on templates
   defaultValue = !defaultValue || defaultValue instanceof Spacebars.kw ? '' : defaultValue;
-  return orion.helpers.searchObjectWithDots(this.collection.findOne(), path) || defaultValue;
+  return orion.helpers.searchObjectWithDots(this.object, path) || defaultValue;
 };
 
 /**
