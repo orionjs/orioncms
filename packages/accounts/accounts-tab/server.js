@@ -14,7 +14,7 @@ Meteor.publish('adminAccountsUpdateRoles', function (userId) {
     return [];
   }
   return [
-    Meteor.users.find(userId, { fields: { services: 0 } }),
+    Meteor.users.find(userId), // , { fields: { services: 0 } }),
     Roles._collection.find({ userId: userId })
   ];
 });
@@ -27,5 +27,14 @@ Meteor.methods({
       throw new Meteor.Error('unauthorized', 'You have no permissions to change user roles');
     }
     Roles.setUserRoles(userId, roles);
+  },
+
+  updatePassword: function(options) {
+    check(options.password1, String);
+    check(options.password2, String);
+    check(options.password2, options.password1);
+
+    // Changes password on current user, user is logged out afterwards (true by default)
+    // Accounts.setPassword(this.userId, options.password1, {logout: true});
   }
 });

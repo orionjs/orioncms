@@ -48,7 +48,7 @@ Package.onUse(function(api) {
     'accounts-tab/client.js',
     ], 'client');
 
-  api.export('orion');
+  api.export(['orion', "PasswordSchema"]);
 });
 
 Package.onTest(function(api) {

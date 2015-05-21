@@ -85,9 +85,14 @@ ReactiveTemplates.helpers('accounts.update.edit', {
     return Meteor.users.findOne(userId);
   },
 
-  getSchema: function(){
-    return orion.accounts.profileSchema;
-    // return SchemaUser;
+  collection: function() {
+    return Meteor.users;
+  },
+
+  schema: function(){
+    console.log(SchemaUser);
+    // return orion.accounts.profileSchema;
+    return SchemaUser;
   }
 
 });

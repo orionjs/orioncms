@@ -62,10 +62,10 @@ orion.accounts.addAdminUsersButton({
 
 
 SchemaUser = new SimpleSchema({
-    username: {
-        type: String,
-        regEx: /^[a-z0-9A-Z_]{3,15}$/
-    },
+    // username: {
+    //     type: String,
+    //     regEx: /^[a-z0-9A-Z_]{3,15}$/
+    // },
     emails: {
         type: [Object],
         // this must be optional if you also use other login services like facebook,
@@ -83,15 +83,44 @@ SchemaUser = new SimpleSchema({
         type: Date
     },
     profile: {
-        type: orion.accounts.profileSchema,
+        type: new SimpleSchema({
+          name: {
+            type: String,
+            optional: true
+          },
+        }),
         optional: true
     },
-    services: {
-        type: Object,
-        optional: true,
-        blackbox: true
-    },
+    // services: {
+    //     type: Object,
+    //     optional: true,
+    //     blackbox: true
+    // },
 
 });
 
-Meteor.users.attachSchema(SchemaUser);
+PasswordSchema = new SimpleSchema({
+  password1: {
+    type: String,
+    label: "New Password",
+
+    autoform: {
+      afFieldInput: {
+        type: "password"
+      }
+    }
+  },
+
+  password2: {
+    type: String,
+    label: "Confirm Password",
+
+    autoform: {
+      afFieldInput: {
+        type: "password"
+      }
+    }
+  }
+});
+
+// Meteor.users.attachSchema(SchemaUser);

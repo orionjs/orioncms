@@ -51,8 +51,7 @@
     <h2>Profile</h2>
     <br>
     <br>
-    {{# autoForm schema=getSchema id="updateAccountForm" collection="Meteor.users" type="update" doc=user }}
-      {{> afQuickFields name='profile' }}
+    {{# quickForm id="updateAccountForm" schema=schema collection=collection type="update" doc=user }}
       <br>
       <div class="text-right">
         <a class="btn btn-default" href="{{ pathFor 'myAccount.index' }}">Cancel</a>
@@ -60,6 +59,16 @@
       </div>
 
 
-    {{/ autoForm }}
+    {{/ quickForm }}
+
+    {{# quickForm id="updatePasswordForm" schema="PasswordSchema" type="method" meteormethod="updatePassword"}}
+      <br>
+      <div class="text-right">
+        <a class="btn btn-default" href="{{ pathFor 'myAccount.index' }}">Cancel</a>
+        <button class="btn btn-primary">Save</button>
+      </div>
+
+
+    {{/ quickForm }}
   {{/ Layout }}
 </template>
