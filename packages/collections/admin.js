@@ -153,7 +153,7 @@ orion.collections.onCreated(function() {
     var linkOptions = _.extend({
       routeName: 'collections.' + this.name + '.index',
       activeRouteRegex: 'collections.' + this.name,
-      permission: 'collection.' + this.name + '.index',
+      permission: 'collections.' + this.name + '.index',
       title: this.name[0].toUpperCase() + this.name.slice(1),
       section: 'medium'
     }, this.link);
