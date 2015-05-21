@@ -4,7 +4,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection
    */
-  ReactiveTemplates.request('collectionIndex.' + this.name, Options.get('collectionsDefaultIndexTemplate'));
+  ReactiveTemplates.request('collections.' + this.name + '.index', Options.get('collectionsDefaultIndexTemplate'));
 
   /**
    * Register the index route
@@ -12,7 +12,7 @@ orion.collections.onCreated(function() {
   Router.route('/admin/' + this.routePath, function () {
     this.collection = self;
     this.layout(ReactiveTemplates.get('layout'));
-    this.render(ReactiveTemplates.get('collectionIndex.' + self.name), {
+    this.render(ReactiveTemplates.get('collections.' + self.name + '.index'), {
       data: function() {
         return {
           collection: self,
@@ -32,7 +32,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection create
    */
-  ReactiveTemplates.request('collectionCreate.' + this.name, Options.get('collectionsDefaultCreateTemplate'));
+  ReactiveTemplates.request('collections.' + this.name + '.create', Options.get('collectionsDefaultCreateTemplate'));
 
   /**
    * Register the create route
@@ -40,7 +40,7 @@ orion.collections.onCreated(function() {
   Router.route('/admin/' + this.routePath + '/create', function () {
     this.collection = self;
     this.layout(ReactiveTemplates.get('layout'));
-    this.render(ReactiveTemplates.get('collectionCreate.' + self.name), {
+    this.render(ReactiveTemplates.get('collections.' + self.name + '.create'), {
       data: function() {
         return {
           collection: self,
@@ -60,7 +60,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection update
    */
-  ReactiveTemplates.request('collectionUpdate.' + this.name, Options.get('collectionsDefaultUpdateTemplate'));
+  ReactiveTemplates.request('collections.' + this.name + '.update', Options.get('collectionsDefaultUpdateTemplate'));
   
   /**
    * Register the update route
@@ -72,7 +72,7 @@ orion.collections.onCreated(function() {
     var item = self.findOne(this.params._id);
     this.item = item;
     if (subs.ready()) {
-      this.render(ReactiveTemplates.get('collectionUpdate.' + self.name), {
+      this.render(ReactiveTemplates.get('collections.' + self.name + '.update'), {
         data: function() {
           return {
             collection: self,
@@ -100,9 +100,9 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection delete
    */
-  ReactiveTemplates.request('collectionDelete.' + this.name, Options.get('collectionsDefaultDeleteTemplate'));
+  ReactiveTemplates.request('collections.' + this.name + '.delete', Options.get('collectionsDefaultDeleteTemplate'));
   if (Meteor.isClient) {
-    ReactiveTemplates.events('collectionDelete.' + this.name, {
+    ReactiveTemplates.events('collections.' + self.name + '.delete', {
       'click .confirm-delete': function() {
         self.remove(this.item._id, function() {
           Router.go(self.indexPath());
@@ -121,7 +121,7 @@ orion.collections.onCreated(function() {
     var item = self.findOne(this.params._id);
     this.item = item;
     if (subs.ready()) {
-      this.render(ReactiveTemplates.get('collectionDelete.' + self.name), {
+      this.render(ReactiveTemplates.get('collections.' + this.name + '.delete'), {
         data: function() {
           return {
             collection: self,
