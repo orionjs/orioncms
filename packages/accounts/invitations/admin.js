@@ -19,6 +19,12 @@ if (Meteor.isClient) {
     },
     invitationId: function() {
       return Session.get('accounts.invite.invitationId');
+    },
+    email: function() {
+      return Session.get('accounts.invite.email');
+    },
+    createUser: function() {
+      return Session.get('accounts.invite.createUser');
     }
   });
   ReactiveTemplates.events('accounts.invite', {
@@ -32,13 +38,17 @@ if (Meteor.isClient) {
       });
 
       var email = template.$('input[type="email"]').val();
+      var createUser = template.$('#createUser').is(':checked');
 
-      Meteor.call('createInvitation', { roles: roles, email: email }, function (error, result) {
+
+      Meteor.call('createInvitation', { roles: roles, email: email, createUser:createUser }, function (error, result) {
         if (error) {
           alert(error.reason);
           console.log(error);
         } else {
-          Session.set('accounts.invite.invitationId', result);
+          Session.set('accounts.invite.invitationId', result.invitationId);
+          Session.set('accounts.invite.email', result.email);
+          Session.set('accounts.invite.createUser', result.createUser);
         }
       });
 
@@ -125,8 +135,3 @@ if (Meteor.isClient) {
     }
   });
 }
-
-
-
-
-

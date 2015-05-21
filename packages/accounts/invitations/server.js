@@ -3,20 +3,36 @@ Meteor.publish('invitation', function (invitationId) {
   return orion.accounts.invitations.find(invitationId);
 });
 
+Accounts.onCreateUser(function(options, user) {
+  // console.log(options,user);
+  // Accounts.sendEnrollmentEmail();
+  if (options.profile)
+    user.profile = options.profile;
+  return user;
+
+})
+
 Meteor.methods({
   createInvitation: function (options) {
     check(options, {
       roles: Array,
       email: Match.Optional(String),
+      createUser: Boolean
     });
     var invitationId = orion.accounts.invitations.insert(options);
 
-    if (Options.get('sendAccountInvitationToEmail') && Options.get('accountInvitationEmailTemplate')) {
-      // Send by email
+    if (Options.get('sendAccountInvitationToEmail') && Options.get('accountInvitationEmailTemplate') && !options.createUser) {
+      // Send invitation by email
     }
 
-    return invitationId;
+    if(options.createUser){
+      Accounts.createUser({username: options.email, email:options.email});
+    }
+
+    return {invitationId:invitationId, email:options.email, createUser:options.createUser};
   },
+
+
   registerWithInvitation: function(options) {
     check(options, {
       email: String,
@@ -44,4 +60,3 @@ Meteor.methods({
     return userId;
   },
 });
-

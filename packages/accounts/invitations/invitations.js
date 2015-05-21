@@ -33,15 +33,13 @@ InvitationsSchema = new SimpleSchema({
   },
   email: {
     type: String,
-    optional: true
+    optional: false
+  },
+  createUser: {
+    type: Boolean
   },
   createdAt: orion.attribute('createdAt'),
   createdBy: orion.attribute('createdBy'),
 });
 
 orion.accounts.invitations.attachSchema(InvitationsSchema);
-
-
-
-
-

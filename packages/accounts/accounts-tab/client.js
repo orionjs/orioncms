@@ -33,7 +33,9 @@ ReactiveTemplates.events('accounts.index', {
 ReactiveTemplates.onRendered('accounts.update.roles', function() {
   var userId = Router.current().params._id;
   this.subscribe('adminAccountsUpdateRoles', userId);
-})
+});
+
+
 
 ReactiveTemplates.helpers('accounts.update.roles', {
   user: function() {
@@ -62,11 +64,56 @@ ReactiveTemplates.events('accounts.update.roles', {
     });
     Meteor.call('updateRoles', userId, roles, function (error, result) {
       if (error) {
-        alert(error.reason) 
+        alert(error.reason)
       } else {
         Router.go('accounts.index');
       }
     });
+    return false;
+  }
+});
+
+
+ReactiveTemplates.onRendered('accounts.update.edit', function() {
+  var userId = Router.current().params._id;
+  this.subscribe('adminAccountsUpdateRoles', userId);
+});
+
+ReactiveTemplates.helpers('accounts.update.edit', {
+  user: function() {
+    var userId = Router.current().params._id;
+    return Meteor.users.findOne(userId);
+  },
+
+  getSchema: function(){
+    return orion.accounts.profileSchema;
+    // return SchemaUser;
+  }
+
+});
+
+ReactiveTemplates.events('accounts.update.edit', {
+  'submit form.account': function (event, template) {
+    var userId = Router.current().params._id;
+    var roles = [];
+    var _id = template.$('#userId').val();
+    var username = template.$('#userName').val();
+    console.log("submit form.account", _id, username);
+
+    // template.$('input[role]').each(function(index, val) {
+    //    var role = $(this).attr('role');
+    //    if ($(this).is(':checked')) {
+    //     roles.push(role);
+    //    }
+    // });
+
+    // Meteor.call('updateRoles', userId, roles, function (error, result) {
+    //   if (error) {
+    //     alert(error.reason)
+    //   } else {
+    //     Router.go('accounts.index');
+    //   }
+    // });
     return false;
   }
 });

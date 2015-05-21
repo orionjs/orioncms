@@ -1,0 +1,65 @@
+<template name="orionBootstrapAccountsUpdateEdit">
+  {{# Layout template="orionBootstrapSmallContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
+      Update Account
+    {{/ Layout }}
+
+
+    <form class="account">
+
+
+      ID:  {{user._id}}
+      <input type="hidden" id="userId" class="form-control" value="{{user._id}}">
+
+
+      <h3>User name</h3>
+      <input type="text" id="userName"  class="form-control" value="{{user.username}}">
+
+      <h3>Emails</h3>
+      {{#each user.emails}}
+        <div class="form-group">
+          <input type="email" class="form-control" email="{{address}}" value="{{address}}">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> <code>Verified</code>
+          </label>
+        </div>
+
+      {{/each}}
+
+      <div class="text-right">
+        <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
+        <button class="btn btn-primary">Save</button>
+      </div>
+    </form>
+
+    <h2>Change Password</h2>
+    <form class="pwd">
+      <input type="password" class="form-control">
+      <input type="password" class="form-control">
+      <div class="text-right">
+        <button class="btn btn-primary">Save</button>
+      </div>
+    </form>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Profile</h2>
+    <br>
+    <br>
+    {{# autoForm schema=getSchema id="updateAccountForm" collection="Meteor.users" type="update" doc=user }}
+      {{> afQuickFields name='profile' }}
+      <br>
+      <div class="text-right">
+        <a class="btn btn-default" href="{{ pathFor 'myAccount.index' }}">Cancel</a>
+        <button class="btn btn-primary">Save</button>
+      </div>
+
+
+    {{/ autoForm }}
+  {{/ Layout }}
+</template>
