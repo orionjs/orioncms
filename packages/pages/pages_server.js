@@ -1,4 +1,8 @@
-Meteor.publish('pages', function (url) {
-  check(url, Match.Optional(String));
-  return url ? orion.pages.collection.find({ url: url }) : orion.pages.collection.find();
+Meteor.publish('pages', function () {
+  return orion.pages.collection.find();
+});
+
+Meteor.publish('page', function (url) {
+  check(url, String);
+  return orion.pages.collection.find({ url: url });
 });
