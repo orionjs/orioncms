@@ -89,36 +89,25 @@ ReactiveTemplates.helpers('accounts.update.edit', {
     return Meteor.users;
   },
 
-  schema: function(){
-    console.log(SchemaUser);
-    // return orion.accounts.profileSchema;
-    return SchemaUser;
+  userSchema: function(){
+    return UserSchema;
+  },
+
+  passwordSchema: function(){
+    return PasswordSchema;
   }
 
 });
 
 ReactiveTemplates.events('accounts.update.edit', {
-  'submit form.account': function (event, template) {
+  'click #btnDeleteUser': function (event, template) {
     var userId = Router.current().params._id;
-    var roles = [];
-    var _id = template.$('#userId').val();
-    var username = template.$('#userName').val();
-    console.log("submit form.account", _id, username);
-
-    // template.$('input[role]').each(function(index, val) {
-    //    var role = $(this).attr('role');
-    //    if ($(this).is(':checked')) {
-    //     roles.push(role);
-    //    }
-    // });
-
-    // Meteor.call('updateRoles', userId, roles, function (error, result) {
-    //   if (error) {
-    //     alert(error.reason)
-    //   } else {
-    //     Router.go('accounts.index');
-    //   }
-    // });
-    return false;
+    Meteor.call('removeUser', userId, function (error, result) {
+      if (error) {
+        alert(error.reason)
+      } else {
+        Router.go('accounts.index');
+      }
+    });
   }
 });

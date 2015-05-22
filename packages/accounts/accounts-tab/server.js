@@ -30,11 +30,23 @@ Meteor.methods({
   },
 
   updatePassword: function(options) {
+    check(options._id, String);
     check(options.password1, String);
     check(options.password2, String);
     check(options.password2, options.password1);
+    Accounts.setPassword(options._id, options.password1, {logout: true});
+  },
 
-    // Changes password on current user, user is logged out afterwards (true by default)
-    // Accounts.setPassword(this.userId, options.password1, {logout: true});
+  updateUser: function(user) {
+    Meteor.users.update({_id: user._id}, {$set: user});
+  },
+
+  removeUser: function(id){
+    check(id, String);
+    if (!Roles.userHasPermission(this.userId, 'accounts.update.roles')) {
+      throw new Meteor.Error('unauthorized', 'You have no permissions to change user roles');
+    }
+    Meteor.users.remove({_id: id});
   }
+
 });

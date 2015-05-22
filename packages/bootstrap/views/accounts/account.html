@@ -5,70 +5,47 @@
     {{/ Layout }}
 
 
-    <form class="account">
+    User ID:  {{user._id}}
 
-
-      ID:  {{user._id}}
-      <input type="hidden" id="userId" class="form-control" value="{{user._id}}">
-
-
-      <h3>User name</h3>
-      <input type="text" id="userName"  class="form-control" value="{{user.username}}">
-
-      <h3>Emails</h3>
-      {{#each user.emails}}
-        <div class="form-group">
-          <input type="email" class="form-control" email="{{address}}" value="{{address}}">
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> <code>Verified</code>
-          </label>
-        </div>
-
-      {{/each}}
-
+    <br>
+    <h2>Account and Profile</h2>
+    <br>
+    {{# quickForm id="updateAccountForm" schema=userSchema type="method" doc=user meteormethod="updateUser"}}
+      <br>
       <div class="text-right">
         <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
         <button class="btn btn-primary">Save</button>
       </div>
-    </form>
+
+
+    {{/ quickForm }}
+
+    <hr>
 
     <h2>Change Password</h2>
-    <form class="pwd">
-      <input type="password" class="form-control">
-      <input type="password" class="form-control">
-      <div class="text-right">
-        <button class="btn btn-primary">Save</button>
-      </div>
-    </form>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2>Profile</h2>
-    <br>
-    <br>
-    {{# quickForm id="updateAccountForm" schema=schema collection=collection type="update" doc=user }}
+    {{# quickForm id="updatePasswordForm" schema=passwordSchema type="method" doc=user meteormethod="updatePassword"}}
       <br>
       <div class="text-right">
-        <a class="btn btn-default" href="{{ pathFor 'myAccount.index' }}">Cancel</a>
+        <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
         <button class="btn btn-primary">Save</button>
       </div>
 
 
     {{/ quickForm }}
 
-    {{# quickForm id="updatePasswordForm" schema="PasswordSchema" type="method" meteormethod="updatePassword"}}
-      <br>
-      <div class="text-right">
-        <a class="btn btn-default" href="{{ pathFor 'myAccount.index' }}">Cancel</a>
-        <button class="btn btn-primary">Save</button>
-      </div>
+    <hr>
 
+    <h2>Danger Ahead</h2>
+    Deleting users can cause problems, better set them to inactive.
 
-    {{/ quickForm }}
+    <hr>
+
+    <button id="btnDeleteUser" class="btn btn-large btn-danger" user="{{user._id}}">Delete User</button>
+
+    <br>
+    <br>
+    <br>
+
   {{/ Layout }}
 </template>

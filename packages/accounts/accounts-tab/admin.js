@@ -61,11 +61,21 @@ orion.accounts.addAdminUsersButton({
 
 
 
-SchemaUser = new SimpleSchema({
+UserSchema = new SimpleSchema({
     // username: {
     //     type: String,
     //     regEx: /^[a-z0-9A-Z_]{3,15}$/
     // },
+    _id: {
+      type: String,
+      label: " ",
+      autoform: {
+        afFieldInput: {
+          type: "hidden"
+        }
+      }
+    },
+
     emails: {
         type: [Object],
         // this must be optional if you also use other login services like facebook,
@@ -90,16 +100,22 @@ SchemaUser = new SimpleSchema({
           },
         }),
         optional: true
-    },
-    // services: {
-    //     type: Object,
-    //     optional: true,
-    //     blackbox: true
-    // },
+    }
+
 
 });
 
 PasswordSchema = new SimpleSchema({
+  _id: {
+    type: String,
+    label: " ",
+    autoform: {
+      afFieldInput: {
+        type: "hidden"
+      }
+    }
+  },
+
   password1: {
     type: String,
     label: "New Password",

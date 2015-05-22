@@ -13,6 +13,7 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Enrolled</th>
             <th>Roles</th>
             <th>Actions</th>
           </tr>
@@ -26,6 +27,7 @@
                   {{ address }}
                 {{/ each }}
               </td>
+              <td>{{ profile.name }}</td>
               <td>
                 {{# each roles }}
                   <span class="label label-danger">{{ this }}</span>
