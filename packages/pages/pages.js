@@ -154,8 +154,9 @@ orion.pages.tabular = new Tabular.Table({
  */
 Meteor.startup(function(){
   Router.route('/:url', function() {
-    this.wait(Meteor.subscribe('pages', { url: this.params.url }));
-    if (this.ready()) {
+    var subs = Meteor.subscribe('pages', this.params.url);
+    this.wait(subs);
+    if (subs.ready()) {
       var page = orion.pages.collection.findOne({ url: this.params.url });
       var template = orion.pages.templates[page.template];
       if (page) {
