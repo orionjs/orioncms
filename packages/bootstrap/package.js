@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:bootstrap',
   summary: 'A simple theme for orion',
-  version: '1.0.1',
+  version: '1.0.2',
   git: 'https://github.com/orionjs/orion'
 });
 
