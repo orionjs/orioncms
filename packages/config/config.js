@@ -19,12 +19,12 @@ SimpleSchema.extendOptions({
 /**
  * To get reactively if the config is active
  */
-orion.config._isActiveDependency = new Tracker.Dependency;
+orion.config._isActiveDependency = new Tracker.Dependency();
 orion.config._isActive = false;
 orion.config.isActive = function() {
-  this._isActiveDependency.depend()
+  this._isActiveDependency.depend();
   return this._isActive;
-}
+};
 
 /**
  * Register the action for the permissions
@@ -62,7 +62,7 @@ orion.config.collection.deny({
   'update': function(userId, doc, fields, modifier) {
     return Roles.deny(userId, 'config.update', userId, doc, fields, modifier);
   }
-})
+});
 
 /**
  * Function to add a config.
@@ -85,7 +85,7 @@ orion.config.add = function(name, category, options) {
     newSchema[name].autoform = {
       type: 'password',
       'data-type': 'secret',
-    }
+    };
   }
 
   this.collection.attachSchema(new SimpleSchema(newSchema));
@@ -98,14 +98,14 @@ orion.config.add = function(name, category, options) {
 
 /**
  * Returns the value of the config.
- * If the config doesn't exists it 
+ * If the config doesn't exists it
  * returns the defaultValue
  */
 orion.config.get = function(path, defaultValue) {
   // Sets empty string to avoid problems on templates
   defaultValue = !defaultValue || defaultValue instanceof Spacebars.kw ? '' : defaultValue;
   return orion.helpers.searchObjectWithDots(this.object, path) || defaultValue;
-}
+};
 
 /**
  * Returns the public options
@@ -113,4 +113,4 @@ orion.config.get = function(path, defaultValue) {
 orion.config.getPublicFields = function() {
   var atts = this.collection.simpleSchema() && _.where(this.collection.simpleSchema()._schema, { public: true });
   return atts && _.pluck(atts, 'name');
-}
+};
