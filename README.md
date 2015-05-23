@@ -51,6 +51,10 @@ This project is very active. If you use orion you should definitely **[subscribe
 
 *Submit a pull request to add your package to this list*
 
+**Admin Themes:**
+
+- [rwatts:orionjs-foundation](https://github.com/rwatts3/orionjs-contrib/blob/master/orionjs-foundation/README.md)
+
 **Attributes:**
 
 - [rwatts:orion-maps](https://atmospherejs.com/rwatts/orion-maps)
