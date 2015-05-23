@@ -3,11 +3,11 @@ Orion
 
 [![Join the chat at https://gitter.im/orionjs/orion](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orionjs/orion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Orion is an open source framework built on meteor that makes complex as well as simple apps possible with minimal effort. It’s built, modified, used, and supported by an active community of people around the world.
+Orion is an open source framework built on Meteor that makes complex as well as simple apps possible with minimal effort. It's built, modified, used, and supported by an active community of people around the world.
 
 ## Getting Started
 
-To start your orion instance the first thing you need to do is install the core package and a admin template.
+To start your Orion instance, the first thing you need to do is install the core package and a admin template.
 Orion has 2 templates, one for [bootstrap](http://getbootstrap.com) and one for [materialize](http://materializecss.com).
 
 ```sh
