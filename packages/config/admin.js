@@ -21,7 +21,7 @@ orion.accounts.addProtectedRoute('config.update');
  */
 Tracker.autorun(function () {
   if (!orion.config.isActive()) return;
-  
+
   orion.addLink({
     section: 'bottom',
     title: 'App Configuration',
@@ -38,16 +38,16 @@ if (Meteor.isClient) {
 
   ReactiveTemplates.onRendered('configUpdate', function() {
     var categories = _.uniq(_.pluck(orion.config.collection.simpleSchema()._schema, 'category'));
-    var defaultCategory = categories && categories[0]
+    var defaultCategory = categories && categories[0];
     Session.set('configUpdateCurrentCategory', defaultCategory);
-  })
+  });
 
   ReactiveTemplates.events('configUpdate', {
     'click [data-category]': function(event) {
       var newCategory = $(event.currentTarget).attr('data-category');
       Session.set('configUpdateCurrentCategory', newCategory);
     }
-  })
+  });
 
   ReactiveTemplates.helpers('configUpdate', {
     getDoc: function() {
@@ -55,10 +55,10 @@ if (Meteor.isClient) {
     },
     getFields: function() {
       var currentCategory = Session.get('configUpdateCurrentCategory');
-      return _.pluck(_.where(orion.config.collection.simpleSchema()._schema, { category: currentCategory }), 'name')
+      return _.pluck(_.where(orion.config.collection.simpleSchema()._schema, { category: currentCategory }), 'name');
     },
     getCategories: function() {
       return _.uniq(_.pluck(orion.config.collection.simpleSchema()._schema, 'category'));
     }
-  })
+  });
 }
