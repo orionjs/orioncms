@@ -21,13 +21,13 @@
         <tbody>
           {{# each users }}
             <tr>
-              <td><b>{{ profile.name }}</b></td>
+              <td><b>{{name}}</b></td>
               <td>
                 {{# each emails }}
                   {{ address }}
                 {{/ each }}
               </td>
-              <td>{{ profile.name }}</td>
+              <td>{{enrolled}}</td>
               <td>
                 {{# each roles }}
                   <span class="label label-danger">{{ this }}</span>

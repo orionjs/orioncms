@@ -1,5 +1,6 @@
 ReactiveTemplates.onRendered('accounts.index', function() {
   this.subscribe('adminAccountsList');
+  this.subscribe('enrolledUsers');
 })
 
 ReactiveTemplates.helpers('accounts.index', {
@@ -14,6 +15,20 @@ ReactiveTemplates.helpers('accounts.index', {
       }
       return value.shouldShow(self);
     });
+  },
+
+  name: function() {
+    return this.profile && this.profile.name || "NA";
+  },
+
+  enrolled: function() {
+    var item = EnrolledUsers.findOne({_id: this._id}),
+        value = item && item.enrolled;
+
+    if(value)
+      return "YES";
+
+    return "NO";
   }
 });
 

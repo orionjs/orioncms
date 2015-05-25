@@ -1,3 +1,17 @@
+Meteor.publish('enrolledUsers', function () {
+  if (!Roles.userHasPermission(this.userId, 'accounts.index')) {
+    return [];
+  }
+
+  var self = this;
+
+  Meteor.users.find({}).map(function(user) {
+    self.added("enrolledUsers", user._id, {_id: user._id, enrolled: !_.isEmpty(user.services)});
+  });
+
+  this.ready();
+});
+
 Meteor.publish('adminAccountsList', function () {
   if (!Roles.userHasPermission(this.userId, 'accounts.index')) {
     return [];
