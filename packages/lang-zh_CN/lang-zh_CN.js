@@ -1,172 +1,172 @@
 mfPkg.syncAll({
     zh_CN: {
         accounts: {
-            text: 'ÕË»§ÁĞ±í'
+            text: 'è´¦æˆ·åˆ—è¡¨'
         },
         edit_roles: {
-            text: '±à¼­½ÇÉ«'
+            text: 'ç¼–è¾‘è§’è‰²'
         },
         invalid_email: {
-            text: 'ÓÊÏäµØÖ·ÎŞĞ§'
+            text: 'é‚®ç®±åœ°å€æ— æ•ˆ'
         },
         passwords_must_match: {
-            text: 'Á½´ÎÊäÈëµÄÃÜÂë±ØĞëÒ»ÖÂ'
+            text: 'ä¸¤æ¬¡è¾“å…¥çš„å¯†ç å¿…é¡»ä¸€è‡´'
         },
         no_permission_for_roles: {
-            text: 'ÄãÎŞÈ¨ĞŞ¸ÄÓÃ»§½ÇÉ«'
+            text: 'ä½ æ— æƒä¿®æ”¹ç”¨æˆ·è§’è‰²'
         },
         invalid_invitation_code: {
-            text: 'ÑûÇëÂëÎŞĞ§'
+            text: 'é‚€è¯·ç æ— æ•ˆ'
         },
         my_account: {
-            text: 'ÎÒµÄÕË»§'
+            text: 'æˆ‘çš„è´¦æˆ·'
         },
         name: {
-            text: 'ĞÕÃû'
+            text: 'å§“å'
         },
         your_name: {
-            text: 'ÄãµÄĞÕÃû'
+            text: 'ä½ çš„å§“å'
         },
         email: {
-            text: 'ÓÊÏä'
+            text: 'é‚®ç®±'
         },
         roles: {
-            text: '½ÇÉ«ÁĞ±í'
+            text: 'è§’è‰²åˆ—è¡¨'
         },
         actions: {
-            text: '¶¯×÷ÁĞ±í'
+            text: 'åŠ¨ä½œåˆ—è¡¨'
         },
         logout: {
-            text: '×¢Ïú'
+            text: 'æ³¨é”€'
         },
         update_profile: {
-            text: '¸üĞÂÓÃ»§×ÊÁÏ'
+            text: 'æ›´æ–°ç”¨æˆ·èµ„æ–™'
         },
         change_password: {
-            text: 'ĞŞ¸ÄÃÜÂë'
+            text: 'ä¿®æ”¹å¯†ç '
         },
         invite: {
-            text: 'ÑûÇë'
+            text: 'é‚€è¯·'
         },
         invitation_created_successfully: {
-            text: 'ÑûÇëÂëÉú³É³É¹¦'
+            text: 'é‚€è¯·ç ç”ŸæˆæˆåŠŸ'
         },
         back: {
-            text: 'ºóÍË'
+            text: 'åé€€'
         },
         invite_another: {
-            text: 'ÑûÇëËûÈË'
+            text: 'é‚€è¯·ä»–äºº'
         },
         select_new_user_roles: {
-            text: 'ÎªĞÂÓÃ»§Ñ¡Ôñ½ÇÉ«'
+            text: 'ä¸ºæ–°ç”¨æˆ·é€‰æ‹©è§’è‰²'
         },
         optional_new_user_email: {
-            text: 'ĞÂÓÃ»§ÓÊÏä(¿ÉÑ¡)'
+            text: 'æ–°ç”¨æˆ·é‚®ç®±(å¯é€‰)'
         },
         cancel: {
-            text: 'È¡Ïû'
+            text: 'å–æ¶ˆ'
         },
         login: {
-            text: 'µÇÂ¼'
+            text: 'ç™»å½•'
         },
         save: {
-            text: '±£´æ'
+            text: 'ä¿å­˜'
         },
         register: {
-            text: '×¢²á'
+            text: 'æ³¨å†Œ'
         },
         password_again: {
-            text: 'ÔÙ´ÎÊäÈëÃÜÂë'
+            text: 'å†æ¬¡è¾“å…¥å¯†ç '
         },
         select_user_roles: {
-            text: 'Îª¸ÃÓÃ»§·ÖÅä½ÇÉ«'
+            text: 'ä¸ºè¯¥ç”¨æˆ·åˆ†é…è§’è‰²'
         },
         create_a: {
-            text: 'Éú³ÉÒ»¸ö'
+            text: 'ç”Ÿæˆä¸€ä¸ª'
         },
         create: {
-            text: 'Éú³É'
+            text: 'ç”Ÿæˆ'
         },
         no_permission: {
-            text: 'È¨ÏŞ²»×ã'
+            text: 'æƒé™ä¸è¶³'
         },
         delete: {
-            text: 'É¾³ı'
+            text: 'åˆ é™¤'
         },
         are_you_sure_to_delete_this: {
-            text: 'È·¶¨ÒªÉ¾³ı£¿'
+            text: 'ç¡®å®šè¦åˆ é™¤ï¼Ÿ'
         },
         confirm: {
-            text: 'È·ÈÏ'
+            text: 'ç¡®è®¤'
         },
         update: {
-            text: '¸üĞÂ'
+            text: 'æ›´æ–°'
         },
         config: {
-            text: 'ÅäÖÃ'
+            text: 'é…ç½®'
         },
         dictionary: {
-            text: '×Öµä'
+            text: 'å­—å…¸'
         },
         create_new_page: {
-            text: 'ĞÂÔöÒ³Ãæ'
+            text: 'æ–°å¢é¡µé¢'
         },
         choose_template: {
-            text: 'Ñ¡ÔñÄ£°å'
+            text: 'é€‰æ‹©æ¨¡æ¿'
         },
         choose: {
-            text: 'Ñ¡Ôñ'
+            text: 'é€‰æ‹©'
         },
         delete_page: {
-            text: 'É¾³ıÒ³Ãæ'
+            text: 'åˆ é™¤é¡µé¢'
         },
         are_you_sure_to_delete_this_page: {
-            text: 'ÄãÈ·¶¨ÒªÉ¾³ı¸ÃÒ³Ãæ?'
+            text: 'ä½ ç¡®å®šè¦åˆ é™¤è¯¥é¡µé¢?'
         },
         pages: {
-            text: 'Ò³ÃæÁĞ±í'
+            text: 'é¡µé¢åˆ—è¡¨'
         },
         update_page: {
-            text: '¸üĞÂÒ³Ãæ'
+            text: 'æ›´æ–°é¡µé¢'
         },
         app_configuration: {
-            text: 'Ó¦ÓÃÅäÖÃ'
+            text: 'åº”ç”¨é…ç½®'
         },
         remove: {
-            text: 'ÒÆ³ı'
+            text: 'ç§»é™¤'
         },
         choose_file: {
-            text: 'Ñ¡ÔñÎÄ¼ş'
+            text: 'é€‰æ‹©æ–‡ä»¶'
         },
         file: {
-            text: 'ÎÄ¼ş'
+            text: 'æ–‡ä»¶'
         },
         no_file: {
-            text: 'È±ÉÙÎÄ¼ş'
+            text: 'ç¼ºå°‘æ–‡ä»¶'
         },
         file_id_not_found: {
-            text: 'ÕÒ²»µ½ÎÄ¼ş {fileId} '
+            text: 'æ‰¾ä¸åˆ°æ–‡ä»¶ {fileId} '
         },
         title: {
-            text: '±êÌâ'
+            text: 'æ ‡é¢˜'
         },
         item: {
-            text: 'ÊÂÏî'
+            text: 'äº‹é¡¹'
         },
         items: {
-            text: 'ÊÂÏîÁĞ±í'
+            text: 'äº‹é¡¹åˆ—è¡¨'
         },
         users: {
-            text: 'ÓÃ»§ÁĞ±í'
+            text: 'ç”¨æˆ·åˆ—è¡¨'
         },
         user: {
-            text: 'ÓÃ»§'
+            text: 'ç”¨æˆ·'
         },
         error_uploading_file: {
-            text: 'ÎÄ¼şÉÏ´«Ê§°Ü'
+            text: 'æ–‡ä»¶ä¸Šä¼ å¤±è´¥'
         },
         error_removing_file: {
-            text: 'ÎÄ¼şÉ¾³ıÊ§°Ü'
+            text: 'æ–‡ä»¶åˆ é™¤å¤±è´¥'
         }
     }
 }, {
