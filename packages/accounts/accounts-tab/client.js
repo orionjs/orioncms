@@ -110,6 +110,9 @@ ReactiveTemplates.helpers('accounts.update.edit', {
 
   passwordSchema: function(){
     return PasswordSchema;
+  },
+  profileSchema: function() {
+    return orion.accounts.profileSchema;
   }
 
 });

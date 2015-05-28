@@ -8,9 +8,10 @@
     User ID:  {{user._id}}
 
     <br>
-    <h2>Account and Profile</h2>
+    <h2>Account</h2>
     <br>
     {{# quickForm id="updateAccountForm" schema=userSchema type="method" doc=user meteormethod="updateUser"}}
+      {{> afQuickFields name='account' }}
       <br>
       <div class="text-right">
         <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
@@ -19,6 +20,18 @@
 
 
     {{/ quickForm }}
+
+    <hr>
+    <h2>Profile</h2>
+
+    {{# autoForm schema=profileSchema id="updateProfileForm" collection="Meteor.users" type="update" doc=user }}
+      {{> afQuickFields name='profile' }}
+      <br>
+      <div class="text-right">
+        <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
+        <button class="btn btn-primary">Save</button>
+      </div>
+    {{/ autoForm }}
 
     <hr>
 

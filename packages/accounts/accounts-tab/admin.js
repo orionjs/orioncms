@@ -76,6 +76,10 @@ UserSchema = new SimpleSchema({
       }
     },
 
+    createdAt: {
+        type: Date
+    },
+
     emails: {
         type: [Object],
         // this must be optional if you also use other login services like facebook,
@@ -88,20 +92,7 @@ UserSchema = new SimpleSchema({
     },
     "emails.$.verified": {
         type: Boolean
-    },
-    createdAt: {
-        type: Date
-    },
-    profile: {
-        type: new SimpleSchema({
-          name: {
-            type: String,
-            optional: true
-          },
-        }),
-        optional: true
     }
-
 
 });
 
