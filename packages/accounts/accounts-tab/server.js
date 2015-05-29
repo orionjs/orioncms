@@ -64,3 +64,9 @@ Meteor.methods({
   }
 
 });
+
+Meteor.users.allow({
+  update: function(userId, doc, fields, modifier) {
+    return Roles.userHasRole(userId, "admin");
+  }
+});

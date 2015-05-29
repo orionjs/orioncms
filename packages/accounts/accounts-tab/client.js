@@ -60,9 +60,9 @@ ReactiveTemplates.helpers('accounts.update.roles', {
   roles: function() {
     return _.keys(Roles._roles);
   },
-  hasRole: function() {
+  hasRole: function(role) {
     var userId = Router.current().params._id;
-    var role = String(this);
+
     return Roles.userHasRole(userId, role);
   }
 });
