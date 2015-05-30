@@ -7,12 +7,12 @@
           {{ user.profile.name }}
         </small>
       {{/ Layout }}
-      
+
         <p>Select the roles for this user</p>
         <br>
         {{# each roles }}
           <p>
-            {{# if hasRole }}
+            {{# if hasRole this}}
               <input type="checkbox" role="{{ this }}" id="input-role-{{this}}" checked />
             {{ else }}
               <input type="checkbox" role="{{ this }}" id="input-role-{{this}}"/>
@@ -20,7 +20,7 @@
             <label for="input-role-{{this}}">{{ this }}</label>
           </p>
         {{/ each }}
-        
+
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
       <a class="" href="{{ pathFor 'accounts.index' }}">Cancel</a>

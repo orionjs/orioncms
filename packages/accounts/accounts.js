@@ -44,3 +44,5 @@ AccountsTemplates.addField({
     placeholder: 'Your name',
     required: true,
 });
+
+EnrolledUsers = new Mongo.Collection("enrolledUsers");

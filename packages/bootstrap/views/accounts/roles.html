@@ -13,7 +13,7 @@
         {{# each roles }}
           <div class="checkbox">
             <label>
-              {{# if hasRole }}
+              {{# if hasRole this }}
                 <input type="checkbox" role="{{ this }}" checked><code>{{ this }}</code>
               {{ else }}
                 <input type="checkbox" role="{{ this }}"> <code>{{ this }}</code>
@@ -21,7 +21,7 @@
             </label>
           </div>
         {{/ each }}
-        
+
         <hr>
         <div class="buttons">
           <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">Cancel</a>
