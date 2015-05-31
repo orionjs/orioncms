@@ -8,7 +8,7 @@ var getSchema = function(options, hasMany) {
     filter: Match.Optional(Function),
     createFilter: Match.Optional(Function),
     create: Match.Optional(Function),
-    aditionalFields: Match.Optional(Array),
+    additionalFields: Match.Optional(Array),
     render: Match.Optional({
       item: Function,
       option: Function
@@ -36,8 +36,8 @@ var getSchema = function(options, hasMany) {
     }
   }
 
-  if (!options.aditionalFields) {
-    options.aditionalFields = [];
+  if (!options.additionalFields) {
+    options.additionalFields = [];
   }
 
   if (options.collection.pluralName) {
@@ -56,7 +56,7 @@ var getSchema = function(options, hasMany) {
     options.singularName = 'item';
   }
 
-  options.fields = options.aditionalFields;
+  options.fields = options.additionalFields;
   options.fields.push(options.titleField);
 
   if (Meteor.isServer) {
