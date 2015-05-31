@@ -7,7 +7,7 @@ orion.attributes.registerAttribute('users', {
       pluralName: 'users',
       singularName: 'user',
       collection: Meteor.users,
-      aditionalFields: ['emails.address'],
+      additionalFields: ['emails.address'],
       render: {
         item: function(item, escape) {
           return '<div class="usersAttribute">' +
@@ -39,7 +39,7 @@ orion.attributes.registerAttribute('user', {
     options = _.extend(options, {
       titleField: 'profile.name',
       collection: Meteor.users,
-      aditionalFields: ['emails.address'],
+      additionalFields: ['emails.address'],
       render: {
         item: function(item, escape) {
           return '<div class="usersAttribute">' +
