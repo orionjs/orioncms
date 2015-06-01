@@ -63,13 +63,13 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
   return _.extend({
     title: {
       type: String,
-      label: i18n('title')
+      label: orion.helpers.getTranslation('pages.schema.title')
     },
     url: {
       type: String,
       regEx: /^[a-z0-9A-Z_-]+$/,
       unique: true,
-      label: 'URL'
+      label: orion.helpers.getTranslation('pages.schema.url')
     },
     template: {
       type: String,
@@ -144,8 +144,8 @@ orion.pages.tabular = new Tabular.Table({
   name: 'PagesIndex',
   collection: orion.pages.collection,
   columns: [
-    {data: 'title', title: i18n('title')},
-    {data: 'url', title: 'URL'}
+    { data: 'title', title: i18n('pages.schema.title') },
+    { data: 'url', title: i18n('pages.schema.url') }
   ]
 });
 

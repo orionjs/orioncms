@@ -133,6 +133,10 @@ i18n.map('en', {
     }
   },
   pages: {
+    schema: {
+      title: 'Título',
+      url: 'Url',
+    },
     index: {
       title: 'Páginas',
     },

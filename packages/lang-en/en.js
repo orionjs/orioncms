@@ -132,6 +132,10 @@ i18n.map('en', {
     }
   },
   pages: {
+    schema: {
+      title: 'Title',
+      url: 'Url',
+    },
     index: {
       title: 'Pages',
     },
