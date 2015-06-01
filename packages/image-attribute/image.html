@@ -1,0 +1,9 @@
+<template name="orionAttributesImage">
+  <div class="image-attribute" {{ this.atts }}>
+    {{# if currentFile }}
+      <img id="img-atr-{{ name }}" src="{{ currentFile }}">
+    {{ else }}
+      <input type="file">
+    {{/ if }}
+  </div>
+</template>
