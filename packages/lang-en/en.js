@@ -11,16 +11,55 @@ i18n.map('en', {
     noPermission: 'You have no permissions',
   },
   accounts: {
+    schema: {
+      emails: {
+        title: 'Emails',
+        address: 'Address',
+        verified: 'Verified'
+      },
+      password: {
+        title: 'Password',
+        new: 'New Password',
+        confirm: 'Confirm Password'
+      },
+      profile: {
+        name: 'Name'
+      }
+    },
     index: {
       title: 'Accounts',
       actions: {
-        editRoles: 'Edit Roles',
+        edit: 'Edit',
       },
       tableTitles: {
         name: 'Name',
         email: 'Email',
         roles: 'Roles',
         actions: 'Actions'
+      }
+    },
+    update: {
+      title: 'Update Account',
+      messages: {
+        noPermissions: 'You have no permissions to edit this user',
+        passwordNotMatch: 'Passwords doesn\'t match'
+      },
+      sections: {
+        profile: {
+          title: 'Profile'
+        },
+        roles: {
+          title: 'Roles',
+          selectRoles: 'Select user roles'
+        },
+        changePassword: {
+          title: 'Change Password'
+        },
+        deleteUser: {
+          title: 'Danger Ahead',
+          advice: 'Deleting users can cause problems.',
+          button: 'Delete User'
+        }
       }
     },
     myAccount: {
@@ -42,13 +81,6 @@ i18n.map('en', {
     updateProfile: {
       title: 'Update Profile',
     },
-    updateRoles: {
-      title: 'Update User Roles',
-      selectRoles: 'Select user roles',
-      messages: {
-        noPermissions: 'You have no permissions to edit roles'
-      }
-    },
     register: {
       title: 'Register',
       registerButton: 'Register',
@@ -60,7 +92,7 @@ i18n.map('en', {
       },
       messages: {
         invalidEmail: 'Invalid Email',
-        passwordNotMatch: 'Password doesn\'t match',
+        passwordNotMatch: 'Passwords doesn\'t match',
         invalidInvitationCode: 'Invalid invitation code',
       }
     }

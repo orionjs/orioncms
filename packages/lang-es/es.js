@@ -11,16 +11,55 @@ i18n.map('en', {
     noPermission: 'No tienes permisos',
   },
   accounts: {
+    schema: {
+      emails: {
+        title: 'Emails',
+        address: 'Dirección',
+        verified: 'Verificado'
+      },
+      password: {
+        title: 'Contraseña',
+        new: 'Nueva Contraseña',
+        confirm: 'Confirmar Contraseña'
+      },
+      profile: {
+        name: 'Nombre'
+      }
+    },
     index: {
       title: 'Cuentas',
       actions: {
-        editRoles: 'Editar Roles',
+         edit: 'Editar',
       },
       tableTitles: {
         name: 'Nombre',
         email: 'Email',
         roles: 'Roles',
         actions: 'Acciones'
+      }
+    },
+    update: {
+      title: 'Editar Cuenta',
+      messages: {
+        noPermissions: 'No tienes permisos para editar este usuario',
+        passwordNotMatch: 'Las contraseñas no son iguales'
+      },
+      sections: {
+        profile: {
+          title: 'Perfil'
+        },
+        roles: {
+          title: 'Roles',
+          selectRoles: 'Selecciona los roles'
+        },
+        changePassword: {
+          title: 'Cambiar Contraseña'
+        },
+        deleteUser: {
+          title: 'Borrar usuario',
+          advice: 'Borrar usuario puede causar problemas.',
+          button: 'Borrar Usuario'
+        }
       }
     },
     myAccount: {
@@ -41,13 +80,6 @@ i18n.map('en', {
     },
     updateProfile: {
       title: 'Editar perfil',
-    },
-    updateRoles: {
-      title: 'Editar los roles del usuario',
-      selectRoles: 'Selecciona los roles',
-      messages: {
-        noPermissions: 'No tienes permisos para cambiar roles'
-      }
     },
     register: {
       title: 'Registrarse',

@@ -40,3 +40,9 @@ orion.helpers.deepExtend = function(target, source) {
       target[prop] = source[prop];
   return target;
 };
+
+orion.helpers.getTranslation = function(key) {
+  return function() {
+    return i18n(key);
+  }
+}

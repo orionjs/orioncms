@@ -42,30 +42,28 @@ Meteor.methods({
     }
     Roles.setUserRoles(userId, roles);
   },
-
-  updatePassword: function(options) {
-    check(options._id, String);
-    check(options.password1, String);
-    check(options.password2, String);
-    check(options.password2, options.password1);
-    Accounts.setPassword(options._id, options.password1, {logout: true});
+  orionAccountsUpdatePassword: function(modifier, userId) {
+    var options = modifier['$set'];
+    check(options, UsersPasswordSchema);
+    Accounts.setPassword(userId, options.password, { logout: true });
   },
-
-  updateUser: function(user) {
-    Meteor.users.update({_id: user._id}, {$set: user});
-  },
-
-  removeUser: function(id){
-    check(id, String);
-    if (!Roles.userHasPermission(this.userId, 'accounts.update.roles')) {
-      throw new Meteor.Error('unauthorized', 'You have no permissions to change user roles');
+  orionAccountsUpdateEmails: function(modifier, userId) {
+    if (!Roles.userHasPermission(this.userId, 'accounts.update.emails', userId)) {
+      throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
     }
-    Meteor.users.remove({_id: id});
-  }
-});
-
-Meteor.users.allow({
-  update: function(userId, doc, fields, modifier) {
-    return Roles.userHasRole(userId, "admin");
+    Meteor.users.update(userId, modifier);
+  },
+  orionAccountsUpdateProfile: function(modifier, userId) {
+    if (!Roles.userHasPermission(this.userId, 'accounts.update.profile', userId)) {
+      throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
+    }
+    Meteor.users.update(userId, modifier);
+  },
+  removeUser: function(userId){
+    check(userId, String);
+    if (!Roles.userHasPermission(this.userId, 'accounts.remove', userId)) {
+      throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
+    }
+    Meteor.users.remove({ _id: userId });
   }
 });

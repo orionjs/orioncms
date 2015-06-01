@@ -4,7 +4,10 @@ orion.accounts = {};
  * Initialize the profile schema option with its default value
  */
 Options.init('profileSchema', {
-  name: { type: String }
+  name: { 
+    type: String,
+    label: orion.helpers.getTranslation('accounts.schema.profile.name')
+  }
 });
 
 /**
@@ -45,4 +48,49 @@ AccountsTemplates.addField({
     required: true,
 });
 
-EnrolledUsers = new Mongo.Collection("enrolledUsers");
+UsersEmailsSchema = new SimpleSchema({
+  emails: {
+    type: [Object],
+    optional: true,
+    label: orion.helpers.getTranslation('accounts.schema.emails.title')
+  },
+  'emails.$.address': {
+    type: String,
+    regEx: SimpleSchema.RegEx.Email,
+    label: orion.helpers.getTranslation('accounts.schema.emails.address')
+  },
+  'emails.$.verified': {
+    type: Boolean,
+    label: orion.helpers.getTranslation('accounts.schema.emails.verified')
+  }
+});
+
+SimpleSchema.messages({
+  'passwordMismatch': i18n('accounts.update.messages.passwordNotMatch')
+});
+
+UsersPasswordSchema = new SimpleSchema({
+  password: {
+    type: String,
+    label: orion.helpers.getTranslation('accounts.schema.password.new'),
+    min: 8,
+    autoform: {
+      type: 'password'
+    }
+  },
+  confirm: {
+    type: String,
+    label: orion.helpers.getTranslation('accounts.schema.password.confirm'),
+    min: 8,
+    autoform: {
+      type: 'password'
+    },
+    custom: function () {
+      if (this.value !== this.field('password').value) {
+        return 'passwordMismatch';
+      }
+    }
+  },
+});
+
+EnrolledUsers = new Mongo.Collection('enrolledUsers');

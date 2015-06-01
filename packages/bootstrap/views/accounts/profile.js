@@ -1,4 +1,4 @@
-AutoForm.addHooks('updateProfileForm', {
+AutoForm.addHooks('updateMyProfileForm', {
   onSuccess: function() {
     Router.go('myAccount.index');
   }

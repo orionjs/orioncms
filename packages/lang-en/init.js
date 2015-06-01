@@ -1,4 +1,5 @@
 i18n.setDefaultLanguage('en')
+i18n.showMissing('[no translation for "<%= label %>" in <%= language %>]')
 
 if (Meteor.isClient) {
   /**

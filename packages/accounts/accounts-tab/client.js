@@ -45,29 +45,48 @@ ReactiveTemplates.events('accounts.index', {
   }
 });
 
-ReactiveTemplates.onRendered('accounts.update.roles', function() {
+ReactiveTemplates.onRendered('accounts.update', function() {
   var userId = Router.current().params._id;
   this.subscribe('adminAccountsUpdateRoles', userId);
 });
 
-
-
-ReactiveTemplates.helpers('accounts.update.roles', {
+ReactiveTemplates.helpers('accounts.update', {
   user: function() {
     var userId = Router.current().params._id;
     return Meteor.users.findOne(userId);
+  },
+  collection: function() {
+    return Meteor.users;
+  },
+  emailsSchema: function(){
+    return UsersEmailsSchema;
+  },
+  profileSchema: function() {
+    return orion.accounts.profileSchema;
+  },
+  passwordSchema: function(){
+    return UsersPasswordSchema;
   },
   roles: function() {
     return _.keys(Roles._roles);
   },
   hasRole: function(role) {
     var userId = Router.current().params._id;
-
     return Roles.userHasRole(userId, role);
   }
 });
 
-ReactiveTemplates.events('accounts.update.roles', {
+ReactiveTemplates.events('accounts.update', {
+  'click #btnDeleteUser': function (event, template) {
+    var userId = Router.current().params._id;
+    Meteor.call('removeUser', userId, function (error, result) {
+      if (error) {
+        alert(error.reason)
+      } else {
+        Router.go('accounts.index');
+      }
+    });
+  },
   'submit form.roles': function (event, template) {
     var userId = Router.current().params._id;
     var roles = [];
@@ -80,52 +99,8 @@ ReactiveTemplates.events('accounts.update.roles', {
     Meteor.call('updateRoles', userId, roles, function (error, result) {
       if (error) {
         alert(error.reason)
-      } else {
-        Router.go('accounts.index');
       }
     });
     return false;
-  }
-});
-
-
-ReactiveTemplates.onRendered('accounts.update.edit', function() {
-  var userId = Router.current().params._id;
-  this.subscribe('adminAccountsUpdateRoles', userId);
-});
-
-ReactiveTemplates.helpers('accounts.update.edit', {
-  user: function() {
-    var userId = Router.current().params._id;
-    return Meteor.users.findOne(userId);
-  },
-
-  collection: function() {
-    return Meteor.users;
-  },
-
-  userSchema: function(){
-    return UserSchema;
-  },
-
-  passwordSchema: function(){
-    return PasswordSchema;
-  },
-  profileSchema: function() {
-    return orion.accounts.profileSchema;
-  }
-
-});
-
-ReactiveTemplates.events('accounts.update.edit', {
-  'click #btnDeleteUser': function (event, template) {
-    var userId = Router.current().params._id;
-    Meteor.call('removeUser', userId, function (error, result) {
-      if (error) {
-        alert(error.reason)
-      } else {
-        Router.go('accounts.index');
-      }
-    });
   }
 });
