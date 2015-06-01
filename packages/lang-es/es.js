@@ -58,7 +58,7 @@ i18n.map('en', {
         },
         deleteUser: {
           title: 'Borrar usuario',
-          advice: 'Borrar usuario puede causar problemas.',
+          advice: 'Borrar usuarios puede causar problemas.',
           button: 'Borrar Usuario'
         }
       }
