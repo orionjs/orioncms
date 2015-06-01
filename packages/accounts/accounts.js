@@ -44,3 +44,5 @@ AccountsTemplates.addField({
     placeholder: Meteor.isClient ? i18n('accounts.register.fields.name') : 'Your Name',
     required: true,
 });
+
+EnrolledUsers = new Mongo.Collection("enrolledUsers");

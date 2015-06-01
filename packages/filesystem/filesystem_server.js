@@ -1,4 +1,6 @@
-Meteor.publish('filesystem_file_toEarse', function(fileId) {
-  check(fileId, String);
-  return orion.filesystem.collection.find(fileId);
-})
+Meteor.methods({
+  getFileDataToEarse: function (fileId) {
+    check(fileId, String);
+    return orion.filesystem.collection.findOne(fileId);
+  }
+});

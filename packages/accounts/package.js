@@ -49,7 +49,7 @@ Package.onUse(function(api) {
     'accounts-tab/client.js'
     ], 'client');
 
-  api.export('orion');
+  api.export(['orion', "EnrolledUsers"]);
 });
 
 Package.onTest(function(api) {

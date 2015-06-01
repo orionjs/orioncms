@@ -8,8 +8,8 @@ ReactiveTemplates.events('attribute.file', {
   },
   'change input': function(event, template) {
     var self = this;
-    var files = event.target.files;
-    if (files.length < 0) return;
+    var files = event.currentTarget.files;
+    if (files.length != 1) return;
 
     var upload = orion.filesystem.upload({
       fileList: files,

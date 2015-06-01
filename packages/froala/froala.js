@@ -1,13 +1,14 @@
 ReactiveTemplates.onRendered('attribute.froala', function () {
-  var key = this.data.name;
-  var parent = $('[data-schema-key="' + key + '"]')
+  var name = this.data.name;
+  var parent = $('[data-schema-key="' + name + '"]')
   // Find the element
   var element = parent.find('.editor');
-
   // initialize froala
   element.editable({
     inlineMode: false,
-    placeholder: ''
+    placeholder: '',
+    minHeight: Options.get('froala.height', 400),  // setting a default height
+    key: orion.config.get('FROALA_ACTIVATION_KEY') // set license key if exists
   });
 
   // set the current value of the attribute

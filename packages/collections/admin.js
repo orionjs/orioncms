@@ -121,7 +121,7 @@ orion.collections.onCreated(function() {
     var item = self.findOne(this.params._id);
     this.item = item;
     if (subs.ready()) {
-      this.render(ReactiveTemplates.get('collections.' + this.name + '.delete'), {
+      this.render(ReactiveTemplates.get('collections.' + self.name + '.delete'), {
         data: function() {
           return {
             collection: self,

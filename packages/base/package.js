@@ -13,7 +13,7 @@ Package.onUse(function(api) {
     'underscore',
     'nicolaslopezj:options@1.0.1',
     'nicolaslopezj:reactive-templates@1.2.0',
-    'nicolaslopezj:roles@1.0.5',
+    'nicolaslopezj:roles@1.1.0',
     'iron:router@1.0.7',
     'zimme:iron-router-active@1.0.1',
     'orionjs:lang-en@1.1.0'
@@ -26,7 +26,7 @@ Package.onUse(function(api) {
     'nicolaslopezj:options',
     'nicolaslopezj:reactive-templates',
     'nicolaslopezj:roles',
-    'orionjs:lang-en@1.1.0'
+    'orionjs:lang-en'
     ]);
 
   api.addFiles([

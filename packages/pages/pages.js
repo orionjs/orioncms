@@ -43,7 +43,7 @@ orion.pages.collection.helpers({
  */
 orion.pages.addTemplate = function (options, schema) {
   if (!options.template) {
-    throw "Template is required";
+    throw new Meteor.Error('orion', 'Template is required');
   }
 
   var newTemplate = _.extend({
@@ -69,7 +69,7 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
       type: String,
       regEx: /^[a-z0-9A-Z_-]+$/,
       unique: true,
-      label: 'Url'
+      label: 'URL'
     },
     template: {
       type: String,
@@ -137,7 +137,7 @@ if (Package['aldeed:tabular']) {
 }
 
 if (!Tabular) {
-  throw new Error('You must install tabular to use this package');
+  throw new Meteor.Error('orion', 'You must install tabular to use this package');
 }
 
 orion.pages.tabular = new Tabular.Table({
