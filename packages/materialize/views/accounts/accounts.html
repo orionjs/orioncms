@@ -3,8 +3,8 @@
     {{ i18n 'accounts.index.title' }}
   {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{# if userHasPermission 'accounts.invite' }}
-      <a href="{{ pathFor 'accounts.invite' }}" class="floating-btn-onheader btn-floating btn-large waves-effect waves-light red right">
+    {{# if userHasPermission 'accounts.showCreate' }}
+      <a href="{{ pathFor 'accounts.create' }}" class="floating-btn-onheader btn-floating btn-large waves-effect waves-light red right">
         <i class="mdi-content-add"></i>
       </a>
     {{/ if }}
@@ -20,7 +20,7 @@
       <tbody>
         {{# each users }}
           <tr>
-            <td><b>{{ profile.name }}</b></td>
+            <td><b>{{ name }}</b></td>
             <td>
               {{# each emails }}
                 {{ address }}

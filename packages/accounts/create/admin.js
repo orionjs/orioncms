@@ -78,7 +78,7 @@ if (Meteor.isClient) {
     'change input[name="createMethod"]': function(event, template) {
       Session.set('accounts.create.method', $(event.currentTarget).val());
     },
-    'click .btn-create-another': function() {
+    'click .btn-invite-another': function() {
       Session.set('accounts.create.invitationId', null);
     }
   });

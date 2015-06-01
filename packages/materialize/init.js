@@ -15,8 +15,8 @@ ReactiveTemplates.set('myAccount.password', 'orionMaterializeAccountPassword');
 ReactiveTemplates.set('myAccount.profile', 'orionMaterializeAccountProfile');
 
 ReactiveTemplates.set('accounts.index', 'orionMaterializeAccountsIndex');
-ReactiveTemplates.set('accounts.update.roles', 'orionMaterializeAccountsUpdateRoles');
-ReactiveTemplates.set('accounts.invite', 'orionMaterializeAccountsInvite');
+ReactiveTemplates.set('accounts.update', 'orionMaterializeAccountsUpdate');
+ReactiveTemplates.set('accounts.create', 'orionMaterializeAccountsCreate');
 
 ReactiveTemplates.set('configUpdate', 'orionMaterializeConfigUpdate');
 ReactiveTemplates.set('dictionaryUpdate', 'orionMaterializeDictionaryUpdate');

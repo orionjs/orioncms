@@ -6,21 +6,12 @@
 
     {{# Layout template="orionBootstrapContentContainer" }}
       {{# if invitationId }}
-        {{# if createUser }}
-          <div class="alert alert-success">
-            {{ i18n 'accounts.create.messages.successfullyCreated' }}
-          </div>
-          <p>
-            Enrollment email has been sent to {{email}}.
-          </p>
-        {{ else }}
-          <div class="alert alert-success">
-            Invitation created successfully
-          </div>
-          <p>
-            <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
-          </p>
-        {{/ if }}
+        <div class="alert alert-success">
+          Invitation created successfully
+        </div>
+        <p>
+          <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
+        </p>
         <hr>
         <div class="buttons">
           <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.back' }}</a>
@@ -77,7 +68,7 @@
             <button class="btn btn-primary">{{ i18n 'global.create' }}</button>
           </div>
         </form>
-        {{/ if }}
+      {{/ if }}
     {{/ Layout }}
   {{/ Layout }}
 </template>
