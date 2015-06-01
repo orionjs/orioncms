@@ -34,14 +34,14 @@ Package.onUse(function(api) {
     'my-account/admin.js',
     'accounts-tab/accounts.js',
     'accounts-tab/admin.js',
-    'invitations/invitations.js',
-    'invitations/admin.js'
+    'create/invite.js',
+    'create/admin.js'
     ]);
 
   api.addFiles([
     'accounts_server.js',
     'accounts-tab/server.js',
-    'invitations/server.js'
+    'create/server.js'
     ], 'server');
 
   api.addFiles([

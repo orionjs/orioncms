@@ -46,7 +46,7 @@ Package.onUse(function(api) {
     'views/accounts/accounts.less',
     'views/accounts/accounts.html',
     'views/accounts/update.html',
-    'views/accounts/invite.html',
+    'views/accounts/create.html',
     'views/config/update.html',
     'views/config/update.js',
     'views/dictionary/update.html',

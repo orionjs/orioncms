@@ -9,6 +9,8 @@ i18n.map('en', {
     confirm: 'Confirmar',
     choose: 'Elegir',
     noPermission: 'No tienes permisos',
+    passwordNotMatch: 'Las contraseñas no son iguales',
+    optional: 'Opcional'
   },
   accounts: {
     schema: {
@@ -42,7 +44,6 @@ i18n.map('en', {
       title: 'Editar Cuenta',
       messages: {
         noPermissions: 'No tienes permisos para editar este usuario',
-        passwordNotMatch: 'Las contraseñas no son iguales'
       },
       sections: {
         profile: {
@@ -65,11 +66,13 @@ i18n.map('en', {
     myAccount: {
       title: 'Mi Cuenta',
     },
-    invite: {
-      title: 'Invitar usuarios',
+    create: {
+      title: 'Crear un usuario',
+      createInvitation: 'Crear invitación',
+      createUserNow: 'Crear usuario ahora',
       inviteOther: 'Invitar a otro',
       selectRoles: 'Selecciona los roles para el nuevo usuario',
-      email: 'Email (opcional)',
+      email: 'Email',
       inviteButton: 'Invitar',
       messages: {
         successfullyCreated: 'La invitación fue creada satisfactoriamente'
@@ -92,7 +95,6 @@ i18n.map('en', {
       },
       messages: {
         invalidEmail: 'Email invalido',
-        passwordNotMatch: 'Las contraseñas no son iguales',
         invalidInvitationCode: 'El código de invitacion es invalido',
       }
     }

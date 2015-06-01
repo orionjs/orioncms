@@ -66,7 +66,7 @@ UsersEmailsSchema = new SimpleSchema({
 });
 
 SimpleSchema.messages({
-  'passwordMismatch': i18n('accounts.update.messages.passwordNotMatch')
+  'passwordMismatch': i18n('global.passwordNotMatch')
 });
 
 UsersPasswordSchema = new SimpleSchema({

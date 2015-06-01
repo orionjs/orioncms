@@ -38,7 +38,7 @@ Meteor.methods({
     check(userId, String);
     check(roles, Array);
     if (!Roles.userHasPermission(this.userId, 'accounts.update.roles')) {
-      throw new Meteor.Error('unauthorized', i18n('accounts.updateRoles.messages.noPermissions'));
+      throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
     }
     Roles.setUserRoles(userId, roles);
   },

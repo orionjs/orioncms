@@ -9,6 +9,8 @@ i18n.map('en', {
     confirm: 'Confirm',
     choose: 'Choose',
     noPermission: 'You have no permissions',
+    passwordNotMatch: 'Passwords doesn\'t match',
+    optional: 'Optional'
   },
   accounts: {
     schema: {
@@ -41,8 +43,7 @@ i18n.map('en', {
     update: {
       title: 'Update Account',
       messages: {
-        noPermissions: 'You have no permissions to edit this user',
-        passwordNotMatch: 'Passwords doesn\'t match'
+        noPermissions: 'You have no permissions to edit this user'
       },
       sections: {
         profile: {
@@ -65,12 +66,13 @@ i18n.map('en', {
     myAccount: {
       title: 'My Account',
     },
-    invite: {
-      title: 'Invite',
+    create: {
+      title: 'Create a User',
+      createInvitation: 'Create invitation',
+      createUserNow: 'Create user now',
       inviteOther: 'Invite Other',
       selectRoles: 'Select new user roles',
-      email: 'Email (optional)',
-      inviteButton: 'Invite',
+      email: 'Email',
       messages: {
         successfullyCreated: 'Invitation created successfully'
       }
@@ -92,7 +94,6 @@ i18n.map('en', {
       },
       messages: {
         invalidEmail: 'Invalid Email',
-        passwordNotMatch: 'Passwords doesn\'t match',
         invalidInvitationCode: 'Invalid invitation code',
       }
     }

@@ -1,14 +1,14 @@
-<template name="orionBootstrapAccountsInvite">
+<template name="orionBootstrapAccountsCreate">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      {{ i18n 'accounts.invite.title' }}
+      {{ i18n 'accounts.create.title' }}
     {{/ Layout }}
 
     {{# Layout template="orionBootstrapContentContainer" }}
       {{# if invitationId }}
         {{# if createUser }}
           <div class="alert alert-success">
-            {{ i18n 'accounts.invite.messages.successfullyCreated' }}
+            {{ i18n 'accounts.create.messages.successfullyCreated' }}
           </div>
           <p>
             Enrollment email has been sent to {{email}}.
@@ -27,8 +27,22 @@
           <button class="btn btn-primary btn-invite-another">{{ i18n 'accounts.invite.inviteOther' }}</button>
         </div>
       {{ else }}
-        <form class="invite">
-          <p>{{ i18n 'accounts.invite.selectRoles' }}</p>
+        <form class="create">
+          <div class="radio">
+            <label>
+              <input type="radio" name="createMethod" value="invitation" checked>
+              {{ i18n 'accounts.create.createInvitation' }}
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="createMethod" value="now">
+              {{ i18n 'accounts.create.createUserNow' }}
+            </label>
+          </div>
+          <hr>
+
+          <p>{{ i18n 'accounts.create.selectRoles' }}</p>
           {{# each roles }}
             <div class="checkbox">
               <label>
@@ -36,20 +50,31 @@
               </label>
             </div>
           {{/ each }}
-          <p>{{ i18n 'accounts.invite.email' }}</p>
+          <hr>
+
+          <p>{{ i18n 'accounts.create.email' }} {{# if createWithInvitation }}({{ i18n 'global.optional' }}){{/ if }}</p>
           <div class="form-group">
             <input type="email" class="form-control">
           </div>
-          <p>Create this user now?</p>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" id="createUser" >
-            </label>
-          </div>
+          {{# unless createWithInvitation }}
+            <p>{{ i18n 'accounts.schema.profile.name' }}</p>
+            <div class="form-group">
+              <input type="text" name="name" class="form-control">
+            </div>
+            <p>{{ i18n 'accounts.schema.password.new' }}</p>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control">
+            </div>
+            <p>{{ i18n 'accounts.schema.password.confirm' }}</p>
+            <div class="form-group">
+              <input type="password" name="confirm" class="form-control">
+            </div>
+          {{/ unless }}
+
           <hr>
           <div class="buttons">
             <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.cancel' }}</a>
-            <button class="btn btn-primary">{{ i18n 'accounts.invite.inviteButton' }}</button>
+            <button class="btn btn-primary">{{ i18n 'global.create' }}</button>
           </div>
         </form>
         {{/ if }}

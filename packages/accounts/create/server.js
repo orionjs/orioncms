@@ -3,36 +3,7 @@ Meteor.publish('invitation', function (invitationId) {
   return orion.accounts.invitations.find(invitationId);
 });
 
-Accounts.onCreateUser(function(options, user) {
-  // console.log(options,user);
-  // Accounts.sendEnrollmentEmail();
-  if (options.profile)
-    user.profile = options.profile;
-  return user;
-
-})
-
 Meteor.methods({
-  createInvitation: function (options) {
-    check(options, {
-      roles: Array,
-      email: Match.Optional(String),
-      createUser: Boolean
-    });
-    var invitationId = orion.accounts.invitations.insert(options);
-
-    if (Options.get('sendAccountInvitationToEmail') && Options.get('accountInvitationEmailTemplate') && !options.createUser) {
-      // Send invitation by email
-    }
-
-    if(options.createUser){
-      Accounts.createUser({username: options.email, email:options.email});
-    }
-
-    return {invitationId:invitationId, email:options.email, createUser:options.createUser};
-  },
-
-
   registerWithInvitation: function(options) {
     check(options, {
       email: String,
@@ -56,6 +27,24 @@ Meteor.methods({
     Roles.setUserRoles(userId, invitation.roles);
 
     orion.accounts.invitations.remove(options.invitationId);
+
+    return userId;
+  },
+  accountsCreateUser: function(options) {
+    check(options, {
+      email: String,
+      password: String,
+      name: String,
+      roles: [String]
+    });
+
+    if (!Roles.userHasPermission(Meteor.userId(), 'accounts.create')) {
+      throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
+    }
+
+    var userId = Accounts.createUser({ email: options.email, password: options.password });
+    Meteor.users.update(userId, { $set: { profile: { name: options.name } } });
+    Roles.setUserRoles(userId, options.roles);
 
     return userId;
   },
