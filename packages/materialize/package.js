@@ -16,7 +16,6 @@ Package.onUse(function(api) {
     'aldeed:autoform@5.1.2',
     'nicolaslopezj:tabular-materialize@1.2.1',
     'useraccounts:materialize@1.8.1',
-    'zimme:iron-router-active@1.0.4',
     'gildaspk:autoform-materialize@0.0.18',
     ]);
 

@@ -15,7 +15,7 @@ Package.onUse(function(api) {
     'nicolaslopezj:reactive-templates@1.2.0',
     'nicolaslopezj:roles@1.1.0',
     'iron:router@1.0.7',
-    'zimme:iron-router-active@1.0.1',
+    'zimme:active-route@2.0.0',
     'orionjs:lang-en@1.1.0'
     ]);
 
