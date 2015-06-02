@@ -47,6 +47,10 @@ meteor add materialize:materialize orionjs:materialize
 
 This project is very active. If you use orion you should definitely **[subscribe](http://eepurl.com/bbji3b)** to the newsletter.
 
+#### Translate Orion
+
+If you want to help translating Orion to your language follow the [instructions](https://github.com/orionjs/examples/blob/master/language/README.md).
+
 #### Community Add-On Packages
 
 *Submit a pull request to add your package to this list*
