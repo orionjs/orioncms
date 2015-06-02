@@ -4,9 +4,11 @@
   {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
     {{# if collection.canShowCreate }}
-      <a href="{{ collection.createPath }}" class="floating-btn-onheader btn-floating btn-large waves-effect waves-light red right">
-        <i class="mdi-content-add"></i>
-      </a>
+      <div class="floating-btn-onheader">
+        <a href="{{ collection.createPath }}" class="btn-floating btn-large waves-effect waves-light red right">
+          <i class="mdi-content-add"></i>
+        </a>
+      </div>
     {{/ if }}
     {{# if collection.canIndex }}
       {{# if showTable }}

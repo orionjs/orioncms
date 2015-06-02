@@ -4,9 +4,11 @@
   {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
     {{# if userHasPermission 'pages.insert' }}
-      <a href="{{ pathFor 'pages.create' }}" class="floating-btn-onheader btn-floating btn-large waves-effect waves-light red right">
-        <i class="mdi-content-add"></i>
-      </a>
+      <div class="floating-btn-onheader">
+        <a href="{{ pathFor 'pages.create' }}" class="btn-floating btn-large waves-effect waves-light red right">
+          <i class="mdi-content-add"></i>
+        </a>
+      </div>
     {{/ if }}
     {{# if userHasPermission 'pages.index' }}
       {{> tabular table=tabularTable class="table index-table" }}
