@@ -1,24 +1,27 @@
 <template name="orionAttributesImageUpload">
-  <div class="fileUpload" {{ this.atts }}>
-    {{# if file }}
-      <div class="preview">
-        {{# if isImage file.url }}
-          <p><img src="{{ file.url }}"></p>
+  <div class="row">
+    <div class="image-attribute col m6 col-sm-6" {{ this.atts }}>
+      {{# if image }}
+        {{# if base64 }}
+          <img src="{{ base64 }}">
         {{ else }}
-          <p><i class="fa {{ iconForFile file.url }}"></i></p>
-          <p><a href="{{ file.url }}" target="_blank">{{ file.url }}</a></p>
+          <img src="{{ image.url }}">
         {{/ if }}
-      </div>
-      <button type="button" class="btn btn-danger btn-remove btn-xs">{{ i18n 'global.delete' }}</button>
-    {{ else }}
-      {{# if isUploading }}
-        <div class="progress"><div class="progress-bar progress-bar-striped active" style="width: {{ progress }}%"></div></div>
+        <br>
+        <button type="button" class="btn btn-danger btn-remove btn-xs red">{{ i18n 'global.delete' }}</button>
       {{ else }}
-        <span class="btn btn-default btn-file btn-xs">
-          {{ i18n 'attributes.file.choose' }} <input type="file">
-        </span>
+        {{# if base64 }}
+          <img src="{{ base64 }}" class="base64-preview {{ uploadingClass }}">
+          {{# if progress }}
+            {{ progress }}
+          {{/ if }}
+        {{ else }}
+          <span class="btn btn-default btn-file btn-xs">
+            {{ i18n 'attributes.image.choose' }} <input type="file">
+          </span>
+        {{/ if }}
       {{/ if }}
-    {{/ if }}
+    </div>
   </div>
 </template>
 

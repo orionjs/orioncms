@@ -1,10 +1,16 @@
-orion.attributes.registerAttribute('file', {
+orion.attributes.registerAttribute('image', {
   template: 'orionAttributesImageUpload',
   previewTemplate: 'orionAttributesImageUploadColumn',
   getSchema: function(options) {
     var subSchema = new SimpleSchema({
       url: {
         type: String
+      },
+      width: {
+        type: Number
+      },
+      height: {
+        type: Number
       },
       fileId: {
         type: String
@@ -15,6 +21,6 @@ orion.attributes.registerAttribute('file', {
     };
   },
   valueOut: function() {
-    return Session.get('file' + this.attr('data-schema-key'));
+    return Session.get('image' + this.attr('data-schema-key'));
   },
 });

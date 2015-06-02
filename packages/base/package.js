@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.1.1',
+  version: '1.1.2',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -35,6 +35,10 @@ Package.onUse(function(api) {
     'layouts.js',
     'home-route.js'
     ]);
+
+  api.addFiles([
+    'helpers_client.js'
+    ], 'client')
 
   api.export('orion');
 });

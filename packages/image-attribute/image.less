@@ -1,32 +1,33 @@
 .btn-file {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
 }
 
-.fileUpload {
-    .preview {
-        img {
-            max-width: 100%;
-        }
+.image-attribute {
+  img {
+    max-width: 100%;
+    &.uploading {
+      opacity: .5;
     }
+  }
 }
 
 .data-table-image {
-    max-height: 50px;
-    border-radius: 5px;
+  max-height: 50px;
+  border-radius: 5px;
 }
