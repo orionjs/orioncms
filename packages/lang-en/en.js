@@ -160,5 +160,18 @@ i18n.map('en', {
       choose: 'Choose file',
       noFile: 'No file',
     }
+  },
+  tabular: {
+    search: 'Search:',
+    info: 'Showing _START_ to _END_ of _TOTAL_ entries',
+    infoEmpty: 'Showing 0 to 0 of 0 entries',
+    lengthMenu: 'Show _MENU_ entries',
+    emptyTable: 'No data available in table',
+    paginate: {
+      first: 'First',
+      previous: 'Previous', 
+      next: 'Next',
+      last: 'Last',
+    }
   }
 })

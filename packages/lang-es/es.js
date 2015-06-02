@@ -161,5 +161,19 @@ i18n.map('en', {
       choose: 'Elegir archivo',
       noFile: 'Ningún archivo seleccionado',
     }
+  },
+  tabular: {
+    search: 'Buscar:',
+    info: 'Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros',
+    infoEmpty: 'Mostrando registros del 0 al 0 de un total de 0 registros',
+    lengthMenu: 'Mostrar _MENU_ registros',
+    emptyTable: 'Ningún dato disponible en esta tabla',
+    paginate: {
+      first: 'Primero',
+      previous: 'Anterior', 
+      next: 'Siguente',
+      last: 'Último',
+    }
+    
   }
 })
