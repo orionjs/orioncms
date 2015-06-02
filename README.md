@@ -73,3 +73,6 @@ If you want to help translating Orion to your language follow the [instructions]
 
 *We don't have community matained languages yet!*
 
+**Integrations:**
+
+- [nicolaslopezj:orion-ga](https://github.com/nicolaslopezj/orion-ga) Google analytics.
