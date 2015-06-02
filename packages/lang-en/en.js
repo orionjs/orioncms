@@ -36,6 +36,7 @@ i18n.map('en', {
       tableTitles: {
         name: 'Name',
         email: 'Email',
+        enrolled: 'Enrolled',
         roles: 'Roles',
         actions: 'Actions'
       }
@@ -169,7 +170,7 @@ i18n.map('en', {
     emptyTable: 'No data available in table',
     paginate: {
       first: 'First',
-      previous: 'Previous', 
+      previous: 'Previous',
       next: 'Next',
       last: 'Last',
     }

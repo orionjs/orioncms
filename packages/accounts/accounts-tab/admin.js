@@ -2,6 +2,8 @@
  * Display account settings
  */
 ReactiveTemplates.request('accounts.index');
+ReactiveTemplates.request('accounts.index.enrolled');
+ReactiveTemplates.request('accounts.index.buttons');
 ReactiveTemplates.request('accounts.update');
 
 /**
@@ -47,4 +49,4 @@ if (Meteor.isClient) {
       }
     });
   });
-} 
+}
