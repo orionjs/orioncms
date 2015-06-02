@@ -23,8 +23,7 @@ Package.onUse(function(api) {
     'orionjs:core',
     'iron:layout',
     'aldeed:autoform',
-    'useraccounts:materialize',
-    'zimme:iron-router-active'
+    'useraccounts:materialize'
     ]);
 
   api.addFiles([
