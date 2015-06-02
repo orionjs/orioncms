@@ -27,7 +27,7 @@ if (Meteor.isClient) {
     
     check(options, Match.ObjectIncluding({
       section: String,
-      title: String,
+      title: Match.OneOf(String, Function),
       routeName: String,
       activeRouteRegex: Match.Optional(String),
       permission: Match.Optional(String),
