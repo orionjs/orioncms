@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:bootstrap',
   summary: 'A simple theme for orion',
-  version: '1.0.2',
+  version: '1.1.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -10,14 +10,12 @@ Package.onUse(function(api) {
 
   api.use([
     'meteor-platform',
-    'orionjs:core@1.0.0',
+    'orionjs:core@1.1.0',
     'less',
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
     'aldeed:tabular@1.1.0',
-    'useraccounts:bootstrap@1.8.1',
-    'zimme:iron-router-active@1.0.4',
-    "fortawesome:fontawesome@4.3.0"
+    'useraccounts:bootstrap@1.8.1'
     ]);
 
   api.imply([
@@ -47,8 +45,8 @@ Package.onUse(function(api) {
     'views/accounts/profile.js',
     'views/accounts/accounts.less',
     'views/accounts/accounts.html',
-    'views/accounts/roles.html',
-    'views/accounts/invite.html',
+    'views/accounts/update.html',
+    'views/accounts/create.html',
     'views/config/update.html',
     'views/config/update.js',
     'views/dictionary/update.html',

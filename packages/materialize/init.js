@@ -1,12 +1,12 @@
 Options.init('homePath')
 Options.init('siteName');
+Options.init('materialize.headerColor');
 
 ReactiveTemplates.request('tabs', 'orionMaterializeTabs');
 
 ReactiveTemplates.set('layout', 'orionMaterializeLayout');
 ReactiveTemplates.set('outAdminLayout', 'orionMaterializeOutAdminLayout');
 
-ReactiveTemplates.set('links', 'orionMaterializeSidebar');
 ReactiveTemplates.set('login', 'orionMaterializeLogin');
 ReactiveTemplates.set('registerWithInvitation', 'orionMaterializeRegisterWithInvitation');
 
@@ -15,8 +15,8 @@ ReactiveTemplates.set('myAccount.password', 'orionMaterializeAccountPassword');
 ReactiveTemplates.set('myAccount.profile', 'orionMaterializeAccountProfile');
 
 ReactiveTemplates.set('accounts.index', 'orionMaterializeAccountsIndex');
-ReactiveTemplates.set('accounts.update.roles', 'orionMaterializeAccountsUpdateRoles');
-ReactiveTemplates.set('accounts.invite', 'orionMaterializeAccountsInvite');
+ReactiveTemplates.set('accounts.update', 'orionMaterializeAccountsUpdate');
+ReactiveTemplates.set('accounts.create', 'orionMaterializeAccountsCreate');
 
 ReactiveTemplates.set('configUpdate', 'orionMaterializeConfigUpdate');
 ReactiveTemplates.set('dictionaryUpdate', 'orionMaterializeDictionaryUpdate');

@@ -13,7 +13,7 @@
           <p><a href="{{ file.url }}" target="_blank">{{ file.url }}</a></p>
         {{/ if }}
       </div>
-      <button type="button" class="btn btn-danger btn-remove btn-xs">Remove</button>
+      <button type="button" class="btn btn-danger btn-remove btn-xs">{{ i18n 'global.remove' }}</button>
     {{ else }}
       {{# if isUploading }}
         <br><br>
@@ -24,13 +24,13 @@
       {{ else }}
         <br>
         <div class="file-field input-field">
-          <input class="file-path validate" type="text"/>
-          <div class="btn btn-small">
-            <span>File</span>
+          <div class="waves-effect waves-light btn">
+            <span>{{ i18n 'attributes.file.choose' }}</span>
             <input type="file" />
           </div>
+          <br><br><br>
         </div>
-      {{/ if }} 
+      {{/ if }}
     {{/ if }}
   </div>
 </template>

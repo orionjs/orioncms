@@ -1,5 +1,8 @@
-Meteor.publish('pages', function (arg1, arg2) {
-  arg1 = arg1 ? arg1 : {};
-  arg2 = arg2 ? arg2 : {};
-  return orion.pages.collection.find(arg1, arg2);
+Meteor.publish('pages', function () {
+  return orion.pages.collection.find();
+});
+
+Meteor.publish('page', function (url) {
+  check(url, String);
+  return orion.pages.collection.find({ url: url });
 });

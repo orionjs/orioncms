@@ -40,24 +40,26 @@ Router.route('/admin/my-account/profile', function () {
 orion.accounts.addProtectedRoute('myAccount.profile');
 
 /**
- * Register the link
- */
-orion.addLink({
-  section: 'bottom',
-  title: 'My Account',
-  routeName: 'myAccount.index',
-  activeRouteRegex: 'myAccount',
-});
-
-/**
  * Create the template events account settings
  */
 if (Meteor.isClient) {
+  /**
+   * Register the link
+   */
+  Tracker.autorun(function () {
+    orion.addLink({
+      section: 'user',
+      title: i18n('accounts.myAccount.title'),
+      routeName: 'myAccount.index',
+      activeRouteRegex: 'myAccount',
+    });
+  });
+
   ReactiveTemplates.events('myAccount.index', {
     'click .logout': function() {
       return Meteor.logout();
     }
-  })
+  });
 
   ReactiveTemplates.helpers('myAccount.profile', {
     getDoc: function() {
@@ -66,5 +68,5 @@ if (Meteor.isClient) {
     getSchema: function() {
       return orion.accounts.profileSchema;
     }
-  })
+  });
 }

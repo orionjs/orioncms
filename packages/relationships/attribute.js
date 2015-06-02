@@ -8,7 +8,7 @@ var getSchema = function(options, hasMany) {
     filter: Match.Optional(Function),
     createFilter: Match.Optional(Function),
     create: Match.Optional(Function),
-    aditionalFields: Match.Optional(Array),
+    additionalFields: Match.Optional(Array),
     render: Match.Optional({
       item: Function,
       option: Function
@@ -33,11 +33,11 @@ var getSchema = function(options, hasMany) {
       option: function(item, escape) {
         return '<div>' + escape(item[options.titleField]) + '</div>';
       }
-    }
+    };
   }
 
-  if (!options.aditionalFields) {
-    options.aditionalFields = [];
+  if (!options.additionalFields) {
+    options.additionalFields = [];
   }
 
   if (options.collection.pluralName) {
@@ -49,14 +49,14 @@ var getSchema = function(options, hasMany) {
   }
 
   if (!options.pluralName) {
-    options.pluralName = 'items';
+    options.pluralName = i18n('collections.common.defaultPluralName');
   }
 
   if (!options.singularName) {
-    options.singularName = 'item';
+    options.singularName = i18n('collections.common.defaultSingularName');
   }
 
-  options.fields = options.aditionalFields;
+  options.fields = options.additionalFields;
   options.fields.push(options.titleField);
 
   if (Meteor.isServer) {
@@ -64,7 +64,7 @@ var getSchema = function(options, hasMany) {
       var pubFields = {};
       for (var i = 0; i < options.fields.length; i++) {
         pubFields[options.fields[i]] = 1;
-      };
+      }
       return options.collection.find(options.filter(this.userId), { fields: pubFields });
     }, { is_auto: true });
     if (!hasMany) {
@@ -72,7 +72,7 @@ var getSchema = function(options, hasMany) {
         var pubFields = {};
         for (var i = 0; i < options.fields.length; i++) {
           pubFields[options.fields[i]] = 1;
-        };
+        }
         var filter = options.filter(this.userId);
         filter._id = id;
         return options.collection.find(filter, { fields: pubFields });
@@ -84,14 +84,14 @@ var getSchema = function(options, hasMany) {
     return {
       type: [String],
       orion: options
-    }
+    };
   } else {
     return {
       type: String,
       orion: options
-    }
+    };
   }
-}
+};
 
 orion.attributes.registerAttribute('hasMany', {
   template: 'orionAttributesHasMany',

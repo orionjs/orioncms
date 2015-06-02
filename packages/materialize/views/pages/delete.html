@@ -1,12 +1,12 @@
 <template name="orionMaterializePagesDelete">
+  {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{ i18n 'pages.delete.title' }}
+  {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{# Layout template="orionMaterializeHeaderContainer" }}
-      Delete page
-    {{/ Layout }}
-    <p>Are you sure you want to delete this page?</p>
+    <p>{{ i18n 'pages.delete.confirmQuestion' }}</p>
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
-    <a class="cancel-delete" href="{{ pathFor 'pages.update' }}">Cancel</a>
-    <a class="red-text confirm-delete" href="#">Confirm</a>
+    <a class="cancel-delete waves-effect waves-light btn" href="{{ pathFor 'pages.update' }}">{{ i18n 'global.cancel' }}</a>
+    <a class="waves-effect waves-light btn red confirm-delete" href="#">{{ i18n 'global.confirm' }}</a>
   {{/ Layout }}
 </template>

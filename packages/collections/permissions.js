@@ -4,52 +4,27 @@ orion.collections.onCreated(function() {
   /**
    * Collection permissions
    */
-  Roles.registerAction('collection.' + this.name + '.index', true);
-  Roles.registerAction('collection.' + this.name + '.insert', true);
-  Roles.registerAction('collection.' + this.name + '.update', true);
-  Roles.registerAction('collection.' + this.name + '.remove', true);
-  Roles.registerAction('collection.' + this.name + '.showCreate', true);
-  Roles.registerAction('collection.' + this.name + '.showUpdate', true);
-  Roles.registerAction('collection.' + this.name + '.showRemove', true);
-  Roles.registerHelper('collection.' + this.name + '.indexFilter', {});
+  Roles.registerAction('collections.' + this.name + '.index', true);
+  Roles.registerAction('collections.' + this.name + '.showCreate', true);
+  Roles.registerAction('collections.' + this.name + '.showUpdate', true);
+  Roles.registerAction('collections.' + this.name + '.showRemove', true);
+  Roles.registerHelper('collections.' + this.name + '.indexFilter', {});
 
-  this.allow({
-    insert: function (userId, doc) {
-      return Roles.allow(userId, 'collection.' + self.name + '.insert', userId, doc)
-    },
-    update: function (userId, doc, fields, modifier) {
-      return Roles.allow(userId, 'collection.' + self.name + '.update', userId, doc, fields, modifier)
-    },
-    remove: function (userId, doc) {
-      return Roles.allow(userId, 'collection.' + self.name + '.remove', userId, doc)
-    }
-  });
-
-  this.deny({
-    insert: function (userId, doc) {
-      return Roles.deny(userId, 'collection.' + self.name + '.insert', userId, doc)
-    },
-    update: function (userId, doc, fields, modifier) {
-      return Roles.deny(userId, 'collection.' + self.name + '.update', userId, doc, fields, modifier)
-    },
-    remove: function (userId, doc) {
-      return Roles.deny(userId, 'collection.' + self.name + '.remove', userId, doc)
-    }
-  });
+  this.attachRoles('collections.' + this.name);
 
   if (Meteor.isClient) {
     this.canIndex = function() {
-      return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.index');
+      return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.index');
     }
     this.canShowCreate = function() {
-      return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showCreate');
+      return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showCreate');
     }
     this.helpers({
       canShowUpdate: function () {
-        return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showUpdate', this);
+        return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showUpdate', this);
       },
       canShowRemove: function() {
-        return Roles.userHasPermission(Meteor.userId(), 'collection.' + self.name + '.showRemove', this);
+        return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showRemove', this);
       }
     });
   }

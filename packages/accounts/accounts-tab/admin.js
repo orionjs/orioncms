@@ -2,7 +2,7 @@
  * Display account settings
  */
 ReactiveTemplates.request('accounts.index');
-ReactiveTemplates.request('accounts.update.roles');
+ReactiveTemplates.request('accounts.update');
 
 /**
  * Register the route
@@ -16,28 +16,35 @@ orion.accounts.addProtectedRoute('accounts.index');
 /**
  * Register the link
  */
-orion.addLink({
-  section: 'bottom',
-  title: 'Accounts',
-  routeName: 'accounts.index',
-  activeRouteRegex: 'accounts',
-  permission: 'accounts.index'
-});
+if (Meteor.isClient) {
+  Tracker.autorun(function () {
+    orion.addLink({
+      section: 'bottom',
+      title: i18n('accounts.index.title'),
+      routeName: 'accounts.index',
+      activeRouteRegex: 'accounts',
+      permission: 'accounts.index'
+    });
+  });
+}
 
 /**
- * Edit the roles of the user
+ * Edit user
  */
-Router.route('/admin/accounts/:_id/update/roles', function () {
+Router.route('/admin/accounts/:_id/update', function () {
   this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('accounts.update.roles'));
-}, { name: 'accounts.update.roles' });
-orion.accounts.addProtectedRoute('accounts.update.roles');
+  this.render(ReactiveTemplates.get('accounts.update'));
+}, { name: 'accounts.update' });
+orion.accounts.addProtectedRoute('accounts.update');
 
-orion.accounts.addAdminUsersButton({
-  title: 'Edit Roles',
-  route: 'accounts.update.roles',
-  shouldShow: function() {
-    return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');
-  }
-});
-
+if (Meteor.isClient) {
+  Tracker.autorun(function () {
+    orion.accounts.addAdminUsersButton({
+      title: i18n('accounts.index.actions.edit'),
+      route: 'accounts.update',
+      shouldShow: function() {
+        return Roles.userHasPermission(Meteor.userId(), 'accounts.update.roles');
+      }
+    });
+  });
+} 

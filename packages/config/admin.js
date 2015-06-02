@@ -19,17 +19,18 @@ orion.accounts.addProtectedRoute('config.update');
 /**
  * Register the link
  */
-Tracker.autorun(function () {
-  if (!orion.config.isActive()) return;
-
-  orion.addLink({
-    section: 'bottom',
-    title: 'App Configuration',
-    routeName: 'config.update',
-    activeRouteRegex: 'config',
-    permission: 'config.update'
+if (Meteor.isClient) {
+  Tracker.autorun(function () {
+    if (!orion.config.isActive()) return;
+    orion.addLink({
+      section: 'bottom',
+      title: i18n('config.update.title'),
+      routeName: 'config.update',
+      activeRouteRegex: 'config',
+      permission: 'config.update'
+    });
   });
-});
+}
 
 /**
  * Create the template helpers for a dictionary

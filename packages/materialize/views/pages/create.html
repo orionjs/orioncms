@@ -1,33 +1,33 @@
 <template name="orionMaterializePagesCreate">
   {{# if userHasPermission 'pages.index' }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      {{# if choosenTemplate }}
+        {{ i18n 'pages.create.title' }} - {{ choosenTemplate.name }}
+      {{ else }}
+        {{ i18n 'pages.create.chooseTemplate' }}
+      {{/ if }}
+    {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
-      {{# Layout template="orionMaterializeHeaderContainer" }}
-        {{# if choosenTemplate }}
-          Create a new page - {{ choosenTemplate.name }}
-        {{ else }}
-          Choose a template
-        {{/ if }}
-      {{/ Layout }}
       {{# if choosenTemplate }}
         {{> quickForm collection="orion.pages.collection" schema=choosenTemplate.schema id="orionPagesCreateForm" type="insert"  buttonContent=false }}
       {{ else }}
         <div class="collection">
           {{# each templates }}
-            <a href="#" class="collection-item template-choose grey-text text-darken-4">
+            <a href="#" class="collection-item template-choose grey-text text-darken-4 waves-effect waves-light">
               <p class=""><b>{{ name }}</b></p>
               <p>{{ description }}</p>
             </a>
           {{/ each }}
         </div>
       {{/ if }}
-      
+
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
       {{# if choosenTemplate }}
-        <a class="cancel-btn" href="#">Back</a>
-        <a class="light-blue-text text-accent-4 submit-btn" href="#">Create</a>
+        <a class="waves-effect waves-light btn cancel-btn" href="#">{{ i18n 'global.back'}}</a>
+        <a class="waves-effect waves-light btn light-blue accent-4 submit-btn" href="#">{{ i18n 'global.create' }}</a>
       {{ else }}
-        <a href="{{ pathFor 'pages.index' }}">Back</a>
+        <a href="{{ pathFor 'pages.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.back' }}</a>
       {{/ if }}
     {{/ Layout }}
   {{/ if }}

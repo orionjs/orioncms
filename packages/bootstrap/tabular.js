@@ -10,7 +10,7 @@ orion.collections.onCreated(function() {
       { data: "_id", title: "ID" }
     ],
     selector: function(userId) {
-      var selectors = Roles.helper(userId, 'collection.' + self.name + '.indexFilter');
+      var selectors = Roles.helper(userId, 'collections.' + self.name + '.indexFilter');
       return { $or: selectors };
     }
   }, this.tabular);

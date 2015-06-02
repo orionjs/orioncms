@@ -47,8 +47,9 @@ Meteor.startup(function () {
     return;
   }
   var fields = { _id: 0 };
-  _.each(orion.config.publicOptions, function(option) {
-    fields[option] = 1;
+  _.each(orion.config.getPublicFields(), function(field) {
+    fields[field] = 1;
   });
-  Inject.obj('orion.config', orion.config.collection.findOne({}, { fields: fields }));
+  var config = orion.config.collection.findOne({}, { fields: fields });
+  Inject.obj('orion.config', config);
 });

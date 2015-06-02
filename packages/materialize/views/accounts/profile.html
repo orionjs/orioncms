@@ -1,18 +1,14 @@
 <template name="orionMaterializeAccountProfile">
   {{# autoForm schema=getSchema id="updateProfileForm" collection="Meteor.users" type="update" doc=getDoc }}
-
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      {{ i18n 'accounts.updateProfile.title' }}
+    {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
-      {{# Layout template="orionMaterializeHeaderContainer" }}
-        Update Profile
-      {{/ Layout }}
-
       {{> afQuickFields name='profile' }}
-
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ pathFor 'myAccount.index' }}">Cancel</a>
-      <button class="waves-effect waves-teal btn-flat light-blue-text text-accent-4">Save</button>
+      <a href="{{ pathFor 'myAccount.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>
+      <button class="waves-effect waves-light btn light-blue accent-4">{{ i18n 'global.save' }}</button>
     {{/ Layout }}
-
   {{/ autoForm }}
 </template>

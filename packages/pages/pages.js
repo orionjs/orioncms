@@ -63,13 +63,13 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
   return _.extend({
     title: {
       type: String,
-      label: 'Title'
+      label: orion.helpers.getTranslation('pages.schema.title')
     },
     url: {
       type: String,
       regEx: /^[a-z0-9A-Z_-]+$/,
       unique: true,
-      label: 'URL'
+      label: orion.helpers.getTranslation('pages.schema.url')
     },
     template: {
       type: String,
@@ -144,8 +144,8 @@ orion.pages.tabular = new Tabular.Table({
   name: 'PagesIndex',
   collection: orion.pages.collection,
   columns: [
-    {data: 'title', title: 'Title'},
-    {data: 'url', title: 'URL'}
+    { data: 'title', title: i18n('pages.schema.title') },
+    { data: 'url', title: i18n('pages.schema.url') }
   ]
 });
 
@@ -154,26 +154,17 @@ orion.pages.tabular = new Tabular.Table({
  */
 Meteor.startup(function(){
   Router.route('/:url', function() {
-    this.subscribe('pages', { url: this.params.url }).wait();
-    Tracker.autorun((function(self) {
-      return function() {
-        // Subscription to the page is available
-        if (self.ready()) {
-          var page = orion.pages.collection.findOne({ url: self.params.url });
-          var template = orion.pages.templates[page.template];
-          if (page) {
-            if (template.layout) {
-              self.layout(template.layout);
-            }
-            self.render(page.template, {data: page});
-          }
-        // Subscription to pages is not already available
-        } else {
-          // Render the loading template
-          self.render('loading');
+    var subs = Meteor.subscribe('page', this.params.url);
+    this.wait(subs);
+    if (subs.ready()) {
+      var page = orion.pages.collection.findOne({ url: this.params.url });
+      var template = orion.pages.templates[page.template];
+      if (page) {
+        if (template.layout) {
+          this.layout(template.layout);
         }
-      };
-    })(this));
-    this.next();
+        this.render(page.template, {data: page});
+      }
+    }
   }, { name: 'pages' });
 });

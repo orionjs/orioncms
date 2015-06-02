@@ -1,15 +1,15 @@
 <template name="orionBootstrapCollectionsDelete">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      Delete {{ collection.singularName }}
+      {{ i18n 'collections.delete.title' collection.singularName }}
     {{/ Layout }}
     {{# Layout template="orionBootstrapContentContainer" }}
-      <p>Are you sure you want to delete this {{ collection.singularName }}?</p>
+      <p>{{ i18n 'collections.delete.confirmQuestion' collection.singularName }}</p>
 
       {{# if item.canShowRemove }}
       <div class="">
-        <a class="btn btn-default" href="{{ collection.indexPath }}">Cancel</a>
-        <a class="btn btn-danger confirm-delete">Confirm</a>
+        <a class="btn btn-default" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
+        <a class="btn btn-danger confirm-delete">{{ i18n 'global.confirm' }}</a>
       </div>
       {{/ if }}
     {{/ Layout }}

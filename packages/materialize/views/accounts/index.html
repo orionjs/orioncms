@@ -1,10 +1,8 @@
 <template name="orionMaterializeAccountIndex">
+  {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{ i18n 'accounts.myAccount.title' }}
+  {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{# Layout template="orionMaterializeHeaderContainer" }}
-      My Account
-    {{/ Layout }}
-    <br>
-
     <div class="row">
       {{# if currentUser.profile.picture }}
         <div class="col m2 s12">
@@ -28,8 +26,8 @@
     </div>
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a class="logout" href="#">Logout</a>
-      <a href="{{ pathFor 'myAccount.profile' }}" class="">Update Profile</a>
-      <a href="{{ pathFor 'myAccount.password' }}" class="">Change Password</a>
+      <a class="logout waves-effect waves-light btn" href="#">{{ i18n 'global.logout' }}</a>
+      <a href="{{ pathFor 'myAccount.profile' }}" class="waves-effect waves-light btn">{{ i18n 'accounts.updateProfile.title' }}</a>
+      <a href="{{ pathFor 'myAccount.password' }}" class="waves-effect waves-light btn">{{ i18n 'accounts.changePassword.title' }}</a>
   {{/ Layout }}
 </template>

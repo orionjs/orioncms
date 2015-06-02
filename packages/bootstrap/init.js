@@ -1,4 +1,4 @@
-Options.init('homePath')
+Options.init('homePath');
 Options.init('siteName');
 
 ReactiveTemplates.request('tabs', 'orionBootstrapTabs');
@@ -15,8 +15,8 @@ ReactiveTemplates.set('myAccount.password', 'orionBootstrapAccountPassword');
 ReactiveTemplates.set('myAccount.profile', 'orionBootstrapAccountProfile');
 
 ReactiveTemplates.set('accounts.index', 'orionBootstrapAccountsIndex');
-ReactiveTemplates.set('accounts.update.roles', 'orionBootstrapAccountsUpdateRoles');
-ReactiveTemplates.set('accounts.invite', 'orionBootstrapAccountsInvite');
+ReactiveTemplates.set('accounts.update', 'orionBootstrapAccountsUpdate');
+ReactiveTemplates.set('accounts.create', 'orionBootstrapAccountsCreate');
 
 ReactiveTemplates.set('configUpdate', 'orionBootstrapConfigUpdate');
 ReactiveTemplates.set('dictionaryUpdate', 'orionBootstrapDictionaryUpdate');

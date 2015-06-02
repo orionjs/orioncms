@@ -1,14 +1,14 @@
 <template name="orionMaterializeCollectionsCreate">
   {{# if collection.canShowCreate }}
+    {{# Layout template="orionMaterializeHeaderContainer" }}
+      {{ i18n 'collections.create.title' collection.singularName }}
+    {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
-      {{# Layout template="orionMaterializeHeaderContainer" }}
-        Create a {{ collection.singularName }}
-      {{/ Layout }}
       {{> quickForm collection=collection id="orionMaterializeCollectionsCreateForm" type="insert" buttonContent=false }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ collection.indexPath }}">Cancel</a>
-      <a class="light-blue-text text-accent-4 create-btn" href="#">Create</a>
+      <a href="{{ collection.indexPath }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>
+      <a class="waves-effect waves-light btn light-blue accent-4 create-btn" href="#">{{ i18n 'global.create' }}</a>
     {{/ Layout }}
   {{/ if }}
 </template>

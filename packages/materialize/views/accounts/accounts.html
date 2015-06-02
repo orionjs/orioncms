@@ -1,21 +1,26 @@
 <template name="orionMaterializeAccountsIndex">
+  {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{ i18n 'accounts.index.title' }}
+  {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{# Layout template="orionMaterializeHeaderContainer" }}
-      Accounts
-    {{/ Layout }}
+    {{# if userHasPermission 'accounts.showCreate' }}
+      <a href="{{ pathFor 'accounts.create' }}" class="floating-btn-onheader btn-floating btn-large waves-effect waves-light red right">
+        <i class="mdi-content-add"></i>
+      </a>
+    {{/ if }}
     <table class="table hoverable responsive-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Roles</th>
-          <th>Actions</th>
+          <th>{{ i18n 'accounts.index.tableTitles.name' }}</th>
+          <th>{{ i18n 'accounts.index.tableTitles.email' }}</th>
+          <th>{{ i18n 'accounts.index.tableTitles.roles' }}</th>
+          <th>{{ i18n 'accounts.index.tableTitles.actions' }}</th>
         </tr>
       </thead>
       <tbody>
         {{# each users }}
           <tr>
-            <td><b>{{ profile.name }}</b></td>
+            <td><b>{{ name }}</b></td>
             <td>
               {{# each emails }}
                 {{ address }}
@@ -28,17 +33,12 @@
             </td>
             <td>
               {{# each buttons }}
-                <a class="btn waves-effect waves-teal light-blue accent-4 user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
+                <a class="btn waves-effect waves-light light-blue accent-4 user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
               {{/ each }}
             </td>
           </tr>
         {{/ each }}
       </tbody>
     </table>
-  {{/ Layout }}
-  {{# Layout template="orionMaterializeButtonsContainer" }}
-    {{# if userHasPermission 'accounts.invite' }}
-      <a href="{{ pathFor 'accounts.invite' }}" >Invite</a>
-    {{/ if }}
   {{/ Layout }}
 </template>

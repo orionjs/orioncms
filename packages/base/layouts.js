@@ -11,46 +11,48 @@ ReactiveTemplates.request('outAdminLayout');
 /**
  * Handle links. To add tabs to the sidebar
  */
-Options.init('links', []);
-orion.addLink = function(options) {
-  check(options, Match.ObjectIncluding({
-    section: String,
-    title: String,
-    routeName: String,
-    activeRouteRegex: Match.Optional(String),
-    permission: Match.Optional(String),
-  }));
-  Options.arrayPush('links', options);
-}
+if (Meteor.isClient) {
+  Options.init('links', []);
 
-/**
- * Requests a links template
- */
-ReactiveTemplates.request('links');
+  orion.addLink = function(options) {
+    var currentLinks;
+
+    Tracker.nonreactive(function () {
+      currentLinks = Options.get('links');
+      var currentLink = _.findWhere(currentLinks, { routeName: options.routeName });
+      if (currentLink) {
+        currentLinks = _.without(currentLinks, currentLink);
+      }
+    });
+    
+    check(options, Match.ObjectIncluding({
+      section: String,
+      title: String,
+      routeName: String,
+      activeRouteRegex: Match.Optional(String),
+      permission: Match.Optional(String),
+    }));
+    currentLinks.push(options);
+    Options.set('links', currentLinks);
+  };
+}
 
 if (Meteor.isClient) {
   /**
    * Set the helpers to the sidebar template
    */
-  ReactiveTemplates.helpers('links', {
-    /**
-     * Return the links for the admin.
-     * You can pass a section and it will filter
-     */
-    links: function(section) {
-      var links = Options.get('links');
-      if (section) {
-        links = _.where(links, { section: section });
-      }
-      _.each(links, function(value, key, list){
-        if (value.permission) {
-          if (!Roles.userHasPermission(Meteor.userId(), value.permission)) {
-            delete list[key];
-          }
-        }
-      });
-      return links;
+  Template.registerHelper('adminLinks', function(section) {
+    var links = Options.get('links');
+    if (section) {
+      links = _.where(links, { section: section });
     }
-  });
+    _.each(links, function(value, key, list){
+      if (value.permission) {
+        if (!Roles.userHasPermission(Meteor.userId(), value.permission)) {
+          delete list[key];
+        }
+      }
+    });
+    return links;
+  })
 }
-

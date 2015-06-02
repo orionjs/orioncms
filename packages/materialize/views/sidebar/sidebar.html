@@ -1,25 +1,18 @@
 <template name="orionMaterializeSidebar">
-  <header>
-    <div class="container button-collapse-container">
-      <a href="#" data-activates="nav-mobile" class="button-collapse grey-text text-darken-3">
-        <h4>
-          <i class="mdi-navigation-menu"></i>
-        </h4>
-      </a>
-    </div>
+  <header class="materialize-sidebar">
     <ul id="nav-mobile" class="side-nav fixed">
       <li class="sidebar-brand no-padding">
           <a href="{{ options 'homePath' '/' }}" class="waves-effect">
               {{ options 'siteName' 'Admin' }}
           </a>
       </li>
-      {{# each links 'top' }}
+      {{# each adminLinks 'top' }}
         {{> orionMaterializeSidebarLink }}
       {{/ each }}
-      {{# each links 'medium' }}
+      {{# each adminLinks 'medium' }}
         {{> orionMaterializeSidebarLink }}
       {{/ each }}
-      {{# each links 'bottom' }}
+      {{# each adminLinks 'bottom' }}
         {{> orionMaterializeSidebarLink }}
       {{/ each }}
     </ul>

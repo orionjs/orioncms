@@ -1,5 +1,6 @@
 ReactiveTemplates.onRendered('accounts.index', function() {
   this.subscribe('adminAccountsList');
+  this.subscribe('enrolledUsers');
 })
 
 ReactiveTemplates.helpers('accounts.index', {
@@ -14,6 +15,20 @@ ReactiveTemplates.helpers('accounts.index', {
       }
       return value.shouldShow(self);
     });
+  },
+
+  name: function() {
+    return this.profile && this.profile.name || "NA";
+  },
+
+  enrolled: function() {
+    var item = EnrolledUsers.findOne({_id: this._id}),
+        value = item && item.enrolled;
+
+    if(value)
+      return "YES";
+
+    return "NO";
   }
 });
 
@@ -30,27 +45,48 @@ ReactiveTemplates.events('accounts.index', {
   }
 });
 
-ReactiveTemplates.onRendered('accounts.update.roles', function() {
+ReactiveTemplates.onRendered('accounts.update', function() {
   var userId = Router.current().params._id;
   this.subscribe('adminAccountsUpdateRoles', userId);
-})
+});
 
-ReactiveTemplates.helpers('accounts.update.roles', {
+ReactiveTemplates.helpers('accounts.update', {
   user: function() {
     var userId = Router.current().params._id;
     return Meteor.users.findOne(userId);
   },
+  collection: function() {
+    return Meteor.users;
+  },
+  emailsSchema: function(){
+    return UsersEmailsSchema;
+  },
+  profileSchema: function() {
+    return orion.accounts.profileSchema;
+  },
+  passwordSchema: function(){
+    return UsersPasswordSchema;
+  },
   roles: function() {
     return _.keys(Roles._roles);
   },
-  hasRole: function() {
+  hasRole: function(role) {
     var userId = Router.current().params._id;
-    var role = String(this);
     return Roles.userHasRole(userId, role);
   }
 });
 
-ReactiveTemplates.events('accounts.update.roles', {
+ReactiveTemplates.events('accounts.update', {
+  'click #btnDeleteUser': function (event, template) {
+    var userId = Router.current().params._id;
+    Meteor.call('removeUser', userId, function (error, result) {
+      if (error) {
+        alert(error.reason)
+      } else {
+        Router.go('accounts.index');
+      }
+    });
+  },
   'submit form.roles': function (event, template) {
     var userId = Router.current().params._id;
     var roles = [];
@@ -62,9 +98,7 @@ ReactiveTemplates.events('accounts.update.roles', {
     });
     Meteor.call('updateRoles', userId, roles, function (error, result) {
       if (error) {
-        alert(error.reason) 
-      } else {
-        Router.go('accounts.index');
+        alert(error.reason)
       }
     });
     return false;

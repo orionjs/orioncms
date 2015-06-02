@@ -23,7 +23,7 @@ Router.route('/admin/pages/:_id/edit', function() {
   this.item = item;
   this.render(ReactiveTemplates.get('pages.update'), {
     data: function() {
-      return item; 
+      return item;
     }
   });
 } , {name: 'pages.update'});
@@ -37,7 +37,7 @@ Router.route('/admin/pages/:_id/delete', function() {
   this.item = item;
   this.render(ReactiveTemplates.get('pages.delete'), {
     data: function() {
-      return item; 
+      return item;
     }
   });
 } , {name: 'pages.delete'});
@@ -47,10 +47,14 @@ orion.accounts.addProtectedRoute('pages.delete');
 /**
  * Register the Pages link in the admin panel
  */
-orion.addLink({
-  section: 'medium',
-  title: 'Pages',
-  routeName: 'pages.index',
-  activeRouteRegex: 'pages',
-  permission: 'pages.index',
-});
+if (Meteor.isClient) {
+  Tracker.autorun(function () {
+    orion.addLink({
+      section: 'medium',
+      title: i18n('pages.index.title'),
+      routeName: 'pages.index',
+      activeRouteRegex: 'pages',
+      permission: 'pages.index',
+    });
+  });
+}

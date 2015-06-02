@@ -1,7 +1,8 @@
 /**
  * Can the user update user users roles?
  */
-Roles.registerAction('accounts.invite', true);
+Roles.registerAction('accounts.showCreate', true);
+Roles.registerAction('accounts.create', true);
 Options.init('sendAccountInvitationToEmail', false);
 Options.init('accountInvitationEmailTemplate');
 
@@ -13,16 +14,7 @@ orion.accounts.invitations = new Meteor.Collection('invitations');
 /**
  * Invitation permissions
  */
-orion.accounts.invitations.allow({
-  'insert': function(userId, doc) {
-    return Roles.allow(this.userId, 'accounts.invite')
-  }
-});
-orion.accounts.invitations.deny({
-  'insert': function(userId, doc) {
-    return Roles.deny(this.userId, 'accounts.invite')
-  }
-});
+orion.accounts.invitations.attachRoles('accounts.invitations');
 
 /**
  * Invitations Schema
@@ -40,8 +32,3 @@ InvitationsSchema = new SimpleSchema({
 });
 
 orion.accounts.invitations.attachSchema(InvitationsSchema);
-
-
-
-
-

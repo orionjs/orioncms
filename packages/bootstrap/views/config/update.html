@@ -1,7 +1,7 @@
 <template name="orionBootstrapConfigUpdate">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      Config
+      {{ i18n 'config.update.title' }}
     {{/ Layout }}
     {{# Layout template="orionBootstrapContentContainer" }}
       <p>
@@ -16,7 +16,7 @@
         {{/ if }}
         <br>
         <div class="text-right">
-          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-primary">{{ i18n 'global.save' }}</button>
         </div>
       {{/ autoForm }}
     {{/ Layout }}

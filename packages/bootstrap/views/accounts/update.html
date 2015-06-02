@@ -1,0 +1,75 @@
+<template name="orionBootstrapAccountsUpdate">
+  {{# Layout template="orionBootstrapSmallContentOffset" }}
+    {{# Layout template="orionBootstrapTitle" }}
+      {{ i18n 'accounts.update.title' }}
+    {{/ Layout }}
+
+    {{# autoForm id="accountsUpdateEmailsForm" schema=emailsSchema type="method-update" doc=user meteormethod="orionAccountsUpdateEmails" }}
+      {{> afQuickField name='emails' }}
+      <br>
+      <button class="btn btn-primary">{{ i18n 'global.save' }}</button>
+    {{/ autoForm }}
+    <hr>
+
+    <h2>{{ i18n 'accounts.update.sections.profile.title' }}</h2>
+    <br>
+    <div class="well">
+      {{# autoForm id="accountsUpdateProfileForm" schema=profileSchema type="method-update" doc=user meteormethod="orionAccountsUpdateProfile" }}
+        {{> afQuickFields name='profile' }}
+        <br>
+        <button class="btn btn-primary">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
+    <hr>
+
+    <h2>{{ i18n 'accounts.update.sections.roles.title' }}</h2>
+    <br>
+    <div class="well">
+      <form class="roles">
+        <p>{{ i18n 'accounts.update.sections.roles.selectRoles' }}</p>
+        {{# each roles }}
+          <div class="checkbox">
+            <label>
+              {{# if hasRole this }}
+                <input type="checkbox" role="{{ this }}" checked><code>{{ this }}</code>
+              {{ else }}
+                <input type="checkbox" role="{{ this }}"> <code>{{ this }}</code>
+              {{/ if }}
+            </label>
+          </div>
+        {{/ each }}
+
+        <br>
+        <button class="btn btn-primary btn-save">{{ i18n 'global.save' }}</button>
+      </form>
+    </div>
+    <hr>
+
+    <h2>{{ i18n 'accounts.update.sections.changePassword.title' }}</h2>
+    <br>
+    <div class="well">
+      {{# autoForm id="accountsUpdatePasswordForm" schema=passwordSchema type="method-update" doc=user meteormethod="orionAccountsUpdatePassword" }}
+        {{> afQuickField name='password' }}
+        {{> afQuickField name='confirm' }}
+        <br>
+        <button class="btn btn-primary">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
+    <hr>
+
+    <h2>{{ i18n 'accounts.update.sections.deleteUser.title' }}</h2>
+    <br>
+    <div class="well">
+      <p>
+        {{ i18n 'accounts.update.sections.deleteUser.advice' }}
+      </p>
+      <button id="btnDeleteUser" class="btn btn-large btn-danger" user="{{user._id}}">
+        {{ i18n 'accounts.update.sections.deleteUser.button' }}
+      </button>
+    </div>
+    <br>
+    <br>
+    <br>
+
+  {{/ Layout }}
+</template>

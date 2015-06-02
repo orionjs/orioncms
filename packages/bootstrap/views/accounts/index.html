@@ -1,7 +1,7 @@
 <template name="orionBootstrapAccountIndex">
   {{# Layout template="orionBootstrapSmallContentOffset" }}
     {{# Layout template="orionBootstrapTitle" }}
-      My Account
+      {{ i18n 'accounts.myAccount.title' }}
     {{/ Layout }}
 
     {{# Layout template="orionBootstrapContentContainer" }}
@@ -27,9 +27,9 @@
       </div>
       <hr>
       <div class="buttons">
-        <a class="btn btn-default btn-xs logout">Logout</a>
-        <a href="{{ pathFor 'myAccount.profile' }}" class="btn btn-default btn-xs">Update Profile</a>
-        <a href="{{ pathFor 'myAccount.password' }}" class="btn btn-default btn-xs">Change Password</a>
+        <a class="btn btn-default btn-xs logout">{{ i18n 'global.logout' }}</a>
+        <a href="{{ pathFor 'myAccount.profile' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.updateProfile.title' }}</a>
+        <a href="{{ pathFor 'myAccount.password' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.changePassword.title' }}</a>
       </div>
     {{/ Layout }}
   {{/ Layout }}

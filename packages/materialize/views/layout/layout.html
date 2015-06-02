@@ -2,23 +2,20 @@
   <div class="orion-materialize-admin">
     <div class="sidebar">
       {{# if dictionaryReady }}
-        {{> reactiveTemplate template="links" }}
+        {{> orionMaterializeSidebar }}
       {{/ if }}
     </div>
-    <main>
-      <div class="container">
-        <div class="admin-content card white">
-          {{# if dictionaryReady }}
-            {{> yield }}
-          {{/ if }}
-        </div>
-      </div>
+    <main class="admin-content">
+      {{# if dictionaryReady }}
+        {{> yield }}
+      {{/ if }}
+      <br><br>
     </main>
   </div>
   <style type="text/css">
-  body {
-    background-color: #eeeeee;
-  }
+    body, html {
+      background-color: #f9f9f9;
+    }
   </style>
 </template>
 
@@ -27,38 +24,81 @@
     <div class="row">
       <div class="col s12 m8 l6 offset-m2 offset-l3">
         <br><br><br>
-        {{> yield }}
+        <div class="card-panel white">
+          <h3>{{> yield 'title' }}</h3>
+          {{> yield }}
+        </div>
         <br><br><br>
       </div>
     </div>
   </div>
+  <style type="text/css">
+    body, html {
+      background-color: #2196F3;
+    }
+  </style>
 </template>
 
 <template name="orionMaterializeContentContainer">
-  <div class="card-content">
+  <div class="materialize-content-container">
     {{> yield }}
   </div>
 </template>
 
 <template name="orionMaterializeButtonsContainer">
-  <div class="card-action">
+  <div class="materialize-buttons-container">
     {{> yield }}
   </div>
 </template>
 
 <template name="orionMaterializeHeaderContainer">
-  <span class="card-title grey-text text-darken-4">{{> yield }}</span><br>
+  <!-- Dropdown Structure -->
+  <ul id="navbar-user-dropdown" class="dropdown-content">
+    <li>
+      <span class="grey-text text-darken-1">
+        {{ currentUser.profile.name }}
+      </span>
+    </li>
+    {{# each adminLinks 'user' }}
+      <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+        <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+      </li>
+    {{/ each }}
+    <li class="divider"></li>
+    <li><a href="#" class="grey-text text-darken-4 logout">{{ i18n 'global.logout' }}</a></li>
+  </ul>
+  <div class="{{ options 'materialize.headerColor' 'blue' }} header-container">
+    <nav class="{{ options 'materialize.headerColor' 'blue' }}">
+      <div class="nav-wrapper">
+        <ul class="left">
+          <li>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+              <i class="mdi-navigation-menu"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="right">
+          <li>
+            <a class="dropdown-button user-links-activator" href="#" data-activates="navbar-user-dropdown">
+              <i class="mdi-social-person"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h4>
+      {{> yield }}
+    </h4>
+  </div>
 </template>
 
 <template name="orionMaterializeTabs">
-  <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        {{# each items }}
-          <li class="tab col"><a class="{{ class }}" href="#">{{ title }}</a></li>
-        {{/ each }}
-      </ul>
-    </div>
+  <div class="materialize-tabs-container {{ options 'materialize.headerColor' 'blue' }}">
+    <ul class="tabs orion-materialize-tabs {{ options 'materialize.headerColor' 'blue' }}">
+      {{# each items }}
+        <li class="tab col"><a class="{{ class }}" href="#">{{ title }}</a></li>
+      {{/ each }}
+    </ul>
   </div>
   <br>
 </template>

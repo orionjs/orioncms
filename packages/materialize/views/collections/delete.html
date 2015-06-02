@@ -1,15 +1,14 @@
 <template name="orionMaterializeCollectionsDelete">
+  {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{ i18n 'collections.delete.title' collection.singularName }} 
+  {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{# Layout template="orionMaterializeHeaderContainer" }}
-      Delete {{ collection.singularName }}
-    {{/ Layout }}
-    <p>Are you sure you want to delete this {{ collection.singularName }}?</p>
-    
+    <p>{{ i18n 'collections.delete.confirmQuestion' collection.singularName }}</p>
   {{/ Layout }}
   {{# if item.canShowRemove }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ collection.indexPath }}">Cancel</a>
-      <a class="red-text confirm-delete" href="#">Confirm</a>
+      <a class="waves-effect waves-light btn" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
+      <a class="waves-effect waves-light btn red confirm-delete" href="#">{{ i18n 'global.confirm' }}</a>
     {{/ Layout }}
   {{/ if }}
 </template>

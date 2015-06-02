@@ -20,11 +20,11 @@ orion.accounts.addProtectedRoute('dictionary.update');
  * Register the link
  */
 Tracker.autorun(function () {
-  if (!orion.dictionary.isActive()) return;
-  
+  if (!orion.dictionary.isActive() || Meteor.isServer) return;
+
   orion.addLink({
     section: 'top',
-    title: 'Dictionary',
+    title: i18n('dictionary.update.title'),
     routeName: 'dictionary.update',
     activeRouteRegex: 'dictionary',
     permission: 'dictionary.update',
@@ -40,14 +40,14 @@ if (Meteor.isClient) {
   ReactiveTemplates.onRendered('dictionaryUpdate', function() {
     var defaultCategory = _.first(_.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.allowedCategories')));
     Session.set('dictionaryUpdateCurrentCategory', defaultCategory);
-  })
+  });
 
   ReactiveTemplates.events('dictionaryUpdate', {
     'click [data-category]': function(event) {
       var newCategory = $(event.currentTarget).attr('data-category');
       Session.set('dictionaryUpdateCurrentCategory', newCategory);
     }
-  })
+  });
 
   ReactiveTemplates.helpers('dictionaryUpdate', {
     getDoc: function() {
@@ -57,7 +57,7 @@ if (Meteor.isClient) {
       return Session.get('dictionaryUpdateCurrentCategory');
     },
     getCategories: function() {
-      return _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.allowedCategories'))
+      return _.union.apply(this, Roles.helper(Meteor.userId(), 'dictionary.allowedCategories'));
     }
-  })
+  });
 }
