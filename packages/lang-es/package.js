@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
 
-  api.use('orionjs:lang-en');
+  api.use('orionjs:lang-en@1.1.0');
   api.imply('orionjs:lang-en');
 
   api.addFiles('es.js');

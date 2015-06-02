@@ -11,7 +11,7 @@ Package.onUse(function(api) {
 
   api.use('anti:i18n@0.4.3');
   api.use('softwarerero:accounts-t9n@1.1.0');
-  api.imply('anti:i18n');
+  api.imply('anti:i18n@0.4.3');
 
   api.addFiles('init.js');
   api.addFiles('en.js');
