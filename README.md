@@ -49,7 +49,7 @@ This project is very active. If you use orion you should definitely **[subscribe
 
 #### Translate Orion
 
-If you want to help translating Orion to your language follow the [instructions](https://github.com/orionjs/examples/blob/master/language/README.md).
+If you want to help translating Orion to your language follow the [instructions](https://github.com/orionjs/examples/tree/master/language).
 
 #### Community Add-On Packages
 
