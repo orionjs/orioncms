@@ -41,6 +41,10 @@ orion.helpers.deepExtend = function(target, source) {
   return target;
 };
 
+/**
+ * Returns a function that returns the translation
+ * Useful for autoform
+ */
 orion.helpers.getTranslation = function(key) {
   return function() {
     return i18n(key);

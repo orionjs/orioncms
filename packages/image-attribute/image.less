@@ -1,0 +1,37 @@
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.image-attribute {
+  margin-top: 20px;
+  padding-top: 1px;
+
+  img {
+    margin-top: 5px;
+    max-width: 100%;
+    &.uploading {
+      opacity: .5;
+    }
+  }
+}
+
+.data-table-image {
+  max-height: 50px;
+  border-radius: 5px;
+}
