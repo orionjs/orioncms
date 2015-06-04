@@ -74,6 +74,7 @@ If you want to help translating Orion to your language follow the [instructions]
 **Languages:**
 
 - [jorisroling:orion-lang-nl](https://github.com/jorisroling/orion-lang-nl) Dutch
+- [pierreeric:orion-lang-fr](https://atmospherejs.com/pierreeric/orion-lang-fr) French
 
 **Integrations:**
 
