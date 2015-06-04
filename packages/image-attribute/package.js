@@ -20,6 +20,8 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
+    'color-thief.js',
+    'color-helper.js',
     'image.html',
     'image.less',
     'image.js',

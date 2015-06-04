@@ -13,7 +13,9 @@
         {{# if base64 }}
           <img src="{{ base64 }}" class="base64-preview {{ uploadingClass }}">
           {{# if progress }}
-            {{ progress }}
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped active determinate" style="width: {{ progress }}%"></div>
+            </div>
           {{/ if }}
         {{ else }}
           <span class="btn btn-default btn-file btn-xs">
@@ -23,6 +25,7 @@
       {{/ if }}
     </div>
   </div>
+  <br>
 </template>
 
 <template name="orionAttributesImageUploadColumn">

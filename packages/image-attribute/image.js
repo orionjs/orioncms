@@ -34,16 +34,16 @@ ReactiveTemplates.events('attribute.image', {
     if (files.length != 1) return;
 
     orion.helpers.getBase64Image(files[0], function(base64) {
-      var imageData = {};
       Session.set('image_base64' + self.name, base64);
-      Session.set('isUploading' + self.name, true);
-      Session.set('uploadProgress' + self.name, 0);
 
       var upload = orion.filesystem.upload({
         fileList: files,
         name: files[0].name,
         uploader: 'image-attribute'
       });
+
+      Session.set('isUploading' + self.name, true);
+      Session.set('uploadProgress' + self.name, 1);
 
       Tracker.autorun(function () {
         if (upload.ready()) {
@@ -52,13 +52,11 @@ ReactiveTemplates.events('attribute.image', {
             console.log(upload.error);
             alert(upload.error.reason);
           } else {
-            var width = template.$('.base64-preview')[0].naturalWidth;
-            var height = template.$('.base64-preview')[0].naturalHeight;
+            var information = orion.helpers.analizeColorFromBase64(base64);
             Session.set('image' + self.name, {
               fileId: upload.fileId,
               url: upload.url,
-              width: width,
-              height: height
+              info: information
             });
           }
           Session.set('isUploading' + self.name, false);
