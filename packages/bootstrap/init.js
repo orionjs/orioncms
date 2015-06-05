@@ -32,3 +32,4 @@ ReactiveTemplates.set('pages.index', 'orionBootstrapPagesIndex');
 ReactiveTemplates.set('pages.create', 'orionBootstrapPagesCreate');
 ReactiveTemplates.set('pages.update', 'orionBootstrapPagesUpdate');
 ReactiveTemplates.set('pages.delete', 'orionBootstrapPagesDelete');
+

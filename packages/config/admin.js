@@ -23,7 +23,7 @@ if (Meteor.isClient) {
   Tracker.autorun(function () {
     if (!orion.config.isActive()) return;
     orion.addLink({
-      section: 'bottom',
+      section: 'zbottom',
       title: i18n('config.update.title'),
       routeName: 'config.update',
       activeRouteRegex: 'config',
