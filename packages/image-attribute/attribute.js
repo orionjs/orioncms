@@ -2,17 +2,6 @@ orion.attributes.registerAttribute('image', {
   template: 'orionAttributesImageUpload',
   previewTemplate: 'orionAttributesImageUploadColumn',
   getSchema: function(options) {
-    var colorSchema = new SimpleSchema({
-      r: {
-        type: Number
-      },
-      g: {
-        type: Number
-      },
-      b: {
-        type: Number
-      }
-    });
     var subSchema = new SimpleSchema({
       url: {
         type: String
@@ -29,11 +18,14 @@ orion.attributes.registerAttribute('image', {
       'info.height': {
         type: Number
       },
-      'info.primaryColor': {
-        type: colorSchema
+      'info.backgroundColor': {
+        type: String
       },
-      'info.pallete': {
-        type: [colorSchema]
+      'info.primaryColor': {
+        type: String
+      },
+      'info.secondaryColor': {
+        type: String
       }
     });
     return {

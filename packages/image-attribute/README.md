@@ -1,4 +1,4 @@
-# File Attribute
+# Image Attribute
 This is an official subpackage for the super awesome Orion CMS framework. This is not a standalone app you must use as part of the framework. 
 [Orionjs.org](http://Orionjs.org) has all the guides and hand holding you need to build simple and complex apps on meteor. 
 
