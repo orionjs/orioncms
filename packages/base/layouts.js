@@ -63,7 +63,6 @@ if (Meteor.isClient) {
   Template.registerHelper('adminSections', function() {
     var links = Options.get('links');
       sections = _(links).chain().flatten().pluck('section').unique().value().sort();
-      console.log(sections);
     return sections;
   });
 
