@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:image-attribute',
   summary: 'Image attribute for orion',
-  version: '1.1.1',
+  version: '1.1.2',
   git: 'http://github.com/orionjs/orion'
 });
 
@@ -20,12 +20,12 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
-    'color-thief.js',
-    'color-helper.js',
+    'colibri.js',
+    'helper.js',
     'image.html',
     'image.less',
     'image.js',
     ], 'client');
 
-  api.export('ColorThief');
+  api.export('Colibri');
 });

@@ -52,7 +52,7 @@ ordered-dict@1.0.3
 orionjs:attributes@1.1.0
 orionjs:base@1.1.2
 orionjs:filesystem@1.1.0
-orionjs:image-attribute@1.1.1
+orionjs:image-attribute@1.1.2
 orionjs:lang-en@1.1.0
 random@1.0.3
 reactive-dict@1.1.0
