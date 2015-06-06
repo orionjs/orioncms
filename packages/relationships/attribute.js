@@ -2,8 +2,8 @@ var getSchema = function(options, hasMany) {
   check(options, {
     titleField: String,
     publicationName: String,
-    pluralName: Match.Optional(String),
-    singularName: Match.Optional(String),
+    pluralName: Match.Optional(Match.OneOf(String, Function)),
+    singularName: Match.Optional(Match.OneOf(String, Function)),
     collection: Mongo.Collection,
     filter: Match.Optional(Function),
     createFilter: Match.Optional(Function),
