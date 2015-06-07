@@ -158,12 +158,14 @@ Meteor.startup(function(){
     this.wait(subs);
     if (subs.ready()) {
       var page = orion.pages.collection.findOne({ url: this.params.url });
-      var template = orion.pages.templates[page.template];
       if (page) {
+        var template = orion.pages.templates[page.template];
         if (template.layout) {
           this.layout(template.layout);
         }
         this.render(page.template, {data: page});
+      } else {
+        this.render('notFound');
       }
     }
   }, { name: 'pages' });
