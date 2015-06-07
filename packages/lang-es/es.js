@@ -160,6 +160,9 @@ i18n.map('en', {
     file: {
       choose: 'Elegir archivo',
       noFile: 'Ningún archivo seleccionado',
+    },
+    image: {
+      choose: 'Choose image'
     }
   },
   tabular: {
