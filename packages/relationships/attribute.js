@@ -40,14 +40,6 @@ var getSchema = function(options, hasMany) {
     options.additionalFields = [];
   }
 
-  if (options.collection.pluralName) {
-    options.pluralName = options.collection.pluralName.toLowerCase();
-  }
-
-  if (options.collection.singularName) {
-    options.singularName = options.collection.singularName.toLowerCase();
-  }
-
   if (!options.pluralName) {
     options.pluralName = i18n('collections.common.defaultPluralName');
   }

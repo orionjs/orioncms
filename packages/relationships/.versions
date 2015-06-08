@@ -52,8 +52,8 @@ observe-sequence@1.0.6
 ordered-dict@1.0.3
 orionjs:attributes@1.1.0
 orionjs:base@1.1.2
-orionjs:lang-en@1.1.0
-orionjs:relationships@1.1.1
+orionjs:lang-en@1.1.1
+orionjs:relationships@1.1.2
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
