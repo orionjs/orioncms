@@ -5,6 +5,15 @@ Template.orionMaterializeHasOneAttribute.onRendered(function() {
   }
 });
 
+ReactiveTemplates.onRendered('attribute.froala', function() {
+  var id = this.$('.orionFroala').attr('id');
+  this.$('.orionFroala').css({ 'margin-top': '2rem' });
+  Meteor.setTimeout(function () {
+    $('label[for="' + id + '"]').addClass('active');
+    $('label[for="' + id + '"]').css({ 'top': '0' });
+  }, 100);
+})
+
 Template.orionMaterializeHasOneAttribute.events({
   'focus .selectize-input input': function (event, template) {
     var id = template.$('.orionAttributesHasOne').attr('id');
