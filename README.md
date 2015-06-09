@@ -28,6 +28,17 @@ or
 meteor add materialize:materialize orionjs:materialize
 ```
 
+And now 
+
+```sh
+meteor
+```
+
+And now go
+
+[http://localhost:3000/admin](http://localhost:3000/admin)
+
+
 #### Documentation
 
 [orionjs.org](http://orionjs.org)
