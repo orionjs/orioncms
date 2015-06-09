@@ -145,7 +145,7 @@ orion.pages.tabular = new Tabular.Table({
   collection: orion.pages.collection,
   columns: [
     { data: 'title', title: i18n('pages.schema.title') },
-    { data: 'url', title: i18n('pages.schema.url') }
+    { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + Router.path('pages', doc) + '">' + Router.path('pages', doc) + '</a>'; } }
   ]
 });
 

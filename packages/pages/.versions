@@ -48,9 +48,9 @@ nicolaslopezj:reactive-templates@1.2.1
 nicolaslopezj:roles@1.1.0
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-orionjs:base@1.1.0
-orionjs:lang-en@1.1.0
-orionjs:pages@1.1.0
+orionjs:base@1.1.2
+orionjs:lang-en@1.1.1
+orionjs:pages@1.1.1
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
