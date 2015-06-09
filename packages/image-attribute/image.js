@@ -27,6 +27,9 @@ ReactiveTemplates.events('attribute.image', {
       orion.filesystem.remove(file.fileId);
     }
     Session.set('image' + template.data.name, null);
+    Session.set('uploadProgress' + template.data.name, null);
+    Session.set('image_base64' + template.data.name, null);
+    Session.set('isUploading' + template.data.name, false);
   },
   'change input': function(event, template) {
     var self = this;
