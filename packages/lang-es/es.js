@@ -162,7 +162,7 @@ i18n.map('en', {
       noFile: 'Ningún archivo seleccionado',
     },
     image: {
-      choose: 'Choose image'
+      choose: 'Elegir imagen'
     }
   },
   tabular: {

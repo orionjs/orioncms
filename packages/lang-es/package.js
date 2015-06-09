@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:lang-es',
-  version: '1.1.1',
+  version: '1.1.2',
   summary: 'Orion spanish language',
   git: 'https://github.com/orionjs/orion',
   documentation: 'README.md'
