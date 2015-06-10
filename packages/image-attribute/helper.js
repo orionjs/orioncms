@@ -9,7 +9,7 @@ orion.helpers.analizeColorFromBase64 = function(base64) {
     width: width,
     height: height,
     backgroundColor: colorInfo.background,
-    primaryColor: colorInfo.content[0],
-    secondaryColor: colorInfo.content[1] || colorInfo.content[0],
+    primaryColor: colorInfo.content[0] || '#ffffff',
+    secondaryColor: colorInfo.content[1] || colorInfo.content[0] || '#ffffff',
   }
 }
