@@ -2,11 +2,13 @@ Options.init('homePath');
 Options.init('siteName');
 
 ReactiveTemplates.request('tabs', 'orionBootstrapTabs');
+ReactiveTemplates.request('adminSidebar');
+
 
 ReactiveTemplates.set('layout', 'orionBootstrapLayout');
 ReactiveTemplates.set('outAdminLayout', 'orionBootstrapOutAdminLayout');
 
-ReactiveTemplates.set('links', 'orionBootstrapSidebar');
+ReactiveTemplates.set('adminSidebar', 'orionBootstrapSidebar');
 ReactiveTemplates.set('login', 'orionBootstrapLogin');
 ReactiveTemplates.set('registerWithInvitation', 'orionBootstrapRegisterWithInvitation');
 

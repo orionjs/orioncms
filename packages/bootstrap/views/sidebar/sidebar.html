@@ -1,20 +1,50 @@
 <template name="orionBootstrapSidebar">
-  <ul class="sidebar-nav">
-    <li class="sidebar-brand">
-        <a href="{{ options 'homePath' '/' }}">
-            {{ options 'siteName' 'Admin' }}
-        </a>
-    </li>
-    {{# each adminSections}}
-        {{# each adminLinks this }}
-               {{> orionBootstrapSidebarLink }}
-         {{/each}}
-    {{/ each }}
-  </ul>
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="{{ options 'homePath' '/' }}">
+                {{ options 'siteName' 'Admin' }}
+            </a>
+        </li>
+        {{# each adminSections}}
+            {{# each adminLinks this }}
+                {{> orionBootstrapSidebarLink }}
+            {{/each}}
+        {{/ each }}
+    </ul>
 </template>
 
 <template name="orionBootstrapSidebarLink">
-  <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-    <a href="{{ pathFor routeName }}">{{ title }}</a>
-  </li>
+    <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+        <a href="{{ pathFor routeName }}">{{ title }}</a>
+    </li>
+</template>
+
+<template name="orionBootstrapSidebarDropdown">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="{{ options 'homePath' '/' }}">
+                {{ options 'siteName' 'Admin' }}
+            </a>
+        </li>
+        {{# each adminSections}}
+            <li>
+                <a href="#{{this}}" data-toggle="collapse">{{ this }}</a>
+            </li>
+
+            <li class="collapse" id="{{this}}">
+                {{# each adminLinks this }}
+                    {{> orionBootstrapSidebarDropdownLink }}
+
+                {{/each}}
+                <hr/>
+            </li>
+
+        {{/each}}
+    </ul>
+</template>
+
+<template name="orionBootstrapSidebarDropdownLink">
+    <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+        <a href="{{ pathFor routeName }}">{{ title }}</a>
+    </li>
 </template>
