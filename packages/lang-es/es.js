@@ -1,4 +1,4 @@
-i18n.map('en', {
+i18n.map('es', {
   global: {
     save: 'Guardar',
     create: 'Crear',
