@@ -23,7 +23,7 @@ Tracker.autorun(function () {
   if (!orion.dictionary.isActive() || Meteor.isServer) return;
 
   orion.addLink({
-    section: 'top',
+    section: 'atop',
     title: i18n('dictionary.update.title'),
     routeName: 'dictionary.update',
     activeRouteRegex: 'dictionary',

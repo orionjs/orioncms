@@ -39,7 +39,7 @@ if (Meteor.isClient) {
 
 if (Meteor.isClient) {
   /**
-   * Set the helpers to the sidebar template
+   * Set the helpers to the sidebar template for links
    */
   Template.registerHelper('adminLinks', function(section) {
     var links = Options.get('links');
@@ -54,5 +54,16 @@ if (Meteor.isClient) {
       }
     });
     return links;
-  })
-}
+  });
+
+/**
+* Set the helpers to the sidebar template for sections.
+* This effectively makes admin sidebar dynamic. Now you can pass any section.
+*/
+  Template.registerHelper('adminSections', function() {
+    var links = Options.get('links');
+      sections = _(links).chain().flatten().pluck('section').unique().value().sort();
+    return sections;
+  });
+
+};
