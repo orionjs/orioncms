@@ -114,3 +114,11 @@ orion.config.getPublicFields = function() {
   var atts = this.collection.simpleSchema() && _.where(this.collection.simpleSchema()._schema, { public: true });
   return atts && _.pluck(atts, 'name');
 };
+
+/**
+ * Returns fields that are not public
+ */
+orion.config.getPrivateFields = function() {
+  var atts = this.collection.simpleSchema() && _.where(this.collection.simpleSchema()._schema, { public: false });
+  return atts && _.pluck(atts, 'name');
+};
