@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:config',
   summary: 'Orion Filesystem',
-  version: '1.1.1',
+  version: '1.1.2',
   git: 'https://github.com/orionjs/orion'
 });
 

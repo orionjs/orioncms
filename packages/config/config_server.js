@@ -48,9 +48,6 @@ Meteor.startup(function () {
   }
 
    var fields = { _id: 0 };
-  _.each(orion.config.getPublicFields(), function(field) {
-    fields[field] = 1;
-  });
 
   //we needs to add in private fields so we can tell our query to not return them
   //so that private fields won't be injected and remain secure
