@@ -5,17 +5,10 @@
             {{ options 'siteName' 'Admin' }}
         </a>
     </li>
-    {{# each adminLinks 'top' }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
-    {{# each adminLinks 'medium' }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
-    {{# each adminLinks 'user' }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
-    {{# each adminLinks 'bottom' }}
-      {{> orionBootstrapSidebarLink }}
+    {{# each adminSections}}
+        {{# each adminLinks this }}
+               {{> orionBootstrapSidebarLink }}
+         {{/each}}
     {{/ each }}
   </ul>
 </template>

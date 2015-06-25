@@ -19,7 +19,7 @@ orion.accounts.addProtectedRoute('accounts.index');
 if (Meteor.isClient) {
   Tracker.autorun(function () {
     orion.addLink({
-      section: 'bottom',
+      section: 'zbottom',
       title: i18n('accounts.index.title'),
       routeName: 'accounts.index',
       activeRouteRegex: 'accounts',
