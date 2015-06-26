@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:materialize',
   summary: 'Materialize theme for orion admin',
-  version: '1.1.7',
+  version: '1.2.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -10,7 +10,7 @@ Package.onUse(function(api) {
 
   api.use([
     'meteor-platform',
-    'orionjs:core@1.1.0',
+    'orionjs:core@1.2.0',
     'less',
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
