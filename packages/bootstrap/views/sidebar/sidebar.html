@@ -5,18 +5,20 @@
             {{ options 'siteName' 'Admin' }}
         </a>
     </li>
-    {{# each adminLinks 'top' }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
-    {{# each adminLinks 'medium' }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
-    {{# each adminLinks 'user' }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
-    {{# each adminLinks 'bottom' }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
+    {{# if rolesIsReady }}
+      {{# each adminLinks 'top' }}
+        {{> orionBootstrapSidebarLink }}
+      {{/ each }}
+      {{# each adminLinks 'medium' }}
+        {{> orionBootstrapSidebarLink }}
+      {{/ each }}
+      {{# each adminLinks 'user' }}
+        {{> orionBootstrapSidebarLink }}
+      {{/ each }}
+      {{# each adminLinks 'bottom' }}
+        {{> orionBootstrapSidebarLink }}
+      {{/ each }}
+    {{/ if }}
   </ul>
 </template>
 
