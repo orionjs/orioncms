@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.2.0',
+  version: '1.1.2',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -12,15 +12,14 @@ Package.onUse(function(api) {
     'meteor-platform',
     'underscore',
     'nicolaslopezj:options@1.0.1',
-    'nicolaslopezj:reactive-templates@1.2.1',
-    'nicolaslopezj:roles@1.1.2',
+    'nicolaslopezj:reactive-templates@1.2.0',
+    'nicolaslopezj:roles@1.1.0',
     'iron:router@1.0.7',
     'zimme:active-route@2.0.0',
-    'orionjs:lang-en@1.2.0'
+    'orionjs:lang-en@1.1.0'
     ]);
 
   api.imply([
-    'orionjs:lang-en',
     'meteor-platform',
     'underscore',
     'iron:router',
@@ -31,8 +30,8 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
-    'init.js',
-    'helpers.js',
+    'init.js', 
+    'helpers.js', 
     'layouts.js',
     'home-route.js'
     ]);
