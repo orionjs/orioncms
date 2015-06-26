@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:filesystem',
   summary: 'Orion Filesystem',
-  version: '1.1.0',
+  version: '1.2.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,12 +9,12 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.1.0',
+    'orionjs:base@1.2.0',
     'aldeed:collection2@2.3.2'
     ]);
 
   api.imply([
-    'aldeed:collection2@2.3.2'
+    'aldeed:collection2'
     ]);
 
   api.addFiles([
