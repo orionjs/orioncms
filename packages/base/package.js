@@ -13,7 +13,7 @@ Package.onUse(function(api) {
     'underscore',
     'nicolaslopezj:options@1.0.1',
     'nicolaslopezj:reactive-templates@1.2.0',
-    'nicolaslopezj:roles@1.1.0',
+    'nicolaslopezj:roles@1.1.2',
     'iron:router@1.0.7',
     'zimme:active-route@2.0.0',
     'orionjs:lang-en@1.1.0'
