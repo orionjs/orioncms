@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.1.2',
+  version: '1.1.3',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -30,8 +30,8 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
-    'init.js', 
-    'helpers.js', 
+    'init.js',
+    'helpers.js',
     'layouts.js',
     'home-route.js'
     ]);
