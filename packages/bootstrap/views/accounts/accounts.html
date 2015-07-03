@@ -8,19 +8,11 @@
     {{/ Layout }}
 
     {{# Layout template="orionBootstrapContentContainer" }}
+      {{> tabular table=tabularTable class="table index-table" }}
       <table class="table">
-        <thead>
-          <tr>
-            <th>{{i18n 'accounts.index.tableTitles.name'}}</th>
-            <th>{{i18n 'accounts.index.tableTitles.email'}}</th>
-            <th>{{i18n 'accounts.index.tableTitles.roles'}}</th>
-            <th>{{i18n 'accounts.index.tableTitles.actions'}}</th>
-          </tr>
-        </thead>
         <tbody>
           {{# each users }}
             <tr>
-              <td><b>{{ name }}</b></td>
               <td>
                 {{# each emails }}
                   {{ address }}
@@ -42,4 +34,18 @@
       </table>
     {{/ Layout }}
   {{/ Layout }}
+</template>
+
+<template name="orionBootstrapAccountsIndexEnrolled">
+  {{#if enrolled}}
+    <i class="fa fa-check"></i>
+  {{else}}
+    <i class="fa fa-times"></i>
+  {{/if}}
+</template>
+
+<template name="orionBootstrapAccountsIndexButtons">
+  {{# each buttons}}
+    <a class="btn btn-default btn-xs user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
+  {{/ each }}
 </template>

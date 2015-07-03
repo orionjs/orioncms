@@ -10,37 +10,20 @@
         </a>
       </div>
     {{/ if }}
-    <table class="table hoverable responsive-table">
-      <thead>
-        <tr>
-          <th>{{ i18n 'accounts.index.tableTitles.name' }}</th>
-          <th>{{ i18n 'accounts.index.tableTitles.email' }}</th>
-          <th>{{ i18n 'accounts.index.tableTitles.roles' }}</th>
-          <th>{{ i18n 'accounts.index.tableTitles.actions' }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{# each users }}
-          <tr>
-            <td><b>{{ name }}</b></td>
-            <td>
-              {{# each emails }}
-                {{ address }}
-              {{/ each }}
-            </td>
-            <td>
-              {{# each roles }}
-                <span class="label label-danger">{{ this }}</span>
-              {{/ each }}
-            </td>
-            <td>
-              {{# each buttons }}
-                <a class="btn waves-effect waves-light light-blue accent-4 user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
-              {{/ each }}
-            </td>
-          </tr>
-        {{/ each }}
-      </tbody>
-    </table>
+    {{> tabular table=tabularTable class="table index-table" }}
   {{/ Layout }}
+</template>
+
+<template name="orionMaterializeAccountsIndexEnrolled">
+  {{#if enrolled}}
+    <i class="mdi-navigation-check"></i>
+  {{else}}
+    <i class="mdi-navigation-close"></i>
+  {{/if}}
+</template>
+
+<template name="orionMaterializeAccountsIndexButtons">
+  {{# each buttons}}
+    <a class="btn waves-effect waves-light light-blue accent-4 user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
+  {{/ each }}
 </template>

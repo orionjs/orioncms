@@ -4,9 +4,24 @@ ReactiveTemplates.onRendered('accounts.index', function() {
 })
 
 ReactiveTemplates.helpers('accounts.index', {
-  users: function () {
-    return Meteor.users.find({}, { sort: { createdAt: -1 } });
-  },
+  tabularTable: function () {
+    return orion.accounts.tabular;
+  }
+});
+
+ReactiveTemplates.helpers('accounts.index.enrolled', {
+  enrolled: function() {
+    var item = EnrolledUsers.findOne({_id: this._id}),
+        value = item && item.enrolled;
+
+    if(value)
+      return true;
+
+    return false;
+  }
+});
+
+ReactiveTemplates.helpers('accounts.index.buttons', {
   buttons: function() {
     var self = this;
     return _.filter(orion.accounts._adminUsersButtons, function(value, key, list){
@@ -15,20 +30,6 @@ ReactiveTemplates.helpers('accounts.index', {
       }
       return value.shouldShow(self);
     });
-  },
-
-  name: function() {
-    return this.profile && this.profile.name || "NA";
-  },
-
-  enrolled: function() {
-    var item = EnrolledUsers.findOne({_id: this._id}),
-        value = item && item.enrolled;
-
-    if(value)
-      return "YES";
-
-    return "NO";
   }
 });
 

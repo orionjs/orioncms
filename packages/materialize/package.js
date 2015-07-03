@@ -27,8 +27,7 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
-    'init.js',
-    'tabular.js'
+    'init.js'
     ]);
 
   api.addFiles([
@@ -46,6 +45,7 @@ Package.onUse(function(api) {
     'views/accounts/profile.js',
     'views/accounts/accounts.less',
     'views/accounts/accounts.html',
+    'views/accounts/accounts.js',
     'views/accounts/update.html',
     'views/accounts/create.html',
     'views/config/update.html',
@@ -70,6 +70,10 @@ Package.onUse(function(api) {
     'views/misc/misc.js',
     'views/misc/misc.less',
     ], 'client');
+
+    api.addFiles([
+      'tabular.js'
+      ]);
 
   api.export('orion');
 });

@@ -1,3 +1,48 @@
+orion.accounts.tabular = new Tabular.Table({
+  name: 'AccountsIndex',
+  collection: Meteor.users,
+  columns: [
+    {
+      data: 'profile.name',
+      title: i18n('accounts.index.tableTitles.name'),
+      render: function(name, type) {
+        if (name) {
+          return '<b>' + name + '</b>';
+        } else {
+          return '<b>NA</b>';
+        }
+      }
+    },
+    {
+      data: 'emails',
+      title: i18n('accounts.index.tableTitles.email'),
+      render: function(emails) {
+        return emails.map(function(email) {
+          return email.address;
+        }).join(', ');
+      }
+    },
+    {
+      title: i18n('accounts.index.tableTitles.enrolled'),
+      tmpl: Meteor.isClient && Template[ReactiveTemplates.get('accounts.index.enrolled')]
+    },
+    {
+      data: 'roles()',
+      title: i18n('accounts.index.tableTitles.roles'),
+      render: function(roles) {
+        var labels = roles.map(function(role) {
+          return '<span class="label label-danger">' + role + '</span>';
+        });
+        return labels.join(' ');
+      }
+    },
+    {
+      title: i18n('accounts.index.tableTitles.actions'),
+      tmpl: Meteor.isClient && Template[ReactiveTemplates.get('accounts.index.buttons')]
+    }
+  ]
+});
+
 orion.collections.onCreated(function() {
   var self = this;
   // if the collection doesn't has the tabular option, nothing to do here!
@@ -21,7 +66,7 @@ orion.collections.onCreated(function() {
       emptyTable: i18n('tabular.emptyTable'),
       paginate: {
         first: i18n('tabular.paginate.first'),
-        previous: i18n('tabular.paginate.previous'), 
+        previous: i18n('tabular.paginate.previous'),
         next: i18n('tabular.paginate.next'),
         last: i18n('tabular.paginate.last'),
       }

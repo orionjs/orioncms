@@ -15,6 +15,8 @@ ReactiveTemplates.set('myAccount.password', 'orionBootstrapAccountPassword');
 ReactiveTemplates.set('myAccount.profile', 'orionBootstrapAccountProfile');
 
 ReactiveTemplates.set('accounts.index', 'orionBootstrapAccountsIndex');
+ReactiveTemplates.set('accounts.index.enrolled', 'orionBootstrapAccountsIndexEnrolled');
+ReactiveTemplates.set('accounts.index.buttons', 'orionBootstrapAccountsIndexButtons');
 ReactiveTemplates.set('accounts.update', 'orionBootstrapAccountsUpdate');
 ReactiveTemplates.set('accounts.create', 'orionBootstrapAccountsCreate');
 
