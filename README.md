@@ -90,6 +90,7 @@ If you want to help translating Orion to your language follow the [instructions]
 - [pierreeric:orion-lang-fr](https://atmospherejs.com/pierreeric/orion-lang-fr) French
 - [loongmxbt:orion-lang-zh-cn](https://github.com/loongmxbt/orion-lang-zh-cn) Simplified Chinese
 - [goooseman:orion-lang-ru](https://github.com/goooseman/orion-lang-ru) Russian
+- [aselox:orion-lang-it](https://atmospherejs.com/aselox/orion-lang-it) Italian
 
 **Integrations:**
 
