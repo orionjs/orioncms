@@ -51,7 +51,7 @@ if (Meteor.isClient) {
       section: 'user',
       title: i18n('accounts.myAccount.title'),
       routeName: 'myAccount.index',
-      activeRouteRegex: 'myAccount'
+      activeRouteRegex: 'myAccount.index'
     });
     orion.addLink({
       section: 'user',
