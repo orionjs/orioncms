@@ -11,6 +11,6 @@ if (orion.dictionary.find().count() != 1) {
 /**
  * Publications of the dictionary
  */
-Meteor.publish(null, function() {
+Meteor.publish('orion_dictionary', function() {
   return orion.dictionary.find();
-}, { is_auto: true });
+});
