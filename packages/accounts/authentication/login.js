@@ -3,13 +3,10 @@
  */
 ReactiveTemplates.request('login');
 
-Tracker.autorun(function () {
-  if (ReactiveTemplates.get('login') && ReactiveTemplates.get('outAdminLayout')) {
-    AccountsTemplates.configureRoute('signIn', {
-      name: 'login',
-      path: '/login',
-      template: ReactiveTemplates.get('login'),
-      layoutTemplate: ReactiveTemplates.get('outAdminLayout')
-    });
-  }
-});
+/**
+ * Register the routes
+ */
+Router.route('/login', function () {
+  this.layout(ReactiveTemplates.get('outAdminLayout'));
+  this.render(ReactiveTemplates.get('login'));
+}, { name: 'login' });
