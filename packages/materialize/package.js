@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:materialize',
   summary: 'Materialize theme for orion admin',
-  version: '1.1.8',
+  version: '1.1.9',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -69,6 +69,7 @@ Package.onUse(function(api) {
     'views/misc/relationships.html',
     'views/misc/misc.js',
     'views/misc/misc.less',
+    'views/misc/fixes.less'
     ], 'client');
 
   api.export('orion');

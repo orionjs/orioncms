@@ -38,7 +38,7 @@ json@1.0.3
 launch-screen@1.0.2
 less@1.0.14
 livedata@1.0.13
-local-test:orionjs:materialize@1.1.8
+local-test:orionjs:materialize@1.1.9
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.13
@@ -57,7 +57,7 @@ nicolaslopezj:tabular-materialize@1.2.1
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-orionjs:accounts@1.1.0
+orionjs:accounts@1.1.1
 orionjs:attributes@1.1.0
 orionjs:base@1.1.3
 orionjs:collections@1.1.0
@@ -65,7 +65,7 @@ orionjs:config@1.1.3
 orionjs:core@1.1.1
 orionjs:dictionary@1.1.1
 orionjs:lang-en@1.1.1
-orionjs:materialize@1.1.8
+orionjs:materialize@1.1.9
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
