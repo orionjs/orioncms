@@ -51,7 +51,19 @@ if (Meteor.isClient) {
       section: 'user',
       title: i18n('accounts.myAccount.title'),
       routeName: 'myAccount.index',
-      activeRouteRegex: 'myAccount',
+      activeRouteRegex: 'myAccount.index'
+    });
+    orion.addLink({
+      section: 'user',
+      title: i18n('accounts.updateProfile.title'),
+      routeName: 'myAccount.profile',
+      activeRouteRegex: 'myAccount.profile'
+    });
+    orion.addLink({
+      section: 'user',
+      title: i18n('accounts.changePassword.title'),
+      routeName: 'myAccount.password',
+      activeRouteRegex: 'myAccount.password'
     });
   });
 

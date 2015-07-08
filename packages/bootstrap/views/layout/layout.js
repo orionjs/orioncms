@@ -9,6 +9,12 @@ Template.orionBootstrapLayout.events({
   }
 });
 
+Template.orionBootstrapHeader.events({
+  'click .logout': function() {
+    Meteor.logout();
+  }
+});
+
 Template.orionBootstrapTabs.helpers({
   items: function () {
     return this;
