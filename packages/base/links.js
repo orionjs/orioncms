@@ -53,7 +53,13 @@ orion.links.getLink = function(identifier) {
 
 orion.links._collection.helpers({
   childs: function() {
-    return orion.links._collection.find({ index: { $exists: true }, parent: this.identifier }, { sort: { index: 1 } }).fetch()
+    var links = orion.links._collection.find({ index: { $exists: true }, parent: this.identifier }, { sort: { index: 1 } }).fetch();
+    return _.filter(links, function(link) {
+      if (link.permission && !Roles.userHasPermission(Meteor.userId(), link.permission)) {
+        return false;
+      }
+      return true;
+    });
   }
 });
 
@@ -64,82 +70,3 @@ Template.registerHelper('adminLinks', function() {
 Template.registerHelper('getAdminLink', function(identifier) {
   return orion.links.getLink(identifier);
 })
-
-
-//**
-//Hasta aca llegaaaaa
-/**
- * Handle sections
-Options.init('sections', {});
-
-orion.addSection = function(name, options) {
-  check(options, Match.ObjectIncluding({
-    index: Match.Optional(Number)
-  }));
-
-  var currentSections;
-  Tracker.nonreactive(function () {
-    currentSections = Options.get('sections');
-  });
-
-  currentSections[name] = options;
-  Options.set('sections', currentSections);
-}
-
-/**
- * Handle links. To add tabs to the sidebar
-Options.init('links', []);
-
-orion.addLink = function(options) {
-  check(options, Match.ObjectIncluding({
-    section: String,
-    title: Match.OneOf(String, Function),
-    routeName: String,
-    activeRouteRegex: Match.Optional(String),
-    permission: Match.Optional(String),
-  }));
-
-  var currentLinks;
-
-  Tracker.nonreactive(function () {
-    if (!_.has(Options.get('sections'), options.section)) {
-      throw new Meteor.Error('section-not-found', 'The specified section for the admin link was not found');
-    }
-
-    currentLinks = Options.get('links');
-    var currentLink = _.findWhere(currentLinks, { routeName: options.routeName });
-    if (currentLink) {
-      currentLinks = _.without(currentLinks, currentLink);
-    }
-  });
-
-  currentLinks.push(options);
-  Options.set('links', currentLinks);
-};
-
-/**
- * Set the helpers to the sidebar template for links
-Template.registerHelper('adminLinks', function(section) {
-  var links = Options.get('links');
-  if (section) {
-    links = _.where(links, { section: section });
-  }
-  _.each(links, function(value, key, list){
-    if (value.permission) {
-      if (!Roles.userHasPermission(Meteor.userId(), value.permission)) {
-        delete list[key];
-      }
-    }
-  });
-  return links;
-});
-
-/**
-* Set the helpers to the sidebar template for sections.
-* This effectively makes admin sidebar dynamic. Now you can pass any section.
-Template.registerHelper('adminSections', function() {
-  var links = Options.get('links');
-    sections = _(links).chain().flatten().pluck('section').unique().value().sort();
-  return sections;
-});
-*/
