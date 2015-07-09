@@ -1,4 +1,5 @@
 <template name="orionMaterializeLayout">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <div class="orion-materialize-admin">
     <div class="sidebar">
       {{# if dictionaryReady }}
@@ -52,21 +53,22 @@
 </template>
 
 <template name="orionMaterializeHeaderContainer">
-  <!-- Dropdown Structure -->
-  <ul id="navbar-user-dropdown" class="dropdown-content">
-    <li>
-      <span class="grey-text text-darken-1">
-        {{ currentUser.profile.name }}
-      </span>
-    </li>
-    {{# each adminLinks 'user' }}
-      <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-        <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+  {{# with getAdminLink 'myAccount' }}
+    <ul id="navbar-user-dropdown" class="dropdown-content">
+      <li>
+        <span class="grey-text text-darken-1">
+          {{ title }}
+        </span>
       </li>
-    {{/ each }}
-    <li class="divider"></li>
-    <li><a href="#" class="grey-text text-darken-4 logout">{{ i18n 'global.logout' }}</a></li>
-  </ul>
+      {{# each childs }}
+        <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+          <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+        </li>
+      {{/ each }}
+      <li class="divider"></li>
+      <li><a href="#" class="grey-text text-darken-4 logout">{{ i18n 'global.logout' }}</a></li>
+    </ul>
+  {{/ with }}
   <div class="{{ options 'materialize.headerColor' 'blue' }} header-container">
     <nav class="{{ options 'materialize.headerColor' 'blue' }}">
       <div class="nav-wrapper">

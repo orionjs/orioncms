@@ -2,7 +2,7 @@
   <div class="orion-bootstrap-admin">
     <div class="sidebar">
       {{# if dictionaryReady }}
-        {{> orionBootstrapSidebar }}
+        {{> reactiveTemplate template="adminSidebar" }}
       {{/ if }}
     </div>
     <div class="content">
@@ -45,30 +45,28 @@
         <a class="menu-toggle navbar-brand">
           <i class="fa fa-bars"></i>
         </a>
-        <a class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-profile-dropdown">
-          <i class="fa fa-user"></i>
-        </a>
       </div>
     </div>
-    <div class="navbar-collapse collapse navbar-responsive-collapse navbar-inverse" id="user-profile-dropdown">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-             aria-expanded="false">
-            {{ currentUser.profile.name }} <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            {{# each adminLinks 'user' }}
-              <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-                <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
-              </li>
-            {{/ each }}
-            <li role="separator" class="divider"></li>
-            <li><a href="#" class="logout"><i class="fa fa-sign-out"></i> {{ i18n 'global.logout' }}</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    {{# with getAdminLink 'myAccount' }}
+      <div class="navbar-collapse collapse navbar-responsive-collapse navbar-inverse" id="user-profile-dropdown">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              {{ title }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              {{# each childs }}
+                <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+                  <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+                </li>
+              {{/ each }}
+              <li role="separator" class="divider"></li>
+              <li><a href="#" class="logout"><i class="fa fa-sign-out"></i> {{ i18n 'global.logout' }}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    {{/ with }}
   </div>
 </template>
 

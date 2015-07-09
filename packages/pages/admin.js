@@ -49,8 +49,9 @@ orion.accounts.addProtectedRoute('pages.delete');
  */
 if (Meteor.isClient) {
   Tracker.autorun(function () {
-    orion.addLink({
-      section: 'medium',
+    orion.links.add({
+      index: 40,
+      identifier: 'pages-index',
       title: i18n('pages.index.title'),
       routeName: 'pages.index',
       activeRouteRegex: 'pages',

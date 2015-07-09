@@ -1,12 +1,13 @@
 .orion-materialize-admin .sidebar {
+
   ul.side-nav.fixed {
-    overflow: hidden; 
+    overflow: hidden;
     li {
-      line-height: 44px; 
+      line-height: 44px;
       a {
         font-size: 13px;
         line-height: 44px;
-        height: 44px; 
+        height: 44px;
 
         &.collapsible-header {
           margin: 0;
@@ -14,18 +15,18 @@
       }
     }
     li:hover {
-      background-color: rgba(0, 0, 0, 0.05); 
+      background-color: rgba(0, 0, 0, 0.05);
     }
 
     li.active {
-      background-color: rgba(0, 0, 0, 0.1); 
+      background-color: rgba(0, 0, 0, 0.1);
       a {
         color: #444;
       }
     }
 
     ul.collapsible-accordion {
-      background-color: #FFF; 
+      //background-color: #FFF;
 
       li {
         a {
@@ -40,12 +41,26 @@
       a {
         font-size: 18px;
         line-height: 60px;
-        height: 60px; 
+        height: 60px;
       }
     }
 
     &:hover {
-      overflow-y: auto; 
+      overflow-y: auto;
     }
+  }
+
+  .collapse-link-right {
+    float: right;
+    i {
+      margin-right: 0;
+    }
+  }
+
+  .collapsible-body {
+    padding-left: 10px;
+  }
+  .collapsible-body .no-padding a {
+    padding-left: 15px !important;
   }
 }

@@ -16,7 +16,7 @@ orion.collections.onCreated(function() {
       data: function() {
         return {
           collection: self,
-        }; 
+        };
       }
     });
   }, { name: ('collections.' + this.name + '.index') });
@@ -44,7 +44,7 @@ orion.collections.onCreated(function() {
       data: function() {
         return {
           collection: self,
-        }; 
+        };
       }
     });
   }, { name: ('collections.' + this.name + '.create') });
@@ -61,7 +61,7 @@ orion.collections.onCreated(function() {
    * Request a template for the collection update
    */
   ReactiveTemplates.request('collections.' + this.name + '.update', Options.get('collectionsDefaultUpdateTemplate'));
-  
+
   /**
    * Register the update route
    */
@@ -77,7 +77,7 @@ orion.collections.onCreated(function() {
           return {
             collection: self,
             item: item,
-          }; 
+          };
         }
       });
     } else {
@@ -126,7 +126,7 @@ orion.collections.onCreated(function() {
           return {
             collection: self,
             item: item,
-          }; 
+          };
         }
       });
     } else {
@@ -151,12 +151,13 @@ orion.collections.onCreated(function() {
      * Register the link
      */
     var linkOptions = _.extend({
+      identifier: 'collections-' + this.name,
       routeName: 'collections.' + this.name + '.index',
       activeRouteRegex: 'collections.' + this.name,
       permission: 'collections.' + this.name + '.index',
       title: this.name[0].toUpperCase() + this.name.slice(1),
-      section: 'medium'
+      index: 30
     }, this.link);
-    orion.addLink(linkOptions);
+    orion.links.add(linkOptions);
   }
 })

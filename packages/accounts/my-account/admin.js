@@ -47,20 +47,31 @@ if (Meteor.isClient) {
    * Register the link
    */
   Tracker.autorun(function () {
-    orion.addLink({
-      section: 'user',
+    orion.links.add({
+      identifier: 'myAccount',
+      title: (Meteor.user() && Meteor.user().profile && Meteor.user().profile.name) || 'Account',
+      activeRouteRegex: 'myAccount'
+    });
+    orion.links.add({
+      index: 20,
+      identifier: 'myAccount-index',
+      parent: 'myAccount',
       title: i18n('accounts.myAccount.title'),
       routeName: 'myAccount.index',
       activeRouteRegex: 'myAccount.index'
     });
-    orion.addLink({
-      section: 'user',
+    orion.links.add({
+      index: 50,
+      identifier: 'myAccount-updateProfile',
+      parent: 'myAccount',
       title: i18n('accounts.updateProfile.title'),
       routeName: 'myAccount.profile',
       activeRouteRegex: 'myAccount.profile'
     });
-    orion.addLink({
-      section: 'user',
+    orion.links.add({
+      index: 100,
+      identifier: 'myAccount-changePassword',
+      parent: 'myAccount',
       title: i18n('accounts.changePassword.title'),
       routeName: 'myAccount.password',
       activeRouteRegex: 'myAccount.password'
