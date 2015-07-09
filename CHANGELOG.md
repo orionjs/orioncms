@@ -1,6 +1,6 @@
 # Changelog
 
-```v1.2```
+##### ```v1.2```
 
 - Completely rewrite admin links, now with the possibility to have collapsed links.
 
