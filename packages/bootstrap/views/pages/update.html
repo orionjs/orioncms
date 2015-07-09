@@ -4,15 +4,26 @@
 		{{ i18n 'pages.update.title' }}
 	{{/ Layout }}
 	{{# Layout template="orionBootstrapContentContainer" }}
-		{{# if getSchema }}
-			{{> quickForm collection="orion.pages.collection" schema=getSchema doc=this id="orionPagesUpdateForm" type="update" buttonContent=false }}
-			<br>
-			<div class="buttons text-right">
-				<a class="btn btn-default cancel-btn" href="{{ pathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
-				<a class="btn btn-danger delete-btn" href="{{ pathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
-				<a class="btn btn-primary save-btn">{{ i18n 'global.save' }}</a>
-			</div>
-		{{/ if }}
+    {{# autoForm collection="orion.pages.collection" doc=this id="orionPagesUpdateForm" type="update" }}
+      {{# each afFieldNames fields="title,url,templateName" }}
+        {{> afQuickField name=this.name options=afOptionsFromSchema }}
+      {{/ each }}
+      <hr>
+      {{# each templatesNames }}
+        {{# if afFieldValueIs name="templateName" value=this }}
+          {{# each afFieldNames name=this }}
+            {{> afQuickField name=this.name options=afOptionsFromSchema }}
+          {{/ each }}
+        {{/ if }}
+      {{/ each }}
+      <br>
+  		<div class="buttons text-right">
+  			<a class="btn btn-default cancel-btn" href="{{ pathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
+  			<a class="btn btn-danger delete-btn" href="{{ pathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
+  			<button class="btn btn-primary save-btn">{{ i18n 'global.save' }}</button>
+  		</div>
+    {{/ autoForm }}
+
 	{{/ Layout }}
   {{/ Layout }}
 </template>

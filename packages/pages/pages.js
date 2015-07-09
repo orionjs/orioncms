@@ -16,6 +16,38 @@ orion.pages.collection.helpers({
   }
 });
 
+orion.pages._schema = {
+  title: {
+    type: String,
+    label: orion.helpers.getTranslation('pages.schema.title')
+  },
+  url: {
+    type: String,
+    regEx: /^[a-z0-9A-Z_-]+$/,
+    unique: true,
+    label: orion.helpers.getTranslation('pages.schema.url')
+  },
+  templateName: {
+    type: String,
+    allowedValues: function() {
+      return _.keys(orion.pages.templates);
+    },
+    autoform: {
+      noselect: true,
+      options: function() {
+        var options = [];
+        _.each(orion.pages.templates, function(val, key) {
+          options.push({ label: val.name, value: key });
+        })
+        return options;
+      }
+    }
+  },
+  createdAt: orion.attribute('createdAt'),
+  updatedAt: orion.attribute('updatedAt'),
+  createdBy: orion.attribute('createdBy')
+};
+
 /**
  * Create a new template
  */
@@ -27,45 +59,18 @@ orion.pages.addTemplate = function (options, schema) {
   var newTemplate = _.extend({
     name: options.template,
     description: 'No description'
-  }, options);
+  }, options)
 
-  var newSchema = orion.pages.getNewTemplateSchema(schema, newTemplate);
-  newTemplate.schema = new SimpleSchema(newSchema);
+  orion.pages._schema[newTemplate.template] = {
+    type: new SimpleSchema(schema),
+    optional: true
+  };
+
+  orion.pages.collection.attachSchema(new SimpleSchema(orion.pages._schema))
 
   orion.pages.templates[newTemplate.template] = newTemplate;
 
   return newTemplate;
-};
-
-orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
-  return _.extend({
-    title: {
-      type: String,
-      label: orion.helpers.getTranslation('pages.schema.title')
-    },
-    url: {
-      type: String,
-      regEx: /^[a-z0-9A-Z_-]+$/,
-      label: orion.helpers.getTranslation('pages.schema.url'),
-      custom: function() {
-        if (this.isSet && orion.pages.collection.find({ url: this.value }).count() > 0) {
-          return 'notUnique';
-        }
-      }
-    },
-    template: {
-      type: String,
-      autoform: {
-        omit: true
-      },
-      autoValue: function () {
-        return newTemplate.template;
-      }
-    },
-    createdAt: orion.attribute('createdAt'),
-    updatedAt: orion.attribute('updatedAt'),
-    createdBy: orion.attribute('createdBy')
-  }, schema);
 };
 
 var Tabular = null;
