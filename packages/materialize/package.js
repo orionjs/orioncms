@@ -69,6 +69,7 @@ Package.onUse(function(api) {
     'views/misc/relationships.html',
     'views/misc/misc.js',
     'views/misc/misc.less',
+    'views/misc/fixes.less'
     ], 'client');
 
   api.export('orion');

@@ -7,6 +7,7 @@ ReactiveTemplates.request('configUpdate');
  * Register the route
  */
 Router.route('/admin/config', function () {
+  this.subscribe('orion_config');
   this.layout(ReactiveTemplates.get('layout'));
   this.render(ReactiveTemplates.get('configUpdate'));
 }, { name: 'config.update' });

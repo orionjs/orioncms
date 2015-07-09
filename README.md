@@ -17,10 +17,12 @@ meteor add orionjs:core
 And now decide which one to use
 
 ```sh
-meteor add twbs:bootstrap orionjs:bootstrap
+meteor add twbs:bootstrap fortawesome:fontawesome orionjs:bootstrap
 ```
 
-*Either ```twbs:bootstrap``` or similar*
+*Either `twbs:bootstrap` or similar*
+
+*Either `fortawesome:fontawesome` or similar*
 
 or
 
@@ -28,7 +30,7 @@ or
 meteor add materialize:materialize orionjs:materialize
 ```
 
-And now 
+And now
 
 ```sh
 meteor
@@ -88,6 +90,7 @@ If you want to help translating Orion to your language follow the [instructions]
 - [pierreeric:orion-lang-fr](https://atmospherejs.com/pierreeric/orion-lang-fr) French
 - [loongmxbt:orion-lang-zh-cn](https://github.com/loongmxbt/orion-lang-zh-cn) Simplified Chinese
 - [goooseman:orion-lang-ru](https://github.com/goooseman/orion-lang-ru) Russian
+- [aselox:orion-lang-it](https://atmospherejs.com/aselox/orion-lang-it) Italian
 
 **Integrations:**
 

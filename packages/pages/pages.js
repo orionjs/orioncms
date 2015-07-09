@@ -8,29 +8,7 @@ Roles.registerAction('pages.insert', true);
 Roles.registerAction('pages.update', true);
 Roles.registerAction('pages.remove', true);
 
-orion.pages.collection.allow({
-  'insert': function (userId, doc) {
-    return Roles.allow(userId, 'pages.insert', userId, doc);
-  },
-  'update': function (userId, doc, fields, modifier) {
-    return Roles.allow(userId, 'pages.update', userId, doc, fields, modifier);
-  },
-  'remove': function (userId, doc) {
-    return Roles.allow(userId, 'pages.remove', userId, doc);
-  }
-});
-
-orion.pages.collection.deny({
-  'insert': function (userId, doc) {
-    return Roles.deny(userId, 'pages.insert', userId, doc);
-  },
-  'update': function (userId, doc, fields, modifier) {
-    return Roles.deny(userId, 'pages.update', userId, doc, fields, modifier);
-  },
-  'remove': function (userId, doc) {
-    return Roles.deny(userId, 'pages.remove', userId, doc);
-  }
-});
+orion.pages.collection.attachRoles('pages');
 
 orion.pages.collection.helpers({
   path: function () {
@@ -68,8 +46,12 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
     url: {
       type: String,
       regEx: /^[a-z0-9A-Z_-]+$/,
-      unique: true,
-      label: orion.helpers.getTranslation('pages.schema.url')
+      label: orion.helpers.getTranslation('pages.schema.url'),
+      custom: function() {
+        if (this.isSet && orion.pages.collection.find({ url: this.value }).count() > 0) {
+          return 'notUnique';
+        }
+      }
     },
     template: {
       type: String,
@@ -80,49 +62,9 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
         return newTemplate.template;
       }
     },
-    createdAt: {
-      type: Date,
-      autoform: {
-        omit: true
-      },
-      autoValue: function () {
-        if (this.isInsert) {
-          return new Date();
-        } else if (this.isUpsert) {
-          return {$setOnInsert: new Date()};
-        } else {
-          this.unset();
-        }
-      }
-    },
-    updatedAt: {
-      type: Date,
-      autoform: {
-        omit: true
-      },
-      autoValue: function () {
-        if (this.isUpdate) {
-          return new Date();
-        }
-      },
-      denyInsert: true,
-      optional: true
-    },
-    createdBy: {
-      type: String,
-      autoform: {
-        omit: true
-      },
-      autoValue: function () {
-        if (this.isInsert) {
-          return this.userId;
-        } else if (this.isUpsert) {
-          return {$setOnInsert: this.userId};
-        } else {
-          this.unset();
-        }
-      }
-    }
+    createdAt: orion.attribute('createdAt'),
+    updatedAt: orion.attribute('updatedAt'),
+    createdBy: orion.attribute('createdBy')
   }, schema);
 };
 

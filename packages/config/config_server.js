@@ -21,14 +21,14 @@ if (orion.config.collection.find().count() === 0) {
 /**
  * Publications of the config. Only for admins
  */
-Meteor.publish(null, function() {
+Meteor.publish('orion_config', function() {
   if (!this.userId) {
     return [];
   }
   if (Roles.userHasPermission(this.userId, 'config.update')) {
     return orion.config.collection.find();
   }
-}, { is_auto: true });
+});
 
 /**
  * Get the config from the database only once
@@ -56,6 +56,6 @@ Meteor.startup(function () {
   });
 
   var config = orion.config.collection.findOne({}, { fields: fields });
-  
+
   Inject.obj('orion.config', config);
 });

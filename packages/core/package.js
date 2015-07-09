@@ -14,10 +14,12 @@ Package.onUse(function(api) {
     'orionjs:config@1.2.0',
     'orionjs:collections@1.2.0',
     'orionjs:dictionary@1.2.0',
-    'orionjs:attributes@1.2.0'
+    'orionjs:attributes@1.2.0',
+    'orionjs:lang-en@1.2.0'
     ]);
 
   api.imply([
+    'orionjs:lang-en',
     'orionjs:base',
     'orionjs:accounts',
     'orionjs:config',
