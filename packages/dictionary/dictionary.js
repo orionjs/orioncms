@@ -100,5 +100,13 @@ orion.dictionary.addDefinition = function(name, category, attribute) {
 orion.dictionary.get = function(path, defaultValue) {
   // Sets empty string to avoid problems on templates
   defaultValue = !defaultValue || defaultValue instanceof Spacebars.kw ? '' : defaultValue;
+
+  if (!defaultValue && orion.dictionary.simpleSchema()) {
+    var def = orion.dictionary.simpleSchema()._schema[path];
+    if (def.defaultValue) {
+      defaultValue = _.isFunction(def.defaultValue) ? def.defaultValue() : def.defaultValue;
+    }
+  }
+
   return orion.helpers.searchObjectWithDots(this.findOne(), path) || defaultValue;
 };

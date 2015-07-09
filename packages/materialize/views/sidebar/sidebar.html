@@ -1,28 +1,41 @@
 <template name="orionMaterializeSidebar">
   <header class="materialize-sidebar">
-    <ul id="nav-mobile" class="side-nav fixed">
+    <ul id="nav-mobile" class="side-nav fixed collapsible">
       <li class="sidebar-brand no-padding">
-          <a href="{{ options 'homePath' '/' }}" class="waves-effect">
-              {{ options 'siteName' 'Admin' }}
-          </a>
+        <a href="{{ options 'homePath' '/' }}" class="waves-effect">
+          {{ options 'siteName' 'Admin' }}
+        </a>
       </li>
-      {{# if rolesIsReady }}
-        {{# each adminLinks 'top' }}
-          {{> orionMaterializeSidebarLink }}
-        {{/ each }}
-        {{# each adminLinks 'medium' }}
-          {{> orionMaterializeSidebarLink }}
-        {{/ each }}
-        {{# each adminLinks 'bottom' }}
-          {{> orionMaterializeSidebarLink }}
-        {{/ each }}
-      {{/ if }}
+      {{# each adminLinks }}
+        {{> orionMaterializeSidebarLink }}
+      {{/ each }}
     </ul>
   </header>
 </template>
-
 <template name="orionMaterializeSidebarLink">
-  <li class="{{ isActiveRoute regex=activeRouteRegex }} no-padding">
-    <a href="{{ pathFor routeName }}" class="waves-effect">{{ title }}</a>
-  </li>
+  {{# if childs }}
+    <li class="no-padding">
+      {{# if routeName }}
+        <a class="collapsible-header collapse-link-right">
+          <i class="material-icons">arrow_drop_down</i>
+        </a>
+        <a href="{{ pathFor routeName }}">
+          {{ title }}
+        </a>
+      {{ else }}
+        <a class="collapsible-header waves-effect">{{ title }}</a>
+      {{/ if }}
+      <div class="collapsible-body">
+        <ul class="collapsible collapsible-accordion child-links">
+          {{# each childs }}
+            {{> orionMaterializeSidebarLink }}
+          {{/ each }}
+        </ul>
+      </div>
+    </li>
+  {{ else }}
+    <li class="{{ isActiveRoute regex=activeRouteRegex }} no-padding">
+      <a href="{{ pathFor routeName }}" class="waves-effect">{{ title }}</a>
+    </li>
+  {{/ if }}
 </template>

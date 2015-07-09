@@ -1,26 +1,43 @@
 <template name="orionBootstrapSidebar">
-  <ul class="sidebar-nav">
+  <ul class="sidebar-nav orion-links">
     <li class="sidebar-brand">
-        <a href="{{ options 'homePath' '/' }}">
-            {{ options 'siteName' 'Admin' }}
-        </a>
+      <a href="{{ options 'homePath' '/' }}">
+        {{ options 'siteName' 'Admin' }}
+      </a>
     </li>
-    {{# if rolesIsReady }}
-      {{# each adminLinks 'top' }}
-        {{> orionBootstrapSidebarLink }}
-      {{/ each }}
-      {{# each adminLinks 'medium' }}
-        {{> orionBootstrapSidebarLink }}
-      {{/ each }}
-      {{# each adminLinks 'bottom' }}
-        {{> orionBootstrapSidebarLink }}
-      {{/ each }}
-    {{/ if }}
+    {{# each adminLinks }}
+      {{> orionBootstrapSidebarLink }}
+    {{/ each }}
   </ul>
 </template>
 
 <template name="orionBootstrapSidebarLink">
-  <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-    <a href="{{ pathFor routeName }}">{{ title }}</a>
-  </li>
+  {{# if childs }}
+    <li>
+      {{# if routeName }}
+        <a class="collapse-link-right" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
+          <span class="caret"></span>
+        </a>
+        <a href="{{ pathFor routeName }}">
+          {{ title }}
+        </a>
+      {{ else }}
+        <a data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
+          {{ title }}
+          <span class="caret"></span>
+        </a>
+      {{/ if }}
+      <div class="collapse" id="admin-links-{{ identifier }}">
+        <ul class="child-links">
+          {{# each childs }}
+            {{> orionBootstrapSidebarLink }}
+          {{/ each }}
+        </ul>
+      </div>
+    </li>
+  {{ else }}
+    <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+      <a href="{{ pathFor routeName }}">{{ title }}</a>
+    </li>
+  {{/ if }}
 </template>

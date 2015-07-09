@@ -18,8 +18,9 @@ orion.accounts.addProtectedRoute('accounts.index');
  */
 if (Meteor.isClient) {
   Tracker.autorun(function () {
-    orion.addLink({
-      section: 'bottom',
+    orion.links.add({
+      index: 80,
+      identifier: 'accounts-index',
       title: i18n('accounts.index.title'),
       routeName: 'accounts.index',
       activeRouteRegex: 'accounts',
@@ -47,4 +48,4 @@ if (Meteor.isClient) {
       }
     });
   });
-} 
+}

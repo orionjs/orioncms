@@ -22,8 +22,9 @@ orion.accounts.addProtectedRoute('dictionary.update');
 Tracker.autorun(function () {
   if (!orion.dictionary.isActive() || Meteor.isServer) return;
 
-  orion.addLink({
-    section: 'top',
+  orion.links.add({
+    index: 10,
+    identifier: 'dictionary-update',
     title: i18n('dictionary.update.title'),
     routeName: 'dictionary.update',
     activeRouteRegex: 'dictionary',
