@@ -12,14 +12,58 @@ ReactiveTemplates.helpers('pages.index', {
 /**
  * Create Route
  */
+ReactiveTemplates.onRendered('pages.create', function () {
+  if (_.keys(orion.pages.templates).length == 1) {
+    Session.set('adminPagesCreate_choosenTemplate', _.keys(orion.pages.templates)[0]);
+  } else {
+    Session.set('adminPagesCreate_choosenTemplate', null);
+  }
+});
+
 ReactiveTemplates.helpers('pages.create', {
-  templatesNames: function () {
-    return _.keys(orion.pages.templates);
+  choosenTemplate: function() {
+    var name = Session.get('adminPagesCreate_choosenTemplate');
+    return name && orion.pages.templates[name];
+  },
+  templates: function () {
+    return _.values(orion.pages.templates);
+  }
+});
+
+ReactiveTemplates.events('pages.create', {
+  'click .template-choose': function () {
+    Session.set('adminPagesCreate_choosenTemplate', this.template);
+  },
+  'click .cancel-btn': function () {
+    if (_.keys(orion.pages.templates).length == 1) {
+      Router.go('adminPagesIndex');
+    } else {
+      Session.set('adminPagesCreate_choosenTemplate', null);
+    }
+  },
+  'click .submit-btn': function () {
+    $('#orionPagesCreateForm').submit();
   }
 });
 
 AutoForm.hooks({
   orionPagesCreateForm: {
+    before: {
+      insert: function(doc) {
+        var name = Session.get('adminPagesCreate_choosenTemplate');
+        if (!name) {
+          this.result(false);
+        } else {
+          doc = orion.pages.templates[name].schema.clean(doc, {
+            extendAutoValueContext: {
+              isInsert: true,
+              userId: Meteor.userId()
+            }
+          });
+          this.result(doc);
+        }
+      }
+    },
     onSuccess: function() {
       Router.go('pages.index');
     }
@@ -38,8 +82,14 @@ AutoForm.hooks({
 });
 
 ReactiveTemplates.helpers('pages.update', {
-  templatesNames: function () {
-    return _.keys(orion.pages.templates);
+  getSchema: function () {
+    return this && orion.pages.templates[this.template] && orion.pages.templates[this.template].schema;
+  }
+});
+
+ReactiveTemplates.events('pages.update', {
+  'click .save-btn': function () {
+    $('#orionPagesUpdateForm').submit();
   }
 });
 
