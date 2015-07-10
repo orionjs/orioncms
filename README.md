@@ -70,7 +70,7 @@ If you want to help translating Orion to your language follow the [instructions]
 
 **Admin Themes:**
 
-- [rwatts:orionjs-foundation](https://github.com/rwatts3/orionjs-contrib/blob/master/orionjs-foundation/README.md)
+- [rwatts:orionjs-foundation](https://github.com/rwatts3/orionjs-contrib/tree/orionjs-foundation)
 
 **Attributes:**
 
