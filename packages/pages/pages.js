@@ -46,12 +46,7 @@ orion.pages.getNewTemplateSchema = function (schema, newTemplate) {
     url: {
       type: String,
       regEx: /^[a-z0-9A-Z_-]+$/,
-      label: orion.helpers.getTranslation('pages.schema.url'),
-      custom: function() {
-        if (this.isSet && orion.pages.collection.find({ url: this.value }).count() > 0) {
-          return 'notUnique';
-        }
-      }
+      label: orion.helpers.getTranslation('pages.schema.url')
     },
     template: {
       type: String,

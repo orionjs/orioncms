@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:pages',
 	summary: 'Pages for Orion CMS',
-	version: '1.2.0',
+	version: '1.2.1',
 	git: 'https://github.com/orionjs/pages'
 });
 

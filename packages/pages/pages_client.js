@@ -50,9 +50,10 @@ AutoForm.hooks({
   orionPagesCreateForm: {
     before: {
       insert: function(doc) {
+        var self = this;
         var name = Session.get('adminPagesCreate_choosenTemplate');
         if (!name) {
-          this.result(false);
+          self.result(false);
         } else {
           doc = orion.pages.templates[name].schema.clean(doc, {
             extendAutoValueContext: {
@@ -60,7 +61,15 @@ AutoForm.hooks({
               userId: Meteor.userId()
             }
           });
-          this.result(doc);
+
+          Meteor.call('orion_pageWithUrl', doc.url, function(error, result) {
+            if (!result) {
+              self.result(doc);
+            } else {
+              orion.pages.templates[name].schema.namedContext('orionPagesCreateForm').addInvalidKeys([{name: 'url', type: 'notUnique'}]);
+              self.result(false);
+            }
+          })
         }
       }
     },
@@ -75,6 +84,31 @@ AutoForm.hooks({
  */
 AutoForm.hooks({
   orionPagesUpdateForm: {
+    before: {
+      update: function(doc) {
+        var self = this;
+        var updatingPage = doc.$set;
+        var name = updatingPage.template;
+        if (!name) {
+          self.result(false);
+        } else {
+          doc = orion.pages.templates[name].schema.clean(doc, {
+            extendAutoValueContext: {
+              isUpdate: true,
+              userId: Meteor.userId()
+            }
+          });
+          Meteor.call('orion_pageWithUrl', updatingPage.url, function(error, result) {
+            if (result && result._id != self.docId) {
+              orion.pages.templates[name].schema.namedContext('orionPagesUpdateForm').addInvalidKeys([{name: 'url', type: 'notUnique'}]);
+              self.result(false);
+            } else {
+              self.result(doc);
+            }
+          })
+        }
+      }
+    },
     onSuccess: function() {
       Router.go('pages.index');
     }
