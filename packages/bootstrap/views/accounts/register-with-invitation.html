@@ -1,6 +1,6 @@
 <template name="orionBootstrapRegisterWithInvitation">
   {{# contentFor "title" }}
-    {{ i18n 'accounts.registerWithInvitation.title' }}
+    {{ i18n 'accounts.register.title' }}
   {{/ contentFor }}
   {{# if invitation }}
     {{# if error }}
@@ -18,28 +18,28 @@
 
     <form>
       <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.email'}}</label>
+        <label>{{i18n 'accounts.register.fields.email'}}</label>
         {{# if invitation.email }}
           <input class="form-control" value="{{ invitation.email }}" name="email" type="email" disabled=true>
         {{ else }}
-          <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.email'}}" name="email" type="email">
+          <input class="form-control" placeholder="{{i18n 'accounts.register.fields.email'}}" name="email" type="email">
         {{/ if }}
       </div>
       <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.name'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.name'}}" name="name" type="text">
+        <label>{{i18n 'accounts.register.fields.name'}}</label>
+        <input class="form-control" placeholder="{{i18n 'accounts.register.fields.name'}}" name="name" type="text">
       </div>
       <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.password'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.password'}}" name="password" type="password">
+        <label>{{i18n 'accounts.register.fields.password'}}</label>
+        <input class="form-control" placeholder="{{i18n 'accounts.register.fields.password'}}" name="password" type="password">
       </div>
       <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}" name="password-confirm" type="password">
+        <label>{{i18n 'accounts.register.fields.confirmPassword'}}</label>
+        <input class="form-control" placeholder="{{i18n 'accounts.register.fields.confirmPassword'}}" name="password-confirm" type="password">
       </div>
       <br>
       <div class="form-group">
-        <button class="btn btn-primary btn-block btn-lg">{{i18n 'accounts.registerWithInvitation.registerButton'}}</button>
+        <button class="btn btn-primary btn-block btn-lg">{{i18n 'accounts.register.registerButton'}}</button>
       </div>
     </form>
   {{/ if }}
