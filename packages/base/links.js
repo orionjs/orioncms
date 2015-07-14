@@ -44,7 +44,12 @@ orion.links.add = function(options) {
 
 orion.links.get = function() {
   var links = this._collection.find({ index: { $exists: true }, parent: { $exists: false } }, { sort: { index: 1 } }).fetch();
-  return links;
+  return _.filter(links, function(link) {
+    if (link.permission && !Roles.userHasPermission(Meteor.userId(), link.permission)) {
+      return false;
+    }
+    return true;
+  });
 }
 
 orion.links.getLink = function(identifier) {
