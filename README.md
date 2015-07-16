@@ -85,7 +85,7 @@ If you want to help translating Orion to your language follow the [instructions]
 - [brightbind:orion-gridfs](https://github.com/brightbind/orion-gridFS/)
 
 **Languages:**
-
+- [orionjs:lang-es](https://github.com/orionjs/orion/tree/master/packages/lang-es) Spanish
 - [jorisroling:orion-lang-nl](https://github.com/jorisroling/orion-lang-nl) Dutch
 - [pierreeric:orion-lang-fr](https://atmospherejs.com/pierreeric/orion-lang-fr) French
 - [loongmxbt:orion-lang-zh-cn](https://github.com/loongmxbt/orion-lang-zh-cn) Simplified Chinese
