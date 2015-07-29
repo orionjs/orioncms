@@ -103,7 +103,7 @@ orion.dictionary.get = function(path, defaultValue) {
 
   if (!defaultValue && orion.dictionary.simpleSchema()) {
     var def = orion.dictionary.simpleSchema()._schema[path];
-    if (def && def.defaultValue) {
+    if (def && _.has(def, 'defaultValue')) {
       defaultValue = _.isFunction(def.defaultValue) ? def.defaultValue() : def.defaultValue;
     }
   }
