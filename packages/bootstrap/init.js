@@ -4,7 +4,6 @@ Options.init('siteName');
 ReactiveTemplates.request('tabs', 'orionBootstrapTabs');
 ReactiveTemplates.request('adminSidebar');
 
-
 ReactiveTemplates.set('layout', 'orionBootstrapLayout');
 ReactiveTemplates.set('outAdminLayout', 'orionBootstrapOutAdminLayout');
 
@@ -34,4 +33,3 @@ ReactiveTemplates.set('pages.index', 'orionBootstrapPagesIndex');
 ReactiveTemplates.set('pages.create', 'orionBootstrapPagesCreate');
 ReactiveTemplates.set('pages.update', 'orionBootstrapPagesUpdate');
 ReactiveTemplates.set('pages.delete', 'orionBootstrapPagesDelete');
-
