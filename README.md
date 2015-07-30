@@ -53,9 +53,6 @@ And now go
 
 [orion-example.meteor.com](http://orion-example.meteor.com)
 
-#### Docker fans
-[There is a container for that](https://registry.hub.docker.com/u/gekkie/orion_meteor_cms/)
-
 #### Roadmap
 
 [trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
