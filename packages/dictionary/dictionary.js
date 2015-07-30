@@ -99,7 +99,7 @@ orion.dictionary.addDefinition = function(name, category, attribute) {
  */
 orion.dictionary.get = function(path, defaultValue) {
   // Sets empty string to avoid problems on templates
-  defaultValue = !defaultValue || defaultValue instanceof Spacebars.kw ? '' : defaultValue;
+  defaultValue = !defaultValue || defaultValue instanceof Spacebars.kw ? undefined : defaultValue;
 
   if (!defaultValue && orion.dictionary.simpleSchema()) {
     var def = orion.dictionary.simpleSchema()._schema[path];

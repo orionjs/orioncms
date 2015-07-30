@@ -36,7 +36,7 @@ jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
 livedata@1.0.13
-local-test:orionjs:dictionary@1.2.2
+local-test:orionjs:dictionary@1.2.3
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.13
@@ -60,7 +60,7 @@ orionjs:base@1.2.1
 orionjs:collections@1.2.0
 orionjs:config@1.2.0
 orionjs:core@1.2.0
-orionjs:dictionary@1.2.2
+orionjs:dictionary@1.2.3
 orionjs:lang-en@1.2.0
 random@1.0.3
 reactive-dict@1.1.0
