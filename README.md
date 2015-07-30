@@ -79,7 +79,6 @@ If you want to help translating Orion to your language follow the [instructions]
 **Filesystem:**
 
 - [vsivsi:orion-file-collection](https://atmospherejs.com/vsivsi/orion-file-collection) Lightweight MongoDB gridFS support
-
 - [lc3t35:orion-filesystem-local](https://github.com/lc3t35/orion-filesystem-local)
 - [brightbind:orion-gridfs](https://github.com/brightbind/orion-gridFS/)
 
