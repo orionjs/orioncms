@@ -71,7 +71,7 @@ If you want to help translating Orion to your language follow the [instructions]
 **Admin Themes:**
 
 - [rwatts:orionjs-foundation](https://github.com/rwatts3/orionjs-contrib/tree/orionjs-foundation)
-- [nicolaslopezj:orion-admin-only-bootstrap](https://github.com/nicolaslopezj/orion-admin-only-bootstrap) use bootstrap theme without using bootstrap in the whole app.
+- [nicolaslopezj:orion-admin-only-bootstrap](https://github.com/nicolaslopezj/orion-admin-only-bootstrap) use bootstrap theme without using bootstrap in the whole app
 
 **Attributes:**
 
