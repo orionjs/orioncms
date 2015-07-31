@@ -49,6 +49,10 @@ And now go
 
 [orionjs.org/tutorials](http://orionjs.org/tutorials)
 
+#### Forums
+
+[forums.orionjs.org](http://forums.orionjs.org)
+
 #### Preview
 
 [orion-example.meteor.com](http://orion-example.meteor.com)
