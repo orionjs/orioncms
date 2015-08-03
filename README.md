@@ -99,3 +99,7 @@ If you want to help translating Orion to your language follow the [instructions]
 **Integrations:**
 
 - [nicolaslopezj:orion-ga](https://github.com/nicolaslopezj/orion-ga) Google analytics
+
+**Others:**
+
+- [nicolaslopezj:orion-exporter](https://github.com/nicolaslopezj/orion-exporter) Export and import Orion data
