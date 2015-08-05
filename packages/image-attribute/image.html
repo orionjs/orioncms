@@ -2,26 +2,33 @@
   <div class="row">
     <div class="image-attribute col m6 col-sm-6" {{ this.atts }}>
       {{# if image }}
-        {{# if base64 }}
-          <img src="{{ base64 }}">
-        {{ else }}
-          <img src="{{ image.url }}">
-        {{/ if }}
-        <br>
-        <button type="button" class="btn btn-danger btn-remove btn-xs red">{{ i18n 'global.delete' }}</button>
+        <p>
+          {{# if base64 }}
+            <img src="{{ base64 }}">
+          {{ else }}
+            <img src="{{ image.url }}">
+          {{/ if }}
+        </p>
+        <p>
+          <button type="button" class="btn btn-danger btn-remove btn-xs red">{{ i18n 'global.delete' }}</button>
+        </p>
       {{ else }}
         {{# if base64 }}
-          <img src="{{ base64 }}" class="base64-preview {{ uploadingClass }}">
+          <p>
+            <img src="{{ base64 }}" class="base64-preview {{ uploadingClass }}">
+          </p>
           {{# if progress }}
+            <br>
             <div class="progress">
               <div class="progress-bar progress-bar-striped active determinate" style="width: {{ progress }}%"></div>
             </div>
           {{/ if }}
         {{ else }}
-            <br>
-          <span class="btn btn-default btn-file btn-xs input-field">
-            {{ i18n 'attributes.image.choose' }} <input type="file">
-          </span>
+          <p>
+            <span class="btn btn-default btn-file btn-xs input-field">
+              {{ i18n 'attributes.image.choose' }} <input type="file" accept="image/*">
+            </span>
+          </p>
         {{/ if }}
       {{/ if }}
     </div>

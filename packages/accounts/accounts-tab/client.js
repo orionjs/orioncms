@@ -1,42 +1,21 @@
-ReactiveTemplates.onRendered('accounts.index', function() {
-  this.subscribe('adminAccountsList');
-  this.subscribe('enrolledUsers');
-})
-
 ReactiveTemplates.helpers('accounts.index', {
-  users: function () {
-    return Meteor.users.find({}, { sort: { createdAt: -1 } });
-  },
-  buttons: function() {
-    var self = this;
-    return _.filter(orion.accounts._adminUsersButtons, function(value, key, list){
-      if (typeof value.shouldShow != 'function') {
-        return true;
-      }
-      return value.shouldShow(self);
-    });
-  },
-
-  name: function() {
-    return this.profile && this.profile.name || "NA";
-  },
-
-  enrolled: function() {
-    var item = EnrolledUsers.findOne({_id: this._id}),
-        value = item && item.enrolled;
-
-    if(value)
-      return "YES";
-
-    return "NO";
+  table: function() {
+    return orion.accounts.indexTabularTable
   }
 });
 
 ReactiveTemplates.events('accounts.index', {
   'click .user-btn-action': function (event, template) {
-    var button = this;
     var userId = $(event.currentTarget).attr('data-user');
     var user = Meteor.users.findOne(userId);
+    var buttons = _.filter(orion.accounts._adminUsersButtons, function(value, key, list){
+      if (typeof value.shouldShow != 'function') {
+        return true;
+      }
+      return value.shouldShow(user);
+    });
+    var buttonIndex = $(event.currentTarget).attr('data-button-index');
+    var button = buttons[buttonIndex];
     if (button.meteorMethod) {
       Meteor.call(button.meteorMethod, user);
     } else if (button.route) {
@@ -48,6 +27,7 @@ ReactiveTemplates.events('accounts.index', {
 ReactiveTemplates.onRendered('accounts.update', function() {
   var userId = Router.current().params._id;
   this.subscribe('adminAccountsUpdateRoles', userId);
+  Session.set('accounts.update.confirmDelete', false);
 });
 
 ReactiveTemplates.helpers('accounts.update', {
@@ -73,11 +53,17 @@ ReactiveTemplates.helpers('accounts.update', {
   hasRole: function(role) {
     var userId = Router.current().params._id;
     return Roles.userHasRole(userId, role);
+  },
+  confirmDelete: function() {
+    return Session.get('accounts.update.confirmDelete');
   }
 });
 
 ReactiveTemplates.events('accounts.update', {
   'click #btnDeleteUser': function (event, template) {
+    Session.set('accounts.update.confirmDelete', true)
+  },
+  'click #btnConfirmDeleteUser': function(event, template) {
     var userId = Router.current().params._id;
     Meteor.call('removeUser', userId, function (error, result) {
       if (error) {

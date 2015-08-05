@@ -163,6 +163,10 @@ i18n.map('es', {
     },
     image: {
       choose: 'Elegir imagen'
+    },
+    images: {
+      choose: 'Elige las imagenes',
+      clickToRemove: 'Toca para eliminar'
     }
   },
   tabular: {
@@ -173,10 +177,10 @@ i18n.map('es', {
     emptyTable: 'Ningún dato disponible en esta tabla',
     paginate: {
       first: 'Primero',
-      previous: 'Anterior', 
+      previous: 'Anterior',
       next: 'Siguente',
       last: 'Último',
     }
-    
+
   }
-})
+});

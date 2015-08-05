@@ -1,0 +1,38 @@
+<template name="orionAttributesImagesUpload">
+  <div class="images-attribute" {{ this.atts }}>
+    <p>
+      {{# each images }}
+        <img src="{{ url }}" class="delete-btn" />
+      {{/ each }}
+      {{# each uploads }}
+        <img class="base64-preview uploading" src="{{ base64 }}" />
+      {{/ each }}
+    </p>
+    {{# each uploads }}
+      <br>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped active determinate" style="width: {{ progress }}%"></div>
+      </div>
+    {{/ each }}
+    {{# if images }}
+    <p class="help-block grey-text">
+      {{ i18n 'attributes.images.clickToRemove' }}
+    </p>
+    {{/ if }}
+    <span class="btn btn-default btn-file btn-xs input-field {{# if uploads }}disabled{{/ if }}">
+      {{ i18n 'attributes.images.choose' }} <input type="file" accept="image/*" disabled={{# if uploads }}true{{/ if }}>
+    </span>
+  </div>
+</template>
+
+<template name="orionAttributesImagesUploadColumn">
+  {{# if value }}
+    <p>
+      {{# each value }}
+        <img class="data-table-image" src="{{ url }}">
+      {{/ each }}
+    </p>
+  {{ else }}
+    <p class="help-block"><i>{{ i18n 'attributes.file.noFile' }}</i></p>
+  {{/ if }}
+</template>

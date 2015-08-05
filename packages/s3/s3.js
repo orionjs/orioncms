@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
   orion.filesystem.providerUpload = function(options, success, failure, progress) {
+    var before = _.pluck(S3.collection.find().fetch(), '_id');
     S3.upload({
       files: options.fileList,
       path: orion.config.get('AWS_S3_PATH', 'orionjs'),
@@ -11,8 +12,12 @@ if (Meteor.isClient) {
       }
       S3.collection.remove({});
     });
+    var after = _.pluck(S3.collection.find().fetch(), '_id');
+    var difference = _.difference(after, before);
+    var id = difference.length > 0 ? difference[0] : '';
+
     Tracker.autorun(function () {
-      var file = S3.collection.findOne();
+      var file = S3.collection.findOne(id);
       if (file) {
         progress(file.percent_uploaded);
       }

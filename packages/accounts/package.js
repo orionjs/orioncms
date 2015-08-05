@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:accounts',
   summary: 'Orion accounts mannager',
-  version: '1.2.1',
+  version: '1.3.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,8 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.2.0',
-    'orionjs:attributes@1.2.0',
+    'orionjs:base@1.3.0',
+    'orionjs:attributes@1.3.0',
     'accounts-base',
     'accounts-password',
     'useraccounts:core@1.8.1',
@@ -18,6 +18,10 @@ Package.onUse(function(api) {
     'matb33:collection-hooks@0.7.11',
     'meteorhacks:inject-initial@1.0.2',
     ]);
+
+  api.use(['aldeed:tabular@1.2.0', 'nicolaslopezj:tabular-materialize@1.2.1'], {
+  		weak: true
+  	});
 
   api.imply([
     'underscore',
@@ -28,6 +32,7 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
+    'tabular.js',
     'accounts.js',
     'authentication/login.js',
     'authentication/secure-routes.js',
