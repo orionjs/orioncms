@@ -70,13 +70,13 @@
         <p class="red-text">{{ i18n 'accounts.update.sections.deleteUser.advice' }}</p>
 
         {{# if confirmDelete }}
-        <button id="btnConfirmDeleteUser"class="waves-effect waves-light btn red" user="{{user._id}}">
-          {{ i18n 'global.confirm' }}
-        </button>
+          <button id="btnConfirmDeleteUser" class="waves-effect waves-light btn red" user="{{user._id}}">
+            {{ i18n 'global.confirm' }}
+          </button>
         {{ else }}
-        <button id="btnDeleteUser" class="waves-effect waves-light btn red" user="{{user._id}}">
-          {{ i18n 'accounts.update.sections.deleteUser.button' }}
-        </button>
+          <button id="btnDeleteUser" class="waves-effect waves-light btn red" user="{{user._id}}">
+            {{ i18n 'accounts.update.sections.deleteUser.button' }}
+          </button>
         {{/ if }}
       </div>
 

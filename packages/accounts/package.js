@@ -19,6 +19,10 @@ Package.onUse(function(api) {
     'meteorhacks:inject-initial@1.0.2',
     ]);
 
+  api.use(['aldeed:tabular@1.2.0', 'nicolaslopezj:tabular-materialize@1.2.1'], {
+  		weak: true
+  	});
+
   api.imply([
     'underscore',
     'accounts-base',
@@ -28,6 +32,7 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
+    'tabular.js',
     'accounts.js',
     'authentication/login.js',
     'authentication/secure-routes.js',

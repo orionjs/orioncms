@@ -12,13 +12,18 @@ Meteor.publish('enrolledUsers', function () {
   this.ready();
 });
 
-Meteor.publish('adminAccountsList', function () {
+Meteor.publish('adminAccountsIndexTabular', function (tableName, ids, fields) {
+  check(tableName, String);
+  check(ids, Array);
+  check(fields, Match.Optional(Object));
+
   if (!Roles.userHasPermission(this.userId, 'accounts.index')) {
     return [];
   }
+
   return [
-    Meteor.users.find({}, { fields: { services: 0 } }),
-    Roles._collection.find()
+    Meteor.users.find({ _id: { $in: ids } }, { fields: { services: 0 } }),
+    Roles._collection.find({ _id: { $in: ids } })
   ];
 });
 
