@@ -13,11 +13,11 @@ meteor@1.1.6
 minimongo@1.0.8
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-orionjs:lang-en@1.2.0
-orionjs:lang-es@1.2.0
+orionjs:lang-en@1.3.0
+orionjs:lang-es@1.3.0
 random@1.0.3
 reactive-var@1.0.5
-softwarerero:accounts-t9n@1.1.1
+softwarerero:accounts-t9n@1.1.3
 tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3
