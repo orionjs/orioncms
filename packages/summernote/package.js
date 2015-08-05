@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:summernote',
   summary: 'Summernote editor for orion',
-  version: '1.2.0',
+  version: '1.3.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,12 +9,12 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.2.0',
-    'orionjs:attributes@1.2.0',
+    'orionjs:base@1.3.0',
+    'orionjs:attributes@1.3.0',
     'less',
-    'orionjs:filesystem@1.2.0',
-    'summernote:standalone@0.6.0',
-    'jquery@1.0.0'
+    'orionjs:filesystem@1.3.0',
+    'summernote:standalone@0.6.15',
+    'jquery'
     ]);
 
   api.imply([

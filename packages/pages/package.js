@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:pages',
 	summary: 'Pages for Orion CMS',
-	version: '1.2.1',
+	version: '1.3.0',
 	git: 'https://github.com/orionjs/pages'
 });
 
@@ -10,9 +10,9 @@ Package.onUse(function(api) {
 
 	api.use([
 		'meteor-platform',
-		'orionjs:base@1.2.0',
-		'aldeed:collection2@2.0.0',
-		'aldeed:autoform@5.1.2'
+		'orionjs:base@1.3.0',
+		'aldeed:collection2@2.3.3',
+		'aldeed:autoform@5.4.0'
 		]);
 
 	api.use(['aldeed:tabular@1.2.0', 'nicolaslopezj:tabular-materialize@1.2.1'], {

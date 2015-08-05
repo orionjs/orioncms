@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:dictionary',
   summary: 'Meteor collection with some magic',
-  version: '1.2.3',
+  version: '1.3.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,8 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.2.0',
-    'aldeed:simple-schema@1.3.2',
+    'orionjs:base@1.3.0',
+    'aldeed:simple-schema@1.3.3',
     'aldeed:collection2@2.3.3',
     ]);
 
