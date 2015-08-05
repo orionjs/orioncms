@@ -1,7 +1,9 @@
 Template.orionBootstrapLayout.events({
   'click .orion-bootstrap-admin.toggled': function() {
-    $(".orion-bootstrap-admin").removeClass("toggled");
-    $("html,body").removeClass("no-overflow");
+    if ($(window).width() < 768) {
+      $(".orion-bootstrap-admin").removeClass("toggled");
+      $("html,body").removeClass("no-overflow");
+    }
   },
   'click .menu-toggle': function () {
     $(".orion-bootstrap-admin").toggleClass("toggled");
