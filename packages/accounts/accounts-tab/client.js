@@ -48,6 +48,7 @@ ReactiveTemplates.events('accounts.index', {
 ReactiveTemplates.onRendered('accounts.update', function() {
   var userId = Router.current().params._id;
   this.subscribe('adminAccountsUpdateRoles', userId);
+  Session.set('accounts.update.confirmDelete', false);
 });
 
 ReactiveTemplates.helpers('accounts.update', {
@@ -73,11 +74,17 @@ ReactiveTemplates.helpers('accounts.update', {
   hasRole: function(role) {
     var userId = Router.current().params._id;
     return Roles.userHasRole(userId, role);
+  },
+  confirmDelete: function() {
+    return Session.get('accounts.update.confirmDelete');
   }
 });
 
 ReactiveTemplates.events('accounts.update', {
   'click #btnDeleteUser': function (event, template) {
+    Session.set('accounts.update.confirmDelete', true)
+  },
+  'click #btnConfirmDeleteUser': function(event, template) {
     var userId = Router.current().params._id;
     Meteor.call('removeUser', userId, function (error, result) {
       if (error) {

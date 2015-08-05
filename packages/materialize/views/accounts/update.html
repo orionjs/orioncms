@@ -16,7 +16,7 @@
 
       <br>
       <div class="divider"></div>
-      
+
       <br>
       <div class="card-panel">
         <h4>{{ i18n 'accounts.update.sections.profile.title' }}</h4>
@@ -69,9 +69,15 @@
         <h4>{{ i18n 'accounts.update.sections.deleteUser.title' }}</h4>
         <p class="red-text">{{ i18n 'accounts.update.sections.deleteUser.advice' }}</p>
 
+        {{# if confirmDelete }}
+        <button id="btnConfirmDeleteUser"class="waves-effect waves-light btn red" user="{{user._id}}">
+          {{ i18n 'global.confirm' }}
+        </button>
+        {{ else }}
         <button id="btnDeleteUser" class="waves-effect waves-light btn red" user="{{user._id}}">
           {{ i18n 'accounts.update.sections.deleteUser.button' }}
         </button>
+        {{/ if }}
       </div>
 
     {{/ Layout }}

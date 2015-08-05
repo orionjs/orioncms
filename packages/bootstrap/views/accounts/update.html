@@ -63,9 +63,15 @@
       <p>
         {{ i18n 'accounts.update.sections.deleteUser.advice' }}
       </p>
-      <button id="btnDeleteUser" class="btn btn-large btn-danger" user="{{user._id}}">
+      {{# if confirmDelete }}
+      <button id="btnConfirmDeleteUser" class="btn btn-large btn-danger" user="{{user._id}}">
+        {{ i18n 'global.confirm' }}
+      </button>
+      {{ else }}
+      <button id="btnDeleteUser" class="btn btn-large btn-danger">
         {{ i18n 'accounts.update.sections.deleteUser.button' }}
       </button>
+      {{/ if }}
     </div>
     <br>
     <br>
