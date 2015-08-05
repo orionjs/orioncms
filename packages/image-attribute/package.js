@@ -25,6 +25,8 @@ Package.onUse(function(api) {
     'image.html',
     'image.less',
     'image.js',
+    'images.html',
+    'images.js',
     ], 'client');
 
   api.export('Colibri');

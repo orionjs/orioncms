@@ -56,7 +56,6 @@ ReactiveTemplates.events('attribute.image', {
             alert(upload.error.reason);
           } else {
             var information = orion.helpers.analizeColorFromBase64(base64);
-            console.log(information, 'info');
             Session.set('image' + self.name, {
               fileId: upload.fileId,
               url: upload.url,

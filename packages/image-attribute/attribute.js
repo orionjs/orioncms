@@ -47,6 +47,6 @@ orion.attributes.registerAttribute('images', {
     };
   },
   valueOut: function() {
-    return Session.get('image' + this.attr('data-schema-key'));
+    return Session.get('images' + this.attr('data-schema-key'));
   },
 });
