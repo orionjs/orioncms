@@ -92,7 +92,6 @@ orion.pages.tabular = new Tabular.Table({
 Meteor.startup(function(){
   Router.route('/:url', function() {
     var subs = Meteor.subscribe('page', this.params.url);
-    this.wait(subs);
     if (subs.ready()) {
       var page = orion.pages.collection.findOne({ url: this.params.url });
       if (page) {
@@ -104,6 +103,8 @@ Meteor.startup(function(){
       } else {
         this.render('notFound');
       }
+    } else {
+      this.render('');
     }
   }, { name: 'pages' });
 });
