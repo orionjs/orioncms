@@ -3,10 +3,12 @@
  */
 ReactiveTemplates.request('accounts.create');
 
-Router.route('/admin/accounts/create', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('accounts.create'));
-}, { name: 'accounts.create' });
+RouterLayer.route('/admin/accounts/create', {
+  layout: 'layout',
+  template: 'accounts.create',
+  name: 'accounts.create'
+  reactiveTemplates: true
+});
 orion.accounts.addProtectedRoute('accounts.create');
 
 if (Meteor.isClient) {
@@ -88,12 +90,12 @@ if (Meteor.isClient) {
  * Register with invitation
  */
 ReactiveTemplates.request('registerWithInvitation');
-
-Router.route('/register/invitation/:_id', function () {
-  this.layout(ReactiveTemplates.get('outAdminLayout'));
-  this.render(ReactiveTemplates.get('registerWithInvitation'));
-}, { name: 'registerWithInvitation' });
-
+RouterLayer.route('/register/invitation/:_id', {
+  layout: 'outAdminLayout',
+  template: 'registerWithInvitation',
+  name: 'registerWithInvitation'
+  reactiveTemplates: true
+});
 
 if (Meteor.isClient) {
 

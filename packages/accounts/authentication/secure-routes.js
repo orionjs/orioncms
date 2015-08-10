@@ -4,12 +4,13 @@
 Options.init('ensureSignedIn', []);
 
 Tracker.autorun(function () {
-  Router.plugin('ensureSignedIn', {
+  /*Router.plugin('ensureSignedIn', {
     only: Options.get('ensureSignedIn')
-  });
+  });*/
 });
 
 orion.accounts.addProtectedRoute = function(routeName) {
+  console.log('addProtectedRoute!!');
   Options.arrayPush('ensureSignedIn', routeName);
 };
 
