@@ -36,7 +36,7 @@
       </div>
     </li>
   {{ else }}
-    <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+    <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }}">
       <a href="{{ pathFor routeName }}">{{ title }}</a>
     </li>
   {{/ if }}

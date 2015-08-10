@@ -9,162 +9,95 @@ orion.collections.onCreated(function() {
   /**
    * Register the index route
    */
-  Router.route('/admin/' + this.routePath, function () {
-    this.collection = self;
-    this.layout(ReactiveTemplates.get('layout'));
-    this.render(ReactiveTemplates.get('collections.' + self.name + '.index'), {
-      data: function() {
-        return {
-          collection: self,
-        };
-      }
-    });
-  }, { name: ('collections.' + this.name + '.index') });
-  this.indexPath = function() {
-    return Router.path('collections.' + self.name + '.index');
+  RouterLayer.route('/admin/' + self.routePath, {
+    layout: 'layout',
+    template: 'collections.' + self.name + '.index',
+    name: 'collections.' + self.name + '.index',
+    reactiveTemplates: true
+  });
+  self.indexPath = function() {
+    return RouterLayer.pathFor('collections.' + self.name + '.index');
   };
 
   /**
    * Ensure user is logged in
    */
-  orion.accounts.addProtectedRoute('collections.' + this.name + '.index');
+  orion.accounts.addProtectedRoute('collections.' + self.name + '.index');
 
   /**
    * Request a template for the collection create
    */
-  ReactiveTemplates.request('collections.' + this.name + '.create', Options.get('collectionsDefaultCreateTemplate'));
+  ReactiveTemplates.request('collections.' + self.name + '.create', Options.get('collectionsDefaultCreateTemplate'));
 
   /**
    * Register the create route
    */
-  Router.route('/admin/' + this.routePath + '/create', function () {
-    this.collection = self;
-    this.layout(ReactiveTemplates.get('layout'));
-    this.render(ReactiveTemplates.get('collections.' + self.name + '.create'), {
-      data: function() {
-        return {
-          collection: self,
-        };
-      }
-    });
-  }, { name: ('collections.' + this.name + '.create') });
-  this.createPath = function() {
-    return Router.path('collections.' + self.name + '.create');
+  RouterLayer.route('/admin/' + self.routePath + '/create', {
+    layout: 'layout',
+    template: 'collections.' + self.name + '.create',
+    name: 'collections.' + self.name + '.create',
+    reactiveTemplates: true
+  });
+  self.createPath = function() {
+    return RouterLayer.pathFor('collections.' + self.name + '.create');
   };
 
   /**
    * Ensure user is logged in
    */
-  orion.accounts.addProtectedRoute('collections.' + this.name + '.create');
+  orion.accounts.addProtectedRoute('collections.' + self.name + '.create');
 
   /**
    * Request a template for the collection update
    */
-  ReactiveTemplates.request('collections.' + this.name + '.update', Options.get('collectionsDefaultUpdateTemplate'));
+  ReactiveTemplates.request('collections.' + self.name + '.update', Options.get('collectionsDefaultUpdateTemplate'));
 
   /**
    * Register the update route
    */
-  Router.route('/admin/' + this.routePath + '/:_id', function () {
-    this.collection = self;
-    this.layout(ReactiveTemplates.get('layout'));
-    var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
-    var item = self.findOne(this.params._id);
-    this.item = item;
-    if (subs.ready()) {
-      this.render(ReactiveTemplates.get('collections.' + self.name + '.update'), {
-        data: function() {
-          return {
-            collection: self,
-            item: item,
-          };
-        }
-      });
-    } else {
-      this.render('');
-    }
-  }, { name: ('collections.' + this.name + '.update') });
-  this.updatePath = function(item) {
+  RouterLayer.route('/admin/' + self.routePath + '/:_id', {
+    layout: 'layout',
+    template: 'collections.' + self.name + '.update',
+    name: 'collections.' + self.name + '.update',
+    reactiveTemplates: true
+  });
+  self.updatePath = function(item) {
     var options = item;
     if (_.isString(item)) {
       options = { _id: item };
     }
-    return Router.path('collections.' + self.name + '.update', options);
+    return RouterLayer.pathFor('collections.' + self.name + '.update', options);
   };
 
   /**
    * Ensure user is logged in
    */
-  orion.accounts.addProtectedRoute('collections.' + this.name + '.update');
+  orion.accounts.addProtectedRoute('collections.' + self.name + '.update');
 
   /**
    * Request a template for the collection delete
    */
-  ReactiveTemplates.request('collections.' + this.name + '.delete', Options.get('collectionsDefaultDeleteTemplate'));
-  if (Meteor.isClient) {
-    ReactiveTemplates.events('collections.' + self.name + '.delete', {
-      'click .confirm-delete': function() {
-        var objectId = this.item._id;
-        self.remove(objectId, function(error, result) {
-          if (error) {
-            console.warn('Error while deleting', objectId, 'in collection', self.name, ':', error);
-          }
-          // Only go back to index in case the deletion has been properly achieved
-          if (result === 1) {
-            Router.go(self.indexPath());
-          }
-        });
-      }
-    });
-  }
+  ReactiveTemplates.request('collections.' + self.name + '.delete', Options.get('collectionsDefaultDeleteTemplate'));
 
   /**
    * Register the delete route
    */
-  Router.route('/admin/' + this.routePath + '/:_id/delete', function () {
-    this.collection = self;
-    this.layout(ReactiveTemplates.get('layout'));
-    var subs = Meteor.subscribe('adminGetOne.' + self.name, this.params._id);
-    var item = self.findOne(this.params._id);
-    this.item = item;
-    if (subs.ready()) {
-      this.render(ReactiveTemplates.get('collections.' + self.name + '.delete'), {
-        data: function() {
-          return {
-            collection: self,
-            item: item,
-          };
-        }
-      });
-    } else {
-      this.render('');
-    }
-  }, { name: ('collections.' + this.name + '.delete') });
+  RouterLayer.route('/admin/' + self.routePath + '/:_id/delete', {
+    layout: 'layout',
+    template: 'collections.' + self.name + '.delete',
+    name: 'collections.' + self.name + '.delete',
+    reactiveTemplates: true
+  });
   this.deletePath = function(item) {
     var options = item;
     if (_.isString(item)) {
       options = { _id: item };
     }
-    return Router.path('collections.' + self.name + '.delete', options);
+    return RouterLayer.pathFor('collections.' + self.name + '.delete', options);
   };
 
   /**
    * Ensure user is logged in
    */
-  orion.accounts.addProtectedRoute('collections.' + this.name + '.delete');
-
-  if (Meteor.isClient) {
-    /**
-     * Register the link
-     */
-    var linkOptions = _.extend({
-      identifier: 'collections-' + this.name,
-      routeName: 'collections.' + this.name + '.index',
-      activeRouteRegex: 'collections.' + this.name,
-      permission: 'collections.' + this.name + '.index',
-      title: this.name[0].toUpperCase() + this.name.slice(1),
-      index: 30
-    }, this.link);
-    orion.links.add(linkOptions);
-  }
+  orion.accounts.addProtectedRoute('collections.' + self.name + '.delete');
 });

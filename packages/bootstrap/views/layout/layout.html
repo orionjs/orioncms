@@ -56,7 +56,7 @@
             </a>
             <ul class="dropdown-menu">
               {{# each childs }}
-                <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+                <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }}">
                   <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
                 </li>
               {{/ each }}

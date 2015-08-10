@@ -4,13 +4,16 @@
 Options.init('ensureSignedIn', []);
 
 Tracker.autorun(function () {
-  /*Router.plugin('ensureSignedIn', {
-    only: Options.get('ensureSignedIn')
-  });*/
+  if (RouterLayer.router == 'iron-router') {
+    RouterLayer.ironRouter.plugin('ensureSignedIn', {
+      only: Options.get('ensureSignedIn')
+    });
+  } else if (RouterLayer.router == 'flow-router') {
+    console.log('Protected routes for flow router is missing');
+  }
 });
 
 orion.accounts.addProtectedRoute = function(routeName) {
-  console.log('addProtectedRoute!!');
   Options.arrayPush('ensureSignedIn', routeName);
 };
 

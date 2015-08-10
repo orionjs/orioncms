@@ -34,6 +34,7 @@ Package.onUse(function(api) {
     ], 'server');
 
   api.addFiles([
+    'collections_client.js'
     ], 'client');
 
   api.export('orion');
