@@ -71,7 +71,7 @@ if (Meteor.isClient) {
             alert(error.reason);
             console.log(error);
           } else {
-            Router.go('accounts.index');
+            RouterLayer.go('accounts.index');
           }
         });
       }
@@ -101,7 +101,7 @@ if (Meteor.isClient) {
 
   ReactiveTemplates.onRendered('registerWithInvitation', function() {
     if (Meteor.userId()) {
-      Router.go('admin');
+      RouterLayer.go('admin');
     }
     this.subscribe('invitation', Router.current().params._id);
     Session.set('registerWithInvitationError', null);
@@ -151,7 +151,7 @@ if (Meteor.isClient) {
               Session.set('registerWithInvitationError', error.reason);
               console.log(error);
             } else {
-              Router.go('admin');
+              RouterLayer.go('admin');
             }
           });
         }

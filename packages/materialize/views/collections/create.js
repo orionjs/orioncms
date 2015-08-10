@@ -7,6 +7,6 @@ Template.orionMaterializeCollectionsCreate.events({
 
 AutoForm.addHooks('orionMaterializeCollectionsCreateForm', {
   onSuccess: function() {
-    Router.go(this.collection.indexPath());
+    RouterLayer.go(this.collection.indexPath());
   }
 });

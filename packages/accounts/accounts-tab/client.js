@@ -19,7 +19,7 @@ ReactiveTemplates.events('accounts.index', {
     if (button.meteorMethod) {
       Meteor.call(button.meteorMethod, user);
     } else if (button.route) {
-      Router.go(button.route, user);
+      RouterLayer.go(button.route, user);
     }
   }
 });
@@ -69,7 +69,7 @@ ReactiveTemplates.events('accounts.update', {
       if (error) {
         alert(error.reason);
       } else {
-        Router.go('accounts.index');
+        RouterLayer.go('accounts.index');
       }
     });
   },

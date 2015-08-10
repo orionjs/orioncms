@@ -7,7 +7,7 @@ Template.orionMaterializeCollectionsIndex.events({
     if (rowData) {
       if (rowData.canShowUpdate()) {
         var path = collection.updatePath(rowData);
-        Router.go(path);
+        RouterLayer.go(path);
       }
     }
   }

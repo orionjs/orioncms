@@ -36,7 +36,7 @@ ReactiveTemplates.events('pages.create', {
   },
   'click .cancel-btn': function () {
     if (_.keys(orion.pages.templates).length == 1) {
-      Router.go('adminPagesIndex');
+      RouterLayer.go('adminPagesIndex');
     } else {
       Session.set('adminPagesCreate_choosenTemplate', null);
     }
@@ -74,7 +74,7 @@ AutoForm.hooks({
       }
     },
     onSuccess: function() {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     }
   }
 });
@@ -110,7 +110,7 @@ AutoForm.hooks({
       }
     },
     onSuccess: function() {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     }
   }
 });
@@ -133,7 +133,7 @@ ReactiveTemplates.events('pages.update', {
 ReactiveTemplates.helpers('pages.delete', {
   onSuccess: function () {
     return function (result) {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     };
   }
 });
@@ -141,7 +141,7 @@ ReactiveTemplates.helpers('pages.delete', {
 ReactiveTemplates.events('pages.delete', {
   'click .confirm-delete': function() {
     orion.pages.collection.remove(this._id, function() {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     });
   }
 });
