@@ -1,6 +1,6 @@
 orion.collections.onCreated(function() {
   var self = this;
-  
+
   /**
    * Collection permissions
    */
@@ -15,10 +15,10 @@ orion.collections.onCreated(function() {
   if (Meteor.isClient) {
     this.canIndex = function() {
       return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.index');
-    }
+    };
     this.canShowCreate = function() {
       return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showCreate');
-    }
+    };
     this.helpers({
       canShowUpdate: function () {
         return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showUpdate', this);

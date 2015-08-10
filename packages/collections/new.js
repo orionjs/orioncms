@@ -3,6 +3,7 @@
  */
 orion.collection = function(name, options) {
   check(name, String);
+  check(options, Object);
   var collection = new Mongo.Collection(name, options);
 
   options = _.extend({
@@ -18,6 +19,5 @@ orion.collection = function(name, options) {
   for (var i = 0, N = orion.collections.hooks.onCreated.length; i < N; i++) {
     orion.collections.hooks.onCreated[i].call(collection);
   }
-
   return collection;
-}
+};
