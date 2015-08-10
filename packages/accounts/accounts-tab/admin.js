@@ -10,7 +10,7 @@ ReactiveTemplates.request('accounts.update');
 RouterLayer.route('/admin/accounts', {
   layout: 'layout',
   template: 'accounts.index',
-  name: 'accounts.index'
+  name: 'accounts.index',
   reactiveTemplates: true
 });
 orion.accounts.addProtectedRoute('accounts.index');
@@ -94,7 +94,7 @@ Tracker.autorun(function () {
 RouterLayer.route('/admin/accounts/:_id/update', {
   layout: 'layout',
   template: 'accounts.update',
-  name: 'accounts.update'
+  name: 'accounts.update',
   reactiveTemplates: true
 });
 orion.accounts.addProtectedRoute('accounts.update');

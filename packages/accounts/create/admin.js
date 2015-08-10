@@ -6,7 +6,7 @@ ReactiveTemplates.request('accounts.create');
 RouterLayer.route('/admin/accounts/create', {
   layout: 'layout',
   template: 'accounts.create',
-  name: 'accounts.create'
+  name: 'accounts.create',
   reactiveTemplates: true
 });
 orion.accounts.addProtectedRoute('accounts.create');
@@ -93,7 +93,7 @@ ReactiveTemplates.request('registerWithInvitation');
 RouterLayer.route('/register/invitation/:_id', {
   layout: 'outAdminLayout',
   template: 'registerWithInvitation',
-  name: 'registerWithInvitation'
+  name: 'registerWithInvitation',
   reactiveTemplates: true
 });
 

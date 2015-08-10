@@ -11,7 +11,7 @@ ReactiveTemplates.request('myAccount.profile');
 RouterLayer.route('/admin/my-account', {
   layout: 'layout',
   template: 'myAccount.index',
-  name: 'myAccount.index'
+  name: 'myAccount.index',
   reactiveTemplates: true
 });
 orion.accounts.addProtectedRoute('myAccount.index');
@@ -29,7 +29,7 @@ AccountsTemplates.configure({
 RouterLayer.route('/admin/my-account/change-password', {
   layout: 'layout',
   template: 'myAccount.password',
-  name: 'myAccount.password'
+  name: 'myAccount.password',
   reactiveTemplates: true
 });
 orion.accounts.addProtectedRoute('myAccount.password');
@@ -40,7 +40,7 @@ orion.accounts.addProtectedRoute('myAccount.password');
 RouterLayer.route('/admin/my-account/profile', {
   layout: 'layout',
   template: 'myAccount.profile',
-  name: 'myAccount.profile'
+  name: 'myAccount.profile',
   reactiveTemplates: true
 });
 orion.accounts.addProtectedRoute('myAccount.profile');
