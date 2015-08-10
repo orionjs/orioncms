@@ -90,21 +90,25 @@ orion.pages.tabular = new Tabular.Table({
  * Register page routes on meteor startup
  */
 Meteor.startup(function(){
-  Router.route('/:url', function() {
-    var subs = Meteor.subscribe('page', this.params.url);
-    if (subs.ready()) {
-      var page = orion.pages.collection.findOne({ url: this.params.url });
-      if (page) {
-        var template = orion.pages.templates[page.template];
-        if (template.layout) {
-          this.layout(template.layout);
+  if (RouterLayer.router == 'iron-router') {
+    Router.route('/:url', function() {
+      var subs = Meteor.subscribe('page', this.params.url);
+      if (subs.ready()) {
+        var page = orion.pages.collection.findOne({ url: this.params.url });
+        if (page) {
+          var template = orion.pages.templates[page.template];
+          if (template.layout) {
+            this.layout(template.layout);
+          }
+          this.render(page.template, {data: page});
+        } else {
+          this.render('notFound');
         }
-        this.render(page.template, {data: page});
       } else {
-        this.render('notFound');
+        this.render('');
       }
-    } else {
-      this.render('');
-    }
-  }, { name: 'pages' });
+    }, { name: 'pages' });
+  } else if (RouterLayer.router == 'flow-router') {
+    console.log('Pages for flow router is missing');
+  }
 });
