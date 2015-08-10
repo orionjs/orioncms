@@ -115,9 +115,19 @@ AutoForm.hooks({
   }
 });
 
+ReactiveTemplates.onCreated('pages.update', function() {
+  var self = this;
+  self.autorun(function() {
+    self.subscribe('pageById', RouterLayer.getParam('_id'));
+  });
+});
+
 ReactiveTemplates.helpers('pages.update', {
   getSchema: function () {
     return this && orion.pages.templates[this.template] && orion.pages.templates[this.template].schema;
+  },
+  item: function() {
+    return orion.pages.collection.findOne(RouterLayer.getParam('_id'));
   }
 });
 
@@ -130,11 +140,21 @@ ReactiveTemplates.events('pages.update', {
 /**
  * Delete route
  */
+ReactiveTemplates.onCreated('pages.delete', function() {
+ var self = this;
+ self.autorun(function() {
+   self.subscribe('pageById', RouterLayer.getParam('_id'));
+ });
+});
+
 ReactiveTemplates.helpers('pages.delete', {
   onSuccess: function () {
     return function (result) {
       RouterLayer.go('pages.index');
     };
+  },
+  item: function() {
+    return orion.pages.collection.findOne(RouterLayer.getParam('_id'));
   }
 });
 
