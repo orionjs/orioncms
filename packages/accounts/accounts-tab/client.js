@@ -1,6 +1,6 @@
 ReactiveTemplates.helpers('accounts.index', {
   table: function() {
-    return orion.accounts.indexTabularTable
+    return orion.accounts.indexTabularTable;
   }
 });
 
@@ -61,13 +61,13 @@ ReactiveTemplates.helpers('accounts.update', {
 
 ReactiveTemplates.events('accounts.update', {
   'click #btnDeleteUser': function (event, template) {
-    Session.set('accounts.update.confirmDelete', true)
+    Session.set('accounts.update.confirmDelete', true);
   },
   'click #btnConfirmDeleteUser': function(event, template) {
     var userId = Router.current().params._id;
     Meteor.call('removeUser', userId, function (error, result) {
       if (error) {
-        alert(error.reason)
+        alert(error.reason);
       } else {
         Router.go('accounts.index');
       }
@@ -84,7 +84,7 @@ ReactiveTemplates.events('accounts.update', {
     });
     Meteor.call('updateRoles', userId, roles, function (error, result) {
       if (error) {
-        alert(error.reason)
+        alert(error.reason);
       }
     });
     return false;

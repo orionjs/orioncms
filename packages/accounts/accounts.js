@@ -4,7 +4,7 @@ orion.accounts = {};
  * Initialize the profile schema option with its default value
  */
 Options.init('profileSchema', {
-  name: { 
+  name: {
     type: String,
     label: orion.helpers.getTranslation('accounts.schema.profile.name')
   }
@@ -35,7 +35,7 @@ Options.listen('forbidClientAccountCreation', function(value) {
   AccountsTemplates.configure({
     forbidClientAccountCreation: orion.adminExists && value,
   });
-})
+});
 
 /**
  * Adds the "name" field to the sign up form

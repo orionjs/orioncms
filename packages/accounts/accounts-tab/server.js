@@ -20,11 +20,11 @@ Meteor.publish('adminAccountsIndexTabular', function (tableName, ids, fields) {
   if (!Roles.userHasPermission(this.userId, 'accounts.index')) {
     return [];
   }
-
-  return [
+  result = [
     Meteor.users.find({ _id: { $in: ids } }, { fields: { services: 0 } }),
-    Roles._collection.find({ _id: { $in: ids } })
+    Roles._collection.find({ userId: { $in: ids } })
   ];
+  return result;
 });
 
 Meteor.publish('adminAccountsUpdateRoles', function (userId) {
@@ -48,7 +48,7 @@ Meteor.methods({
     Roles.setUserRoles(userId, roles);
   },
   orionAccountsUpdatePassword: function(modifier, userId) {
-    var options = modifier['$set'];
+    var options = modifier.$set;
     check(options, UsersPasswordSchema);
     Accounts.setPassword(userId, options.password, { logout: true });
   },

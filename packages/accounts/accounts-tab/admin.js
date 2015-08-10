@@ -41,8 +41,22 @@ var tabularOptions = {
   pub: 'adminAccountsIndexTabular',
   columns: [
     { data: 'profile.name', title: orion.helpers.getTranslation('accounts.index.tableTitles.name') },
-    { data: 'emails', title: orion.helpers.getTranslation('accounts.index.tableTitles.email'), render: function(val, type, doc) { return val && val[0] && val[0].address; } },
-    { data: 'roles()', title: orion.helpers.getTranslation('accounts.index.tableTitles.roles'), render: function(val, type, doc) { return val.map(function(role) { return '<span class="label label-danger red">' + role + '</span>' }).join('') } },
+    {
+      data: 'emails',
+      title: orion.helpers.getTranslation('accounts.index.tableTitles.email'),
+      render: function(val, type, doc) {
+        return val && val[0] && val[0].address;
+      }
+    },
+    {
+      data: 'roles()',
+      title: orion.helpers.getTranslation('accounts.index.tableTitles.roles'),
+      render: function(val, type, doc) {
+        return val.map(function(role) {
+          return '<span class="label label-danger red">' + role + '</span>';
+        }).join('');
+      }
+    },
     {
       title: orion.helpers.getTranslation('accounts.index.tableTitles.actions'),
       render: function(val, type, doc) {
