@@ -69,7 +69,7 @@ AutoForm.hooks({
               orion.pages.templates[name].schema.namedContext('orionPagesCreateForm').addInvalidKeys([{name: 'url', type: 'notUnique'}]);
               self.result(false);
             }
-          })
+          });
         }
       }
     },
@@ -105,7 +105,7 @@ AutoForm.hooks({
             } else {
               self.result(doc);
             }
-          })
+          });
         }
       }
     },

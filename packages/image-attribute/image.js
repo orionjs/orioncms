@@ -68,6 +68,6 @@ ReactiveTemplates.events('attribute.image', {
       Tracker.autorun(function () {
         Session.set('uploadProgress' + self.name, upload.progress());
       });
-    })
+    });
   }
 });

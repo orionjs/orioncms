@@ -12,7 +12,7 @@ Template.registerHelper('dict', function(name, defaultValue) {
  */
 orion.dictionary.isReady = function() {
   return subscription.ready();
-}
+};
 
 /**
  * Is the dictionary subscription ready for templates

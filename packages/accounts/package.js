@@ -14,8 +14,8 @@ Package.onUse(function(api) {
     'accounts-base',
     'accounts-password',
     'useraccounts:core@1.12.0',
-    'aldeed:simple-schema@1.3.2',
-    'matb33:collection-hooks@0.7.11',
+    'aldeed:simple-schema@1.3.3',
+    'matb33:collection-hooks@0.7.13',
     'meteorhacks:inject-initial@1.0.2',
     ]);
 

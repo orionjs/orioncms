@@ -10,7 +10,7 @@ Template.orionBootstrapDictionaryUpdate.helpers({
         class: function() {
           return Session.get('dictionaryUpdateCurrentCategory') == category ? 'btn-default disabled': 'btn-primary';
         }
-      }
+      };
     });
   }
 });

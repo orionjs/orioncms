@@ -1,7 +1,11 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
+<<<<<<< d7b5207b4790c1b09545c50e7a26a40156fec7a3
   version: '1.4.1',
+=======
+  version: '1.3.1',
+>>>>>>> Linting & Hoisting & package bumped
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -16,7 +20,12 @@ Package.onUse(function(api) {
     'nicolaslopezj:roles@1.2.0',
     'nicolaslopezj:router-layer@0.0.8',
     'aldeed:simple-schema@1.3.3',
+<<<<<<< d7b5207b4790c1b09545c50e7a26a40156fec7a3
     'orionjs:lang-en@1.4.0'
+=======
+    'zimme:active-route@2.3.0',
+    'orionjs:lang-en@1.3.1'
+>>>>>>> Linting & Hoisting & package bumped
     ]);
 
   api.imply([
@@ -39,7 +48,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'helpers_client.js',
     'links.js'
-    ], 'client')
+  ], 'client');
 
   api.export('orion');
 });

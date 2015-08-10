@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     'orionjs:base@1.4.0',
     'orionjs:attributes@1.4.0',
     'less',
-    'jeremy:selectize@0.12.1'
+    'jeremy:selectize@0.12.1_3'
     ]);
 
   api.imply([

@@ -7,4 +7,4 @@ orion.helpers.getBase64Image = function(file, callback) {
     callback(e.target.result);
   };
   FR.readAsDataURL(file);
-} 
+};

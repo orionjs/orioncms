@@ -13,7 +13,7 @@ Package.onUse(function(api) {
     'orionjs:core@1.4.0',
     'less',
     'aldeed:autoform@5.4.0',
-    'aldeed:tabular@1.1.0',
+    'aldeed:tabular@1.2.0',
     'useraccounts:bootstrap@1.11.1'
     ]);
 

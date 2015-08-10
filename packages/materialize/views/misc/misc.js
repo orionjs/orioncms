@@ -12,7 +12,7 @@ ReactiveTemplates.onRendered('attribute.froala', function() {
     $('label[for="' + id + '"]').addClass('active');
     $('label[for="' + id + '"]').css({ 'top': '0' });
   }, 100);
-})
+});
 
 Template.orionMaterializeHasOneAttribute.events({
   'focus .selectize-input input': function (event, template) {

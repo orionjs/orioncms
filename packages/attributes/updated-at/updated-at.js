@@ -8,9 +8,9 @@ orion.attributes.registerAttribute('updatedAt', {
       },
       autoValue: function() {
         if (this.isUpdate || this.isInsert) {
-          return new Date;
+          return new Date();
         } else if (this.isUpsert) {
-          return {$setOnInsert: new Date};
+          return {$setOnInsert: new Date()};
         } else {
           this.unset();
         }

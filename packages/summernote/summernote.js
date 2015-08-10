@@ -29,7 +29,7 @@ ReactiveTemplates.onRendered('attribute.summernote', function() {
     }
   });
   element.code(this.data.value);
-})
+});
 
 ReactiveTemplates.helpers('attribute.summernote', {
   isUploading: function() {
@@ -38,7 +38,7 @@ ReactiveTemplates.helpers('attribute.summernote', {
   progress: function() {
     return Session.get('orionSummernoteProgress');
   }
-})
+});
 
 ReactiveTemplates.helpers('attributePreview.summernote', {
   preview: function () {

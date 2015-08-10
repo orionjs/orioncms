@@ -63,6 +63,6 @@ ReactiveTemplates.events('attribute.images', {
           event.currentTarget.value = '';
         }
       });
-    })
+    });
   }
 });

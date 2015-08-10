@@ -18,18 +18,18 @@ orion.attribute = function(name, schema, options) {
   if (!_.has(orion.attributes, name)) {
     throw 'The attribute "' + name + '" does not exist';
   }
-  var schema = schema || {};
-  var options = options || {};
-  var attributeSchema = orion.attributes[name].getSchema.call(this, options);
+  var _schema = schema || {};
+  var _options = options || {};
+  var attributeSchema = orion.attributes[name].getSchema.call(this, _options);
   var override = {
     orionAttribute: name,
     autoform: {
       type: 'orion.' + name
     }
-  }
-  var attribute = orion.helpers.deepExtend(orion.helpers.deepExtend(schema, attributeSchema), override);
+  };
+  var attribute = orion.helpers.deepExtend(orion.helpers.deepExtend(_schema, attributeSchema), override);
   return attribute;
-}
+};
 
 /**
  * Returns proper tabular column for the attribute
@@ -52,12 +52,12 @@ orion.attributeColumn = function(name, key, title) {
         item: rowData,
         collection: collection,
         schema: schema,
-      }
+      };
       var template = ReactiveTemplates.get('attributePreview.' + name);
       Blaze.renderWithData(Template[template], data, cell);
     }
-  }
-}
+  };
+};
 
 /**
  * Helper function to use arrays of attributes (Ex: array of images)
@@ -73,7 +73,7 @@ orion.arrayOfAttribute = function(name, schema, options) {
   return orion.helpers.deepExtend(schema, {
     type: [subSchema]
   });
-}
+};
 
 /**
  * Creates a new attribute
@@ -112,4 +112,8 @@ orion.attributes.registerAttribute = function(name, attribute) {
       });
     });
   }
+<<<<<<< d7b5207b4790c1b09545c50e7a26a40156fec7a3
 }
+=======
+};
+>>>>>>> Linting & Hoisting & package bumped
