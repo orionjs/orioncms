@@ -6,10 +6,12 @@ ReactiveTemplates.request('dictionaryUpdate');
 /**
  * Register the route
  */
-Router.route('/admin/dictionary', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('dictionaryUpdate'));
-}, { name: 'dictionary.update' });
+RouterLayer.route('/admin/dictionary', {
+  layout: 'layout',
+  template: 'dictionaryUpdate',
+  name: 'dictionary.update',
+  reactiveTemplates: true
+});
 
 /**
  * Ensure user is logged in
