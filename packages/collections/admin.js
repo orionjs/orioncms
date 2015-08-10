@@ -4,7 +4,7 @@ orion.collections.onCreated(function() {
   /**
    * Request a template for the collection
    */
-  ReactiveTemplates.request('collections.' + this.name + '.index', Options.get('collectionsDefaultIndexTemplate'));
+  ReactiveTemplates.request('collections.' + self.name + '.index', Options.get('collectionsDefaultIndexTemplate'));
 
   /**
    * Register the index route
@@ -22,7 +22,7 @@ orion.collections.onCreated(function() {
   }, { name: ('collections.' + this.name + '.index') });
   this.indexPath = function() {
     return Router.path('collections.' + self.name + '.index');
-  }
+  };
 
   /**
    * Ensure user is logged in
@@ -50,7 +50,7 @@ orion.collections.onCreated(function() {
   }, { name: ('collections.' + this.name + '.create') });
   this.createPath = function() {
     return Router.path('collections.' + self.name + '.create');
-  }
+  };
 
   /**
    * Ensure user is logged in
@@ -90,7 +90,7 @@ orion.collections.onCreated(function() {
       options = { _id: item };
     }
     return Router.path('collections.' + self.name + '.update', options);
-  }
+  };
 
   /**
    * Ensure user is logged in
@@ -104,11 +104,18 @@ orion.collections.onCreated(function() {
   if (Meteor.isClient) {
     ReactiveTemplates.events('collections.' + self.name + '.delete', {
       'click .confirm-delete': function() {
-        self.remove(this.item._id, function() {
-          Router.go(self.indexPath());
+        var objectId = this.item._id;
+        self.remove(objectId, function(error, result) {
+          if (error) {
+            console.warn('Error while deleting', objectId, 'in collection', self.name, ':', error);
+          }
+          // Only go back to index in case the deletion has been properly achieved
+          if (result === 1) {
+            Router.go(self.indexPath());
+          }
         });
       }
-    })
+    });
   }
 
   /**
@@ -139,7 +146,7 @@ orion.collections.onCreated(function() {
       options = { _id: item };
     }
     return Router.path('collections.' + self.name + '.delete', options);
-  }
+  };
 
   /**
    * Ensure user is logged in
@@ -160,4 +167,4 @@ orion.collections.onCreated(function() {
     }, this.link);
     orion.links.add(linkOptions);
   }
-})
+});

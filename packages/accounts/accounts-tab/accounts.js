@@ -38,4 +38,4 @@ orion.accounts.addAdminUsersButton = function(button) {
   });
 
   orion.accounts._adminUsersButtons.push(button);
-}
+};

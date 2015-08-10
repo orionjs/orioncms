@@ -49,7 +49,7 @@ if (Meteor.isClient) {
           } else {
             Session.set('accounts.create.invitationId', result);
           }
-        })
+        });
       } else if (method == 'now') {
         var name = template.$('input[name="name"]').val();
         var password = template.$('input[name="password"]').val();
@@ -63,7 +63,7 @@ if (Meteor.isClient) {
           password: password,
           name: name,
           roles: roles
-        }
+        };
         Meteor.call('accountsCreateUser', options, function(error, result) {
           if (error) {
             alert(error.reason);
@@ -103,7 +103,7 @@ if (Meteor.isClient) {
     }
     this.subscribe('invitation', Router.current().params._id);
     Session.set('registerWithInvitationError', null);
-  })
+  });
 
   ReactiveTemplates.helpers('registerWithInvitation', {
     invitation: function() {
@@ -151,7 +151,7 @@ if (Meteor.isClient) {
             } else {
               Router.go('admin');
             }
-          })
+          });
         }
       });
     }

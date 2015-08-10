@@ -11,7 +11,7 @@ Tracker.autorun(function () {
 
 orion.accounts.addProtectedRoute = function(routeName) {
   Options.arrayPush('ensureSignedIn', routeName);
-}
+};
 
 /**
  * Set login template to ensure signed in.

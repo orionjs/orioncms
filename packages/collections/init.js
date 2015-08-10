@@ -9,7 +9,7 @@ orion.collections.hooks = {
 
 orion.collections.onCreated = function(cb) {
   this.hooks.onCreated.push(cb);
-}
+};
 
 /**
  * Request the default templates using options
