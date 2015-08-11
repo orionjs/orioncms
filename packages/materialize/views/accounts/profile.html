@@ -7,7 +7,7 @@
       {{> afQuickFields name='profile' }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a href="{{ pathFor 'myAccount.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>
+      <a href="{{ RouterLayerPathFor 'myAccount.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>
       <button class="waves-effect waves-light btn light-blue accent-4">{{ i18n 'global.save' }}</button>
     {{/ Layout }}
   {{/ autoForm }}

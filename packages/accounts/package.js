@@ -13,7 +13,7 @@ Package.onUse(function(api) {
     'orionjs:attributes@1.4.0',
     'accounts-base',
     'accounts-password',
-    'useraccounts:core@1.8.1',
+    'useraccounts:core@1.12.0',
     'aldeed:simple-schema@1.3.2',
     'matb33:collection-hooks@0.7.11',
     'meteorhacks:inject-initial@1.0.2',

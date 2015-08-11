@@ -10,11 +10,11 @@
           Invitation created successfully
         </div>
         <p>
-          <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
+          <a href="{{ RouterLayerPathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
         </p>
         <hr>
         <div class="buttons">
-          <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.back' }}</a>
+          <a class="btn btn-default" href="{{ RouterLayerPathFor 'accounts.index' }}">{{ i18n 'global.back' }}</a>
           <button class="btn btn-primary btn-invite-another">{{ i18n 'accounts.create.inviteOther' }}</button>
         </div>
       {{ else }}
@@ -64,7 +64,7 @@
 
           <hr>
           <div class="buttons">
-            <a class="btn btn-default" href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.cancel' }}</a>
+            <a class="btn btn-default" href="{{ RouterLayerPathFor 'accounts.index' }}">{{ i18n 'global.cancel' }}</a>
             <button class="btn btn-primary">{{ i18n 'global.create' }}</button>
           </div>
         </form>

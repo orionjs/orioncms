@@ -12,7 +12,7 @@ orion.pages.collection.attachRoles('pages');
 
 orion.pages.collection.helpers({
   path: function () {
-    return Router.path('pages', {url: this.url});
+    return RouterLayer.pathFor('pages', { url: this.url });
   }
 });
 
@@ -82,7 +82,7 @@ orion.pages.tabular = new Tabular.Table({
   collection: orion.pages.collection,
   columns: [
     { data: 'title', title: i18n('pages.schema.title') },
-    { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + Router.path('pages', doc) + '">' + Router.path('pages', doc) + '</a>'; } }
+    { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + RouterLayer.pathFor('pages', doc) + '">' + RouterLayer.pathFor('pages', doc) + '</a>'; } }
   ]
 });
 

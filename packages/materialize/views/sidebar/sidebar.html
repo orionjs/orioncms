@@ -19,7 +19,7 @@
         <a class="collapsible-header collapse-link-right">
           <i class="material-icons">arrow_drop_down</i>
         </a>
-        <a href="{{ pathFor routeName }}">
+        <a href="{{ RouterLayerPathFor routeName }}">
           {{ title }}
         </a>
       {{ else }}
@@ -35,7 +35,7 @@
     </li>
   {{ else }}
     <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} no-padding">
-      <a href="{{ pathFor routeName }}" class="waves-effect">{{ title }}</a>
+      <a href="{{ RouterLayerPathFor routeName }}" class="waves-effect">{{ title }}</a>
     </li>
   {{/ if }}
 </template>

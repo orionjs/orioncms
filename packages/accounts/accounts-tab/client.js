@@ -25,14 +25,14 @@ ReactiveTemplates.events('accounts.index', {
 });
 
 ReactiveTemplates.onRendered('accounts.update', function() {
-  var userId = Router.current().params._id;
+  var userId = RouterLayer.getParam('_id');
   this.subscribe('adminAccountsUpdateRoles', userId);
   Session.set('accounts.update.confirmDelete', false);
 });
 
 ReactiveTemplates.helpers('accounts.update', {
   user: function() {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     return Meteor.users.findOne(userId);
   },
   collection: function() {
@@ -51,7 +51,7 @@ ReactiveTemplates.helpers('accounts.update', {
     return _.keys(Roles._roles);
   },
   hasRole: function(role) {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     return Roles.userHasRole(userId, role);
   },
   confirmDelete: function() {
@@ -64,7 +64,7 @@ ReactiveTemplates.events('accounts.update', {
     Session.set('accounts.update.confirmDelete', true);
   },
   'click #btnConfirmDeleteUser': function(event, template) {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     Meteor.call('removeUser', userId, function (error, result) {
       if (error) {
         alert(error.reason);
@@ -74,7 +74,7 @@ ReactiveTemplates.events('accounts.update', {
     });
   },
   'submit form.roles': function (event, template) {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     var roles = [];
     template.$('input[role]').each(function(index, val) {
        var role = $(this).attr('role');

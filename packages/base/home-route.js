@@ -8,5 +8,10 @@ if (RouterLayer.router == 'iron-router') {
     this.router.go(Options.get('adminHomeRoute'), {}, { replaceState: true });
   }, { name: 'admin' });
 } else {
-  console.log('configure for flow router');
+  RouterLayer.flowRouter.route('/admin', {
+    name: 'admin',
+    action: function() {
+      RouterLayer.go(Options.get('adminHomeRoute'));
+    }
+  });
 }

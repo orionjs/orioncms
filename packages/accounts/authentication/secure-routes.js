@@ -4,31 +4,26 @@
 Options.init('ensureSignedIn', []);
 
 Tracker.autorun(function () {
+  var routes = Options.get('ensureSignedIn');
   if (RouterLayer.router == 'iron-router') {
-    RouterLayer.ironRouter.plugin('ensureSignedIn', {
-      only: Options.get('ensureSignedIn')
+    RouterLayer.ironRouter.onBeforeAction(function() {
+      if (_.contains(routes, RouterLayer.ironRouter.current().route.getName()) && !Meteor.userId()) {
+        this.router.go('admin.login', { }, { replaceState: true, query: { ref: window.location.href } });
+        return;
+      }
+      this.next();
     });
   } else if (RouterLayer.router == 'flow-router') {
-    console.log('Protected routes for flow router is missing');
+    RouterLayer.flowRouter.triggers.enter([function(context, redirect) {
+      Tracker.autorun(function() {
+        if (_.contains(routes, RouterLayer.flowRouter.getRouteName()) && !Meteor.userId()) {
+          RouterLayer.go('admin.login');
+        }
+      });
+    }]);
   }
 });
 
 orion.accounts.addProtectedRoute = function(routeName) {
   Options.arrayPush('ensureSignedIn', routeName);
 };
-
-/**
- * Set login template to ensure signed in.
- * First we need to create a route (in accounts templates)
- */
-AccountsTemplates.configureRoute('ensureSignedIn', {
-  template: 'none'
-});
-
-/**
- * Then we can override it
- */
-Tracker.autorun(function () {
-  AccountsTemplates.routes.ensureSignedIn.template = ReactiveTemplates.get('login');
-  AccountsTemplates.routes.ensureSignedIn.layoutTemplate = ReactiveTemplates.get('outAdminLayout');
-});

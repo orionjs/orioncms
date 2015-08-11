@@ -31,7 +31,6 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-        <h1 class="text-center">{{> yield 'title' }}</h1>
         {{> yield }}
       </div>
     </div>
@@ -57,7 +56,7 @@
             <ul class="dropdown-menu">
               {{# each childs }}
                 <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }}">
-                  <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+                  <a href="{{ RouterLayerPathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
                 </li>
               {{/ each }}
               <li role="separator" class="divider"></li>

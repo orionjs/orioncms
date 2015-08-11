@@ -9,8 +9,8 @@
       {{/ if }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
-      <a class="waves-effect waves-light btn cancel-btn" href="{{ pathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
-      <a class="waves-effect waves-light btn red delete-btn" href="{{ pathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
+      <a class="waves-effect waves-light btn cancel-btn" href="{{ RouterLayerPathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
+      <a class="waves-effect waves-light btn red delete-btn" href="{{ RouterLayerPathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
       <a class="waves-effect waves-light btn light-blue accent-4 save-btn">{{ i18n 'global.save' }}</a>
     {{/ Layout }}
   {{/ with }}

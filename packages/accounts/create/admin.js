@@ -103,13 +103,13 @@ if (Meteor.isClient) {
     if (Meteor.userId()) {
       RouterLayer.go('admin');
     }
-    this.subscribe('invitation', Router.current().params._id);
+    this.subscribe('invitation', RouterLayer.getParam('_id'));
     Session.set('registerWithInvitationError', null);
   });
 
   ReactiveTemplates.helpers('registerWithInvitation', {
     invitation: function() {
-      return orion.accounts.invitations.findOne(Router.current().params._id);
+      return orion.accounts.invitations.findOne(RouterLayer.getParam('_id'));
     },
     error: function() {
       return Session.get('registerWithInvitationError');

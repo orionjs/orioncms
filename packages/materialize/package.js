@@ -12,7 +12,6 @@ Package.onUse(function(api) {
     'meteor-platform',
     'orionjs:core@1.4.0',
     'less',
-    'iron:layout@1.0.8',
     'aldeed:autoform@5.4.0',
     'nicolaslopezj:tabular-materialize@1.2.1',
     'useraccounts:materialize@1.11.1',
@@ -21,7 +20,6 @@ Package.onUse(function(api) {
 
   api.imply([
     'orionjs:core',
-    'iron:layout',
     'aldeed:autoform',
     'useraccounts:materialize'
     ]);
