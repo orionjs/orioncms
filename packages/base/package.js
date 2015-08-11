@@ -14,7 +14,7 @@ Package.onUse(function(api) {
     'nicolaslopezj:options@1.0.1',
     'nicolaslopezj:reactive-templates@1.2.1',
     'nicolaslopezj:roles@1.2.0',
-    'nicolaslopezj:router-layer@0.0.1',
+    'nicolaslopezj:router-layer@0.0.6',
     'aldeed:simple-schema@1.3.3',
     'orionjs:lang-en@1.4.0'
     ]);
