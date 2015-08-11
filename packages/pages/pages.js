@@ -12,7 +12,7 @@ orion.pages.collection.attachRoles('pages');
 
 orion.pages.collection.helpers({
   path: function () {
-    return RouterLayer.pathFor('pages', { url: this.url });
+    return RouterLayer.pathFor('page', { url: this.url });
   }
 });
 
