@@ -15,7 +15,7 @@ var initSelect = function(template, dataContext, schema, options) {
 var onRendered = function() {
   var template = this;
   template.autorun(function() {
-    Router.current();
+    RouterLayer.isActiveRoute('admin');
     template.$('select')[0].selectize && template.$('select')[0].selectize.destroy();
   })
   template.autorun(function () {

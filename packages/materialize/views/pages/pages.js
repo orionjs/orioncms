@@ -4,7 +4,7 @@ Template.orionMaterializePagesIndex.events({
     var dataTable = $(event.target).closest('table').DataTable();
     var rowData = dataTable.row(event.currentTarget).data();
     if (rowData) {
-      Router.go('pages.update', rowData);
+      RouterLayer.go('pages.update', rowData);
     }
   }
 });

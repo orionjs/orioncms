@@ -36,7 +36,7 @@ ReactiveTemplates.events('pages.create', {
   },
   'click .cancel-btn': function () {
     if (_.keys(orion.pages.templates).length == 1) {
-      Router.go('adminPagesIndex');
+      RouterLayer.go('adminPagesIndex');
     } else {
       Session.set('adminPagesCreate_choosenTemplate', null);
     }
@@ -74,7 +74,7 @@ AutoForm.hooks({
       }
     },
     onSuccess: function() {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     }
   }
 });
@@ -110,14 +110,24 @@ AutoForm.hooks({
       }
     },
     onSuccess: function() {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     }
   }
+});
+
+ReactiveTemplates.onCreated('pages.update', function() {
+  var self = this;
+  self.autorun(function() {
+    self.subscribe('pageById', RouterLayer.getParam('_id'));
+  });
 });
 
 ReactiveTemplates.helpers('pages.update', {
   getSchema: function () {
     return this && orion.pages.templates[this.template] && orion.pages.templates[this.template].schema;
+  },
+  item: function() {
+    return orion.pages.collection.findOne(RouterLayer.getParam('_id'));
   }
 });
 
@@ -130,18 +140,59 @@ ReactiveTemplates.events('pages.update', {
 /**
  * Delete route
  */
+ReactiveTemplates.onCreated('pages.delete', function() {
+ var self = this;
+ self.autorun(function() {
+   self.subscribe('pageById', RouterLayer.getParam('_id'));
+ });
+});
+
 ReactiveTemplates.helpers('pages.delete', {
   onSuccess: function () {
     return function (result) {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     };
+  },
+  item: function() {
+    return orion.pages.collection.findOne(RouterLayer.getParam('_id'));
   }
 });
 
 ReactiveTemplates.events('pages.delete', {
   'click .confirm-delete': function() {
     orion.pages.collection.remove(this._id, function() {
-      Router.go('pages.index');
+      RouterLayer.go('pages.index');
     });
+  }
+});
+
+/**
+ * Reactive Templates
+ */
+ReactiveTemplates.request('pages.loading', 'orionPages_defaultLoading');
+ReactiveTemplates.request('pages.notFound', 'orionPages_defaultNotFound');
+
+/**
+ * Pages main template
+ */
+Template.orionPages_mainTemplate.onCreated(function() {
+  var self = this;
+  self.autorun(function() {
+    self.subscribe('page', RouterLayer.getParam('url'));
+  });
+});
+
+Template.orionPages_mainTemplate.helpers({
+  page: function() {
+    return orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
+  },
+  layout: function() {
+    var page = orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
+    var template = orion.pages.templates[page.template];
+    return template.layout;
+  },
+  template: function() {
+    var page = orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
+    return page.template;
   }
 });

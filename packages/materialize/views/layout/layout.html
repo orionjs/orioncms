@@ -61,8 +61,8 @@
         </span>
       </li>
       {{# each childs }}
-        <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-          <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
+        <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }}">
+          <a href="{{ RouterLayerPathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
         </li>
       {{/ each }}
       <li class="divider"></li>

@@ -44,8 +44,8 @@ orion.attributeColumn = function(name, key, title) {
       return '';
     },
     createdCell: function(cell, cellData, rowData) {
-      var collection = Router.current().collection;
-      var schema = Router.current().collection.simpleSchema()._schema[key];
+      var collection = rowData._collection();
+      var schema = rowData._collection().simpleSchema()._schema[key];
       var data = {
         key: key,
         value: cellData,

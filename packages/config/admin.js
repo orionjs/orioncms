@@ -6,11 +6,12 @@ ReactiveTemplates.request('configUpdate');
 /**
  * Register the route
  */
-Router.route('/admin/config', function () {
-  this.subscribe('orion_config');
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('configUpdate'));
-}, { name: 'config.update' });
+RouterLayer.route('/admin/config', {
+  layout: 'layout',
+  template: 'configUpdate',
+  name: 'config.update',
+  reactiveTemplates: true
+});
 
 /**
  * Ensure user is logged in
@@ -38,6 +39,10 @@ if (Meteor.isClient) {
  * Create the template helpers for a dictionary
  */
 if (Meteor.isClient) {
+
+  ReactiveTemplates.onCreated('configUpdate', function() {
+    this.subscribe('orion_config');
+  });
 
   ReactiveTemplates.onRendered('configUpdate', function() {
     var categories = _.uniq(_.pluck(orion.config.collection.simpleSchema()._schema, 'category'));

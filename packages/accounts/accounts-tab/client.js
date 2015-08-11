@@ -19,20 +19,20 @@ ReactiveTemplates.events('accounts.index', {
     if (button.meteorMethod) {
       Meteor.call(button.meteorMethod, user);
     } else if (button.route) {
-      Router.go(button.route, user);
+      RouterLayer.go(button.route, user);
     }
   }
 });
 
 ReactiveTemplates.onRendered('accounts.update', function() {
-  var userId = Router.current().params._id;
+  var userId = RouterLayer.getParam('_id');
   this.subscribe('adminAccountsUpdateRoles', userId);
   Session.set('accounts.update.confirmDelete', false);
 });
 
 ReactiveTemplates.helpers('accounts.update', {
   user: function() {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     return Meteor.users.findOne(userId);
   },
   collection: function() {
@@ -51,7 +51,7 @@ ReactiveTemplates.helpers('accounts.update', {
     return _.keys(Roles._roles);
   },
   hasRole: function(role) {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     return Roles.userHasRole(userId, role);
   },
   confirmDelete: function() {
@@ -64,17 +64,17 @@ ReactiveTemplates.events('accounts.update', {
     Session.set('accounts.update.confirmDelete', true);
   },
   'click #btnConfirmDeleteUser': function(event, template) {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     Meteor.call('removeUser', userId, function (error, result) {
       if (error) {
         alert(error.reason);
       } else {
-        Router.go('accounts.index');
+        RouterLayer.go('accounts.index');
       }
     });
   },
   'submit form.roles': function (event, template) {
-    var userId = Router.current().params._id;
+    var userId = RouterLayer.getParam('_id');
     var roles = [];
     template.$('input[role]').each(function(index, val) {
        var role = $(this).attr('role');

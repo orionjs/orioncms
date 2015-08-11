@@ -12,7 +12,7 @@ orion.pages.collection.attachRoles('pages');
 
 orion.pages.collection.helpers({
   path: function () {
-    return Router.path('pages', {url: this.url});
+    return RouterLayer.pathFor('page', { url: this.url });
   }
 });
 
@@ -82,29 +82,27 @@ orion.pages.tabular = new Tabular.Table({
   collection: orion.pages.collection,
   columns: [
     { data: 'title', title: i18n('pages.schema.title') },
-    { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + Router.path('pages', doc) + '">' + Router.path('pages', doc) + '</a>'; } }
+    { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + RouterLayer.pathFor('page', doc) + '">' + RouterLayer.pathFor('page', doc) + '</a>'; } }
   ]
 });
+
+/**
+ * Wait the initialization of flow router
+ */
+ if (RouterLayer.router == 'flow-router') {
+   RouterLayer.flowRouter.wait();
+ }
 
 /**
  * Register page routes on meteor startup
  */
 Meteor.startup(function(){
-  Router.route('/:url', function() {
-    var subs = Meteor.subscribe('page', this.params.url);
-    if (subs.ready()) {
-      var page = orion.pages.collection.findOne({ url: this.params.url });
-      if (page) {
-        var template = orion.pages.templates[page.template];
-        if (template.layout) {
-          this.layout(template.layout);
-        }
-        this.render(page.template, {data: page});
-      } else {
-        this.render('notFound');
-      }
-    } else {
-      this.render('');
-    }
-  }, { name: 'pages' });
+  RouterLayer.route('/:url', {
+    name: 'page',
+    template: 'orionPages_mainTemplate'
+  });
+
+  if (RouterLayer.router == 'flow-router') {
+    RouterLayer.flowRouter.initialize();
+  }
 });

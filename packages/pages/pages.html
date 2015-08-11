@@ -1,0 +1,29 @@
+<template name="orionPages_mainTemplate">
+  {{# if Template.subscriptionsReady }}
+    {{# with page }}
+      {{# if layout }}
+        {{# Layout template=layout }}
+          {{> Template.dynamic template=template data=page }}
+        {{/ Layout }}
+      {{ else }}
+        {{> Template.dynamic template=template }}
+      {{/ if }}
+    {{ else }}
+      {{> reactiveTemplate template="pages.notFound" }}
+    {{/ with }}
+  {{ else }}
+    {{> reactiveTemplate template="pages.loading" }}
+  {{/ if }}
+</template>
+
+<template name="orionPages_defaultLoading">
+  <p style="text-align:center">
+    Loading...
+  </p>
+</template>
+
+<template name="orionPages_defaultNotFound">
+  <p style="text-align:center">
+    Not found
+  </p>
+</template>

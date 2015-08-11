@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:pages',
 	summary: 'Pages for Orion CMS',
-	version: '1.3.1',
+	version: '1.4.0',
 	git: 'https://github.com/orionjs/pages'
 });
 
@@ -10,7 +10,7 @@ Package.onUse(function(api) {
 
 	api.use([
 		'meteor-platform',
-		'orionjs:base@1.3.0',
+		'orionjs:base@1.4.0',
 		'aldeed:collection2@2.3.3',
 		'aldeed:autoform@5.4.0'
 		]);
@@ -25,15 +25,16 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'pages.js',
-		'admin.js',
+		'admin.js'
 		]);
 
 	api.addFiles([
-		'pages_server.js',
+		'pages_server.js'
 		], 'server');
 
 	api.addFiles([
-		'pages_client.js',
+		'pages.html',
+		'pages_client.js'
 		], 'client');
 
 });

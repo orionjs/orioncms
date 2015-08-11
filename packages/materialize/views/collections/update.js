@@ -6,6 +6,6 @@ Template.orionMaterializeCollectionsUpdate.events({
 
 AutoForm.addHooks('orionMaterializeCollectionsUpdateForm', {
   onSuccess: function() {
-    Router.go(this.collection.indexPath());
+    RouterLayer.go(this.collection.indexPath());
   }
 });

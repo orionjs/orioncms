@@ -6,6 +6,6 @@ Template.orionBootstrapCollectionsUpdate.events({
 
 AutoForm.addHooks('orionBootstrapCollectionsUpdateForm', {
   onSuccess: function() {
-    Router.go(this.collection.indexPath());
+    RouterLayer.go(this.collection.indexPath());
   }
 });

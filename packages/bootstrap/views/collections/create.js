@@ -7,6 +7,6 @@ Template.orionBootstrapCollectionsCreate.events({
 
 AutoForm.addHooks('orionBootstrapCollectionsCreateForm', {
   onSuccess: function() {
-    Router.go(this.collection.indexPath());
+    RouterLayer.go(this.collection.indexPath());
   }
 });

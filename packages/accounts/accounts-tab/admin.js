@@ -7,10 +7,12 @@ ReactiveTemplates.request('accounts.update');
 /**
  * Register the route
  */
-Router.route('/admin/accounts', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('accounts.index'));
-}, { name: 'accounts.index' });
+RouterLayer.route('/admin/accounts', {
+  layout: 'layout',
+  template: 'accounts.index',
+  name: 'accounts.index',
+  reactiveTemplates: true
+});
 orion.accounts.addProtectedRoute('accounts.index');
 
 /**
@@ -89,10 +91,12 @@ Tracker.autorun(function () {
 /**
  * Edit user
  */
-Router.route('/admin/accounts/:_id/update', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('accounts.update'));
-}, { name: 'accounts.update' });
+RouterLayer.route('/admin/accounts/:_id/update', {
+  layout: 'layout',
+  template: 'accounts.update',
+  name: 'accounts.update',
+  reactiveTemplates: true
+});
 orion.accounts.addProtectedRoute('accounts.update');
 
 if (Meteor.isClient) {

@@ -8,10 +8,12 @@ ReactiveTemplates.request('myAccount.profile');
 /**
  * Register the route
  */
-Router.route('/admin/my-account', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('myAccount.index'));
-}, { name: 'myAccount.index' });
+RouterLayer.route('/admin/my-account', {
+  layout: 'layout',
+  template: 'myAccount.index',
+  name: 'myAccount.index',
+  reactiveTemplates: true
+});
 orion.accounts.addProtectedRoute('myAccount.index');
 
 /**
@@ -24,19 +26,23 @@ AccountsTemplates.configure({
 /**
  * Register the route
  */
-Router.route('/admin/my-account/change-password', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('myAccount.password'));
-}, { name: 'myAccount.password' });
+RouterLayer.route('/admin/my-account/change-password', {
+  layout: 'layout',
+  template: 'myAccount.password',
+  name: 'myAccount.password',
+  reactiveTemplates: true
+});
 orion.accounts.addProtectedRoute('myAccount.password');
 
 /**
  * To update the profile
  */
-Router.route('/admin/my-account/profile', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('myAccount.profile'));
-}, { name: 'myAccount.profile' });
+RouterLayer.route('/admin/my-account/profile', {
+  layout: 'layout',
+  template: 'myAccount.profile',
+  name: 'myAccount.profile',
+  reactiveTemplates: true
+});
 orion.accounts.addProtectedRoute('myAccount.profile');
 
 /**

@@ -28,8 +28,8 @@
       <hr>
       <div class="buttons">
         <a class="btn btn-default btn-xs logout">{{ i18n 'global.logout' }}</a>
-        <a href="{{ pathFor 'myAccount.profile' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.updateProfile.title' }}</a>
-        <a href="{{ pathFor 'myAccount.password' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.changePassword.title' }}</a>
+        <a href="{{ RouterLayerPathFor 'myAccount.profile' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.updateProfile.title' }}</a>
+        <a href="{{ RouterLayerPathFor 'myAccount.password' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.changePassword.title' }}</a>
       </div>
     {{/ Layout }}
   {{/ Layout }}

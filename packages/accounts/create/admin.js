@@ -3,10 +3,12 @@
  */
 ReactiveTemplates.request('accounts.create');
 
-Router.route('/admin/accounts/create', function () {
-  this.layout(ReactiveTemplates.get('layout'));
-  this.render(ReactiveTemplates.get('accounts.create'));
-}, { name: 'accounts.create' });
+RouterLayer.route('/admin/accounts/create', {
+  layout: 'layout',
+  template: 'accounts.create',
+  name: 'accounts.create',
+  reactiveTemplates: true
+});
 orion.accounts.addProtectedRoute('accounts.create');
 
 if (Meteor.isClient) {
@@ -69,7 +71,7 @@ if (Meteor.isClient) {
             alert(error.reason);
             console.log(error);
           } else {
-            Router.go('accounts.index');
+            RouterLayer.go('accounts.index');
           }
         });
       }
@@ -88,26 +90,26 @@ if (Meteor.isClient) {
  * Register with invitation
  */
 ReactiveTemplates.request('registerWithInvitation');
-
-Router.route('/register/invitation/:_id', function () {
-  this.layout(ReactiveTemplates.get('outAdminLayout'));
-  this.render(ReactiveTemplates.get('registerWithInvitation'));
-}, { name: 'registerWithInvitation' });
-
+RouterLayer.route('/register/invitation/:_id', {
+  layout: 'outAdminLayout',
+  template: 'registerWithInvitation',
+  name: 'registerWithInvitation',
+  reactiveTemplates: true
+});
 
 if (Meteor.isClient) {
 
   ReactiveTemplates.onRendered('registerWithInvitation', function() {
     if (Meteor.userId()) {
-      Router.go('admin');
+      RouterLayer.go('admin');
     }
-    this.subscribe('invitation', Router.current().params._id);
+    this.subscribe('invitation', RouterLayer.getParam('_id'));
     Session.set('registerWithInvitationError', null);
   });
 
   ReactiveTemplates.helpers('registerWithInvitation', {
     invitation: function() {
-      return orion.accounts.invitations.findOne(Router.current().params._id);
+      return orion.accounts.invitations.findOne(RouterLayer.getParam('_id'));
     },
     error: function() {
       return Session.get('registerWithInvitationError');
@@ -149,7 +151,7 @@ if (Meteor.isClient) {
               Session.set('registerWithInvitationError', error.reason);
               console.log(error);
             } else {
-              Router.go('admin');
+              RouterLayer.go('admin');
             }
           });
         }

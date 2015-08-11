@@ -18,7 +18,7 @@
         <a class="collapse-link-right" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
           <span class="caret"></span>
         </a>
-        <a href="{{ pathFor routeName }}">
+        <a href="{{ RouterLayerPathFor routeName }}">
           {{ title }}
         </a>
       {{ else }}
@@ -36,8 +36,8 @@
       </div>
     </li>
   {{ else }}
-    <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-      <a href="{{ pathFor routeName }}">{{ title }}</a>
+    <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }}">
+      <a href="{{ RouterLayerPathFor routeName }}">{{ title }}</a>
     </li>
   {{/ if }}
 </template>
