@@ -91,7 +91,7 @@ orion.pages.tabular = new Tabular.Table({
  */
 Meteor.startup(function(){
   if (RouterLayer.router == 'iron-router') {
-    Router.route('/:url', function() {
+    RouterLayer.ironRouter.route('/:url', function() {
       var subs = Meteor.subscribe('page', this.params.url);
       if (subs.ready()) {
         var page = orion.pages.collection.findOne({ url: this.params.url });
@@ -100,7 +100,7 @@ Meteor.startup(function(){
           if (template.layout) {
             this.layout(template.layout);
           }
-          this.render(page.template, {data: page});
+          this.render(page.template, { data: { page: page } });
         } else {
           this.render('notFound');
         }
@@ -109,6 +109,36 @@ Meteor.startup(function(){
       }
     }, { name: 'pages' });
   } else if (RouterLayer.router == 'flow-router') {
-    console.log('Pages for flow router is missing');
+    RouterLayer.flowRouter.route('/:url', {
+      name: 'pages',
+      action: function(params) {
+        var subs = Meteor.subscribe('page', params.url);
+        Tracker.autorun(function() {
+          if (subs.ready()) {
+            var page = orion.pages.collection.findOne({ url: params.url });
+            if (page) {
+              var template = orion.pages.templates[page.template];
+              if (template.layout) {
+                BlazeLayout.render(template.layout, { content: page.template });
+              } else {
+                BlazeLayout.render(page.template);
+              }
+              Template[page.template].helpers({
+                page: function() {
+                  return orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
+                }
+              });
+            } else {
+              BlazeLayout.render('notFound');
+            }
+          }
+        });
+      }
+    });
+    RouterLayer.flowRouter.initialize();
   }
 });
+
+if (RouterLayer.router == 'flow-router') {
+  RouterLayer.flowRouter.wait();
+}
