@@ -25,15 +25,16 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'pages.js',
-		'admin.js',
+		'admin.js'
 		]);
 
 	api.addFiles([
-		'pages_server.js',
+		'pages_server.js'
 		], 'server');
 
 	api.addFiles([
-		'pages_client.js',
+		'pages.html',
+		'pages_client.js'
 		], 'client');
 
 });

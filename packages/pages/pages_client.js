@@ -165,3 +165,30 @@ ReactiveTemplates.events('pages.delete', {
     });
   }
 });
+
+
+
+/**
+ * Pages main template
+ */
+Template.orionPages_mainTemplate.onCreated(function() {
+  var self = this;
+  self.autorun(function() {
+    self.subscribe('page', RouterLayer.getParam('url'));
+  });
+});
+
+Template.orionPages_mainTemplate.helpers({
+  page: function() {
+    return orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
+  },
+  layout: function() {
+    var page = orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
+    var template = orion.pages.templates[page.template];
+    return template.layout;
+  },
+  template: function() {
+    var page = orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
+    return page.template;
+  }
+});

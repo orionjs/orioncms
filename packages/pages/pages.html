@@ -1,0 +1,17 @@
+<template name="orionPages_mainTemplate">
+  {{# if Template.subscriptionsReady }}
+    {{# with page }}
+      {{# if layout }}
+        {{# Layout template=layout }}
+          {{> Template.dynamic template=template data=page }}
+        {{/ Layout }}
+      {{ else }}
+        {{> Template.dynamic template=template }}
+      {{/ if }}
+    {{ else }}
+      <!--{{> notFound }}-->
+    {{/ with }}
+  {{ else }}
+    <!--{{> loading }}-->
+  {{/ if }}
+</template>

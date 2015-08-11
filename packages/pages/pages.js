@@ -82,63 +82,27 @@ orion.pages.tabular = new Tabular.Table({
   collection: orion.pages.collection,
   columns: [
     { data: 'title', title: i18n('pages.schema.title') },
-    { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + RouterLayer.pathFor('pages', doc) + '">' + RouterLayer.pathFor('pages', doc) + '</a>'; } }
+    { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + RouterLayer.pathFor('page', doc) + '">' + RouterLayer.pathFor('page', doc) + '</a>'; } }
   ]
 });
+
+/**
+ * Wait the initialization of flow router
+ */
+ if (RouterLayer.router == 'flow-router') {
+   RouterLayer.flowRouter.wait();
+ }
 
 /**
  * Register page routes on meteor startup
  */
 Meteor.startup(function(){
-  if (RouterLayer.router == 'iron-router') {
-    RouterLayer.ironRouter.route('/:url', function() {
-      var subs = Meteor.subscribe('page', this.params.url);
-      if (subs.ready()) {
-        var page = orion.pages.collection.findOne({ url: this.params.url });
-        if (page) {
-          var template = orion.pages.templates[page.template];
-          if (template.layout) {
-            this.layout(template.layout);
-          }
-          this.render(page.template, { data: { page: page } });
-        } else {
-          this.render('notFound');
-        }
-      } else {
-        this.render('');
-      }
-    }, { name: 'pages' });
-  } else if (RouterLayer.router == 'flow-router') {
-    RouterLayer.flowRouter.route('/:url', {
-      name: 'pages',
-      action: function(params) {
-        var subs = Meteor.subscribe('page', params.url);
-        Tracker.autorun(function() {
-          if (subs.ready()) {
-            var page = orion.pages.collection.findOne({ url: params.url });
-            if (page) {
-              var template = orion.pages.templates[page.template];
-              if (template.layout) {
-                BlazeLayout.render(template.layout, { content: page.template });
-              } else {
-                BlazeLayout.render(page.template);
-              }
-              Template[page.template].helpers({
-                page: function() {
-                  return orion.pages.collection.findOne({ url: RouterLayer.getParam('url') });
-                }
-              });
-            } else {
-              BlazeLayout.render('notFound');
-            }
-          }
-        });
-      }
-    });
+  RouterLayer.route('/:url', {
+    name: 'page',
+    template: 'orionPages_mainTemplate'
+  });
+
+  if (RouterLayer.router == 'flow-router') {
     RouterLayer.flowRouter.initialize();
   }
 });
-
-if (RouterLayer.router == 'flow-router') {
-  RouterLayer.flowRouter.wait();
-}
