@@ -1,81 +1,81 @@
-Orion
-=====
-
-[![Join the chat at https://gitter.im/orionjs/orion](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orionjs/orion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Orion
 
 Orion is an open source framework built on Meteor that makes complex as well as simple apps possible with minimal effort. It's built, modified, used, and supported by an active community of people around the world.
 
 ## Getting Started
 
-To start your orion instance the first thing you need to do is install the core package and an admin template.
-Orion has two templates, one for [bootstrap](http://getbootstrap.com) and one for [materialize](http://materializecss.com).
+To start your orion instance the first thing you need to do is install the core package, a admin template and a router.
 
 ```sh
 meteor add orionjs:core
 ```
 
-And now decide which one to use
+#### Install a template
+
+Orion has two official templates, one for [bootstrap](http://getbootstrap.com) and one for [materialize](http://materializecss.com), but you can use one in the list below
+
+**Bootstrap:**
 
 ```sh
 meteor add twbs:bootstrap fortawesome:fontawesome orionjs:bootstrap
 ```
 
-*Either `twbs:bootstrap` or similar*
-
-*Either `fortawesome:fontawesome` or similar*
-
-or
+**Materialize:**
 
 ```sh
 meteor add materialize:materialize orionjs:materialize
 ```
 
-And now
+#### Install a router
+
+Orion supports [iron:router](https://github.com/iron-meteor/iron-router) and [kadira:flow-router](https://github.com/kadirahq/flow-router) thanks to [nicolaslopezj:router-layer](https://github.com/nicolaslopezj/meteor-router-layer).
+
+**iron:router:**
+
+```sh
+meteor add iron:router
+```
+**kadira:flow-router:**
+
+```sh
+meteor add kadira:flow-router kadira:blaze-layout
+```
+
+#### Start using Orion
 
 ```sh
 meteor
 ```
 
-And now go
+And go
 
 [http://localhost:3000/admin](http://localhost:3000/admin)
 
 
-#### Documentation
+## Links
 
-[orionjs.org](http://orionjs.org)
+- **Website:** [orionjs.org](http://orionjs.org)
+- **Documentation:** [orionjs.org/docs/introduction](http://orionjs.org/docs/introduction)
+- **Tutorials:** [orionjs.org/tutorials](http://orionjs.org/tutorials)
+- **Forums:** [forums.orionjs.org](http://forums.orionjs.org)
+- **Gitter:** [gitter.im/orionjs/orion](https://gitter.im/orionjs/orion)
+- **Preview:** [orion-example.meteor.com](http://orion-example.meteor.com)
+- **Roadmap:** [trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
+- **Newsletter:** [subscribe](http://eepurl.com/bbji3b)
 
-#### Tutorials
-
-[orionjs.org/tutorials](http://orionjs.org/tutorials)
-
-#### Forums
-
-[forums.orionjs.org](http://forums.orionjs.org)
-
-#### Preview
-
-[orion-example.meteor.com](http://orion-example.meteor.com)
-
-#### Roadmap
-
-[trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
-
-#### Newsletter
-
-This project is very active. If you use orion you should definitely **[subscribe](http://eepurl.com/bbji3b)** to the newsletter.
-
-#### Translate Orion
+### Translate Orion
 
 If you want to help translating Orion to your language follow the [instructions](https://github.com/orionjs/examples/tree/master/language).
 
-#### Community Add-On Packages
+## Community Add-On Packages
 
 *Submit a pull request to add your package to this list*
 
 **Admin Themes:**
 
 - [rwatts:orionjs-foundation](https://github.com/rwatts3/orionjs-contrib/tree/orionjs-foundation)
+- [dvz:orion-semantic-ui](https://github.com/amazingBastard/orion-semantic-ui)
+- [dvz:orion-unstyled](https://github.com/amazingBastard/orion-unstyled)
 - [nicolaslopezj:orion-admin-only-bootstrap](https://github.com/nicolaslopezj/orion-admin-only-bootstrap) use bootstrap theme without using bootstrap in the whole app
 
 **Attributes:**
