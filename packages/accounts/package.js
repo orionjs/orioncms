@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:accounts',
   summary: 'Orion accounts mannager',
-  version: '1.4.0',
+  version: '1.4.1',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -54,7 +54,7 @@ Package.onUse(function(api) {
     'accounts-tab/client.js'
     ], 'client');
 
-  api.export(['orion', "EnrolledUsers"]);
+  api.export(['orion']);
 });
 
 Package.onTest(function(api) {

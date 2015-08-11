@@ -92,5 +92,3 @@ UsersPasswordSchema = new SimpleSchema({
     }
   },
 });
-
-EnrolledUsers = new Mongo.Collection('enrolledUsers');
