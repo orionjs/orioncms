@@ -8,7 +8,11 @@ Tracker.autorun(function () {
   if (RouterLayer.router == 'iron-router') {
     RouterLayer.ironRouter.onBeforeAction(function() {
       if (_.contains(routes, RouterLayer.ironRouter.current().route.getName()) && !Meteor.userId()) {
-        this.router.go('admin.login', { }, { replaceState: true, query: { ref: window.location.href } });
+        var path = null;
+        Tracker.nonreactive(function() {
+          path = RouterLayer.ironRouter.current().location.get().path
+        });
+        this.router.go('admin.login', { }, { replaceState: true, query: { ref: path } });
         return;
       }
       this.next();
@@ -17,7 +21,9 @@ Tracker.autorun(function () {
     RouterLayer.flowRouter.triggers.enter([function(context, redirect) {
       Tracker.autorun(function() {
         if (_.contains(routes, RouterLayer.flowRouter.getRouteName()) && !Meteor.userId()) {
-          RouterLayer.go('admin.login');
+          FlowRouter.withReplaceState(function() {
+            RouterLayer.flowRouter.go('admin.login', {}, { ref: FlowRouter.current().path });
+          });
         }
       });
     }]);
