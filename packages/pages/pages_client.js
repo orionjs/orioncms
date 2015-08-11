@@ -166,7 +166,11 @@ ReactiveTemplates.events('pages.delete', {
   }
 });
 
-
+/**
+ * Reactive Templates
+ */
+ReactiveTemplates.request('pages.loading', 'orionPages_defaultLoading');
+ReactiveTemplates.request('pages.notFound', 'orionPages_defaultNotFound');
 
 /**
  * Pages main template

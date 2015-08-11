@@ -9,9 +9,21 @@
         {{> Template.dynamic template=template }}
       {{/ if }}
     {{ else }}
-      <!--{{> notFound }}-->
+      {{> reactiveTemplate template="pages.notFound" }}
     {{/ with }}
   {{ else }}
-    <!--{{> loading }}-->
+    {{> reactiveTemplate template="pages.loading" }}
   {{/ if }}
+</template>
+
+<template name="orionPages_defaultLoading">
+  <p style="text-align:center">
+    Loading...
+  </p>
+</template>
+
+<template name="orionPages_defaultNotFound">
+  <p style="text-align:center">
+    Not found
+  </p>
 </template>
