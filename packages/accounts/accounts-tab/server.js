@@ -48,6 +48,9 @@ Meteor.methods({
     Roles.setUserRoles(userId, roles);
   },
   orionAccountsUpdatePassword: function(modifier, userId) {
+    if (!Roles.userHasPermission(this.userId, 'accounts.update.password', userId)) {
+      throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
+    }
     var options = modifier.$set;
     check(options, UsersPasswordSchema);
     Accounts.setPassword(userId, options.password, { logout: true });

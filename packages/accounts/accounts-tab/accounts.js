@@ -7,6 +7,7 @@ Roles.registerAction('accounts.index', true);
  * Can the user update user users roles?
  */
 Roles.registerAction('accounts.update.roles', true);
+Roles.registerAction('accounts.update.password', true);
 Roles.registerAction('accounts.update.emails', true);
 Roles.registerAction('accounts.update.profile', true);
 Roles.registerAction('accounts.remove', true);
