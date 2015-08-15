@@ -28,6 +28,26 @@ myAppLog.error('Error level logs');
 ...
 ```
 
+## Commands
+### Remove all logs from Orion
+```js
+orion.log.level('none');
+```
+> This is also applicable to your own logs.
+
+### Set a specific level of logs for Orion
+```js
+// For debug level and aboves
+orion.log.level('debug');
+...
+// For info level and above
+orion.log.level('info');
+...
+// For fatal only level
+orion.log.level('fatal');
+```
+> This is also applicable to your own logs.
+
 ## Links
 * Inspired from [Ongoworks's Bunyan](https://github.com/ongoworks/meteor-bunyan)
 * [Bunyan](https://github.com/trentm/node-bunyan)
