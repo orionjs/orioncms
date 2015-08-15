@@ -15,15 +15,9 @@ var initSelect = function(template, dataContext, schema, options) {
 var onRendered = function() {
   var template = this;
   template.autorun(function() {
-<<<<<<< d7b5207b4790c1b09545c50e7a26a40156fec7a3
     RouterLayer.isActiveRoute('admin');
-    template.$('select')[0].selectize && template.$('select')[0].selectize.destroy();
-  })
-=======
-    Router.current();
     if (template.$('select')[0].selectize !== null) template.$('select')[0].selectize.destroy();
   });
->>>>>>> Linting & Hoisting & package bumped
   template.autorun(function () {
     var dataContext = Template.currentData();
     var schema = AutoForm.getSchemaForField(dataContext.name);

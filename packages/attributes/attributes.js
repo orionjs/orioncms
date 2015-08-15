@@ -112,8 +112,4 @@ orion.attributes.registerAttribute = function(name, attribute) {
       });
     });
   }
-<<<<<<< d7b5207b4790c1b09545c50e7a26a40156fec7a3
-}
-=======
 };
->>>>>>> Linting & Hoisting & package bumped
