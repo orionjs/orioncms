@@ -1,11 +1,15 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
+<<<<<<< e053de23a3f5383f8c48dcfe848e2d32757f4a94
 <<<<<<< d7b5207b4790c1b09545c50e7a26a40156fec7a3
   version: '1.4.1',
 =======
   version: '1.3.1',
 >>>>>>> Linting & Hoisting & package bumped
+=======
+  version: '1.3.2',
+>>>>>>> Namespace & Logging package
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -24,6 +28,7 @@ Package.onUse(function(api) {
     'orionjs:lang-en@1.4.0'
 =======
     'zimme:active-route@2.3.0',
+    'orionjs:logging@1.3.0',
     'orionjs:lang-en@1.3.1'
 >>>>>>> Linting & Hoisting & package bumped
     ]);
@@ -39,7 +44,6 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
-    'init.js',
     'helpers.js',
     'home-route.js',
     'layouts.js',
