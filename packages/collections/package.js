@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:collections',
   summary: 'Meteor collection with some magic',
-  version: '1.4.1',
+  version: '1.4.2',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,7 +9,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.4.1',
+    'orionjs:base@1.4.2',
     'underscore',
     'aldeed:simple-schema@1.3.3',
     'aldeed:collection2@2.3.3',

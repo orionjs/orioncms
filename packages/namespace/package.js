@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:namespace',
-  version: '1.3.0',
+  version: '1.4.0',
   summary: 'Orion - Namespace',
   git: 'https://github.com/orionjs/orion',
   documentation: 'README.md'

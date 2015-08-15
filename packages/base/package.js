@@ -16,6 +16,7 @@ Package.onUse(function(api) {
     'nicolaslopezj:roles@1.2.0',
     'nicolaslopezj:router-layer@0.0.8',
     'aldeed:simple-schema@1.3.3',
+    'orionjs:namespace@1.4.0',
     'orionjs:lang-en@1.4.0',
     'orionjs:logging@1.4.0'
     ]);

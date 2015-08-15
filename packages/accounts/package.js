@@ -9,8 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.4.0',
-    'orionjs:attributes@1.4.0',
+    'orionjs:base@1.4.2',
+    'orionjs:attributes@1.4.1',
     'accounts-base',
     'accounts-password',
     'useraccounts:core@1.12.0',
