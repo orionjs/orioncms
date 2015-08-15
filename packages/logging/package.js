@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:logging',
-  version: '1.4.0',
+  version: '1.3.0',
   summary: 'Orion - Logger',
   git: 'https://github.com/orionjs/orion',
   documentation: 'README.md'
