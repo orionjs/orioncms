@@ -44,7 +44,7 @@ ReactiveTemplates.events('attribute.images', {
       Tracker.autorun(function () {
         if (upload.ready()) {
           if (upload.error) {
-            console.log(upload.error);
+            orion.log.error(upload.error);
             alert(upload.error.reason);
           } else {
             var information = orion.helpers.analizeColorFromBase64(base64);

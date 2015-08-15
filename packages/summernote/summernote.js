@@ -15,7 +15,7 @@ ReactiveTemplates.onRendered('attribute.summernote', function() {
       Tracker.autorun(function () {
         if (upload.ready()) {
           if (upload.error) {
-            console.log(upload.error);
+            orion.log.error(upload.error);
             alert(upload.error.reason);
           } else {
             editor.insertImage($editable, upload.url);

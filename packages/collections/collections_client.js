@@ -17,12 +17,12 @@ orion.collections.onCreated(function() {
   var getCollection = function() {
     var collection = null;
     try {
-      collection = orion.collections.list[RouterLayer.getPath().split('/')[2]]
+      collection = orion.collections.list[RouterLayer.getPath().split('/')[2]];
     } catch (e) {
-      console.log('Error getting collection', e);
+      orion.log.error('Error getting collection', e);
     }
     return collection;
-  }
+  };
 
   ReactiveTemplates.helpers('collections.' + self.name + '.index', {
     collection: function() {
@@ -45,7 +45,7 @@ orion.collections.onCreated(function() {
 
   ReactiveTemplates.helpers('collections.' + self.name + '.update', {
     collection: function() {
-      return getCollection()
+      return getCollection();
     },
     item: function() {
       return getCollection().findOne(RouterLayer.getParam('_id'));
@@ -73,7 +73,7 @@ orion.collections.onCreated(function() {
       var objectId = RouterLayer.getParam('_id');
       self.remove(objectId, function(error, result) {
         if (error) {
-          console.warn('Error while deleting', objectId, 'in collection', getCollection().name, ':', error);
+          orion.log.warn('Error while deleting', objectId, 'in collection', getCollection().name, ':', error);
         }
         // Only go back to index in case the deletion has been properly achieved
         if (result === 1) {
@@ -82,4 +82,4 @@ orion.collections.onCreated(function() {
       });
     }
   });
-})
+});

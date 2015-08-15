@@ -47,7 +47,7 @@ if (Meteor.isClient) {
         orion.accounts.invitations.insert({ roles: roles, email: email }, function(error, result) {
           if (error) {
             alert(error.reason);
-            console.log(error);
+            orion.log.error(error);
           } else {
             Session.set('accounts.create.invitationId', result);
           }
@@ -69,7 +69,7 @@ if (Meteor.isClient) {
         Meteor.call('accountsCreateUser', options, function(error, result) {
           if (error) {
             alert(error.reason);
-            console.log(error);
+            orion.log.error(error);
           } else {
             RouterLayer.go('accounts.index');
           }
@@ -144,12 +144,12 @@ if (Meteor.isClient) {
       }, function(error, result) {
         if (error) {
           Session.set('registerWithInvitationError', error.reason);
-          console.log(error);
+          orion.log.error(error);
         } else {
           Meteor.loginWithPassword(email, password, function(error) {
             if (error) {
               Session.set('registerWithInvitationError', error.reason);
-              console.log(error);
+              orion.log.error(error);
             } else {
               RouterLayer.go('admin');
             }
