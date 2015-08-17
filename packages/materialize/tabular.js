@@ -4,8 +4,8 @@ orion.collections.onCreated(function() {
   if (!_.has(this, 'tabular')) return;
 
   var tabularOptions = _.extend({
-    name: 'tabular_' + this.name,
-    collection: this,
+    name: 'tabular_' + self.name,
+    collection: self,
     columns: [
       { data: "_id", title: "ID" }
     ],
@@ -21,7 +21,7 @@ orion.collections.onCreated(function() {
       emptyTable: i18n('tabular.emptyTable'),
       paginate: {
         first: i18n('tabular.paginate.first'),
-        previous: i18n('tabular.paginate.previous'), 
+        previous: i18n('tabular.paginate.previous'),
         next: i18n('tabular.paginate.next'),
         last: i18n('tabular.paginate.last'),
       }
