@@ -17,7 +17,8 @@ orion.collections.onCreated(function() {
   var getCollection = function() {
     var collection = null;
     try {
-      collection = orion.collections.list[RouterLayer.getPath().split('/')[2]]
+      var path = RouterLayer.getPath().split('/')[2];
+      collection = orion.collections.list[path]
     } catch (e) {
       console.log('Error getting collection', e);
     }
@@ -39,7 +40,7 @@ orion.collections.onCreated(function() {
   ReactiveTemplates.onCreated('collections.' + self.name + '.update', function() {
     var template = this;
     template.autorun(function() {
-      template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
+      getCollection() && template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
     });
   });
 
@@ -48,14 +49,14 @@ orion.collections.onCreated(function() {
       return getCollection()
     },
     item: function() {
-      return getCollection().findOne(RouterLayer.getParam('_id'));
+      return getCollection() && getCollection().findOne(RouterLayer.getParam('_id'));
     }
   });
 
   ReactiveTemplates.onCreated('collections.' + self.name + '.delete', function() {
     var template = this;
     template.autorun(function() {
-      template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
+      getCollection() && template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
     });
   });
 
