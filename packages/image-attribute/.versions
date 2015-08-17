@@ -39,13 +39,13 @@ mongo@1.1.0
 nicolaslopezj:options@1.0.1
 nicolaslopezj:reactive-templates@1.2.1
 nicolaslopezj:roles@1.2.0
-nicolaslopezj:router-layer@0.0.6
+nicolaslopezj:router-layer@0.0.10
 observe-sequence@1.0.6
 ordered-dict@1.0.3
 orionjs:attributes@1.4.0
-orionjs:base@1.4.0
+orionjs:base@1.4.1
 orionjs:filesystem@1.4.0
-orionjs:image-attribute@1.4.0
+orionjs:image-attribute@1.4.1
 orionjs:lang-en@1.4.0
 random@1.0.3
 reactive-dict@1.1.0
