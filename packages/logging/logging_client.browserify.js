@@ -1,10 +1,8 @@
 RotatingFileStream = null; // see: https://github.com/trentm/node-bunyan/issues/223
 bunyan = require('bunyan');
-bunyanFormat = require('bunyan-format');
-
-var WritableStream = require('stream').Writable;
-var inherits = require('util').inherits;
-var logStyle = require('log-with-style');
+WritableStream = require('stream').Writable;
+inherits = require('util').inherits;
+logStyle = require('log-with-style');
 
 inherits(BrowserStdout, WritableStream);
 

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:logging',
-  version: '1.4.0',
+  version: '1.4.1',
   summary: 'Orion - Logger',
   git: 'https://github.com/orionjs/orion',
   documentation: 'README.md'
@@ -28,7 +28,7 @@ Package.onUse(function(api) {
   api.addFiles('logging_both.js');
 
   // Exported variables
-  api.export(['orion', 'bunyan', 'formatter']);
-  api.export('process', 'client');
+  api.export(['orion', 'bunyan']);
+  api.export(['process', 'WritableStream', 'inherits', 'logStyle'], 'client');
   api.export('bunyanFormat', 'server');
 });
