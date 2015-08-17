@@ -15,7 +15,7 @@ Template.orionBootstrapCollectionsIndex.events({
 
 Template.orionBootstrapCollectionsIndex.onRendered(function() {
   this.autorun(function () {
-    Template.currentData();
+    RouterLayer.isActiveRoute('');
     Session.set('orionBootstrapCollectionsIndex_showTable', false);
     Meteor.defer(function () {
       Session.set('orionBootstrapCollectionsIndex_showTable', true);
