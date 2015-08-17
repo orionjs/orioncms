@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.4.1',
+  version: '1.4.2',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -16,7 +16,9 @@ Package.onUse(function(api) {
     'nicolaslopezj:roles@1.2.0',
     'nicolaslopezj:router-layer@0.0.8',
     'aldeed:simple-schema@1.3.3',
-    'orionjs:lang-en@1.4.0'
+    'orionjs:namespace@1.4.0',
+    'orionjs:lang-en@1.4.0',
+    'orionjs:logging@1.4.0'
     ]);
 
   api.imply([
@@ -30,7 +32,6 @@ Package.onUse(function(api) {
     ]);
 
   api.addFiles([
-    'init.js',
     'helpers.js',
     'home-route.js',
     'layouts.js',
@@ -39,7 +40,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'helpers_client.js',
     'links.js'
-    ], 'client')
+  ], 'client');
 
   api.export('orion');
 });

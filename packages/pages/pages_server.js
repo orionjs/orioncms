@@ -21,4 +21,4 @@ Meteor.methods({
     check(url, String);
     return orion.pages.collection.findOne({ url: url });
   }
-})
+});

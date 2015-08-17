@@ -24,7 +24,7 @@ ReactiveTemplates.events('attribute.file', {
       if (upload.ready()) {
         if (upload.error) {
           Session.set('file' + self.name, null);
-          console.log(upload.error);
+          orion.log.error(upload.error);
           alert(upload.error.reason);
         } else {
           Session.set('file' + self.name, {

@@ -10,17 +10,17 @@ var initSelect = function(template, dataContext, schema, options) {
       options: options,
       render: schema.orion.render,
   });
-}
+};
 
 var onRendered = function() {
   var template = this;
   template.autorun(function() {
     RouterLayer.isActiveRoute('admin');
-    template.$('select')[0].selectize && template.$('select')[0].selectize.destroy();
-  })
+    if (template.$('select')[0].selectize !== null) template.$('select')[0].selectize.destroy();
+  });
   template.autorun(function () {
     var dataContext = Template.currentData();
-    var schema = AutoForm.getSchemaForField(dataContext.name)
+    var schema = AutoForm.getSchemaForField(dataContext.name);
     var subscription = template.subscribe(schema.orion.publicationName);
     if (subscription.ready()) {
       var filter = schema.orion.filter(Meteor.userId());
@@ -29,21 +29,21 @@ var onRendered = function() {
         for (var i = 0; i < schema.orion.fields.length; i++) {
           var field = schema.orion.fields[i];
           newItem[field] = orion.helpers.searchObjectWithDots(item, field, true);
-        };
+        }
         return newItem;
       });
-      initSelect(template, dataContext, schema, options)
+      initSelect(template, dataContext, schema, options);
     }
   });
-}
+};
 
 var onDestroyed = function() {
-  this.$('select')[0].selectize && this.$('select')[0].selectize.destroy();
-}
-ReactiveTemplates.onRendered('attribute.hasMany', onRendered)
-ReactiveTemplates.onRendered('attribute.hasOne', onRendered)
-ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed)
-ReactiveTemplates.onDestroyed('attribute.hasOne', onDestroyed)
+  if (this.$('select')[0].selectize !== null) this.$('select')[0].selectize.destroy();
+};
+ReactiveTemplates.onRendered('attribute.hasMany', onRendered);
+ReactiveTemplates.onRendered('attribute.hasOne', onRendered);
+ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed);
+ReactiveTemplates.onDestroyed('attribute.hasOne', onDestroyed);
 
 ReactiveTemplates.helpers('attributePreview.hasMany', {
   val: function() {

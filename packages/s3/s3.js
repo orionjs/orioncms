@@ -35,11 +35,11 @@ if (Meteor.isClient) {
   };
 }
 
-orion.config.add('AWS_API_KEY', 'aws')
-orion.config.add('AWS_API_SECRET', 'aws', { secret: true })
-orion.config.add('AWS_S3_BUCKET', 'aws')
-orion.config.add('AWS_S3_REGION', 'aws', { optional: true })
-orion.config.add('AWS_S3_PATH', 'aws', { optional: true })
+orion.config.add('AWS_API_KEY', 'aws');
+orion.config.add('AWS_API_SECRET', 'aws', { secret: true });
+orion.config.add('AWS_S3_BUCKET', 'aws');
+orion.config.add('AWS_S3_REGION', 'aws', { optional: true });
+orion.config.add('AWS_S3_PATH', 'aws', { optional: true });
 
 if (Meteor.isServer) {
   S3.config = {

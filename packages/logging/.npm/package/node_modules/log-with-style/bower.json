@@ -1,0 +1,28 @@
+{
+    "name": "log",
+    "version": "0.1.5",
+    "homepage": "http://adamschwartz.co/log",
+    "authors": [
+        "Adam Schwartz <adam.flynn.schwartz@gmail.com>"
+    ],
+    "description": "Console.log with style",
+    "main": [
+        "log.js",
+        "log.min.js"
+    ],
+    "keywords": [
+        "log",
+        "console",
+        "console.log",
+        "inspector",
+        "Chrome"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "node_modules",
+        "bower_components",
+        "**/.*",
+        "test",
+        "tests"
+    ]
+}

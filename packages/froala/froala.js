@@ -1,6 +1,6 @@
 ReactiveTemplates.onRendered('attribute.froala', function () {
   var name = this.data.name;
-  var parent = $('[data-schema-key="' + name + '"]')
+  var parent = $('[data-schema-key="' + name + '"]');
   // Find the element
   var element = parent.find('.editor');
   // initialize froala
@@ -24,7 +24,7 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
     Tracker.autorun(function () {
       if (upload.ready()) {
         if (upload.error) {
-          console.log(upload.error, "error uploading file")
+          orion.log.error(upload.error, 'error uploading file');
         } else {
           element.editable("insertHTML", "<img class='fr-fin' data-file-id='" + upload.fileId + "' src='" + upload.url + "'>", true);
         }

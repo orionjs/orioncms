@@ -1,7 +1,7 @@
 /**
  * Orion Helpers
  */
-orion.helpers = {}
+orion.helpers = {};
 
 /**
  * Searchs a object with a givin string
@@ -48,5 +48,5 @@ orion.helpers.deepExtend = function(target, source) {
 orion.helpers.getTranslation = function(key) {
   return function() {
     return i18n(key);
-  }
-}
+  };
+};

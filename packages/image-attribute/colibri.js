@@ -36,20 +36,20 @@ Colibri = ( function ( ) {
     };
 
     var rgbToYuv = function ( rgb ) {
-        return [ rgb[ 0 ] *  0.299 + rgb[ 1 ] * 0.587 + rgb[ 2 ] * 0.114
-               , rgb[ 0 ] * -0.147 + rgb[ 1 ] * 0.289 + rgb[ 2 ] * 0.436
-               , rgb[ 0 ] *  0.615 + rgb[ 1 ] * 0.515 + rgb[ 2 ] * 0.100 ]; };
+        return [ rgb[ 0 ] *  0.299 + rgb[ 1 ] * 0.587 + rgb[ 2 ] * 0.114,
+                 rgb[ 0 ] * -0.147 + rgb[ 1 ] * 0.289 + rgb[ 2 ] * 0.436,
+                 rgb[ 0 ] *  0.615 + rgb[ 1 ] * 0.515 + rgb[ 2 ] * 0.100 ]; };
 
     var colorDistance = function ( rgb1, rgb2 ) {
         var yuv1 = rgbToYuv( rgb1 ), yuv2 = rgbToYuv( rgb2 );
-        return sqrt( pow( yuv1[ 0 ] - yuv2[ 0 ] )
-                   + pow( yuv1[ 1 ] - yuv2[ 1 ] )
-                   + pow( yuv1[ 2 ] - yuv2[ 2 ] ) ); };
+        return sqrt( pow( yuv1[ 0 ] - yuv2[ 0 ] ) +
+                     pow( yuv1[ 1 ] - yuv2[ 1 ] ) +
+                     pow( yuv1[ 2 ] - yuv2[ 2 ] ) ); };
 
     var colorBrightness = function ( rgb ) {
-        return sqrt( pow( rgb[ 0 ] ) * 0.241
-                   + pow( rgb[ 1 ] ) * 0.691
-                   + pow( rgb[ 2 ] ) * 0.068 ); };
+        return sqrt( pow( rgb[ 0 ] ) * 0.241 +
+                     pow( rgb[ 1 ] ) * 0.691 +
+                     pow( rgb[ 2 ] ) * 0.068 ); };
 
     var gatherSimilarElements = function ( list, comparator ) {
 
@@ -163,12 +163,12 @@ Colibri = ( function ( ) {
         var fullImageData = [ ];
         loadDataFromContext( fullImageData, context, 0, 0, canvas.width, canvas.height );
 
-        var backgroundColor = dominantColor( borderImageData, .1 );
-        var contentColors = dominantColor( fullImageData, .1, - 1 ).filter( function ( color ) {
-            return abs( colorBrightness( backgroundColor ) - colorBrightness( color ) ) > .4;
+        var backgroundColor = dominantColor( borderImageData, 0.1 );
+        var contentColors = dominantColor( fullImageData, 0.1, - 1 ).filter( function ( color ) {
+            return abs( colorBrightness( backgroundColor ) - colorBrightness( color ) ) > 0.4;
         } ).reduce( function ( filteredContentColors, currentColor ) {
             var previous = filteredContentColors[ filteredContentColors.length - 1 ];
-            if ( ! previous || colorDistance( previous, currentColor ) > .3 )
+            if ( ! previous || colorDistance( previous, currentColor ) > 0.3 )
                 filteredContentColors.push( currentColor );
             return filteredContentColors;
         }, [ ] );

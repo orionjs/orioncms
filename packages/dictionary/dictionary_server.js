@@ -4,7 +4,7 @@
 if (orion.dictionary.find().count() != 1) {
   orion.dictionary.remove({});
   orion.dictionary.insert({}, function(){
-    console.log("Orion dictionary initialized");
+    orion.log.info('Orion dictionary initialized');
   });
 }
 

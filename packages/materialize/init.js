@@ -1,4 +1,4 @@
-Options.init('homePath')
+Options.init('homePath');
 Options.init('siteName');
 Options.init('materialize.headerColor');
 

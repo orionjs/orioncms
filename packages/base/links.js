@@ -40,7 +40,7 @@ orion.links.add = function(options) {
     }
     self._collection.upsert({ identifier: options.identifier }, { $set: options });
   });
-}
+};
 
 orion.links.get = function() {
   var links = this._collection.find({ index: { $exists: true }, parent: { $exists: false } }, { sort: { index: 1 } }).fetch();
@@ -50,11 +50,11 @@ orion.links.get = function() {
     }
     return true;
   });
-}
+};
 
 orion.links.getLink = function(identifier) {
   return this._collection.findOne({ identifier: identifier });
-}
+};
 
 orion.links._collection.helpers({
   childs: function() {
@@ -70,8 +70,8 @@ orion.links._collection.helpers({
 
 Template.registerHelper('adminLinks', function() {
   return orion.links.get();
-})
+});
 
 Template.registerHelper('getAdminLink', function(identifier) {
   return orion.links.getLink(identifier);
-})
+});

@@ -1,5 +1,5 @@
 Template.orionMaterializeLayout.onRendered(function() {
-  
+
 });
 
 Template.orionMaterializeHeaderContainer.onRendered(function() {
@@ -8,7 +8,7 @@ Template.orionMaterializeHeaderContainer.onRendered(function() {
   $('.dropdown-button').dropdown({
     constrain_width: false
   });
-})
+});
 
 Template.orionMaterializeHeaderContainer.events({
   'click .logout': function() {

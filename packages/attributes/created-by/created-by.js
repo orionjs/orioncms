@@ -28,11 +28,11 @@ if (Meteor.isServer) {
 }
 if (Meteor.isClient) {
   ReactiveTemplates.onRendered('attributePreview.createdBy', function() {
-    this.subscribe('userProfileForCreatedByAttributeColumn', this.data.value)
+    this.subscribe('userProfileForCreatedByAttributeColumn', this.data.value);
   });
   ReactiveTemplates.helpers('attributePreview.createdBy', {
     name: function() {
-      var user = Meteor.users.findOne(this.value)
+      var user = Meteor.users.findOne(this.value);
       return user && user.profile.name;
     }
   });
