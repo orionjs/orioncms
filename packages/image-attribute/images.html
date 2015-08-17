@@ -2,7 +2,9 @@
   <div class="images-attribute" {{ this.atts }}>
     <p>
       {{# each images }}
-        <img src="{{ url }}" class="delete-btn" />
+        <div class="delete-btn" title="Delete image">
+          <img src="{{ url }}" />
+        </div>
       {{/ each }}
       {{# each uploads }}
         <img class="base64-preview uploading" src="{{ base64 }}" />

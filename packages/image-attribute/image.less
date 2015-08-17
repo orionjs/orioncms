@@ -35,6 +35,35 @@
 
   .delete-btn {
     cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      bottom: 0;
+      color: #f00;
+      content: "×";
+      font-size: 2em;
+      font-weight: bold;
+      left: 5px;
+      line-height: 0.7em;
+      position: absolute;
+      right: 5px;
+      text-shadow:
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff;
+      top: 5px;
+      transition: all 100ms ease-in-out;
+    }
+
+    &:hover {
+      &::before {
+        font-size: 5em;
+        text-align: center;
+        top: 0;
+      }
+    }
   }
 
   img {
