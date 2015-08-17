@@ -40,7 +40,7 @@ orion.collections.onCreated(function() {
   ReactiveTemplates.onCreated('collections.' + self.name + '.update', function() {
     var template = this;
     template.autorun(function() {
-      getCollection() && template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
+      getCollection() && RouterLayer.isActiveRoute('collections.' + getCollection().name + '.update') && template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
     });
   });
 
@@ -56,7 +56,7 @@ orion.collections.onCreated(function() {
   ReactiveTemplates.onCreated('collections.' + self.name + '.delete', function() {
     var template = this;
     template.autorun(function() {
-      getCollection() && template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
+      getCollection() && RouterLayer.isActiveRoute('collections.' + getCollection().name + '.update') && template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
     });
   });
 
