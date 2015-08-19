@@ -3,7 +3,9 @@
     {{ i18n 'collections.update.title' collection.singularName }}
   {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
-    {{> quickForm collection=collection doc=item id="orionMaterializeCollectionsUpdateForm" type="update" buttonContent=false }}
+    {{#if Template.subscriptionsReady}}
+      {{> quickForm collection=collection doc=item id="orionMaterializeCollectionsUpdateForm" type="update" buttonContent=false }}
+    {{/ if }}
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}
       <a href="{{ collection.indexPath }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>

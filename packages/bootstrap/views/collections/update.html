@@ -4,16 +4,18 @@
       {{i18n 'collections.update.title' collection.singularName }}
     {{/ Layout }}
     {{# Layout template="orionBootstrapContentContainer" }}
-      {{# if item.canShowUpdate }}
-        {{> quickForm collection=collection doc=item id="orionBootstrapCollectionsUpdateForm" type="update" buttonContent=false }}
-        <br>
-        <div class="buttons text-right">
-          <a class="btn btn-default" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
-          {{# if item.canShowRemove }}
-            <a class="btn btn-danger" href="{{ collection.deletePath item._id }}">{{i18n 'global.delete' }}</a>
-          {{/ if }}
-          <a class="btn btn-primary save-btn">{{ i18n 'global.save' }}</a>
-        </div>
+      {{#if Template.subscriptionsReady}}
+        {{# if item.canShowUpdate }}
+          {{> quickForm collection=collection doc=item id="orionBootstrapCollectionsUpdateForm" type="update" buttonContent=false }}
+          <br>
+          <div class="buttons text-right">
+            <a class="btn btn-default" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
+            {{# if item.canShowRemove }}
+              <a class="btn btn-danger" href="{{ collection.deletePath item._id }}">{{i18n 'global.delete' }}</a>
+            {{/ if }}
+            <a class="btn btn-primary save-btn">{{ i18n 'global.save' }}</a>
+          </div>
+        {{/ if }}
       {{/ if }}
     {{/ Layout }}
   {{/ Layout }}
