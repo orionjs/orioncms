@@ -48,7 +48,7 @@ ReactiveTemplates.helpers('accounts.update', {
     return UsersPasswordSchema;
   },
   roles: function() {
-    return _.keys(Roles._roles);
+    return Roles.availableRoles();
   },
   hasRole: function(role) {
     var userId = RouterLayer.getParam('_id');

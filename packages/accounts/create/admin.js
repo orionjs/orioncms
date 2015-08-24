@@ -18,7 +18,7 @@ if (Meteor.isClient) {
   });
   ReactiveTemplates.helpers('accounts.create', {
     roles: function() {
-      return _.keys(Roles._roles);
+      return Roles.availableRoles();
     },
     invitationId: function() {
       return Session.get('accounts.create.invitationId');
