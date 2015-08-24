@@ -6,22 +6,28 @@ var subSchema = new SimpleSchema({
     type: String
   },
   info: {
-    type: Object
+    type: Object,
+    optional: true
   },
   'info.width': {
-    type: Number
+    type: Number,
+    optional: true
   },
   'info.height': {
-    type: Number
+    type: Number,
+    optional: true
   },
   'info.backgroundColor': {
-    type: String
+    type: String,
+    optional: true
   },
   'info.primaryColor': {
-    type: String
+    type: String,
+    optional: true
   },
   'info.secondaryColor': {
-    type: String
+    type: String,
+    optional: true
   }
 });
 
