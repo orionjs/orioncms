@@ -10,9 +10,11 @@ var initSelect = function(template, dataContext, schema, options) {
     options: options,
     render: schema.orion.render,
   });
+  var currentValue = element.val();
   element[0].selectize.clearOptions();
   element[0].selectize.load(function(callback) {
     callback(options);
+    element[0].selectize.setValue(currentValue);
   });
 }
 
@@ -44,6 +46,7 @@ var onRendered = function() {
 var onDestroyed = function() {
   this.$('select')[0].selectize && this.$('select')[0].selectize.destroy();
 }
+
 ReactiveTemplates.onRendered('attribute.hasMany', onRendered)
 ReactiveTemplates.onRendered('attribute.hasOne', onRendered)
 ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed)
