@@ -1,14 +1,18 @@
 var initSelect = function(template, dataContext, schema, options) {
-  template.$('select').selectize({
-      valueField: '_id',
-      labelField: options.titleField,
-      items: _.isArray(dataContext.value) ? dataContext.value : [dataContext.value],
-      searchField: schema.orion.fields,
-      plugins: ['remove_button'],
-      createFilter: schema.orion.createFilter,
-      create: schema.orion.create,
-      options: options,
-      render: schema.orion.render,
+  var element = template.$('select').selectize({
+    valueField: '_id',
+    labelField: options.titleField,
+    items: _.isArray(dataContext.value) ? dataContext.value : [dataContext.value],
+    searchField: schema.orion.fields,
+    plugins: ['remove_button'],
+    createFilter: schema.orion.createFilter,
+    create: schema.orion.create,
+    options: options,
+    render: schema.orion.render,
+  });
+  element[0].selectize.clearOptions();
+  element[0].selectize.load(function(callback) {
+    callback(options);
   });
 }
 
