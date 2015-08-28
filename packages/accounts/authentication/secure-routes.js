@@ -4,6 +4,7 @@
 Options.init('ensureSignedIn', []);
 
 Tracker.autorun(function () {
+  if (!Meteor.isClient) return;
   var routes = Options.get('ensureSignedIn');
   if (RouterLayer.router == 'iron-router') {
     RouterLayer.ironRouter.onBeforeAction(function() {

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:accounts',
   summary: 'Orion accounts mannager',
-  version: '1.4.3',
+  version: '1.4.4',
   git: 'https://github.com/orionjs/orion'
 });
 
