@@ -21,7 +21,7 @@ orion.collections.onCreated(function() {
       return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showCreate');
     };
     this.getHiddenFields = function() {
-      return _.union.apply(this, Roles.helper(Meteor.userId(), 'collections.agencies.hiddenFields'));
+      return _.union.apply(this, Roles.helper(Meteor.userId(), 'collections.' + self.name + '.hiddenFields'));
     }
     this.helpers({
       canShowUpdate: function () {
