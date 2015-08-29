@@ -4,7 +4,7 @@
       {{ i18n 'collections.create.title' collection.singularName }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeContentContainer" }}
-      {{> quickForm collection=collection id="orionMaterializeCollectionsCreateForm" type="insert" buttonContent=false }}
+      {{> quickForm collection=collection id="orionMaterializeCollectionsCreateForm" type="insert" buttonContent=false  omitFields=collection.getHiddenFields }}
     {{/ Layout }}
     {{# Layout template="orionMaterializeButtonsContainer" }}
       <a href="{{ collection.indexPath }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:materialize',
   summary: 'Materialize theme for orion admin',
-  version: '1.4.4',
+  version: '1.4.5',
   git: 'https://github.com/orionjs/orion'
 });
 

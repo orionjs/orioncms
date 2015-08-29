@@ -4,7 +4,7 @@
   {{/ Layout }}
   {{# Layout template="orionMaterializeContentContainer" }}
     {{#if Template.subscriptionsReady}}
-      {{> quickForm collection=collection doc=item id="orionMaterializeCollectionsUpdateForm" type="update" buttonContent=false }}
+      {{> quickForm collection=collection doc=item id="orionMaterializeCollectionsUpdateForm" type="update" buttonContent=false omitFields=collection.getHiddenFields }}
     {{/ if }}
   {{/ Layout }}
   {{# Layout template="orionMaterializeButtonsContainer" }}

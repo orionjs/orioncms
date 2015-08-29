@@ -9,6 +9,7 @@ orion.collections.onCreated(function() {
   Roles.registerAction('collections.' + this.name + '.showUpdate', true);
   Roles.registerAction('collections.' + this.name + '.showRemove', true);
   Roles.registerHelper('collections.' + this.name + '.indexFilter', {});
+  Roles.registerHelper('collections.' + this.name + '.hiddenFields', []);
 
   this.attachRoles('collections.' + this.name);
 
@@ -19,6 +20,9 @@ orion.collections.onCreated(function() {
     this.canShowCreate = function() {
       return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showCreate');
     };
+    this.getHiddenFields = function() {
+      return _.union.apply(this, Roles.helper(Meteor.userId(), 'collections.agencies.hiddenFields'));
+    }
     this.helpers({
       canShowUpdate: function () {
         return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showUpdate', this);

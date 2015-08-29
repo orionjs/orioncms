@@ -6,7 +6,7 @@
     {{# Layout template="orionBootstrapContentContainer" }}
       {{#if Template.subscriptionsReady}}
         {{# if item.canShowUpdate }}
-          {{> quickForm collection=collection doc=item id="orionBootstrapCollectionsUpdateForm" type="update" buttonContent=false }}
+          {{> quickForm collection=collection doc=item id="orionBootstrapCollectionsUpdateForm" type="update" buttonContent=false omitFields=collection.getHiddenFields }}
           <br>
           <div class="buttons text-right">
             <a class="btn btn-default" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>

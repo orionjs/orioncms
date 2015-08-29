@@ -37,11 +37,7 @@
 
 <template name="orionAttributesImageUploadColumn">
   {{# if value }}
-    {{# if isImage value.url }}
-      <p><img class="data-table-image" src="{{ value.url }}"></p>
-    {{ else }}
-      <p><a href="{{ value.url }}" target="_blank">{{ value.url }}</a></p>
-    {{/ if }}
+    <p><img class="data-table-image" src="{{ value.url }}"></p>
   {{ else }}
     <p class="help-block"><i>{{ i18n 'attributes.file.noFile' }}</i></p>
   {{/ if }}
