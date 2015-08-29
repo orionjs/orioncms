@@ -3,6 +3,10 @@
  */
 Roles.registerAction('accounts.showCreate', true);
 Roles.registerAction('accounts.create', true);
+Roles.registerHelper('accounts.allowedRoles', function() {
+  return Roles.availableRoles();
+});
+
 Options.init('sendAccountInvitationToEmail', false);
 Options.init('accountInvitationEmailTemplate');
 

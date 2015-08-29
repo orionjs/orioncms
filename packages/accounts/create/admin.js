@@ -18,7 +18,7 @@ if (Meteor.isClient) {
   });
   ReactiveTemplates.helpers('accounts.create', {
     roles: function() {
-      return Roles.availableRoles();
+      return _.union.apply(this, Roles.helper(Meteor.userId(), 'accounts.allowedRoles'));
     },
     invitationId: function() {
       return Session.get('accounts.create.invitationId');
