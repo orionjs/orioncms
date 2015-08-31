@@ -1,7 +1,8 @@
 var getSchema = function(options, hasMany) {
-  check(options, {
+  check(options, Match.ObjectIncluding({
     titleField: String,
     publicationName: String,
+    customPublication: Match.Optional(Boolean),
     pluralName: Match.Optional(Match.OneOf(String, Function)),
     singularName: Match.Optional(Match.OneOf(String, Function)),
     collection: Mongo.Collection,
@@ -13,7 +14,7 @@ var getSchema = function(options, hasMany) {
       item: Function,
       option: Function
     })
-  });
+  }));
 
   if (!options.filter) {
     options.filter = function(userId) {
@@ -52,13 +53,15 @@ var getSchema = function(options, hasMany) {
   options.fields.push(options.titleField);
 
   if (Meteor.isServer) {
-    Meteor.publish(options.publicationName, function () {
-      var pubFields = {};
-      for (var i = 0; i < options.fields.length; i++) {
-        pubFields[options.fields[i]] = 1;
-      }
-      return options.collection.find(options.filter(this.userId), { fields: pubFields });
-    }, { is_auto: true });
+    if (!options.customPublication) {
+      Meteor.publish(options.publicationName, function () {
+        var pubFields = {};
+        for (var i = 0; i < options.fields.length; i++) {
+          pubFields[options.fields[i]] = 1;
+        }
+        return options.collection.find(options.filter(this.userId), { fields: pubFields });
+      }, { is_auto: true });
+    }
     if (!hasMany) {
       Meteor.publish(options.publicationName + '_row', function (id) {
         var pubFields = {};
