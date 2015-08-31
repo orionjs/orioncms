@@ -40,6 +40,10 @@ var tabularOptions = {
   allow: function (userId) {
     return Roles.userHasPermission(userId, 'accounts.index'); // don't allow this person to subscribe to the data
   },
+  selector: function(userId) {
+    var selectors = Roles.helper(userId, 'accounts.indexFilter');
+    return { $or: selectors };
+  },
   pub: 'adminAccountsIndexTabular',
   columns: [
     { data: 'profile.name', title: orion.helpers.getTranslation('accounts.index.tableTitles.name') },

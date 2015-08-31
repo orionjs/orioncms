@@ -13,6 +13,11 @@ Roles.registerAction('accounts.update.profile', true);
 Roles.registerAction('accounts.remove', true);
 
 /**
+ * Register the index filter for the accounts.list
+ */
+Roles.registerHelper('accounts.indexFilter', {});
+
+/**
  * To set the actions for the admin
  */
 orion.accounts._adminUsersButtons = [];
