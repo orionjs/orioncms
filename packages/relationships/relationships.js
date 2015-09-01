@@ -1,7 +1,7 @@
 var initSelect = function(template, dataContext, schema, options) {
   var element = template.$('select').selectize({
     valueField: '_id',
-    labelField: options.titleField,
+    labelField: _.isArray(options.titleField) ? options.titleField[0] : options.titleField,
     items: _.isArray(dataContext.value) ? dataContext.value : [dataContext.value],
     searchField: schema.orion.fields,
     sortField: _.union(
