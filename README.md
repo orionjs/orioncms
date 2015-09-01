@@ -82,6 +82,7 @@ If you want to help translating Orion to your language follow the [instructions]
 
 - [rwatts:orion-maps](https://atmospherejs.com/rwatts/orion-maps)
 - [nicolaslopezj:orion-users-with-roles-attribute](https://github.com/nicolaslopezj/orion-users-with-roles-attribute) Users relationship with roles filter
+- [dvc:orion-tags](https://github.com/dvc94ch/orion-tags/) Bootstrap tags input
 
 **Filesystem:**
 
