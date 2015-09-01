@@ -4,6 +4,16 @@ var initSelect = function(template, dataContext, schema, options) {
     labelField: options.titleField,
     items: _.isArray(dataContext.value) ? dataContext.value : [dataContext.value],
     searchField: schema.orion.fields,
+    sortField: _.union(
+      (
+        _.isArray(schema.orion.sortFields) ?
+          _.map(schema.orion.sortFields, function(sort_field) { return { field: sort_field, direction: 'asc' } })
+          :
+          _.map(schema.orion.sortFields, function(sort_order, sort_field) { return { field: sort_field, direction: sort_order } })
+      )
+      ,
+      [{field: '$score'}]
+    ),
     plugins: ['remove_button'],
     createFilter: schema.orion.createFilter,
     create: schema.orion.create,
