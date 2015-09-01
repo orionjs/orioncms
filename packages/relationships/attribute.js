@@ -10,6 +10,7 @@ var getSchema = function(options, hasMany) {
     createFilter: Match.Optional(Function),
     create: Match.Optional(Function),
     additionalFields: Match.Optional(Array),
+    sortFields: Match.Optional(Match.OneOf(Array, Object)),
     render: Match.Optional({
       item: Function,
       option: Function
