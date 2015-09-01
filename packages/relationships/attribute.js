@@ -1,6 +1,6 @@
 var getSchema = function(options, hasMany) {
   check(options, Match.ObjectIncluding({
-    titleField: String,
+    titleField: Match.OneOf(String, Array),
     publicationName: String,
     customPublication: Match.Optional(Boolean),
     pluralName: Match.Optional(Match.OneOf(String, Function)),
@@ -26,13 +26,28 @@ var getSchema = function(options, hasMany) {
     options.create = false;
   }
 
+  if (_.isArray(options.titleField) && options.titleField.length === 1) {
+    options.titleField = options.titleField[0];
+  }
+
+  function render_item_default(item, escape) {
+    var fieldContent = ""
+    if (_.isArray(options.titleField)) {
+      _.each(options.titleField, function(field, index) { fieldContent += (index > 0 ? " | " : "") + escape(item[field])});
+    }
+    else {
+      fieldContent = escape(item[options.titleField]);
+    }
+    return '<div>' + fieldContent + '</div>';
+  }
+
   if (!options.render) {
     options.render = {
       item: function(item, escape) {
-        return '<div>' + escape(item[options.titleField]) + '</div>';
+        return render_item_default(item, escape);
       },
       option: function(item, escape) {
-        return '<div>' + escape(item[options.titleField]) + '</div>';
+        return render_item_default(item, escape);
       }
     };
   }
@@ -49,8 +64,7 @@ var getSchema = function(options, hasMany) {
     options.singularName = i18n('collections.common.defaultSingularName');
   }
 
-  options.fields = options.additionalFields;
-  options.fields.push(options.titleField);
+  options.fields = _.union(options.additionalFields, options.titleField);
 
   if (Meteor.isServer) {
     if (!options.customPublication) {
