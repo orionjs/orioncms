@@ -8,7 +8,7 @@ Tracker.autorun(function () {
   var routes = Options.get('ensureSignedIn');
   if (RouterLayer.router == 'iron-router') {
     RouterLayer.ironRouter.onBeforeAction(function() {
-      if (_.contains(routes, RouterLayer.ironRouter.current().route.getName()) && !Meteor.userId()) {
+      if (RouterLayer.ironRouter.current && _.contains(routes, RouterLayer.ironRouter.current().route.getName()) && !Meteor.userId()) {
         var path = null;
         Tracker.nonreactive(function() {
           path = RouterLayer.ironRouter.current().location.get().path
