@@ -99,6 +99,7 @@ If you want to help translating Orion to your language follow the [instructions]
 - [aselox:orion-lang-it](https://atmospherejs.com/aselox/orion-lang-it) Italian
 - [palpinter:orion-lang-hu] (https://github.com/palpinter/orion-lang-hu.git) Hungarian
 - [tunifight:orion-lang-ar] (https://github.com/nabiltntn/orion-lang-ar.git) Arabic
+- [budickda:orion-lang-de](https://atmospherejs.com/budickda/orion-lang-de) German
 
 **Integrations:**
 
