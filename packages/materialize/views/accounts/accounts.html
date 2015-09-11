@@ -1,8 +1,8 @@
 <template name="orionMaterializeAccountsIndex">
-  {{# Layout template="orionMaterializeHeaderContainer" }}
+  {{# Layout template=materializeHeader }}
     {{ i18n 'accounts.index.title' }}
   {{/ Layout }}
-  {{# Layout template="orionMaterializeContentContainer" }}
+  {{# Layout template=materializeContent }}
     {{# if userHasPermission 'accounts.showCreate' }}
       <div class="floating-btn-onheader">
         <a href="{{ RouterLayerPathFor 'accounts.create' }}" class="btn-floating btn-large waves-effect waves-light red right">

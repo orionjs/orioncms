@@ -1,12 +1,12 @@
 <template name="orionMaterializeCollectionsDelete">
-  {{# Layout template="orionMaterializeHeaderContainer" }}
-    {{ i18n 'collections.delete.title' collection.singularName }} 
+  {{# Layout template=materializeHeader }}
+    {{ i18n 'collections.delete.title' collection.singularName }}
   {{/ Layout }}
-  {{# Layout template="orionMaterializeContentContainer" }}
+  {{# Layout template=materializeContent }}
     <p>{{ i18n 'collections.delete.confirmQuestion' collection.singularName }}</p>
   {{/ Layout }}
   {{# if item.canShowRemove }}
-    {{# Layout template="orionMaterializeButtonsContainer" }}
+    {{# Layout template=materializeButtons }}
       <a class="waves-effect waves-light btn" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
       <a class="waves-effect waves-light btn red confirm-delete" href="#">{{ i18n 'global.confirm' }}</a>
     {{/ Layout }}

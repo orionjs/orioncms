@@ -1,8 +1,8 @@
 <template name="orionMaterializeCollectionsIndex">
-  {{# Layout template="orionMaterializeHeaderContainer" }}
+  {{# Layout template=materializeHeader }}
     {{ collection.title }}
   {{/ Layout }}
-  {{# Layout template="orionMaterializeContentContainer" }}
+  {{# Layout template=materializeContent }}
     {{# if collection.canShowCreate }}
       <div class="floating-btn-onheader">
         <a href="{{ collection.createPath }}" class="btn-floating btn-large waves-effect waves-light red right">

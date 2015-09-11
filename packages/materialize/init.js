@@ -4,6 +4,10 @@ Options.init('materialize.headerColor');
 
 ReactiveTemplates.request('tabs', 'orionMaterializeTabs');
 
+ReactiveTemplates.request('materializeHeader', 'orionMaterializeHeaderContainer');
+ReactiveTemplates.request('materializeContent', 'orionMaterializeContentContainer');
+ReactiveTemplates.request('materializeButtons', 'orionMaterializeButtonsContainer');
+
 ReactiveTemplates.set('layout', 'orionMaterializeLayout');
 ReactiveTemplates.set('outAdminLayout', 'orionMaterializeOutAdminLayout');
 
@@ -34,12 +38,24 @@ ReactiveTemplates.set('attribute.hasMany', 'orionMaterializeHasManyAttribute');
 ReactiveTemplates.set('attribute.user', 'orionMaterializeHasOneAttribute');
 ReactiveTemplates.set('attribute.users', 'orionMaterializeHasManyAttribute');
 
-if (Meteor.isClient) {
-  AutoForm.setDefaultTemplate('materialize');
-}
-
 // Pages
 ReactiveTemplates.set('pages.index', 'orionMaterializePagesIndex');
 ReactiveTemplates.set('pages.create', 'orionMaterializePagesCreate');
 ReactiveTemplates.set('pages.update', 'orionMaterializePagesUpdate');
 ReactiveTemplates.set('pages.delete', 'orionMaterializePagesDelete');
+
+if (Meteor.isClient) {
+  AutoForm.setDefaultTemplate('materialize');
+
+  Template.registerHelper('materializeHeader', function() {
+    return ReactiveTemplates.get('materializeHeader');
+  });
+
+  Template.registerHelper('materializeContent', function() {
+    return ReactiveTemplates.get('materializeContent');
+  });
+
+  Template.registerHelper('materializeButtons', function() {
+    return ReactiveTemplates.get('materializeButtons');
+  });
+}

@@ -1,9 +1,9 @@
 <template name="orionMaterializeAccountsCreate">
-  {{# Layout template="orionMaterializeHeaderContainer" }}
+  {{# Layout template=materializeHeader }}
     {{ i18n 'accounts.create.title' }}
   {{/ Layout }}
   {{# if invitationId }}
-    {{# Layout template="orionMaterializeContentContainer" }}
+    {{# Layout template=materializeContent }}
       <br>
       <div class="green-text">
         {{ i18n 'accounts.create.messages.successfullyCreated' }}
@@ -12,13 +12,13 @@
         <input type="text" disabled="true" value="{{ urlFor 'registerWithInvitation' _id=invitationId }}">
       </p>
     {{/ Layout }}
-    {{# Layout template="orionMaterializeButtonsContainer" }}
+    {{# Layout template=materializeButtons }}
       <a href="{{ RouterLayerPathFor 'accounts.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.back' }}</a>
       <button class="waves-effect waves-light btn light-blue accent-4 btn-invite-another">{{ i18n 'accounts.create.inviteOther' }}</button>
     {{/ Layout }}
   {{ else }}
     <form class="create">
-      {{# Layout template="orionMaterializeContentContainer" }}
+      {{# Layout template=materializeContent }}
         <p>
           <input type="radio" id="invitationRadio" name="createMethod" value="invitation" checked>
           <label for="invitationRadio">{{ i18n 'accounts.create.createInvitation' }}</label>
@@ -67,7 +67,7 @@
 
       {{/ Layout }}
 
-      {{# Layout template="orionMaterializeButtonsContainer" }}
+      {{# Layout template=materializeButtons }}
         <a href="{{ RouterLayerPathFor 'accounts.index' }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>
         <button class="waves-effect waves-light btn light-blue accent-4">{{ i18n 'global.create' }}</button>
       {{/ Layout }}

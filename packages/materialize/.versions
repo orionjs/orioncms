@@ -20,7 +20,6 @@ ejson@1.0.6
 email@1.0.6
 fastclick@1.0.3
 geojson-utils@1.0.3
-gildaspk:autoform-materialize@0.0.21
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0
@@ -30,7 +29,7 @@ json@1.0.3
 launch-screen@1.0.2
 less@1.0.14
 livedata@1.0.13
-local-test:orionjs:materialize@1.4.5
+local-test:orionjs:materialize@1.4.6
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.13
@@ -50,15 +49,16 @@ nicolaslopezj:tabular-materialize@1.2.1
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-orionjs:accounts@1.4.4
+orionjs:accounts@1.4.6
 orionjs:attributes@1.4.0
 orionjs:base@1.4.2
-orionjs:collections@1.4.5
+orionjs:collections@1.4.6
 orionjs:config@1.4.0
 orionjs:core@1.4.0
 orionjs:dictionary@1.4.0
 orionjs:lang-en@1.4.0
-orionjs:materialize@1.4.5
+orionjs:materialize@1.4.6
+poetic:autoform-materialize@0.1.1
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5

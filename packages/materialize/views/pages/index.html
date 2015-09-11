@@ -1,8 +1,8 @@
 <template name="orionMaterializePagesIndex">
-  {{# Layout template="orionMaterializeHeaderContainer" }}
+  {{# Layout template=materializeHeader }}
     {{ i18n 'pages.index.title' }}
   {{/ Layout }}
-  {{# Layout template="orionMaterializeContentContainer" }}
+  {{# Layout template=materializeContent }}
     {{# if userHasPermission 'pages.insert' }}
       <div class="floating-btn-onheader">
         <a href="{{ RouterLayerPathFor 'pages.create' }}" class="btn-floating btn-large waves-effect waves-light red right">

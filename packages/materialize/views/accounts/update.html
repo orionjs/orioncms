@@ -1,12 +1,12 @@
 <template name="orionMaterializeAccountsUpdate">
   <form class="roles">
-    {{# Layout template="orionMaterializeHeaderContainer" }}
+    {{# Layout template=materializeHeader }}
       {{ i18n 'accounts.update.title' }}
       <small>
         {{ user.profile.name }}
       </small>
     {{/ Layout }}
-    {{# Layout template="orionMaterializeContentContainer" }}
+    {{# Layout template=materializeContent }}
 
       {{# autoForm id="accountsUpdateEmailsForm" schema=emailsSchema type="method-update" doc=user meteormethod="orionAccountsUpdateEmails" }}
         {{> afQuickField name='emails' class=""}}
