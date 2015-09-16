@@ -1,4 +1,4 @@
-Options.init('homePath')
+Options.init('homePath');
 Options.init('siteName');
 Options.init('materialize.headerColor');
 
@@ -46,6 +46,20 @@ ReactiveTemplates.set('pages.delete', 'orionMaterializePagesDelete');
 
 if (Meteor.isClient) {
   AutoForm.setDefaultTemplate('materialize');
+
+  AutoForm.addHooks(null, {
+    beginSubmit: function() {
+      Session.set('orion_autoformLoading', true);
+    },
+    endSubmit: function() {
+      Session.set('orion_autoformLoading', false);
+    }
+  });
+
+  Template.registerHelper('orion_autoformLoading', function() {
+    return Session.get('orion_autoformLoading') ? 'disabled': '';
+  });
+
 
   Template.registerHelper('materializeHeader', function() {
     return ReactiveTemplates.get('materializeHeader');

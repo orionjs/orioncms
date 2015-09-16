@@ -7,8 +7,8 @@
   {{/ Layout }}
   {{# if item.canShowRemove }}
     {{# Layout template=materializeButtons }}
-      <a class="waves-effect waves-light btn" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
-      <a class="waves-effect waves-light btn red confirm-delete" href="#">{{ i18n 'global.confirm' }}</a>
+      <a class="waves-effect waves-light btn {{ orion_autoformLoading }}" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
+      <a class="waves-effect waves-light btn red confirm-delete {{ orion_autoformLoading }}" href="#">{{ i18n 'global.confirm' }}</a>
     {{/ Layout }}
   {{/ if }}
 </template>

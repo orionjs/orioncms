@@ -23,7 +23,7 @@ orion.collections.onCreated(function() {
     this.getHiddenFields = function() {
       var docId = RouterLayer.getParam('_id');
       return _.union.apply(this, Roles.helper(Meteor.userId(), 'collections.' + self.name + '.hiddenFields', docId));
-    }
+    };
     this.helpers({
       canShowUpdate: function () {
         return Roles.userHasPermission(Meteor.userId(), 'collections.' + self.name + '.showUpdate', this);
