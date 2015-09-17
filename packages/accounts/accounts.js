@@ -41,11 +41,11 @@ Options.listen('forbidClientAccountCreation', function(value) {
  * Adds the "name" field to the sign up form
  */
 AccountsTemplates.addField({
-    _id: 'name',
-    type: 'text',
-    displayName: Meteor.isClient ? i18n('accounts.register.fields.name') : 'Name',
-    placeholder: Meteor.isClient ? i18n('accounts.register.fields.name') : 'Your Name',
-    required: true,
+  _id: 'name',
+  type: 'text',
+  displayName: Meteor.isClient ? i18n('accounts.register.fields.name') : 'Name',
+  placeholder: Meteor.isClient ? i18n('accounts.register.fields.name') : 'Your Name',
+  required: true,
 });
 
 UsersEmailsSchema = new SimpleSchema({
