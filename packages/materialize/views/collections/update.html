@@ -8,10 +8,10 @@
     {{/ if }}
   {{/ Layout }}
   {{# Layout template=materializeButtons }}
-      <a href="{{ collection.indexPath }}" class="waves-effect waves-light btn">{{ i18n 'global.cancel' }}</a>
+      <a href="{{ collection.indexPath }}" class="waves-effect waves-light btn {{ orion_autoformLoading }}">{{ i18n 'global.cancel' }}</a>
       {{# if item.canShowRemove }}
-        <a class="waves-effect waves-light btn red" href="{{ collection.deletePath item._id }}">{{ i18n 'global.delete' }}</a>
+        <a class="waves-effect waves-light btn red {{ orion_autoformLoading }}" href="{{ collection.deletePath item._id }}">{{ i18n 'global.delete' }}</a>
       {{/ if }}
-      <a class="waves-effect waves-light btn light-blue accent-4 save-btn" href="#">{{ i18n 'global.save' }}</a>
+      <a class="waves-effect waves-light btn light-blue accent-4 save-btn {{ orion_autoformLoading }}" href="#">{{ i18n 'global.save' }}</a>
   {{/ Layout }}
 </template>

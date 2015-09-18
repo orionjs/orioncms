@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:collections',
   summary: 'Meteor collection with some magic',
-  version: '1.4.6',
+  version: '1.4.7',
   git: 'https://github.com/orionjs/orion'
 });
 
