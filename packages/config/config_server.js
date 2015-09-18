@@ -12,8 +12,8 @@ orion.config.collection.after.update(function (userId, doc, fieldNames, modifier
 /**
  * Creates one object in the config collection
  */
-if (orion.config.collection.find().count() === 0) {
-  orion.config.collection.insert({}, function(){
+if (orion.config.collection.find(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{}).count() === 0) {
+  orion.config.collection.insert(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{}, function(){
     console.log("Orion config initialized");
   });
 }
@@ -26,14 +26,14 @@ Meteor.publish('orion_config', function() {
     return [];
   }
   if (Roles.userHasPermission(this.userId, 'config.update')) {
-    return orion.config.collection.find();
+    return orion.config.collection.find(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{});
   }
 });
 
 /**
  * Get the config from the database only once
  */
-orion.config.object = orion.config.collection.findOne();
+orion.config.object = orion.config.collection.findOne(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{});
 
 /**
  * Send the data to the client (only public values).
@@ -55,7 +55,7 @@ Meteor.startup(function () {
     fields[field] = 0;
   });
 
-  var config = orion.config.collection.findOne({}, { fields: fields });
+  var config = orion.config.collection.findOne(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{}, { fields: fields });
 
   Inject.obj('orion.config', config);
 });

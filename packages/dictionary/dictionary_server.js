@@ -1,9 +1,9 @@
 /**
  * If its on server, inserts the dictionary object
  */
-if (orion.dictionary.find().count() != 1) {
-  orion.dictionary.remove({});
-  orion.dictionary.insert({}, function(){
+if (orion.dictionary.find(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{}).count() != 1) {
+  orion.dictionary.remove(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{});
+  orion.dictionary.insert(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{}, function(){
     console.log("Orion dictionary initialized");
   });
 }
@@ -12,5 +12,5 @@ if (orion.dictionary.find().count() != 1) {
  * Publications of the dictionary
  */
 Meteor.publish('orion_dictionary', function() {
-  return orion.dictionary.find();
+  return orion.dictionary.find(process.env.ORION_APPID?{_id:process.env.ORION_APPID}:{});
 });
