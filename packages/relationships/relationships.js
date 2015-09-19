@@ -28,7 +28,12 @@ var initSelect = function(template, dataContext, schema, options) {
     element[0].selectize.setValue(currentValue);
   });
   var setValue = function(value) {
-    element[0].selectize.setValue(value);
+    if (element[0].selectize.settings.mode == 'multi') {
+      element[0].selectize.setTextboxValue('');
+      element[0].selectize.addItem(value);
+    } else {
+      element[0].selectize.setValue(value);
+    }
   };
 };
 
