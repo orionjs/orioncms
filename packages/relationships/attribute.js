@@ -32,9 +32,9 @@ var getSchema = function(options, hasMany) {
   }
 
   function render_item_default(item, escape) {
-    var fieldContent = ""
+    var fieldContent = "";
     if (_.isArray(options.titleField)) {
-      _.each(options.titleField, function(field, index) { fieldContent += (index > 0 ? " | " : "") + escape(item[field])});
+      _.each(options.titleField, function(field, index) { fieldContent += (index > 0 ? " | " : "") + escape(item[field]); } );
     }
     else {
       fieldContent = escape(item[options.titleField]);
@@ -93,12 +93,28 @@ var getSchema = function(options, hasMany) {
   if (hasMany) {
     return {
       type: [String],
-      orion: options
+      orion: options,
+      custom: function() {
+        if (this.isSet && _.isArray(this.value)) {
+          var count = options.collection.find({ $and: [{ _id: { $in: this.value } }, options.filter(this.userId)] }).count();
+          if (count != this.value.length) {
+            return 'notAllowed';
+          }
+        }
+      }
     };
   } else {
     return {
       type: String,
-      orion: options
+      orion: options,
+      custom: function() {
+        if (this.isSet && _.isString(this.value)) {
+          var count = options.collection.find({ $and: [{ _id: this.value }, options.filter(this.userId)] }).count();
+          if (count != 1) {
+            return 'notAllowed';
+          }
+        }
+      }
     };
   }
 };
