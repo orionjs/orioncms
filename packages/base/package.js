@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.4.3',
+  version: '1.4.4',
   git: 'https://github.com/orionjs/orion'
 });
 
