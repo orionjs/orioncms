@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:dictionary',
   summary: 'Meteor collection with some magic',
-  version: '1.4.0',
+  version: '1.4.1',
   git: 'https://github.com/orionjs/orion'
 });
 
