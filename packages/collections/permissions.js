@@ -9,7 +9,6 @@ orion.collections.onCreated(function() {
   Roles.registerAction('collections.' + this.name + '.showUpdate', true);
   Roles.registerAction('collections.' + this.name + '.showRemove', true);
   Roles.registerHelper('collections.' + this.name + '.indexFilter', {});
-  Roles.registerHelper('collections.' + this.name + '.hiddenFields', []);
 
   this.attachRoles('collections.' + this.name);
 
@@ -22,7 +21,7 @@ orion.collections.onCreated(function() {
     };
     this.getHiddenFields = function() {
       var docId = RouterLayer.getParam('_id');
-      return _.union.apply(this, Roles.helper(Meteor.userId(), 'collections.' + self.name + '.hiddenFields', docId));
+      return _.union.apply(this, Roles.helper(Meteor.userId(), 'collections.' + self.name + '.forbiddenFields', docId));
     };
     this.helpers({
       canShowUpdate: function () {

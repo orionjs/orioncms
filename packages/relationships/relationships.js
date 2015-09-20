@@ -5,18 +5,19 @@ var initSelect = function(template, dataContext, schema, options) {
     items: _.isArray(dataContext.value) ? dataContext.value : [dataContext.value],
     searchField: schema.orion.fields,
     sortField: _.union(
-      (
-        _.isArray(schema.orion.sortFields) ?
-          _.map(schema.orion.sortFields, function(sort_field) { return { field: sort_field, direction: 'asc' } })
-          :
-          _.map(schema.orion.sortFields, function(sort_order, sort_field) { return { field: sort_field, direction: sort_order } })
-      )
-      ,
+      (_.isArray(schema.orion.sortFields) ?
+          _.map(schema.orion.sortFields, function(sort_field) { return { field: sort_field, direction: 'asc' }; }) :
+          _.map(schema.orion.sortFields, function(sort_order, sort_field) { return { field: sort_field, direction: sort_order }; })),
       [{field: '$score'}]
     ),
     plugins: ['remove_button'],
     createFilter: schema.orion.createFilter,
-    create: schema.orion.create,
+    create: schema.orion.create && function(input, callback) {
+      schema.orion.create(input, function(value) {
+        callback(value);
+        setValue(value);
+      });
+    },
     options: options,
     render: schema.orion.render,
   });
@@ -26,14 +27,22 @@ var initSelect = function(template, dataContext, schema, options) {
     callback(options);
     element[0].selectize.setValue(currentValue);
   });
-}
+  var setValue = function(value) {
+    if (element[0].selectize.settings.mode == 'multi') {
+      element[0].selectize.setTextboxValue('');
+      element[0].selectize.addItem(value);
+    } else {
+      element[0].selectize.setValue(value);
+    }
+  };
+};
 
 var onRendered = function() {
   var template = this;
   template.autorun(function() {
     RouterLayer.isActiveRoute('admin');
     template.$('select')[0].selectize && template.$('select')[0].selectize.destroy();
-  })
+  });
   template.autorun(function () {
     var dataContext = Template.currentData();
     var schema = AutoForm.getSchemaForField(dataContext.name)

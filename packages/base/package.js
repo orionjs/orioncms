@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.4.2',
+  version: '1.4.3',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -17,7 +17,7 @@ Package.onUse(function(api) {
     'nicolaslopezj:router-layer@0.0.8',
     'aldeed:simple-schema@1.3.3',
     'orionjs:lang-en@1.4.0'
-    ]);
+  ]);
 
   api.imply([
     'meteor-platform',
@@ -27,19 +27,19 @@ Package.onUse(function(api) {
     'nicolaslopezj:reactive-templates',
     'nicolaslopezj:roles',
     'orionjs:lang-en'
-    ]);
+  ]);
 
   api.addFiles([
     'init.js',
     'helpers.js',
     'home-route.js',
     'layouts.js',
-    ]);
+  ]);
 
   api.addFiles([
     'helpers_client.js',
     'links.js'
-    ], 'client')
+  ], 'client');
 
   api.export('orion');
 });

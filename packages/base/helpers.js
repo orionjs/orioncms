@@ -1,7 +1,7 @@
 /**
  * Orion Helpers
  */
-orion.helpers = {}
+orion.helpers = {};
 
 /**
  * Searchs a object with a givin string
@@ -19,14 +19,14 @@ orion.helpers.searchObjectWithDots = function(object, key, selectFirstIfIsArray)
       if (key[i] in object) {
         object = object[key[i]];
       } else {
-        return null;
+        return undefined;
       }
     }
   } catch(error) {
-    return null;
+    return undefined;
   }
 
-  return object || null;
+  return object;
 };
 
 /**
@@ -48,5 +48,5 @@ orion.helpers.deepExtend = function(target, source) {
 orion.helpers.getTranslation = function(key) {
   return function() {
     return i18n(key);
-  }
-}
+  };
+};
