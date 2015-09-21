@@ -18,12 +18,12 @@ orion.collections.onCreated(function() {
     var collection = null;
     try {
       var path = RouterLayer.getPath().split('/')[2];
-      collection = orion.collections.list[path]
+      collection = orion.collections.list[path];
     } catch (e) {
       console.log('Error getting collection', e);
     }
     return collection;
-  }
+  };
 
   ReactiveTemplates.helpers('collections.' + self.name + '.index', {
     collection: function() {
@@ -46,7 +46,7 @@ orion.collections.onCreated(function() {
 
   ReactiveTemplates.helpers('collections.' + self.name + '.update', {
     collection: function() {
-      return getCollection()
+      return getCollection();
     },
     item: function() {
       return getCollection() && getCollection().findOne(RouterLayer.getParam('_id'));
@@ -83,4 +83,4 @@ orion.collections.onCreated(function() {
       });
     }
   });
-})
+});

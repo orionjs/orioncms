@@ -48,11 +48,8 @@ var tabularOptions = {
   columns: [
     { data: 'profile.name', title: orion.helpers.getTranslation('accounts.index.tableTitles.name') },
     {
-      data: 'emails',
-      title: orion.helpers.getTranslation('accounts.index.tableTitles.email'),
-      render: function(val, type, doc) {
-        return val && val[0] && val[0].address;
-      }
+      data: 'emails[0].address',
+      title: orion.helpers.getTranslation('accounts.index.tableTitles.email')
     },
     {
       data: 'roles()',
