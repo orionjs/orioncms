@@ -30,11 +30,14 @@ i18n.map('en', {
     },
     index: {
       title: 'Accounts',
+      noName: 'No Name',
       actions: {
         edit: 'Edit',
+        sendEnrollmentEmail: 'Send Enrollment Email'
       },
       tableTitles: {
         name: 'Name',
+        services: 'Login method',
         email: 'Email',
         roles: 'Roles',
         actions: 'Actions'
