@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.4.4',
+  version: '1.4.5',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,8 +9,14 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'meteor-platform',
+    'meteor-base@1.0.1',
+    'mongo',
+    'standard-minifiers@1.0.0',
     'underscore',
+    'spacebars',
+    'blaze-html-templates@1.0.1',
+    'check',
+    'tracker',
     'nicolaslopezj:options@1.0.1',
     'nicolaslopezj:reactive-templates@1.2.1',
     'nicolaslopezj:roles@1.3.1',
@@ -20,8 +26,14 @@ Package.onUse(function(api) {
   ]);
 
   api.imply([
-    'meteor-platform',
+    'meteor-base',
+    'mongo',
+    'standard-minifiers',
     'underscore',
+    'spacebars',
+    'blaze-html-templates',
+    'check',
+    'tracker',
     'nicolaslopezj:router-layer',
     'nicolaslopezj:options',
     'nicolaslopezj:reactive-templates',
