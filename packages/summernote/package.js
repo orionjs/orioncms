@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     'orionjs:base@1.4.0',
     'orionjs:attributes@1.4.0',
     'orionjs:filesystem@1.4.0',
-    'less',
+    'less@2.5.0_2',
     'summernote:standalone@0.6.15',
     'jquery'
     ]);
