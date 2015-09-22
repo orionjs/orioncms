@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:core',
   summary: 'Orion',
-  version: '1.4.0',
+  version: '1.5.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,13 +9,13 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.4.0',
-    'orionjs:accounts@1.4.0',
-    'orionjs:config@1.4.0',
-    'orionjs:collections@1.4.0',
-    'orionjs:dictionary@1.4.0',
-    'orionjs:attributes@1.4.0',
-    'orionjs:lang-en@1.4.0'
+    'orionjs:base@1.5.0',
+    'orionjs:accounts@1.5.0',
+    'orionjs:config@1.5.0',
+    'orionjs:collections@1.5.0',
+    'orionjs:dictionary@1.5.0',
+    'orionjs:attributes@1.5.0',
+    'orionjs:lang-en@1.5.0'
     ]);
 
   api.imply([
