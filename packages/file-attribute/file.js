@@ -7,6 +7,8 @@ ReactiveTemplates.events('attribute.file', {
     Session.set('file' + template.data.name, null);
   },
   'change input': function(event, template) {
+    if (orion.filesystem.isUploading()) return;
+
     var self = this;
     var files = event.currentTarget.files;
     if (files.length != 1) return;

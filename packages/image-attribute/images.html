@@ -21,7 +21,7 @@
       {{ i18n 'attributes.images.clickToRemove' }}
     </p>
     {{/ if }}
-    <span class="btn btn-default btn-file btn-xs input-field {{# if uploads }}disabled{{/ if }}">
+    <span class="btn btn-default btn-file btn-xs input-field {{# if uploads }}disabled{{ else }}{{# if filesystemIsUploading }}disabled{{/ if }}{{/ if }}">
       {{ i18n 'attributes.images.choose' }} <input type="file" accept="image/*" disabled={{# if uploads }}true{{/ if }}>
     </span>
   </div>

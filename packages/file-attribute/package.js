@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:file-attribute',
   summary: 'File attribute for orion',
-  version: '1.4.1',
+  version: '1.4.2',
   git: 'http://github.com/orionjs/orion'
 });
 

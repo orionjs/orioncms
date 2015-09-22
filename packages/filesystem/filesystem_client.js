@@ -1,4 +1,14 @@
 /**
+ * Current uploads array
+ */
+orion.filesystem.uploads = [];
+orion.filesystem._uploadsDep = new Tracker.Dependency();
+orion.filesystem.isUploading = function() {
+  orion.filesystem._uploadsDep.depend();
+  return orion.filesystem.uploads.length !== 0;
+};
+
+/**
  * Public upload function
  *
  * This function handles all uploads in orion,
@@ -13,7 +23,11 @@ orion.filesystem.upload = function(options) {
     meta: Match.Optional(Object)
   });
 
+  Session.set('filesystem.uploading', true);
+
   var upload = {};
+  orion.filesystem.uploads.push(upload);
+  orion.filesystem._uploadsDep.changed();
 
   upload._statusDependency = new Tracker.Dependency();
   upload._ready = false;
@@ -40,11 +54,19 @@ orion.filesystem.upload = function(options) {
     upload._ready = true;
     upload.fileId = orion.filesystem.collection.insert({ url: url, meta: meta, name: options.name, uploader: options.uploader });
     upload._statusDependency.changed();
+
+    var index = orion.filesystem.uploads.indexOf(upload);
+    orion.filesystem.uploads.splice(index, 1);
+    orion.filesystem._uploadsDep.changed();
   }, function(error) {
     check(error, Meteor.Error);
     upload.error = error;
     upload._ready = true;
     upload._statusDependency.changed();
+
+    var index = orion.filesystem.uploads.indexOf(upload);
+    orion.filesystem.uploads.splice(index, 1);
+    orion.filesystem._uploadsDep.changed();
   }, function(progress) {
     check(progress, Number);
     upload._progress = progress;

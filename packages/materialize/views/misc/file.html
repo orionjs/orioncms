@@ -24,7 +24,7 @@
       {{ else }}
         <br>
         <div class="file-field input-field">
-          <div class="waves-effect waves-light btn">
+          <div class="waves-effect waves-light btn {{# if filesystemIsUploading }}disabled{{/ if }}">
             <span>{{ i18n 'attributes.file.choose' }}</span>
             <input type="file" />
           </div>

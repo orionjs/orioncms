@@ -14,7 +14,7 @@
       {{# if isUploading }}
         <div class="progress"><div class="progress-bar progress-bar-striped active" style="width: {{ progress }}%"></div></div>
       {{ else }}
-        <span class="btn btn-default btn-file btn-xs">
+        <span class="btn btn-default btn-file btn-xs {{# if filesystemIsUploading }}disabled{{/ if }}">
           {{ i18n 'attributes.file.choose' }} <input type="file">
         </span>
       {{/ if }}

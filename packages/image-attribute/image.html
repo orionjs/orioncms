@@ -25,7 +25,7 @@
           {{/ if }}
         {{ else }}
           <p>
-            <span class="btn btn-default btn-file btn-xs input-field">
+            <span class="btn btn-default btn-file btn-xs input-field {{# if filesystemIsUploading }}disabled{{/ if }}">
               {{ i18n 'attributes.image.choose' }} <input type="file" accept="image/*">
             </span>
           </p>

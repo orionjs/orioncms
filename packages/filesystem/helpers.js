@@ -18,3 +18,7 @@ Template.registerHelper('iconForFile', function(fileURL) {
   }
   return 'fa-file-o';
 });
+
+Template.registerHelper('filesystemIsUploading', function() {
+  return orion.filesystem.isUploading();
+});
