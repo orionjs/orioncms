@@ -73,9 +73,9 @@ S3.config = {
  * Initializes the variables, so you can
  * edit them in the admin panel
  */
-orion.config.add('AWS_API_KEY', 'aws')
-orion.config.add('AWS_API_SECRET', 'aws', {secret: true})
-orion.config.add('AWS_S3_BUCKET', 'aws')
+orion.config.add('AWS_API_KEY', 'aws');
+orion.config.add('AWS_API_SECRET', 'aws', { secret: true });
+orion.config.add('AWS_S3_BUCKET', 'aws');
 
 /**
  * Sets the credentials when the server starts
