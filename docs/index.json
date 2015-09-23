@@ -89,6 +89,15 @@
           "section": "customization"
         }
       ]
+    },
+    {
+      "title": "Other",
+      "childs": [
+        {
+          "title": "Changelog",
+          "section": "changelog"
+        }
+      ]
     }
   ]
 }
