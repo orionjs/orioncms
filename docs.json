@@ -4,6 +4,10 @@
       "id": "master",
       "alias": "v1.5",
       "isDefault": true
+    },
+    {
+      "id": "v1.5",
+      "alias": "v1.4"
     }
   ]
 }
