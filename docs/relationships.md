@@ -18,26 +18,28 @@ The "has one" attribute is a **String** that contains the id of the selected ite
 orion.attribute('hasOne', schema, options)
 ```
 
-- `schema` **Object**. The definition of the attribute.
+- ```schema``` **Object**. The definition of the attribute.
 
 ***Options***
 
-- `titleField` **String**. The name of the field you want to show.
+- ```titleField``` **String**. The name of the field you want to show.
 
-- `publicationName` **String**. The name of the publication. It doesn't
+- ```publicationName``` **String**. The name of the publication. It doesn't
 affect anything; just set a unique string.
 
-- `collection` **Collection**. The Meteor collection. This is not the name of the collection, but the variable.
+- ```customPublication``` **Boolean**. Optional. False by default, if true the publication will not be created automatically.
 
-- `filter` **Function**. Optional. A function that takes the `userId` and returns the Mongo filter. Remember to add to `additionalFields` all the fields that you use in the `filter` function.
+- ```collection``` **Collection**. The Meteor collection. This is not the name of the collection, but the variable.
 
-- `additionalFields` **Array**. Optional. Search with more fields in the select. If you want to fetch other fields than the `titleField` you must add them here.
+- ```filter``` **Function**. Optional. A function that takes the ```userId``` and returns the Mongo filter. Remember to add to ```additionalFields``` all the fields that you use in the ```filter``` function.
 
-- `create` **Function**. Optional. Allows the user to create new items that aren't in the list of options. This option can be any of the following: `true`, `false` (disabled), or a function that accepts two arguments: "input" and "callback". The callback should be invoked with the final data for the option.
+- ```additionalFields``` **Array**. Optional. Search with more fields in the select. If you want to fetch other fields than the ```titleField``` you must add them here.
 
-- `createFilter` **Function**. Optional. Specifies a RegExp or String containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
+- ```create``` **Function**. Optional. Allows the user to create new items that aren't in the list of options. This option can be any of the following: `true`, ```false``` (disabled), or a function that accepts two arguments: "input" and "callback". The callback should be invoked with the final data for the option.
 
-- `render` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js documentation](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set `option` and `item`.
+- ```createFilter``` **Function**. Optional. Specifies a RegExp or String containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
+
+- ```render``` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js documentation](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set ```option``` and ```item```.
 
 ## Examples
 
@@ -66,32 +68,32 @@ The "has many" attribute is an **Array** that contains the ids of the selected i
 orion.attribute('hasMany', schema, options)
 ```
 
-- `schema` **Object**. The definition of the attribute.
+- ```schema``` **Object**. The definition of the attribute.
 
 ***Options***
 
-- `titleField` **String**. The name of the field you want to show.
+- ```titleField``` **String**. The name of the field you want to show.
 
-- `publicationName` **String**. The name of the publication. It doesn't
+- ```publicationName``` **String**. The name of the publication. It doesn't
 affect anything; just set a unique string.
 
-- `pluralName` **String**. Optional. The name of more than one item. When `entity` is used,
+- ```pluralName``` **String**. Optional. The name of more than one item. When ```entity``` is used,
 this is automatically set.
 
-- `singularName` **String**. Optional. The name of one item. When `entity` is used,
+- ```singularName``` **String**. Optional. The name of one item. When ```entity``` is used,
 this is automatically set.
 
-- `collection` **Collection**. The Meteor collection. This is not the name of the collection, but the variable.
+- ```collection``` **Collection**. The Meteor collection. This is not the name of the collection, but the variable.
 
-- `filter` **Function**. Optional. A function that takes the `userId` and returns the Mongo filter. Remember to add to `additionalFields` all the fields that you use in the `filter` function.
+- ```filter``` **Function**. Optional. A function that takes the ```userId``` and returns the Mongo filter. Remember to add to ```additionalFields``` all the fields that you use in the ```filter``` function.
 
-- `additionalFields` **Array**. Optional. Search with more fields in the select. If you want to fetch other fields than the `titleField` you must add them here.
+- ```additionalFields``` **Array**. Optional. Search with more fields in the select. If you want to fetch other fields than the ```titleField``` you must add them here.
 
-- `create` **Function**. Optional. Allows the user to create new items that aren't in the list of options. This option can be any of the following: `true`, `false` (disabled), or a function that accepts two arguments: "input" and "callback". The callback should be invoked with the final data for the option.
+- ```create``` **Function**. Optional. Allows the user to create new items that aren't in the list of options. This option can be any of the following: ```true```, ```false``` (disabled), or a function that accepts two arguments: "input" and "callback". The callback should be invoked with the final data for the option.
 
-- `createFilter` **Function**. Optional. Specifies a RegExp or String containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
+- ```createFilter``` **Function**. Optional. Specifies a RegExp or String containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
 
-- `render` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set `option` and `item`.
+- ```render``` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set ```option``` and ```item```.
 
 ## Examples
 
