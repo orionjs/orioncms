@@ -1,0 +1,8 @@
+{
+  "branches": [
+    {
+      "id": "master",
+      "alias": "v1.5"
+    }
+  ]
+}
