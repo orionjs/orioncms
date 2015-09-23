@@ -46,7 +46,7 @@ orion.config.get(name),
 
 ## Example
 
-In previous versions of orion, to upload with s3 you had to set the aws keys in the code.
+In previous versions of orion, to upload with s3 you had to set the AWS keys in the code.
 Now ```orionjs:s3``` is made to work with ```orion.config```. This is how it's done:
 
 ```js
