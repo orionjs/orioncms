@@ -51,7 +51,7 @@ Adding to entities
 Posts = new orion.collection('posts', {
   tabular: {
     columns: [
-      { data: "title", title: "Title" },
+      { data: 'title', title: 'Title' },
       orion.attributeColumn('summernote' /* or 'froala' */, 'body', 'Preview')
     ]
   }

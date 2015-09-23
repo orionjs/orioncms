@@ -1,7 +1,7 @@
 # The Dictionary
 
 Instead of making all the content of your site static, use
-__the dictionary__ to make all the content editable in the admin interface.
+**the dictionary** to make all the content editable in the admin interface.
 
 ## Getting started
 
@@ -31,8 +31,8 @@ Example:
 
 ```js
 orion.dictionary.addDefinition('description', 'site', {
-    type: String,
-    label: 'Description'
+  type: String,
+  label: 'Description'
 });
 ```
 
@@ -69,8 +69,8 @@ Just add the ```defaultValue``` key in the schema:
 
 ```js
 orion.dictionary.addDefinition('description', 'site', {
-    type: String,
-    label: 'Description',
-    defaultValue: 'My description'
+  type: String,
+  label: 'Description',
+  defaultValue: 'My description'
 });
 ```
