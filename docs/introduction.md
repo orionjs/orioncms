@@ -12,7 +12,7 @@ meteor add orionjs:core
 
 #### Install a template
 
-Orion has two official templates, one for [bootstrap](http://getbootstrap.com) and one for [materialize](http://materializecss.com), but you can use one in the list below
+Orion has two official templates, one for [bootstrap](http://getbootstrap.com) and one for [materialize](http://materializecss.com), but you can use one in the list below:
 
 **Bootstrap:**
 
