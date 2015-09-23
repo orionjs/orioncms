@@ -35,7 +35,9 @@ myRole.deny('collections.posts.update', function(userId, doc, fields, modifier) 
   return _.contains(fields, 'userId'); // Can't change the userId field
 });
 ```
+
 ## Role Helper Functions
+
 You can also set helpers for your role
 
 ```js
@@ -51,6 +53,13 @@ Example:
 ```js
 myRole.helper('dictionary.allowedCategories', function() {
   return ['public'];
+});
+```
+
+```js
+// Return the fields that the role can't edit
+myRole.helper('collections.posts.forbiddenFields', function() {
+  return ['isFeatured', 'score'];
 });
 ```
 
@@ -94,6 +103,9 @@ Where ```myCollection``` is the name of the collection.
 
 - ```collections.myCollection.indexFilter``` The filter of the results that the user can view in the admin.
 Example: ```{ createdBy: this.userId }```. Filters will be joined with $or comparator.
+- ```collections.myCollection.forbiddenFields``` A array of the name of the fields that the role can't insert/update.
+This will hide the input in the admin and secure that fields in the server.
+Example: ```['isFeatured', 'likesCount']```.
 
 
 **Dictionary**
