@@ -57,7 +57,7 @@ myRole.helper('dictionary.allowedCategories', function() {
 ```
 
 ```js
-// Return the fields that the role can't edit
+// Return the fields that the users with that role can't edit
 myRole.helper('collections.posts.forbiddenFields', function() {
   return ['isFeatured', 'score'];
 });
@@ -103,7 +103,7 @@ Where ```myCollection``` is the name of the collection.
 
 - ```collections.myCollection.indexFilter``` The filter of the results that the user can view in the admin.
 Example: ```{ createdBy: this.userId }```. Filters will be joined with $or comparator.
-- ```collections.myCollection.forbiddenFields``` A array of the name of the fields that the role can't insert/update.
+- ```collections.myCollection.forbiddenFields``` A array of the name of the fields that the users with that role can't insert/update.
 This will hide the input in the admin and secure that fields in the server.
 Example: ```['isFeatured', 'likesCount']```.
 
@@ -112,6 +112,11 @@ Example: ```['isFeatured', 'likesCount']```.
 
 - ```dictionary.allowedCategories``` The categories that the user can edit in the admin.
 The union of all the allowedCategories will be the result.
+
+**Accounts**
+
+- ```accounts.allowedRoles``` A array of the roles that the user with that role can add to new users or existing ones.
+- ```accounts.indexFilter``` The filter of the users that the user can view in the admin.
 
 ## Example
 
