@@ -23,8 +23,8 @@ Adding to the dictionary
 ```js
 orion.dictionary.addDefinition('logo', 'site',
 	orion.attribute('file', {
-	    label: 'Site Logo',
-	    optional: true
+    label: 'Site Logo',
+    optional: true
 	})
 );
 ```
