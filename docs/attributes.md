@@ -88,19 +88,19 @@ In the dictionary
 ```js
 // Instead of
 orion.dictionary.addDefinition('description', 'basic', {
-    type: String,
-    label: 'Description of the site',
-    optional: true,
-    autoform: {
-        type: 'textarea',
-    }
+  type: String,
+  label: 'Description of the site',
+  optional: true,
+  autoform: {
+    type: 'textarea',
+  }
 });
 // Do this
 orion.dictionary.addDefinition('description', 'basic',
-    orion.attribute('summernote', {
-        label: 'Description of the site',
-        optional: true
-    })
+  orion.attribute('summernote', {
+    label: 'Description of the site',
+    optional: true
+  })
 );
 ```
 
@@ -110,19 +110,19 @@ In collections
 // Instead of
 Posts.attachSchema(new SimpleSchema({
   body: {
-    type: String,
-    label: 'Body',
-    optional: true,
-    autoform: {
-        type: 'textarea',
-    }
+	  type: String,
+	  label: 'Body',
+	  optional: true,
+	  autoform: {
+      type: 'textarea',
+	  }
   }
 }));
 // Do this
 Posts.attachSchema(new SimpleSchema({
   body: orion.attribute('summernote', {
-      label: 'Body',
-      optional: true
+    label: 'Body',
+    optional: true
   }),
 }));
 ```

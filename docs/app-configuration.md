@@ -11,7 +11,7 @@ and each time the admin updates the settings the server is **restarted**.
 To add variables to the config, call in shared code:
 
 ```js
-orion.config.add(name, category, options)
+orion.config.add(name, category, options);
 ```
 
 - ```name``` **String**. This is the name of the variable.
