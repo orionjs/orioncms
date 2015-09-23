@@ -98,8 +98,8 @@ If you want to help translating Orion to your language follow the [instructions]
 - [loongmxbt:orion-lang-zh-cn](https://github.com/loongmxbt/orion-lang-zh-cn) Simplified Chinese
 - [goooseman:orion-lang-ru](https://github.com/goooseman/orion-lang-ru) Russian
 - [aselox:orion-lang-it](https://atmospherejs.com/aselox/orion-lang-it) Italian
-- [palpinter:orion-lang-hu] (https://github.com/palpinter/orion-lang-hu.git) Hungarian
-- [tunifight:orion-lang-ar] (https://github.com/nabiltntn/orion-lang-ar.git) Arabic
+- [palpinter:orion-lang-hu](https://github.com/palpinter/orion-lang-hu.git) Hungarian
+- [tunifight:orion-lang-ar](https://github.com/nabiltntn/orion-lang-ar.git) Arabic
 - [budickda:orion-lang-de](https://atmospherejs.com/budickda/orion-lang-de) German
 
 **Integrations:**
