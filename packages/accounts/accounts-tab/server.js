@@ -1,17 +1,3 @@
-Meteor.publish('enrolledUsers', function () {
-  if (!Roles.userHasPermission(this.userId, 'accounts.index')) {
-    return [];
-  }
-
-  var self = this;
-
-  Meteor.users.find({}).map(function(user) {
-    self.added("enrolledUsers", user._id, {_id: user._id, enrolled: !_.isEmpty(user.services)});
-  });
-
-  this.ready();
-});
-
 Meteor.publish('adminAccountsIndexTabular', function (tableName, ids, fields) {
   check(tableName, String);
   check(ids, Array);
@@ -20,11 +6,48 @@ Meteor.publish('adminAccountsIndexTabular', function (tableName, ids, fields) {
   if (!Roles.userHasPermission(this.userId, 'accounts.index')) {
     return [];
   }
-  result = [
-    Meteor.users.find({ _id: { $in: ids } }, { fields: { services: 0 } }),
-    Roles._collection.find({ userId: { $in: ids } })
-  ];
-  return result;
+
+  var self = this;
+  var transform = function(user) {
+    user.usedServices = _.keys(user.services);
+    delete user.services;
+    return user;
+  };
+
+  fields.services = 1;
+  var usersHandle = Meteor.users.find({ _id: { $in: ids } }, { fields: fields }).observe({
+    added: function (user) {
+      self.added('users', user._id, transform(user));
+    },
+    changed: function (user) {
+      self.changed('users', user._id, transform(user));
+    },
+    removed: function (user) {
+      self.removed('users', user._id);
+    }
+  });
+
+  self.onStop(function() {
+    usersHandle.stop();
+  });
+
+  var rolesHandle = Roles._collection.find({ userId: { $in: ids } }).observe({
+    added: function (role) {
+      self.added('roles', role._id, role);
+    },
+    changed: function (role) {
+      self.changed('roles', role._id, role);
+    },
+    removed: function (role) {
+      self.removed('roles', role._id);
+    }
+  });
+
+  self.onStop(function() {
+    rolesHandle.stop();
+  });
+
+  self.ready();
 });
 
 Meteor.publish('adminAccountsUpdateRoles', function (userId) {
@@ -73,5 +96,10 @@ Meteor.methods({
       throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
     }
     Meteor.users.remove({ _id: userId });
+  },
+  adminSendEnrollmentEmail: function(userId) {
+    check(userId, String);
+    Roles.checkPermission(this.userId, 'accounts.index');
+    return Accounts.sendEnrollmentEmail(userId);
   }
 });

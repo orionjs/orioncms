@@ -42,16 +42,13 @@ if (Meteor.isClient) {
 
       var email = template.$('input[type="email"]').val();
       var method = template.$('input[name="createMethod"]:checked').val();
+      var options = {};
 
       if (method == 'invitation') {
-        orion.accounts.invitations.insert({ roles: roles, email: email }, function(error, result) {
-          if (error) {
-            alert(error.reason);
-            console.log(error);
-          } else {
-            Session.set('accounts.create.invitationId', result);
-          }
-        });
+        options = {
+          email: email,
+          roles: roles
+        };
       } else if (method == 'now') {
         var name = template.$('input[name="name"]').val();
         var password = template.$('input[name="password"]').val();
@@ -60,21 +57,22 @@ if (Meteor.isClient) {
           alert(i18n('global.passwordNotMatch'));
           return false;
         }
-        var options = {
+        options = {
           email: email,
           password: password,
           name: name,
           roles: roles
         };
-        Meteor.call('accountsCreateUser', options, function(error, result) {
-          if (error) {
-            alert(error.reason);
-            console.log(error);
-          } else {
-            RouterLayer.go('accounts.index');
-          }
-        });
       }
+
+      Meteor.call('accountsCreateUser', options, function(error, result) {
+        if (error) {
+          alert(error.reason);
+          console.log(error);
+        } else {
+          RouterLayer.go('accounts.index');
+        }
+      });
       return false;
     },
     'change input[name="createMethod"]': function(event, template) {

@@ -21,6 +21,14 @@ ReactiveTemplates.events('accounts.index', {
     } else if (button.route) {
       RouterLayer.go(button.route, user);
     }
+  },
+  'click .send-enrollment-email-btn': function(event, template) {
+    var userId = $(event.currentTarget).attr('data-user');
+    Meteor.call('adminSendEnrollmentEmail', userId, function(error, response) {
+      if (error) {
+        console.log(error);
+      }
+    });
   }
 });
 

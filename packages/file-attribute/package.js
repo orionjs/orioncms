@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:file-attribute',
   summary: 'File attribute for orion',
-  version: '1.4.2',
+  version: '1.5.0',
   git: 'http://github.com/orionjs/orion'
 });
 
@@ -9,9 +9,9 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.4.0',
-    'orionjs:attributes@1.4.0',
-    'orionjs:filesystem@1.4.0',
+    'orionjs:base@1.5.0',
+    'orionjs:attributes@1.5.0',
+    'orionjs:filesystem@1.5.0',
     'less@2.5.0_1'
     ]);
 

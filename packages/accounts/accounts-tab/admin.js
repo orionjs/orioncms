@@ -46,7 +46,27 @@ var tabularOptions = {
   },
   pub: 'adminAccountsIndexTabular',
   columns: [
-    { data: 'profile.name', title: orion.helpers.getTranslation('accounts.index.tableTitles.name') },
+    {
+      data: 'profile.name',
+      title: orion.helpers.getTranslation('accounts.index.tableTitles.name'),
+      render: function(val, type, doc) {
+        return val ? val : '<span class="grey-text help-block">' + i18n('accounts.index.noName') + '</span>';
+      }
+    },
+    {
+      data: 'usedServices',
+      title: orion.helpers.getTranslation('accounts.index.tableTitles.services'),
+      render: function(val, type, doc) {
+        var services = _.without(val, 'email', 'resume');
+        if (!services.length) {
+          var title = i18n('accounts.index.actions.sendEnrollmentEmail');
+          return '<button class="btn btn-danger red btn-xs send-enrollment-email-btn" data-user="' + doc._id + '">' + title + '</button>';
+        }
+        return services.map(function(service) {
+          return '<span class="label label-primary blue">' + service + '</span>';
+        }).join('');
+      }
+    },
     {
       data: 'emails',
       title: orion.helpers.getTranslation('accounts.index.tableTitles.email'),
