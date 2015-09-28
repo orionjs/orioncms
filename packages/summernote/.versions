@@ -61,7 +61,7 @@ orionjs:attributes@1.5.0
 orionjs:base@1.5.0
 orionjs:filesystem@1.5.0
 orionjs:lang-en@1.5.0
-orionjs:summernote@1.5.0
+orionjs:summernote@1.5.1
 promise@0.4.8
 random@1.0.4
 rate-limit@1.0.0
