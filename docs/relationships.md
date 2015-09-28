@@ -41,9 +41,9 @@ affect anything; just set a unique string.
 
 - ```render``` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js documentation](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set ```option``` and ```item```.
 
-- ```validateOnClient``` **Boolean**. Optional, ```true``` by default. If false Orion will not validate that the related document exists.
+- ```validateOnClient``` **Boolean**. Optional, ```true``` by default. If ```false```, Orion will not validate that the related document exists.
 
-- ```validateOnServer``` **Boolean**. Optional. ```true``` by default. If false, Orion will not validate that the related document exists.
+- ```validateOnServer``` **Boolean**. Optional. ```true``` by default. If ```false```, Orion will not validate that the related document exists.
 
 ## Examples
 
@@ -99,9 +99,9 @@ this is automatically set.
 
 - ```render``` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set ```option``` and ```item```.
 
-- ```validateOnClient``` **Boolean**. Optional, ```true``` by default. If false Orion will not validate that the related document exists.
+- ```validateOnClient``` **Boolean**. Optional, ```true``` by default. If ```false```, Orion will not validate that the related document exists.
 
-- ```validateOnServer``` **Boolean**. Optional. ```true``` by default. If false, Orion will not validate that the related document exists.
+- ```validateOnServer``` **Boolean**. Optional. ```true``` by default. If ```false```, Orion will not validate that the related document exists.
 
 ## Examples
 
