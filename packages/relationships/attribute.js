@@ -11,11 +11,21 @@ var getSchema = function(options, hasMany) {
     create: Match.Optional(Function),
     additionalFields: Match.Optional(Array),
     sortFields: Match.Optional(Match.OneOf(Array, Object)),
+    validateOnClient: Match.Optional(Boolean),
+    validateOnServer: Match.Optional(Boolean),
     render: Match.Optional({
       item: Function,
       option: Function
     })
   }));
+
+  if (!_.has(options, 'validateOnClient')) {
+    options.validateOnClient = true;
+  }
+
+  if (!_.has(options, 'validateOnServer')) {
+    options.validateOnServer = true;
+  }
 
   if (!options.filter) {
     options.filter = function(userId) {
@@ -95,6 +105,12 @@ var getSchema = function(options, hasMany) {
       type: [String],
       orion: options,
       custom: function() {
+        if (Meteor.isClient && !options.validateOnClient) {
+          return;
+        }
+        if (Meteor.isServer && !options.validateOnServer) {
+          return;
+        }
         if (this.isSet && _.isArray(this.value)) {
           var count = options.collection.find({ $and: [{ _id: { $in: this.value } }, options.filter(this.userId)] }).count();
           if (count != this.value.length) {
@@ -108,6 +124,12 @@ var getSchema = function(options, hasMany) {
       type: String,
       orion: options,
       custom: function() {
+        if (Meteor.isClient && !options.validateOnClient) {
+          return;
+        }
+        if (Meteor.isServer && !options.validateOnServer) {
+          return;
+        }
         if (this.isSet && _.isString(this.value)) {
           var count = options.collection.find({ $and: [{ _id: this.value }, options.filter(this.userId)] }).count();
           if (count != 1) {
