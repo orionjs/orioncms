@@ -105,6 +105,7 @@ If you want to help translating Orion to your language follow the [instructions]
 **Integrations:**
 
 - [nicolaslopezj:orion-ga](https://github.com/nicolaslopezj/orion-ga) Google analytics
+- [rwatts:orionjs-gtm](https://atmospherejs.com/rwatts/orionjs-gtm) Google Tag Manager
 
 **Others:**
 
