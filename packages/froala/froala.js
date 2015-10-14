@@ -1,6 +1,6 @@
 ReactiveTemplates.onRendered('attribute.froala', function () {
   var name = this.data.name;
-  var parent = $('[data-schema-key="' + name + '"]')
+  var parent = $('[data-schema-key="' + name + '"]');
   // Find the element
   var element = parent.find('.editor');
   // initialize froala

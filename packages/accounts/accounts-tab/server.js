@@ -15,6 +15,7 @@ Meteor.publish('adminAccountsIndexTabular', function (tableName, ids, fields) {
   };
 
   fields.services = 1;
+  fields.roles = 1;
   var usersHandle = Meteor.users.find({ _id: { $in: ids } }, { fields: fields }).observe({
     added: function (user) {
       self.added('users', user._id, transform(user));
@@ -31,21 +32,23 @@ Meteor.publish('adminAccountsIndexTabular', function (tableName, ids, fields) {
     usersHandle.stop();
   });
 
-  var rolesHandle = Roles._collection.find({ userId: { $in: ids } }).observe({
-    added: function (role) {
-      self.added('roles', role._id, role);
-    },
-    changed: function (role) {
-      self.changed('roles', role._id, role);
-    },
-    removed: function (role) {
-      self.removed('roles', role._id);
-    }
-  });
+  if (Roles._collection) {
+    var rolesHandle = Roles._collection.find({ userId: { $in: ids } }).observe({
+      added: function (role) {
+        self.added('roles', role._id, role);
+      },
+      changed: function (role) {
+        self.changed('roles', role._id, role);
+      },
+      removed: function (role) {
+        self.removed('roles', role._id);
+      }
+    });
 
-  self.onStop(function() {
-    rolesHandle.stop();
-  });
+    self.onStop(function() {
+      rolesHandle.stop();
+    });
+  }
 
   self.ready();
 });
