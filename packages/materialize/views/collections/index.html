@@ -12,8 +12,10 @@
     {{/ if }}
     {{# if collection.canIndex }}
       {{# if showTable }}
-        <div class="admin-index-table">
-          {{> tabular table=collection.tabularTable class="table index-table" }}
+        <div class="row admin-index-table">
+          <div class="col s12">
+            {{> tabular table=collection.tabularTable class="table bordered index-table" }}
+          </div>
         </div>
       {{/ if }}
     {{/ if }}

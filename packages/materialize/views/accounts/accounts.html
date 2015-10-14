@@ -10,6 +10,10 @@
         </a>
       </div>
     {{/ if }}
-    {{> tabular table=table class="table index-table"}}
+    <div class="row admin-index-table">
+      <div class="col s12">
+        {{> tabular table=table class="table bordered index-table"}}
+      </div>
+    </div>
   {{/ Layout }}
 </template>
