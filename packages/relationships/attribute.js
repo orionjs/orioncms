@@ -13,6 +13,7 @@ var getSchema = function(options, hasMany) {
     sortFields: Match.Optional(Match.OneOf(Array, Object)),
     validateOnClient: Match.Optional(Boolean),
     validateOnServer: Match.Optional(Boolean),
+    dontValidate: Match.Optional(Boolean),
     render: Match.Optional({
       item: Function,
       option: Function
@@ -54,12 +55,8 @@ var getSchema = function(options, hasMany) {
 
   if (!options.render) {
     options.render = {
-      item: function(item, escape) {
-        return render_item_default(item, escape);
-      },
-      option: function(item, escape) {
-        return render_item_default(item, escape);
-      }
+      item: render_item_default,
+      option: render_item_default
     };
   }
 
@@ -100,7 +97,17 @@ var getSchema = function(options, hasMany) {
     }
   }
 
-  if (hasMany) {
+  if (options.dontValidate && hasMany) {
+    return {
+      type: [String],
+      orion: options
+    };
+  } else if (options.dontValidate && !hasMany) {
+    return {
+      type: String,
+      orion: options,
+    };
+  } else if (hasMany) {
     return {
       type: [String],
       orion: options,
@@ -111,7 +118,7 @@ var getSchema = function(options, hasMany) {
         if (Meteor.isServer && !options.validateOnServer) {
           return;
         }
-        if (this.isSet && _.isArray(this.value)) {
+        if (this.isSet && _.isArray(this.value) && this.value) {
           var count = options.collection.find({ $and: [{ _id: { $in: this.value } }, options.filter(this.userId)] }).count();
           if (count != this.value.length) {
             return 'notAllowed';
@@ -130,7 +137,7 @@ var getSchema = function(options, hasMany) {
         if (Meteor.isServer && !options.validateOnServer) {
           return;
         }
-        if (this.isSet && _.isString(this.value)) {
+        if (this.isSet && _.isString(this.value) && this.value) {
           var count = options.collection.find({ $and: [{ _id: this.value }, options.filter(this.userId)] }).count();
           if (count != 1) {
             return 'notAllowed';
