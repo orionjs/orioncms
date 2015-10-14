@@ -18,6 +18,8 @@ ReactiveTemplates.events('accounts.index', {
     var button = buttons[buttonIndex];
     if (button.meteorMethod) {
       Meteor.call(button.meteorMethod, user);
+    } else if (button.onClick) {
+      button.onClick(user);
     } else if (button.route) {
       RouterLayer.go(button.route, user);
     }

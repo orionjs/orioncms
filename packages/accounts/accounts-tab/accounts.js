@@ -40,7 +40,8 @@ orion.accounts.addAdminUsersButton = function(button) {
     title: String,
     route: Match.Optional(String),
     meteorMethod: Match.Optional(String),
-    shouldShow: Match.Optional(Function)
+    shouldShow: Match.Optional(Function),
+    onClick: Match.Optional(Function)
   });
 
   orion.accounts._adminUsersButtons.push(button);
