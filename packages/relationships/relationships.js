@@ -45,7 +45,7 @@ var onRendered = function() {
   });
   template.autorun(function () {
     var dataContext = Template.currentData();
-    var schema = AutoForm.getSchemaForField(dataContext.name)
+    var schema = AutoForm.getSchemaForField(dataContext.name);
     var subscription = template.subscribe(schema.orion.publicationName);
     if (subscription.ready()) {
       var filter = schema.orion.filter(Meteor.userId());
@@ -64,12 +64,12 @@ var onRendered = function() {
 
 var onDestroyed = function() {
   this.$('select')[0].selectize && this.$('select')[0].selectize.destroy();
-}
+};
 
-ReactiveTemplates.onRendered('attribute.hasMany', onRendered)
-ReactiveTemplates.onRendered('attribute.hasOne', onRendered)
-ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed)
-ReactiveTemplates.onDestroyed('attribute.hasOne', onDestroyed)
+ReactiveTemplates.onRendered('attribute.hasMany', onRendered);
+ReactiveTemplates.onRendered('attribute.hasOne', onRendered);
+ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed);
+ReactiveTemplates.onDestroyed('attribute.hasOne', onDestroyed);
 
 ReactiveTemplates.helpers('attributePreview.hasMany', {
   val: function() {
