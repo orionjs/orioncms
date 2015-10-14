@@ -1,14 +1,16 @@
 orion.collections.onCreated(function() {
   var self = this;
 
+  var allow = !this.dontAllowByDefault;
+
   /**
    * Collection permissions
    */
-  Roles.registerAction('collections.' + this.name + '.index', true);
-  Roles.registerAction('collections.' + this.name + '.showCreate', true);
-  Roles.registerAction('collections.' + this.name + '.showUpdate', true);
-  Roles.registerAction('collections.' + this.name + '.showRemove', true);
-  Roles.registerHelper('collections.' + this.name + '.indexFilter', {});
+  Roles.registerAction('collections.' + this.name + '.index', allow);
+  Roles.registerAction('collections.' + this.name + '.showCreate', allow);
+  Roles.registerAction('collections.' + this.name + '.showUpdate', allow);
+  Roles.registerAction('collections.' + this.name + '.showRemove', allow);
+  Roles.registerHelper('collections.' + this.name + '.indexFilter', allow && {});
 
   this.attachRoles('collections.' + this.name);
 
