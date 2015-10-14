@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     'orionjs:base@1.6.0',
     'underscore',
     'aldeed:simple-schema@1.3.3',
-    'aldeed:collection2@2.3.3',
+    'aldeed:collection2@2.5.0',
     'dburles:collection-helpers@1.0.3',
     ]);
 

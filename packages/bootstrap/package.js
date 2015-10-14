@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     'meteor-platform',
     'orionjs:core@1.6.0',
     'less@2.5.0_1',
-    'aldeed:autoform@5.4.0',
+    'aldeed:autoform@5.7.1',
     'aldeed:tabular@1.1.0',
     'useraccounts:bootstrap@1.11.1'
     ]);
