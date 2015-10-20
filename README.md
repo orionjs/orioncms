@@ -55,7 +55,7 @@ And go
 ## Links
 
 - **Website:** [orionjs.org](http://orionjs.org)
-- **Documentation:** [orionjs.org/docs/introduction](http://docs.orionjs.org/)
+- **Documentation:** [docs.orionjs.org/](http://docs.orionjs.org/)
 - **Tutorials:** [orionjs.org/tutorials](http://orionjs.org/tutorials)
 - **Forums:** [forums.orionjs.org](http://forums.orionjs.org)
 - **Gitter:** [gitter.im/orionjs/orion](https://gitter.im/orionjs/orion)
