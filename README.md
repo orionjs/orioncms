@@ -102,6 +102,7 @@ If you want to help translating Orion to your language follow the [instructions]
 - [tunifight:orion-lang-ar](https://github.com/nabiltntn/orion-lang-ar.git) Arabic
 - [budickda:orion-lang-de](https://atmospherejs.com/budickda/orion-lang-de) German
 - [brajt:orion-lang-pl](https://github.com/brajt/orion-lang-pl) Polish
+- [findegil:orion-lang-bg](https://atmospherejs.com/findegil/orion-lang-bg) Bulgarian
 
 **Integrations:**
 
