@@ -108,5 +108,7 @@ orion.dictionary.get = function(path, defaultValue) {
     }
   }
 
-  return orion.helpers.searchObjectWithDots(this.findOne((process && process.env && process.env.ORION_APPID)?{_id:process.env.ORION_APPID}:{}), path) || defaultValue;
+  var dictionaryId = Meteor.isServer && process.env.ORION_APPID ? { _id: process.env.ORION_APPID }: {};
+  var dictionary = this.findOne(dictionaryId);
+  return orion.helpers.searchObjectWithDots(dictionary, path) || defaultValue;
 };
