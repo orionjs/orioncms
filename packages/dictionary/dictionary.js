@@ -108,5 +108,5 @@ orion.dictionary.get = function(path, defaultValue) {
     }
   }
 
-  return orion.helpers.searchObjectWithDots(this.findOne(), path) || defaultValue;
+  return orion.helpers.searchObjectWithDots(this.findOne((process && process.env && process.env.ORION_APPID)?{_id:process.env.ORION_APPID}:{}), path) || defaultValue;
 };

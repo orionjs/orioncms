@@ -15,10 +15,12 @@ Meteor.methods({
     if (options.password) {
       newUser.password = options.password;
     }
+    if (!!options.name) {
+      newUser.profile = { name: options.name };
+    }
 
     var userId = Accounts.createUser(newUser);
 
-    Meteor.users.update(userId, { $set: { profile: { name: options.name } } });
     Roles.setUserRoles(userId, options.roles);
 
     return userId;

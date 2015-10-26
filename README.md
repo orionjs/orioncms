@@ -55,7 +55,7 @@ And go
 ## Links
 
 - **Website:** [orionjs.org](http://orionjs.org)
-- **Documentation:** [orionjs.org/docs/introduction](http://orionjs.org/docs/introduction)
+- **Documentation:** [docs.orionjs.org](http://docs.orionjs.org/)
 - **Tutorials:** [orionjs.org/tutorials](http://orionjs.org/tutorials)
 - **Forums:** [forums.orionjs.org](http://forums.orionjs.org)
 - **Gitter:** [gitter.im/orionjs/orion](https://gitter.im/orionjs/orion)
@@ -101,10 +101,13 @@ If you want to help translating Orion to your language follow the [instructions]
 - [palpinter:orion-lang-hu](https://github.com/palpinter/orion-lang-hu.git) Hungarian
 - [tunifight:orion-lang-ar](https://github.com/nabiltntn/orion-lang-ar.git) Arabic
 - [budickda:orion-lang-de](https://atmospherejs.com/budickda/orion-lang-de) German
+- [brajt:orion-lang-pl](https://github.com/brajt/orion-lang-pl) Polish
+- [findegil:orion-lang-bg](https://atmospherejs.com/findegil/orion-lang-bg) Bulgarian
 
 **Integrations:**
 
 - [nicolaslopezj:orion-ga](https://github.com/nicolaslopezj/orion-ga) Google analytics
+- [rwatts:orionjs-gtm](https://atmospherejs.com/rwatts/orionjs-gtm) Google Tag Manager
 
 **Others:**
 
