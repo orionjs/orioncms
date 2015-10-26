@@ -78,8 +78,8 @@ var tabularOptions = {
       data: 'roles',
       title: orion.helpers.getTranslation('accounts.index.tableTitles.roles'),
       render: function(val, type, doc) {
-        val = val || [];
-        return val.map(function(role) {
+        var roles = Roles._collection ? doc.roles() : val || [];
+        return roles.map(function(role) {
           return '<span class="label label-danger red">' + role + '</span>';
         }).join('');
       }
