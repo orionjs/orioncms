@@ -1,14 +1,14 @@
 {
   "branches": [
     {
-      "id": "master",
+      "id": "v1.5",
       "alias": "v1.5",
-      "isDefault": true
+      "isDefault": false
     },
     {
-      "id": "v1.6",
+      "id": "master",
       "alias": "v1.6",
-      "isDefault": false
+      "isDefault": true
     }
   ]
 }
