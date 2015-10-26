@@ -1,5 +1,12 @@
 # Changelog
 
+### ```v1.6```:
+
+- Support for nicolaslopezj:roles@2.0.
+- Select if relationship attribute will validate.
+- Add onClick callback to accounts index.
+- Visual fixes for materialize theme.
+
 ### ```v1.5```:
 
 - Select which fields roles can update or insert.
