@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:s3',
   summary: 'S3 storage for orion:filesystem',
-  version: '1.6.0',
+  version: '1.6.1',
   git: 'https://github.com/orionjs/s3'
 });
 
