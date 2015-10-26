@@ -1,5 +1,14 @@
 # Changelog
 
+### ```v1.6```:
+
+- Support for nicolaslopezj:roles 2.0.
+- Select if relationships will validate.
+- Add onClick callback to accounts index.
+- Add a "dont validate" option to relationships package.
+- Visual fixes for materialize theme.
+- Fix bugs with pages navigation in the admin.
+
 ### ```v1.5```:
 
 - Select which fields roles can update or insert.

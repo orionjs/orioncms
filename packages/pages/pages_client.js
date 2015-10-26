@@ -36,7 +36,9 @@ ReactiveTemplates.events('pages.create', {
   },
   'click .cancel-btn': function () {
     if (_.keys(orion.pages.templates).length == 1) {
-      RouterLayer.go('adminPagesIndex');
+      Meteor.defer(function() {
+        RouterLayer.go('pages.index');
+      });
     } else {
       Session.set('adminPagesCreate_choosenTemplate', null);
     }
@@ -69,7 +71,7 @@ AutoForm.hooks({
               orion.pages.templates[name].schema.namedContext('orionPagesCreateForm').addInvalidKeys([{name: 'url', type: 'notUnique'}]);
               self.result(false);
             }
-          })
+          });
         }
       }
     },
@@ -105,7 +107,7 @@ AutoForm.hooks({
             } else {
               self.result(doc);
             }
-          })
+          });
         }
       }
     },

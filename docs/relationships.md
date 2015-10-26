@@ -41,6 +41,10 @@ affect anything; just set a unique string.
 
 - ```render``` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js documentation](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set ```option``` and ```item```.
 
+- ```validateOnClient``` **Boolean**. Optional, ```true``` by default. If ```false```, Orion will not validate that the related document exists.
+
+- ```validateOnServer``` **Boolean**. Optional. ```true``` by default. If ```false```, Orion will not validate that the related document exists.
+
 ## Examples
 
 Adding to entities
@@ -94,6 +98,10 @@ this is automatically set.
 - ```createFilter``` **Function**. Optional. Specifies a RegExp or String containing a regular expression that the current search filter must match to be allowed to be created. May also be a predicate function that takes the filter text and returns whether it is allowed.
 
 - ```render``` **Object**. Optional. Custom render functions for the select. Check the [Selectize.js](https://github.com/brianreavis/selectize.js/blob/master/docs/usage.md#rendering). You must set ```option``` and ```item```.
+
+- ```validateOnClient``` **Boolean**. Optional, ```true``` by default. If ```false```, Orion will not validate that the related document exists.
+
+- ```validateOnServer``` **Boolean**. Optional. ```true``` by default. If ```false```, Orion will not validate that the related document exists.
 
 ## Examples
 
