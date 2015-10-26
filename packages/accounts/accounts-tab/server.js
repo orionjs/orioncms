@@ -58,10 +58,14 @@ Meteor.publish('adminAccountsUpdateRoles', function (userId) {
   if (!Roles.userHasPermission(this.userId, 'accounts.update.roles')) {
     return [];
   }
-  return [
-    Meteor.users.find(userId), // , { fields: { services: 0 } }),
-    Roles._collection.find({ userId: userId })
-  ];
+  if (Roles._collection) {
+    return [
+      Meteor.users.find(userId, { fields: { services: 0 } }),
+      Roles._collection.find({ userId: userId })
+    ];
+  } else {
+    return Meteor.users.find(userId, { fields: { services: 0 } });
+  }
 });
 
 Meteor.methods({
