@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:core',
-  summary: 'Orion',
+  summary: 'A framework that makes complex as well as simple apps possible with minimal effort',
   version: '1.6.0',
   git: 'https://github.com/orionjs/orion'
 });
