@@ -1,3 +1,3 @@
-Template.materializeButtons.rendered = function() {
+Template.materializeButtons.onRendered(function() {
   Session.set("orion_autoformLoading", undefined);
-};
+});
