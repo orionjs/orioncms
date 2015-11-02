@@ -12,9 +12,16 @@ Install filesystem
 meteor add orionjs:filesystem
 ```
 
-Install a provider
-(currently the only one is S3.
-To use S3 need to config some things, see [here](https://github.com/Lepozepo/S3/#create-your-amazon-s3))
+Install a provider.
+If you want to save file locally (if your db is local) use ```vsivsi:orion-file-collection```, if you want to save them in the cloud, use ```orionjs:s3``` 
+
+There is no need to config anything here.
+
+```sh
+meteor add vsivsi:orion-file-collection
+```
+
+To use S3 need to config some things, see [here](https://github.com/Lepozepo/S3/#create-your-amazon-s3).
 
 ```sh
 meteor add orionjs:s3
