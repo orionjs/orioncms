@@ -90,7 +90,7 @@ If you want to help translating Orion to your language follow the [instructions]
 - [vsivsi:orion-file-collection](https://atmospherejs.com/vsivsi/orion-file-collection) Lightweight MongoDB gridFS support
 - [lc3t35:orion-filesystem-local](https://github.com/lc3t35/orion-filesystem-local)
 - [brightbind:orion-gridfs](https://github.com/brightbind/orion-gridFS/)
-- [rwatts:orionjs-cloudinary[(https://atmospherejs.com/rwatts/orionjs-cloudinary)
+- [rwatts:orionjs-cloudinary](https://atmospherejs.com/rwatts/orionjs-cloudinary)
 
 **Languages:**
 
@@ -105,6 +105,7 @@ If you want to help translating Orion to your language follow the [instructions]
 - [budickda:orion-lang-de](https://atmospherejs.com/budickda/orion-lang-de) German
 - [brajt:orion-lang-pl](https://github.com/brajt/orion-lang-pl) Polish
 - [findegil:orion-lang-bg](https://atmospherejs.com/findegil/orion-lang-bg) Bulgarian
+- [eyeskiller:orion-lang-sk](https://github.com/eyeskiller/orion-lang-sk) Slovak
 
 **Integrations:**
 
