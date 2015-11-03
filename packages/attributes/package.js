@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:attributes',
   summary: 'Orion attributes',
-  version: '1.6.0',
+  version: '1.7.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,7 +9,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.6.0',
+    'orionjs:base@1.7.0',
     'aldeed:collection2@2.0.0',
     'aldeed:autoform@5.4.0',
     'momentjs:moment@2.10.3'
