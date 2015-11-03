@@ -46,6 +46,10 @@ ReactiveTemplates.set('pages.delete', 'orionMaterializePagesDelete');
 
 if (Meteor.isClient) {
   AutoForm.setDefaultTemplate('materialize');
+  
+  Meteor.startup(function() {
+    Session.set('orion_autoformLoading', false);
+  });
 
   AutoForm.addHooks(null, {
     beginSubmit: function() {
