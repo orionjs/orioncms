@@ -1,71 +1,108 @@
-var initSelect = function(template, dataContext, schema, options) {
-  var element = template.$('select').selectize({
+var onCreated = function() {
+  var self = this;
+
+  self.selectInput = new ReactiveVar(null);
+  self.observer = new ReactiveVar(null);
+
+  self.autorun(function() {
+    var dataContext = Template.currentData();
+    var schema = AutoForm.getSchemaForField(dataContext.name);
+    self.subscribe(schema.orion.publicationName);
+  });
+
+  self.autorun(function() {
+    var dataContext = Template.currentData();
+    var instance = Template.instance();
+    if (!instance.selectInput.get()) return;
+    var schema = AutoForm.getSchemaForField(dataContext.name);
+    var filter = schema.orion.filter(Meteor.userId());
+    var transform = function(item) {
+      var newItem = { _id: item._id };
+      for (var i = 0; i < schema.orion.fields.length; i++) {
+        var field = schema.orion.fields[i];
+        newItem[field] = orion.helpers.searchObjectWithDots(item, field, true);
+      }
+      return newItem;
+    };
+
+    var observer = schema.orion.collection.find(filter).observe({
+      added: function(newItem) {
+        var elem = instance.selectInput.get().getItem(newItem._id);
+        if (elem && elem[0]) {
+          instance.selectInput.get().updateOption(newItem._id, transform(newItem));
+        } else {
+          instance.selectInput.get().addOption(transform(newItem));
+        }
+      },
+      changed: function(newItem, oldItem) {
+        instance.selectInput.get().updateOption(oldItem._id, transform(newItem));
+      },
+      removed: function(item) {
+        var items = _.isArray(dataContext.value) ? dataContext.value : [dataContext.value];
+        if (!_.contains(items, item._id)) {
+          instance.selectInput.get().removeOption(item._id);
+        }
+      }
+    });
+
+    instance.observer.set(observer);
+  });
+};
+
+var onRendered = function() {
+  var dataContext = Template.currentData();
+  var schema = AutoForm.getSchemaForField(dataContext.name);
+  var self = this;
+  var items = _.isArray(dataContext.value) ? dataContext.value : [dataContext.value];
+  var labelField = _.isArray(schema.orion.titleField) ? schema.orion.titleField[0] : schema.orion.titleField;
+  var defaultOptions = [];
+  _.each(items, function(itemId) {
+    var newItem = { _id: itemId };
+    newItem[labelField] = 'Loading...';
+    defaultOptions.push(newItem);
+  });
+  var element = this.$('select').selectize({
     valueField: '_id',
-    labelField: _.isArray(options.titleField) ? options.titleField[0] : options.titleField,
-    items: _.isArray(dataContext.value) ? dataContext.value : [dataContext.value],
+    labelField: labelField,
+    items: items,
     searchField: schema.orion.fields,
     sortField: _.union(
       (_.isArray(schema.orion.sortFields) ?
           _.map(schema.orion.sortFields, function(sort_field) { return { field: sort_field, direction: 'asc' }; }) :
           _.map(schema.orion.sortFields, function(sort_order, sort_field) { return { field: sort_field, direction: sort_order }; })),
-      [{field: '$score'}]
+      [{ field: '$score' }]
     ),
     plugins: ['remove_button'],
     createFilter: schema.orion.createFilter,
     create: schema.orion.create && function(input, callback) {
       schema.orion.create(input, function(value) {
+        var select = self.selectInput.get();
+        if (select.settings.mode == 'multi') {
+          select.setTextboxValue('');
+          select.addItem(value);
+        } else {
+          select.setValue(value);
+        }
         callback(value);
-        setValue(value);
       });
     },
-    options: options,
+    options: defaultOptions,
     render: schema.orion.render,
   });
-  var currentValue = element.val();
-  element[0].selectize.clearOptions();
-  element[0].selectize.load(function(callback) {
-    callback(options);
-    element[0].selectize.setValue(currentValue);
-  });
-  var setValue = function(value) {
-    if (element[0].selectize.settings.mode == 'multi') {
-      element[0].selectize.setTextboxValue('');
-      element[0].selectize.addItem(value);
-    } else {
-      element[0].selectize.setValue(value);
-    }
-  };
+  Template.instance().selectInput.set(element[0].selectize);
 };
-
-var onRendered = function() {
-  var template = this;
-  template.autorun(function() {
-    RouterLayer.isActiveRoute('admin');
-    template.$('select')[0].selectize && template.$('select')[0].selectize.destroy();
-  });
-  template.autorun(function () {
-    var dataContext = Template.currentData();
-    var schema = AutoForm.getSchemaForField(dataContext.name);
-    var subscription = template.subscribe(schema.orion.publicationName);
-    if (subscription.ready()) {
-      var filter = schema.orion.filter(Meteor.userId());
-      var options = schema.orion.collection.find(filter).map(function(item) {
-        var newItem = { _id: item._id };
-        for (var i = 0; i < schema.orion.fields.length; i++) {
-          var field = schema.orion.fields[i];
-          newItem[field] = orion.helpers.searchObjectWithDots(item, field, true);
-        };
-        return newItem;
-      });
-      initSelect(template, dataContext, schema, options)
-    }
-  });
-}
 
 var onDestroyed = function() {
-  this.$('select')[0].selectize && this.$('select')[0].selectize.destroy();
+  if (this.selectInput.get()) {
+    this.selectInput.get().destroy();
+  }
+  if (this.observer.get()) {
+    this.observer.get().stop();
+  }
 };
 
+ReactiveTemplates.onRendered('attribute.hasMany', onCreated);
+ReactiveTemplates.onRendered('attribute.hasOne', onCreated);
 ReactiveTemplates.onRendered('attribute.hasMany', onRendered);
 ReactiveTemplates.onRendered('attribute.hasOne', onRendered);
 ReactiveTemplates.onDestroyed('attribute.hasMany', onDestroyed);
@@ -84,8 +121,13 @@ ReactiveTemplates.helpers('attributePreview.hasMany', {
   }
 });
 
-ReactiveTemplates.onRendered('attributePreview.hasOne', function() {
-  this.subscribe(this.data.schema.orion.publicationName + '_row', this.data.value);
+ReactiveTemplates.onCreated('attributePreview.hasOne', function() {
+  var self = this;
+  self.autorun(function() {
+    var dataContext = Template.currentData();
+    var schema = AutoForm.getSchemaForField(dataContext.name);
+    self.subscribe(schema.orion.publicationName + '_row', dataContext.value);
+  });
 });
 
 ReactiveTemplates.helpers('attributePreview.hasOne', {
