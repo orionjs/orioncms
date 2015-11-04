@@ -125,8 +125,7 @@ ReactiveTemplates.onCreated('attributePreview.hasOne', function() {
   var self = this;
   self.autorun(function() {
     var dataContext = Template.currentData();
-    var schema = AutoForm.getSchemaForField(dataContext.name);
-    self.subscribe(schema.orion.publicationName + '_row', dataContext.value);
+    self.subscribe(dataContext.schema.orion.publicationName + '_row', dataContext.value);
   });
 });
 
