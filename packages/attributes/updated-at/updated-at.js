@@ -3,6 +3,7 @@ orion.attributes.registerAttribute('updatedAt', {
   getSchema: function(options) {
     return {
       type: Date,
+      index: 1,
       autoform: {
         omit: true
       },

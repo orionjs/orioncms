@@ -3,6 +3,7 @@ orion.attributes.registerAttribute('createdAt', {
   getSchema: function(options) {
     return {
       type: Date,
+      index: 1,
       autoform: {
         omit: true
       },
@@ -10,7 +11,7 @@ orion.attributes.registerAttribute('createdAt', {
         if (this.isInsert) {
           return new Date;
         } else if (this.isUpsert) {
-          return {$setOnInsert: new Date};
+          return { $setOnInsert: new Date };
         } else {
           this.unset();
         }

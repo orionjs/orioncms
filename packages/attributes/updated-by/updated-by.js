@@ -3,6 +3,7 @@ orion.attributes.registerAttribute('updatedBy', {
   getSchema: function(options) {
     return {
       type: String,
+      index: 1,
       autoform: {
         omit: true
       },
