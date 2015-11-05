@@ -1,5 +1,6 @@
 orion.attributes.registerAttribute('createdAt', {
   previewTemplate: 'createdAtPreview',
+  orderable: true,
   getSchema: function(options) {
     return {
       type: Date,

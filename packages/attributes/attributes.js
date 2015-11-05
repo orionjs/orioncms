@@ -18,28 +18,38 @@ orion.attribute = function(name, schema, options) {
   if (!_.has(orion.attributes, name)) {
     throw 'The attribute "' + name + '" does not exist';
   }
-  var schema = schema || {};
-  var options = options || {};
+  schema = schema || {};
+  options = options || {};
   var attributeSchema = orion.attributes[name].getSchema.call(this, options);
   var override = {
     orionAttribute: name,
     autoform: {
       type: 'orion.' + name
     }
-  }
+  };
   var attribute = orion.helpers.deepExtend(orion.helpers.deepExtend(schema, attributeSchema), override);
   return attribute;
-}
+};
 
 /**
  * Returns proper tabular column for the attribute
  */
-orion.attributeColumn = function(name, key, title) {
+orion.attributeColumn = function(name, key, title, options = {}) {
+  check(options, {
+    orderable: Match.Optional(Boolean)
+  });
+  var attributeDef = orion.attributes[name];
+
+  if (attributeDef.orderable && options.orderable !== false) {
+    options.orderable = true;
+  }
+
+  console.log(!!options.orderable);
   return {
     data: key,
     title: title,
     defaultContent: '',
-    orderable: false,
+    orderable: !!options.orderable,
     render: function() {
       return '';
     },
@@ -52,12 +62,12 @@ orion.attributeColumn = function(name, key, title) {
         item: rowData,
         collection: collection,
         schema: schema,
-      }
+      };
       var template = ReactiveTemplates.get('attributePreview.' + name);
       Blaze.renderWithData(Template[template], data, cell);
     }
-  }
-}
+  };
+};
 
 /**
  * Helper function to use arrays of attributes (Ex: array of images)
@@ -73,7 +83,7 @@ orion.arrayOfAttribute = function(name, schema, options) {
   return orion.helpers.deepExtend(schema, {
     type: [subSchema]
   });
-}
+};
 
 /**
  * Creates a new attribute
@@ -89,6 +99,7 @@ orion.attributes.registerAttribute = function(name, attribute) {
     valueIn: Match.Optional(Function),
     valueConverters: Match.Optional(Function),
     contextAdjust: Match.Optional(Function),
+    orderable: Match.Optional(Boolean)
   });
 
   if (attribute.template) {
@@ -112,4 +123,4 @@ orion.attributes.registerAttribute = function(name, attribute) {
       });
     });
   }
-}
+};
