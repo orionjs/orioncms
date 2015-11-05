@@ -54,10 +54,10 @@ Posts = new orion.collection('posts', {
       /**
        * If you want to show a custom orion attribute in
        * the index table you must call this function
-       * orion.attributeColumn(attributeType, key, label)
+       * orion.attributeColumn(attributeType, key, label, options)
        */
       orion.attributeColumn('file', 'image', 'Image'),
-      orion.attributeColumn('summernote', 'body', 'Content'),
+      orion.attributeColumn('summernote', 'body', 'Content', { orderable: true }), // makes it searchable
       orion.attributeColumn('createdBy', 'createdBy', 'Created By')
     ]
   }

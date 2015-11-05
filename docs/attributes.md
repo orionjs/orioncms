@@ -153,3 +153,5 @@ template.
 [schema](https://github.com/aldeed/meteor-simple-schema) of the attribute.
 Sometimes it's a [value](https://github.com/orionjs/froala-editor/blob/master/lib/attribute.js#L4)
 and sometimes an [object](https://github.com/orionjs/file-attribute/blob/master/lib/attribute.js#L4).
+
+- ```orderable``` **Boolean**. Optional. If the attribute column is orderable by default in tabular.
