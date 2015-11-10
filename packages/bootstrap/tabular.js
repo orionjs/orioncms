@@ -9,6 +9,7 @@ orion.collections.onCreated(function() {
     columns: [
       { data: "_id", title: "ID" }
     ],
+    stateSave: true,
     selector: function(userId) {
       var selectors = Roles.helper(userId, 'collections.' + self.name + '.indexFilter');
       return { $or: selectors };

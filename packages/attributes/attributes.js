@@ -44,7 +44,6 @@ orion.attributeColumn = function(name, key, title, options = {}) {
     options.orderable = true;
   }
 
-  console.log(!!options.orderable);
   return {
     data: key,
     title: title,
