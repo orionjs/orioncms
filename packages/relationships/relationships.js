@@ -132,6 +132,14 @@ ReactiveTemplates.onCreated('attributePreview.hasOne', function() {
 ReactiveTemplates.helpers('attributePreview.hasOne', {
   val: function () {
     var item = this.schema && this.schema.orion.collection.findOne(this.value);
-    return item && orion.helpers.searchObjectWithDots(item, this.schema.orion.titleField, true);
+    if (item) {
+      if (_.isArray(this.schema.orion.titleField)) {
+        return this.schema.orion.titleField.map((field) => {
+          return orion.helpers.searchObjectWithDots(item, field, true);
+        }).join(' | ');
+      } else {
+        return orion.helpers.searchObjectWithDots(item, this.schema.orion.titleField, true);
+      }
+    }
   }
 });
