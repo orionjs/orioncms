@@ -12,11 +12,13 @@ Package.onUse(function(api) {
     'orionjs:base@1.7.0',
     'orionjs:attributes@1.7.0',
     'less@2.5.0_1',
-    'jeremy:selectize@0.12.1'
+    'jeremy:selectize@0.12.1',
+    'reactive-var'
     ]);
 
   api.imply([
     'jeremy:selectize',
+    'reactive-var'
     ]);
 
   api.addFiles([
