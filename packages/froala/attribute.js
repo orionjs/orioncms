@@ -7,10 +7,9 @@ orion.attributes.registerAttribute('froala', {
     };
   },
   valueOut: function() {
-    return this.find('.editor').editable('getHTML', false, true);
+    return this.find('.editor').froalaEditor('html.get', false, true);
   }
 });
 
 Options.init('froala.height');
 orion.config.add('FROALA_ACTIVATION_KEY', 'froala', { public: true });
-
