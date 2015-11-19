@@ -6,3 +6,4 @@ Roles.registerAction('accounts.create', true);
 Roles.registerHelper('accounts.allowedRoles', function() {
   return Roles.availableRoles();
 });
+Roles.registerHelper('accounts.deniedRoles', []);

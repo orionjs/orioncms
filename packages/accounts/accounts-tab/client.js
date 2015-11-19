@@ -58,7 +58,9 @@ ReactiveTemplates.helpers('accounts.update', {
     return UsersPasswordSchema;
   },
   roles: function() {
-    return Roles.availableRoles();
+    var allowed = _.union.apply(this, Roles.helper(Meteor.userId(), 'accounts.allowedRoles'));
+    var denied = _.union.apply(this, Roles.helper(Meteor.userId(), 'accounts.deniedRoles'));
+    return _.difference(allowed, denied);
   },
   hasRole: function(role) {
     var userId = RouterLayer.getParam('_id');
