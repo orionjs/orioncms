@@ -36,7 +36,7 @@ You can check the [documentation](https://github.com/aldeed/meteor-autoform).
 **I recommend you to check the [autoform playground](http://autoform.meteor.com/)
 to learn more about attributes**
 
-- **Simple String with a maximun of 200 characters**
+- **Simple String with a maximum of 200 characters**
 ```js
 {
 	type: String,
