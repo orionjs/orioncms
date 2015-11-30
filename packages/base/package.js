@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     'meteor-base@1.0.1',
     'mongo',
     'standard-minifiers@1.0.0',
-    'ecmascript',
+    'ecmascript@0.1.6',
     'underscore',
     'spacebars',
     'blaze-html-templates@1.0.1',
