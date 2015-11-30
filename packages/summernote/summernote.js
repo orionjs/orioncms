@@ -18,7 +18,7 @@ ReactiveTemplates.onRendered('attribute.summernote', function() {
             console.log(upload.error);
             alert(upload.error.reason);
           } else {
-            editor.insertImage($editable, upload.url);
+            element.summernote('insertImage', upload.url);
           }
           Session.set('orionSummernoteIsUploading', false);
         }
