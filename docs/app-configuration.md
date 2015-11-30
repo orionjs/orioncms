@@ -39,7 +39,7 @@ be passed to the client.
 To get the value of the variable, call in the server:
 
 ```js
-orion.config.get(name),
+orion.config.get(name);
 ```
 
 - ```name``` **String**. The name of the variable.
