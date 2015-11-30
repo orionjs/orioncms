@@ -75,6 +75,14 @@ Meteor.methods({
     if (!Roles.userHasPermission(this.userId, 'accounts.update.roles')) {
       throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
     }
+    var allowed = _.union.apply(this, Roles.helper(this.userId, 'accounts.allowedRoles'));
+    var denied = _.union.apply(this, Roles.helper(this.userId, 'accounts.deniedRoles'));
+    var finalRoles = _.difference(allowed, denied);
+
+    if (_.difference(roles, finalRoles).length !== 0) {
+      throw new Meteor.Error('unauthorized', i18n('accounts.update.messages.noPermissions'));
+    }
+
     Roles.setUserRoles(userId, roles);
   },
   orionAccountsUpdatePassword: function(modifier, userId) {

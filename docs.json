@@ -6,8 +6,13 @@
       "isDefault": false
     },
     {
-      "id": "master",
+      "id": "v1.6",
       "alias": "v1.6",
+      "isDefault": false
+    },
+    {
+      "id": "master",
+      "alias": "v1.7",
       "isDefault": true
     }
   ]

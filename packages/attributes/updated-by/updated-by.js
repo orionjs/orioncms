@@ -1,5 +1,5 @@
-orion.attributes.registerAttribute('createdBy', {
-  previewTemplate: 'createdByPreview',
+orion.attributes.registerAttribute('updatedBy', {
+  previewTemplate: 'updatedByPreview',
   getSchema: function(options) {
     return {
       type: String,
@@ -7,12 +7,11 @@ orion.attributes.registerAttribute('createdBy', {
       autoform: {
         omit: true
       },
-      optional: true,
       autoValue: function() {
-        if (this.isInsert) {
+        if (this.isUpdate || this.isInsert) {
           return this.userId;
         } else if (this.isUpsert) {
-          return { $setOnInsert: this.userId };
+          return {$setOnInsert: this.userId};
         } else {
           this.unset();
         }
@@ -22,18 +21,19 @@ orion.attributes.registerAttribute('createdBy', {
 });
 
 if (Meteor.isServer) {
-  Meteor.publish('userProfileForCreatedByAttributeColumn', function(userId) {
+  Meteor.publish('userProfileForUpdatedByAttributeColumn', function(userId) {
     check(userId, String);
     return Meteor.users.find({ _id: userId }, { fields: { profile: 1 } });
   });
 }
+
 if (Meteor.isClient) {
-  ReactiveTemplates.onRendered('attributePreview.createdBy', function() {
-    this.subscribe('userProfileForCreatedByAttributeColumn', this.data.value);
+  ReactiveTemplates.onRendered('attributePreview.updatedBy', function() {
+    this.subscribe('userProfileForUpdatedByAttributeColumn', this.data.value)
   });
-  ReactiveTemplates.helpers('attributePreview.createdBy', {
+  ReactiveTemplates.helpers('attributePreview.updatedBy', {
     name: function() {
-      var user = Meteor.users.findOne(this.value);
+      var user = Meteor.users.findOne(this.value)
       return user && user.profile.name;
     }
   });

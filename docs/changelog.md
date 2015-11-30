@@ -1,5 +1,15 @@
 # Changelog
 
+### ```v1.7```:
+
+- ```updatedBy``` attribute by @ojread #338.
+- Rewrite relationships attribute.
+- Add mongodb indexes to ```createdAt```, ```createdBy```, ```updateAt```, ```updateBy``` attributes.
+- Add option to order by orion attributes in tabular.
+- Save state in all tabular tables.
+- Fix hasOne attribute column with multiple title fields.
+- Better permissions for editing roles.
+
 ### ```v1.6```:
 
 - Support for nicolaslopezj:roles 2.0.

@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:base',
   summary: 'Orion',
-  version: '1.6.0',
+  version: '1.7.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -12,6 +12,7 @@ Package.onUse(function(api) {
     'meteor-base@1.0.1',
     'mongo',
     'standard-minifiers@1.0.0',
+    'ecmascript@0.1.6',
     'underscore',
     'spacebars',
     'blaze-html-templates@1.0.1',
@@ -23,7 +24,7 @@ Package.onUse(function(api) {
     'nicolaslopezj:router-layer@0.0.8',
     'aldeed:simple-schema@1.3.3',
     'aldeed:collection2@2.5.0',
-    'orionjs:lang-en@1.6.0'
+    'orionjs:lang-en@1.7.0'
   ]);
 
   api.imply([
@@ -32,6 +33,7 @@ Package.onUse(function(api) {
     'standard-minifiers',
     'underscore',
     'spacebars',
+    'ecmascript',
     'blaze-html-templates',
     'check',
     'tracker',

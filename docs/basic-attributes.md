@@ -7,6 +7,8 @@ you can use in your collections.
 
 Saves the ```_id``` of the user that created the document.
 
+> updatedBy works like createdBy
+
 Example:
 
 ```js
@@ -30,6 +32,8 @@ Posts.attachSchema(new SimpleSchema({
 ## Created At
 
 Saves the date that the document was created automatically.
+
+> updatedAt works like createdAt
 
 Example:
 

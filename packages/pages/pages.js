@@ -80,6 +80,7 @@ if (!Tabular) {
 orion.pages.tabular = new Tabular.Table({
   name: 'PagesIndex',
   collection: orion.pages.collection,
+  stateSave: true,
   columns: [
     { data: 'title', title: i18n('pages.schema.title') },
     { data: 'url', title: i18n('pages.schema.url'), render: function(val, type, doc) { return '<a href="' + RouterLayer.pathFor('page', doc) + '">' + RouterLayer.pathFor('page', doc) + '</a>'; } }

@@ -36,6 +36,7 @@ if (Meteor.isClient) {
  */
 var tabularOptions = {
   name: 'AccountsIndex',
+  stateSave: true,
   collection: Meteor.users,
   allow: function (userId) {
     return Roles.userHasPermission(userId, 'accounts.index'); // don't allow this person to subscribe to the data

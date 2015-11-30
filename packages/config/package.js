@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:config',
   summary: 'Orion Filesystem',
-  version: '1.6.0',
+  version: '1.7.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,8 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:lang-en@1.6.0',
-    'orionjs:base@1.6.0',
+    'orionjs:lang-en@1.7.0',
+    'orionjs:base@1.7.0',
     'aldeed:simple-schema@1.3.3',
     'aldeed:collection2@2.3.3',
     'matb33:collection-hooks@0.7.13',
