@@ -5,7 +5,9 @@
 
  Api.addRoute('froala/images/', {
  	get() {
- 		return orion.filesystem.collection.find({uploader: 'image-attribute'}).map(function(image){
+ 		return orion.filesystem.collection.find({
+ 			uploader: {$in: ['image-attribute', 'froala']}
+ 		}).map(function(image){
  			return {
  				thumb: image.url,
  				url: image.url,
