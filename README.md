@@ -61,11 +61,19 @@ And go
 - **Gitter:** [gitter.im/orionjs/orion](https://gitter.im/orionjs/orion)
 - **Preview:** [orion-example.meteor.com](http://orion-example.meteor.com)
 - **Roadmap:** [trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
-- **Newsletter:** [subscribe](http://eepurl.com/bbji3b)
+- **Newsletter:** [subscribe](http://eepurl.com/
 
 ### Translate Orion
 
 If you want to help translating Orion to your language follow the [instructions](https://github.com/orionjs/examples/tree/master/language).
+
+## Made With Orion
+
+- [franciscainfante.com](http://franciscainfante.com) - [Source](https://github.com/madeby-nicolaslopezj/fran2)
+- [weeshing.com](http://weeshing.com)
+
+Feel free to add your made with Orion site doing a pull request. 
+
 
 ## Community Add-On Packages
 

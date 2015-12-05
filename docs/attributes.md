@@ -36,7 +36,7 @@ You can check the [documentation](https://github.com/aldeed/meteor-autoform).
 **I recommend you to check the [autoform playground](http://autoform.meteor.com/)
 to learn more about attributes**
 
-- **Simple String with a maximun of 200 characters**
+- **Simple String with a maximum of 200 characters**
 ```js
 {
 	type: String,
@@ -153,3 +153,5 @@ template.
 [schema](https://github.com/aldeed/meteor-simple-schema) of the attribute.
 Sometimes it's a [value](https://github.com/orionjs/froala-editor/blob/master/lib/attribute.js#L4)
 and sometimes an [object](https://github.com/orionjs/file-attribute/blob/master/lib/attribute.js#L4).
+
+- ```orderable``` **Boolean**. Optional. If the attribute column is orderable by default in tabular.

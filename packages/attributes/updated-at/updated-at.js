@@ -1,8 +1,10 @@
 orion.attributes.registerAttribute('updatedAt', {
   previewTemplate: 'updatedAtPreview',
+  orderable: true,
   getSchema: function(options) {
     return {
       type: Date,
+      index: 1,
       autoform: {
         omit: true
       },

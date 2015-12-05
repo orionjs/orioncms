@@ -22,7 +22,7 @@ orion.attribute('hasOne', schema, options)
 
 ***Options***
 
-- ```titleField``` **String**. The name of the field you want to show.
+- ```titleField``` **String|Array**. The name of the field (or fields) you want to show.
 
 - ```publicationName``` **String**. The name of the publication. It doesn't
 affect anything; just set a unique string.
