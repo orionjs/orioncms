@@ -61,7 +61,14 @@ And go
 - **Gitter:** [gitter.im/orionjs/orion](https://gitter.im/orionjs/orion)
 - **Preview:** [orion-example.meteor.com](http://orion-example.meteor.com)
 - **Roadmap:** [trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
-- **Newsletter:** [subscribe](http://eepurl.com/bbji3b)
+- **Newsletter:** [subscribe](http://eepurl.com/
+
+# Made With Orion
+
+- [franciscainfante.com](http://franciscainfante.com)
+- [weeshing.com](http://weeshing.com)
+
+Feel free to add your made with Orion site doing a pull request. 
 
 ### Translate Orion
 
