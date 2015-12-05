@@ -63,6 +63,10 @@ And go
 - **Roadmap:** [trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
 - **Newsletter:** [subscribe](http://eepurl.com/
 
+### Translate Orion
+
+If you want to help translating Orion to your language follow the [instructions](https://github.com/orionjs/examples/tree/master/language).
+
 ## Made With Orion
 
 - [franciscainfante.com](http://franciscainfante.com) - [Source](https://github.com/madeby-nicolaslopezj/fran2)
@@ -70,9 +74,6 @@ And go
 
 Feel free to add your made with Orion site doing a pull request. 
 
-### Translate Orion
-
-If you want to help translating Orion to your language follow the [instructions](https://github.com/orionjs/examples/tree/master/language).
 
 ## Community Add-On Packages
 
