@@ -5,6 +5,10 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
   var element = parent.find('.editor');
   // initialize froala
   element.froalaEditor({
+    imageManagerLoadURL: '/api/froala/images',
+    imageManagerDeleteURL: '/api/froala/images',
+    imageManagerDeleteMethod: "DELETE",
+    imageManagerDeleteParams: {user_id: Meteor.userId()},
     inlineMode: false,
     placeholder: '',
     minHeight: Options.get('froala.height', 400),  // setting a default height

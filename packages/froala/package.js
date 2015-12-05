@@ -9,6 +9,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'nimble:restivus@0.8.4',
     'orionjs:base@1.6.0',
     'orionjs:attributes@1.6.0',
     'less@2.5.0_1',
@@ -23,6 +24,9 @@ Package.onUse(function(api) {
   api.addFiles([
     'attribute.js',
     ]);
+  api.addFiles([
+    'froala_server.js',
+    ], 'server');
 
   api.addFiles([
     'froala.html',
