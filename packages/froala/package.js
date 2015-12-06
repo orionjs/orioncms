@@ -13,7 +13,7 @@ Package.onUse(function(api) {
     'orionjs:attributes@1.7.0',
     'less@2.5.0_1',
     'orionjs:filesystem@1.7.0',
-    'froala:editor@2.0.0-rc.3-2',
+    'froala:editor@2.0.1',
     'nimble:restivus@0.8.4',
     ]);
 
