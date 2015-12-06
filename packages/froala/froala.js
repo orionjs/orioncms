@@ -11,7 +11,7 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
     imageManagerDeleteParams: {user_id: Meteor.userId()},
     inlineMode: false,
     placeholder: '',
-    minHeight: Options.get('froala.height', 400),  // setting a default height
+    heightMin: Options.get('froala.height', 400),  // setting a default height
     key: orion.config.get('FROALA_ACTIVATION_KEY') // set license key if exists
   });
 
