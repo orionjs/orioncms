@@ -28,6 +28,7 @@ if (Meteor.isClient) {
       index: 100,
       identifier: 'config-update',
       title: i18n('config.update.title'),
+      iconClass: 'fa fa-wrench',
       routeName: 'config.update',
       activeRouteRegex: 'config',
       permission: 'config.update'

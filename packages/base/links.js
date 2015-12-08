@@ -18,6 +18,10 @@ orion.links.attachSchema(new SimpleSchema({
   title: {
     type: String
   },
+  iconClass: {
+    type: String,
+    optional: true
+  },
   routeName: {
     type: String,
     optional: true
@@ -37,6 +41,9 @@ orion.links.add = function(options) {
   Tracker.autorun(function() {
     if (_.isFunction(options.title)) {
       options.title = options.title();
+    }
+    if (_.isFunction(options.iconClass)) {
+      options.iconClass = options.iconClass();
     }
     self.upsert({ identifier: options.identifier }, { $set: options });
   });

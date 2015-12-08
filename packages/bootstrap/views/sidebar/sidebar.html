@@ -19,11 +19,11 @@
           <span class="caret"></span>
         </a>
         <a href="{{ RouterLayerPathFor routeName }}">
-          {{ title }}
+          {{>orionBootstrapSidebarLinkIcon}} {{ title }}
         </a>
       {{ else }}
         <a data-target="#admin-links-{{ identifier }}" href="#" data-toggle="collapse">
-          {{ title }}
+          {{>orionBootstrapSidebarLinkIcon}} {{ title }}
           <span class="caret"></span>
         </a>
       {{/ if }}
@@ -37,7 +37,13 @@
     </li>
   {{ else }}
     <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }}">
-      <a href="{{ RouterLayerPathFor routeName }}">{{ title }}</a>
+      <a href="{{ RouterLayerPathFor routeName }}">{{>orionBootstrapSidebarLinkIcon}} {{ title }}</a>
     </li>
   {{/ if }}
+</template>
+
+<template name="orionBootstrapSidebarLinkIcon">
+  {{#if iconClass}}
+    <i class="sidebar-icon {{iconClass}}"></i>
+  {{/if}}
 </template>
