@@ -47,6 +47,7 @@ if (Meteor.isClient) {
       index: 40,
       identifier: 'pages-index',
       title: i18n('pages.index.title'),
+      iconClass: 'fa fa-file-o',
       routeName: 'pages.index',
       activeRouteRegex: 'pages',
       permission: 'pages.index',

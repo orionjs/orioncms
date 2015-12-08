@@ -24,6 +24,7 @@ if (Meteor.isClient) {
       index: 80,
       identifier: 'accounts-index',
       title: i18n('accounts.index.title'),
+      iconClass: 'fa fa-user',
       routeName: 'accounts.index',
       activeRouteRegex: 'accounts',
       permission: 'accounts.index'

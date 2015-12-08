@@ -28,6 +28,7 @@ Tracker.autorun(function () {
     index: 10,
     identifier: 'dictionary-update',
     title: i18n('dictionary.update.title'),
+    iconClass: 'fa fa-at',
     routeName: 'dictionary.update',
     activeRouteRegex: 'dictionary',
     permission: 'dictionary.update',
