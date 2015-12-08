@@ -29,6 +29,32 @@ Options.set('forbidClientAccountCreation', false);
 
 New users will not have any roles by default, unless you specify default roles:
 
-```
+```js
 Options.set('defaultRoles', ['role1', 'role2']);
 ```
+
+## Configure Routes
+
+If you want that the accounts routes, like enroll or forgot password, work correctly you need to configure them.
+
+```js
+AccountsTemplates.configureRoute('verifyEmail', {
+  name: 'verifyEmail',
+  path: '/verify-email',
+  redirect: '/admin'
+});
+
+AccountsTemplates.configureRoute('resetPwd', {
+  name: 'resetPassword',
+  path: '/reset-password',
+  redirect: '/admin'
+});
+
+AccountsTemplates.configureRoute('enrollAccount', {
+  name: 'enrollAccount',
+  path: '/enroll',
+  redirect: '/admin'
+});
+```
+
+More info [here](https://github.com/meteor-useraccounts/core/blob/master/Guide.md#routing)
