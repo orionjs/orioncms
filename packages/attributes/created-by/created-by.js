@@ -5,7 +5,7 @@ orion.attributes.registerAttribute('createdBy', {
       type: String,
       index: 1,
       autoform: {
-        omit: true
+        omit: true,
       },
       optional: true,
       autoValue: function() {
@@ -16,9 +16,9 @@ orion.attributes.registerAttribute('createdBy', {
         } else {
           this.unset();
         }
-      }
+      },
     };
-  }
+  },
 });
 
 if (Meteor.isServer) {
@@ -27,14 +27,16 @@ if (Meteor.isServer) {
     return Meteor.users.find({ _id: userId }, { fields: { profile: 1 } });
   });
 }
+
 if (Meteor.isClient) {
   ReactiveTemplates.onRendered('attributePreview.createdBy', function() {
     this.subscribe('userProfileForCreatedByAttributeColumn', this.data.value);
   });
+
   ReactiveTemplates.helpers('attributePreview.createdBy', {
     name: function() {
       var user = Meteor.users.findOne(this.value);
-      return user && user.profile.name;
-    }
+      return user && user.profile && user.profile.name;
+    },
   });
 }
