@@ -6,7 +6,7 @@ RouterLayer.route('/admin/pages', {
   layout: 'layout',
   template: 'pages.index',
   name: 'pages.index',
-  reactiveTemplates: true
+  reactiveTemplates: true,
 });
 orion.accounts.addProtectedRoute('pages.index');
 
@@ -15,7 +15,7 @@ RouterLayer.route('/admin/pages/create', {
   layout: 'layout',
   template: 'pages.create',
   name: 'pages.create',
-  reactiveTemplates: true
+  reactiveTemplates: true,
 });
 orion.accounts.addProtectedRoute('pages.create');
 
@@ -24,7 +24,7 @@ RouterLayer.route('/admin/pages/:_id/edit', {
   layout: 'layout',
   template: 'pages.update',
   name: 'pages.update',
-  reactiveTemplates: true
+  reactiveTemplates: true,
 });
 orion.accounts.addProtectedRoute('pages.update');
 
@@ -33,16 +33,15 @@ RouterLayer.route('/admin/pages/:_id/delete', {
   layout: 'layout',
   template: 'pages.delete',
   name: 'pages.delete',
-  reactiveTemplates: true
+  reactiveTemplates: true,
 });
 orion.accounts.addProtectedRoute('pages.delete');
-
 
 /**
  * Register the Pages link in the admin panel
  */
 if (Meteor.isClient) {
-  Tracker.autorun(function () {
+  Tracker.autorun(function() {
     orion.links.add({
       index: 40,
       identifier: 'pages-index',
