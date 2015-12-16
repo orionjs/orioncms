@@ -1,3 +1,6 @@
+Roles.registerAction('filesystem.upload', true); // input: { name, meta, uploader, uploadedBy }.
+Roles.registerAction('filesystem.remove', true); // input: { url, name, meta, uploader, uploadedBy }.
+
 orion.filesystem = {};
 
 /**
@@ -10,32 +13,44 @@ orion.filesystem.collection = new Mongo.Collection('orionFiles');
  */
 orion.filesystem.collection.attachSchema(new SimpleSchema({
   url: {
-    type: String
+    type: String,
   },
   name: {
-    type: String
+    type: String,
   },
   uploader: {
-    type: String
+    type: String,
   },
   meta: {
     type: Object,
     optional: true,
-    blackbox: true
-  }
+    blackbox: true,
+  },
+  size: {
+    type: Number,
+  },
+  uploadedBy: {
+    type: String,
+    optional: true,
+  },
 }));
 
-/**
- * TODO: fix permissions here
- */
 orion.filesystem.collection.allow({
-  insert: function (userId, doc) {
-    return true;
+  insert: function(userId, doc) {
+    return Roles.allow(userId, 'filesystem.upload', doc);
   },
-  update: function (userId, doc, fields, modifier) {
-    return true;
+
+  remove: function(userId, doc) {
+    return Roles.allow(userId, 'filesystem.upload', doc);
   },
-  remove: function (userId, doc) {
-    return true;
-  }
+});
+
+orion.filesystem.collection.deny({
+  insert: function(userId, doc) {
+    return Roles.deny(userId, 'filesystem.remove', doc);
+  },
+
+  remove: function(userId, doc) {
+    return Roles.deny(userId, 'filesystem.remove', doc);
+  },
 });

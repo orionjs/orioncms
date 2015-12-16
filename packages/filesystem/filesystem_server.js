@@ -1,6 +1,10 @@
 Meteor.methods({
-  getFileDataToEarse: function (fileId) {
+  getFileDataToEarse: function(fileId) {
     check(fileId, String);
-    return orion.filesystem.collection.findOne(fileId);
-  }
+    var doc = orion.filesystem.collection.findOne(fileId);
+    if (doc) {
+      Roles.checkPermission(Meteor.userId(), 'filesystem.remove', doc);
+      return doc;
+    }
+  },
 });
