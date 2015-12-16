@@ -13,7 +13,7 @@ There are lots of different ways that you can contribute to Orion:
 - **Testing**: Orion currently doesn't have test, we have plans to add the testing but time is short. This is the thing that is most needed in Orion.
 
 
-Rules: 
+### Rules
 
 - **Always try to create a external package**: Orion is very extendible, in almost all cases you could create a package that connects with Orion, if you cant, try to create the apis in Orion that allows you to create a external package.
 
