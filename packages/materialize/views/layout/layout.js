@@ -1,19 +1,19 @@
 Template.orionMaterializeLayout.onRendered(function() {
-  
+
 });
 
 Template.orionMaterializeHeaderContainer.onRendered(function() {
   $('#sidenav-overlay').click();
   $('.button-collapse').sideNav();
   $('.dropdown-button').dropdown({
-    constrain_width: false
+    constrain_width: false,
   });
-})
+});
 
 Template.orionMaterializeHeaderContainer.events({
   'click .logout': function() {
     Meteor.logout();
-  }
+  },
 });
 
 Template.orionMaterializeTabs.onRendered(function() {
@@ -21,13 +21,13 @@ Template.orionMaterializeTabs.onRendered(function() {
 });
 
 Template.orionMaterializeTabs.helpers({
-  items: function () {
+  items: function() {
     return this;
-  }
+  },
 });
 
 Template.orionMaterializeTabs.events({
-  'click a': function () {
+  'click a': function() {
     this.onClick();
-  }
+  },
 });
