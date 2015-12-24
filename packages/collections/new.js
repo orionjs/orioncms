@@ -14,6 +14,7 @@ orion.collection = function(name, options) {
     routePath: name,
     pluralName: name,
     singularName: name,
+    autopublishUpdate: true,
     title: name[0].toUpperCase() + name.slice(1),
   }, options);
 
@@ -26,7 +27,7 @@ orion.collection = function(name, options) {
   collection.helpers({
     _collection: function() {
       return collection;
-    }
+    },
   });
 
   orion.collections.list[name] = collection;

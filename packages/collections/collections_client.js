@@ -10,7 +10,7 @@ orion.collections.onCreated(function() {
     activeRouteRegex: 'collections.' + self.name,
     permission: 'collections.' + self.name + '.index',
     title: self.name[0].toUpperCase() + self.name.slice(1),
-    index: 30
+    index: 30,
   }, self.link);
   orion.links.add(linkOptions);
 
@@ -22,25 +22,30 @@ orion.collections.onCreated(function() {
     } catch (e) {
       console.log('Error getting collection', e);
     }
+
     return collection;
   };
 
   ReactiveTemplates.helpers('collections.' + self.name + '.index', {
     collection: function() {
       return getCollection();
-    }
+    },
   });
 
   ReactiveTemplates.helpers('collections.' + self.name + '.create', {
     collection: function() {
       return getCollection();
-    }
+    },
   });
 
   ReactiveTemplates.onCreated('collections.' + self.name + '.update', function() {
-    var template = this;
-    template.autorun(function() {
-      getCollection() && RouterLayer.isActiveRoute('collections.' + getCollection().name + '.update') && template.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
+    this.autorun(() => {
+      var collection = getCollection();
+      if (collection) {
+        if (collection.autopublishUpdate && RouterLayer.isActiveRoute('collections.' + collection.name + '.update')) {
+          this.subscribe('adminGetOne.' + getCollection().name, RouterLayer.getParam('_id'));
+        }
+      }
     });
   });
 
@@ -48,9 +53,10 @@ orion.collections.onCreated(function() {
     collection: function() {
       return getCollection();
     },
+
     item: function() {
       return getCollection() && getCollection().findOne(RouterLayer.getParam('_id'));
-    }
+    },
   });
 
   ReactiveTemplates.onCreated('collections.' + self.name + '.delete', function() {
@@ -64,9 +70,10 @@ orion.collections.onCreated(function() {
     collection: function() {
       return getCollection();
     },
+
     item: function() {
       return getCollection().findOne(RouterLayer.getParam('_id'));
-    }
+    },
   });
 
   ReactiveTemplates.events('collections.' + self.name + '.delete', {
@@ -76,11 +83,12 @@ orion.collections.onCreated(function() {
         if (error) {
           console.warn('Error while deleting', objectId, 'in collection', getCollection().name, ':', error);
         }
+
         // Only go back to index in case the deletion has been properly achieved
         if (result === 1) {
           RouterLayer.go(getCollection().indexPath());
         }
       });
-    }
+    },
   });
 });
