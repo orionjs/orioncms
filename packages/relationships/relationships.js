@@ -22,8 +22,12 @@ var onCreated = function() {
         var field = schema.orion.fields[i];
         newItem[field] = orion.helpers.searchObjectWithDots(item, field, true);
       }
+
       return newItem;
     };
+
+    var items = _.clone(instance.selectInput.get().items);
+    instance.selectInput.get().clearOptions();
 
     var observer = schema.orion.collection.find(filter).observe({
       added: function(newItem) {
@@ -33,16 +37,22 @@ var onCreated = function() {
         } else {
           instance.selectInput.get().addOption(transform(newItem));
         }
+
+        if (_.contains(items, newItem._id)) {
+          instance.selectInput.get().addItem(newItem._id, true);
+        }
       },
+
       changed: function(newItem, oldItem) {
         instance.selectInput.get().updateOption(oldItem._id, transform(newItem));
       },
+
       removed: function(item) {
         var items = _.isArray(dataContext.value) ? dataContext.value : [dataContext.value];
         if (!_.contains(items, item._id)) {
           instance.selectInput.get().removeOption(item._id);
         }
-      }
+      },
     });
 
     instance.observer.set(observer);
@@ -61,6 +71,7 @@ var onRendered = function() {
     newItem[labelField] = 'Loading...';
     defaultOptions.push(newItem);
   });
+
   var element = this.$('select').selectize({
     valueField: '_id',
     labelField: labelField,
@@ -69,7 +80,9 @@ var onRendered = function() {
     sortField: _.union(
       (_.isArray(schema.orion.sortFields) ?
           _.map(schema.orion.sortFields, function(sort_field) { return { field: sort_field, direction: 'asc' }; }) :
+
           _.map(schema.orion.sortFields, function(sort_order, sort_field) { return { field: sort_field, direction: sort_order }; })),
+
       [{ field: '$score' }]
     ),
     plugins: ['remove_button'],
@@ -83,9 +96,11 @@ var onRendered = function() {
         } else {
           select.setValue(value);
         }
+
         callback(value);
       });
     },
+
     options: defaultOptions,
     render: schema.orion.render,
   });
@@ -96,6 +111,7 @@ var onDestroyed = function() {
   if (this.selectInput.get()) {
     this.selectInput.get().destroy();
   }
+
   if (this.observer.get()) {
     this.observer.get().stop();
   }
@@ -114,11 +130,13 @@ ReactiveTemplates.helpers('attributePreview.hasMany', {
     if (!this.schema) {
       return '';
     }
+
     if (count != 1) {
       return count + ' ' + this.schema.orion.pluralName;
     }
+
     return count + ' ' + this.schema.orion.singularName;
-  }
+  },
 });
 
 ReactiveTemplates.onCreated('attributePreview.hasOne', function() {
@@ -130,7 +148,7 @@ ReactiveTemplates.onCreated('attributePreview.hasOne', function() {
 });
 
 ReactiveTemplates.helpers('attributePreview.hasOne', {
-  val: function () {
+  val: function() {
     var item = this.schema && this.schema.orion.collection.findOne(this.value);
     if (item) {
       if (_.isArray(this.schema.orion.titleField)) {
@@ -141,5 +159,5 @@ ReactiveTemplates.helpers('attributePreview.hasOne', {
         return orion.helpers.searchObjectWithDots(item, this.schema.orion.titleField, true);
       }
     }
-  }
+  },
 });
