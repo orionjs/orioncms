@@ -3,12 +3,13 @@ orion.attributes.registerAttribute('froala', {
   previewTemplate: 'orionAttributesFroalaColumn',
   getSchema: function(options) {
     return {
-      type: String
+      type: String,
     };
   },
+
   valueOut: function() {
     return this.find('.editor').editable('getHTML', false, true);
-  }
+  },
 });
 
 Options.init('froala.height');
