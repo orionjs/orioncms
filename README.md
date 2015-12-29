@@ -2,6 +2,8 @@
 
 Orion is an open source framework built on Meteor that makes complex as well as simple apps possible with minimal effort. It's built, modified, used, and supported by an active community of people around the world.
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RJ7GP2UST4EN)
+
 ## Getting Started
 
 To start your orion instance the first thing you need to do is install the core package, a admin template and a router.
@@ -124,3 +126,4 @@ Feel free to add your made with Orion site doing a pull request.
 
 - [nicolaslopezj:orion-exporter](https://github.com/nicolaslopezj/orion-exporter) Export and import Orion data
 - [rwatts:orionjs-dashboard](https://atmospherejs.com/rwatts/orionjs-dashboard) Add a Dashboard & Widgets to Orion
+
