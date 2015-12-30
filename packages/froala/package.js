@@ -13,7 +13,8 @@ Package.onUse(function(api) {
     'orionjs:attributes@1.7.0',
     'less@2.5.0_1',
     'orionjs:filesystem@1.7.0',
-    'froala:editor@1.2.8',
+    'froala:editor@2.0.1',
+    'nimble:restivus@0.8.4',
     ]);
 
   api.imply([
@@ -23,6 +24,9 @@ Package.onUse(function(api) {
   api.addFiles([
     'attribute.js',
     ]);
+  api.addFiles([
+    'froala_server.js',
+    ], 'server');
 
   api.addFiles([
     'froala.html',

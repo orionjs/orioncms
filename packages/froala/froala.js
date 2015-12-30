@@ -4,18 +4,22 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
   // Find the element
   var element = parent.find('.editor');
   // initialize froala
-  element.editable({
+  element.froalaEditor({
+    imageManagerLoadURL: '/api/froala/images',
+    imageManagerDeleteURL: '/api/froala/images',
+    imageManagerDeleteMethod: "DELETE",
+    imageManagerDeleteParams: {user_id: Meteor.userId()},
     inlineMode: false,
     placeholder: '',
-    minHeight: Options.get('froala.height', 400),  // setting a default height
+    heightMin: Options.get('froala.height', 400),  // setting a default height
     key: orion.config.get('FROALA_ACTIVATION_KEY') // set license key if exists
   });
 
   // set the current value of the attribute
-  element.editable("setHTML", this.data.value, true);
+  element.froalaEditor("html.set", this.data.value, true);
 
   // Handle image uploads
-  element.on('editable.beforeImageUpload', function (e, editor, files) {
+  element.on('froalaEditor.image.beforeUpload', function (e, editor, files) {
     var upload = orion.filesystem.upload({
       fileList: files,
       name: files[0].name,
@@ -26,16 +30,16 @@ ReactiveTemplates.onRendered('attribute.froala', function () {
         if (upload.error) {
           console.log(upload.error, "error uploading file")
         } else {
-          element.editable("insertHTML", "<img class='fr-fin' data-file-id='" + upload.fileId + "' src='" + upload.url + "'>", true);
+          element.froalaEditor("html.insert", "<img class='fr-fin' data-file-id='" + upload.fileId + "' src='" + upload.url + "'>", true);
         }
-        element.editable("hidePopups");
+        element.froalaEditor("popups.hideAll");
       }
     });
     return false;
   });
   // Handle image deletes
   // If its uploaded through filesystem, it deletes the image and prevent the server call to delete
-  element.on('editable.beforeRemoveImage', function (e, editor, img) {
+  element.on('froalaEditor.image.beforeRemove', function (e, editor, img) {
     var imgId = img.attr("data-file-id");
     if (!imgId) {
       return;
