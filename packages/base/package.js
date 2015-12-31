@@ -34,7 +34,6 @@ Package.onUse(function(api) {
     'underscore',
     'spacebars',
     'ecmascript',
-    'blaze-html-templates',
     'check',
     'tracker',
     'nicolaslopezj:router-layer',
