@@ -10,6 +10,7 @@ orion.collections.onCreated(function() {
     activeRouteRegex: 'collections.' + self.name,
     permission: 'collections.' + self.name + '.index',
     title: self.name[0].toUpperCase() + self.name.slice(1),
+    iconClass: 'fa fa-table',
     index: 30
   }, self.link);
   orion.links.add(linkOptions);
