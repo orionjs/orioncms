@@ -16,14 +16,14 @@ Package.onUse(function (api) {
         'orionjs:base@1.7.0',
         'orionjs:attributes@1.7.0',
         'orionjs:filesystem@1.7.0',
-        'cerealkiller:materialnote@1.2.1',
+        'vojtechklos:materialnote@1.2.2',
         'less@2.5.0_2',
 
         'jquery'
     ]);
 
     api.imply([
-        'cerealkiller:materialnote',
+        'vojtechklos:materialnote',
     ]);
 
     api.addFiles([
