@@ -1,19 +1,18 @@
 # Roles
 
 Orion uses ```nicolaslopezj:roles``` for roles.
-Basically this package let us define actions and later assign
-allow/deny rules for that action.
+Basically, this package lets us define actions and later assign allow/deny rules for that action.
 
 You can check the full documentation of ```nicolaslopezj:roles``` [here](http://github.com/nicolaslopezj/roles).
 
 ## Creating roles
-To create a new role
+To create a new role:
 ```js
 myRole = new Roles.Role('my-role');
 ```
 
 ## Role Allow/Deny Rules
-You can then set custom allow/deny rules for specific roles to allow/deny users with the role certain actions
+You can then set custom allow/deny rules for specific roles to allow/deny users with the role certain actions:
 
 ```js
 myRole.allow(action, rule);
@@ -70,7 +69,7 @@ Below is a list of the available actions for users. These Actions are essentiall
 **Accounts**
 
 - ```accounts.index``` View the list of users in the admin panel.
-- ```accounts.update.roles``` Change a user roles.
+- ```accounts.update.roles``` Change a user's roles.
 - ```accounts.invite``` Create invitations.
 
 **Collections**
@@ -82,7 +81,7 @@ Where ```myCollection``` is the name of the collection.
 - ```collections.myCollection.update``` Update a document of a collection. Input: ```userId, doc, fields, modifier```.
 - ```collections.myCollection.remove``` Remove a document. Input: ```userId, doc```.
 - ```collections.myCollection.showCreate``` Show the create button in the admin.
-- ```collections.myCollection.showUpdate``` Show the update button/sends the user to the update form. Input: ```doc```.
+- ```collections.myCollection.showUpdate``` Show the update button/send the user to the update form. Input: ```doc```.
 - ```collections.myCollection.showRemove``` Show the remove button. Input: ```doc```.
 
 **App Configuration**
@@ -103,8 +102,8 @@ Where ```myCollection``` is the name of the collection.
 
 - ```collections.myCollection.indexFilter``` The filter of the results that the user can view in the admin.
 Example: ```{ createdBy: this.userId }```. Filters will be joined with $or comparator.
-- ```collections.myCollection.forbiddenFields``` A array of the name of the fields that the users with that role can't insert/update.
-This will hide the input in the admin and secure that fields in the server.
+- ```collections.myCollection.forbiddenFields``` An array of the name of the fields that the users with that role can't insert/update.
+This will hide the input in the admin and secure those fields in the server.
 Example: ```['isFeatured', 'likesCount']```.
 
 
@@ -115,7 +114,7 @@ The union of all the allowedCategories will be the result.
 
 **Accounts**
 
-- ```accounts.allowedRoles``` A array of the roles that the user with that role can add to new users or existing ones.
+- ```accounts.allowedRoles``` An array of the roles that the user with that role can add to new users or existing ones.
 - ```accounts.indexFilter``` The filter of the users that the user can view in the admin.
 
 ## Example
@@ -144,5 +143,5 @@ myRole.allow('collections.myCollection.showRemove', true); // Shows the delete b
  * This part is very important and sometimes is forgotten.
  * Here you must specify which documents the role will be able to see in the index route
  */
-myRole.helper('collections.myCollection.indexFilter', {}); // Allows the role to se all documents
+myRole.helper('collections.myCollection.indexFilter', {}); // Allows the role to see all documents
 ```
