@@ -14,7 +14,7 @@ orion.links.add(options);
 
 **options**
 
-- ```index``` **Number**. Optinal. Orion will order the links by this key. If not set, it will not appear on the list.
+- ```index``` **Number**. Optional. Orion will order the links by this key. If not set, it will not appear on the list.
 
 - ```identifier``` **String**. The identifier of the link. Only letters, numbers, ```-``` and ```_```.
 
