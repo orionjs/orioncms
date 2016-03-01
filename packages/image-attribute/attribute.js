@@ -3,7 +3,8 @@ var subSchema = new SimpleSchema({
     type: String
   },
   fileId: {
-    type: String
+    type: String,
+    optional: true,
   },
   info: {
     type: Object,
@@ -28,6 +29,11 @@ var subSchema = new SimpleSchema({
   'info.secondaryColor': {
     type: String,
     optional: true
+  },
+  meta: {
+    type: Object,
+    optional: true,
+    blackbox: true,
   }
 });
 

@@ -22,7 +22,7 @@ orion.filesystem.upload = function(options) {
     uploader: String,
     meta: Match.Optional(Object),
   });
-  options.size = options.fileList[0].size;
+  options.size = options.fileList[0] && options.fileList[0].size;
   options.uploadedBy = Meteor.userId();
 
   Roles.checkPermission(Meteor.userId(), 'filesystem.upload', _.omit(options, 'fileList'));
@@ -62,7 +62,7 @@ orion.filesystem.upload = function(options) {
       name: options.name,
       uploader: options.uploader,
       uploadedBy: Meteor.userId(),
-      size: options.fileList[0].size,
+      size: options.size,
     });
     upload._statusDependency.changed();
 

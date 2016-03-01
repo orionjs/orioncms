@@ -28,6 +28,7 @@ orion.filesystem.collection.attachSchema(new SimpleSchema({
   },
   size: {
     type: Number,
+    optional: true,
   },
   uploadedBy: {
     type: String,

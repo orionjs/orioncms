@@ -1,0 +1,19 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'whoami' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.3
+4 verbose stack Error: this command requires you to be logged in.
+4 verbose stack     at EventEmitter.whoami (/usr/local/lib/node_modules/npm/lib/whoami.js:42:18)
+4 verbose stack     at Object.commandCache.(anonymous function) (/usr/local/lib/node_modules/npm/lib/npm.js:220:11)
+4 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/bin/npm-cli.js:72:28)
+4 verbose stack     at doNTCallback0 (node.js:419:9)
+4 verbose stack     at process._tickCallback (node.js:348:13)
+5 verbose cwd /Users/nicolaslopezj/Code/Node/orion
+6 error Darwin 15.2.0
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "whoami"
+8 error node v4.2.3
+9 error npm  v2.14.7
+10 error code ENEEDAUTH
+11 error need auth this command requires you to be logged in.
+11 error need auth You need to authorize this machine using `npm adduser`
+12 verbose exit [ 1, true ]

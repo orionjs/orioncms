@@ -15,7 +15,10 @@ if (Meteor.isClient) {
     this.autorun(function() {
       if (Meteor.userId()) {
         var ref = RouterLayer.getQueryParam('ref') || RouterLayer.pathFor('admin');
-        RouterLayer.go(ref);
+        if (ref.indexOf('http') > -1) {
+          Session.set('orion_isRedirecting', true);
+        }
+        window.location.replace(ref);
       }
     });
   });

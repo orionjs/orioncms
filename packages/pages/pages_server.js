@@ -1,5 +1,7 @@
-Meteor.publish('pages', function () {
-  return orion.pages.collection.find();
+Meteor.publish('pages', function (fields = ['title', 'url', 'createdAt']) {
+  check(fields, [String]);
+  var options = _.object(fields, Array(fields.length).fill(1));
+  return orion.pages.collection.find({}, { fields: options });
 });
 
 Meteor.publish('page', function (url) {

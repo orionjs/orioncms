@@ -7,7 +7,13 @@ orion.attributes.registerAttribute('file', {
         type: String
       },
       fileId: {
-        type: String
+        type: String,
+        optional: true,
+      },
+      meta: {
+        type: Object,
+        blackbox: true,
+        optional: true,
       }
     });
     return {
