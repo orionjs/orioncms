@@ -40,7 +40,7 @@ id-map@1.0.4
 jquery@1.11.4
 launch-screen@1.0.4
 livedata@1.0.15
-local-test:orionjs:accounts@1.8.0
+local-test:orionjs:accounts@1.8.1
 localstorage@1.0.5
 logging@1.0.8
 matb33:collection-hooks@0.7.15
@@ -62,7 +62,7 @@ npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
-orionjs:accounts@1.8.0
+orionjs:accounts@1.8.1
 orionjs:attributes@1.8.0
 orionjs:base@1.8.0
 orionjs:lang-en@1.8.0
