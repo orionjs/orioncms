@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
-  api.use('ecmascript@0.3.0');
+  api.use('ecmascript@0.1.6');
   api.use('anti:i18n@0.4.3');
   api.use('softwarerero:accounts-t9n@1.1.4');
   api.imply('anti:i18n');

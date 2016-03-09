@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
-  api.use('ecmascript@0.3.0');
+  api.use('ecmascript@0.1.6');
   api.use('orionjs:lang-en@1.8.0');
   api.imply('orionjs:lang-en');
 
