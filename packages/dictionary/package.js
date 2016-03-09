@@ -10,7 +10,7 @@ Package.onUse(function(api) {
 
   api.use([
     'blaze-html-templates',
-    'ecmascript',
+    'ecmascript@0.3.0',
     'orionjs:base@1.8.0',
     'aldeed:simple-schema@1.3.3',
     'aldeed:collection2@2.3.3',

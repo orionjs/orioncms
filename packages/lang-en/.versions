@@ -17,7 +17,7 @@ jquery@1.11.4
 meteor@1.1.10
 mongo-id@1.0.1
 observe-sequence@1.0.7
-orionjs:lang-en@1.7.0
+orionjs:lang-en@1.8.0
 promise@0.5.1
 random@1.0.5
 reactive-var@1.0.6

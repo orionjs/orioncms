@@ -9,11 +9,11 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'ecmascript',
+    'ecmascript@0.3.0',
     'meteor-base@1.0.1',
     'mongo',
     'standard-minifiers@1.0.0',
-    'ecmascript@0.1.6',
+    'ecmascript@0.3.0',
     'underscore',
     'spacebars',
     'blaze-html-templates@1.0.1',

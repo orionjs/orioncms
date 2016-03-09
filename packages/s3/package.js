@@ -9,7 +9,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'ecmascript',
+    'ecmascript@0.3.0',
     'orionjs:core@1.8.0',
     'orionjs:filesystem@1.8.0',
     'orionjs:config@1.8.0',
