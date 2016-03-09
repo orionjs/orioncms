@@ -13,8 +13,8 @@ Package.describe({
 Package.onUse(function (api) {
     api.versionsFrom('1.2.1');
     api.use([
-        'blaze-html-templates',
-        'ecmascript@0.3.0',
+        'blaze-html-templates@1.0.1',
+        'ecmascript@0.1.6',
         'orionjs:base@1.8.0',
         'orionjs:attributes@1.8.0',
         'orionjs:filesystem@1.8.0',
