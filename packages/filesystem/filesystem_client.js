@@ -20,8 +20,12 @@ orion.filesystem.upload = function(options) {
     name: String,
     fileList: Match.Any,
     uploader: String,
-    meta: Match.Optional(Object)
+    meta: Match.Optional(Object),
   });
+  options.size = options.fileList[0] && options.fileList[0].size;
+  options.uploadedBy = Meteor.userId();
+
+  Roles.checkPermission(Meteor.userId(), 'filesystem.upload', _.omit(options, 'fileList'));
 
   Session.set('filesystem.uploading', true);
 
@@ -52,13 +56,21 @@ orion.filesystem.upload = function(options) {
     upload.url = url;
     upload.meta = meta;
     upload._ready = true;
-    upload.fileId = orion.filesystem.collection.insert({ url: url, meta: meta, name: options.name, uploader: options.uploader });
+    upload.fileId = orion.filesystem.collection.insert({
+      url: url,
+      meta: meta,
+      name: options.name,
+      uploader: options.uploader,
+      uploadedBy: Meteor.userId(),
+      size: options.size,
+    });
     upload._statusDependency.changed();
 
     var index = orion.filesystem.uploads.indexOf(upload);
     orion.filesystem.uploads.splice(index, 1);
     orion.filesystem._uploadsDep.changed();
   }, function(error) {
+
     check(error, Meteor.Error);
     upload.error = error;
     upload._ready = true;
@@ -68,6 +80,7 @@ orion.filesystem.upload = function(options) {
     orion.filesystem.uploads.splice(index, 1);
     orion.filesystem._uploadsDep.changed();
   }, function(progress) {
+
     check(progress, Number);
     upload._progress = progress;
     upload._progressDependency.changed();
@@ -96,13 +109,15 @@ orion.filesystem.remove = function(fileId) {
     return remove._ready;
   };
 
-  Meteor.call('getFileDataToEarse', fileId, function (error, file) {
+  Meteor.call('getFileDataToEarse', fileId, function(error, file) {
     if (error) {
       remove._ready = true;
       remove.error = error;
       remove._statusDependency.changed();
+      console.log('Error removing file: ' + error.message);
       return;
     }
+
     if (!file) {
       remove._ready = true;
       remove.error = new Meteor.Error(
@@ -116,6 +131,7 @@ orion.filesystem.remove = function(fileId) {
         orion.filesystem.collection.remove(fileId);
         remove._statusDependency.changed();
       }, function(error) {
+
         check(error, Meteor.Error);
         remove._ready = true;
         remove.error = error;

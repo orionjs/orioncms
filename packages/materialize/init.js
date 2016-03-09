@@ -46,7 +46,7 @@ ReactiveTemplates.set('pages.delete', 'orionMaterializePagesDelete');
 
 if (Meteor.isClient) {
   AutoForm.setDefaultTemplate('materialize');
-  
+
   Meteor.startup(function() {
     Session.set('orion_autoformLoading', false);
   });
@@ -55,15 +55,15 @@ if (Meteor.isClient) {
     beginSubmit: function() {
       Session.set('orion_autoformLoading', true);
     },
+
     endSubmit: function() {
       Session.set('orion_autoformLoading', false);
-    }
+    },
   });
 
   Template.registerHelper('orion_autoformLoading', function() {
-    return Session.get('orion_autoformLoading') ? 'disabled': '';
+    return Session.get('orion_autoformLoading') ? 'disabled' : '';
   });
-
 
   Template.registerHelper('materializeHeader', function() {
     return ReactiveTemplates.get('materializeHeader');

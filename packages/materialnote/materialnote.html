@@ -1,0 +1,13 @@
+<template name="orionAttributesMaterialnote">
+    <div class="orionMaterialnote" {{ atts }}>
+        {{# if isUploading }}
+            <br>
+            <div class="progress"><div class="progress-bar progress-bar-striped active" style="width: {{ progress }}%"></div></div>
+        {{/ if }}
+        <div class="materialnote"></div>
+    </div>
+</template>
+
+<template name="orionAttributesMaterialnoteColumn">
+    {{ preview }}
+</template>

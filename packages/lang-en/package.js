@@ -1,6 +1,6 @@
 Package.describe({
   name: 'orionjs:lang-en',
-  version: '1.7.0',
+  version: '1.8.0',
   summary: 'Orion - Default english language',
   git: 'https://github.com/orionjs/orion',
   documentation: 'README.md'
@@ -9,6 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
+  api.use('ecmascript@0.1.6');
   api.use('anti:i18n@0.4.3');
   api.use('softwarerero:accounts-t9n@1.1.4');
   api.imply('anti:i18n');

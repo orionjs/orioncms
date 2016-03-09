@@ -6,5 +6,5 @@ Template.orionBootstrapPagesIndex.events({
     if (rowData) {
       RouterLayer.go('pages.update', rowData);
     }
-  }
+  },
 });

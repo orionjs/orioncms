@@ -16,8 +16,8 @@ var getSchema = function(options, hasMany) {
     dontValidate: Match.Optional(Boolean),
     render: Match.Optional({
       item: Function,
-      option: Function
-    })
+      option: Function,
+    }),
   }));
 
   if (!_.has(options, 'validateOnClient')) {
@@ -43,20 +43,20 @@ var getSchema = function(options, hasMany) {
   }
 
   function render_item_default(item, escape) {
-    var fieldContent = "";
+    var fieldContent = '';
     if (_.isArray(options.titleField)) {
-      _.each(options.titleField, function(field, index) { fieldContent += (index > 0 ? " | " : "") + escape(item[field]); } );
-    }
-    else {
+      _.each(options.titleField, function(field, index) { fieldContent += (index > 0 ? ' | ' : '') + escape(item[field]); });
+    } else {
       fieldContent = escape(item[options.titleField]);
     }
+
     return '<div>' + fieldContent + '</div>';
   }
 
   if (!options.render) {
     options.render = {
       item: render_item_default,
-      option: render_item_default
+      option: render_item_default,
     };
   }
 
@@ -76,31 +76,34 @@ var getSchema = function(options, hasMany) {
 
   if (Meteor.isServer) {
     if (!options.customPublication) {
-      Meteor.publish(options.publicationName, function () {
+      Meteor.publish(options.publicationName, function() {
         var pubFields = {};
         for (var i = 0; i < options.fields.length; i++) {
           pubFields[options.fields[i]] = 1;
         }
+
         return options.collection.find(options.filter(this.userId), { fields: pubFields });
-      }, { is_auto: true });
+      });
     }
+
     if (!hasMany) {
-      Meteor.publish(options.publicationName + '_row', function (id) {
+      Meteor.publish(options.publicationName + '_row', function(id) {
         var pubFields = {};
         for (var i = 0; i < options.fields.length; i++) {
           pubFields[options.fields[i]] = 1;
         }
+
         var filter = options.filter(this.userId);
         filter._id = id;
         return options.collection.find(filter, { fields: pubFields });
-      }, { is_auto: true });
+      });
     }
   }
 
   if (options.dontValidate && hasMany) {
     return {
       type: [String],
-      orion: options
+      orion: options,
     };
   } else if (options.dontValidate && !hasMany) {
     return {
@@ -115,16 +118,18 @@ var getSchema = function(options, hasMany) {
         if (Meteor.isClient && !options.validateOnClient) {
           return;
         }
+
         if (Meteor.isServer && !options.validateOnServer) {
           return;
         }
+
         if (this.isSet && _.isArray(this.value) && this.value) {
           var count = options.collection.find({ $and: [{ _id: { $in: this.value } }, options.filter(this.userId)] }).count();
           if (count != this.value.length) {
             return 'notAllowed';
           }
         }
-      }
+      },
     };
   } else {
     return {
@@ -134,16 +139,18 @@ var getSchema = function(options, hasMany) {
         if (Meteor.isClient && !options.validateOnClient) {
           return;
         }
+
         if (Meteor.isServer && !options.validateOnServer) {
           return;
         }
+
         if (this.isSet && _.isString(this.value) && this.value) {
           var count = options.collection.find({ $and: [{ _id: this.value }, options.filter(this.userId)] }).count();
           if (count != 1) {
             return 'notAllowed';
           }
         }
-      }
+      },
     };
   }
 };
@@ -154,9 +161,10 @@ orion.attributes.registerAttribute('hasMany', {
   getSchema: function(options) {
     return getSchema(options, true);
   },
+
   valueOut: function() {
     return this.val();
-  }
+  },
 });
 
 orion.attributes.registerAttribute('hasOne', {
@@ -165,7 +173,8 @@ orion.attributes.registerAttribute('hasOne', {
   getSchema: function(options) {
     return getSchema(options, false);
   },
+
   valueOut: function() {
     return this.val();
-  }
+  },
 });

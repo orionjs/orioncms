@@ -8,30 +8,32 @@ Template.orionMaterializeHasOneAttribute.onRendered(function() {
 ReactiveTemplates.onRendered('attribute.froala', function() {
   var id = this.$('.orionFroala').attr('id');
   this.$('.orionFroala').css({ 'margin-top': '2rem' });
-  Meteor.setTimeout(function () {
+  Meteor.setTimeout(function() {
     $('label[for="' + id + '"]').addClass('active');
-    $('label[for="' + id + '"]').css({ 'top': '0' });
+    $('label[for="' + id + '"]').css({ top: '0' });
   }, 100);
-})
+});
 
 Template.orionMaterializeHasOneAttribute.events({
-  'focus .selectize-input input': function (event, template) {
+  'focus .selectize-input input': function(event, template) {
     var id = template.$('.orionAttributesHasOne').attr('id');
     $('label[for="' + id + '"]').addClass('active teal-text');
   },
-  'blur .selectize-input input': function (event, template) {
+
+  'blur .selectize-input input': function(event, template) {
     var id = template.$('.orionAttributesHasOne').attr('id');
     $('label[for="' + id + '"]').removeClass('teal-text');
     if (!template.$('.orionAttributesHasOne').val()) {
       $('label[for="' + id + '"]').removeClass('active');
     }
   },
-  'keyup .selectize-input input': function (event, template) {
+
+  'keyup .selectize-input input': function(event, template) {
     if ($(event.currentTarget).val() || template.$('.orionAttributesHasOne').val()) {
       var id = template.$('.orionAttributesHasOne').attr('id');
       $('label[for="' + id + '"]').addClass('active');
     }
-  }
+  },
 });
 
 Template.orionMaterializeHasManyAttribute.onRendered(function() {
@@ -42,21 +44,23 @@ Template.orionMaterializeHasManyAttribute.onRendered(function() {
 });
 
 Template.orionMaterializeHasManyAttribute.events({
-  'focus .selectize-input input': function (event, template) {
+  'focus .selectize-input input': function(event, template) {
     var id = template.$('.orionAttributesHasMany').attr('id');
     $('label[for="' + id + '"]').addClass('active teal-text');
   },
-  'blur .selectize-input input': function (event, template) {
+
+  'blur .selectize-input input': function(event, template) {
     var id = template.$('.orionAttributesHasMany').attr('id');
     $('label[for="' + id + '"]').removeClass('teal-text');
     if (!template.$('.orionAttributesHasMany').val()) {
       $('label[for="' + id + '"]').removeClass('active');
     }
   },
-  'keyup .selectize-input input': function (event, template) {
+
+  'keyup .selectize-input input': function(event, template) {
     if ($(event.currentTarget).val() || template.$('.orionAttributesHasMany').val()) {
       var id = template.$('.orionAttributesHasMany').attr('id');
       $('label[for="' + id + '"]').addClass('active');
     }
-  }
+  },
 });

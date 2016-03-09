@@ -13,7 +13,7 @@ orion.collections.onCreated(function() {
     layout: 'layout',
     template: 'collections.' + self.name + '.index',
     name: 'collections.' + self.name + '.index',
-    reactiveTemplates: true
+    reactiveTemplates: true,
   });
   self.indexPath = function() {
     return RouterLayer.pathFor('collections.' + self.name + '.index');
@@ -36,7 +36,7 @@ orion.collections.onCreated(function() {
     layout: 'layout',
     template: 'collections.' + self.name + '.create',
     name: 'collections.' + self.name + '.create',
-    reactiveTemplates: true
+    reactiveTemplates: true,
   });
   self.createPath = function() {
     return RouterLayer.pathFor('collections.' + self.name + '.create');
@@ -59,13 +59,14 @@ orion.collections.onCreated(function() {
     layout: 'layout',
     template: 'collections.' + self.name + '.update',
     name: 'collections.' + self.name + '.update',
-    reactiveTemplates: true
+    reactiveTemplates: true,
   });
   self.updatePath = function(item) {
     var options = item;
     if (_.isString(item)) {
       options = { _id: item };
     }
+
     return RouterLayer.pathFor('collections.' + self.name + '.update', options);
   };
 
@@ -86,13 +87,14 @@ orion.collections.onCreated(function() {
     layout: 'layout',
     template: 'collections.' + self.name + '.delete',
     name: 'collections.' + self.name + '.delete',
-    reactiveTemplates: true
+    reactiveTemplates: true,
   });
   this.deletePath = function(item) {
     var options = item;
     if (_.isString(item)) {
       options = { _id: item };
     }
+
     return RouterLayer.pathFor('collections.' + self.name + '.delete', options);
   };
 

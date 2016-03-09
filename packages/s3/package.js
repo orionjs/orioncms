@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:s3',
   summary: 'S3 storage for orion:filesystem',
-  version: '1.7.0',
+  version: '1.8.0',
   git: 'https://github.com/orionjs/s3'
 });
 
@@ -9,9 +9,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:core@1.7.0',
-    'orionjs:filesystem@1.7.0',
-    'orionjs:config@1.7.0',
+    'ecmascript@0.1.6',
+    'orionjs:core@1.8.0',
+    'orionjs:filesystem@1.8.0',
+    'orionjs:config@1.8.0',
     'lepozepo:s3@5.1.1'
     ]);
 

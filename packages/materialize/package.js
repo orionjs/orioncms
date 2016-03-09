@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:materialize',
   summary: 'Materialize theme for orion admin',
-  version: '1.7.0',
+  version: '1.8.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,8 +9,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'blaze-html-templates@1.0.1',
+    'ecmascript@0.1.6',
     'meteor-platform',
-    'orionjs:core@1.7.0',
+    'orionjs:core@1.8.0',
     'less@2.5.0_1',
     'aldeed:autoform@5.7.1',
     'nicolaslopezj:tabular-materialize@1.2.1',

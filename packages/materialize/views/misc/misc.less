@@ -60,7 +60,7 @@
       }
     }
   }
-   
+
 }
 
 .orionMaterializeHasManyAttribute {
@@ -92,24 +92,52 @@
       }
 
       [data-value] {
-        border: none;
-        color: #fff;
-        margin-top: 3px;
-        padding: 3px 10px;
-        background-color: #42A5F5;
+        display: inline-block;
+        height: 32px;
         font-size: 13px;
-        font-weight: 300;
+        font-weight: 500;
+        color: rgba(0,0,0,.6);
+        line-height: 32px;
+        padding: 0 12px;
+        border-radius: 16px;
+        background-color: #e4e4e4;
+        border: none;
+        padding-right: 13px !important;
 
         &.active, &.focus {
-          background-color: lighten(#42A5F5, 10%);
+          background-color: darken(#e4e4e4, 7%);
         }
 
         &:hover {
-          background-color: lighten(#42A5F5, 5%);
+          background-color: darken(#e4e4e4, 9%);
+        }
+
+        img {
+          float: left;
+          margin: 0 8px 0 -12px;
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+        }
+
+        i.material-icons {
+          cursor: pointer;
+          float: right;
+          font-size: 16px;
+          line-height: 32px;
+          padding-left: 8px;
         }
 
         .remove {
-          border-left: 1px solid #fff;
+          border-left: none;
+          position: static;
+          font-size: 16px;
+          padding: 0;
+          padding-left: 8px;
+
+          &:hover {
+            background-color: transparent;
+          }
         }
 
       }

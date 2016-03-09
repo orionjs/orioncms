@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:pages',
 	summary: 'Pages for Orion CMS',
-	version: '1.7.0',
+	version: '1.8.0',
 	git: 'https://github.com/orionjs/pages'
 });
 
@@ -9,8 +9,10 @@ Package.onUse(function(api) {
 	api.versionsFrom('1.0');
 
 	api.use([
+		'blaze-html-templates@1.0.1',
+		'ecmascript@0.1.6',
 		'meteor-platform',
-		'orionjs:base@1.7.0',
+		'orionjs:base@1.8.0',
 		'aldeed:collection2@2.3.3',
 		'aldeed:autoform@5.4.0'
 		]);

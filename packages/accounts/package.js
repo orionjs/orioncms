@@ -1,7 +1,7 @@
 Package.describe({
   name: 'orionjs:accounts',
   summary: 'Orion accounts mannager',
-  version: '1.7.0',
+  version: '1.8.0',
   git: 'https://github.com/orionjs/orion'
 });
 
@@ -9,8 +9,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
-    'orionjs:base@1.7.0',
-    'orionjs:attributes@1.7.0',
+    'blaze-html-templates@1.0.1',
+    'ecmascript@0.1.6',
+    'orionjs:base@1.8.0',
+    'orionjs:attributes@1.8.0',
     'accounts-base',
     'accounts-password',
     'useraccounts:core@1.12.0',
@@ -24,7 +26,6 @@ Package.onUse(function(api) {
   	});
 
   api.imply([
-    'underscore',
     'accounts-base',
     'accounts-password',
     'useraccounts:core',
