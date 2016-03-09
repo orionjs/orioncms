@@ -33,7 +33,7 @@ Options.init('forbidClientAccountCreation', true);
  */
 Options.listen('forbidClientAccountCreation', function(value) {
   AccountsTemplates.configure({
-    forbidClientAccountCreation: orion.adminExists && value,
+    forbidClientAccountCreation: (!!orion.adminExists) && (!!value),
   });
 });
 
