@@ -9,6 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'blaze-html-templates',
+    'ecmascript',
     'orionjs:lang-en@1.8.0',
     'orionjs:base@1.8.0',
     'aldeed:simple-schema@1.3.3',

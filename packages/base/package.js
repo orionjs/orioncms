@@ -9,6 +9,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'ecmascript',
     'meteor-base@1.0.1',
     'mongo',
     'standard-minifiers@1.0.0',
@@ -28,15 +29,9 @@ Package.onUse(function(api) {
   ]);
 
   api.imply([
-    'meteor-base',
-    'mongo',
-    'standard-minifiers',
-    'underscore',
-    'spacebars',
-    'ecmascript',
-    'blaze-html-templates',
-    'check',
     'tracker',
+    'underscore',
+    'check',
     'nicolaslopezj:router-layer',
     'nicolaslopezj:options',
     'nicolaslopezj:reactive-templates',

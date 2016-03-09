@@ -9,6 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'blaze-html-templates',
+    'ecmascript',
     'meteor-platform',
     'orionjs:core@1.8.0',
     'less@2.5.0_1',
