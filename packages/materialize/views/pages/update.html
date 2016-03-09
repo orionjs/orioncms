@@ -1,19 +1,19 @@
 <template name="orionMaterializePagesUpdate">
-  {{# with item }}
-    {{# Layout template=materializeHeader }}
-      {{ i18n 'pages.update.title' }}
-    {{/ Layout }}
-    {{# Layout template=materializeContent }}
+  {{# Layout template=materializeHeader }}
+    {{ i18n 'pages.update.title' }}
+  {{/ Layout }}
+  {{# Layout template=materializeContent }}
+    {{# with item }}
       {{# if getSchema }}
         {{> quickForm collection="orion.pages.collection" schema=getSchema doc=this id="orionPagesUpdateForm" type="update" buttonContent=false }}
       {{/ if }}
-    {{/ Layout }}
-    {{# Layout template=materializeButtons }}
-      <a class="waves-effect waves-light btn cancel-btn" href="{{ RouterLayerPathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
-      {{# with item }}
-        <a class="waves-effect waves-light btn red delete-btn" href="{{ RouterLayerPathFor 'pages.delete' _id=_id }}">{{ i18n 'global.delete' }}</a>
-        <a class="waves-effect waves-light btn light-blue accent-4 save-btn">{{ i18n 'global.save' }}</a>
-      {{/ with }}
-    {{/ Layout }}
-  {{/ with }}
+    {{/ with }}
+  {{/ Layout }}
+  {{# Layout template=materializeButtons }}
+    <a class="waves-effect waves-light btn cancel-btn" href="{{ RouterLayerPathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
+    {{# with item }}
+      <a class="waves-effect waves-light btn red delete-btn" href="{{ RouterLayerPathFor 'pages.delete' _id=_id }}">{{ i18n 'global.delete' }}</a>
+      <a class="waves-effect waves-light btn light-blue accent-4 save-btn">{{ i18n 'global.save' }}</a>
+    {{/ with }}
+  {{/ Layout }}
 </template>
