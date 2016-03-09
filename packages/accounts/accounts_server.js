@@ -26,7 +26,7 @@ if (Roles._collection) {
 } else {
   orion.adminExists = Meteor.users.find({ roles: 'admin' }).count() !== 0;
 }
-Inject.obj('adminExists', { exists: orion.adminExists });
+Inject.obj('adminExists', { exists: !!orion.adminExists });
 AccountsTemplates.configure({
   forbidClientAccountCreation: !!orion.adminExists
 });
