@@ -63,7 +63,6 @@ And go
 - **Gitter:** [gitter.im/orionjs/orion](https://gitter.im/orionjs/orion)
 - **Preview:** [orion-example.meteor.com](http://orion-example.meteor.com)
 - **Roadmap:** [trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
-- **Newsletter:** [subscribe](http://eepurl.com/
 
 ### Translate Orion
 
