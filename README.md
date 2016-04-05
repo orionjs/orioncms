@@ -59,7 +59,7 @@ And go
 - **Website:** [orionjs.org](http://orionjs.org)
 - **Documentation:** [docs.orionjs.org](http://docs.orionjs.org/)
 - **Tutorials:** [orionjs.org/tutorials](http://orionjs.org/tutorials)
-- **Forums:** [forums.orionjs.org](http://forums.orionjs.org)
+- **Forums:** use [meteor forums](https://forums.meteor.com/)
 - **Gitter:** [gitter.im/orionjs/orion](https://gitter.im/orionjs/orion)
 - **Preview:** [orion-example.meteor.com](http://orion-example.meteor.com)
 - **Roadmap:** [trello.com/b/dQhi5dF9/orion-roadmap](https://trello.com/b/dQhi5dF9/orion-roadmap)
