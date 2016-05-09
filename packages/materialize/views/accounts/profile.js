@@ -1,5 +1,8 @@
 AutoForm.addHooks('updateProfileForm', {
   onSuccess: function() {
-    RouterLayer.go('myAccount.index');
+    let collection = this.collection;
+    Meteor.defer(function() {
+      RouterLayer.go(collection.indexPath());
+    });
   }
 });

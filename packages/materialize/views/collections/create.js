@@ -7,6 +7,9 @@ Template.orionMaterializeCollectionsCreate.events({
 
 AutoForm.addHooks('orionMaterializeCollectionsCreateForm', {
   onSuccess: function() {
-    RouterLayer.go(this.collection.indexPath());
+    let collection = this.collection;
+    Meteor.defer(function() {
+      RouterLayer.go(collection.indexPath());
+    });
   }
 });
