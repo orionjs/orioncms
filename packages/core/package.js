@@ -9,6 +9,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'npm-bcrypt@0.9.2',
     'blaze-html-templates@1.0.1',
     'ecmascript@0.1.6',
     'orionjs:base@1.8.0',
