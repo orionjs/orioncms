@@ -21,16 +21,6 @@ Package.onUse(function(api) {
     'orionjs:lang-en@1.8.0'
     ]);
 
-  api.imply([
-    'orionjs:lang-en',
-    'orionjs:base',
-    'orionjs:accounts',
-    'orionjs:config',
-    'orionjs:collections',
-    'orionjs:dictionary',
-    'orionjs:attributes',
-    ]);
-
   api.export('orion');
 });
 
