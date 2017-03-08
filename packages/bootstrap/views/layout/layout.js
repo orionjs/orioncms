@@ -1,5 +1,5 @@
 Template.orionBootstrapLayout.events({
-  'click .orion-bootstrap-admin.toggled': function() {
+  'resize .orion-bootstrap-admin.toggled': function() {
     if ($(window).width() < 768) {
       $(".orion-bootstrap-admin").removeClass("toggled");
       $("html,body").removeClass("no-overflow");
