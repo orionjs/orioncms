@@ -2,7 +2,7 @@
 
 Orion is an open source framework built on Meteor that makes complex as well as simple apps possible with minimal effort. It's built, modified, used, and supported by an active community of people around the world.
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4RJ7GP2UST4EN)
+> Project sponsored by [Orion Hosting](https://orion.hosting/?utm_source=github-orionjs) - Hosting for Meteor
 
 ## Getting Started
 
