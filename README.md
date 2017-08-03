@@ -115,6 +115,7 @@ Feel free to add your made with Orion site doing a pull request.
 - [goooseman:orion-lang-ru](https://github.com/goooseman/orion-lang-ru) Russian
 - [eyeskiller:orion-lang-sk](https://github.com/eyeskiller/orion-lang-sk) Slovak
 - [orionjs:lang-es](https://github.com/orionjs/orion/tree/master/packages/lang-es) Spanish
+- [berkbadem:orion-lang-tr](https://github.com/berkbadem/orion-lang-tr) Turkish
 
 **Integrations:**
 
