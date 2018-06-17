@@ -19,7 +19,7 @@ Orion has two official templates, one for [bootstrap](http://getbootstrap.com) a
 **Bootstrap:**
 
 ```sh
-meteor add twbs:bootstrap fortawesome:fontawesome orionjs:bootstrap
+meteor add twbs:bootstrap fontawesome:fontawesome orionjs:bootstrap
 ```
 
 **Materialize:**
