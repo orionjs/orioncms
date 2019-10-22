@@ -123,7 +123,6 @@ Feel free to add your made with Orion site doing a pull request.
 - [rwatts:orionjs-gtm](https://atmospherejs.com/rwatts/orionjs-gtm) Google Tag Manager
 
 **Others:**
-
 - [nicolaslopezj:orion-exporter](https://github.com/nicolaslopezj/orion-exporter) Export and import Orion data
 - [rwatts:orionjs-dashboard](https://atmospherejs.com/rwatts/orionjs-dashboard) Add a Dashboard & Widgets to Orion
-
+- [joadr:orion-languages](https://github.com/joadr/orion-languages) Dictionary Languages support (for multi-languages sites)
